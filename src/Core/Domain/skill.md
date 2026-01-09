@@ -1,145 +1,111 @@
 # Domain Layer Skills
 
-## Overview
-This document defines the skills for working with the Domain layer in the AVA AIGC Toolbox. The Domain layer contains the core business logic, entities, and value objects that form the foundation of the application.
+## 1. Core Responsibility
+- Defines domain entities, value objects, and their relationships, encapsulating the application's core business logic and invariants.
 
-## 1. Workflow-based Skills
+## 2. Core Development Rules
+1. **Naming Conventions**: 
+   - Entities: Singular PascalCase (e.g., `Image`, `Tag`)
+   - Value Objects: Singular PascalCase (e.g., `TagCount`)
+   - Properties: PascalCase with descriptive names (e.g., `CreatedDate`, `Name`)
+   - Methods: PascalCase verbs with clear intent (e.g., `AddTag`, `UpdateName`)
+2. **Entity Design**: 
+   - Must have an Id property as primary identifier
+   - Enforce valid state via constructors and factory methods
+   - Implement business logic within the entity
+   - Use private setters for most properties to control state changes
+   - Navigation properties are optional, use sparingly
+3. **Value Object Design**: 
+   - Must be immutable (readonly properties, no public setters)
+   - Override Equals() and GetHashCode() for value-based equality
+   - Implement explicit conversion operators if needed
+   - No identity property (Id)
+4. **Relationship Rules**: 
+   - One-to-One: Use foreign key in dependent entity
+   - One-to-Many: Navigation property in principal entity, foreign key in dependent
+   - Many-to-Many: Use join entity with foreign keys to both entities
+   - Avoid circular references
+5. **Aggregate Design**: 
+   - Group related entities and value objects into aggregates
+   - Identify a single aggregate root
+   - All operations on aggregate members must go through the root
 
-### Domain Modeling Workflow
-- **Type**: Workflow-based
-- **Description**: Complete process for developing domain models
-- **Steps**:
-  1. Identify domain concepts from business requirements
-  2. Determine if a concept is an entity or value object
-  3. Define properties and relationships
-  4. Implement business logic within the domain objects
-  5. Validate the model against business rules
-  6. Update repository interfaces if needed
-- **Implementation**: Follow the pattern in existing domain models (e.g., `Image.cs`)
+## 3. Common Patterns
+### Value Object Pattern
+```csharp
+public class ValueObjectName : IEquatable<ValueObjectName>
+{
+    public string Property1 { get; } // Readonly property
+    public int Property2 { get; }     // Readonly property
+    
+    // Public constructor with validation
+    public ValueObjectName(string property1, int property2)
+    {
+        if (string.IsNullOrWhiteSpace(property1))
+            throw new ArgumentException("Property1 cannot be empty");
+        
+        Property1 = property1;
+        Property2 = property2;
+    }
+    
+    // Value-based equality implementation
+    public bool Equals(ValueObjectName other)
+    {
+        if (other is null) return false;
+        return Property1 == other.Property1 && Property2 == other.Property2;
+    }
+    
+    public override bool Equals(object obj) => Equals(obj as ValueObjectName);
+    public override int GetHashCode() => HashCode.Combine(Property1, Property2);
+}
+```
 
-### Entity Relationship Design Workflow
-- **Type**: Workflow-based
-- **Description**: Process for designing relationships between domain entities
-- **Steps**:
-  1. Identify the entities involved
-  2. Determine the relationship type (one-to-one, one-to-many, many-to-many)
-  3. Define foreign keys or join entities as needed
-  4. Implement navigation properties if appropriate
-  5. Ensure relationships follow business rules
-- **Implementation**: See `ImageTag.cs` for many-to-many relationship example
+### Entity Relationship Pattern (One-to-Many)
+```csharp
+// Principal entity
+public class Album
+{
+    public int Id { get; private set; }
+    public string Name { get; private set; }
+    
+    // Navigation property to dependent entities
+    public List<Image> Images { get; private set; } = new();
+    
+    // Business logic to maintain relationship invariant
+    public void AddImage(Image image)
+    {
+        if (image == null) throw new ArgumentNullException(nameof(image));
+        if (!Images.Contains(image))
+        {
+            Images.Add(image);
+            // Additional business logic if needed
+        }
+    }
+}
 
-## 2. Task-based Skills
+// Dependent entity
+public class Image
+{
+    public int Id { get; private set; }
+    public string FilePath { get; private set; }
+    
+    // Foreign key to principal entity
+    public int AlbumId { get; private set; }
+    
+    // Navigation property back to principal (optional)
+    public Album Album { get; private set; }
+}
+```
 
-### Domain Component Operations
-- **Type**: Task-based
-- **Description**: Collection of operations for working with domain components
-- **Operations**:
-  - CreateEntity: Define a new domain entity class
-  - CreateValueObject: Define a new value object class
-  - AddProperties: Define properties with appropriate access modifiers
-  - ImplementBusinessLogic: Add methods for domain-specific behavior
-  - DefineRelationships: Establish connections between entities
-  - ValidateModel: Ensure the model follows business rules
+## 4. Capability List
+- Domain modeling and entity definition
+- Value object implementation with immutable design
+- Entity relationship design and management
+- Business rule enforcement within domain objects
+- Invariant preservation
+- Aggregate root design and management
+- Business logic encapsulation
 
-### Domain Components
-- **Type**: Task-based
-- **Description**: Key components of the Domain layer
-- **Components**:
-  - Entities: `src/Core/Domain/Entities/`
-  - Value Objects: `src/Core/Domain/ValueObjects/`
-
-## 3. Reference/Guidelines
-
-### Domain-Driven Design Principles
-- **Type**: Reference
-- **Description**: Core principles for effective domain modeling
-- **Guidelines**:
-  - **Entities**: Objects with identity that change over time
-  - **Value Objects**: Immutable objects defined by their properties
-  - **Aggregates**: Clusters of entities and value objects treated as a single unit
-  - **Domain Events**: Represent significant changes in the domain
-  - **Repositories**: Abstractions for data access
-  - **Services**: Operations that don't naturally belong to a single entity
-
-### Entity Design Guidelines
-- **Type**: Reference
-- **Description**: Standards for designing domain entities
-- **Guidelines**:
-  - Include an identifier property (usually Id)
-  - Use appropriate data types for properties
-  - Implement constructors to enforce valid state
-  - Add business logic methods to maintain invariants
-  - Use navigation properties sparingly
-  - Follow the law of Demeter
-- **Example**: `src/Core/Domain/Entities/Image.cs`
-
-### Value Object Design Guidelines
-- **Type**: Reference
-- **Description**: Standards for designing value objects
-- **Guidelines**:
-  - Make them immutable
-  - Override Equals and GetHashCode
-  - Implement value-based equality
-  - Use them for concepts without identity
-  - Prefer value objects over primitive types for domain concepts
-- **Example**: `src/Core/Domain/ValueObjects/TagCount.cs`
-
-### Naming Conventions
-- **Type**: Reference
-- **Description**: Naming standards for domain components
-- **Guidelines**:
-  - Entities: Singular PascalCase (e.g., `Image`, `Tag`)
-  - Value Objects: Singular PascalCase (e.g., `TagCount`)
-  - Properties: PascalCase (e.g., `ImageId`, `CreatedDate`)
-  - Methods: PascalCase with clear action verbs (e.g., `AddTag`, `UpdateMetadata`)
-
-## 4. Capabilities-based Skills
-
-### Domain Model System
-- **Type**: Capabilities-based
-- **Description**: Complete domain modeling functionality
-- **Capabilities**:
-  - Entity definition and management
-  - Value object implementation
-  - Relationship management
-  - Business rule enforcement
-  - Domain invariant preservation
-  - Aggregate design and management
-- **Implementation**: `src/Core/Domain/` directory structure
-
-### Business Logic Layer
-- **Type**: Capabilities-based
-- **Description**: Core business logic functionality
-- **Capabilities**:
-  - Business rule validation
-  - Domain-specific calculations
-  - State transitions
-  - Event generation
-  - Invariant maintenance
-- **Implementation**: Business logic methods within domain entities
-
-## How to Use These Skills
-
-### For Domain Model Development
-1. Follow the **Domain Modeling Workflow**
-2. Apply **Domain-Driven Design Principles**
-3. Use the appropriate component type (entity vs value object)
-4. Implement business logic within the domain objects
-5. Validate the model against business requirements
-
-### For Working with Existing Domain Models
-1. Understand the entity relationships
-2. Respect the existing design patterns
-3. Follow the established naming conventions
-4. Don't break existing business logic
-5. Use domain objects as they were intended
-
-### For Extending the Domain Model
-1. Identify the new domain concept
-2. Determine if it's an entity or value object
-3. Define its properties and relationships
-4. Implement necessary business logic
-5. Update repository interfaces if needed
-6. Test the new domain component thoroughly
-
-This skills document provides a framework for effectively working with the Domain layer in the AVA AIGC Toolbox. Follow these guidelines to ensure a robust and maintainable domain model that accurately represents the business domain.
+## 5. Skill Loading Rules
+- Load `Domain/Entities/` skills for entity-specific implementation details
+- Load `Domain/ValueObjects/` skills for value object-specific patterns

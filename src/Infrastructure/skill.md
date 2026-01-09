@@ -1,133 +1,74 @@
 # Infrastructure Layer Skills
 
-## Overview
-This document defines the skills for working with the Infrastructure layer of the AVA AIGC Toolbox. The Infrastructure layer contains the concrete implementations of repository interfaces, database context, and other external dependencies.
+## 1. Core Responsibility
+- Provides concrete implementations of repository interfaces, database context, and other external dependencies, acting as the application's bridge to external systems.
 
-## 1. Workflow-based Skills
+## 2. Core Development Rules
+1. **Naming Conventions**: 
+   - Repository class name: `{DatabaseType}{EntityName}Repository` (e.g., `SQLiteImageRepository`, `SQLiteTagRepository`)
+   - Database context: `DatabaseContext.cs`
+   - File structure: Organize in `Data/` and `Repositories/` subdirectories
+2. **Repository Implementation**: 
+   - Implement all methods from the corresponding Core layer interface
+   - Use SQLite-net for all database operations
+   - All methods must be async (return Task<T> or Task)
+   - Use parameterized queries to prevent SQL injection
+3. **Database Usage**: 
+   - Use `SQLiteConnection` for database operations
+   - Annotate entities with SQLite attributes (e.g., `[PrimaryKey]`, `[AutoIncrement]`)
+   - Proper connection management and disposal
+   - Handle database locks and exceptions appropriately
+4. **Dependency Rules**: 
+   - Depend only on Core layer interfaces and SQLite-net
+   - No presentation layer dependencies
+   - Constructor injection for all dependencies
+5. **Transaction Management**: 
+   - Use explicit transactions for multiple related operations
+   - Ensure proper transaction commit/rollback
 
-### Repository Implementation Workflow
-- **Type**: Workflow-based
-- **Description**: Complete process for implementing repository interfaces
-- **Steps**:
-  1. Identify the repository interface to implement
-  2. Create a new repository class in the appropriate directory
-  3. Implement all interface methods
-  4. Use SQLite-net for database operations
-  5. Handle database connections and transactions
-  6. Test the repository implementation
-- **Implementation**: Follow the pattern in existing repositories (e.g., `SQLiteImageRepository.cs`)
+## 3. Common Patterns
+### Repository Implementation Pattern
+```csharp
+public class SQLiteEntityNameRepository : IEntityRepository
+{
+    private readonly DatabaseContext _dbContext;
+    
+    public SQLiteEntityNameRepository(DatabaseContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+    
+    public async Task<EntityName> GetByIdAsync(int id)
+    {
+        using var connection = _dbContext.GetConnection();
+        return await connection.Table<EntityName>().FirstOrDefaultAsync(e => e.Id == id);
+    }
+    
+    public async Task<IEnumerable<EntityName>> GetAllAsync()
+    {
+        using var connection = _dbContext.GetConnection();
+        return await connection.Table<EntityName>().ToListAsync();
+    }
+    
+    public async Task AddAsync(EntityName entity)
+    {
+        using var connection = _dbContext.GetConnection();
+        await connection.InsertAsync(entity);
+    }
+    
+    // Implement other interface methods...
+}
+```
 
-### Database Migration Workflow
-- **Type**: Workflow-based
-- **Description**: Process for updating the database schema
-- **Steps**:
-  1. Update domain entities with new properties
-  2. Modify the DatabaseContext to handle schema changes
-  3. Implement migration logic if needed
-  4. Test the migration process
-  5. Update documentation
-- **Implementation**: `src/Infrastructure/Data/DatabaseContext.cs`
+## 4. Capability List
+- SQLite database management and connection handling
+- Concrete repository implementations for all Core layer interfaces
+- Database schema creation and management
+- CRUD operations for all domain entities
+- Complex query implementation
+- Transaction management
+- Database migration support
 
-## 2. Task-based Skills
-
-### Infrastructure Operations
-- **Type**: Task-based
-- **Description**: Collection of operations for working with the Infrastructure layer
-- **Operations**:
-  - ImplementRepository: Create a concrete repository implementation
-  - ConfigureDatabase: Set up database connections and context
-  - WriteSQLQueries: Implement database queries using SQLite-net
-  - HandleTransactions: Manage database transactions
-  - TestRepository: Verify repository functionality
-  - UpdateSchema: Modify database schema to match domain changes
-
-### Infrastructure Components
-- **Type**: Task-based
-- **Description**: Key components of the Infrastructure layer
-- **Components**:
-  - Database Context: `src/Infrastructure/Data/DatabaseContext.cs`
-  - Repositories: `src/Infrastructure/Repositories/`
-  - Database Migrations: `src/Infrastructure/Data/` (future)
-
-## 3. Reference/Guidelines
-
-### Repository Implementation Guidelines
-- **Type**: Reference
-- **Description**: Standards for implementing repositories
-- **Guidelines**:
-  - Name repositories with database type prefix (e.g., `SQLiteImageRepository`)
-  - Implement all methods from the corresponding interface
-  - Use SQLite-net for database operations
-  - Handle exceptions appropriately
-  - Use parameterized queries to prevent SQL injection
-  - Implement proper connection management
-- **Example**: `src/Infrastructure/Repositories/SQLiteImageRepository.cs`
-
-### Database Context Guidelines
-- **Type**: Reference
-- **Description**: Standards for database context implementation
-- **Guidelines**:
-  - Manage database connections
-  - Handle schema creation and updates
-  - Provide access to database connections for repositories
-  - Implement proper disposal of resources
-  - Use appropriate connection string handling
-- **Example**: `src/Infrastructure/Data/DatabaseContext.cs`
-
-### SQLite-net Usage Guidelines
-- **Type**: Reference
-- **Description**: Best practices for using SQLite-net
-- **Guidelines**:
-  - Use `SQLiteConnection` for database operations
-  - Annotate entities with SQLite attributes
-  - Use async methods where available
-  - Handle database locks appropriately
-  - Implement proper error handling
-
-## 4. Capabilities-based Skills
-
-### Data Access Layer
-- **Type**: Capabilities-based
-- **Description**: Complete data access functionality
-- **Capabilities**:
-  - SQLite database management
-  - Repository pattern implementation
-  - CRUD operations for all entities
-  - Query building and execution
-  - Transaction management
-  - Connection pooling and management
-- **Implementation**: `src/Infrastructure/Repositories/` directory
-
-### Database Infrastructure
-- **Type**: Capabilities-based
-- **Description**: Database system infrastructure
-- **Capabilities**:
-  - Database creation and initialization
-  - Schema management and migrations
-  - Connection management
-  - Backup and restore functionality
-  - Performance optimization
-- **Implementation**: `src/Infrastructure/Data/DatabaseContext.cs`
-
-## How to Use These Skills
-
-### For New Repository Implementation
-1. Follow the **Repository Implementation Workflow**
-2. Refer to **Repository Implementation Guidelines**
-3. Use SQLite-net for database operations
-4. Test thoroughly with various scenarios
-
-### For Database Schema Changes
-1. Update domain entities first
-2. Follow the **Database Migration Workflow**
-3. Update DatabaseContext if needed
-4. Test the migration process
-
-### For Troubleshooting
-1. Check database connection string
-2. Verify repository implementation matches interface
-3. Test SQL queries directly if needed
-4. Check for proper exception handling
-5. Verify database file permissions
-
-This skills document provides a framework for effectively working with the Infrastructure layer of the AVA AIGC Toolbox. Follow these guidelines to ensure reliable and maintainable data access implementation.
+## 5. Skill Loading Rules
+- Load `Infrastructure/Data/` skills for database context and schema management
+- Load `Infrastructure/Repositories/` skills for repository implementations

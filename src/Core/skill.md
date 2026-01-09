@@ -1,118 +1,81 @@
 # Core Layer Skills
 
-## Overview
-This document defines the skills for working with the Core layer of the AVA AIGC Toolbox. The Core layer contains the domain models, value objects, and repository interfaces that form the foundation of the application.
+## 1. Core Responsibility
+- Defines domain models, value objects, and repository interfaces forming the application's foundational business logic layer.
 
-## 1. Workflow-based Skills
+## 2. Core Development Rules
+1. **Naming Conventions**: 
+   - Entities: Singular PascalCase (e.g., `Image`)
+   - Value Objects: Singular PascalCase (e.g., `TagCount`)
+   - Repositories: `I` + EntityName + `Repository` (e.g., `IImageRepository`)
+   - Methods: PascalCase verbs (e.g., `GetAllAsync`)
+2. **Domain-Driven Design**: 
+   - Entities: Objects with identity, implement business logic internally
+   - Value Objects: Immutable data structures, define equality by value
+   - Avoid anemic domain models (no empty entity classes)
+3. **Repository Interfaces**: 
+   - Define only necessary CRUD and domain-specific query methods
+   - Return domain objects, never infrastructure-specific types
+   - No direct database or external service dependencies
+4. **Dependency Rules**: 
+   - Core layer must not depend on any other layer
+   - All dependencies must flow inward
 
-### Domain Model Development Workflow
-- **Type**: Workflow-based
-- **Description**: Complete process for developing new domain models
-- **Steps**:
-  1. Identify the domain entity or value object to create
-  2. Define the properties and relationships
-  3. Implement constructor and business logic
-  4. Create repository interface if needed
-  5. Update infrastructure layer with implementation
-  6. Test the domain model
-- **Implementation**: Follow the pattern in existing entities (e.g., `Image.cs`)
+## 3. Common Patterns
+### Domain Entity Pattern
+```csharp
+public class EntityName
+{
+    public int Id { get; private set; } // Identity property
+    public string PropertyName { get; private set; }
+    
+    // Private constructor for ORM, public factory method for creation
+    private EntityName() {}
+    
+    public static EntityName Create(string propertyName)
+    {
+        // Validate inputs and enforce invariants
+        if (string.IsNullOrWhiteSpace(propertyName))
+            throw new ArgumentException("PropertyName cannot be empty");
+        
+        return new EntityName
+        {
+            PropertyName = propertyName
+        };
+    }
+    
+    // Business logic methods
+    public void UpdateProperty(string newValue)
+    {
+        // Validate and update
+        PropertyName = newValue;
+    }
+}
+```
 
-## 2. Task-based Skills
+### Repository Interface Pattern
+```csharp
+public interface IEntityRepository
+{
+    Task<EntityName> GetByIdAsync(int id);
+    Task<IEnumerable<EntityName>> GetAllAsync();
+    Task AddAsync(EntityName entity);
+    Task UpdateAsync(EntityName entity);
+    Task DeleteAsync(int id);
+    
+    // Domain-specific query method
+    Task<IEnumerable<EntityName>> GetByPropertyAsync(string propertyValue);
+}
+```
 
-### Domain Model Operations
-- **Type**: Task-based
-- **Description**: Collection of operations for working with domain models
-- **Operations**:
-  - CreateEntity: Create a new domain entity class
-  - CreateValueObject: Create a new value object class
-  - DefineProperties: Add properties with appropriate access modifiers
-  - ImplementBusinessLogic: Add methods for domain-specific behavior
-  - CreateRepositoryInterface: Define repository interface for data access
-  - UpdateRelationships: Manage relationships between entities
+## 4. Capability List
+- Domain modeling and entity definition
+- Value object implementation with immutable design
+- Business rule enforcement within domain objects
+- Repository interface abstraction for data access
+- Clear entity relationship management
+- Domain-specific query definition
 
-### Core Components
-- **Type**: Task-based
-- **Description**: Key components of the Core layer
-- **Components**:
-  - Domain Entities: `src/Core/Domain/Entities/`
-  - Value Objects: `src/Core/Domain/ValueObjects/`
-  - Repository Interfaces: `src/Core/Application/Ports/`
-
-## 3. Reference/Guidelines
-
-### Domain-Driven Design Guidelines
-- **Type**: Reference
-- **Description**: Principles for effective domain modeling
-- **Guidelines**:
-  - Use entities for objects with identity
-  - Use value objects for immutable data structures
-  - Implement business logic within domain objects
-  - Avoid anemic domain models
-  - Define clear relationships between entities
-- **Example**: `src/Core/Domain/Entities/Image.cs`
-
-### Repository Interface Guidelines
-- **Type**: Reference
-- **Description**: Standards for defining repository interfaces
-- **Guidelines**:
-  - Name interfaces with `I` prefix followed by entity name and "Repository"
-  - Include basic CRUD operations
-  - Use domain objects as parameters and return types
-  - Define methods for common queries
-  - Keep interfaces focused and cohesive
-- **Example**: `src/Core/Application/Ports/IImageRepository.cs`
-
-### Naming Conventions
-- **Type**: Reference
-- **Description**: Naming standards for Core layer components
-- **Guidelines**:
-  - Entities: Singular PascalCase (e.g., `Image`, `Tag`)
-  - Value Objects: Singular PascalCase (e.g., `TagCount`)
-  - Repositories: `I` + EntityName + `Repository` (e.g., `IImageRepository`)
-  - Methods: PascalCase with clear action verbs (e.g., `GetAllAsync`, `AddAsync`)
-
-## 4. Capabilities-based Skills
-
-### Domain Model Layer
-- **Type**: Capabilities-based
-- **Description**: Complete domain modeling functionality
-- **Capabilities**:
-  - Entity definition and management
-  - Value object implementation
-  - Business rule enforcement
-  - Relationship management
-  - Domain event handling
-- **Implementation**: `src/Core/Domain/` directory structure
-
-### Repository Interface Layer
-- **Type**: Capabilities-based
-- **Description**: Abstraction layer for data access
-- **Capabilities**:
-  - Data access abstraction
-  - Query definition
-  - Transaction management
-  - Repository pattern implementation
-- **Implementation**: `src/Core/Application/Ports/` directory
-
-## How to Use These Skills
-
-### For New Domain Model Development
-1. Follow the **Domain Model Development Workflow**
-2. Refer to **Domain-Driven Design Guidelines**
-3. Create appropriate repository interfaces if needed
-4. Update infrastructure layer with concrete implementations
-
-### For Modifying Existing Models
-1. Identify the domain model to modify
-2. Ensure changes maintain business integrity
-3. Update related repository interfaces if needed
-4. Update infrastructure implementations
-5. Test thoroughly
-
-### For Extending Functionality
-1. Define new repository methods in existing interfaces
-2. Implement the methods in the infrastructure layer
-3. Create use cases to expose the new functionality
-4. Update the dependency injection configuration
-
-This skills document provides a framework for effectively working with the Core layer of the AVA AIGC Toolbox. Follow these guidelines to ensure a robust and maintainable domain model.
+## 5. Skill Loading Rules
+- Load `Core/Domain/` skills for domain modeling and value objects
+- Load `Core/Application/Ports/` skills for repository interfaces

@@ -1,137 +1,88 @@
 # ViewModels Skills
 
-## Overview
-This document defines the skills for working with ViewModels in the AVA AIGC Toolbox. The ViewModels directory contains the MVVM ViewModels that connect the UI with the application logic using CommunityToolkit.Mvvm attributes.
+## 1. Core Responsibility
+- Implements ViewModels that connect the UI to application logic, managing UI state and delegating business operations to use cases.
 
-## 1. Workflow-based Skills
+## 2. Core Development Rules
+1. **Naming Conventions**: 
+   - ViewModel class name: PascalCase with "ViewModel" suffix (e.g., `MainWindowViewModel`)
+   - Properties: PascalCase (e.g., `SelectedImage`)
+   - Commands: PascalCase with "Command" suffix (e.g., `SaveCommand`)
+2. **Base Class Requirement**: 
+   - All ViewModels must inherit from `ViewModelBase`
+   - `ViewModelBase` provides common functionality for all ViewModels
+3. **Property Implementation**: 
+   - Use `[ObservableProperty]` attribute for automatic INotifyPropertyChanged
+   - Private fields for properties use underscore prefix (e.g., `_propertyName`)
+4. **Command Implementation**: 
+   - `[RelayCommand]` for synchronous commands
+   - `[RelayCommand]` with async methods for asynchronous commands
+   - Command logic in private methods
+   - Use `[RelayCommand(CanExecute = "CanExecuteMethod")]` for conditional commands
+5. **Dependency Rules**: 
+   - Only depend on use cases (no direct repositories)
+   - Constructor injection for all dependencies
+   - Register all ViewModels as Transient in `App.axaml.cs`
+6. **Business Logic**: 
+   - No business logic in ViewModels
+   - Delegate all business operations to injected use cases
 
-### ViewModel Development Workflow
-- **Type**: Workflow-based
-- **Description**: Complete process for developing MVVM ViewModels
-- **Steps**:
-  1. Create ViewModel class inheriting from `ViewModelBase`
-  2. Add dependencies via constructor injection
-  3. Implement observable properties with `ObservableProperty` attribute
-  4. Implement commands with `RelayCommand` attribute
-  5. Add async commands with `AsyncRelayCommand` if needed
-  6. Connect to use cases for business logic
-  7. Test ViewModel functionality
-- **Implementation**: Follow the pattern in `MainWindowViewModel.cs`
+## 3. Common Patterns
+### Observable Property and Command Pattern
+```csharp
+public partial class ViewModelName : ViewModelBase
+{
+    // Observable property with automatic INotifyPropertyChanged
+    [ObservableProperty]
+    private string _propertyName;
+    
+    // Async command with automatic ICommand implementation
+    [RelayCommand]
+    private async Task AsyncCommandName()
+    {
+        try
+        {
+            // Delegate to use case for business logic
+            var result = await _useCase.ExecuteAsync();
+            PropertyName = result;
+        }
+        catch (Exception ex)
+        {
+            // Handle UI error
+            ErrorMessage = ex.Message;
+        }
+    }
+    
+    // Conditional command example
+    [RelayCommand(CanExecute = nameof(CanExecuteCommand))]
+    private void SyncCommandName()
+    {
+        // Simple synchronous operation
+        _useCase.ExecuteSync();
+    }
+    
+    private bool CanExecuteCommand()
+    {
+        // Command availability logic
+        return !string.IsNullOrWhiteSpace(PropertyName);
+    }
+    
+    private readonly IUseCase _useCase;
+    
+    public ViewModelName(IUseCase useCase)
+    {
+        _useCase = useCase;
+    }
+}
+```
 
-### Data Binding Workflow
-- **Type**: Workflow-based
-- **Description**: Process for setting up data binding between View and ViewModel
-- **Steps**:
-  1. Create ViewModel with observable properties
-  2. Create XAML View with binding expressions
-  3. Set DataContext of View to ViewModel instance
-  4. Test binding updates
-  5. Add command bindings for user interactions
-- **Implementation**: See `MainWindowViewModel.cs` and `MainWindow.axaml`
+## 4. Capability List
+- Observable property management with automatic INotifyPropertyChanged
+- Command handling (synchronous and asynchronous)
+- UI state management
+- Use case delegation for business logic
+- Error handling for UI presentation
 
-## 2. Task-based Skills
-
-### ViewModel Operations
-- **Type**: Task-based
-- **Description**: Collection of operations for working with ViewModels
-- **Operations**:
-  - CreateViewModelClass: Define a new ViewModel inheriting from `ViewModelBase`
-  - AddDependencies: Inject use cases and services via constructor
-  - ImplementObservableProperties: Add bindable properties with `ObservableProperty`
-  - ImplementCommands: Create commands with `RelayCommand` or `AsyncRelayCommand`
-  - AddBusinessLogic: Connect to use cases for application logic
-  - RegisterInDI: Add ViewModel to dependency injection container
-
-### Available ViewModels
-- **Type**: Task-based
-- **Description**: List of existing ViewModels
-- **ViewModels**:
-  - `MainWindowViewModel`: Main application window ViewModel
-  - `ViewModelBase`: Base class for all ViewModels
-
-## 3. Reference/Guidelines
-
-### ViewModel Implementation Guidelines
-- **Type**: Reference
-- **Description**: Standards for implementing ViewModels
-- **Guidelines**:
-  - Inherit from `ViewModelBase` for all ViewModels
-  - Use `ObservableProperty` attribute for bindable properties
-  - Use `RelayCommand` for synchronous commands
-  - Use `AsyncRelayCommand` for asynchronous commands
-  - Keep business logic in use cases, not in ViewModels
-  - Use constructor injection for dependencies
-  - Implement IDisposable if needed for resource cleanup
-- **Example**: `MainWindowViewModel.cs`
-
-### CommunityToolkit.Mvvm Usage Guidelines
-- **Type**: Reference
-- **Description**: Best practices for using CommunityToolkit.Mvvm
-- **Guidelines**:
-  - Use `[ObservableProperty]` for automatic INotifyPropertyChanged implementation
-  - Use `[RelayCommand]` for simple commands
-  - Use `[RelayCommand(CanExecute = "CanExecuteMethod")]` for commands with conditions
-  - Use `[ObservableProperty(SetterAccess = AccessModifier.Private)]` for read-only properties
-  - Implement command logic in private methods
-- **Example**: Property and command implementations in `MainWindowViewModel.cs`
-
-### Naming Conventions
-- **Type**: Reference
-- **Description**: Naming standards for ViewModel components
-- **Guidelines**:
-  - ViewModel classes: PascalCase with "ViewModel" suffix (e.g., `MainWindowViewModel`)
-  - Properties: PascalCase (e.g., `SelectedImage`, `Images`)
-  - Commands: PascalCase with "Command" suffix (e.g., `SaveCommand`)
-  - Command methods: Private PascalCase methods (e.g., `SaveImage`)
-  - Private fields: camelCase with underscore prefix (e.g., `_imageUseCase`)
-
-## 4. Capabilities-based Skills
-
-### MVVM Layer
-- **Type**: Capabilities-based
-- **Description**: Complete MVVM ViewModel functionality
-- **Capabilities**:
-  - Observable property implementation
-  - Command handling
-  - Async command support
-  - Dependency injection integration
-  - UI state management
-  - Event handling
-- **Implementation**: `ViewModelBase.cs` and all ViewModel classes
-
-### Application UI Logic
-- **Type**: Capabilities-based
-- **Description**: UI-specific logic implementation
-- **Capabilities**:
-  - Data binding setup
-  - Command routing
-  - Loading states
-  - Error handling for UI
-  - Navigation logic
-  - User interaction handling
-- **Implementation**: `MainWindowViewModel.cs` and future ViewModels
-
-## How to Use These Skills
-
-### For Creating New ViewModels
-1. Follow the **ViewModel Development Workflow**
-2. Apply **ViewModel Implementation Guidelines**
-3. Use CommunityToolkit.Mvvm attributes for properties and commands
-4. Inject necessary use cases via constructor
-5. Register the ViewModel in the DI container
-
-### For Working with Existing ViewModels
-1. Understand the ViewModel's properties and commands
-2. Use dependency injection to get instances
-3. Follow existing naming and implementation patterns
-4. Add new properties and commands following the same style
-5. Test changes thoroughly
-
-### For Troubleshooting ViewModels
-1. Check that properties use `ObservableProperty` attribute
-2. Verify commands are properly decorated with `RelayCommand`
-3. Ensure dependencies are correctly injected
-4. Test command execution and property updates
-5. Check data binding expressions in the View
-
-This skills document provides a framework for effectively working with ViewModels in the AVA AIGC Toolbox. Follow these guidelines to ensure consistent and maintainable MVVM implementation.
+## 5. Skill Loading Rules
+- No subdirectories in ViewModels, all skills loaded from this file
+- Available ViewModels: `MainWindowViewModel` (main application window), `ViewModelBase` (base class for all ViewModels)

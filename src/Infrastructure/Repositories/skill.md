@@ -1,128 +1,91 @@
 # Repositories Skills
 
-## Overview
-This document defines the skills for working with Repositories in the AVA AIGC Toolbox. The Repositories directory contains the concrete implementations of the repository interfaces defined in the Core layer.
+## 1. Core Responsibility
+- Implements concrete repository classes that provide SQLite-based data access for all domain entities, following the repository interfaces defined in the Core layer.
 
-## 1. Workflow-based Skills
+## 2. Core Development Rules
+1. **Naming Conventions**: 
+   - Repository class name: `SQLite{EntityName}Repository` (e.g., `SQLiteImageRepository`, `SQLiteTagRepository`)
+   - Method names: Match exactly the interface methods from Core layer
+2. **Repository Implementation**: 
+   - Implement all methods from the corresponding Core layer interface
+   - All methods must be async (return Task<T> or Task)
+   - Use parameterized queries to prevent SQL injection
+   - Handle null returns appropriately with descriptive exceptions
+3. **Database Usage**: 
+   - Use `SQLiteConnection` obtained from `DatabaseContext`
+   - Use `Table<T>()` for simple queries, `Query<T>()` for complex queries
+   - Use `InsertAsync()`, `UpdateAsync()`, `DeleteAsync()` for CRUD operations
+   - Proper connection disposal with `using` statements
+4. **Dependency Injection**: 
+   - Constructor injection of `DatabaseContext` only
+   - No other dependencies allowed
+   - Register all repositories as Transient in `App.axaml.cs`
+5. **Error Handling**: 
+   - Catch and wrap SQLite exceptions in domain-friendly exceptions
+   - Provide clear error messages for debugging
+   - Log exceptions appropriately
 
-### Repository Implementation Workflow
-- **Type**: Workflow-based
-- **Description**: Complete process for implementing repository interfaces
-- **Steps**:
-  1. Identify the repository interface to implement
-  2. Create a concrete class with SQLite prefix
-  3. Implement all interface methods
-  4. Use SQLite-net for database operations
-  5. Handle exceptions appropriately
-  6. Test the implementation thoroughly
-- **Implementation**: Follow the pattern in existing repositories (e.g., `SQLiteImageRepository.cs`)
+## 3. Common Patterns
+### CRUD Repository Implementation Pattern
+```csharp
+public class SQLiteEntityNameRepository : IEntityRepository
+{
+    private readonly DatabaseContext _dbContext;
+    
+    public SQLiteEntityNameRepository(DatabaseContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+    
+    public async Task<EntityName> GetByIdAsync(int id)
+    {
+        using var connection = _dbContext.GetConnection();
+        return await connection.Table<EntityName>().FirstOrDefaultAsync(e => e.Id == id);
+    }
+    
+    public async Task<IEnumerable<EntityName>> GetAllAsync()
+    {
+        using var connection = _dbContext.GetConnection();
+        return await connection.Table<EntityName>().ToListAsync();
+    }
+    
+    public async Task AddAsync(EntityName entity)
+    {
+        using var connection = _dbContext.GetConnection();
+        await connection.InsertAsync(entity);
+    }
+    
+    public async Task UpdateAsync(EntityName entity)
+    {
+        using var connection = _dbContext.GetConnection();
+        await connection.UpdateAsync(entity);
+    }
+    
+    public async Task DeleteAsync(int id)
+    {
+        using var connection = _dbContext.GetConnection();
+        await connection.DeleteAsync<EntityName>(id);
+    }
+    
+    // Domain-specific query example
+    public async Task<IEnumerable<EntityName>> GetByPropertyAsync(string propertyValue)
+    {
+        using var connection = _dbContext.GetConnection();
+        return await connection.Table<EntityName>()
+            .Where(e => e.PropertyName == propertyValue)
+            .ToListAsync();
+    }
+}
+```
 
-### CRUD Implementation Workflow
-- **Type**: Workflow-based
-- **Description**: Process for implementing CRUD operations in repositories
-- **Steps**:
-  1. Implement GetAllAsync to retrieve all entities
-  2. Implement GetByIdAsync to retrieve a single entity
-  3. Implement AddAsync to create new entities
-  4. Implement UpdateAsync to modify existing entities
-  5. Implement DeleteAsync to remove entities
-  6. Add domain-specific query methods
-- **Implementation**: See `SQLiteTagRepository.cs` for CRUD example
+## 4. Capability List
+- SQLite-based implementation of all Core layer repository interfaces
+- CRUD operations for all domain entities
+- Complex query support using SQLite-net
+- Transaction management for related operations
+- Error handling and exception wrapping
+- Connection pooling via DatabaseContext
 
-## 2. Task-based Skills
-
-### Repository Operations
-- **Type**: Task-based
-- **Description**: Collection of operations for working with repositories
-- **Operations**:
-  - ImplementRepositoryInterface: Create a concrete repository class
-  - WriteSQLQueries: Implement database queries using SQLite-net
-  - HandleDatabaseExceptions: Implement error handling
-  - TestRepositoryMethods: Verify repository functionality
-  - OptimizeQueries: Improve query performance
-
-### Available Repositories
-- **Type**: Task-based
-- **Description**: List of existing repository implementations
-- **Repositories**:
-  - `SQLiteAlbumRepository`: Implementation of `IAlbumRepository`
-  - `SQLiteFolderRepository`: Implementation of `IFolderRepository`
-  - `SQLiteImageRepository`: Implementation of `IImageRepository`
-  - `SQLiteImageTagRepository`: Implementation of `IImageTagRepository`
-  - `SQLiteTagRepository`: Implementation of `ITagRepository`
-
-## 3. Reference/Guidelines
-
-### Repository Implementation Guidelines
-- **Type**: Reference
-- **Description**: Standards for implementing repositories
-- **Guidelines**:
-  - Name repositories with database type prefix (e.g., `SQLiteImageRepository`)
-  - Use constructor injection for database context
-  - Implement all methods from the corresponding interface
-  - Use parameterized queries to prevent SQL injection
-  - Handle null returns appropriately
-  - Implement proper error handling
-  - Use async methods for all database operations
-- **Example**: `SQLiteImageRepository.cs`
-
-### SQLite-net Usage Guidelines
-- **Type**: Reference
-- **Description**: Best practices for using SQLite-net in repositories
-- **Guidelines**:
-  - Use `SQLiteConnection` for database operations
-  - Use `Table<T>()` for basic queries
-  - Use `Query<T>()` for complex queries
-  - Use `InsertAsync()` for adding entities
-  - Use `UpdateAsync()` for modifying entities
-  - Use `DeleteAsync()` for removing entities
-- **Example**: Repository methods in various repository classes
-
-## 4. Capabilities-based Skills
-
-### Data Access Layer
-- **Type**: Capabilities-based
-- **Description**: Complete data access functionality
-- **Capabilities**:
-  - CRUD operations for all entities
-  - Complex query support
-  - Transaction management
-  - Connection pooling (via DatabaseContext)
-  - Error handling and recovery
-- **Implementation**: All repository classes in this directory
-
-### SQLite Repository System
-- **Type**: Capabilities-based
-- **Description**: SQLite-specific repository functionality
-- **Capabilities**:
-  - SQLite database interaction
-  - Table creation and management
-  - Index optimization
-  - Query building and execution
-  - Entity mapping
-- **Implementation**: Repository classes using SQLite-net
-
-## How to Use These Skills
-
-### For Implementing New Repositories
-1. Follow the **Repository Implementation Workflow**
-2. Apply **Repository Implementation Guidelines**
-3. Use SQLite-net for database operations
-4. Test all CRUD operations
-5. Add domain-specific query methods as needed
-
-### For Modifying Existing Repositories
-1. Identify the repository to modify
-2. Follow existing implementation patterns
-3. Add or update methods as required
-4. Test thoroughly with various scenarios
-5. Ensure backward compatibility
-
-### For Troubleshooting Repository Issues
-1. Check database connection string
-2. Verify query syntax
-3. Test with sample data
-4. Check for proper exception handling
-5. Optimize queries if needed
-
-This skills document provides a framework for effectively working with repositories in the AVA AIGC Toolbox. Follow these guidelines to ensure consistent, maintainable, and efficient data access implementation.
+## 5. Skill Loading Rules
+- No subdirectories in Repositories, all skills loaded from this file
