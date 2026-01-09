@@ -26,7 +26,7 @@ Use the following approach to explore:
    - Focus on the main csproj files to understand project dependencies
 
 2. **Analyze architecture patterns**:
-   - Identify the clean architecture layers (Presentation â†’ Application â†’ Core â†’ Infrastructure)
+   - Identify the clean architecture layers (Presentation â†?Application â†?Core â†?Infrastructure)
    - Understand the dependency injection setup in `App.axaml.cs`
    - Examine the use case pattern implementation
 
