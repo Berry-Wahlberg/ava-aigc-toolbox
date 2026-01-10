@@ -1,0 +1,1 @@
+# Organization\n\n*Placeholder for image organization*

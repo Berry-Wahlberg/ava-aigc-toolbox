@@ -1,0 +1,1 @@
+# Image Management\n\n*Placeholder for image management features*

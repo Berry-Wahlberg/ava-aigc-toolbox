@@ -1,0 +1,1 @@
+# Installation Guide\n\n*Placeholder for installation instructions*

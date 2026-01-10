@@ -1,0 +1,1 @@
+# Settings\n\n*Placeholder for application settings*

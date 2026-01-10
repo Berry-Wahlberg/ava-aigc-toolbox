@@ -1,0 +1,1 @@
+# FAQ\n\n*Placeholder for frequently asked questions*
