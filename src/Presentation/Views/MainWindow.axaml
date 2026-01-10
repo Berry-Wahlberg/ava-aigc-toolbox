@@ -27,6 +27,7 @@
             <StackPanel Orientation="Horizontal" Spacing="10">
                 <TextBlock Text="Berry AIGC Toolbox" FontWeight="Bold" FontSize="18" Foreground="White" VerticalAlignment="Center"/>
                 <Separator Width="2" Background="#555"/>
+                <Button Content="Import Folder" Command="{Binding ImportFolderCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
                 <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
                 <Button Content="Refresh" Command="{Binding RefreshDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
                 <TextBlock Text="{Binding StatusMessage}" Foreground="#ccc" VerticalAlignment="Center" Margin="20,0,0,0"/>

@@ -1,6 +1,7 @@
 using AIGenManager.Core.Application.Ports;
 using AIGenManager.Infrastructure.Data;
 using AIGenManager.Infrastructure.Repositories;
+using AIGenManager.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using System;
@@ -23,6 +24,10 @@ namespace AIGenManager.Infrastructure
                 var dbContext = sp.GetRequiredService<DatabaseContext>();
                 return dbContext.GetConnection();
             });
+
+            // Services
+            services.AddSingleton<PngMetadataExtractor>();
+            services.AddSingleton<FolderScanner>();
 
             // Repositories
             services.AddSingleton<IImageRepository, SQLiteImageRepository>();

@@ -20,6 +20,7 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly GetRootFoldersUseCase _getRootFoldersUseCase;
     private readonly GetAllImagesUseCase _getAllImagesUseCase;
     private readonly GetImagesByFolderIdUseCase _getImagesByFolderIdUseCase;
+    private readonly ScanFolderUseCase _scanFolderUseCase;
     
     // Tag use cases
     private readonly GetAllTagsUseCase _getAllTagsUseCase;
@@ -258,6 +259,7 @@ public partial class MainWindowViewModel : ViewModelBase
         GetRootFoldersUseCase getRootFoldersUseCase,
         GetAllImagesUseCase getAllImagesUseCase,
         GetImagesByFolderIdUseCase getImagesByFolderIdUseCase,
+        ScanFolderUseCase scanFolderUseCase,
         
         // Tag use cases
         GetAllTagsUseCase getAllTagsUseCase,
@@ -275,6 +277,7 @@ public partial class MainWindowViewModel : ViewModelBase
         _getRootFoldersUseCase = getRootFoldersUseCase;
         _getAllImagesUseCase = getAllImagesUseCase;
         _getImagesByFolderIdUseCase = getImagesByFolderIdUseCase;
+        _scanFolderUseCase = scanFolderUseCase;
         
         // Tag use cases
         _getAllTagsUseCase = getAllTagsUseCase;
@@ -345,6 +348,39 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         var albums = await _getAllAlbumsUseCase.ExecuteAsync();
         Albums = new ObservableCollection<Album>(albums);
+    }
+
+    [RelayCommand]
+    private async Task ImportFolder()
+    {
+        try
+        {
+            // Show folder picker dialog (implementation will depend on Avalonia UI framework)
+            // For now, we'll simulate with a hardcoded path for testing
+            var folderPath = "C:\\AI Images";
+            
+            IsLoading = true;
+            StatusMessage = $"Scanning folder: {folderPath}...";
+            
+            var request = new ScanFolderRequest(folderPath, true);
+            var processedCount = await _scanFolderUseCase.ExecuteAsync(request);
+            
+            // Refresh data
+            await LoadFolders();
+            await LoadImages();
+            
+            StatusMessage = $"Successfully imported {processedCount} images from {folderPath}";
+            HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"Error importing folder: {ex.Message}";
+            Debug.WriteLine($"Error importing folder: {ex.Message}");
+        }
+        finally
+        {
+            IsLoading = false;
+        }
     }
 
     private string GetDebuggerDisplay()
