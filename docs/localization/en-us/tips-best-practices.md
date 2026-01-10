@@ -1,147 +1,258 @@
-# ヒントとベストプラクティ�?
-\n> **English version is authoritative**\n\n> **英語版が準拠となりま�?*
+# Tips and Best Practices
 
-このガイドでは、AVA AIGC ツールボックスを最大限に活用するための役立つヒントとベストプラクティスを提供します。これらの推奨事項に従って、ワークフローを最適化し、パフォーマンスを向上させ、スムーズなエクスペリエンスを確保してください�?
-## はじめに
+> **English version is authoritative**
 
-### 小さなライブラリから始め�?AVA AIGC ツールボックスを初めて使用する場合は、アプリケーションの機能に慣れるために、少ない数の画像コレクションから始めてください。慣れたら、徐々にライブラリに画像を追加できます�?
-### インポート前にファイルを整理する
-AVA AIGC ツールボックスには強力な整理機能がありますが、インポートする前に論理的なフォルダ構造でファイルを整理することをお勧めします。これにより、ライブラリの管理と後での画像検索が容易になります�?
-### キーボードショートカットを設定す�?ワークフローを高速化するために、キーボードショートカットを学び、カスタマイズしてください。ショートカット�?`設定 > キーボードショートカット` で表示およびカスタマイズできます�?
-### ワークフローに合わせて設定を構成する
-アプリケーションの設定をワークフローの優先設定に合わせて調整してください。特に以下に注意してください�?- **ライブラリ設�?*: キャッシュサイズとパフォーマンスオプショ�?- **表示設定**: サムネイルサイズ、グリッド間隔、表示設�?- **インポート設�?*: デフォルトのインポート動�?
-## ライブラリ管�?
-### 異なるプロジェクトには複数のライブラリを使用する
-異なるプロジェクト、テーマ、またはクライアントごとに個別のライブラリを作成することを検討してください。これにより、ライブラリの管理が容易になり、パフォーマンスが向上します�?
-### 定期的にライブラリをバックアップする
-常に自動バックアップを有効にし、定期的にライブラリの手動バックアップを作成してください。これにより、ハードウェア障害やデータ破損が発生した場合でも、メタデータと整理作業が保護されます�?
-### ライブラリをクリーンに保�?定期的に以下の方法でライブラリをクリーンアップしてください：
-- 重複画像を削除す�?- 使用されていないタグを削除す�?- データベースを最適化する (`ファイル > メンテナンス > データベースを最適化`)
-- 古いキャッシュをクリアす�?(`ファイル > メンテナンス > キャッシュをクリア`)
+This guide provides useful tips and best practices for getting the most out of the AVA AIGC Toolbox. Follow these recommendations to optimize your workflow, improve performance, and ensure a smooth experience.
 
-### 分かりやすいライブラリ名を使用す�?ライブラリを簡単に識別できるように、明確で分かりやすい名前を選択してください。ライブラリ名には、プロジェクト名、日付、またはその他の関連情報を含めてください�?
-## 画像の整�?
-### 一貫したタグ付けシステムを作成する
-画像に一貫したタグ付けシステムを開発してください。これにより、後で画像を見つけやすくなり、検索結果の精度が向上します�?
-### 階層型タグを使用する
-より良い整理のために、タグを階層的に整理してください。例�?- `subject:person`（被写体:人物�?- `subject:animal`（被写体:動物�?- `style:realistic`（スタイ�?リアル）
-- `style:cartoon`（スタイ�?カートゥーン�?
-### インポート後すぐに画像にタグを付ける
-インポート後すぐに画像にタグを付けてください。これにより、良い習慣が身に付き、ライブラリが最初から整理された状態に保たれます�?
-### 評価を賢く使用す�?5つ星評価システムを一貫して使用し、画像の品質や重要性をマークしてください。これにより、優れた作品を簡単にフィルタリングして見つけることができます�?
-### お気に入り機能を活用する
-最も重要な、または頻繁に使用する画像をお気に入りとしてマークし、すばやくアクセスできるようにしてください�?
-## メタデータ管�?
-### メタデータを一貫させる
-画像間で一貫したメタデータを維持してください。これには以下が含まれます：
-- 日付と時間の形式を統一する
-- キーワードの大文字小文字を一貫させる
-- 標準化されたモデル名を使用す�?
-### タグの使用を控え�?徹底的に行うことは良いことですが、画像に過剰なタグを付けないでください。後で画像を見つけるのに役立つ、最も関連性の高い記述的なタグに焦点を当ててください�?
-### 共通のメタデータにはテンプレートを使用する
-複数の画像に類似したメタデータを頻繁に追加する場合は、メタデータテンプレートまたは一括編集を使用することを検討してください�?
-### 定期的にメタデータを更新する
-特にAI生成画像の場合は、メタデータを最新の状態に保ってください。画像についてより多くの情報を得たり、新しいメタデータが利用可能になったりしたら、レコードを更新してください�?
-## 検索とフィルタリング
+## Getting Started
 
-### 高度な検索演算子を学�?必要なものを正確に見つけるために、高度な検索演算子を活用してください�?- `tag:landscape AND tag:mountain`（タ�?風景 AND タグ:山）
-- `rating:>=4 AND date:>2023-01-01`（評�?>=4 AND 日付:>2023-01-01�?- `prompt:"cyberpunk city" AND model:stable-diffusion`（プロンプト:"サイバーパンク都�? AND モデ�?stable-diffusion�?
-### 検索クエリを保存する
-頻繁に使用する検索クエリをプリセットとして保存し、将来すばやくアクセスできるようにしてください�?
-### フィルターを組み合わせて使用する
-複数のフィルター（タグ、評価、日付など）を組み合わせて、検索結果を効果的に絞り込んでください�?
-### クイック検索バーを利用す�?高速なアドホック検索には、ツールバーのクイック検索バーを使用してください。より複雑な検索には、高度な検索ダイアログ（`検索 > 高度な検索`）を使用してください�?
-## パフォーマンスの最適化
+### Start with a small library
+If you're new to the AVA AIGC Toolbox, start with a small collection of images to get familiar with the application's features. Once you're comfortable, you can gradually add more images to your library.
 
-### システムに基づいてキャッシュサイズを調整する
-システムの使用可能なRAMに基づいて、サムネイルと画像のキャッシュサイズを最適化してください�?- 8GB RAMの場合：各キャッシュサイズを1GBに設�?- 16GB RAMの場合：各キャッシュサイズを2-3GBに設�?- 32GB+ RAMの場合：各キャッシュサイズを4-5GBに設�?
-### 遅延読み込みを有効にする
-大きなライブラリの初期読み込み時間を改善するために、`設定 > ライブラ�?> パフォーマンス` で遅延読み込みを有効にしてください�?
-### 並列処理を制限す�?CPUに基づいて並列プロセスの数を調整してください�?- 4コアCPUの場合：2-3つの並列プロセスを使�?- 8コアCPUの場合：4-6つの並列プロセスを使�?- 12+コアCPUの場合：6-8つの並列プロセスを使�?
-### 使用していない機能を無効にす�?特にAI機能など、使用していない機能を無効にしてパフォーマンスを向上させてください：
-- `設定 > AI > 一般` でAI機能を有�?無効にします
-- より高速なパフォーマンスのために、`設定 > インターフェース` でアニメーションを無効にしま�?
-### ライブラリに高速ストレージを使用す�?特に大きなライブラリを扱う場合に、パフォーマンスを向上させるために、ライブラリを高速ストレージデバイス（SSD）に保存してください�?
-## AI機能
+### Organize files before importing
+While the AVA AIGC Toolbox has powerful organization features, it's recommended to organize your files into a logical folder structure before importing. This will make it easier to manage your library and find images later.
 
-### 適切なAIモデルを選択する
-ニーズに応じて適切なAIモデルを選択してください�?- 多様な画像コレクションには汎用モデルを使�?- 特定の画像タイプには専門モデルを使用（例：人物被写体にはポートレートモデル）
-- 精度要件に基づいて信頼度しきい値を調整
+### Set up keyboard shortcuts
+Learn and customize keyboard shortcuts to speed up your workflow. Shortcuts can be viewed and customized in `Settings > Keyboard Shortcuts`.
 
-### 自動生成されたタグを確認する
-自動生成されたタグを保持する前に、必ず確認してください。AIタグ付けは強力ですが、完璧ではなく、関係のないまたは不正なタグを生成することがあります�?
-### AI機能を選択的に使用す�?処理時間とリソースを節約するために、必要な場合にのみAI機能を使用してください：
-- 類似した画像のバッチで自動タグ付けを実行
-- 必要な画像にのみAI強化を使�?- 使用していない場合はAI機能を無効にする
+### Configure settings to match your workflow
+Adjust the application settings to match your workflow preferences. Pay particular attention to:
+- **Library Settings**: Cache sizes and performance options
+- **Display Settings**: Thumbnail size, grid spacing, display options
+- **Import Settings**: Default import behavior
 
-### API使用量を監視する
-APIキーが必要なAI機能を使用している場合は、予期しないコストを避けるためにAPI使用量を監視してください。`設定 > AI > API統合` でレート制限を設定できます�?
-## エクスポートと共�?
-### 適切なエクスポート形式を使用する
-ニーズに合った適切なエクスポート形式を選択してください：
-- **JPEG**: Web使用、共有、または印刷用（ニーズに応じて品質を調整�?- **PNG**: 透明度のある画像、またはロスレス品質が必要な場合
-- **WebP**: 最適化されたWeb画像用（JPEG/PNGよりもファイルサイズが小さい�?- **TIFF**: プロフェッショナルな印刷またはアーカイブ目的�?
-### 関連するメタデータを含める
-画像をエクスポートするときは、使用目的に関連するメタデータのみを含めてください�?- アーカイブ目的の場合はすべてのメタデータを含める
-- Web共有の場合は限定的なメタデータを含め�?- 公開共有する場合は機密メタデータを削除す�?
-### エクスポートプリセットを使用する
-一般的なエクスポートタスクには、エクスポートプリセットを作成して使用してください。これにより時間が節約され、一貫したエクスポート設定が確保されます�?
-### 効率のために一括エクスポートを使用する
-一度に複数の画像をエクスポートするには、一括エクスポート機能を使用してください。これは個々の画像をエクスポートするよりもはるかに効率的です�?
-## ワークフローのヒント
+## Library Management
 
-### 一般的なタスクにはキーボードショートカットを使用す�?最も頻繁に使用するタスクのキーボードショートカットを覚えてください�?- `Ctrl/Cmd + I`: 画像をインポート
-- `Ctrl/Cmd + E`: 画像をエクスポー�?- `Ctrl/Cmd + T`: タグを追�?- `Ctrl/Cmd + L`: 検索バーにフォーカス
+### Use multiple libraries for different projects
+Consider creating separate libraries for different projects, themes, or clients. This makes library management easier and improves performance.
 
-### 一貫したワークフローを作成する
-画像を管理するための一貫したワークフローを開発してください�?1. 画像をインポート
-2. 画像を確認して整�?3. タグとメタデータを追�?4. 画像に評価を付け、お気に入りにす�?5. ライブラリをバックアップ
+### Back up your library regularly
+Always keep automatic backups enabled and create manual backups of your library regularly. This protects your metadata and organization work in case of hardware failure or data corruption.
 
-### 戦略的に表示モードを使用する
-タスクに応じて、異なる表示モードを切り替えてください：
-- **グリッド表示**: 画像をすばやく閲覧および選択する場合
-- **リスト表�?*: 詳細情報と並べ替えを行う場合
-- **フルスクリーン表�?*: 画像を詳細に検査する場合
+### Keep your library clean
+Regularly clean up your library using these methods:
+- Delete duplicate images
+- Remove unused tags
+- Optimize the database (`File > Maintenance > Optimize Database`)
+- Clear old cache (`File > Maintenance > Clear Cache`)
 
-### 一括操作を活用する
-繰り返しのタスクには一括操作を活用してください�?- 複数の画像に一括でタグを付ける
-- メタデータを一括で編集する
-- 画像を一括で名前変更する
-- 画像を一括でリサイズする
+### Use descriptive library names
+Choose clear, descriptive names for your libraries to make them easy to identify. Include project names, dates, or other relevant information in library names.
 
-## トラブルシューティングとメンテナンス
+## Image Organization
 
-### 定期的にアプリケーションを更新す�?AVA AIGC ツールボックスを常に最新バージョンに更新してください。更新には、バグ修正、パフォーマンス向上、および新機能が含まれます�?
-### 問題が発生した場合はログを確認す�?問題が発生した場合は、アプリケーションログを確認してエラーメッセージを見てください。ログの場所�?`設定 > トラブルシューティン�?> ロギング` で確認できます�?
-### 必要に応じて設定をリセットす�?永続的な問題が発生した場合は、アプリケーション設定をデフォルトにリセットしてみてください�?1. `設定 > 高度な設�?> 設定のリセット` に移�?2. "デフォルトにリセット"をクリッ�?3. アプリケーションを再起動
+### Create a consistent tagging system
+Develop a consistent tagging system for your images. This makes it easier to find images later and improves search result accuracy.
 
-### 問題が解決しない場合は再インストールする
-それでも問題が解決しない場合は、アプリケーションを再インストールしてみてください：
-1. AVA AIGC ツールボックスをアンインストール
-2. 残っているアプリケーションファイルを削除
-3. 最新バージョンをダウンロードしてインストー�?4. バックアップからライブラリを復元
+### Use hierarchical tags
+Organize tags hierarchically for better organization. For example:
+- `subject:person`
+- `subject:animal`
+- `style:realistic`
+- `style:cartoon`
 
-## セキュリティとプライバシ�?
-### APIキーを保護す�?APIキーを安全に保管し、他人と共有しないでください。APIキー�?`設定 > AI > API統合` で管理できます�?
-### 機密画像には注意する
-機密画像を扱う場合は、以下を考慮してください�?- 機密コンテンツには別のライブラリを使用す�?- サポートされている場合はライブラリの暗号化を有効にす�?- 画像を共有するときに含めるメタデータに注意す�?
-### 定期的にシステムを更新す�?互換性とセキュリティを確保するために、オペレーティングシステムとその他のソフトウェアを定期的に更新してください�?
-## コミュニティとサポー�?
-### コミュニティに参加す�?以下を通じて、他のAVA AIGC ツールボックスユーザーとつながってください：
-- GitHubディスカッション
-- Discordサーバー（利用可能な場合�?- オンラインフォーラムとソーシャルメディア
+### Tag images immediately after import
+Tag images right after importing them. This builds good habits and keeps your library organized from the start.
 
-### バグを報告し、機能を提案する
-バグに遭遇した場合、または機能リクエストがある場合は、プロジェクトのGitHubページで報告してください。以下を含めてください：
-- 問題の詳細な説明
-- 再現手順（バグの場合�?- システム情報
-- 関連するログファイ�?
-### プロジェクトに貢献す�?プログラミングスキルやその他の専門知識がある場合は、プロジェクトへの貢献を検討してください�?- バグ修正や機能拡張を提出する
-- ドキュメントを改善す�?- アプリケーションを他の言語に翻訳する
-- プレリリースバージョンをテストす�?
-## 結論
+### Use ratings wisely
+Consistently use the 5-star rating system to mark image quality or importance. This makes it easy to filter and find your best work.
 
-これらのヒントとベストプラクティスに従うことで、ワークフローを最適化し、パフォーマンスを向上させ、AVA AIGC ツールボックスを最大限に活用することができます。最適なワークフローは自分に合ったものであることを忘れないでください。実験して、自分のニーズに最適なものを見つけることを恐れないでください�?
-## 次のステップ
+### Leverage the favorites feature
+Mark your most important or frequently used images as favorites for quick access.
 
-- 一般的なコマンドへのクイックアクセスについては、[キーボードショートカット](./keyboard-shortcuts.md) を参照してくださ�?- アプリケーションをニーズに合わせて設定するには、[設定](./settings.md) を参照してくださ�?- よくある質問への回答については、[FAQ](./faq.md) を参照してくださ�
+## Metadata Management
+
+### Keep metadata consistent
+Maintain consistent metadata across your images. This includes:
+- Standardizing date and time formats
+- Using consistent capitalization for keywords
+- Using standardized model names
+
+### Avoid over-tagging
+While thoroughness is good, don't over-tag your images. Focus on the most relevant, descriptive tags that will help you find images later.
+
+### Use templates for common metadata
+If you frequently add similar metadata to multiple images, consider using metadata templates or batch editing.
+
+### Update metadata regularly
+Keep your metadata up to date, especially for AI-generated images. Update records as you learn more about your images or when new metadata becomes available.
+
+## Search and Filtering
+
+### Learn advanced search operators
+Utilize advanced search operators to find exactly what you need:
+- `tag:landscape AND tag:mountain`
+- `rating:>=4 AND date:>2023-01-01`
+- `prompt:"cyberpunk city" AND model:stable-diffusion`
+
+### Save search queries
+Save frequently used search queries as presets for quick access in the future.
+
+### Combine filters
+Combine multiple filters (tags, ratings, dates, etc.) to effectively narrow down your search results.
+
+### Use the quick search bar
+Use the quick search bar in the toolbar for fast ad-hoc searches. For more complex searches, use the advanced search dialog (`Search > Advanced Search`).
+
+## Performance Optimization
+
+### Adjust cache sizes based on your system
+Optimize thumbnail and image cache sizes based on your system's available RAM:
+- For 8GB RAM: Set each cache size to 1GB
+- For 16GB RAM: Set each cache size to 2-3GB
+- For 32GB+ RAM: Set each cache size to 4-5GB
+
+### Enable lazy loading
+Improve initial load time for large libraries by enabling lazy loading in `Settings > Library > Performance`.
+
+### Limit parallel processing
+Adjust the number of parallel processes based on your CPU:
+- For 4-core CPUs: Use 2-3 parallel processes
+- For 8-core CPUs: Use 4-6 parallel processes
+- For 12+ core CPUs: Use 6-8 parallel processes
+
+### Disable unused features
+Improve performance by disabling unused features, especially AI features:
+- Enable/disable AI features in `Settings > AI > General`
+- Disable animations in `Settings > Interface` for faster performance
+
+### Use fast storage for your library
+Store your library on a fast storage device (SSD) to improve performance, especially when working with large libraries.
+
+## AI Features
+
+### Choose the right AI model
+Select the appropriate AI model for your needs:
+- Use general-purpose models for diverse image collections
+- Use specialized models for specific image types (e.g., portrait models for people subjects)
+- Adjust confidence thresholds based on accuracy requirements
+
+### Verify automatically generated tags
+Always review automatically generated tags before keeping them. AI tagging is powerful but not perfect, and may generate irrelevant or incorrect tags.
+
+### Use AI features selectively
+Use AI features only when needed to save processing time and resources:
+- Run automatic tagging on batches of similar images
+- Apply AI enhancements only to necessary images
+- Disable AI features when not in use
+
+### Monitor API usage
+If you're using AI features that require API keys, monitor your API usage to avoid unexpected costs. Rate limits can be set in `Settings > AI > API Integration`.
+
+## Exporting and Sharing
+
+### Use the appropriate export format
+Select the right export format for your needs:
+- **JPEG**: For web use, sharing, or printing (adjust quality as needed)
+- **PNG**: For images with transparency or when lossless quality is required
+- **WebP**: For optimized web images (smaller file sizes than JPEG/PNG)
+- **TIFF**: For professional printing or archival purposes
+
+### Include relevant metadata
+When exporting images, include only the metadata relevant to your use case:
+- Include all metadata for archival purposes
+- Include limited metadata for web sharing
+- Remove sensitive metadata when sharing publicly
+
+### Use export presets
+Create and use export presets for common export tasks. This saves time and ensures consistent export settings.
+
+### Use batch export for efficiency
+Use the batch export feature to export multiple images at once. This is much more efficient than exporting images individually.
+
+## Workflow Tips
+
+### Use keyboard shortcuts for common tasks
+Learn keyboard shortcuts for your most frequently used tasks:
+- `Ctrl/Cmd + I`: Import images
+- `Ctrl/Cmd + E`: Export images
+- `Ctrl/Cmd + T`: Add tags
+- `Ctrl/Cmd + L`: Focus search bar
+
+### Create a consistent workflow
+Develop a consistent workflow for managing your images:
+1. Import images
+2. Review and organize images
+3. Add tags and metadata
+4. Rate images and mark favorites
+5. Back up your library
+
+### Use display modes strategically
+Switch between different display modes based on your task:
+- **Grid View**: For quickly browsing and selecting images
+- **List View**: For detailed information and sorting
+- **Fullscreen View**: For inspecting images in detail
+
+### Leverage batch operations
+Use batch operations for repetitive tasks:
+- Apply tags to multiple images at once
+- Edit metadata in batches
+- Rename images in bulk
+- Resize images in bulk
+
+## Troubleshooting and Maintenance
+
+### Keep the application updated
+Always keep the AVA AIGC Toolbox updated to the latest version. Updates include bug fixes, performance improvements, and new features.
+
+### Check logs when encountering issues
+If you encounter issues, check the application logs for error messages. The log location can be found in `Settings > Troubleshooting > Logging`.
+
+### Reset settings if necessary
+If you're experiencing persistent issues, try resetting the application settings to default:
+1. Navigate to `Settings > Advanced > Reset Settings`
+2. Click "Reset to Defaults"
+3. Restart the application
+
+### Reinstall if issues persist
+If issues still persist, try reinstalling the application:
+1. Uninstall the AVA AIGC Toolbox
+2. Delete remaining application files
+3. Download and install the latest version
+4. Restore your library from backup
+
+## Security and Privacy
+
+### Protect your API keys
+Keep your API keys secure and don't share them with others. API keys can be managed in `Settings > AI > API Integration`.
+
+### Be cautious with sensitive images
+When working with sensitive images, consider the following:
+- Use separate libraries for sensitive content
+- Enable library encryption if supported
+- Be mindful of metadata included when sharing images
+
+### Keep your system updated
+Regularly update your operating system and other software to ensure compatibility and security.
+
+## Community and Support
+
+### Join the community
+Connect with other AVA AIGC Toolbox users through:
+- GitHub discussions
+- Discord server (if available)
+- Online forums and social media
+
+### Report bugs and suggest features
+If you encounter bugs or have feature requests, report them on the project's GitHub page. Include:
+- A detailed description of the issue
+- Steps to reproduce (for bugs)
+- System information
+- Related log files
+
+### Contribute to the project
+If you have programming skills or other expertise, consider contributing to the project:
+- Submit bug fixes or feature enhancements
+- Improve documentation
+- Translate the application into other languages
+- Test pre-release versions
+
+## Conclusion
+
+By following these tips and best practices, you can optimize your workflow, improve performance, and get the most out of the AVA AIGC Toolbox. Remember that the best workflow is the one that works for you. Don't be afraid to experiment and find what works best for your needs.
+
+## Next Steps
+
+- For quick access to common commands, check out [Keyboard Shortcuts](./keyboard-shortcuts.md)
+- To configure the application to match your needs, see [Settings](./settings.md)
+- For answers to common questions, refer to the [FAQ](./faq.md)
