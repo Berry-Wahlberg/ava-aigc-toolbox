@@ -1,240 +1,242 @@
-# Settings
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox provides a comprehensive set of settings to customize your experience. This guide covers all the available settings and how to configure them.
+# Einstellungen
 
-## Accessing Settings
+> **Die englische Version gilt als maßgebend**
 
-#### Steps to Open Settings:
-1. Click the **Settings** button in the toolbar, or go to `File > Settings`
-2. The settings dialog will appear
-3. Use the sidebar to navigate between different settings categories
-4. Click **Save** to apply changes, or **Cancel** to discard changes
-5. Some settings may require restarting the application to take effect
+Die AVA AIGC Toolbox bietet eine umfassende Reihe von Einstellungen, um Ihre Erfahrung zu personalisieren. Diese Anleitung behandelt alle verfügbaren Einstellungen und wie Sie sie konfigurieren können.
 
-## General Settings
+## Zugriff auf Einstellungen
 
-### Application
-- **Language**: Select the application language (English, etc.)
-- **Theme**: Choose between light, dark, or system theme
-- **Startup Behavior**: Configure what happens when the application starts
-  - **Show Welcome Screen**: Display welcome screen on startup
-  - **Open Last Library**: Automatically open the last used library
-  - **Minimize to Tray**: Start minimized to system tray
-- **Update Checks**: Configure automatic update checks
-  - **Check for updates automatically**: Enable/disable automatic update checks
-  - **Update channel**: Select update channel (stable, beta, nightly)
+#### Schritte zum Öffnen der Einstellungen:
+1. Klicken Sie auf die **Einstellungen**-Schaltfläche in der Werkzeugleiste oder gehen Sie zu `Datei > Einstellungen`
+2. Der Einstellungsdialog wird angezeigt
+3. Verwenden Sie die Seitenleiste, um zwischen verschiedenen Einstellungskategorien zu navigieren
+4. Klicken Sie auf **Speichern**, um Änderungen anzuwenden, oder auf **Abbrechen**, um Änderungen zu verwerfen
+5. Einige Einstellungen erfordern möglicherweise einen Neustart der Anwendung, um wirksam zu werden
 
-### Interface
-- **Font Size**: Adjust the application font size for better readability
-- **Icon Size**: Change the size of icons in the interface
-- **Animation**: Toggle animations on or off
-- **Tooltips**: Enable/disable tooltips
-- **Status Bar**: Show/hide the status bar
+## Allgemeine Einstellungen
 
-## Library Settings
+### Anwendung
+- **Sprache**: Wählen Sie die Anwendungssprache (Englisch, usw.)
+- **Thema**: Wählen Sie zwischen hellem, dunklem oder System-Thema
+- **Startverhalten**: Konfigurieren Sie, was beim Start der Anwendung passiert
+  - **Willkommensbildschirm anzeigen**: Zeigen Sie den Willkommensbildschirm beim Start an
+  - **Letzte Bibliothek öffnen**: Öffnen Sie automatisch die zuletzt genutzte Bibliothek
+  - **In das Systemtray minimieren**: Starten Sie im Systemtray minimiert
+- **Update-Prüfungen**: Konfigurieren Sie automatische Update-Prüfungen
+  - **Automatisch nach Updates suchen**: Automatische Update-Prüfungen aktivieren/deaktivieren
+  - **Update-Kanal**: Wählen Sie den Update-Kanal (stable, beta, nightly)
 
-### General
-- **Database Location**: Path to the library database file
-- **Default Import Folder**: Default folder for importing images
-- **Auto-Update Library**: Automatically update the library when files change
-- **File Watcher**: Enable/disable file system watching
+### Benutzeroberfläche
+- **Schriftgröße**: Passen Sie die Anwendungs-Schriftgröße für bessere Lesbarkeit an
+- **Symbolgröße**: Ändern Sie die Größe der Symbole in der Benutzeroberfläche
+- **Animation**: Schalten Sie Animationen an oder aus
+- **Tooltips**: Tooltips aktivieren/deaktivieren
+- **Statusleiste**: Statusleiste anzeigen/verstecken
 
-### Backup
-- **Enable automatic backup**: Enable/disable scheduled backups
-- **Backup Frequency**: How often to backup (daily, weekly, monthly)
-- **Backup Time**: Time of day to perform backups
-- **Backup Type**: Database only or complete backup
-- **Destination Folder**: Where to store backups
-- **Keep Backups For**: How long to keep old backups
-- **Maximum Backup Count**: Maximum number of backups to keep
+## Bibliothekseinstellungen
 
-### Performance
-- **Thumbnail Cache Size**: Maximum size of thumbnail cache in MB
-- **Image Cache Size**: Maximum size of image cache in MB
-- **Parallel Processing**: Number of parallel processes for tasks
-- **Lazy Loading**: Enable/disable lazy loading of images
+### Allgemein
+- **Datenbankstandort**: Pfad zur Bibliotheksdatenbankdatei
+- **Standard-Importordner**: Standardordner zum Importieren von Bildern
+- **Bibliothek automatisch aktualisieren**: Aktualisieren Sie die Bibliothek automatisch, wenn Dateien sich ändern
+- **Dateisystem-Monitor**: Dateisystem-Überwachung aktivieren/deaktivieren
 
-## Import Settings
+### Sicherung
+- **Automatische Sicherung aktivieren**: Geplante Sicherungen aktivieren/deaktivieren
+- **Sicherungsfrequenz**: Wie oft gesichert werden soll (täglich, wöchentlich, monatlich)
+- **Sicherungszeit**: Uhrzeit, zu der Sicherungen durchgeführt werden
+- **Sicherungstyp**: Nur Datenbank oder vollständige Sicherung
+- **Zielordner**: Wo Sicherungen gespeichert werden sollen
+- **Sicherungen behalten für**: Wie lange alte Sicherungen behalten werden sollen
+- **Maximale Anzahl von Sicherungen**: Maximale Anzahl von zu behaltenden Sicherungen
 
-### General
-- **Include Subfolders**: Include subfolders when importing by default
-- **Extract Metadata**: Extract metadata from images by default
-- **Generate Thumbnails**: Generate thumbnails during import by default
-- **Overwrite Existing**: Overwrite existing images by default
+### Leistung
+- **Vorschaubild-Cache-Größe**: Maximale Größe des Vorschaubild-Caches in MB
+- **Bild-Cache-Größe**: Maximale Größe des Bild-Caches in MB
+- **Parallele Verarbeitung**: Anzahl der parallelen Prozesse für Aufgaben
+- **Lazy Loading**: Lazy Loading von Bildern aktivieren/deaktivieren
 
-### File Handling
-- **Skip Corrupted Files**: Skip corrupted files during import
-- **Skip Duplicate Files**: Skip files with the same path
-- **File Name Conflict Resolution**: How to handle file name conflicts
-  - **Rename New File**: Rename the new file with a suffix
-  - **Overwrite Existing**: Replace the existing file
-  - **Skip**: Skip the new file
+## Importeinstellungen
 
-## Display Settings
+### Allgemein
+- **Unterordner einschließen**: Unterordner standardmäßig beim Import einschließen
+- **Metadaten extrahieren**: Metadaten standardmäßig aus Bildern extrahieren
+- **Vorschaubilder generieren**: Vorschaubilder standardmäßig während des Imports generieren
+- **Bestehende überschreiben**: Bestehende Bilder standardmäßig überschreiben
 
-### Grid View
-- **Default Thumbnail Size**: Default size of thumbnails in grid view
-- **Grid Spacing**: Spacing between images in grid view
-- **Show File Names**: Show/hide file names under thumbnails
-- **Show Rating Stars**: Show/hide rating stars on thumbnails
-- **Show Favorite Icon**: Show/hide favorite icon on thumbnails
+### Dateibehandlung
+- **Defekte Dateien überspringen**: Defekte Dateien während des Imports überspringen
+- **Duplicate Dateien überspringen**: Dateien mit demselben Pfad überspringen
+- **Dateinamen-Konfliktlösung**: Wie mit Dateinamenkonflikten umgegangen werden soll
+  - **Neue Datei umbenennen**: Neue Datei mit einem Suffix umbenennen
+  - **Bestehende überschreiben**: Bestehende Datei ersetzen
+  - **Überspringen**: Neue Datei überspringen
 
-### List View
-- **Default Columns**: Select which columns to show by default in list view
-- **Column Widths**: Adjust default widths for columns
-- **Row Height**: Set the height of rows in list view
+## Anzeigeeinstellungen
 
-### Details Panel
-- **Show Details Panel**: Show/hide the details panel by default
-- **Panel Position**: Position of the details panel (left, right, bottom)
-- **Expanded Sections**: Which sections to show expanded by default
+### Gitteransicht
+- **Standard-Vorschaubildgröße**: Standardgröße der Vorschaubilder in der Gitteransicht
+- **Gitterabstand**: Abstand zwischen Bildern in der Gitteransicht
+- **Dateinamen anzeigen**: Dateinamen unter den Vorschaubildern anzeigen/verstecken
+- **Bewertungssterne anzeigen**: Bewertungssterne auf den Vorschaubildern anzeigen/verstecken
+- **Favoriten-Symbol anzeigen**: Favoriten-Symbol auf den Vorschaubildern anzeigen/verstecken
 
-## Metadata Settings
+### Listenansicht
+- **Standardspalten**: Wählen Sie, welche Spalten standardmäßig in der Listenansicht angezeigt werden
+- **Spaltenbreiten**: Passen Sie die Standardbreiten für Spalten an
+- **Zeilenhöhe**: Setzen Sie die Höhe der Zeilen in der Listenansicht
 
-### Extraction
-- **Extract Metadata on Import**: Automatically extract metadata when importing images
-- **Metadata Fields**: Select which metadata fields to extract
-- **Model Name Mapping**: Map model hashes to human-readable names
-- **Auto-Detect Model**: Automatically detect model names from metadata
+### Detailbereich
+- **Detailbereich anzeigen**: Detailbereich standardmäßig anzeigen/verstecken
+- **Bereichsposition**: Position des Detailbereichs (links, rechts, unten)
+- **Erweiterte Abschnitte**: Welche Abschnitte standardmäßig erweitert angezeigt werden
 
-### Display
-- **Show Full Prompt**: Show full prompt or truncated prompt in details panel
-- **Format Dates**: Select date format (short, long, custom)
-- **Format Numbers**: Select number formatting options
+## Metadaten-Einstellungen
 
-### Editing
-- **Allow Metadata Editing**: Enable/disable metadata editing
-- **Validate Metadata**: Validate metadata before saving
-- **Backup Original Metadata**: Backup original metadata before editing
+### Extraktion
+- **Metadaten beim Import extrahieren**: Metadaten automatisch extrahieren, wenn Bilder importiert werden
+- **Metadatenfelder**: Wählen Sie, welche Metadatenfelder extrahiert werden sollen
+- **Modellnamen-Zuordnung**: Ordnen Sie Modell-Hashes lesbaren Namen zu
+- **Modell automatisch erkennen**: Modellnamen automatisch aus Metadaten erkennen
 
-## AI Settings
+### Anzeige
+- **Vollständiger Prompt anzeigen**: Vollständigen Prompt oder abgeschnittenen Prompt im Detailbereich anzeigen
+- **Datenformat**: Wählen Sie das Datumsformat (kurz, lang, benutzerdefiniert)
+- **Zahlenformat**: Wählen Sie die Zahlenformatierungsoptionen
 
-### General
-- **Enable AI Features**: Toggle AI features on or off
-- **Default AI Model**: Set the default AI model for various tasks
-- **Max Parallel Requests**: Number of parallel AI requests
-- **Cache AI Results**: Cache AI results for faster processing
+### Bearbeitung
+- **Metadatenbearbeitung erlauben**: Metadatenbearbeitung aktivieren/deaktivieren
+- **Metadaten validieren**: Metadaten vor dem Speichern validieren
+- **Originalmetadaten sichern**: Originalmetadaten vor der Bearbeitung sichern
 
-### Tag Models
-- **Default Tag Model**: Set the default model for auto-tagging
-- **Tag Confidence Threshold**: Default confidence level for generated tags
-- **Tag Language**: Default language for generated tags
+## KI-Einstellungen
 
-### API Integration
-- **API Key**: Your API key for AI services
-- **API URL**: API endpoint URL
-- **Rate Limit**: Maximum number of requests per minute
-- **Timeout**: API request timeout in seconds
+### Allgemein
+- **KI-Funktionen aktivieren**: KI-Funktionen an oder aus schalten
+- **Standard-KI-Modell**: Setzen Sie das Standard-KI-Modell für verschiedene Aufgaben
+- **Maximale parallele Anfragen**: Anzahl der parallelen KI-Anfragen
+- **KI-Ergebnisse cachen**: KI-Ergebnisse cachen für schnellere Verarbeitung
 
-## Search Settings
+### Tag-Modelle
+- **Standard-Tag-Modell**: Setzen Sie das Standardmodell für automatisches Tagging
+- **Tag-Confidence-Schwelle**: Standard-Confidence-Level für generierte Tags
+- **Tag-Sprache**: Standardsprache für generierte Tags
 
-### General
-- **Default Search Scope**: Default scope for searches (all images, current folder, etc.)
-- **Search History Size**: Number of recent searches to keep
-- **Auto-Complete**: Enable/disable search auto-complete
-- **Wildcards Enabled**: Enable/disable wildcards in search
+### API-Integration
+- **API-Schlüssel**: Ihr API-Schlüssel für KI-Dienste
+- **API-URL**: API-Endpunkt-URL
+- **Rate Limit**: Maximale Anzahl von Anfragen pro Minute
+- **Timeout**: API-Anfrage-Timeout in Sekunden
 
-### Advanced
-- **Search Indexing**: Configure search indexing behavior
-  - **Index on Import**: Index images when importing
-  - **Index in Background**: Index images in the background
-  - **Index Frequency**: How often to update search index
+## Sucheinstellungen
 
-## Export Settings
+### Allgemein
+- **Standard-Suchbereich**: Standardbereich für Suchen (alle Bilder, aktueller Ordner, usw.)
+- **Größe des Suchverlaufs**: Anzahl der zu behaltenden kürzlichen Suchen
+- **Autovervollständigung**: Such-Autovervollständigung aktivieren/deaktivieren
+- **Platzhalter aktivieren**: Platzhalter in der Suche aktivieren/deaktivieren
 
-### Defaults
-- **Default Export Format**: Default format for exporting images
-- **Default Export Quality**: Default quality for export
-- **Default Resize Options**: Default resize settings
-- **Include Metadata**: Include metadata in exports by default
+### Erweitert
+- **Suchindexierung**: Konfigurieren Sie das Suchindexierungsverhalten
+  - **Beim Import indizieren**: Bilder beim Import indizieren
+  - **Im Hintergrund indizieren**: Bilder im Hintergrund indizieren
+  - **Indizierungsfrequenz**: Wie oft der Suchindex aktualisiert werden soll
 
-### Presets
-- **Manage Export Presets**: Create, edit, and delete export presets
-- **Default Export Preset**: Set the default export preset
+## Exporteinstellungen
 
-## Keyboard Shortcuts
+### Standards
+- **Standard-Exportformat**: Standardformat zum Exportieren von Bildern
+- **Standard-Exportqualität**: Standardqualität für den Export
+- **Standard-Skalierungsoptionen**: Standard-Skalierungseinstellungen
+- **Metadaten einschließen**: Metadaten standardmäßig in Exports einschließen
 
-### Customization
-- **Enable Keyboard Shortcuts**: Enable/disable keyboard shortcuts
-- **Customize Shortcuts**: Modify existing keyboard shortcuts
-- **Reset to Defaults**: Restore default keyboard shortcuts
+### Voreinstellungen
+- **Exportvoreinstellungen verwalten**: Erstellen, bearbeiten und löschen Sie Exportvoreinstellungen
+- **Standard-Exportvoreinstellung**: Setzen Sie die Standard-Exportvoreinstellung
 
-## Troubleshooting Settings
+## Tastaturkürzel
 
-### Logging
-- **Log Level**: Set the verbosity of logs (debug, info, warning, error)
-- **Log File Location**: Path to log files
-- **Max Log File Size**: Maximum size of log files in MB
-- **Keep Log Files For**: How long to keep log files
+### Anpassung
+- **Tastaturkürzel aktivieren**: Tastaturkürzel aktivieren/deaktivieren
+- **Kürzel anpassen**: Vorhandene Tastaturkürzel modifizieren
+- **Auf Standardwerte zurücksetzen**: Standard-Tastaturkürzel wiederherstellen
+
+## Problembehebungs-Einstellungen
+
+### Protokollierung
+- **Log-Level**: Setzen Sie die Ausführlichkeit der Protokolle (debug, info, warning, error)
+- **Log-Datei-Standort**: Pfad zu den Log-Dateien
+- **Maximale Log-Dateigröße**: Maximale Größe der Log-Dateien in MB
+- **Log-Dateien behalten für**: Wie lange Log-Dateien behalten werden sollen
 
 ### Debug
-- **Enable Debug Mode**: Enable debug mode for troubleshooting
-- **Show Debug Information**: Display debug information in the interface
-- **Generate Debug Reports**: Create debug reports for support
+- **Debug-Modus aktivieren**: Debug-Modus für die Problembehebung aktivieren
+- **Debug-Informationen anzeigen**: Debug-Informationen in der Benutzeroberfläche anzeigen
+- **Debug-Berichte generieren**: Debug-Berichte für den Support erstellen
 
-## Resetting Settings
+## Einstellungen zurücksetzen
 
-### Reset to Defaults
-1. Go to `Settings > Advanced > Reset Settings`
-2. Click **Reset to Defaults**
-3. Confirm the reset in the dialog
-4. The application will restart with default settings
+### Auf Standardwerte zurücksetzen
+1. Gehen Sie zu `Einstellungen > Erweitert > Einstellungen zurücksetzen`
+2. Klicken Sie auf **Auf Standardwerte zurücksetzen**
+3. Bestätigen Sie den Reset im Dialog
+4. Die Anwendung wird mit Standard-Einstellungen neu gestartet
 
-### Reset Specific Settings
-1. Go to the settings category you want to reset
-2. Click the **Reset to Defaults** button at the bottom of the page
-3. Confirm the reset in the dialog
-4. Click **Save** to apply changes
+### Spezifische Einstellungen zurücksetzen
+1. Gehen Sie zur Einstellungskategorie, die Sie zurücksetzen möchten
+2. Klicken Sie auf die Schaltfläche **Auf Standardwerte zurücksetzen** am unteren Rand der Seite
+3. Bestätigen Sie den Reset im Dialog
+4. Klicken Sie auf **Speichern**, um Änderungen anzuwenden
 
-## Importing/Exporting Settings
+## Einstellungen importieren/exportieren
 
-### Export Settings
-1. Go to `Settings > Advanced > Import/Export Settings`
-2. Click **Export Settings**
-3. Choose a location to save the settings file
-4. Click **Save** to export settings
+### Einstellungen exportieren
+1. Gehen Sie zu `Einstellungen > Erweitert > Einstellungen importieren/exportieren`
+2. Klicken Sie auf **Einstellungen exportieren**
+3. Wählen Sie einen Speicherort für die Einstellungsdatei
+4. Klicken Sie auf **Speichern**, um die Einstellungen zu exportieren
 
-### Import Settings
-1. Go to `Settings > Advanced > Import/Export Settings`
-2. Click **Import Settings**
-3. Select the settings file from your filesystem
-4. Click **Open** to import settings
-5. Restart the application to apply imported settings
+### Einstellungen importieren
+1. Gehen Sie zu `Einstellungen > Erweitert > Einstellungen importieren/exportieren`
+2. Klicken Sie auf **Einstellungen importieren**
+3. Wählen Sie die Einstellungsdatei aus Ihrem Dateisystem
+4. Klicken Sie auf **Öffnen**, um die Einstellungen zu importieren
+5. Starten Sie die Anwendung neu, um die importierten Einstellungen anzuwenden
 
-## Best Practices for Settings
+## Best Practices für Einstellungen
 
-1. **Start with Defaults**: Begin with default settings and adjust as needed
-2. **Backup Settings**: Export your settings after making significant changes
-3. **Test Changes**: Test settings changes before relying on them
-4. **Restart When Prompted**: Always restart the application when prompted for settings changes
-5. **Document Custom Settings**: Keep a record of custom settings you've made
-6. **Use Presets**: Save frequently used configurations as presets
-7. **Optimize Performance**: Adjust performance settings based on your system
-8. **Reset if Problems Occur**: If you encounter issues, try resetting to default settings
+1. **Beginnen Sie mit den Standards**: Starten Sie mit den Standard-Einstellungen und passen Sie sie bei Bedarf an
+2. **Einstellungen sichern**: Exportieren Sie Ihre Einstellungen nach wichtigen Änderungen
+3. **Änderungen testen**: Testen Sie Einstellungsänderungen, bevor Sie sich darauf verlassen
+4. **Beim Auffordern neu starten**: Starten Sie die Anwendung immer neu, wenn Sie dazu aufgefordert werden
+5. **Benutzerdefinierte Einstellungen dokumentieren**: Halten Sie eine Aufzeichnung Ihrer benutzerdefinierten Einstellungen
+6. **Voreinstellungen verwenden**: Speichern Sie häufig verwendete Konfigurationen als Voreinstellungen
+7. **Leistung optimieren**: Passen Sie die Leistungseinstellungen basierend auf Ihrem System an
+8. **Bei Problemen zurücksetzen**: Wenn Sie Probleme haben, versuchen Sie, auf Standardwerte zurückzusetzen
 
-## Troubleshooting Settings Issues
+## Problembehebung bei Einstellungsproblemen
 
-### Settings Not Saving
-- **Check Permissions**: Ensure you have write access to the settings file location
-- **Check Disk Space**: Ensure there's enough disk space for settings
-- **Close Other Instances**: Ensure no other instances of the application are running
-- **Reset Settings**: Try resetting settings to default
+### Einstellungen werden nicht gespeichert
+- **Berechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf den Speicherort der Einstellungsdatei haben
+- **Festplattenplatz prüfen**: Stellen Sie sicher, dass genügend Festplattenplatz für die Einstellungen vorhanden ist
+- **Andere Instanzen schließen**: Stellen Sie sicher, dass keine anderen Instanzen der Anwendung ausgeführt werden
+- **Einstellungen zurücksetzen**: Versuchen Sie, die Einstellungen auf Standardwerte zurückzusetzen
 
-### Application Not Starting After Settings Change
-- **Reset Settings Manually**: Delete the settings file to reset to defaults
+### Anwendung startet nicht nach Einstellungsänderung
+- **Einstellungen manuell zurücksetzen**: Löschen Sie die Einstellungsdatei, um auf Standardwerte zurückzusetzen
   - Windows: `%APPDATA%/AIGenManager/settings.json`
   - macOS: `~/.local/share/AIGenManager/settings.json`
   - Linux: `~/.local/share/AIGenManager/settings.json`
-- **Reinstall Application**: If manual reset doesn't work, reinstall the application
+- **Anwendung neu installieren**: Wenn das manuelle Zurücksetzen nicht funktioniert, installieren Sie die Anwendung neu
 
-### Performance Issues
-- **Adjust Cache Settings**: Increase cache sizes for better performance
-- **Reduce Parallel Processing**: Decrease the number of parallel processes
-- **Disable Animation**: Turn off animations for faster performance
-- **Enable Lazy Loading**: Enable lazy loading to reduce initial load time
+### Leistungsprobleme
+- **Cache-Einstellungen anpassen**: Erhöhen Sie die Cache-Größen für bessere Leistung
+- **Parallele Verarbeitung reduzieren**: Verringern Sie die Anzahl der parallelen Prozesse
+- **Animationen deaktivieren**: Schalten Sie Animationen aus für schnellere Leistung
+- **Lazy Loading aktivieren**: Aktivieren Sie Lazy Loading, um die anfängliche Ladezeit zu reduzieren
 
-## Next Steps
+## Nächste Schritte
 
-- Learn about [Keyboard Shortcuts](./keyboard-shortcuts.md) for quick access to common commands
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [FAQ](./faq.md) for answers to frequently asked questions
+- Erfahren Sie mehr über [Tastaturkürzel](./keyboard-shortcuts.md) für schnellen Zugriff auf häufig verwendete Befehle
+- Lesen Sie über [Problembehebung](./troubleshooting.md) für Hilfe bei häufig auftretenden Problemen
+- Entdecken Sie die [FAQ](./faq.md) für Antworten auf häufig gestellte Fragen

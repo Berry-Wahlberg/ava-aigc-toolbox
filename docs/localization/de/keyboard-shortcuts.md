@@ -1,199 +1,201 @@
-# Keyboard Shortcuts
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox provides a comprehensive set of keyboard shortcuts to help you work more efficiently. This guide lists all the available keyboard shortcuts and how to customize them.
+# Tastaturkürzel
 
-## General Shortcuts
+> **Die englische Version gilt als maßgebend**
 
-| Shortcut | Action |
+Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen die Arbeit effizienter zu gestalten. Diese Anleitung listet alle verfügbaren Tastaturkürzel und wie Sie sie anpassen können.
+
+## Allgemeine Tastaturkürzel
+
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + O` | Open library |
-| `Ctrl/Cmd + S` | Save current changes |
-| `Ctrl/Cmd + Q` | Exit the application |
-| `Ctrl/Cmd + ,` | Open settings |
-| `Ctrl/Cmd + H` | Show/hide sidebar |
-| `Ctrl/Cmd + L` | Focus search bar |
-| `Ctrl/Cmd + F` | Find in current view |
-| `F1` | Open documentation |
-| `F12` | Toggle debug mode |
+| `Ctrl/Cmd + O` | Bibliothek öffnen |
+| `Ctrl/Cmd + S` | Aktuelle Änderungen speichern |
+| `Ctrl/Cmd + Q` | Anwendung beenden |
+| `Ctrl/Cmd + ,` | Einstellungen öffnen |
+| `Ctrl/Cmd + H` | Seitenleiste anzeigen/verstecken |
+| `Ctrl/Cmd + L` | Suchleiste fokussieren |
+| `Ctrl/Cmd + F` | In aktueller Ansicht suchen |
+| `F1` | Dokumentation öffnen |
+| `F12` | Debug-Modus umschalten |
 
-## Navigation Shortcuts
+## Navigationskürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + Left Arrow` | Navigate to previous view |
-| `Ctrl/Cmd + Right Arrow` | Navigate to next view |
-| `Ctrl/Cmd + Home` | Go to top of view |
-| `Ctrl/Cmd + End` | Go to bottom of view |
-| `Page Up` | Scroll up |
-| `Page Down` | Scroll down |
-| `Home` | Scroll to beginning |
-| `End` | Scroll to end |
+| `Ctrl/Cmd + Left Arrow` | Zur vorherigen Ansicht navigieren |
+| `Ctrl/Cmd + Right Arrow` | Zur nächsten Ansicht navigieren |
+| `Ctrl/Cmd + Home` | Zum Anfang der Ansicht gehen |
+| `Ctrl/Cmd + End` | Zum Ende der Ansicht gehen |
+| `Page Up` | Nach oben scrollen |
+| `Page Down` | Nach unten scrollen |
+| `Home` | Zum Anfang scrollen |
+| `End` | Zum Ende scrollen |
 
-## Image View Shortcuts
+## Bildansichtskürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Enter` | Open selected image in full-screen view |
-| `Esc` | Close full-screen view |
-| `Right Arrow` | Next image in full-screen view |
-| `Left Arrow` | Previous image in full-screen view |
-| `Up Arrow` | Zoom in |
-| `Down Arrow` | Zoom out |
-| `0` | Reset zoom |
-| `F11` | Toggle between fit-to-screen and actual size |
-| `Space` | Toggle slideshow in full-screen view |
+| `Enter` | Ausgewähltes Bild in der Vollbildansicht öffnen |
+| `Esc` | Vollbildansicht schließen |
+| `Right Arrow` | Nächstes Bild in der Vollbildansicht |
+| `Left Arrow` | Vorheriges Bild in der Vollbildansicht |
+| `Up Arrow` | Vergrößern |
+| `Down Arrow` | Verkleinern |
+| `0` | Zoom zurücksetzen |
+| `F11` | Zwischen "Passend zum Bildschirm" und tatsächlicher Größe umschalten |
+| `Space` | Diashow in der Vollbildansicht umschalten |
 
-## Selection Shortcuts
+## Auswahlkürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + A` | Select all images |
-| `Ctrl/Cmd + D` | Deselect all images |
-| `Ctrl/Cmd + I` | Invert selection |
-| `Ctrl/Cmd + Click` | Select/deselect individual images |
-| `Shift + Click` | Select range of images |
-| `Ctrl/Cmd + Shift + Click` | Select range of images from last selection |
+| `Ctrl/Cmd + A` | Alle Bilder auswählen |
+| `Ctrl/Cmd + D` | Auswahl aufheben |
+| `Ctrl/Cmd + I` | Auswahl invertieren |
+| `Ctrl/Cmd + Click` | Einzelne Bilder auswählen/abwählen |
+| `Shift + Click` | Bereich von Bildern auswählen |
+| `Ctrl/Cmd + Shift + Click` | Bereich von Bildern ab der letzten Auswahl auswählen |
 
-## Image Management Shortcuts
+## Bildverwaltungskürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + I` | Import images |
-| `Ctrl/Cmd + E` | Export selected images |
-| `Delete` | Delete selected images |
-| `Ctrl/Cmd + Z` | Undo last action |
-| `Ctrl/Cmd + Shift + Z` | Redo last action |
-| `Ctrl/Cmd + C` | Copy selected images |
-| `Ctrl/Cmd + V` | Paste images |
-| `Ctrl/Cmd + X` | Cut selected images |
+| `Ctrl/Cmd + I` | Bilder importieren |
+| `Ctrl/Cmd + E` | Ausgewählte Bilder exportieren |
+| `Delete` | Ausgewählte Bilder löschen |
+| `Ctrl/Cmd + Z` | Letzte Aktion rückgängig machen |
+| `Ctrl/Cmd + Shift + Z` | Letzte rückgängig gemachte Aktion wiederholen |
+| `Ctrl/Cmd + C` | Ausgewählte Bilder kopieren |
+| `Ctrl/Cmd + V` | Bilder einfügen |
+| `Ctrl/Cmd + X` | Ausgewählte Bilder ausschneiden |
 
-## Tagging Shortcuts
+## Tagging-Kürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + T` | Add tags to selected images |
-| `Ctrl/Cmd + Shift + T` | Remove tags from selected images |
-| `Ctrl/Cmd + U` | Remove all tags from selected images |
+| `Ctrl/Cmd + T` | Tags zu ausgewählten Bildern hinzufügen |
+| `Ctrl/Cmd + Shift + T` | Tags von ausgewählten Bildern entfernen |
+| `Ctrl/Cmd + U` | Alle Tags von ausgewählten Bildern entfernen |
 
-## Rating & Properties Shortcuts
+## Bewertungs- und Eigenschaftskürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + 1` | Set rating to 1 star |
-| `Ctrl/Cmd + 2` | Set rating to 2 stars |
-| `Ctrl/Cmd + 3` | Set rating to 3 stars |
-| `Ctrl/Cmd + 4` | Set rating to 4 stars |
-| `Ctrl/Cmd + 5` | Set rating to 5 stars |
-| `Ctrl/Cmd + 0` | Clear rating |
-| `Ctrl/Cmd + F` | Toggle favorite status |
-| `Ctrl/Cmd + D` | Toggle for deletion status |
-| `Ctrl/Cmd + N` | Toggle NSFW status |
+| `Ctrl/Cmd + 1` | Bewertung auf 1 Stern setzen |
+| `Ctrl/Cmd + 2` | Bewertung auf 2 Sterne setzen |
+| `Ctrl/Cmd + 3` | Bewertung auf 3 Sterne setzen |
+| `Ctrl/Cmd + 4` | Bewertung auf 4 Sterne setzen |
+| `Ctrl/Cmd + 5` | Bewertung auf 5 Sterne setzen |
+| `Ctrl/Cmd + 0` | Bewertung löschen |
+| `Ctrl/Cmd + F` | Favoritenstatus umschalten |
+| `Ctrl/Cmd + D` | Zur Löschung markieren/unmarkieren |
+| `Ctrl/Cmd + N` | NSFW-Status umschalten |
 
-## View Mode Shortcuts
+## Ansichtsmoduskürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + G` | Toggle between grid and list view |
-| `Ctrl/Cmd + Shift + G` | Show/hide grid lines |
-| `Ctrl/Cmd + +` | Increase thumbnail size |
-| `Ctrl/Cmd + -` | Decrease thumbnail size |
-| `Ctrl/Cmd + 0` | Reset thumbnail size |
+| `Ctrl/Cmd + G` | Zwischen Gitter- und Listenansicht umschalten |
+| `Ctrl/Cmd + Shift + G` | Gitternetzlinien anzeigen/verstecken |
+| `Ctrl/Cmd + +` | Vorschaubildgröße erhöhen |
+| `Ctrl/Cmd + -` | Vorschaubildgröße verringern |
+| `Ctrl/Cmd + 0` | Vorschaubildgröße zurücksetzen |
 
-## Search Shortcuts
+## Suchkürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + F` | Focus search bar |
-| `Enter` | Execute search |
-| `Esc` | Clear search |
-| `Ctrl/Cmd + Shift + F` | Open advanced search |
-| `Down Arrow` | Navigate down search results |
-| `Up Arrow` | Navigate up search results |
+| `Ctrl/Cmd + F` | Suchleiste fokussieren |
+| `Enter` | Suche ausführen |
+| `Esc` | Suche löschen |
+| `Ctrl/Cmd + Shift + F` | Erweiterte Suche öffnen |
+| `Down Arrow` | In Suchergebnissen nach unten navigieren |
+| `Up Arrow` | In Suchergebnissen nach oben navigieren |
 
-## Batch Operations Shortcuts
+## Stapeloperationenkürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + Shift + R` | Batch resize images |
-| `Ctrl/Cmd + Shift + C` | Batch convert images |
-| `Ctrl/Cmd + Shift + N` | Batch rename images |
-| `Ctrl/Cmd + Shift + A` | Batch auto-tag images |
-| `Ctrl/Cmd + Shift + E` | Batch enhance metadata |
+| `Ctrl/Cmd + Shift + R` | Bilder stapelweise skalieren |
+| `Ctrl/Cmd + Shift + C` | Bilder stapelweise konvertieren |
+| `Ctrl/Cmd + Shift + N` | Bilder stapelweise umbenennen |
+| `Ctrl/Cmd + Shift + A` | Bilder stapelweise automatisch taggen |
+| `Ctrl/Cmd + Shift + E` | Metadaten stapelweise verbessern |
 
-## Menu Shortcuts
+## Menükürzel
 
-| Shortcut | Action |
+| Kürzel | Aktion |
 |----------|--------|
-| `Alt/F10` | Focus menu bar |
-| `Arrow Keys` | Navigate menu items |
-| `Enter` | Select menu item |
-| `Esc` | Close menu |
+| `Alt/F10` | Menüleiste fokussieren |
+| `Arrow Keys` | Menüelemente navigieren |
+| `Enter` | Menüelement auswählen |
+| `Esc` | Menü schließen |
 
-## Customizing Keyboard Shortcuts
+## Tastaturkürzel anpassen
 
-You can customize keyboard shortcuts to suit your workflow:
+Sie können Tastaturkürzel an Ihre Arbeitsweise anpassen:
 
-#### Steps to Customize Keyboard Shortcuts:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. In the keyboard shortcuts settings, you can:
-   - **View** all available shortcuts
-   - **Search** for specific shortcuts
-   - **Edit** existing shortcuts
-   - **Reset** shortcuts to defaults
-3. To edit a shortcut:
-   - Click the shortcut field next to the action
-   - Press the new key combination
-   - Click **Save** to apply the new shortcut
-4. Click **Save** to save all changes
-5. Restart the application for changes to take effect
+#### Schritte zum Anpassen von Tastaturkürzeln:
+1. Gehen Sie zu `Datei > Einstellungen > Tastaturkürzel`
+2. In den Tastaturkürzel-Einstellungen können Sie:
+   - **Alle** verfügbaren Kürzel **anzeigen**
+   - Nach **bestimmten** Kürzeln **suchen**
+   - **Vorhandene** Kürzel **bearbeiten**
+   - Kürzel auf **Standardwerte zurücksetzen**
+3. Zum Bearbeiten eines Kürzels:
+   - Klicken Sie auf das Kürzelsfeld neben der Aktion
+   - Drücken Sie die neue Tastenkombination
+   - Klicken Sie auf **Speichern**, um das neue Kürzel anzuwenden
+4. Klicken Sie auf **Speichern**, um alle Änderungen zu speichern
+5. Starten Sie die Anwendung neu, damit die Änderungen wirksam werden
 
-## Importing/Exporting Shortcut Configurations
+## Importieren/Exportieren von Kürzelkonfigurationen
 
-#### Steps to Export Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Export Configuration**
-3. Choose the destination folder for the export file
-4. Enter a name for the file
-5. Click **Save** to export the configuration
+#### Schritte zum Exportieren einer Kürzelkonfiguration:
+1. Gehen Sie zu `Datei > Einstellungen > Tastaturkürzel`
+2. Klicken Sie auf **Konfiguration exportieren**
+3. Wählen Sie den Zielordner für die Exportdatei
+4. Geben Sie einen Namen für die Datei ein
+5. Klicken Sie auf **Speichern**, um die Konfiguration zu exportieren
 
-#### Steps to Import Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Import Configuration**
-3. Select the configuration file from your filesystem
-4. Click **Open** to import the configuration
-5. Click **Save** to apply the imported shortcuts
-6. Restart the application for changes to take effect
+#### Schritte zum Importieren einer Kürzelkonfiguration:
+1. Gehen Sie zu `Datei > Einstellungen > Tastaturkürzel`
+2. Klicken Sie auf **Konfiguration importieren**
+3. Wählen Sie die Konfigurationsdatei aus Ihrem Dateisystem
+4. Klicken Sie auf **Öffnen**, um die Konfiguration zu importieren
+5. Klicken Sie auf **Speichern**, um die importierten Kürzel anzuwenden
+6. Starten Sie die Anwendung neu, damit die Änderungen wirksam werden
 
-## Best Practices for Keyboard Shortcuts
+## Best Practices für Tastaturkürzel
 
-1. **Learn Common Shortcuts**: Start with the most commonly used shortcuts
-2. **Customize for Your Workflow**: Adjust shortcuts to match your preferred workflow
-3. **Avoid Conflicts**: Ensure new shortcuts don't conflict with existing ones
-4. **Document Your Shortcuts**: Keep a record of your custom shortcuts
-5. **Practice Regularly**: Use shortcuts frequently to build muscle memory
-6. **Reset if Needed**: If you get confused, reset shortcuts to defaults
+1. **Lernen Sie häufig verwendete Kürzel**: Beginnen Sie mit den am häufigsten verwendeten Kürzeln
+2. **Passen Sie sie an Ihre Arbeitsweise an**: Passen Sie Kürzel an Ihre bevorzugte Arbeitsweise an
+3. **Vermeiden Sie Konflikte**: Stellen Sie sicher, dass neue Kürzel keine Konflikte mit bestehenden verursachen
+4. **Dokumentieren Sie Ihre Kürzel**: Halten Sie eine Aufzeichnung Ihrer benutzerdefinierten Kürzel
+5. **Üben Sie regelmäßig**: Verwenden Sie Kürzel häufig, um Muskelgedächtnis aufzubauen
+6. **Setzen Sie sie bei Bedarf zurück**: Wenn Sie verwirrt sind, setzen Sie die Kürzel auf Standardwerte zurück
 
-## Troubleshooting Keyboard Shortcuts
+## Problembehebung bei Tastaturkürzeln
 
-### Shortcuts Not Working
-- **Check Focus**: Ensure the correct view has focus
-- **Check Conflicts**: Ensure no other application is intercepting the shortcut
-- **Check Settings**: Verify the shortcut is enabled in settings
-- **Restart Application**: Try restarting the application
-- **Reset Shortcuts**: Reset shortcuts to default if issues persist
+### Kürzel funktionieren nicht
+- **Fokus prüfen**: Stellen Sie sicher, dass die richtige Ansicht den Fokus hat
+- **Konflikte prüfen**: Stellen Sie sicher, dass keine andere Anwendung das Kürzel abfängt
+- **Einstellungen prüfen**: Vergewissern Sie sich, dass das Kürzel in den Einstellungen aktiviert ist
+- **Anwendung neu starten**: Versuchen Sie, die Anwendung neu zu starten
+- **Kürzel zurücksetzen**: Setzen Sie die Kürzel auf Standardwerte zurück, wenn Probleme weiterhin auftreten
 
-### Shortcut Conflicts
-- **Identify Conflicting Application**: Determine which application is conflicting
-- **Change Shortcut**: Modify the shortcut in settings
-- **Disable Conflict**: Disable the conflicting shortcut in the other application
+### Kürzelkonflikte
+- **Konfliktanwendung identifizieren**: Bestimmen Sie, welche Anwendung im Konflikt steht
+- **Kürzel ändern**: Ändern Sie das Kürzel in den Einstellungen
+- **Konflikt deaktivieren**: Deaktivieren Sie das konfligierende Kürzel in der anderen Anwendung
 
-### Custom Shortcuts Not Saving
-- **Check Permissions**: Ensure you have write access to the settings file
-- **Restart Application**: Restart the application to apply changes
-- **Reset and Reconfigure**: Reset shortcuts to default and reconfigure
+### Benutzerdefinierte Kürzel werden nicht gespeichert
+- **Berechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf die Einstellungsdatei haben
+- **Anwendung neu starten**: Starten Sie die Anwendung neu, um Änderungen anzuwenden
+- **Zurücksetzen und neu konfigurieren**: Setzen Sie die Kürzel auf Standardwerte zurück und konfigurieren Sie sie neu
 
-## Next Steps
+## Nächste Schritte
 
-- Learn about [Settings](./settings.md) to configure other application preferences
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [Tips & Best Practices](./tips-best-practices.md) for more user tips
+- Erfahren Sie mehr über [Einstellungen](./settings.md), um weitere Anwendungsvorlieben zu konfigurieren
+- Lesen Sie über [Problembehebung](./troubleshooting.md), um Hilfe bei häufig auftretenden Problemen zu erhalten
+- Entdecken Sie [Tipps & Best Practices](./tips-best-practices.md) für weitere Benutzer-Tipps

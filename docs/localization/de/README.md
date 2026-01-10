@@ -1,87 +1,87 @@
-# AVA AIGC Toolbox User Documentation
+# AVA AIGC Toolbox Benutzerdokumentation
 
 > **Die englische Version gilt als maßgebend**
 
-Welcome to the comprehensive user documentation for the AVA AIGC Toolbox! This documentation will guide you through every aspect of using this powerful cross-platform AI-generated image management application.
+Willkommen zur umfassenden Benutzerdokumentation für die AVA AIGC Toolbox! Diese Dokumentation führt Sie durch alle Aspekte der Verwendung dieser leistungsstarken plattformübergreifenden Anwendung zur Verwaltung von KI-generierten Bildern.
 
-## Introduction
+## Einführung
 
-AVA AIGC Toolbox is a feature-rich application designed to help you manage, organize, and manipulate your growing collection of AI-generated images. Built with Avalonia and .NET, it provides a unified experience across Windows, macOS, and Linux operating systems.
+AVA AIGC Toolbox ist eine funktionsreiche Anwendung, die Ihnen hilft, Ihre wachsende Sammlung an KI-generierten Bildern zu verwalten, zu organisieren und zu bearbeiten. Mit Avalonia und .NET erstellt, bietet sie eine einheitliche Erfahrung auf Windows-, macOS- und Linux-Betriebssystemen.
 
-## Documentation Overview
+## Dokumentationsübersicht
 
-This documentation is organized to help you get started quickly and then explore more advanced features as you become familiar with the application.
+Diese Dokumentation ist so strukturiert, dass Sie schnell loslegen und dann fortschrittlichere Funktionen erkunden können, wenn Sie mit der Anwendung vertraut werden.
 
-## Table of Contents
+## Inhaltsverzeichnis
 
-### Getting Started
+### Erste Schritte
 
-- [Installation Guide](./installation.md) - Step-by-step installation instructions for all platforms
-- [Getting Started](./getting-started.md) - First-time setup and basic usage
-- [UI Overview](./ui-overview.md) - Detailed explanation of the user interface components
+- [Installationsanleitung](./installation.md) - Schritt-für-Schritt-Installationsanweisungen für alle Plattformen
+- [Erste Schritte](./getting-started.md) - Ersteinrichtung und grundlegende Nutzung
+- [UI-Übersicht](./ui-overview.md) - Detaillierte Erklärung der Benutzeroberflächenkomponenten
 
-### Core Features
+### Kernfunktionen
 
-- [Image Management](./features/image-management.md) - Import, view, and manage your images
-- [Organization](./features/organization.md) - Use folders, albums, and tags to organize your collection
-- [Metadata Editing](./features/metadata-editing.md) - View and edit AI-generated metadata
-- [Search & Filtering](./features/search-filtering.md) - Find images quickly with powerful search tools
-- [Export & Sharing](./features/export-sharing.md) - Export images with or without metadata
+- [Bildverwaltung](./features/image-management.md) - Importieren, Anzeigen und Verwalten Ihrer Bilder
+- [Organisation](./features/organization.md) - Verwenden Sie Ordner, Alben und Tags, um Ihre Sammlung zu organisieren
+- [Metadatenbearbeitung](./features/metadata-editing.md) - Anzeigen und Bearbeiten von KI-generierten Metadaten
+- [Suche & Filterung](./features/search-filtering.md) - Suchen Sie schnell nach Bildern mit leistungsstarken Suchwerkzeugen
+- [Export & Freigabe](./features/export-sharing.md) - Exportieren Sie Bilder mit oder ohne Metadaten
 
-### Advanced Features
+### Erweiterte Funktionen
 
-- [AI Integration](./advanced-features/ai-integration.md) - Leverage AI-powered features
-- [Batch Operations](./advanced-features/batch-operations.md) - Process multiple images at once
-- [Backup & Restore](./advanced-features/backup-restore.md) - Safeguard your image library
+- [KI-Integration](./advanced-features/ai-integration.md) - Nutzen Sie KI-gestützte Funktionen
+- [Stapeloperationen](./advanced-features/batch-operations.md) - Verarbeiten Sie mehrere Bilder auf einmal
+- [Sicherung & Wiederherstellung](./advanced-features/backup-restore.md) - Schützen Sie Ihre Bildbibliothek
 
-### Configuration & Support
+### Konfiguration & Support
 
-- [Settings](./settings.md) - Customize the application to your preferences
-- [Keyboard Shortcuts](./keyboard-shortcuts.md) - Boost your productivity with keyboard shortcuts
-- [Troubleshooting](./troubleshooting.md) - Common issues and their solutions
-- [FAQ](./faq.md) - Answers to frequently asked questions
-- [Tips & Best Practices](./tips-best-practices.md) - Get the most out of AVA AIGC Toolbox
+- [Einstellungen](./settings.md) - Passen Sie die Anwendung an Ihre Vorlieben an
+- [Tastaturkürzel](./keyboard-shortcuts.md) - Steigern Sie Ihre Produktivität mit Tastaturkürzeln
+- [Problembehebung](./troubleshooting.md) - Häufige Probleme und ihre Lösungen
+- [FAQ](./faq.md) - Antworten auf häufig gestellte Fragen
+- [Tipps & Best Practices](./tips-best-practices.md) - Holen Sie das Beste aus der AVA AIGC Toolbox heraus
 
-## System Requirements
+## Systemanforderungen
 
-| Category | Minimum Requirements | Recommended |
+| Kategorie | Mindestanforderungen | Empfohlen |
 |----------|---------------------|-------------|
-| **Operating System** | Windows 10+, macOS 10.15+, Linux (Ubuntu 20.04+, Fedora 32+) | Windows 11, macOS 12+, latest Linux distribution |
-| **.NET Runtime** | .NET 7.0 or later | .NET 7.0 or later |
-| **Disk Space** | 100 MB of free space | 500 MB or more |
-| **RAM** | 2 GB | 4 GB or more |
-| **Processor** | Dual-core CPU | Quad-core CPU or better |
-| **Display** | 1024x768 resolution | 1920x1080 or higher |
+| **Betriebssystem** | Windows 10+, macOS 10.15+, Linux (Ubuntu 20.04+, Fedora 32+) | Windows 11, macOS 12+, neueste Linux-Distribution |
+| **.NET Runtime** | .NET 7.0 oder neuer | .NET 7.0 oder neuer |
+| **Speicherplatz** | 100 MB freier Speicherplatz | 500 MB oder mehr |
+| **RAM** | 2 GB | 4 GB oder mehr |
+| **Prozessor** | Dual-Core CPU | Quad-Core CPU oder besser |
+| **Bildschirm** | 1024x768 Auflösung | 1920x1080 oder höher |
 
-## Supported Image Formats
+## Unterstützte Bildformate
 
 - JPEG/JPG
 - PNG
 - WebP
 - TIFF
 - BMP
-- GIF (static only)
+- GIF (nur statisch)
 
-## Getting Help
+## Hilfe erhalten
 
-If you need assistance with the AVA AIGC Toolbox:
+Wenn Sie Unterstützung bei der AVA AIGC Toolbox benötigen:
 
-1. **Check this documentation** - Most questions are answered here
-2. **Read the [FAQ](./faq.md)** - Answers to common questions
-3. **Visit the [Troubleshooting](./troubleshooting.md)** - Solutions to common issues
-4. **Join our community** - Connect with other users and developers
-5. **Report issues** - Submit bug reports and feature requests on GitHub
+1. **Lesen Sie diese Dokumentation** - Die meisten Fragen werden hier beantwortet
+2. **Lesen Sie die [FAQ](./faq.md)** - Antworten auf häufig gestellte Fragen
+3. **Lesen Sie die [Problembehebung](./troubleshooting.md)** - Lösungen für häufig auftretende Probleme
+4. **Treten Sie unserer Community bei** - Verbinden Sie sich mit anderen Benutzern und Entwicklern
+5. **Melden Sie Probleme** - Senden Sie Fehlerberichte und Funktionsanfragen auf GitHub
 
-## Contributing to Documentation
+## Zum Dokumentation beitragen
 
-We welcome contributions to improve this documentation! If you find errors, have suggestions, or want to add content, please visit the project's GitHub repository for contribution guidelines.
+Wir begrüßen Beiträge zur Verbesserung dieser Dokumentation! Wenn Sie Fehler finden, Vorschläge haben oder Inhalte hinzufügen möchten, besuchen Sie bitte das GitHub-Repository des Projekts für Beitragsrichtlinien.
 
-## Version Information
+## Versionsinformationen
 
-- **Current Documentation Version**: 1.0.0
-- **Last Updated**: January 2026
-- **Application Version**: 1.0.0
+- **Aktuelle Dokumentationsversion**: 1.0.0
+- **Letztes Update**: Januar 2026
+- **Anwendungsversion**: 1.0.0
 
 ---
 
-*AVA AIGC Toolbox - Your Ultimate AI-Generated Image Management Solution*
+*AVA AIGC Toolbox - Ihre ultimative Lösung zur Verwaltung von KI-generierten Bildern*

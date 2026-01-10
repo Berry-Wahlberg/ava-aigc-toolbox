@@ -1,207 +1,209 @@
-# Getting Started Guide
-\n> **Die englische Version gilt als maßgebend**\n\n
-## Welcome to AVA AIGC Toolbox
+# Erste-Schritte-Anleitung
 
-Thank you for choosing AVA AIGC Toolbox! This guide will help you get started with the application and explore its key features.
+> **Die englische Version gilt als maßgebend**
 
-## First Launch
+## Willkommen bei der AVA AIGC Toolbox
 
-### 1. Launch the Application
-- **Windows**: Double-click the desktop shortcut or use Start menu
-- **macOS**: Open from Applications folder or use Spotlight
-- **Linux**: Launch from applications menu or run `ava-aigc-toolbox` in terminal
+Vielen Dank, dass Sie sich für die AVA AIGC Toolbox entschieden haben! Diese Anleitung hilft Ihnen, mit der Anwendung zu beginnen und ihre wichtigsten Funktionen zu erkunden.
 
-### 2. Initial Setup
+## Erster Start
 
-When you launch the application for the first time:
+### 1. Anwendung starten
+- **Windows**: Doppelklicken Sie auf die Desktop-Verknüpfung oder verwenden Sie das Startmenü
+- **macOS**: Öffnen Sie es aus dem Anwendungen-Ordner oder verwenden Sie Spotlight
+- **Linux**: Starten Sie es aus dem Anwendungsmenü oder führen Sie `ava-aigc-toolbox` im Terminal aus
 
-1. **Welcome Screen**
-   - You'll see a welcome screen with options to:
-     - Start with empty library
-     - Import existing images
-     - Learn more about the application
+### 2. Initiale Einrichtung
 
-2. **Choose Your Option**
-   - **Start with empty library**: Creates a new database for your images
-   - **Import existing images**: Lets you select folders to import images from
-   - **Learn more**: Opens the documentation
+Wenn Sie die Anwendung zum ersten Mal starten:
 
-3. **Database Location**
-   - The application automatically creates a database file:
+1. **Willkommensbildschirm**
+   - Sie sehen einen Willkommensbildschirm mit den Optionen:
+     - Mit leerer Bibliothek starten
+     - Bestehende Bilder importieren
+     - Mehr über die Anwendung erfahren
+
+2. **Wählen Sie Ihre Option**
+   - **Mit leerer Bibliothek starten**: Erstellt eine neue Datenbank für Ihre Bilder
+   - **Bestehende Bilder importieren**: Lässt Sie Ordner auswählen, aus denen Bilder importiert werden sollen
+   - **Mehr erfahren**: Öffnet die Dokumentation
+
+3. **Datenbankstandort**
+   - Die Anwendung erstellt automatisch eine Datenbankdatei:
      - Windows: `%APPDATA%/AIGenManager/aigenmanager.db`
      - macOS: `~/.local/share/AIGenManager/aigenmanager.db`
      - Linux: `~/.local/share/AIGenManager/aigenmanager.db`
 
-## Basic Navigation
+## Grundlegende Navigation
 
-The main window is divided into several sections:
+Das Hauptfenster ist in mehrere Abschnitte unterteilt:
 
-### 1. Sidebar
-- **Folders**: Navigate through your image folders
-- **Albums**: Access your image albums
-- **Tags**: Browse and filter by tags
-- **All Images**: View all images in your library
+### 1. Seitenleiste
+- **Ordner**: Navigieren Sie durch Ihre Bildordner
+- **Alben**: Zugriff auf Ihre Bildalben
+- **Tags**: Durchsuchen und Filtern nach Tags
+- **Alle Bilder**: Alle Bilder in Ihrer Bibliothek anzeigen
 
-### 2. Main Content Area
-- **Image Grid**: Displays images in a grid layout
-- **Image Details**: Shows metadata and properties when an image is selected
+### 2. Hauptinhaltbereich
+- **Bildgitter**: Zeigt Bilder in einem Gitternetz an
+- **Bilddetails**: Zeigt Metadaten und Eigenschaften an, wenn ein Bild ausgewählt ist
 
-### 3. Toolbar
-- **Import**: Add new images to your library
-- **Sort**: Change image sorting order
-- **Filter**: Apply filters to the image grid
-- **View**: Toggle between grid and list views
+### 3. Werkzeugleiste
+- **Import**: Fügen Sie Ihrer Bibliothek neue Bilder hinzu
+- **Sortieren**: Ändern Sie die Bildsortierreihenfolge
+- **Filter**: Wenden Sie Filter auf das Bildgitter an
+- **Ansicht**: Wechseln Sie zwischen Gitter- und Listenansicht
 
-### 4. Status Bar
-- Shows total number of images
-- Displays current filter or search criteria
-- Shows application status
+### 4. Statusleiste
+- Zeigt die Gesamtzahl der Bilder an
+- Zeigt die aktuellen Filter oder Suchkriterien an
+- Zeigt den Anwendungsstatus an
 
-## Adding Images
+## Bilder hinzufügen
 
-### 1. Importing Images
+### 1. Bilder importieren
 
-#### From Filesystem
-1. Click the **Import** button in the toolbar
-2. Select **Import from Folder**
-3. Choose the folder containing your images
-4. Click **Select Folder** to start importing
+#### Aus dem Dateisystem
+1. Klicken Sie auf die **Import**-Schaltfläche in der Werkzeugleiste
+2. Wählen Sie **Aus Ordner importieren**
+3. Wählen Sie den Ordner aus, der Ihre Bilder enthält
+4. Klicken Sie auf **Ordner auswählen**, um den Import zu starten
 
-#### Drag and Drop
-1. Open your file explorer/finder
-2. Select one or more images
-3. Drag them into the main content area of the application
-4. The images will be added to your library
+#### Drag and Drop (Ziehen und Ablegen)
+1. Öffnen Sie Ihren Datei-Explorer/Finder
+2. Wählen Sie ein oder mehrere Bilder aus
+3. Ziehen Sie sie in den Hauptinhaltbereich der Anwendung
+4. Die Bilder werden zu Ihrer Bibliothek hinzugefügt
 
-### 2. Image Metadata
+### 2. Bildmetadaten
 
-When images are imported, the application automatically extracts:
-- Filename and path
-- File size and dimensions
-- Creation and modification dates
-- AI-generated metadata (if available):
+Wenn Bilder importiert werden, extrahiert die Anwendung automatisch:
+- Dateiname und Pfad
+- Dateigröße und Abmessungen
+- Erstellungs- und Änderungsdaten
+- KI-generierte Metadaten (sofern verfügbar):
   - Prompt
-  - Negative prompt
-  - Steps and sampler
-  - CFG scale and seed
-  - Model information
+  - Negative Prompt
+  - Schritte und Sampler
+  - CFG-Skalierung und Seed
+  - Modellinformationen
 
-## Organizing Images
+## Bilder organisieren
 
-### 1. Using Folders
+### 1. Verwendung von Ordnern
 
-- The application mirrors your filesystem folder structure
-- Navigate folders in the sidebar to view images in specific locations
-- New folders created in the filesystem will be detected automatically
+- Die Anwendung spiegelt Ihre Dateisystemordnerstruktur wider
+- Navigieren Sie in der Seitenleiste durch Ordner, um Bilder an bestimmten Orten anzuzeigen
+- Neue Ordner, die im Dateisystem erstellt werden, werden automatisch erkannt
 
-### 2. Creating Albums
+### 2. Erstellen von Alben
 
-1. Click the **+** button next to "Albums" in the sidebar
-2. Enter a name for your album
-3. Press Enter to create
-4. Drag images from the grid into the album to add them
+1. Klicken Sie auf die **+**-Schaltfläche neben "Alben" in der Seitenleiste
+2. Geben Sie einen Namen für Ihr Album ein
+3. Drücken Sie Enter, um es zu erstellen
+4. Ziehen Sie Bilder aus dem Gitter in das Album, um sie hinzuzufügen
 
-### 3. Adding Tags
+### 3. Hinzufügen von Tags
 
-#### To Single Image
-1. Select an image in the grid
-2. In the details panel, find the "Tags" section
-3. Click the **+** button
-4. Enter a tag name and press Enter
+#### Zu einem einzelnen Bild
+1. Wählen Sie ein Bild im Gitter aus
+2. Suchen Sie im Detailbereich den Abschnitt "Tags"
+3. Klicken Sie auf die **+**-Schaltfläche
+4. Geben Sie einen Tag-Namen ein und drücken Sie Enter
 
-#### To Multiple Images
-1. Select multiple images using Ctrl/Cmd + click
-2. Right-click and select **Add Tags**
-3. Enter tag names separated by commas
-4. Click **Add** to apply tags to all selected images
+#### Zu mehreren Bildern
+1. Wählen Sie mehrere Bilder aus, indem Sie Ctrl/Cmd + Klick verwenden
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Tags hinzufügen**
+3. Geben Sie Tag-Namen getrennt durch Kommas ein
+4. Klicken Sie auf **Hinzufügen**, um Tags auf alle ausgewählten Bilder anzuwenden
 
-## Working with Images
+## Arbeiten mit Bildern
 
-### 1. Viewing Images
+### 1. Anzeigen von Bildern
 
-- **Single Click**: Select an image to see details
-- **Double Click**: Open image in full-screen view
-- **Right Click**: Open context menu with additional options
+- **Einzelklick**: Wählen Sie ein Bild aus, um Details zu sehen
+- **Doppelklick**: Öffnen Sie das Bild in der Vollbildansicht
+- **Rechtsklick**: Öffnen Sie das Kontextmenü mit zusätzlichen Optionen
 
-### 2. Image Details
+### 2. Bilddetails
 
-When an image is selected, you'll see:
-- Basic information (filename, size, dimensions)
-- AI metadata (prompt, negative prompt, etc.)
-- Tags associated with the image
-- Rating and favorite status
+Wenn ein Bild ausgewählt ist, sehen Sie:
+- Grundinformationen (Dateiname, Größe, Abmessungen)
+- KI-Metadaten (Prompt, Negative Prompt usw.)
+- Mit dem Bild verknüpfte Tags
+- Bewertung und Favoritenstatus
 
-### 3. Editing Metadata
+### 3. Bearbeiten von Metadaten
 
-1. Select an image
-2. In the details panel, click on any editable field
-3. Make your changes
-4. Press Enter or click outside the field to save
+1. Wählen Sie ein Bild aus
+2. Klicken Sie im Detailbereich auf ein beliebiges editierbares Feld
+3. Nehmen Sie Ihre Änderungen vor
+4. Drücken Sie Enter oder klicken Sie außerhalb des Feldes, um zu speichern
 
-### 4. Rating and Favoriting
+### 4. Bewerten und Favorisieren
 
-- **Rating**: Click the stars in the details panel to rate an image (1-5 stars)
-- **Favorite**: Click the heart icon to mark an image as favorite
-- **For Deletion**: Mark images for deletion to easily remove them later
+- **Bewertung**: Klicken Sie auf die Sterne im Detailbereich, um ein Bild zu bewerten (1-5 Sterne)
+- **Favorit**: Klicken Sie auf das Herzsymbol, um ein Bild als Favorit zu markieren
+- **Zur Löschung**: Markieren Sie Bilder zur Löschung, um sie später einfach entfernen zu können
 
-## Searching and Filtering
+## Suchen und Filtern
 
-### 1. Basic Search
+### 1. Grundlegende Suche
 
-1. Type in the search box at the top of the window
-2. Results will appear automatically as you type
-3. Search matches against filenames, tags, and metadata
+1. Geben Sie im Suchfeld oben im Fenster ein
+2. Ergebnisse werden automatisch angezeigt, während Sie tippen
+3. Die Suche findet Übereinstimmungen in Dateinamen, Tags und Metadaten
 
-### 2. Advanced Filtering
+### 2. Erweiterte Filterung
 
-1. Click the **Filter** button in the toolbar
-2. Set filter criteria:
-   - Folder
+1. Klicken Sie auf die **Filter**-Schaltfläche in der Werkzeugleiste
+2. Legen Sie Filterkriterien fest:
+   - Ordner
    - Album
    - Tags
-   - Rating
-   - Date range
-   - Dimensions
-   - AI metadata (model, sampler, etc.)
-3. Click **Apply** to see filtered results
+   - Bewertung
+   - Datumsbereich
+   - Abmessungen
+   - KI-Metadaten (Modell, Sampler usw.)
+3. Klicken Sie auf **Anwenden**, um die gefilterten Ergebnisse zu sehen
 
-## Exporting Images
+## Bilder exportieren
 
-### 1. Export Single Image
+### 1. Einzelnes Bild exportieren
 
-1. Select an image
-2. Right-click and select **Export Image**
-3. Choose destination folder
-4. Click **Save**
+1. Wählen Sie ein Bild aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Bild exportieren**
+3. Wählen Sie den Zielordner
+4. Klicken Sie auf **Speichern**
 
-### 2. Export Multiple Images
+### 2. Mehrere Bilder exportieren
 
-1. Select multiple images
-2. Right-click and select **Export Selected Images**
-3. Choose destination folder
-4. Click **Save**
+1. Wählen Sie mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Ausgewählte Bilder exportieren**
+3. Wählen Sie den Zielordner
+4. Klicken Sie auf **Speichern**
 
-### 3. Export with Metadata
+### 3. Exportieren mit Metadaten
 
-- When exporting, you can choose to include metadata
-- Check the "Include metadata" option in the export dialog
-- Metadata will be embedded in the exported images
+- Beim Exportieren können Sie wählen, ob Metadaten eingeschlossen werden sollen
+- Aktivieren Sie die Option "Metadaten einbeziehen" im Exportdialog
+- Metadaten werden in die exportierten Bilder eingebettet
 
-## Next Steps
+## Nächste Schritte
 
-Now that you've learned the basics, you can:
+Jetzt, da Sie die Grundlagen gelernt haben, können Sie:
 
-- Explore the [UI Overview](./ui-overview.md) for detailed interface explanation
-- Learn about [Image Management](./features/image-management.md) for more details on managing your images
-- Read about [Organization](./features/organization.md) to learn more about folders, albums, and tags
-- Check the [FAQ](./faq.md) for common questions
+- Erkunden Sie die [UI-Übersicht](./ui-overview.md) für eine detaillierte Erklärung der Benutzeroberfläche
+- Erfahren Sie mehr über [Bildverwaltung](./features/image-management.md) für weitere Details zur Verwaltung Ihrer Bilder
+- Lesen Sie über [Organisation](./features/organization.md), um mehr über Ordner, Alben und Tags zu erfahren
+- Überprüfen Sie die [FAQ](./faq.md) für häufig gestellte Fragen
 
-## Tips and Tricks
+## Tipps und Tricks
 
-- **Keyboard Shortcuts**: Press `Ctrl/Cmd + K` to see all keyboard shortcuts
-- **Batch Operations**: Select multiple images to perform batch operations
-- **Auto-Tagging**: Use AI-powered auto-tagging for your images
-- **Backup**: Regularly backup your database file to prevent data loss
-- **Update Metadata**: Use the metadata editor to keep your image information organized
+- **Tastaturkürzel**: Drücken Sie `Ctrl/Cmd + K`, um alle Tastaturkürzel zu sehen
+- **Stapeloperationen**: Wählen Sie mehrere Bilder aus, um Stapeloperationen durchzuführen
+- **Auto-Tagging**: Verwenden Sie KI-gestütztes Auto-Tagging für Ihre Bilder
+- **Sicherung**: Sichern Sie Ihre Datenbankdatei regelmäßig, um Datenverlust zu verhindern
+- **Metadaten aktualisieren**: Verwenden Sie den Metadaten-Editor, um Ihre Bildinformationen organisiert zu halten
 
-Enjoy using AVA AIGC Toolbox for managing your AI-generated images!
+Genießen Sie die Verwendung der AVA AIGC Toolbox zur Verwaltung Ihrer KI-generierten Bilder!

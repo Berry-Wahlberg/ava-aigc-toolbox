@@ -1,292 +1,297 @@
-# UI Overview
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox features an intuitive, well-organized user interface designed to help you manage your AI-generated images efficiently. This guide provides a detailed explanation of all the main interface components.
+# UI-Übersicht
 
-## Main Window Layout
+> **Die englische Version gilt als maßgebend**
 
-The application window is divided into four main sections:
+Die AVA AIGC Toolbox verfügt über eine intuitive, gut organisierte Benutzeroberfläche, die Ihnen hilft, Ihre KI-generierten Bilder effizient zu verwalten. Diese Anleitung bietet eine detaillierte Erklärung aller wichtigsten Schnittstellenkomponenten.
 
-1. **Menu Bar** - Top-level navigation and application commands
-2. **Sidebar** - Quick access to different views and filters
-3. **Toolbar** - Common actions and settings
-4. **Main Content Area** - Image display and details
-5. **Status Bar** - Application status and information
+## Hauptfenster-Layout
+
+Das Anwendungsfenster ist in fünf Hauptbereiche unterteilt:
+
+1. **Menüleiste** - Navigation auf oberster Ebene und Anwendungsbefehle
+2. **Seitenleiste** - Schnellzugriff auf verschiedene Ansichten und Filter
+3. **Werkzeugleiste** - Häufig verwendete Aktionen und Einstellungen
+4. **Hauptinhaltbereich** - Bildanzeige und Details
+5. **Statusleiste** - Anwendungsstatus und Informationen
 
 ```
-┌─────────────────────────────────────────────────────────────────�?�?                       Menu Bar                                 �?├─────────────────────────────────────────────────────────────────�?�?                       Toolbar                                  �?├───────────────┬─────────────────────────────────────────────────�?�?              �?                                                �?�?  Sidebar     �?             Main Content Area                  �?�?              �?                                                �?├───────────────┴─────────────────────────────────────────────────�?�?                       Status Bar                               �?└─────────────────────────────────────────────────────────────────�?```
+┌─────────────────────────────────────────────────────────────────�?�?                       Menu Bar                                 �?├─────────────────────────────────────────────────────────────────�?�?                       Toolbar                                  �?├───────────────┬─────────────────────────────────────────────────�?�?              �?                                                �?�?  Sidebar     �?             Main Content Area                  �?�?              �?                                                �?├───────────────┴─────────────────────────────────────────────────�?�?                       Status Bar                               �?└─────────────────────────────────────────────────────────────────�?```
 
-## 1. Menu Bar
+## 1. Menüleiste
 
-The menu bar contains application-wide commands and settings, organized into the following menus:
+Die Menüleiste enthält anwendungsweite Befehle und Einstellungen, die in folgende Menüs unterteilt sind:
 
-### File Menu
-- **New Library**: Create a new empty image library
-- **Open Library**: Open an existing library database
-- **Import**: 
-  - **Import Images**: Import images from folders
-  - **Import Metadata**: Import metadata from files
-- **Export**: 
-  - **Export Selected Images**: Export selected images to a folder
-  - **Export All Images**: Export all images in the current view
-- **Settings**: Open application settings
-- **Exit**: Close the application
+### Dateimenü
+- **Neue Bibliothek**: Erstellen Sie eine neue leere Bildbibliothek
+- **Bibliothek öffnen**: Öffnen Sie eine vorhandene Bibliotheksdatenbank
+- **Importieren**: 
+  - **Bilder importieren**: Importieren Sie Bilder aus Ordnern
+  - **Metadaten importieren**: Importieren Sie Metadaten aus Dateien
+- **Exportieren**: 
+  - **Ausgewählte Bilder exportieren**: Exportieren Sie ausgewählte Bilder in einen Ordner
+  - **Alle Bilder exportieren**: Exportieren Sie alle Bilder in der aktuellen Ansicht
+- **Einstellungen**: Öffnen Sie die Anwendungs-Einstellungen
+- **Beenden**: Schließen Sie die Anwendung
 
-### Edit Menu
-- **Undo**: Undo the last action
-- **Redo**: Redo the last undone action
-- **Select All**: Select all images in the current view
-- **Deselect All**: Deselect all selected images
-- **Invert Selection**: Invert the current selection
-- **Find**: Open the search dialog
+### Bearbeitungsmenü
+- **Rückgängig**: Mache die letzte Aktion rückgängig
+- **Wiederholen**: Wiederhole die letzte rückgängig gemachte Aktion
+- **Alle auswählen**: Wähle alle Bilder in der aktuellen Ansicht aus
+- **Auswahl aufheben**: Hebe die Auswahl aller ausgewählten Bilder auf
+- **Auswahl invertieren**: Invertiere die aktuelle Auswahl
+- **Suchen**: Öffne den Suchdialog
 
-### View Menu
-- **Toggle Sidebar**: Show or hide the sidebar
-- **Toggle Details Panel**: Show or hide the details panel
-- **View Mode**: 
-  - **Grid View**: Display images in a grid
-  - **List View**: Display images in a list with details
-- **Sort By**: Change the sorting order of images
-- **Zoom**: Adjust the zoom level of the image grid
-- **Refresh**: Refresh the current view
+### Ansichtsmenü
+- **Seitenleiste umschalten**: Zeige oder verstecke die Seitenleiste
+- **Detailbereich umschalten**: Zeige oder verstecke den Detailbereich
+- **Ansicht**: 
+  - **Gitteransicht**: Zeige Bilder in einem Gitter
+  - **Listenansicht**: Zeige Bilder in einer Liste mit Details
+- **Sortieren nach**: Ändern Sie die Sortierreihenfolge der Bilder
+- **Zoomen**: Passen Sie die Zoomstufe des Bildgitters an
+- **Aktualisieren**: Aktualisieren Sie die aktuelle Ansicht
 
-### Tools Menu
-- **Batch Operations**: 
-  - **Batch Rename**: Rename multiple images at once
-  - **Batch Tag**: Add tags to multiple images
-  - **Batch Export**: Export multiple images with custom settings
-- **Metadata Editor**: Open advanced metadata editing tools
-- **Image Tools**: 
-  - **Crop**: Crop images
-  - **Resize**: Resize images
-  - **Convert Format**: Convert images to different formats
-- **AI Tools**: 
-  - **Auto-Tag**: Use AI to automatically tag images
-  - **Generate Thumbnails**: Regenerate thumbnails for all images
+### Werkzeuge-Menü
+- **Stapeloperationen**: 
+  - **Stapelumbennung**: Benennen Sie mehrere Bilder auf einmal um
+  - **Stapeltagging**: Fügen Sie mehreren Bildern Tags hinzu
+  - **Stapelexport**: Exportieren Sie mehrere Bilder mit benutzerdefinierten Einstellungen
+- **Metadaten-Editor**: Öffnen Sie erweiterte Metadaten-Bearbeitungswerkzeuge
+- **Bildwerkzeuge**: 
+  - **Zuschneiden**: Schneiden Sie Bilder zu
+  - **Größe ändern**: Ändern Sie die Größe von Bildern
+  - **Format konvertieren**: Konvertieren Sie Bilder in verschiedene Formate
+- **KI-Werkzeuge**: 
+  - **Auto-Tagging**: Verwenden Sie KI, um Bilder automatisch zu taggen
+  - **Vorschaubilder generieren**: Erzeugen Sie Vorschaubilder für alle Bilder neu
 
-### Help Menu
-- **Documentation**: Open this documentation
-- **Keyboard Shortcuts**: Display keyboard shortcuts
-- **About**: Show application version and credits
-- **Check for Updates**: Check for new versions
-- **Report Issue**: Open GitHub issues page
+### Hilfe-Menü
+- **Dokumentation**: Öffnen Sie diese Dokumentation
+- **Tastaturkürzel**: Zeigen Sie Tastaturkürzel an
+- **Über**: Zeigen Sie die Anwendungsversion und Credits an
+- **Nach Updates suchen**: Suchen Sie nach neuen Versionen
+- **Problem melden**: Öffnen Sie die GitHub-Issues-Seite
 
-## 2. Sidebar
+## 2. Seitenleiste
 
-The sidebar provides quick access to different views and organizational features:
+Die Seitenleiste bietet schnellen Zugriff auf verschiedene Ansichten und Organisationsfunktionen:
 
-### Folders View
-- **Root Folders**: Displays the root folders you've added to your library
-- **Subfolders**: Expand folders to view their contents
-- **Add Folder**: Click the `+` button to add a new root folder
-- **Folder Options**: Right-click a folder to access options like:
-  - Refresh Folder
-  - Remove Folder
-  - Properties
+### Ordneransicht
+- **Wurzelordner**: Zeigt die Wurzelordner, die Sie Ihrer Bibliothek hinzugefügt haben
+- **Unterordner**: Erweitern Sie Ordner, um ihren Inhalt anzuzeigen
+- **Ordner hinzufügen**: Klicken Sie auf die `+`-Schaltfläche, um einen neuen Wurzelordner hinzuzufügen
+- **Ordneroptionen**: Klicken Sie mit der rechten Maustaste auf einen Ordner, um Optionen wie:
+  - Ordner aktualisieren
+  - Ordner entfernen
+  - Eigenschaften
+  zuzugreifen
 
-### Albums View
-- **My Albums**: Displays all user-created albums
-- **Add Album**: Click the `+` button to create a new album
-- **Album Options**: Right-click an album to access options like:
-  - Rename Album
-  - Delete Album
-  - Add Images
-  - Properties
+### Albenansicht
+- **Meine Alben**: Zeigt alle von Benutzern erstellten Alben
+- **Album hinzufügen**: Klicken Sie auf die `+`-Schaltfläche, um ein neues Album zu erstellen
+- **Albumoptionen**: Klicken Sie mit der rechten Maustaste auf ein Album, um Optionen wie:
+  - Album umbenennen
+  - Album löschen
+  - Bilder hinzufügen
+  - Eigenschaften
+  zuzugreifen
 
-### Tags View
-- **All Tags**: Displays all tags in your library, sorted by usage
-- **Tag Cloud**: Visual representation of tags by popularity
-- **Add Tag**: Click the `+` button to create a new tag
-- **Tag Options**: Right-click a tag to access options like:
-  - Rename Tag
-  - Delete Tag
-  - Merge Tags
-  - View Images with Tag
+### Tags-Ansicht
+- **Alle Tags**: Zeigt alle Tags in Ihrer Bibliothek, sortiert nach Nutzung
+- **Tag-Cloud**: Visuelle Darstellung von Tags nach Popularität
+- **Tag hinzufügen**: Klicken Sie auf die `+`-Schaltfläche, um einen neuen Tag zu erstellen
+- **Tagoptionen**: Klicken Sie mit der rechten Maustaste auf einen Tag, um Optionen wie:
+  - Tag umbenennen
+  - Tag löschen
+  - Tags zusammenführen
+  - Bilder mit Tag anzeigen
+  zuzugreifen
 
-### Smart Collections
-- **All Images**: All images in your library
-- **Favorites**: Images marked as favorites
-- **Recently Added**: Images added in the last 30 days
-- **Recently Viewed**: Images viewed in the last 7 days
-- **Untagged Images**: Images without any tags
-- **For Deletion**: Images marked for deletion
+### Intelligente Sammlungen
+- **Alle Bilder**: Alle Bilder in Ihrer Bibliothek
+- **Favoriten**: Als Favorit markierte Bilder
+- **Kürzlich hinzugefügt**: Bilder, die in den letzten 30 Tagen hinzugefügt wurden
+- **Kürzlich angesehen**: Bilder, die in den letzten 7 Tagen angesehen wurden
+- **Ungetaggte Bilder**: Bilder ohne Tags
+- **Zur Löschung**: Zur Löschung markierte Bilder
 
-## 3. Toolbar
+## 3. Werkzeugleiste
 
-The toolbar provides quick access to common actions and settings:
+Die Werkzeugleiste bietet schnellen Zugriff auf häufig verwendete Aktionen und Einstellungen:
 
-### Main Toolbar
-- **Import**: Import images from folders
-- **Refresh**: Refresh the current view
-- **View Mode**: Toggle between grid and list views
-- **Sort**: Change the sorting order (by name, date, size, etc.)
-- **Filter**: Open the filter panel
-- **Settings**: Open application settings
+### Hauptwerkzeugleiste
+- **Import**: Importieren Sie Bilder aus Ordnern
+- **Aktualisieren**: Aktualisieren Sie die aktuelle Ansicht
+- **Ansicht**: Wechseln Sie zwischen Gitter- und Listenansicht
+- **Sortieren**: Ändern Sie die Sortierreihenfolge (nach Name, Datum, Größe usw.)
+- **Filter**: Öffnen Sie das Filterpanel
+- **Einstellungen**: Öffnen Sie die Anwendungs-Einstellungen
 
-### Image Operations Toolbar
-- **Favorite**: Mark/unmark selected images as favorites
-- **Delete**: Delete selected images
-- **Tag**: Add tags to selected images
-- **Edit**: Open image editor
-- **Export**: Export selected images
+### Bildoperationen-Werkzeugleiste
+- **Favorit**: Markieren/Symbolisieren Sie ausgewählte Bilder als Favoriten
+- **Löschen**: Löschen Sie ausgewählte Bilder
+- **Tag**: Fügen Sie ausgewählten Bildern Tags hinzu
+- **Bearbeiten**: Öffnen Sie den Bildeditor
+- **Exportieren**: Exportieren Sie ausgewählte Bilder
 
-## 4. Main Content Area
+## 4. Hauptinhaltbereich
 
-The main content area displays images and their details, and consists of two parts:
+Der Hauptinhaltbereich zeigt Bilder und ihre Details an und besteht aus zwei Teilen:
 
-### Image Display
+### Bildanzeige
 
-#### Grid View
-- **Image Thumbnails**: Displays images in a grid of thumbnails
-- **Selection**: 
-  - Click to select a single image
-  - Ctrl/Cmd + Click to select multiple images
-  - Shift + Click to select a range of images
-  - Drag to select multiple images in a rectangular area
-- **Image Information**: Shows basic information on hover (filename, dimensions, size)
+#### Gitteransicht
+- **Bildvorschaubilder**: Zeigt Bilder in einem Gitter von Vorschaubildern
+- **Auswahl**: 
+  - Klicken Sie, um ein einzelnes Bild auszuwählen
+  - Ctrl/Cmd + Klicken, um mehrere Bilder auszuwählen
+  - Shift + Klicken, um einen Bereich von Bildern auszuwählen
+  - Ziehen Sie, um mehrere Bilder in einem rechteckigen Bereich auszuwählen
+- **Bildinformationen**: Zeigt grundlegende Informationen beim Überfahren mit der Maus an (Dateiname, Abmessungen, Größe)
 
-#### List View
-- **Columns**: Displays images with columns for:
-  - Filename
-  - Size
-  - Dimensions
-  - Date Added
-  - Date Modified
-  - Rating
-  - Favorite status
-- **Sorting**: Click column headers to sort by that column
-- **Resizable Columns**: Drag column dividers to adjust widths
+#### Listenansicht
+- **Spalten**: Zeigt Bilder mit Spalten für:
+  - Dateiname
+  - Größe
+  - Abmessungen
+  - Hinzufügungsdatum
+  - Änderungsdatum
+  - Bewertung
+  - Favoritenstatus
+- **Sortierung**: Klicken Sie auf Spaltenüberschriften, um nach dieser Spalte zu sortieren
+- **Änderbare Spaltenbreiten**: Ziehen Sie Spaltentrenner, um Breiten anzupassen
 
-#### Full-Screen View
-- **Double-Click**: Open an image in full-screen view
+#### Vollbildansicht
+- **Doppelklick**: Öffnen Sie ein Bild in der Vollbildansicht
 - **Navigation**: 
-  - Arrow keys to navigate between images
-  - Escape to exit full-screen mode
-  - Right-click for additional options
-- **Zoom**: Use mouse wheel to zoom in/out
-- **Pan**: Click and drag to pan when zoomed in
+  - Pfeiltasten, um zwischen Bildern zu navigieren
+  - Escape, um den Vollbildmodus zu verlassen
+  - Rechtsklick für zusätzliche Optionen
+- **Zoomen**: Verwenden Sie das Mausrad, um herein- oder herauszuzoomen
+- **Verschieben**: Klicken und ziehen Sie, um bei vergrößertem Bild zu verschieben
 
-### Details Panel
+### Detailbereich
 
-The details panel appears on the right side of the window when an image is selected, displaying detailed information about the image:
+Der Detailbereich erscheint auf der rechten Seite des Fensters, wenn ein Bild ausgewählt ist, und zeigt detaillierte Informationen über das Bild an:
 
-#### Basic Information
-- **Filename**: Name of the image file
-- **Path**: Full file path
-- **Size**: File size in bytes/KB/MB
-- **Dimensions**: Width and height in pixels
-- **Resolution**: DPI information (if available)
-- **Format**: File format (JPEG, PNG, etc.)
-- **Date Added**: When the image was added to the library
-- **Date Modified**: Last modified date of the file
+#### Grundinformationen
+- **Dateiname**: Name der Bilddatei
+- **Pfad**: Vollständiger Dateipfad
+- **Größe**: Dateigröße in Bytes/KB/MB
+- **Abmessungen**: Breite und Höhe in Pixeln
+- **Auflösung**: DPI-Informationen (sofern verfügbar)
+- **Format**: Dateiformat (JPEG, PNG usw.)
+- **Hinzufügungsdatum**: Wann das Bild zur Bibliothek hinzugefügt wurde
+- **Änderungsdatum**: Letztes Änderungsdatum der Datei
 
-#### AI Metadata
-- **Prompt**: The prompt used to generate the image
-- **Negative Prompt**: The negative prompt used
-- **Steps**: Number of generation steps
-- **Sampler**: Name of the sampler used
-- **CFG Scale**: CFG scale value
-- **Seed**: Seed value used for generation
-- **Model**: Name of the model used
-- **Model Hash**: Hash of the model
-- **Width/Height**: Generated dimensions
+#### KI-Metadaten
+- **Prompt**: Der Prompt, der zum Generieren des Bildes verwendet wurde
+- **Negative Prompt**: Der Negative Prompt, der verwendet wurde
+- **Schritte**: Anzahl der Generierungsschritte
+- **Sampler**: Name des verwendeten Samplers
+- **CFG-Skalierung**: CFG-Skalierungswert
+- **Seed**: Seed-Wert, der für die Generierung verwendet wurde
+- **Modell**: Name des verwendeten Modells
+- **Modell-Hash**: Hash des Modells
+- **Breite/Höhe**: Generierte Abmessungen
 
-#### Image Properties
-- **Rating**: 1-5 star rating system
-- **Favorite**: Toggle favorite status
-- **For Deletion**: Mark for deletion
-- **NSFW**: Mark as Not Safe For Work
-- **Unavailable**: File is unavailable
+#### Bildeigenschaften
+- **Bewertung**: 1-5-Sterne-Bewertungssystem
+- **Favorit**: Favoritenstatus umschalten
+- **Zur Löschung**: Zur Löschung markieren
+- **NSFW**: Als Nicht-Sicher-für-Arbeit markieren
+- **Nicht verfügbar**: Datei ist nicht verfügbar
 
 #### Tags
-- **Tags List**: Display all tags associated with the image
-- **Add Tag**: Click `+` to add new tags
-- **Remove Tag**: Click `×` to remove existing tags
+- **Tags-Liste**: Zeigt alle mit dem Bild verbundenen Tags an
+- **Tag hinzufügen**: Klicken Sie auf `+`, um neue Tags hinzuzufügen
+- **Tag entfernen**: Klicken Sie auf `×`, um bestehende Tags zu entfernen
 
-## 5. Status Bar
+## 5. Statusleiste
 
-The status bar appears at the bottom of the window and displays:
+Die Statusleiste erscheint am unteren Rand des Fensters und zeigt an:
 
-- **Total Images**: Number of images in the current view
-- **Selected Images**: Number of selected images
-- **Filter Status**: Current filter being applied
-- **Sort Status**: Current sorting criteria
-- **Application Status**: Current application activity (importing, exporting, etc.)
-- **Database Size**: Size of the current database
+- **Gesamtbilder**: Anzahl der Bilder in der aktuellen Ansicht
+- **Ausgewählte Bilder**: Anzahl der ausgewählten Bilder
+- **Filterstatus**: Aktuell angewendeter Filter
+- **Sortierstatus**: Aktuelle Sortierkriterien
+- **Anwendungsstatus**: Aktuelle Anwendungsaktivität (Importieren, Exportieren usw.)
+- **Datenbankgröße**: Größe der aktuellen Datenbank
 
-## 6. Dialogs and Panels
+## 6. Dialoge und Panels
 
-### Import Dialog
-- **Folder Selection**: Choose folders to import images from
-- **Import Options**: 
-  - Include subfolders
-  - Overwrite existing images
-  - Extract metadata
-  - Generate thumbnails
-- **Progress Indicator**: Shows import progress
+### Importdialog
+- **Ordnerauswahl**: Wählen Sie Ordner aus, aus denen Bilder importiert werden sollen
+- **Importoptionen**: 
+  - Unterordner einschließen
+  - Bestehende Bilder überschreiben
+  - Metadaten extrahieren
+  - Vorschaubilder generieren
+- **Fortschrittsanzeige**: Zeigt den Importfortschritt an
 
-### Export Dialog
-- **Destination Folder**: Choose where to export images
-- **Export Options**: 
-  - Include metadata
-  - Resize images
-  - Convert to format
-  - Rename files
-- **Progress Indicator**: Shows export progress
+### Exportdialog
+- **Zielordner**: Wählen Sie, wo Bilder exportiert werden sollen
+- **Exportoptionen**: 
+  - Metadaten einschließen
+  - Bilder skalieren
+  - In Format konvertieren
+  - Dateien umbenennen
+- **Fortschrittsanzeige**: Zeigt den Exportfortschritt an
 
-### Filter Panel
-- **Text Search**: Search by filename, tags, or metadata
-- **Date Range**: Filter by creation or modification date
-- **Dimensions**: Filter by image width and height
-- **Rating**: Filter by star rating
-- **Tags**: Filter by specific tags
-- **AI Metadata**: Filter by model, sampler, steps, etc.
+### Filterpanel
+- **Textsuche**: Suchen Sie nach Dateiname, Tags oder Metadaten
+- **Datumsbereich**: Filtern Sie nach Erstellungs- oder Änderungsdatum
+- **Abmessungen**: Filtern Sie nach Bildbreite und -höhe
+- **Bewertung**: Filtern Sie nach Sternbewertung
+- **Tags**: Filtern Sie nach bestimmten Tags
+- **KI-Metadaten**: Filtern Sie nach Modell, Sampler, Schritten usw.
 
-### Settings Dialog
-- **General**: Application language, theme, and startup options
-- **Library**: Database location and backup settings
-- **Import**: Default import options
-- **Display**: Thumbnail size, grid spacing, and view options
-- **Metadata**: Metadata extraction and display options
-- **Keyboard Shortcuts**: Customize keyboard shortcuts
+### Einstellungsdialog
+- **Allgemein**: Anwendungssprache, Thema und Startoptionen
+- **Bibliothek**: Datenbankstandort und Sicherungseinstellungen
+- **Import**: Standard-Importoptionen
+- **Anzeige**: Vorschaubildgröße, Gitterabstand und Ansichtoptionen
+- **Metadaten**: Metadatenextraktion und Anzeigeoptionen
+- **Tastaturkürzel**: Tastaturkürzel anpassen
 
-## 7. Context Menus
+## 7. Kontextmenüs
 
-Context menus appear when you right-click on various elements:
+Kontextmenüs erscheinen, wenn Sie mit der rechten Maustaste auf verschiedene Elemente klicken:
 
-### Image Context Menu
-- **View**: Open in full-screen view
-- **Edit**: Edit image or metadata
-- **Copy**: Copy image to clipboard
-- **Move To**: Move image to another folder or album
-- **Copy To**: Copy image to another location
-- **Delete**: Delete image from library
-- **Add to Album**: Add to existing album
-- **Add Tags**: Add tags to image
-- **Remove Tags**: Remove tags from image
-- **Set Rating**: Set star rating
-- **Mark as Favorite**: Toggle favorite status
-- **Properties**: View detailed properties
+### Bildkontextmenü
+- **Anzeigen**: Öffnen Sie in der Vollbildansicht
+- **Bearbeiten**: Bearbeiten Sie das Bild oder seine Metadaten
+- **Kopieren**: Kopieren Sie das Bild in die Zwischenablage
+- **Verschieben nach**: Verschieben Sie das Bild in einen anderen Ordner oder ein anderes Album
+- **Kopieren nach**: Kopieren Sie das Bild an einen anderen Speicherort
+- **Löschen**: Löschen Sie das Bild aus der Bibliothek
+- **Zu Album hinzufügen**: Fügen Sie es einem bestehenden Album hinzu
+- **Tags hinzufügen**: Fügen Sie dem Bild Tags hinzu
+- **Tags entfernen**: Entfernen Sie Tags vom Bild
+- **Bewertung festlegen**: Legen Sie eine Sternbewertung fest
+- **Als Favorit markieren**: Favoritenstatus umschalten
+- **Eigenschaften**: Zeigen Sie detaillierte Eigenschaften an
 
-### Folder Context Menu
-- **Open in Explorer/Finder**: Open folder in system file manager
-- **Refresh**: Refresh folder contents
-- **Remove Folder**: Remove from library (doesn't delete files)
-- **Properties**: View folder properties
+### Ordnerkontextmenü
+- **Im Explorer/Finder öffnen**: Öffnen Sie den Ordner im System-Dateimanager
+- **Aktualisieren**: Aktualisieren Sie den Ordnerinhalt
+- **Ordner entfernen**: Entfernen Sie ihn aus der Bibliothek (löscht keine Dateien)
+- **Eigenschaften**: Zeigen Sie die Ordner-Eigenschaften an
 
-### Album Context Menu
-- **Open**: View album contents
-- **Rename**: Rename album
-- **Delete**: Delete album
-- **Add Images**: Add images to album
-- **Remove Images**: Remove selected images from album
-- **Properties**: View album properties
+### Albumkontextmenü
+- **Öffnen**: Zeigen Sie den Albuminhalt an
+- **Umbenennen**: Benennen Sie das Album um
+- **Löschen**: Löschen Sie das Album
+- **Bilder hinzufügen**: Fügen Sie dem Album Bilder hinzu
+- **Bilder entfernen**: Entfernen Sie ausgewählte Bilder aus dem Album
+- **Eigenschaften**: Zeigen Sie die Album-Eigenschaften an
 
-### Tag Context Menu
-- **View Images**: View all images with this tag
-- **Rename**: Rename tag
-- **Delete**: Delete tag
-- **Merge With**: Merge with another tag
-- **Properties**: View tag properties
+### Tagkontextmenü
+- **Bilder anzeigen**: Zeigen Sie alle Bilder mit diesem Tag an
+- **Umbenennen**: Benennen Sie den Tag um
+- **Löschen**: Löschen Sie den Tag
+- **Mit zusammenführen**: Führen Sie ihn mit einem anderen Tag zusammen
+- **Eigenschaften**: Zeigen Sie die Tag-Eigenschaften an
 
 ## 8. Keyboard Shortcuts
 
