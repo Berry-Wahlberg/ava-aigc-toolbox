@@ -1,6 +1,9 @@
 # Visual Studio Code
 .vscode/
 
+# Trae AI
+.trae/
+
 # Build outputs
 bin/
 obj/
