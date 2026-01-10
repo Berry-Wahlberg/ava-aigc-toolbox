@@ -1,199 +1,201 @@
-# Keyboard Shortcuts
-\n> **La versione inglese è quella ufficiale**\n\n
-The AVA AIGC Toolbox provides a comprehensive set of keyboard shortcuts to help you work more efficiently. This guide lists all the available keyboard shortcuts and how to customize them.
+# Scorciatoie da Tastiera
 
-## General Shortcuts
+> **La versione italiana è quella ufficiale**
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + O` | Open library |
-| `Ctrl/Cmd + S` | Save current changes |
-| `Ctrl/Cmd + Q` | Exit the application |
-| `Ctrl/Cmd + ,` | Open settings |
-| `Ctrl/Cmd + H` | Show/hide sidebar |
-| `Ctrl/Cmd + L` | Focus search bar |
-| `Ctrl/Cmd + F` | Find in current view |
-| `F1` | Open documentation |
-| `F12` | Toggle debug mode |
+AVA AIGC Toolbox fornisce un insieme completo di scorciatoie da tastiera per aiutarti a lavorare in modo più efficiente. Questa guida elenca tutte le scorciatoie da tastiera disponibili e come personalizzarle.
 
-## Navigation Shortcuts
+## Scorciatoie Generali
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + Left Arrow` | Navigate to previous view |
-| `Ctrl/Cmd + Right Arrow` | Navigate to next view |
-| `Ctrl/Cmd + Home` | Go to top of view |
-| `Ctrl/Cmd + End` | Go to bottom of view |
-| `Page Up` | Scroll up |
-| `Page Down` | Scroll down |
-| `Home` | Scroll to beginning |
-| `End` | Scroll to end |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + O` | Apri libreria |
+| `Ctrl/Cmd + S` | Salva le modifiche correnti |
+| `Ctrl/Cmd + Q` | Esci dall'applicazione |
+| `Ctrl/Cmd + ,` | Apri impostazioni |
+| `Ctrl/Cmd + H` | Mostra/nascondi barra laterale |
+| `Ctrl/Cmd + L` | Focus sulla barra di ricerca |
+| `Ctrl/Cmd + F` | Cerca nella vista corrente |
+| `F1` | Apri documentazione |
+| `F12` | Attiva/disattiva modalità debug |
 
-## Image View Shortcuts
+## Scorciatoie di Navigazione
 
-| Shortcut | Action |
-|----------|--------|
-| `Enter` | Open selected image in full-screen view |
-| `Esc` | Close full-screen view |
-| `Right Arrow` | Next image in full-screen view |
-| `Left Arrow` | Previous image in full-screen view |
-| `Up Arrow` | Zoom in |
-| `Down Arrow` | Zoom out |
-| `0` | Reset zoom |
-| `F11` | Toggle between fit-to-screen and actual size |
-| `Space` | Toggle slideshow in full-screen view |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + Freccia Sinistra` | Naviga alla vista precedente |
+| `Ctrl/Cmd + Freccia Destra` | Naviga alla vista successiva |
+| `Ctrl/Cmd + Home` | Vai all'inizio della vista |
+| `Ctrl/Cmd + End` | Vai alla fine della vista |
+| `Page Up` | Scorri verso l'alto |
+| `Page Down` | Scorri verso il basso |
+| `Home` | Scorri all'inizio |
+| `End` | Scorri alla fine |
 
-## Selection Shortcuts
+## Scorciatoie di Visualizzazione Immagine
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + A` | Select all images |
-| `Ctrl/Cmd + D` | Deselect all images |
-| `Ctrl/Cmd + I` | Invert selection |
-| `Ctrl/Cmd + Click` | Select/deselect individual images |
-| `Shift + Click` | Select range of images |
-| `Ctrl/Cmd + Shift + Click` | Select range of images from last selection |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Enter` | Apri l'immagine selezionata in vista a schermo intero |
+| `Esc` | Chiudi la vista a schermo intero |
+| `Freccia Destra` | Prossima immagine in vista a schermo intero |
+| `Freccia Sinistra` | Immagine precedente in vista a schermo intero |
+| `Freccia Su` | Zoom in |
+| `Freccia Giù` | Zoom out |
+| `0` | Resetta zoom |
+| `F11` | Passa tra adattamento allo schermo e dimensione reale |
+| `Space` | Attiva/disattiva presentazione in vista a schermo intero |
 
-## Image Management Shortcuts
+## Scorciatoie di Selezione
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + I` | Import images |
-| `Ctrl/Cmd + E` | Export selected images |
-| `Delete` | Delete selected images |
-| `Ctrl/Cmd + Z` | Undo last action |
-| `Ctrl/Cmd + Shift + Z` | Redo last action |
-| `Ctrl/Cmd + C` | Copy selected images |
-| `Ctrl/Cmd + V` | Paste images |
-| `Ctrl/Cmd + X` | Cut selected images |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + A` | Seleziona tutte le immagini |
+| `Ctrl/Cmd + D` | Deseleziona tutte le immagini |
+| `Ctrl/Cmd + I` | Inverti selezione |
+| `Ctrl/Cmd + Clicca` | Seleziona/deseleziona immagini singole |
+| `Shift + Clicca` | Seleziona una gamma di immagini |
+| `Ctrl/Cmd + Shift + Clicca` | Seleziona una gamma di immagini dalla precedente selezione |
 
-## Tagging Shortcuts
+## Scorciatoie di Gestione Immagini
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + T` | Add tags to selected images |
-| `Ctrl/Cmd + Shift + T` | Remove tags from selected images |
-| `Ctrl/Cmd + U` | Remove all tags from selected images |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + I` | Importa immagini |
+| `Ctrl/Cmd + E` | Esporta immagini selezionate |
+| `Delete` | Elimina immagini selezionate |
+| `Ctrl/Cmd + Z` | Annulla ultima azione |
+| `Ctrl/Cmd + Shift + Z` | Ripeti ultima azione |
+| `Ctrl/Cmd + C` | Copia immagini selezionate |
+| `Ctrl/Cmd + V` | Incolla immagini |
+| `Ctrl/Cmd + X` | Taglia immagini selezionate |
 
-## Rating & Properties Shortcuts
+## Scorciatoie di Tagging
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + 1` | Set rating to 1 star |
-| `Ctrl/Cmd + 2` | Set rating to 2 stars |
-| `Ctrl/Cmd + 3` | Set rating to 3 stars |
-| `Ctrl/Cmd + 4` | Set rating to 4 stars |
-| `Ctrl/Cmd + 5` | Set rating to 5 stars |
-| `Ctrl/Cmd + 0` | Clear rating |
-| `Ctrl/Cmd + F` | Toggle favorite status |
-| `Ctrl/Cmd + D` | Toggle for deletion status |
-| `Ctrl/Cmd + N` | Toggle NSFW status |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + T` | Aggiungi tag alle immagini selezionate |
+| `Ctrl/Cmd + Shift + T` | Rimuovi tag dalle immagini selezionate |
+| `Ctrl/Cmd + U` | Rimuovi tutti i tag dalle immagini selezionate |
 
-## View Mode Shortcuts
+## Scorciatoie di Valutazione e Proprietà
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + G` | Toggle between grid and list view |
-| `Ctrl/Cmd + Shift + G` | Show/hide grid lines |
-| `Ctrl/Cmd + +` | Increase thumbnail size |
-| `Ctrl/Cmd + -` | Decrease thumbnail size |
-| `Ctrl/Cmd + 0` | Reset thumbnail size |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + 1` | Imposta valutazione a 1 stella |
+| `Ctrl/Cmd + 2` | Imposta valutazione a 2 stelle |
+| `Ctrl/Cmd + 3` | Imposta valutazione a 3 stelle |
+| `Ctrl/Cmd + 4` | Imposta valutazione a 4 stelle |
+| `Ctrl/Cmd + 5` | Imposta valutazione a 5 stelle |
+| `Ctrl/Cmd + 0` | Cancella valutazione |
+| `Ctrl/Cmd + F` | Attiva/disattiva stato preferito |
+| `Ctrl/Cmd + D` | Attiva/disattiva stato da eliminare |
+| `Ctrl/Cmd + N` | Attiva/disattiva stato NSFW |
 
-## Search Shortcuts
+## Scorciatoie di Modalità Visualizzazione
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + F` | Focus search bar |
-| `Enter` | Execute search |
-| `Esc` | Clear search |
-| `Ctrl/Cmd + Shift + F` | Open advanced search |
-| `Down Arrow` | Navigate down search results |
-| `Up Arrow` | Navigate up search results |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + G` | Passa tra vista griglia e lista |
+| `Ctrl/Cmd + Shift + G` | Mostra/nascondi linee di griglia |
+| `Ctrl/Cmd + +` | Aumenta dimensione anteprime |
+| `Ctrl/Cmd + -` | Diminuisci dimensione anteprime |
+| `Ctrl/Cmd + 0` | Resetta dimensione anteprime |
 
-## Batch Operations Shortcuts
+## Scorciatoie di Ricerca
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + Shift + R` | Batch resize images |
-| `Ctrl/Cmd + Shift + C` | Batch convert images |
-| `Ctrl/Cmd + Shift + N` | Batch rename images |
-| `Ctrl/Cmd + Shift + A` | Batch auto-tag images |
-| `Ctrl/Cmd + Shift + E` | Batch enhance metadata |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + F` | Focus sulla barra di ricerca |
+| `Enter` | Esegui ricerca |
+| `Esc` | Cancella ricerca |
+| `Ctrl/Cmd + Shift + F` | Apri ricerca avanzata |
+| `Freccia Giù` | Naviga verso il basso nei risultati della ricerca |
+| `Freccia Su` | Naviga verso l'alto nei risultati della ricerca |
 
-## Menu Shortcuts
+## Scorciatoie di Operazioni di Gruppo
 
-| Shortcut | Action |
-|----------|--------|
-| `Alt/F10` | Focus menu bar |
-| `Arrow Keys` | Navigate menu items |
-| `Enter` | Select menu item |
-| `Esc` | Close menu |
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Ctrl/Cmd + Shift + R` | Ridimensiona immagini in gruppo |
+| `Ctrl/Cmd + Shift + C` | Converti immagini in gruppo |
+| `Ctrl/Cmd + Shift + N` | Rinomina immagini in gruppo |
+| `Ctrl/Cmd + Shift + A` | Auto-taggare immagini in gruppo |
+| `Ctrl/Cmd + Shift + E` | Migliora metadati in gruppo |
 
-## Customizing Keyboard Shortcuts
+## Scorciatoie di Menu
 
-You can customize keyboard shortcuts to suit your workflow:
+| Scorciatoia | Azione |
+|-------------|--------|
+| `Alt/F10` | Focus sulla barra del menu |
+| `Tasti Freccia` | Naviga tra gli elementi del menu |
+| `Enter` | Seleziona elemento del menu |
+| `Esc` | Chiudi menu |
 
-#### Steps to Customize Keyboard Shortcuts:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. In the keyboard shortcuts settings, you can:
-   - **View** all available shortcuts
-   - **Search** for specific shortcuts
-   - **Edit** existing shortcuts
-   - **Reset** shortcuts to defaults
-3. To edit a shortcut:
-   - Click the shortcut field next to the action
-   - Press the new key combination
-   - Click **Save** to apply the new shortcut
-4. Click **Save** to save all changes
-5. Restart the application for changes to take effect
+## Personalizzazione delle Scorciatoie da Tastiera
 
-## Importing/Exporting Shortcut Configurations
+Puoi personalizzare le scorciatoie da tastiera per adattarle al tuo flusso di lavoro:
 
-#### Steps to Export Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Export Configuration**
-3. Choose the destination folder for the export file
-4. Enter a name for the file
-5. Click **Save** to export the configuration
+#### Passaggi per Personalizzare le Scorciatoie da Tastiera:
+1. Vai a `File > Impostazioni > Scorciatoie da Tastiera`
+2. Nelle impostazioni delle scorciatoie da tastiera, puoi:
+   - **Visualizzare** tutte le scorciatoie disponibili
+   - **Cercare** scorciatoie specifiche
+   - **Modificare** scorciatoie esistenti
+   - **Resettare** le scorciatoie ai valori predefiniti
+3. Per modificare una scorciatoia:
+   - Clicca sul campo della scorciatoia accanto all'azione
+   - Premi la nuova combinazione di tasti
+   - Clicca **Salva** per applicare la nuova scorciatoia
+4. Clicca **Salva** per salvare tutte le modifiche
+5. Riavvia l'applicazione per rendere effettive le modifiche
 
-#### Steps to Import Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Import Configuration**
-3. Select the configuration file from your filesystem
-4. Click **Open** to import the configuration
-5. Click **Save** to apply the imported shortcuts
-6. Restart the application for changes to take effect
+## Importazione/Esportazione delle Configurazioni delle Scorciatoie
 
-## Best Practices for Keyboard Shortcuts
+#### Passaggi per Esportare la Configurazione delle Scorciatoie:
+1. Vai a `File > Impostazioni > Scorciatoie da Tastiera`
+2. Clicca **Esporta Configurazione**
+3. Scegli la cartella di destinazione per il file di esportazione
+4. Inserisci un nome per il file
+5. Clicca **Salva** per esportare la configurazione
 
-1. **Learn Common Shortcuts**: Start with the most commonly used shortcuts
-2. **Customize for Your Workflow**: Adjust shortcuts to match your preferred workflow
-3. **Avoid Conflicts**: Ensure new shortcuts don't conflict with existing ones
-4. **Document Your Shortcuts**: Keep a record of your custom shortcuts
-5. **Practice Regularly**: Use shortcuts frequently to build muscle memory
-6. **Reset if Needed**: If you get confused, reset shortcuts to defaults
+#### Passaggi per Importare la Configurazione delle Scorciatoie:
+1. Vai a `File > Impostazioni > Scorciatoie da Tastiera`
+2. Clicca **Importa Configurazione**
+3. Seleziona il file di configurazione dal tuo file system
+4. Clicca **Apri** per importare la configurazione
+5. Clicca **Salva** per applicare le scorciatoie importate
+6. Riavvia l'applicazione per rendere effettive le modifiche
 
-## Troubleshooting Keyboard Shortcuts
+## Migliori Pratiche per le Scorciatoie da Tastiera
 
-### Shortcuts Not Working
-- **Check Focus**: Ensure the correct view has focus
-- **Check Conflicts**: Ensure no other application is intercepting the shortcut
-- **Check Settings**: Verify the shortcut is enabled in settings
-- **Restart Application**: Try restarting the application
-- **Reset Shortcuts**: Reset shortcuts to default if issues persist
+1. **Impara le Scorciatoie Comuni**: Inizia con le scorciatoie più utilizzate
+2. **Personalizza per il Tuo Flusso di Lavoro**: Adatta le scorciatoie per corrispondere al tuo flusso di lavoro preferito
+3. **Evita Conflitti**: Assicurati che le nuove scorciatoie non conflittino con quelle esistenti
+4. **Documenta le Tue Scorciatoie**: Mantieni un registro delle tue scorciatoie personalizzate
+5. **Pratichi Regolarmente**: Usa le scorciatoie frequentemente per sviluppare la memoria muscolare
+6. **Resetta se Necessario**: Se ti confondi, resetta le scorciatoie ai valori predefiniti
 
-### Shortcut Conflicts
-- **Identify Conflicting Application**: Determine which application is conflicting
-- **Change Shortcut**: Modify the shortcut in settings
-- **Disable Conflict**: Disable the conflicting shortcut in the other application
+## Risoluzione dei Problemi con le Scorciatoie da Tastiera
 
-### Custom Shortcuts Not Saving
-- **Check Permissions**: Ensure you have write access to the settings file
-- **Restart Application**: Restart the application to apply changes
-- **Reset and Reconfigure**: Reset shortcuts to default and reconfigure
+### Scorciatoie Non Funzionanti
+- **Controlla il Focus**: Assicurati che la vista corretta abbia il focus
+- **Controlla i Conflitti**: Assicurati che nessun'altra applicazione stia intercettando la scorciatoia
+- **Controlla le Impostazioni**: Verifica che la scorciatoia sia abilitata nelle impostazioni
+- **Riavvia l'Applicazione**: Prova a riavviare l'applicazione
+- **Resetta le Scorciatoie**: Resetta le scorciatoie ai valori predefiniti se i problemi persistono
 
-## Next Steps
+### Conflitti di Scorciatoie
+- **Identifica l'Applicazione in Conflitto**: Determina quale applicazione è in conflitto
+- **Cambia Scorciatoia**: Modifica la scorciatoia nelle impostazioni
+- **Disabilita il Conflitto**: Disabilita la scorciatoia in conflitto nell'altra applicazione
 
-- Learn about [Settings](./settings.md) to configure other application preferences
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [Tips & Best Practices](./tips-best-practices.md) for more user tips
+### Scorciatoie Personalizzate Non Si Salvano
+- **Controlla i Permessi**: Assicurati di avere i permessi di scrittura sul file delle impostazioni
+- **Riavvia l'Applicazione**: Riavvia l'applicazione per applicare le modifiche
+- **Resetta e Riconfigura**: Resetta le scorciatoie ai valori predefiniti e riconfigura
+
+## Prossimi Passaggi
+
+- Impara sulle [Impostazioni](./settings.md) per configurare altre preferenze dell'applicazione
+- Leggi sulla [Risoluzione dei Problemi](./troubleshooting.md) per aiuto con problemi comuni
+- Esplora [Consigli e Migliori Pratiche](./tips-best-practices.md) per ulteriori suggerimenti per l'utente
