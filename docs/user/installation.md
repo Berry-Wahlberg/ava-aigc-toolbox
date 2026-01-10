@@ -1,78 +1,80 @@
-# Installation Guide
+# 安装指南
 
-## Overview
-This guide will walk you through the process of installing the AVA AIGC Toolbox on your system. The application supports Windows, macOS, and Linux.
+> **备注：以英文版本为准**
 
-## System Requirements
+## 概述
+本指南将引导您完成在系统上安装 AVA AIGC 工具箱的过程。该应用程序支持 Windows、macOS 和 Linux。
 
-### Minimum Requirements
-- **Operating System**: Windows 10+, macOS 10.15+, or Linux (Ubuntu 20.04+, Fedora 32+)
-- **.NET Runtime**: .NET 7.0 or later
-- **Disk Space**: 100 MB of free space
-- **RAM**: 2 GB minimum
+## 系统要求
 
-### Recommended Requirements
-- **RAM**: 4 GB or more
-- **Processor**: Multi-core CPU
-- **Display**: 1080p or higher resolution
+### 最低要求
+- **操作系统**：Windows 10+，macOS 10.15+ 或 Linux（Ubuntu 20.04+，Fedora 32+）
+- **.NET 运行时**：.NET 7.0 或更高版本
+- **磁盘空间**：100 MB 可用空间
+- **内存**：最低 2 GB
 
-## Installation Methods
+### 推荐要求
+- **内存**：4 GB 或更多
+- **处理器**：多核 CPU
+- **显示器**：1080p 或更高分辨率
 
-### 1. Using Installer (Windows)
+## 安装方法
 
-1. **Download the Installer**
-   - Visit the official website or GitHub releases page
-   - Download the latest `.exe` installer for Windows
+### 1. 使用安装程序（Windows）
 
-2. **Run the Installer**
-   - Double-click the downloaded `.exe` file
-   - Follow the on-screen instructions
-   - Choose installation directory (default recommended)
-   - Select whether to create desktop and start menu shortcuts
+1. **下载安装程序**
+   - 访问官方网站或 GitHub 发布页面
+   - 下载适用于 Windows 的最新 `.exe` 安装程序
 
-3. **Launch the Application**
-   - Click "Finish" to launch the application immediately
-   - Or use the desktop/start menu shortcuts later
+2. **运行安装程序**
+   - 双击下载的 `.exe` 文件
+   - 按照屏幕上的说明操作
+   - 选择安装目录（推荐使用默认目录）
+   - 选择是否创建桌面和开始菜单快捷方式
 
-### 2. Using Package Manager (macOS/Linux)
+3. **启动应用程序**
+   - 点击 "完成" 立即启动应用程序
+   - 或稍后使用桌面/开始菜单快捷方式
 
-#### macOS (Homebrew)
+### 2. 使用包管理器（macOS/Linux）
+
+#### macOS（Homebrew）
 ```bash
 brew tap ava-aigc-toolbox/tap
 brew install ava-aigc-toolbox
 ```
 
-#### Linux (Snap)
+#### Linux（Snap）
 ```bash
 sudo snap install ava-aigc-toolbox
 ```
 
-#### Linux (Debian/Ubuntu)
+#### Linux（Debian/Ubuntu）
 ```bash
 sudo dpkg -i ava-aigc-toolbox_*.deb
 sudo apt-get install -f
 ```
 
-### 3. Portable Version (All Platforms)
+### 3. 便携式版本（所有平台）
 
-1. **Download Portable Archive**
-   - Download the latest `.zip` (Windows) or `.tar.gz` (macOS/Linux) archive
+1. **下载便携式归档文件**
+   - 下载最新的 `.zip`（Windows）或 `.tar.gz`（macOS/Linux）归档文件
 
-2. **Extract the Archive**
-   - Extract the contents to a directory of your choice
-   - No installation required
+2. **提取归档文件**
+   - 将内容提取到您选择的目录
+   - 无需安装
 
-3. **Run the Application**
-   - Windows: Double-click `AIGenManager.exe`
-   - macOS/Linux: Run `./AIGenManager` from the terminal
+3. **运行应用程序**
+   - Windows：双击 `AIGenManager.exe`
+   - macOS/Linux：从终端运行 `./AIGenManager`
 
-## .NET Runtime Installation
+## .NET 运行时安装
 
-If you don't have the .NET 7.0 runtime installed, you'll need to install it first:
+如果您没有安装 .NET 7.0 运行时，需要先安装它：
 
 ### Windows
-- Download from https://dotnet.microsoft.com/download/dotnet/7.0
-- Run the installer and follow instructions
+- 从 https://dotnet.microsoft.com/download/dotnet/7.0 下载
+- 运行安装程序并按照说明操作
 
 ### macOS
 ```bash
@@ -89,64 +91,64 @@ sudo apt-get install -y dotnet-runtime-7.0
 sudo dnf install -y dotnet-runtime-7.0
 ```
 
-## Verifying Installation
+## 验证安装
 
-1. **Launch the Application**
-2. **Check Version**
-   - Go to `Help` > `About`
-   - Verify the version matches the one you downloaded
+1. **启动应用程序**
+2. **检查版本**
+   - 转到 `帮助` > `关于`
+   - 验证版本与您下载的版本匹配
 
-3. **Test Basic Functionality**
-   - The application should launch without errors
-   - The main window should display correctly
-   - You should be able to navigate through the interface
+3. **测试基本功能**
+   - 应用程序应无错误启动
+   - 主窗口应正确显示
+   - 您应该能够浏览界面
 
-## Troubleshooting
+## 故障排除
 
-### Application Won't Launch
-- **Check .NET Runtime**: Ensure you have the correct .NET runtime installed
-- **Check System Requirements**: Verify your system meets the minimum requirements
-- **Run as Administrator**: Try running the application with administrative privileges
-- **Check Logs**: Look for log files in `%APPDATA%/AIGenManager/` (Windows) or `~/.local/share/AIGenManager/` (macOS/Linux)
+### 应用程序无法启动
+- **检查 .NET 运行时**：确保您安装了正确的 .NET 运行时
+- **检查系统要求**：验证您的系统满足最低要求
+- **以管理员身份运行**：尝试以管理员权限运行应用程序
+- **检查日志**：在 `%APPDATA%/AIGenManager/`（Windows）或 `~/.local/share/AIGenManager/`（macOS/Linux）中查找日志文件
 
-### Installation Errors
-- **Windows Installer**: Ensure you have write permissions to the installation directory
-- **Package Manager**: Check your internet connection and try again
-- **Portable Version**: Ensure you've extracted all files correctly
+### 安装错误
+- **Windows 安装程序**：确保您对安装目录有写入权限
+- **包管理器**：检查您的互联网连接并重试
+- **便携式版本**：确保您已正确提取所有文件
 
-### Performance Issues
-- **Close Other Applications**: Free up system resources
-- **Increase RAM**: Consider upgrading your system RAM
-- **Lower Display Resolution**: Adjust your display settings
+### 性能问题
+- **关闭其他应用程序**：释放系统资源
+- **增加内存**：考虑升级系统内存
+- **降低显示分辨率**：调整您的显示设置
 
-## Uninstallation
+## 卸载
 
-### Windows (Installer)
-1. Go to `Control Panel` > `Programs` > `Programs and Features`
-2. Select "AVA AIGC Toolbox" from the list
-3. Click "Uninstall" and follow instructions
+### Windows（安装程序）
+1. 转到 `控制面板` > `程序` > `程序和功能`
+2. 从列表中选择 "AVA AIGC 工具箱"
+3. 点击 "卸载" 并按照说明操作
 
-### macOS (Homebrew)
+### macOS（Homebrew）
 ```bash
 brew uninstall ava-aigc-toolbox
 ```
 
-### Linux (Snap)
+### Linux（Snap）
 ```bash
 sudo snap remove ava-aigc-toolbox
 ```
 
-### Portable Version
-- Simply delete the extracted directory
-- Optionally delete the application data folder:
-  - Windows: `%APPDATA%/AIGenManager/`
-  - macOS: `~/.local/share/AIGenManager/`
-  - Linux: `~/.local/share/AIGenManager/`
+### 便携式版本
+- 只需删除提取的目录
+- 可选地删除应用程序数据文件夹：
+  - Windows：`%APPDATA%/AIGenManager/`
+  - macOS：`~/.local/share/AIGenManager/`
+  - Linux：`~/.local/share/AIGenManager/`
 
-## Next Steps
+## 下一步
 
-- [Getting Started Guide](./getting-started.md)
-- [Features Overview](./features.md)
-- [User Interface Guide](./ui-guide.md)
+- [快速开始指南](./getting-started.md)
+- [功能概述](./features.md)
+- [用户界面指南](./ui-guide.md)
 
-If you encounter any issues during installation, please check the [FAQ](./faq.md) or report them on the GitHub issues page.
+如果您在安装过程中遇到任何问题，请查看 [常见问题](./faq.md) 或在 GitHub 问题页面上报告。
