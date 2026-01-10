@@ -1,336 +1,338 @@
-# UI Overview
+# UI 概要
 
-The AVA AIGC Toolbox features an intuitive, well-organized user interface designed to help you manage your AI-generated images efficiently. This guide provides a detailed explanation of all the main interface components.
+> **日本語版が公式バージョンです**
 
-## Main Window Layout
+AVA AIGC ツールボックスは、AI 生成画像を効率的に管理するために設計された直感的で整理されたユーザーインターフェースを備えています。このガイドでは、すべての主要なインターフェースコンポーネントの詳細な説明を提供します。
 
-The application window is divided into four main sections:
+## メインウィンドウレイアウト
 
-1. **Menu Bar** - Top-level navigation and application commands
-2. **Sidebar** - Quick access to different views and filters
-3. **Toolbar** - Common actions and settings
-4. **Main Content Area** - Image display and details
-5. **Status Bar** - Application status and information
+アプリケーションウィンドウは、4つの主要セクションに分割されています：
+
+1. **メニューバー** - トップレベルのナビゲーションとアプリケーションコマンド
+2. **サイドバー** - さまざまなビューとフィルタへのクイックアクセス
+3. **ツールバー** - 一般的なアクションと設定
+4. **メインコンテンツエリア** - 画像の表示と詳細
+5. **ステータスバー** - アプリケーションのステータスと情報
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        Menu Bar                                 │
+│                        メニューバー                               │
 ├─────────────────────────────────────────────────────────────────┤
-│                        Toolbar                                  │
+│                        ツールバー                                │
 ├───────────────┬─────────────────────────────────────────────────┤
 │               │                                                 │
-│   Sidebar     │              Main Content Area                  │
+│   サイドバー   │              メインコンテンツエリア              │
 │               │                                                 │
 ├───────────────┴─────────────────────────────────────────────────┤
-│                        Status Bar                               │
+│                        ステータスバー                             │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 1. Menu Bar
+## 1. メニューバー
 
-The menu bar contains application-wide commands and settings, organized into the following menus:
+メニューバーには、アプリケーション全体のコマンドと設定が含まれており、以下のメニューに整理されています：
 
-### File Menu
-- **New Library**: Create a new empty image library
-- **Open Library**: Open an existing library database
-- **Import**: 
-  - **Import Images**: Import images from folders
-  - **Import Metadata**: Import metadata from files
-- **Export**: 
-  - **Export Selected Images**: Export selected images to a folder
-  - **Export All Images**: Export all images in the current view
-- **Settings**: Open application settings
-- **Exit**: Close the application
+### ファイルメニュー
+- **新しいライブラリ**: 新しい空の画像ライブラリを作成
+- **ライブラリを開く**: 既存のライブラリデータベースを開く
+- **インポート**: 
+  - **画像をインポート**: フォルダから画像をインポート
+  - **メタデータをインポート**: ファイルからメタデータをインポート
+- **エクスポート**: 
+  - **選択した画像をエクスポート**: 選択した画像をフォルダにエクスポート
+  - **すべての画像をエクスポート**: 現在のビューのすべての画像をエクスポート
+- **設定**: アプリケーション設定を開く
+- **終了**: アプリケーションを閉じる
 
-### Edit Menu
-- **Undo**: Undo the last action
-- **Redo**: Redo the last undone action
-- **Select All**: Select all images in the current view
-- **Deselect All**: Deselect all selected images
-- **Invert Selection**: Invert the current selection
-- **Find**: Open the search dialog
+### 編集メニュー
+- **元に戻す**: 最後のアクションを元に戻す
+- **やり直す**: 最後に元に戻したアクションをやり直す
+- **すべて選択**: 現在のビューのすべての画像を選択
+- **選択を解除**: すべての選択を解除
+- **選択を反転**: 現在の選択を反転
+- **検索**: 検索ダイアログを開く
 
-### View Menu
-- **Toggle Sidebar**: Show or hide the sidebar
-- **Toggle Details Panel**: Show or hide the details panel
-- **View Mode**: 
-  - **Grid View**: Display images in a grid
-  - **List View**: Display images in a list with details
-- **Sort By**: Change the sorting order of images
-- **Zoom**: Adjust the zoom level of the image grid
-- **Refresh**: Refresh the current view
+### 表示メニュー
+- **サイドバーを切り替え**: サイドバーを表示/非表示
+- **詳細パネルを切り替え**: 詳細パネルを表示/非表示
+- **ビューモード**: 
+  - **グリッドビュー**: 画像をグリッドで表示
+  - **リストビュー**: 詳細付きのリストで画像を表示
+- **並べ替え**: 画像の並べ替え順序を変更
+- **ズーム**: 画像グリッドのズームレベルを調整
+- **更新**: 現在のビューを更新
 
-### Tools Menu
-- **Batch Operations**: 
-  - **Batch Rename**: Rename multiple images at once
-  - **Batch Tag**: Add tags to multiple images
-  - **Batch Export**: Export multiple images with custom settings
-- **Metadata Editor**: Open advanced metadata editing tools
-- **Image Tools**: 
-  - **Crop**: Crop images
-  - **Resize**: Resize images
-  - **Convert Format**: Convert images to different formats
-- **AI Tools**: 
-  - **Auto-Tag**: Use AI to automatically tag images
-  - **Generate Thumbnails**: Regenerate thumbnails for all images
+### ツールメニュー
+- **一括操作**: 
+  - **一括名前変更**: 一度に複数の画像の名前を変更
+  - **一括タグ付け**: 複数の画像にタグを追加
+  - **一括エクスポート**: カスタム設定で複数の画像をエクスポート
+- **メタデータエディター**: 高度なメタデータ編集ツールを開く
+- **画像ツール**: 
+  - **トリミング**: 画像をトリミング
+  - **リサイズ**: 画像のサイズを変更
+  - **形式変換**: 画像を異なる形式に変換
+- **AIツール**: 
+  - **自動タグ付け**: AIを使用して画像に自動的にタグを付ける
+  - **サムネイルを生成**: すべての画像のサムネイルを再生成
 
-### Help Menu
-- **Documentation**: Open this documentation
-- **Keyboard Shortcuts**: Display keyboard shortcuts
-- **About**: Show application version and credits
-- **Check for Updates**: Check for new versions
-- **Report Issue**: Open GitHub issues page
+### ヘルプメニュー
+- **ドキュメント**: このドキュメントを開く
+- **キーボードショートカット**: キーボードショートカットを表示
+- **このソフトウェアについて**: アプリケーションのバージョンとクレジットを表示
+- **更新を確認**: 新しいバージョンを確認
+- **問題を報告**: GitHubの問題ページを開く
 
-## 2. Sidebar
+## 2. サイドバー
 
-The sidebar provides quick access to different views and organizational features:
+サイドバーは、さまざまなビューと組織化機能へのクイックアクセスを提供します：
 
-### Folders View
-- **Root Folders**: Displays the root folders you've added to your library
-- **Subfolders**: Expand folders to view their contents
-- **Add Folder**: Click the `+` button to add a new root folder
-- **Folder Options**: Right-click a folder to access options like:
-  - Refresh Folder
-  - Remove Folder
-  - Properties
+### フォルダビュー
+- **ルートフォルダ**: ライブラリに追加したルートフォルダを表示
+- **サブフォルダ**: フォルダを展開して内容を表示
+- **フォルダを追加**: `+` ボタンをクリックして新しいルートフォルダを追加
+- **フォルダオプション**: フォルダを右クリックして以下のオプションにアクセス：
+  - フォルダを更新
+  - フォルダを削除
+  - プロパティ
 
-### Albums View
-- **My Albums**: Displays all user-created albums
-- **Add Album**: Click the `+` button to create a new album
-- **Album Options**: Right-click an album to access options like:
-  - Rename Album
-  - Delete Album
-  - Add Images
-  - Properties
+### アルバムビュー
+- **マイアルバム**: ユーザーが作成したすべてのアルバムを表示
+- **アルバムを追加**: `+` ボタンをクリックして新しいアルバムを作成
+- **アルバムオプション**: アルバムを右クリックして以下のオプションにアクセス：
+  - アルバム名を変更
+  - アルバムを削除
+  - 画像を追加
+  - プロパティ
 
-### Tags View
-- **All Tags**: Displays all tags in your library, sorted by usage
-- **Tag Cloud**: Visual representation of tags by popularity
-- **Add Tag**: Click the `+` button to create a new tag
-- **Tag Options**: Right-click a tag to access options like:
-  - Rename Tag
-  - Delete Tag
-  - Merge Tags
-  - View Images with Tag
+### タグビュー
+- **すべてのタグ**: 使用頻度でソートされたライブラリ内のすべてのタグを表示
+- **タグクラウド**: 人気によるタグの視覚的表現
+- **タグを追加**: `+` ボタンをクリックして新しいタグを作成
+- **タグオプション**: タグを右クリックして以下のオプションにアクセス：
+  - タグ名を変更
+  - タグを削除
+  - タグをマージ
+  - タグ付き画像を表示
 
-### Smart Collections
-- **All Images**: All images in your library
-- **Favorites**: Images marked as favorites
-- **Recently Added**: Images added in the last 30 days
-- **Recently Viewed**: Images viewed in the last 7 days
-- **Untagged Images**: Images without any tags
-- **For Deletion**: Images marked for deletion
+### スマートコレクション
+- **すべての画像**: ライブラリ内のすべての画像
+- **お気に入り**: お気に入りとしてマークされた画像
+- **最近追加**: 過去30日間に追加された画像
+- **最近表示**: 過去7日間に表示された画像
+- **タグなし画像**: タグのない画像
+- **削除予定**: 削除予定としてマークされた画像
 
-## 3. Toolbar
+## 3. ツールバー
 
-The toolbar provides quick access to common actions and settings:
+ツールバーは、一般的なアクションと設定へのクイックアクセスを提供します：
 
-### Main Toolbar
-- **Import**: Import images from folders
-- **Refresh**: Refresh the current view
-- **View Mode**: Toggle between grid and list views
-- **Sort**: Change the sorting order (by name, date, size, etc.)
-- **Filter**: Open the filter panel
-- **Settings**: Open application settings
+### メインツールバー
+- **インポート**: フォルダから画像をインポート
+- **更新**: 現在のビューを更新
+- **ビューモード**: グリッドビューとリストビューを切り替え
+- **並べ替え**: 並べ替え順序を変更（名前、日付、サイズなど）
+- **フィルタ**: フィルタパネルを開く
+- **設定**: アプリケーション設定を開く
 
-### Image Operations Toolbar
-- **Favorite**: Mark/unmark selected images as favorites
-- **Delete**: Delete selected images
-- **Tag**: Add tags to selected images
-- **Edit**: Open image editor
-- **Export**: Export selected images
+### 画像操作ツールバー
+- **お気に入り**: 選択した画像をお気に入りとしてマーク/マーク解除
+- **削除**: 選択した画像を削除
+- **タグ**: 選択した画像にタグを追加
+- **編集**: 画像エディタを開く
+- **エクスポート**: 選択した画像をエクスポート
 
-## 4. Main Content Area
+## 4. メインコンテンツエリア
 
-The main content area displays images and their details, and consists of two parts:
+メインコンテンツエリアには画像とその詳細が表示され、2つの部分で構成されています：
 
-### Image Display
+### 画像表示
 
-#### Grid View
-- **Image Thumbnails**: Displays images in a grid of thumbnails
-- **Selection**: 
-  - Click to select a single image
-  - Ctrl/Cmd + Click to select multiple images
-  - Shift + Click to select a range of images
-  - Drag to select multiple images in a rectangular area
-- **Image Information**: Shows basic information on hover (filename, dimensions, size)
+#### グリッドビュー
+- **画像サムネイル**: 画像をサムネイルのグリッドで表示
+- **選択**: 
+  - クリックして単一の画像を選択
+  - Ctrl/Cmd + クリックで複数の画像を選択
+  - Shift + クリックで画像の範囲を選択
+  - ドラッグして長方形の領域内の複数の画像を選択
+- **画像情報**: ホバー時に基本情報を表示（ファイル名、寸法、サイズ）
 
-#### List View
-- **Columns**: Displays images with columns for:
-  - Filename
-  - Size
-  - Dimensions
-  - Date Added
-  - Date Modified
-  - Rating
-  - Favorite status
-- **Sorting**: Click column headers to sort by that column
-- **Resizable Columns**: Drag column dividers to adjust widths
+#### リストビュー
+- **列**: 以下の列を含むリストで画像を表示：
+  - ファイル名
+  - サイズ
+  - 寸法
+  - 追加日
+  - 更新日
+  - 評価
+  - お気に入りステータス
+- **並べ替え**: 列ヘッダーをクリックしてその列で並べ替え
+- **サイズ変更可能な列**: 列の区切りをドラッグして幅を調整
 
-#### Full-Screen View
-- **Double-Click**: Open an image in full-screen view
-- **Navigation**: 
-  - Arrow keys to navigate between images
-  - Escape to exit full-screen mode
-  - Right-click for additional options
-- **Zoom**: Use mouse wheel to zoom in/out
-- **Pan**: Click and drag to pan when zoomed in
+#### フルスクリーンビュー
+- **ダブルクリック**: 画像をフルスクリーンビューで開く
+- **ナビゲーション**: 
+  - 矢印キーで画像間を移動
+  - Escapeでフルスクリーンモードを終了
+  - 右クリックで追加オプション
+- **ズーム**: マウスホイールでズームイン/アウト
+- **パン**: ズームイン時にクリックしてドラッグしてパン
 
-### Details Panel
+### 詳細パネル
 
-The details panel appears on the right side of the window when an image is selected, displaying detailed information about the image:
+詳細パネルは、画像が選択されたときにウィンドウの右側に表示され、画像に関する詳細情報を表示します：
 
-#### Basic Information
-- **Filename**: Name of the image file
-- **Path**: Full file path
-- **Size**: File size in bytes/KB/MB
-- **Dimensions**: Width and height in pixels
-- **Resolution**: DPI information (if available)
-- **Format**: File format (JPEG, PNG, etc.)
-- **Date Added**: When the image was added to the library
-- **Date Modified**: Last modified date of the file
+#### 基本情報
+- **ファイル名**: 画像ファイルの名前
+- **パス**: 完全なファイルパス
+- **サイズ**: バイト/KB/MB単位のファイルサイズ
+- **寸法**: ピクセル単位の幅と高さ
+- **解像度**: DPI情報（利用可能な場合）
+- **形式**: ファイル形式（JPEG、PNGなど）
+- **追加日**: 画像がライブラリに追加された日時
+- **更新日**: ファイルが最後に変更された日時
 
-#### AI Metadata
-- **Prompt**: The prompt used to generate the image
-- **Negative Prompt**: The negative prompt used
-- **Steps**: Number of generation steps
-- **Sampler**: Name of the sampler used
-- **CFG Scale**: CFG scale value
-- **Seed**: Seed value used for generation
-- **Model**: Name of the model used
-- **Model Hash**: Hash of the model
-- **Width/Height**: Generated dimensions
+#### AIメタデータ
+- **プロンプト**: 画像生成に使用されたプロンプト
+- **ネガティブプロンプト**: 使用されたネガティブプロンプト
+- **ステップ数**: 生成ステップ数
+- **サンプラー**: 使用されたサンプラーの名前
+- **CFGスケール**: CFGスケール値
+- **シード**: 生成に使用されたシード値
+- **モデル**: 使用されたモデルの名前
+- **モデルハッシュ**: モデルのハッシュ
+- **幅/高さ**: 生成された寸法
 
-#### Image Properties
-- **Rating**: 1-5 star rating system
-- **Favorite**: Toggle favorite status
-- **For Deletion**: Mark for deletion
-- **NSFW**: Mark as Not Safe For Work
-- **Unavailable**: File is unavailable
+#### 画像プロパティ
+- **評価**: 1-5つ星の評価システム
+- **お気に入り**: お気に入りステータスを切り替え
+- **削除予定**: 削除予定としてマーク
+- **NSFW**: 職場で不適切としてマーク
+- **利用不可**: ファイルが利用不可
 
-#### Tags
-- **Tags List**: Display all tags associated with the image
-- **Add Tag**: Click `+` to add new tags
-- **Remove Tag**: Click `×` to remove existing tags
+#### タグ
+- **タグリスト**: 画像に関連付けられたすべてのタグを表示
+- **タグを追加**: `+` をクリックして新しいタグを追加
+- **タグを削除**: `×` をクリックして既存のタグを削除
 
-## 5. Status Bar
+## 5. ステータスバー
 
-The status bar appears at the bottom of the window and displays:
+ステータスバーはウィンドウの下部に表示され、以下を表示します：
 
-- **Total Images**: Number of images in the current view
-- **Selected Images**: Number of selected images
-- **Filter Status**: Current filter being applied
-- **Sort Status**: Current sorting criteria
-- **Application Status**: Current application activity (importing, exporting, etc.)
-- **Database Size**: Size of the current database
+- **総画像数**: 現在のビューの画像数
+- **選択された画像数**: 選択された画像の数
+- **フィルタステータス**: 現在適用されているフィルタ
+- **並べ替えステータス**: 現在の並べ替え基準
+- **アプリケーションステータス**: 現在のアプリケーションアクティビティ（インポート、エクスポートなど）
+- **データベースサイズ**: 現在のデータベースのサイズ
 
-## 6. Dialogs and Panels
+## 6. ダイアログとパネル
 
-### Import Dialog
-- **Folder Selection**: Choose folders to import images from
-- **Import Options**: 
-  - Include subfolders
-  - Overwrite existing images
-  - Extract metadata
-  - Generate thumbnails
-- **Progress Indicator**: Shows import progress
+### インポートダイアログ
+- **フォルダ選択**: 画像をインポートするフォルダを選択
+- **インポートオプション**: 
+  - サブフォルダを含める
+  - 既存の画像を上書き
+  - メタデータを抽出
+  - サムネイルを生成
+- **進捗インジケータ**: インポートの進捗を表示
 
-### Export Dialog
-- **Destination Folder**: Choose where to export images
-- **Export Options**: 
-  - Include metadata
-  - Resize images
-  - Convert to format
-  - Rename files
-- **Progress Indicator**: Shows export progress
+### エクスポートダイアログ
+- **出力先フォルダ**: 画像をエクスポートする場所を選択
+- **エクスポートオプション**: 
+  - メタデータを含める
+  - 画像のサイズを変更
+  - 形式に変換
+  - ファイル名を変更
+- **進捗インジケータ**: エクスポートの進捗を表示
 
-### Filter Panel
-- **Text Search**: Search by filename, tags, or metadata
-- **Date Range**: Filter by creation or modification date
-- **Dimensions**: Filter by image width and height
-- **Rating**: Filter by star rating
-- **Tags**: Filter by specific tags
-- **AI Metadata**: Filter by model, sampler, steps, etc.
+### フィルタパネル
+- **テキスト検索**: ファイル名、タグ、またはメタデータで検索
+- **日付範囲**: 作成日または変更日でフィルタ
+- **寸法**: 画像の幅と高さでフィルタ
+- **評価**: 星の評価でフィルタ
+- **タグ**: 特定のタグでフィルタ
+- **AIメタデータ**: モデル、サンプラー、ステップ数などでフィルタ
 
-### Settings Dialog
-- **General**: Application language, theme, and startup options
-- **Library**: Database location and backup settings
-- **Import**: Default import options
-- **Display**: Thumbnail size, grid spacing, and view options
-- **Metadata**: Metadata extraction and display options
-- **Keyboard Shortcuts**: Customize keyboard shortcuts
+### 設定ダイアログ
+- **一般**: アプリケーション言語、テーマ、スタートアップオプション
+- **ライブラリ**: データベースの場所とバックアップ設定
+- **インポート**: デフォルトのインポートオプション
+- **表示**: サムネイルサイズ、グリッド間隔、ビューオプション
+- **メタデータ**: メタデータ抽出と表示オプション
+- **キーボードショートカット**: キーボードショートカットをカスタマイズ
 
-## 7. Context Menus
+## 7. コンテキストメニュー
 
-Context menus appear when you right-click on various elements:
+コンテキストメニューは、さまざまな要素を右クリックしたときに表示されます：
 
-### Image Context Menu
-- **View**: Open in full-screen view
-- **Edit**: Edit image or metadata
-- **Copy**: Copy image to clipboard
-- **Move To**: Move image to another folder or album
-- **Copy To**: Copy image to another location
-- **Delete**: Delete image from library
-- **Add to Album**: Add to existing album
-- **Add Tags**: Add tags to image
-- **Remove Tags**: Remove tags from image
-- **Set Rating**: Set star rating
-- **Mark as Favorite**: Toggle favorite status
-- **Properties**: View detailed properties
+### 画像コンテキストメニュー
+- **表示**: フルスクリーンビューで開く
+- **編集**: 画像またはメタデータを編集
+- **コピー**: 画像をクリップボードにコピー
+- **移動先**: 画像を別のフォルダまたはアルバムに移動
+- **コピー先**: 画像を別の場所にコピー
+- **削除**: 画像をライブラリから削除
+- **アルバムに追加**: 既存のアルバムに追加
+- **タグを追加**: 画像にタグを追加
+- **タグを削除**: 画像からタグを削除
+- **評価を設定**: 星の評価を設定
+- **お気に入りとしてマーク**: お気に入りステータスを切り替え
+- **プロパティ**: 詳細なプロパティを表示
 
-### Folder Context Menu
-- **Open in Explorer/Finder**: Open folder in system file manager
-- **Refresh**: Refresh folder contents
-- **Remove Folder**: Remove from library (doesn't delete files)
-- **Properties**: View folder properties
+### フォルダコンテキストメニュー
+- **エクスプローラー/ファインダーで開く**: システムファイルマネージャでフォルダを開く
+- **更新**: フォルダの内容を更新
+- **フォルダを削除**: ライブラリから削除（ファイルは削除されません）
+- **プロパティ**: フォルダのプロパティを表示
 
-### Album Context Menu
-- **Open**: View album contents
-- **Rename**: Rename album
-- **Delete**: Delete album
-- **Add Images**: Add images to album
-- **Remove Images**: Remove selected images from album
-- **Properties**: View album properties
+### アルバムコンテキストメニュー
+- **開く**: アルバムの内容を表示
+- **名前を変更**: アルバムの名前を変更
+- **削除**: アルバムを削除
+- **画像を追加**: アルバムに画像を追加
+- **画像を削除**: アルバムから選択した画像を削除
+- **プロパティ**: アルバムのプロパティを表示
 
-### Tag Context Menu
-- **View Images**: View all images with this tag
-- **Rename**: Rename tag
-- **Delete**: Delete tag
-- **Merge With**: Merge with another tag
-- **Properties**: View tag properties
+### タグコンテキストメニュー
+- **画像を表示**: このタグが付いたすべての画像を表示
+- **名前を変更**: タグの名前を変更
+- **削除**: タグを削除
+- **マージ先**: 別のタグとマージ
+- **プロパティ**: タグのプロパティを表示
 
-## 8. Keyboard Shortcuts
+## 8. キーボードショートカット
 
-For quick access to common commands, refer to the [Keyboard Shortcuts](./keyboard-shortcuts.md) reference.
+一般的なコマンドへのクイックアクセスについては、[キーボードショートカット](./keyboard-shortcuts.md) リファレンスを参照してください。
 
-## Customization Options
+## カスタマイズオプション
 
-### Theme
-- **Light Mode**: Bright color scheme
-- **Dark Mode**: Dark color scheme
-- **System Theme**: Follow system theme settings
+### テーマ
+- **ライトモード**: 明るいカラースキーム
+- **ダークモード**: 暗いカラースキーム
+- **システムテーマ**: システムのテーマ設定に従う
 
-### View Options
-- **Thumbnail Size**: Adjust the size of thumbnails in grid view
-- **Grid Spacing**: Adjust spacing between images in grid view
-- **Show/Hide Columns**: Customize which columns appear in list view
-- **Details Panel Position**: Move details panel to left or right
+### 表示オプション
+- **サムネイルサイズ**: グリッドビューのサムネイルサイズを調整
+- **グリッド間隔**: グリッドビューの画像間の間隔を調整
+- **列の表示/非表示**: リストビューに表示する列をカスタマイズ
+- **詳細パネルの位置**: 詳細パネルを左または右に移動
 
-### Font Size
-- Adjust the font size for better readability
+### フォントサイズ
+- 読みやすさのためにフォントサイズを調整
 
-## Tips for Efficient Navigation
+## 効率的なナビゲーションのヒント
 
-1. **Keyboard Navigation**: Use keyboard shortcuts for faster operation
-2. **Customize Toolbar**: Add frequently used commands to the toolbar
-3. **Pin Frequent Items**: Pin frequently used folders, albums, and tags to the top of their respective lists
-4. **Use Smart Collections**: Take advantage of pre-built smart collections for quick access
-5. **Custom Filters**: Create and save custom filters for recurring searches
-6. **Keyboard Focus**: Press `Tab` to navigate between UI elements
-7. **Context Menus**: Right-click on elements for quick access to options
+1. **キーボードナビゲーション**: より速い操作のためにキーボードショートカットを使用
+2. **ツールバーのカスタマイズ**: 頻繁に使用するコマンドをツールバーに追加
+3. **頻繁な項目をピン留め**: 頻繁に使用するフォルダ、アルバム、タグをそれぞれのリストの先頭にピン留め
+4. **スマートコレクションを使用**: 事前に構築されたスマートコレクションを活用してクイックアクセス
+5. **カスタムフィルタ**: 繰り返し検索のためにカスタムフィルタを作成して保存
+6. **キーボードフォーカス**: `Tab` を押してUI要素間をナビゲート
+7. **コンテキストメニュー**: 要素を右クリックしてオプションにクイックアクセス
 
-## Conclusion
+## 結論
 
-The AVA AIGC Toolbox UI is designed to be intuitive and efficient, with all features easily accessible from the main interface. By familiarizing yourself with the different components, you'll be able to navigate and use the application more effectively, helping you manage your AI-generated images with ease.
+AVA AIGC ツールボックスのUIは直感的で効率的に設計されており、すべての機能がメインインターフェースから簡単にアクセスできます。さまざまなコンポーネントに慣れることで、アプリケーションをより効果的に操作してナビゲートできるようになり、AI生成画像を簡単に管理できるようになります。
 
-For more information on specific features, refer to the relevant sections in this documentation:
+特定の機能に関する詳細情報については、このドキュメントの関連セクションを参照してください：

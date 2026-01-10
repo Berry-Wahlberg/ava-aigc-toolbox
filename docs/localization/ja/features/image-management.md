@@ -1,271 +1,273 @@
-# Image Management
+# 画像管理
 
-This guide covers the core image management features of the AVA AIGC Toolbox, including how to import, view, and manage your AI-generated images.
+> **日本語版が公式バージョンです**
 
-## Importing Images
+このガイドでは、AVA AIGC ツールボックスのコア画像管理機能、AI生成画像のインポート、表示、管理方法について説明します。
 
-### 1. Import from Folders
+## 画像のインポート
 
-You can import images from your filesystem into the AVA AIGC Toolbox:
+### 1. フォルダからのインポート
 
-#### Steps to Import:
-1. Click the **Import** button in the toolbar, or go to `File > Import > Import Images`
-2. In the import dialog, click **Add Folder** and select one or more folders containing images
-3. Configure import options:
-   - **Include subfolders**: Import images from all subdirectories
-   - **Overwrite existing images**: Replace images with the same path in the library
-   - **Extract metadata**: Automatically extract AI metadata from images
-   - **Generate thumbnails**: Create or regenerate thumbnails for all imported images
-4. Click **Start Import** to begin the import process
-5. Monitor the progress in the import dialog
-6. Click **Finish** when import is complete
+ファイルシステムからAVA AIGC ツールボックスに画像をインポートできます：
 
-### 2. Drag and Drop
+#### インポート手順：
+1. ツールバーの**インポート**ボタンをクリックするか、`ファイル > インポート > 画像をインポート`に移動します
+2. インポートダイアログで**フォルダを追加**をクリックし、画像を含む1つ以上のフォルダを選択します
+3. インポートオプションを設定します：
+   - **サブフォルダを含める**：すべてのサブディレクトリから画像をインポートします
+   - **既存の画像を上書き**：ライブラリ内の同じパスの画像を置き換えます
+   - **メタデータを抽出**：画像からAIメタデータを自動的に抽出します
+   - **サムネイルを生成**：すべてのインポート画像のサムネイルを作成または再生成します
+4. **インポート開始**をクリックしてインポートプロセスを開始します
+5. インポートダイアログで進捗を監視します
+6. インポートが完了したら**完了**をクリックします
 
-You can also import images by dragging and dropping them into the application:
+### 2. ドラッグアンドドロップ
 
-#### Steps to Import via Drag and Drop:
-1. Open your system's file manager (Explorer/Finder)
-2. Select one or more images or folders
-3. Drag them into the AVA AIGC Toolbox window
-4. A confirmation dialog will appear with import options
-5. Configure the options as desired
-6. Click **Import** to start the import process
+アプリケーションにドラッグアンドドロップすることでも画像をインポートできます：
 
-### 3. Automatic Import
+#### ドラッグアンドドロップによるインポート手順：
+1. システムのファイルマネージャ（エクスプローラー/ファインダー）を開きます
+2. 1つ以上の画像またはフォルダを選択します
+3. それらをAVA AIGC ツールボックスウィンドウにドラッグします
+4. インポートオプションが含まれる確認ダイアログが表示されます
+5. 必要に応じてオプションを設定します
+6. **インポート**をクリックしてインポートプロセスを開始します
 
-The application can automatically watch folders for new images:
+### 3. 自動インポート
 
-#### Steps to Set Up Automatic Import:
-1. Go to `Settings > Library > Watched Folders`
-2. Click **Add Folder** and select a folder to watch
-3. Configure watch options:
-   - **Include subfolders**: Monitor all subdirectories
-   - **Check interval**: How often to check for new images (in minutes)
-   - **Auto-import new images**: Automatically import new images when detected
-4. Click **Save** to enable automatic importing
+アプリケーションは新しい画像用にフォルダを自動的に監視できます：
 
-## Viewing Images
+#### 自動インポートの設定手順：
+1. `設定 > ライブラリ > 監視フォルダ`に移動します
+2. **フォルダを追加**をクリックし、監視するフォルダを選択します
+3. 監視オプションを設定します：
+   - **サブフォルダを含める**：すべてのサブディレクトリを監視します
+   - **チェック間隔**：新しい画像をチェックする頻度（分単位）
+   - **新しい画像を自動インポート**：検出されたときに新しい画像を自動的にインポートします
+4. **保存**をクリックして自動インポートを有効にします
 
-### 1. Grid View
+## 画像の表示
 
-Grid view displays images in a grid of thumbnails, which is the default view when you open the application:
+### 1. グリッドビュー
 
-#### Navigating Grid View:
-- **Scroll**: Use your mouse wheel or scroll bar to navigate the grid
-- **Zoom**: 
-  - Use `Ctrl/Cmd +` to zoom in
-  - Use `Ctrl/Cmd -` to zoom out
-  - Use `Ctrl/Cmd 0` to reset zoom
-- **Adjust Thumbnail Size**: Use the slider in the toolbar or go to `View > Thumbnail Size`
+グリッドビューは画像をサムネイルのグリッドで表示し、アプリケーションを開いたときのデフォルトビューです：
 
-#### Selecting Images in Grid View:
-- **Single Image**: Click on an image to select it
-- **Multiple Images**: 
-  - Hold `Ctrl/Cmd` and click to select multiple individual images
-  - Hold `Shift` and click to select a range of images
-  - Click and drag to draw a selection rectangle around multiple images
-- **Select All**: Press `Ctrl/Cmd + A` to select all images in the current view
-- **Deselect All**: Press `Esc` or go to `Edit > Deselect All`
+#### グリッドビューの操作：
+- **スクロール**：マウスホイールまたはスクロールバーを使用してグリッドを移動します
+- **ズーム**：
+  - `Ctrl/Cmd +` を使用してズームイン
+  - `Ctrl/Cmd -` を使用してズームアウト
+  - `Ctrl/Cmd 0` を使用してズームをリセット
+- **サムネイルサイズの調整**：ツールバーのスライダーまたは `表示 > サムネイルサイズ` を使用します
 
-### 2. List View
+#### グリッドビューでの画像選択：
+- **単一画像**：画像をクリックして選択します
+- **複数画像**：
+  - `Ctrl/Cmd` を押しながらクリックして、複数の個々の画像を選択します
+  - `Shift` を押しながらクリックして、画像の範囲を選択します
+  - クリックしてドラッグして、長方形の領域内の複数の画像を選択します
+- **すべて選択**：`Ctrl/Cmd + A` を押して、現在のビューのすべての画像を選択します
+- **選択を解除**：`Esc` を押すか、`編集 > すべての選択を解除` に移動します
 
-List view displays images in a list with detailed information columns:
+### 2. リストビュー
 
-#### Switching to List View:
-- Click the **List View** button in the toolbar, or go to `View > List View`
+リストビューは、詳細な情報列を含むリストで画像を表示します：
 
-#### Customizing List View:
-- **Sort Columns**: Click on a column header to sort by that column
-- **Resize Columns**: Drag the dividers between column headers to adjust widths
-- **Show/Hide Columns**: Right-click on any column header to show or hide columns
-- **Reset Columns**: Go to `View > Reset List Columns` to restore default columns
+#### リストビューへの切り替え：
+- ツールバーの**リストビュー**ボタンをクリックするか、`表示 > リストビュー` に移動します
 
-#### Available Columns:
-- Filename
-- Path
-- Size
-- Dimensions
-- Date Added
-- Date Modified
-- Rating
-- Favorite status
-- Tags
-- Model
-- Sampler
-- Steps
-- CFG Scale
-- Seed
+#### リストビューのカスタマイズ：
+- **列の並べ替え**：列ヘッダーをクリックして、その列で並べ替えます
+- **列幅の調整**：列ヘッダー間の区切りをドラッグして幅を調整します
+- **列の表示/非表示**：任意の列ヘッダーを右クリックして、列を表示または非表示にします
+- **列のリセット**：`表示 > リスト列をリセット` に移動して、デフォルトの列に戻します
 
-### 3. Full-Screen View
+#### 使用可能な列：
+- ファイル名
+- パス
+- サイズ
+- 寸法
+- 追加日
+- 更新日
+- 評価
+- お気に入りステータス
+- タグ
+- モデル
+- サンプラー
+- ステップ数
+- CFGスケール
+- シード
 
-Full-screen view allows you to view images in full resolution:
+### 3. フルスクリーンビュー
 
-#### Opening Full-Screen View:
-- Double-click on an image in grid or list view
-- Select an image and press `Enter`
-- Right-click on an image and select **View**
+フルスクリーンビューでは、画像をフル解像度で表示できます：
 
-#### Navigating in Full-Screen View:
-- **Next Image**: Use `Right Arrow`, `Page Down`, or click the right arrow button
-- **Previous Image**: Use `Left Arrow`, `Page Up`, or click the left arrow button
-- **Zoom**: 
-  - Use mouse wheel to zoom in/out
-  - Click and drag to pan when zoomed in
-  - Press `F11` to toggle between fit-to-screen and actual size
-- **Exit Full-Screen**: Press `Esc` or click the close button
+#### フルスクリーンビューの開き方：
+- グリッドビューまたはリストビューで画像をダブルクリックします
+- 画像を選択して `Enter` を押します
+- 画像を右クリックして **表示** を選択します
 
-#### Full-Screen View Options:
-- **Show/Hide Controls**: Move your mouse to the bottom of the screen to show controls
-- **Image Information**: Click the `i` button to toggle image information display
-- **Slideshow**: Click the play button to start a slideshow
-- **Set as Favorite**: Click the heart button to mark/unmark as favorite
+#### フルスクリーンビューでの操作：
+- **次の画像**：`右矢印`、`Page Down` を使用するか、右矢印ボタンをクリックします
+- **前の画像**：`左矢印`、`Page Up` を使用するか、左矢印ボタンをクリックします
+- **ズーム**：
+  - マウスホイールを使用してズームイン/アウト
+  - ズームイン時にクリックしてドラッグしてパン
+  - `F11` を押して、画面に合わせる/実際のサイズを切り替え
+- **フルスクリーンを終了**：`Esc` を押すか、閉じるボタンをクリックします
 
-## Image Operations
+#### フルスクリーンビューのオプション：
+- **コントロールの表示/非表示**：マウスを画面の下部に移動してコントロールを表示します
+- **画像情報**：`i` ボタンをクリックして画像情報の表示を切り替えます
+- **スライドショー**：再生ボタンをクリックしてスライドショーを開始します
+- **お気に入りに設定**：ハートボタンをクリックしてお気に入りとしてマーク/マーク解除します
 
-### 1. Copying Images
+## 画像操作
 
-You can copy images to the clipboard or to other locations:
+### 1. 画像のコピー
 
-#### Copy to Clipboard:
-1. Select one or more images
-2. Right-click and select **Copy**
-3. Paste the images into another application or location using `Ctrl/Cmd + V`
+画像をクリップボードまたは他の場所にコピーできます：
 
-#### Copy to Folder:
-1. Select one or more images
-2. Right-click and select **Copy To**
-3. Choose the destination folder
-4. Click **Copy** to copy the images
+#### クリップボードにコピー：
+1. 1つ以上の画像を選択します
+2. 右クリックして **コピー** を選択します
+3. `Ctrl/Cmd + V` を使用して、画像を別のアプリケーションまたは場所に貼り付けます
 
-### 2. Moving Images
+#### フォルダにコピー：
+1. 1つ以上の画像を選択します
+2. 右クリックして **コピー先** を選択します
+3. 宛先フォルダを選択します
+4. **コピー** をクリックして画像をコピーします
 
-You can move images to different folders within your library:
+### 2. 画像の移動
 
-#### Steps to Move Images:
-1. Select one or more images
-2. Right-click and select **Move To**
-3. Choose the destination folder
-4. Click **Move** to move the images
+ライブラリ内の異なるフォルダに画像を移動できます：
 
-### 3. Renaming Images
+#### 画像の移動手順：
+1. 1つ以上の画像を選択します
+2. 右クリックして **移動先** を選択します
+3. 宛先フォルダを選択します
+4. **移動** をクリックして画像を移動します
 
-You can rename individual images or multiple images at once:
+### 3. 画像の名前変更
 
-#### Rename Single Image:
-1. Select an image
-2. Right-click and select **Rename**
-3. Type the new name
-4. Press `Enter` to confirm
+個々の画像または一度に複数の画像の名前を変更できます：
 
-#### Batch Rename Images:
-1. Select multiple images
-2. Go to `Tools > Batch Operations > Batch Rename`
-3. Configure rename options:
-   - **Prefix**: Add a prefix to filenames
-   - **Suffix**: Add a suffix to filenames
-   - **Numbering**: Add sequential numbers
-   - **Pattern**: Use a custom pattern for renaming
-4. Preview the new names
-5. Click **Rename** to apply the changes
+#### 単一画像の名前変更：
+1. 画像を選択します
+2. 右クリックして **名前を変更** を選択します
+3. 新しい名前を入力します
+4. `Enter` を押して確認します
 
-### 4. Deleting Images
+#### 一括名前変更：
+1. 複数の画像を選択します
+2. `ツール > 一括操作 > 一括名前変更` に移動します
+3. 名前変更オプションを設定します：
+   - **プレフィックス**：ファイル名にプレフィックスを追加
+   - **サフィックス**：ファイル名にサフィックスを追加
+   - **番号付け**：連続番号を追加
+   - **パターン**：名前変更のためのカスタムパターンを使用
+4. 新しい名前をプレビューします
+5. **名前を変更** をクリックして変更を適用します
 
-You can delete images from your library:
+### 4. 画像の削除
 
-#### Delete Single Image:
-1. Select an image
-2. Press `Delete` or right-click and select **Delete**
-3. Confirm the deletion in the dialog
+ライブラリから画像を削除できます：
 
-#### Delete Multiple Images:
-1. Select multiple images
-2. Press `Delete` or right-click and select **Delete**
-3. Confirm the deletion in the dialog
+#### 単一画像の削除：
+1. 画像を選択します
+2. `Delete` を押すか、右クリックして **削除** を選択します
+3. ダイアログで削除を確認します
 
-#### Mark for Deletion:
-You can mark images for deletion without immediately removing them:
-1. Select one or more images
-2. Right-click and select **Mark for Deletion**
-3. To view marked images, go to **Smart Collections > For Deletion**
-4. To delete marked images, select them and click **Delete**
-5. To unmark images, right-click and select **Unmark for Deletion**
+#### 複数画像の削除：
+1. 複数の画像を選択します
+2. `Delete` を押すか、右クリックして **削除** を選択します
+3. ダイアログで削除を確認します
 
-### 5. Image Properties
+#### 削除予定としてマーク：
+即座に削除せずに画像を削除予定としてマークできます：
+1. 1つ以上の画像を選択します
+2. 右クリックして **削除予定としてマーク** を選択します
+3. マークされた画像を表示するには、**スマートコレクション > 削除予定** に移動します
+4. マークされた画像を削除するには、それらを選択して **削除** をクリックします
+5. 画像のマークを解除するには、右クリックして **削除予定のマークを解除** を選択します
 
-You can view detailed properties of any image:
+### 5. 画像プロパティ
 
-#### Steps to View Image Properties:
-1. Select an image
-2. Right-click and select **Properties**
-3. The properties dialog will display:
-   - Basic information (filename, path, size, dimensions)
-   - File attributes (created date, modified date, accessed date)
-   - AI metadata (prompt, negative prompt, steps, etc.)
-   - Image statistics (color profile, bit depth)
-4. Click **Close** when finished
+任意の画像の詳細なプロパティを表示できます：
 
-## Thumbnail Management
+#### 画像プロパティの表示手順：
+1. 画像を選択します
+2. 右クリックして **プロパティ** を選択します
+3. プロパティダイアログに以下が表示されます：
+   - 基本情報（ファイル名、パス、サイズ、寸法）
+   - ファイル属性（作成日、更新日、アクセス日）
+   - AIメタデータ（プロンプト、ネガティブプロンプト、ステップ数など）
+   - 画像統計（カラープロファイル、ビット深度）
+4. 終了したら **閉じる** をクリックします
 
-### 1. Generate Thumbnails
+## サムネイル管理
 
-The application automatically generates thumbnails when importing images, but you can regenerate them if needed:
+### 1. サムネイルの生成
 
-#### Steps to Regenerate Thumbnails:
-1. Select one or more images, or go to a folder/album view
-2. Go to `Tools > AI Tools > Generate Thumbnails`
-3. Configure options:
-   - **Regenerate all thumbnails**: Replace existing thumbnails
-   - **Quality**: Set thumbnail quality (high, medium, low)
-   - **Size**: Set maximum thumbnail size
-4. Click **Generate** to start the process
-5. Monitor progress in the dialog
-6. Click **Finish** when done
+アプリケーションは画像をインポートするときに自動的にサムネイルを生成しますが、必要に応じて再生成できます：
 
-### 2. Thumbnail Settings
+#### サムネイルの再生成手順：
+1. 1つ以上の画像を選択するか、フォルダ/アルバムビューに移動します
+2. `ツール > AIツール > サムネイルを生成` に移動します
+3. オプションを設定します：
+   - **すべてのサムネイルを再生成**：既存のサムネイルを置き換えます
+   - **品質**：サムネイルの品質を設定（高、中、低）
+   - **サイズ**：最大サムネイルサイズを設定
+4. **生成** をクリックしてプロセスを開始します
+5. ダイアログで進捗を監視します
+6. 完了したら **完了** をクリックします
 
-You can configure thumbnail settings in the application settings:
+### 2. サムネイル設定
 
-#### Steps to Configure Thumbnail Settings:
-1. Go to `Settings > Display > Thumbnails`
-2. Configure settings:
-   - **Default thumbnail size**: Set the default size for grid view
-   - **Quality**: Set thumbnail quality (high, medium, low)
-   - **Cache size**: Set maximum cache size for thumbnails
-   - **Auto-regenerate**: Automatically regenerate thumbnails when needed
-3. Click **Save** to apply changes
+アプリケーション設定でサムネイル設定を構成できます：
 
-## Best Practices for Image Management
+#### サムネイル設定の構成手順：
+1. `設定 > 表示 > サムネイル` に移動します
+2. 設定を構成します：
+   - **デフォルトのサムネイルサイズ**：グリッドビューのデフォルトサイズを設定します
+   - **品質**：サムネイルの品質を設定（高、中、低）
+   - **キャッシュサイズ**：サムネイルの最大キャッシュサイズを設定します
+   - **自動再生成**：必要に応じてサムネイルを自動的に再生成します
+3. **保存** をクリックして変更を適用します
 
-1. **Organize First**: Plan your folder structure before importing large numbers of images
-2. **Use Descriptive Names**: Name folders and images in a way that makes them easy to find
-3. **Import with Metadata**: Always extract metadata when importing images
-4. **Regular Backups**: Backup your library database regularly (see [Backup & Restore](../advanced-features/backup-restore.md))
-5. **Optimize Performance**: For large libraries, consider increasing cache size and using lower thumbnail quality
-6. **Clean Up Regularly**: Remove unused images and organize your library periodically
-7. **Use Smart Collections**: Take advantage of smart collections for quick access to frequently used image groups
+## 画像管理のベストプラクティス
 
-## Troubleshooting Image Management
+1. **最初に整理**：大量の画像をインポートする前にフォルダ構造を計画します
+2. **説明的な名前を使用**：フォルダと画像に、見つけやすいような名前を付けます
+3. **メタデータ付きでインポート**：画像をインポートするときは常にメタデータを抽出します
+4. **定期的なバックアップ**：ライブラリデータベースを定期的にバックアップします（[バックアップと復元](../advanced-features/backup-restore.md) を参照）
+5. **パフォーマンスの最適化**：大規模なライブラリの場合は、キャッシュサイズを増やし、サムネイル品質を下げることを検討してください
+6. **定期的な整理**：不要な画像を削除し、ライブラリを定期的に整理します
+7. **スマートコレクションを使用**：頻繁に使用する画像グループへのクイックアクセスのために、スマートコレクションを活用します
 
-### Images Not Importing
-- **Check File Permissions**: Ensure you have read access to the source folders
-- **Supported Formats**: Verify that your images are in supported formats (JPEG, PNG, WebP, TIFF, BMP, GIF)
-- **File Size**: Check if images are too large to import
-- **Corrupted Files**: Some images may be corrupted - try importing one image at a time to identify problematic files
+## 画像管理のトラブルシューティング
 
-### Thumbnails Not Displaying
-- **Regenerate Thumbnails**: Try regenerating thumbnails for the affected images
-- **Check Cache**: Clear the thumbnail cache in `Settings > Display > Thumbnails > Clear Cache`
-- **File Access**: Ensure the application has access to the image files
+### 画像がインポートされない
+- **ファイルアクセス権限を確認**：ソースフォルダへの読み取りアクセス権があることを確認します
+- **サポートされている形式**：画像がサポートされている形式（JPEG、PNG、WebP、TIFF、BMP、GIF）であることを確認します
+- **ファイルサイズ**：画像がインポートできるサイズを超えていないか確認します
+- **破損したファイル**：一部の画像が破損している可能性があります - 問題のあるファイルを特定するために、一度に1つの画像をインポートしてみてください
 
-### Slow Image Loading
-- **Increase Cache Size**: Increase thumbnail cache size in settings
-- **Lower Thumbnail Quality**: Reduce thumbnail quality for better performance
-- **Close Other Applications**: Free up system resources by closing other applications
-- **Optimize Database**: Use the database optimization tool in `Settings > Library > Optimize Database`
+### サムネイルが表示されない
+- **サムネイルを再生成**：影響を受けた画像のサムネイルを再生成してみてください
+- **キャッシュを確認**：`設定 > 表示 > サムネイル > キャッシュをクリア` でサムネイルキャッシュをクリアします
+- **ファイルアクセス**：アプリケーションに画像ファイルへのアクセス権があることを確認します
 
-## Next Steps
+### 画像の読み込みが遅い
+- **キャッシュサイズを増やす**：設定でサムネイルキャッシュサイズを増やします
+- **サムネイル品質を下げる**：パフォーマンス向上のためにサムネイル品質を下げます
+- **他のアプリケーションを閉じる**：他のアプリケーションを閉じてシステムリソースを解放します
+- **データベースを最適化**：`設定 > ライブラリ > データベースの最適化` でデータベース最適化ツールを使用します
 
-- Learn about [Organization](./organization.md) to organize your images using folders, albums, and tags
-- Read about [Metadata Editing](./metadata-editing.md) to view and edit AI metadata
-- Explore [Search & Filtering](./search-filtering.md) to find images quickly
+## 次のステップ
+
+- フォルダ、アルバム、タグを使用して画像を整理するには、[整理](./organization.md) を参照してください
+- AIメタデータを表示および編集するには、[メタデータ編集](./metadata-editing.md) を参照してください
+- 画像をすばやく見つけるには、[検索とフィルタリング](./search-filtering.md) を参照してください
