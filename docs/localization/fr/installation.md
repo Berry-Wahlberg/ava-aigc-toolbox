@@ -1,40 +1,42 @@
-# Installation Guide
-\n> **La version anglaise prévaut**\n\n
-## Overview
-This guide will walk you through the process of installing the AVA AIGC Toolbox on your system. The application supports Windows, macOS, and Linux.
+# Guide d'Installation
 
-## System Requirements
+> **La version anglaise prévaut**
 
-### Minimum Requirements
-- **Operating System**: Windows 10+, macOS 10.15+, or Linux (Ubuntu 20.04+, Fedora 32+)
-- **.NET Runtime**: .NET 7.0 or later
-- **Disk Space**: 100 MB of free space
-- **RAM**: 2 GB minimum
+## Aperçu
+Ce guide vous guidera à travers le processus d'installation de l'AVA AIGC Toolbox sur votre système. L'application prend en charge Windows, macOS et Linux.
 
-### Recommended Requirements
-- **RAM**: 4 GB or more
-- **Processor**: Multi-core CPU
-- **Display**: 1080p or higher resolution
+## Configuration Système Requise
 
-## Installation Methods
+### Configuration Minimum
+- **Système d'Exploitation** : Windows 10+, macOS 10.15+ ou Linux (Ubuntu 20.04+, Fedora 32+)
+- **Runtime .NET** : .NET 7.0 ou ultérieur
+- **Espace Disque** : 100 Mo d'espace libre
+- **RAM** : 2 Go minimum
 
-### 1. Using Installer (Windows)
+### Configuration Recommandée
+- **RAM** : 4 Go ou plus
+- **Processeur** : CPU multi-cœur
+- **Écran** : Résolution 1080p ou supérieure
 
-1. **Download the Installer**
-   - Visit the official website or GitHub releases page
-   - Download the latest `.exe` installer for Windows
+## Méthodes d'Installation
 
-2. **Run the Installer**
-   - Double-click the downloaded `.exe` file
-   - Follow the on-screen instructions
-   - Choose installation directory (default recommended)
-   - Select whether to create desktop and start menu shortcuts
+### 1. Utiliser l'Installateur (Windows)
 
-3. **Launch the Application**
-   - Click "Finish" to launch the application immediately
-   - Or use the desktop/start menu shortcuts later
+1. **Télécharger l'Installateur**
+   - Visitez le site officiel ou la page des releases GitHub
+   - Téléchargez le dernier installateur `.exe` pour Windows
 
-### 2. Using Package Manager (macOS/Linux)
+2. **Exécuter l'Installateur**
+   - Double-cliquez sur le fichier `.exe` téléchargé
+   - Suivez les instructions à l'écran
+   - Choisissez le répertoire d'installation (le répertoire par défaut est recommandé)
+   - Sélectionnez si vous souhaitez créer des raccourcis sur le bureau et dans le menu Démarrer
+
+3. **Lancer l'Application**
+   - Cliquez sur "Terminer" pour lancer l'application immédiatement
+   - Ou utilisez les raccourcis bureau/menu Démarrer plus tard
+
+### 2. Utiliser un Gestionnaire de Paquets (macOS/Linux)
 
 #### macOS (Homebrew)
 ```bash
@@ -53,26 +55,26 @@ sudo dpkg -i ava-aigc-toolbox_*.deb
 sudo apt-get install -f
 ```
 
-### 3. Portable Version (All Platforms)
+### 3. Version Portable (Toutes les Plateformes)
 
-1. **Download Portable Archive**
-   - Download the latest `.zip` (Windows) or `.tar.gz` (macOS/Linux) archive
+1. **Télécharger l'Archive Portable**
+   - Téléchargez la dernière archive `.zip` (Windows) ou `.tar.gz` (macOS/Linux)
 
-2. **Extract the Archive**
-   - Extract the contents to a directory of your choice
-   - No installation required
+2. **Extraire l'Archive**
+   - Extraire le contenu dans un répertoire de votre choix
+   - Aucune installation requise
 
-3. **Run the Application**
-   - Windows: Double-click `AIGenManager.exe`
-   - macOS/Linux: Run `./AIGenManager` from the terminal
+3. **Exécuter l'Application**
+   - Windows : Double-cliquez sur `AIGenManager.exe`
+   - macOS/Linux : Exécutez `./AIGenManager` depuis le terminal
 
-## .NET Runtime Installation
+## Installation du Runtime .NET
 
-If you don't have the .NET 7.0 runtime installed, you'll need to install it first:
+Si vous n'avez pas le runtime .NET 7.0 installé, vous devrez d'abord l'installer :
 
 ### Windows
-- Download from https://dotnet.microsoft.com/download/dotnet/7.0
-- Run the installer and follow instructions
+- Téléchargez depuis https://dotnet.microsoft.com/download/dotnet/7.0
+- Exécutez l'installateur et suivez les instructions
 
 ### macOS
 ```bash
@@ -89,42 +91,42 @@ sudo apt-get install -y dotnet-runtime-7.0
 sudo dnf install -y dotnet-runtime-7.0
 ```
 
-## Verifying Installation
+## Vérification de l'Installation
 
-1. **Launch the Application**
-2. **Check Version**
-   - Go to `Help` > `About`
-   - Verify the version matches the one you downloaded
+1. **Lancer l'Application**
+2. **Vérifier la Version**
+   - Allez dans `Aide` > `À propos`
+   - Vérifiez que la version correspond à celle que vous avez téléchargée
 
-3. **Test Basic Functionality**
-   - The application should launch without errors
-   - The main window should display correctly
-   - You should be able to navigate through the interface
+3. **Tester les Fonctionnalités de Base**
+   - L'application doit se lancer sans erreurs
+   - La fenêtre principale doit s'afficher correctement
+   - Vous devez pouvoir naviguer dans l'interface
 
-## Troubleshooting
+## Dépannage
 
-### Application Won't Launch
-- **Check .NET Runtime**: Ensure you have the correct .NET runtime installed
-- **Check System Requirements**: Verify your system meets the minimum requirements
-- **Run as Administrator**: Try running the application with administrative privileges
-- **Check Logs**: Look for log files in `%APPDATA%/AIGenManager/` (Windows) or `~/.local/share/AIGenManager/` (macOS/Linux)
+### L'Application Ne Se Lance Pas
+- **Vérifier le Runtime .NET** : Assurez-vous d'avoir le runtime .NET correct installé
+- **Vérifier les Prérequis Système** : Vérifiez que votre système répond aux prérequis minimum
+- **Exécuter en tant qu'Administrateur** : Essayez de lancer l'application avec des privilèges d'administrateur
+- **Vérifier les Journaux** : Recherchez les fichiers journaux dans `%APPDATA%/AIGenManager/` (Windows) ou `~/.local/share/AIGenManager/` (macOS/Linux)
 
-### Installation Errors
-- **Windows Installer**: Ensure you have write permissions to the installation directory
-- **Package Manager**: Check your internet connection and try again
-- **Portable Version**: Ensure you've extracted all files correctly
+### Erreurs d'Installation
+- **Installateur Windows** : Assurez-vous d'avoir les permissions d'écriture sur le répertoire d'installation
+- **Gestionnaire de Paquets** : Vérifiez votre connexion internet et réessayez
+- **Version Portable** : Assurez-vous d'avoir extrait tous les fichiers correctement
 
-### Performance Issues
-- **Close Other Applications**: Free up system resources
-- **Increase RAM**: Consider upgrading your system RAM
-- **Lower Display Resolution**: Adjust your display settings
+### Problèmes de Performance
+- **Fermer les Autres Applications** : Libérez des ressources système
+- **Augmenter la RAM** : Envisagez de mettre à niveau la RAM de votre système
+- **Baisser la Résolution d'Écran** : Ajustez vos paramètres d'affichage
 
-## Uninstallation
+## Désinstallation
 
-### Windows (Installer)
-1. Go to `Control Panel` > `Programs` > `Programs and Features`
-2. Select "AVA AIGC Toolbox" from the list
-3. Click "Uninstall" and follow instructions
+### Windows (Installateur)
+1. Allez dans `Panneau de configuration` > `Programmes` > `Programmes et fonctionnalités`
+2. Sélectionnez "AVA AIGC Toolbox" dans la liste
+3. Cliquez sur "Désinstaller" et suivez les instructions
 
 ### macOS (Homebrew)
 ```bash
@@ -136,17 +138,17 @@ brew uninstall ava-aigc-toolbox
 sudo snap remove ava-aigc-toolbox
 ```
 
-### Portable Version
-- Simply delete the extracted directory
-- Optionally delete the application data folder:
-  - Windows: `%APPDATA%/AIGenManager/`
-  - macOS: `~/.local/share/AIGenManager/`
-  - Linux: `~/.local/share/AIGenManager/`
+### Version Portable
+- Supprimez simplement le répertoire extrait
+- Facultativement, supprimez le dossier de données de l'application :
+  - Windows : `%APPDATA%/AIGenManager/`
+  - macOS : `~/.local/share/AIGenManager/`
+  - Linux : `~/.local/share/AIGenManager/`
 
-## Next Steps
+## Étapes Suivantes
 
-- [Getting Started Guide](./getting-started.md)
-- [Features Overview](./features.md)
-- [User Interface Guide](./ui-guide.md)
+- [Guide des Premiers Pas](./getting-started.md)
+- [Aperçu des Fonctionnalités](./features.md)
+- [Guide de l'Interface Utilisateur](./ui-guide.md)
 
-If you encounter any issues during installation, please check the [FAQ](./faq.md) or report them on the GitHub issues page.
+Si vous rencontrez des problèmes lors de l'installation, veuillez consulter la [FAQ](./faq.md) ou signaler les problèmes sur la page GitHub des issues.

@@ -1,199 +1,201 @@
-# Keyboard Shortcuts
-\n> **La version anglaise prévaut**\n\n
-The AVA AIGC Toolbox provides a comprehensive set of keyboard shortcuts to help you work more efficiently. This guide lists all the available keyboard shortcuts and how to customize them.
+# Raccourcis Clavier
 
-## General Shortcuts
+> **La version anglaise prévaut**
 
-| Shortcut | Action |
+L'AVA AIGC Toolbox fournit un ensemble complet de raccourcis clavier pour vous aider à travailler plus efficacement. Ce guide répertorie tous les raccourcis clavier disponibles et comment les personnaliser.
+
+## Raccourcis Généraux
+
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + O` | Open library |
-| `Ctrl/Cmd + S` | Save current changes |
-| `Ctrl/Cmd + Q` | Exit the application |
-| `Ctrl/Cmd + ,` | Open settings |
-| `Ctrl/Cmd + H` | Show/hide sidebar |
-| `Ctrl/Cmd + L` | Focus search bar |
-| `Ctrl/Cmd + F` | Find in current view |
-| `F1` | Open documentation |
-| `F12` | Toggle debug mode |
+| `Ctrl/Cmd + O` | Ouvrir une bibliothèque |
+| `Ctrl/Cmd + S` | Enregistrer les modifications courantes |
+| `Ctrl/Cmd + Q` | Quitter l'application |
+| `Ctrl/Cmd + ,` | Ouvrir les paramètres |
+| `Ctrl/Cmd + H` | Afficher/masquer la barre latérale |
+| `Ctrl/Cmd + L` | Mettre le focus sur la barre de recherche |
+| `Ctrl/Cmd + F` | Rechercher dans la vue courante |
+| `F1` | Ouvrir la documentation |
+| `F12` | Activer/désactiver le mode debug |
 
-## Navigation Shortcuts
+## Raccourcis de Navigation
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + Left Arrow` | Navigate to previous view |
-| `Ctrl/Cmd + Right Arrow` | Navigate to next view |
-| `Ctrl/Cmd + Home` | Go to top of view |
-| `Ctrl/Cmd + End` | Go to bottom of view |
-| `Page Up` | Scroll up |
-| `Page Down` | Scroll down |
-| `Home` | Scroll to beginning |
-| `End` | Scroll to end |
+| `Ctrl/Cmd + Flèche gauche` | Naviguer vers la vue précédente |
+| `Ctrl/Cmd + Flèche droite` | Naviguer vers la vue suivante |
+| `Ctrl/Cmd + Home` | Aller au début de la vue |
+| `Ctrl/Cmd + End` | Aller à la fin de la vue |
+| `Page Up` | Faire défiler vers le haut |
+| `Page Down` | Faire défiler vers le bas |
+| `Home` | Faire défiler jusqu'au début |
+| `End` | Faire défiler jusqu'à la fin |
 
-## Image View Shortcuts
+## Raccourcis de Vue d'Image
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Enter` | Open selected image in full-screen view |
-| `Esc` | Close full-screen view |
-| `Right Arrow` | Next image in full-screen view |
-| `Left Arrow` | Previous image in full-screen view |
-| `Up Arrow` | Zoom in |
-| `Down Arrow` | Zoom out |
-| `0` | Reset zoom |
-| `F11` | Toggle between fit-to-screen and actual size |
-| `Space` | Toggle slideshow in full-screen view |
+| `Entrée` | Ouvrir l'image sélectionnée en vue plein écran |
+| `Échap` | Fermer la vue plein écran |
+| `Flèche droite` | Image suivante en vue plein écran |
+| `Flèche gauche` | Image précédente en vue plein écran |
+| `Flèche haut` | Zoomer avant |
+| `Flèche bas` | Zoomer arrière |
+| `0` | Réinitialiser le zoom |
+| `F11` | Basculer entre adaptation à l'écran et taille réelle |
+| `Espace` | Activer/désactiver le diaporama en vue plein écran |
 
-## Selection Shortcuts
+## Raccourcis de Sélection
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + A` | Select all images |
-| `Ctrl/Cmd + D` | Deselect all images |
-| `Ctrl/Cmd + I` | Invert selection |
-| `Ctrl/Cmd + Click` | Select/deselect individual images |
-| `Shift + Click` | Select range of images |
-| `Ctrl/Cmd + Shift + Click` | Select range of images from last selection |
+| `Ctrl/Cmd + A` | Sélectionner toutes les images |
+| `Ctrl/Cmd + D` | Désélectionner toutes les images |
+| `Ctrl/Cmd + I` | Inverser la sélection |
+| `Ctrl/Cmd + Clic` | Sélectionner/désélectionner des images individuelles |
+| `Shift + Clic` | Sélectionner une plage d'images |
+| `Ctrl/Cmd + Shift + Clic` | Sélectionner une plage d'images depuis la dernière sélection |
 
-## Image Management Shortcuts
+## Raccourcis de Gestion des Images
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + I` | Import images |
-| `Ctrl/Cmd + E` | Export selected images |
-| `Delete` | Delete selected images |
-| `Ctrl/Cmd + Z` | Undo last action |
-| `Ctrl/Cmd + Shift + Z` | Redo last action |
-| `Ctrl/Cmd + C` | Copy selected images |
-| `Ctrl/Cmd + V` | Paste images |
-| `Ctrl/Cmd + X` | Cut selected images |
+| `Ctrl/Cmd + I` | Importer des images |
+| `Ctrl/Cmd + E` | Exporter les images sélectionnées |
+| `Supprimer` | Supprimer les images sélectionnées |
+| `Ctrl/Cmd + Z` | Annuler la dernière action |
+| `Ctrl/Cmd + Shift + Z` | Rétablir la dernière action annulée |
+| `Ctrl/Cmd + C` | Copier les images sélectionnées |
+| `Ctrl/Cmd + V` | Coller des images |
+| `Ctrl/Cmd + X` | Couper les images sélectionnées |
 
-## Tagging Shortcuts
+## Raccourcis d'Étiquetage
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + T` | Add tags to selected images |
-| `Ctrl/Cmd + Shift + T` | Remove tags from selected images |
-| `Ctrl/Cmd + U` | Remove all tags from selected images |
+| `Ctrl/Cmd + T` | Ajouter des étiquettes aux images sélectionnées |
+| `Ctrl/Cmd + Shift + T` | Supprimer des étiquettes des images sélectionnées |
+| `Ctrl/Cmd + U` | Supprimer toutes les étiquettes des images sélectionnées |
 
-## Rating & Properties Shortcuts
+## Raccourcis de Note et Propriétés
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + 1` | Set rating to 1 star |
-| `Ctrl/Cmd + 2` | Set rating to 2 stars |
-| `Ctrl/Cmd + 3` | Set rating to 3 stars |
-| `Ctrl/Cmd + 4` | Set rating to 4 stars |
-| `Ctrl/Cmd + 5` | Set rating to 5 stars |
-| `Ctrl/Cmd + 0` | Clear rating |
-| `Ctrl/Cmd + F` | Toggle favorite status |
-| `Ctrl/Cmd + D` | Toggle for deletion status |
-| `Ctrl/Cmd + N` | Toggle NSFW status |
+| `Ctrl/Cmd + 1` | Définir la note sur 1 étoile |
+| `Ctrl/Cmd + 2` | Définir la note sur 2 étoiles |
+| `Ctrl/Cmd + 3` | Définir la note sur 3 étoiles |
+| `Ctrl/Cmd + 4` | Définir la note sur 4 étoiles |
+| `Ctrl/Cmd + 5` | Définir la note sur 5 étoiles |
+| `Ctrl/Cmd + 0` | Effacer la note |
+| `Ctrl/Cmd + F` | Activer/désactiver le statut de favori |
+| `Ctrl/Cmd + D` | Activer/désactiver le statut à supprimer |
+| `Ctrl/Cmd + N` | Activer/désactiver le statut NSFW |
 
-## View Mode Shortcuts
+## Raccourcis de Mode d'Affichage
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + G` | Toggle between grid and list view |
-| `Ctrl/Cmd + Shift + G` | Show/hide grid lines |
-| `Ctrl/Cmd + +` | Increase thumbnail size |
-| `Ctrl/Cmd + -` | Decrease thumbnail size |
-| `Ctrl/Cmd + 0` | Reset thumbnail size |
+| `Ctrl/Cmd + G` | Basculer entre la vue grille et la vue liste |
+| `Ctrl/Cmd + Shift + G` | Afficher/masquer les lignes de grille |
+| `Ctrl/Cmd + +` | Augmenter la taille des miniatures |
+| `Ctrl/Cmd + -` | Diminuer la taille des miniatures |
+| `Ctrl/Cmd + 0` | Réinitialiser la taille des miniatures |
 
-## Search Shortcuts
+## Raccourcis de Recherche
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + F` | Focus search bar |
-| `Enter` | Execute search |
-| `Esc` | Clear search |
-| `Ctrl/Cmd + Shift + F` | Open advanced search |
-| `Down Arrow` | Navigate down search results |
-| `Up Arrow` | Navigate up search results |
+| `Ctrl/Cmd + F` | Mettre le focus sur la barre de recherche |
+| `Entrée` | Exécuter la recherche |
+| `Échap` | Effacer la recherche |
+| `Ctrl/Cmd + Shift + F` | Ouvrir la recherche avancée |
+| `Flèche bas` | Naviguer vers le bas dans les résultats de recherche |
+| `Flèche haut` | Naviguer vers le haut dans les résultats de recherche |
 
-## Batch Operations Shortcuts
+## Raccourcis d'Opérations par Lot
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Ctrl/Cmd + Shift + R` | Batch resize images |
-| `Ctrl/Cmd + Shift + C` | Batch convert images |
-| `Ctrl/Cmd + Shift + N` | Batch rename images |
-| `Ctrl/Cmd + Shift + A` | Batch auto-tag images |
-| `Ctrl/Cmd + Shift + E` | Batch enhance metadata |
+| `Ctrl/Cmd + Shift + R` | Redimensionner des images par lot |
+| `Ctrl/Cmd + Shift + C` | Convertir des images par lot |
+| `Ctrl/Cmd + Shift + N` | Renommer des images par lot |
+| `Ctrl/Cmd + Shift + A` | Auto-étiqueter des images par lot |
+| `Ctrl/Cmd + Shift + E` | Améliorer les métadonnées par lot |
 
-## Menu Shortcuts
+## Raccourcis de Menu
 
-| Shortcut | Action |
+| Raccourci | Action |
 |----------|--------|
-| `Alt/F10` | Focus menu bar |
-| `Arrow Keys` | Navigate menu items |
-| `Enter` | Select menu item |
-| `Esc` | Close menu |
+| `Alt/F10` | Mettre le focus sur la barre de menu |
+| `Touches fléchées` | Naviguer entre les éléments de menu |
+| `Entrée` | Sélectionner un élément de menu |
+| `Échap` | Fermer le menu |
 
-## Customizing Keyboard Shortcuts
+## Personnalisation des Raccourcis Clavier
 
-You can customize keyboard shortcuts to suit your workflow:
+Vous pouvez personnaliser les raccourcis clavier pour adapter à votre flux de travail :
 
-#### Steps to Customize Keyboard Shortcuts:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. In the keyboard shortcuts settings, you can:
-   - **View** all available shortcuts
-   - **Search** for specific shortcuts
-   - **Edit** existing shortcuts
-   - **Reset** shortcuts to defaults
-3. To edit a shortcut:
-   - Click the shortcut field next to the action
-   - Press the new key combination
-   - Click **Save** to apply the new shortcut
-4. Click **Save** to save all changes
-5. Restart the application for changes to take effect
+#### Étapes pour personnaliser les raccourcis clavier :
+1. Allez dans `Fichier > Paramètres > Raccourcis clavier`
+2. Dans les paramètres des raccourcis clavier, vous pouvez :
+   - **Voir** tous les raccourcis disponibles
+   - **Rechercher** des raccourcis spécifiques
+   - **Éditer** des raccourcis existants
+   - **Réinitialiser** les raccourcis par défaut
+3. Pour éditer un raccourci :
+   - Cliquez sur le champ de raccourci à côté de l'action
+   - Appuyez sur la nouvelle combinaison de touches
+   - Cliquez sur **Enregistrer** pour appliquer le nouveau raccourci
+4. Cliquez sur **Enregistrer** pour sauvegarder toutes les modifications
+5. Redémarrez l'application pour que les modifications prennent effet
 
-## Importing/Exporting Shortcut Configurations
+## Importation/Exportation des Configurations de Raccourcis
 
-#### Steps to Export Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Export Configuration**
-3. Choose the destination folder for the export file
-4. Enter a name for the file
-5. Click **Save** to export the configuration
+#### Étapes pour exporter une configuration de raccourcis :
+1. Allez dans `Fichier > Paramètres > Raccourcis clavier`
+2. Cliquez sur **Exporter la configuration**
+3. Choisissez le dossier de destination pour l'exportation
+4. Entrez un nom pour le fichier
+5. Cliquez sur **Enregistrer** pour exporter la configuration
 
-#### Steps to Import Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Import Configuration**
-3. Select the configuration file from your filesystem
-4. Click **Open** to import the configuration
-5. Click **Save** to apply the imported shortcuts
-6. Restart the application for changes to take effect
+#### Étapes pour importer une configuration de raccourcis :
+1. Allez dans `Fichier > Paramètres > Raccourcis clavier`
+2. Cliquez sur **Importer la configuration**
+3. Sélectionnez le fichier de configuration dans votre système de fichiers
+4. Cliquez sur **Ouvrir** pour importer la configuration
+5. Cliquez sur **Enregistrer** pour appliquer les raccourcis importés
+6. Redémarrez l'application pour que les modifications prennent effet
 
-## Best Practices for Keyboard Shortcuts
+## Bonnes Pratiques pour les Raccourcis Clavier
 
-1. **Learn Common Shortcuts**: Start with the most commonly used shortcuts
-2. **Customize for Your Workflow**: Adjust shortcuts to match your preferred workflow
-3. **Avoid Conflicts**: Ensure new shortcuts don't conflict with existing ones
-4. **Document Your Shortcuts**: Keep a record of your custom shortcuts
-5. **Practice Regularly**: Use shortcuts frequently to build muscle memory
-6. **Reset if Needed**: If you get confused, reset shortcuts to defaults
+1. **Apprenez les raccourcis courants** : Commencez par les raccourcis les plus couramment utilisés
+2. **Personnalisez pour votre flux de travail** : Ajustez les raccourcis pour correspondre à votre flux de travail préféré
+3. **Évitez les conflits** : Assurez-vous que les nouveaux raccourcis ne entrent pas en conflit avec les existants
+4. **Documentez vos raccourcis** : Gardez un enregistrement de vos raccourcis personnalisés
+5. **Pratiquez régulièrement** : Utilisez fréquemment les raccourcis pour développer une mémoire musculaire
+6. **Réinitialisez si nécessaire** : Si vous êtes confus, réinitialisez les raccourcis par défaut
 
-## Troubleshooting Keyboard Shortcuts
+## Dépannage des Raccourcis Clavier
 
-### Shortcuts Not Working
-- **Check Focus**: Ensure the correct view has focus
-- **Check Conflicts**: Ensure no other application is intercepting the shortcut
-- **Check Settings**: Verify the shortcut is enabled in settings
-- **Restart Application**: Try restarting the application
-- **Reset Shortcuts**: Reset shortcuts to default if issues persist
+### Les raccourcis ne fonctionnent pas
+- **Vérifiez le focus** : Assurez-vous que la vue correcte a le focus
+- **Vérifiez les conflits** : Assurez-vous qu'aucune autre application n'intercepte le raccourci
+- **Vérifiez les paramètres** : Vérifiez que le raccourci est activé dans les paramètres
+- **Redémarrez l'application** : Essayez de redémarrer l'application
+- **Réinitialisez les raccourcis** : Réinitialisez les raccourcis par défaut si les problèmes persistent
 
-### Shortcut Conflicts
-- **Identify Conflicting Application**: Determine which application is conflicting
-- **Change Shortcut**: Modify the shortcut in settings
-- **Disable Conflict**: Disable the conflicting shortcut in the other application
+### Conflits de raccourcis
+- **Identifiez l'application en conflit** : Déterminez quelle application entre en conflit
+- **Modifiez le raccourci** : Modifiez le raccourci dans les paramètres
+- **Désactivez le conflit** : Désactivez le raccourci en conflit dans l'autre application
 
-### Custom Shortcuts Not Saving
-- **Check Permissions**: Ensure you have write access to the settings file
-- **Restart Application**: Restart the application to apply changes
-- **Reset and Reconfigure**: Reset shortcuts to default and reconfigure
+### Les raccourcis personnalisés ne sont pas enregistrés
+- **Vérifiez les permissions** : Assurez-vous d'avoir les permissions d'écriture sur le fichier de paramètres
+- **Redémarrez l'application** : Redémarrez l'application pour appliquer les modifications
+- **Réinitialisez et reconfigurez** : Réinitialisez les raccourcis par défaut et reconfigurez-les
 
-## Next Steps
+## Étapes Suivantes
 
-- Learn about [Settings](./settings.md) to configure other application preferences
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [Tips & Best Practices](./tips-best-practices.md) for more user tips
+- En savoir plus sur les [Paramètres](./settings.md) pour configurer d'autres préférences de l'application
+- Lire à propos du [Dépannage](./troubleshooting.md) pour obtenir de l'aide sur les problèmes courants
+- Explorer les [Conseils et Bonnes Pratiques](./tips-best-practices.md) pour plus de conseils utilisateur
