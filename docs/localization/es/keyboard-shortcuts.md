@@ -1,199 +1,200 @@
-# Keyboard Shortcuts
-\n> **La versión en inglés es la válida**\n\n
-The AVA AIGC Toolbox provides a comprehensive set of keyboard shortcuts to help you work more efficiently. This guide lists all the available keyboard shortcuts and how to customize them.
+# Atajos de Teclado
 
-## General Shortcuts
+> **La versión en inglés es la válida**
 
-| Shortcut | Action |
+AVA AIGC Toolbox proporciona un conjunto completo de atajos de teclado para ayudarte a trabajar más eficientemente. Esta guía enumera todos los atajos de teclado disponibles y cómo personalizarlos.
+
+## Atajos Generales
+
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + O` | Open library |
-| `Ctrl/Cmd + S` | Save current changes |
-| `Ctrl/Cmd + Q` | Exit the application |
-| `Ctrl/Cmd + ,` | Open settings |
-| `Ctrl/Cmd + H` | Show/hide sidebar |
-| `Ctrl/Cmd + L` | Focus search bar |
-| `Ctrl/Cmd + F` | Find in current view |
-| `F1` | Open documentation |
-| `F12` | Toggle debug mode |
+| `Ctrl/Cmd + O` | Abrir biblioteca |
+| `Ctrl/Cmd + S` | Guardar cambios actuales |
+| `Ctrl/Cmd + Q` | Salir de la aplicación |
+| `Ctrl/Cmd + ,` | Abrir configuraciones |
+| `Ctrl/Cmd + H` | Mostrar/ocultar barra lateral |
+| `Ctrl/Cmd + L` | Enfocar barra de búsqueda |
+| `Ctrl/Cmd + F` | Buscar en la vista actual |
+| `F1` | Abrir documentación |
+| `F12` | Alternar modo debug |
 
-## Navigation Shortcuts
+## Atajos de Navegación
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + Left Arrow` | Navigate to previous view |
-| `Ctrl/Cmd + Right Arrow` | Navigate to next view |
-| `Ctrl/Cmd + Home` | Go to top of view |
-| `Ctrl/Cmd + End` | Go to bottom of view |
-| `Page Up` | Scroll up |
-| `Page Down` | Scroll down |
-| `Home` | Scroll to beginning |
-| `End` | Scroll to end |
+| `Ctrl/Cmd + Flecha Izquierda` | Navegar a la vista anterior |
+| `Ctrl/Cmd + Flecha Derecha` | Navegar a la vista siguiente |
+| `Ctrl/Cmd + Home` | Ir al principio de la vista |
+| `Ctrl/Cmd + End` | Ir al final de la vista |
+| `Page Up` | Desplazarse hacia arriba |
+| `Page Down` | Desplazarse hacia abajo |
+| `Home` | Desplazarse al principio |
+| `End` | Desplazarse al final |
 
-## Image View Shortcuts
+## Atajos de Vista de Imágenes
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Enter` | Open selected image in full-screen view |
-| `Esc` | Close full-screen view |
-| `Right Arrow` | Next image in full-screen view |
-| `Left Arrow` | Previous image in full-screen view |
-| `Up Arrow` | Zoom in |
-| `Down Arrow` | Zoom out |
-| `0` | Reset zoom |
-| `F11` | Toggle between fit-to-screen and actual size |
-| `Space` | Toggle slideshow in full-screen view |
+| `Enter` | Abrir imagen seleccionada en vista de pantalla completa |
+| `Esc` | Cerrar vista de pantalla completa |
+| `Flecha Derecha` | Siguiente imagen en vista de pantalla completa |
+| `Flecha Izquierda` | Imagen anterior en vista de pantalla completa |
+| `Flecha Arriba` | Acercar |
+| `Flecha Abajo` | Alejar |
+| `0` | Restablecer zoom |
+| `F11` | Alternar entre adaptación a pantalla y tamaño real |
+| `Espacio` | Alternar diapositivas en vista de pantalla completa |
 
-## Selection Shortcuts
+## Atajos de Selección
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + A` | Select all images |
-| `Ctrl/Cmd + D` | Deselect all images |
-| `Ctrl/Cmd + I` | Invert selection |
-| `Ctrl/Cmd + Click` | Select/deselect individual images |
-| `Shift + Click` | Select range of images |
-| `Ctrl/Cmd + Shift + Click` | Select range of images from last selection |
+| `Ctrl/Cmd + A` | Seleccionar todas las imágenes |
+| `Ctrl/Cmd + D` | Deseleccionar todas las imágenes |
+| `Ctrl/Cmd + I` | Invertir selección |
+| `Ctrl/Cmd + Clic` | Seleccionar/deseleccionar imágenes individuales |
+| `Shift + Clic` | Seleccionar un rango de imágenes |
+| `Ctrl/Cmd + Shift + Clic` | Seleccionar un rango de imágenes desde la última selección |
 
-## Image Management Shortcuts
+## Atajos de Gestión de Imágenes
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + I` | Import images |
-| `Ctrl/Cmd + E` | Export selected images |
-| `Delete` | Delete selected images |
-| `Ctrl/Cmd + Z` | Undo last action |
-| `Ctrl/Cmd + Shift + Z` | Redo last action |
-| `Ctrl/Cmd + C` | Copy selected images |
-| `Ctrl/Cmd + V` | Paste images |
-| `Ctrl/Cmd + X` | Cut selected images |
+| `Ctrl/Cmd + I` | Importar imágenes |
+| `Ctrl/Cmd + E` | Exportar imágenes seleccionadas |
+| `Eliminar` | Eliminar imágenes seleccionadas |
+| `Ctrl/Cmd + Z` | Deshacer última acción |
+| `Ctrl/Cmd + Shift + Z` | Rehacer última acción deshecha |
+| `Ctrl/Cmd + C` | Copiar imágenes seleccionadas |
+| `Ctrl/Cmd + V` | Pegar imágenes |
+| `Ctrl/Cmd + X` | Cortar imágenes seleccionadas |
 
-## Tagging Shortcuts
+## Atajos de Etiquetado
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + T` | Add tags to selected images |
-| `Ctrl/Cmd + Shift + T` | Remove tags from selected images |
-| `Ctrl/Cmd + U` | Remove all tags from selected images |
+| `Ctrl/Cmd + T` | Agregar etiquetas a imágenes seleccionadas |
+| `Ctrl/Cmd + Shift + T` | Eliminar etiquetas de imágenes seleccionadas |
+| `Ctrl/Cmd + U` | Eliminar todas las etiquetas de imágenes seleccionadas |
 
-## Rating & Properties Shortcuts
+## Atajos de Calificación y Propiedades
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + 1` | Set rating to 1 star |
-| `Ctrl/Cmd + 2` | Set rating to 2 stars |
-| `Ctrl/Cmd + 3` | Set rating to 3 stars |
-| `Ctrl/Cmd + 4` | Set rating to 4 stars |
-| `Ctrl/Cmd + 5` | Set rating to 5 stars |
-| `Ctrl/Cmd + 0` | Clear rating |
-| `Ctrl/Cmd + F` | Toggle favorite status |
-| `Ctrl/Cmd + D` | Toggle for deletion status |
-| `Ctrl/Cmd + N` | Toggle NSFW status |
+| `Ctrl/Cmd + 1` | Establecer calificación en 1 estrella |
+| `Ctrl/Cmd + 2` | Establecer calificación en 2 estrellas |
+| `Ctrl/Cmd + 3` | Establecer calificación en 3 estrellas |
+| `Ctrl/Cmd + 4` | Establecer calificación en 4 estrellas |
+| `Ctrl/Cmd + 5` | Establecer calificación en 5 estrellas |
+| `Ctrl/Cmd + 0` | Borrar calificación |
+| `Ctrl/Cmd + F` | Alternar estado de favorito |
+| `Ctrl/Cmd + D` | Alternar estado para eliminación |
+| `Ctrl/Cmd + N` | Alternar estado NSFW |
 
-## View Mode Shortcuts
+## Atajos de Modo de Vista
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + G` | Toggle between grid and list view |
-| `Ctrl/Cmd + Shift + G` | Show/hide grid lines |
-| `Ctrl/Cmd + +` | Increase thumbnail size |
-| `Ctrl/Cmd + -` | Decrease thumbnail size |
-| `Ctrl/Cmd + 0` | Reset thumbnail size |
+| `Ctrl/Cmd + G` | Alternar entre vistas de cuadrícula y lista |
+| `Ctrl/Cmd + Shift + G` | Mostrar/ocultar líneas de cuadrícula |
+| `Ctrl/Cmd + +` | Aumentar tamaño de miniaturas |
+| `Ctrl/Cmd + -` | Disminuir tamaño de miniaturas |
+| `Ctrl/Cmd + 0` | Restablecer tamaño de miniaturas |
 
-## Search Shortcuts
+## Atajos de Búsqueda
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + F` | Focus search bar |
-| `Enter` | Execute search |
-| `Esc` | Clear search |
-| `Ctrl/Cmd + Shift + F` | Open advanced search |
-| `Down Arrow` | Navigate down search results |
-| `Up Arrow` | Navigate up search results |
+| `Ctrl/Cmd + F` | Enfocar barra de búsqueda |
+| `Enter` | Ejecutar búsqueda |
+| `Esc` | Limpiar búsqueda |
+| `Ctrl/Cmd + Shift + F` | Abrir búsqueda avanzada |
+| `Flecha Abajo` | Navegar hacia abajo en resultados de búsqueda |
+| `Flecha Arriba` | Navegar hacia arriba en resultados de búsqueda |
 
-## Batch Operations Shortcuts
+## Atajos de Operaciones por Lote
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Ctrl/Cmd + Shift + R` | Batch resize images |
-| `Ctrl/Cmd + Shift + C` | Batch convert images |
-| `Ctrl/Cmd + Shift + N` | Batch rename images |
-| `Ctrl/Cmd + Shift + A` | Batch auto-tag images |
-| `Ctrl/Cmd + Shift + E` | Batch enhance metadata |
+| `Ctrl/Cmd + Shift + R` | Redimensionar imágenes por lote |
+| `Ctrl/Cmd + Shift + C` | Convertir imágenes por lote |
+| `Ctrl/Cmd + Shift + N` | Renombrar imágenes por lote |
+| `Ctrl/Cmd + Shift + A` | Auto-etiquetar imágenes por lote |
+| `Ctrl/Cmd + Shift + E` | Mejorar metadatos por lote |
 
-## Menu Shortcuts
+## Atajos de Menú
 
-| Shortcut | Action |
+| Atajo | Acción |
 |----------|--------|
-| `Alt/F10` | Focus menu bar |
-| `Arrow Keys` | Navigate menu items |
-| `Enter` | Select menu item |
-| `Esc` | Close menu |
+| `Alt/F10` | Enfocar barra de menú |
+| `Touches de flecha` | Navegar entre elementos de menú |
+| `Enter` | Seleccionar elemento de menú |
+| `Esc` | Cerrar menú |
 
-## Customizing Keyboard Shortcuts
+## Personalizando Atajos de Teclado
 
-You can customize keyboard shortcuts to suit your workflow:
+Puedes personalizar los atajos de teclado para adaptarlos a tu flujo de trabajo:
 
-#### Steps to Customize Keyboard Shortcuts:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. In the keyboard shortcuts settings, you can:
-   - **View** all available shortcuts
-   - **Search** for specific shortcuts
-   - **Edit** existing shortcuts
-   - **Reset** shortcuts to defaults
-3. To edit a shortcut:
-   - Click the shortcut field next to the action
-   - Press the new key combination
-   - Click **Save** to apply the new shortcut
-4. Click **Save** to save all changes
-5. Restart the application for changes to take effect
+#### Pasos para personalizar los atajos de teclado:
+1. Ve a `Archivo > Configuración > Atajos de Teclado`
+2. En las configuraciones de atajos de teclado, puedes:
+   - **Ver** todos los atajos disponibles
+   - **Buscar** atajos específicos
+   - **Editar** atajos existentes
+   - **Restablecer** atajos a valores por defecto
+3. Para editar un atajo:
+   - Haz clic en el campo de atajo junto a la acción
+   - Presiona la nueva combinación de teclas
+   - Haz clic en **Guardar** para aplicar el nuevo atajo
+4. Haz clic en **Guardar** para guardar todos los cambios
+5. Reinicia la aplicación para que los cambios surtan efecto
 
-## Importing/Exporting Shortcut Configurations
+## Importando/Exportando Configuraciones de Atajos
 
-#### Steps to Export Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Export Configuration**
-3. Choose the destination folder for the export file
-4. Enter a name for the file
-5. Click **Save** to export the configuration
+#### Pasos para exportar configuración de atajos:
+1. Ve a `Archivo > Configuración > Atajos de Teclado`
+2. Haz clic en **Exportar Configuración**
+3. Elige la carpeta de destino para el archivo de exportación
+4. Ingresa un nombre para el archivo
+5. Haz clic en **Guardar** para exportar la configuración
 
-#### Steps to Import Shortcut Configuration:
-1. Go to `File > Settings > Keyboard Shortcuts`
-2. Click **Import Configuration**
-3. Select the configuration file from your filesystem
-4. Click **Open** to import the configuration
-5. Click **Save** to apply the imported shortcuts
-6. Restart the application for changes to take effect
+#### Pasos para importar configuración de atajos:
+1. Ve a `Archivo > Configuración > Atajos de Teclado`
+2. Haz clic en **Importar Configuración**
+3. Selecciona el archivo de configuración desde tu sistema de archivos
+4. Haz clic en **Abrir** para importar la configuración
+5. Reinicia la aplicación para que los cambios surtan efecto
 
-## Best Practices for Keyboard Shortcuts
+## Mejores Prácticas para Atajos de Teclado
 
-1. **Learn Common Shortcuts**: Start with the most commonly used shortcuts
-2. **Customize for Your Workflow**: Adjust shortcuts to match your preferred workflow
-3. **Avoid Conflicts**: Ensure new shortcuts don't conflict with existing ones
-4. **Document Your Shortcuts**: Keep a record of your custom shortcuts
-5. **Practice Regularly**: Use shortcuts frequently to build muscle memory
-6. **Reset if Needed**: If you get confused, reset shortcuts to defaults
+1. **Aprende los atajos comunes**: Comienza con los atajos más comúnmente usados
+2. **Personaliza para tu flujo de trabajo**: Ajusta los atajos para que coincidan con tu flujo de trabajo preferido
+3. **Evita conflictos**: Asegúrate de que los nuevos atajos no entren en conflicto con los existentes
+4. **Documenta tus atajos**: Mantén un registro de tus atajos personalizados
+5. **Practica regularmente**: Usa los atajos con frecuencia para desarrollar memoria muscular
+6. **Restablece si es necesario**: Si te confundes, restablece los atajos a los valores por defecto
 
-## Troubleshooting Keyboard Shortcuts
+## Solución de Problemas de Atajos de Teclado
 
-### Shortcuts Not Working
-- **Check Focus**: Ensure the correct view has focus
-- **Check Conflicts**: Ensure no other application is intercepting the shortcut
-- **Check Settings**: Verify the shortcut is enabled in settings
-- **Restart Application**: Try restarting the application
-- **Reset Shortcuts**: Reset shortcuts to default if issues persist
+### Los atajos no funcionan
+- **Verifica el enfoque**: Asegúrate de que la vista correcta tenga el enfoque
+- **Verifica conflictos**: Asegúrate de que ninguna otra aplicación esté interceptando el atajo
+- **Verifica las configuraciones**: Verifica que el atajo esté habilitado en las configuraciones
+- **Reinicia la aplicación**: Intenta reiniciar la aplicación
+- **Restablece los atajos**: Restablece los atajos a los valores por defecto si los problemas persisten
 
-### Shortcut Conflicts
-- **Identify Conflicting Application**: Determine which application is conflicting
-- **Change Shortcut**: Modify the shortcut in settings
-- **Disable Conflict**: Disable the conflicting shortcut in the other application
+### Conflictos de atajos
+- **Identifica la aplicación en conflicto**: Determina qué aplicación está en conflicto
+- **Cambia el atajo**: Modifica el atajo en las configuraciones
+- **Desactiva el conflicto**: Desactiva el atajo en conflicto en la otra aplicación
 
-### Custom Shortcuts Not Saving
-- **Check Permissions**: Ensure you have write access to the settings file
-- **Restart Application**: Restart the application to apply changes
-- **Reset and Reconfigure**: Reset shortcuts to default and reconfigure
+### Los atajos personalizados no se guardan
+- **Verifica los permisos**: Asegúrate de tener permisos de escritura en el archivo de configuraciones
+- **Reinicia la aplicación**: Reinicia la aplicación para aplicar los cambios
+- **Restablece y vuelve a configurar**: Restablece los atajos a los valores por defecto y vuelve a configurarlos
 
-## Next Steps
+## Pasos Siguientes
 
-- Learn about [Settings](./settings.md) to configure other application preferences
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [Tips & Best Practices](./tips-best-practices.md) for more user tips
+- Aprende sobre las [Configuraciones](./settings.md) para configurar otras preferencias de la aplicación
+- Lee sobre [Solución de Problemas](./troubleshooting.md) para obtener ayuda con problemas comunes
+- Explora [Consejos y Buenas Prácticas](./tips-best-practices.md) para más consejos de usuario
