@@ -1,8 +1,10 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using AIGenManager.Application.UseCases.Folders;
 using AIGenManager.Application.UseCases.Images;
@@ -47,14 +49,210 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty]
     private Folder? _selectedFolder;
 
+    public bool HasSelectedFolder => SelectedFolder != null;
+
+    partial void OnSelectedFolderChanged(Folder? value)
+    {
+        OnPropertyChanged(nameof(HasSelectedFolder));
+    }
+
     [ObservableProperty]
     private Image? _selectedImage;
+
+    public bool HasSelectedImage => SelectedImage != null;
+
+    partial void OnSelectedImageChanged(Image? value)
+    {
+        OnPropertyChanged(nameof(HasSelectedImage));
+    }
+
+    [ObservableProperty]
+    private Tag? _selectedTag;
+
+    [ObservableProperty]
+    private Album? _selectedAlbum;
 
     [ObservableProperty]
     private string _newTagName = string.Empty;
 
     [ObservableProperty]
     private string _newAlbumName = string.Empty;
+
+    [ObservableProperty]
+    private bool _isLoading = false;
+
+    [ObservableProperty]
+    private string _statusMessage = string.Empty;
+
+    [ObservableProperty]
+    private bool _hasData = false;
+
+    public bool IsNotLoading => !IsLoading;
+
+    partial void OnHasDataChanged(bool value)
+    {
+        OnPropertyChanged(nameof(ShowEmptyState));
+        OnPropertyChanged(nameof(ShowMainContent));
+    }
+
+    partial void OnIsLoadingChanged(bool value)
+    {
+        OnPropertyChanged(nameof(IsNotLoading));
+        OnPropertyChanged(nameof(ShowEmptyState));
+        OnPropertyChanged(nameof(ShowMainContent));
+    }
+
+    public bool ShowEmptyState => !IsLoading && !HasData;
+
+    public bool ShowMainContent => !IsLoading && HasData;
+
+    [RelayCommand]
+    private void RefreshData()
+    {
+        LoadData();
+    }
+
+    [RelayCommand]
+    private async Task LoadImagesForSelectedFolder()
+    {
+        if (SelectedFolder != null)
+        {
+            try
+            {
+                var request = new GetImagesByFolderIdRequest(SelectedFolder.Id);
+                var images = await _getImagesByFolderIdUseCase.ExecuteAsync(request);
+                Images = new ObservableCollection<Image>(images);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading images for folder: {ex.Message}");
+            }
+        }
+    }
+
+    [RelayCommand]
+    private async Task LoadSampleData()
+    {
+        try
+        {
+            IsLoading = true;
+            StatusMessage = "Generating sample data...";
+            
+            // Create sample folders
+            var sampleFolders = new List<Folder>
+            {
+                new Folder("C:/AI Images/Stable Diffusion") { IsRoot = true, ImageCount = 5 },
+                new Folder("C:/AI Images/Midjourney") { IsRoot = true, ImageCount = 3 },
+                new Folder("C:/AI Images/DALL-E") { IsRoot = true, ImageCount = 2 }
+            };
+            
+            foreach (var folder in sampleFolders)
+            {
+                Folders.Add(folder);
+            }
+            
+            // Create sample images
+            var sampleImages = new List<Image>
+            {
+                new Image("C:/AI Images/Stable Diffusion/image1.png", "portrait_001.png") 
+                { 
+                    Prompt = "Portrait of a woman in a garden, digital art, detailed", 
+                    Steps = 30, 
+                    Sampler = "Euler a", 
+                    CFGScale = 7.0m,
+                    Seed = 1234567890,
+                    Width = 512,
+                    Height = 768,
+                    Model = "SDXL 1.0",
+                    Rating = 4,
+                    Favorite = true
+                },
+                new Image("C:/AI Images/Stable Diffusion/image2.png", "landscape_002.png") 
+                { 
+                    Prompt = "Beautiful mountain landscape at sunset, photorealistic", 
+                    Steps = 40, 
+                    Sampler = "DPM++ 2M", 
+                    CFGScale = 8.0m,
+                    Seed = 9876543210,
+                    Width = 1024,
+                    Height = 768,
+                    Model = "SDXL 1.0",
+                    Rating = 5
+                },
+                new Image("C:/AI Images/Midjourney/image1.png", "fantasy_001.png") 
+                { 
+                    Prompt = "Dragon flying over a medieval castle, fantasy art", 
+                    Steps = 25, 
+                    Sampler = "Midjourney v6", 
+                    CFGScale = 7.5m,
+                    Seed = 4567890123,
+                    Width = 1024,
+                    Height = 1024,
+                    Model = "Midjourney v6",
+                    Rating = 5,
+                    Favorite = true
+                },
+                new Image("C:/AI Images/DALL-E/image1.png", "abstract_001.png") 
+                { 
+                    Prompt = "Abstract geometric patterns with vibrant colors", 
+                    Steps = 20, 
+                    Sampler = "DALL-E 3", 
+                    CFGScale = 6.5m,
+                    Seed = 7890123456,
+                    Width = 1024,
+                    Height = 1024,
+                    Model = "DALL-E 3",
+                    Rating = 3
+                }
+            };
+            
+            foreach (var image in sampleImages)
+            {
+                Images.Add(image);
+            }
+            
+            // Create sample tags
+            var sampleTags = new List<Tag>
+            {
+                new Tag { Name = "Portrait" },
+                new Tag { Name = "Landscape" },
+                new Tag { Name = "Fantasy" },
+                new Tag { Name = "Abstract" },
+                new Tag { Name = "Digital Art" },
+                new Tag { Name = "Photorealistic" }
+            };
+            
+            foreach (var tag in sampleTags)
+            {
+                Tags.Add(tag);
+            }
+            
+            // Create sample albums
+            var sampleAlbums = new List<Album>
+            {
+                new Album { Name = "Favorites" },
+                new Album { Name = "High Quality" },
+                new Album { Name = "Portrait Collection" }
+            };
+            
+            foreach (var album in sampleAlbums)
+            {
+                Albums.Add(album);
+            }
+            
+            HasData = true;
+            StatusMessage = "Sample data loaded successfully!";
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"Error loading sample data: {ex.Message}";
+            Debug.WriteLine($"Error loading sample data: {ex.Message}");
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
 
     public MainWindowViewModel(
         GetRootFoldersUseCase getRootFoldersUseCase,
@@ -98,16 +296,55 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
+            IsLoading = true;
+            StatusMessage = "Loading folders...";
             await LoadFolders();
+            
+            StatusMessage = "Loading images...";
             await LoadImages();
+            
+            StatusMessage = "Loading tags...";
             await LoadTags();
+            
+            StatusMessage = "Loading albums...";
             await LoadAlbums();
+            
+            HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();
+            StatusMessage = HasData ? "Data loaded successfully" : "No data found. Import images or load sample data to get started.";
         }
         catch (Exception ex)
         {
-            // Log the error (in a real app, you'd use a logging framework)
+            StatusMessage = $"Error loading data: {ex.Message}";
             Debug.WriteLine($"Error loading data: {ex.Message}");
         }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+
+    private async Task LoadFolders()
+    {
+        var folders = await _getRootFoldersUseCase.ExecuteAsync();
+        Folders = new ObservableCollection<Folder>(folders);
+    }
+
+    private async Task LoadImages()
+    {
+        var images = await _getAllImagesUseCase.ExecuteAsync();
+        Images = new ObservableCollection<Image>(images);
+    }
+
+    private async Task LoadTags()
+    {
+        var tags = await _getAllTagsUseCase.ExecuteAsync();
+        Tags = new ObservableCollection<Tag>(tags);
+    }
+
+    private async Task LoadAlbums()
+    {
+        var albums = await _getAllAlbumsUseCase.ExecuteAsync();
+        Albums = new ObservableCollection<Album>(albums);
     }
 
     private string GetDebuggerDisplay()
