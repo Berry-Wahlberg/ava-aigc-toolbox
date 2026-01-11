@@ -104,7 +104,7 @@ public partial class MainWindowViewModel : ViewModelBase
         catch (Exception ex)
         {
             // Log error (in a real app, you'd use a logging framework)
-            Debug.WriteLine($"Error loading data: {ex.Message}");
+            Debug.WriteLine($"Error loading data: {ex.Message}}");
         }
     }
 
