@@ -34,7 +34,7 @@ public partial class ImportWizardViewModel : ViewModelBase
     private ImportResultDTO? _importResult;
 
     [ObservableProperty]
-    private ObservableCollection<ImportErrorDTO> _importErrors = [];
+    private ObservableCollection<ImportErrorDTO> _errors = [];
 
     [ObservableProperty]
     private bool _showManualMetadataEntry = false;
@@ -52,21 +52,6 @@ public partial class ImportWizardViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private async Task SelectFolderAsync()
-    {
-        var dialog = new Microsoft.Win32.OpenFileDialog();
-        dialog.Filter = "Folders|*.none";
-        dialog.CheckFileExists = false;
-        dialog.CheckPathExists = true;
-        dialog.FileName = "Select Folder";
-
-        if (dialog.ShowDialog() == true)
-        {
-            SelectedFolderPath = System.IO.Path.GetDirectoryName(dialog.FileName);
-        }
-    }
-
-    [RelayCommand]
     private async Task StartImportAsync()
     {
         if (string.IsNullOrWhiteSpace(SelectedFolderPath))
@@ -77,7 +62,7 @@ public partial class ImportWizardViewModel : ViewModelBase
         IsImporting = true;
         CurrentProgress = 0;
         TotalProgress = 0;
-        ImportErrors.Clear();
+        _errors = [];
 
         try
         {
@@ -102,7 +87,17 @@ public partial class ImportWizardViewModel : ViewModelBase
 
             if (statistics.FailedToImport > 0)
             {
-                ImportErrors = new ObservableCollection<ImportErrorDTO>(ImportResult.Errors);
+                var errors = result.Errors.Select(e => new ImportErrorDTO
+                {
+                    FilePath = e.FilePath,
+                    ErrorType = e.ErrorType,
+                    ErrorMessage = e.ErrorMessage
+                }).ToList();
+                
+                foreach (var error in errors)
+                {
+                    _errors.Add(error);
+                }
             }
         }
         finally
@@ -112,7 +107,7 @@ public partial class ImportWizardViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void ShowManualMetadataEntry(ImportErrorDTO error)
+    private void ShowManualMetadataEntryForError(ImportErrorDTO error)
     {
         ManualMetadataFilePath = error.FilePath;
         ShowManualMetadataEntry = true;
@@ -129,7 +124,7 @@ public partial class ImportWizardViewModel : ViewModelBase
     private void ClearImportResult()
     {
         ImportResult = null;
-        ImportErrors.Clear();
+        _errors = [];
         CurrentProgress = 0;
         TotalProgress = 0;
         CurrentFile = string.Empty;
