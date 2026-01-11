@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Metadata Editing
 
 The AVA AIGC Toolbox automatically extracts and displays AI-generated metadata from your images, and allows you to view, edit, and manage this metadata. This guide covers how to work with metadata in the application.
@@ -276,3 +277,7 @@ You can create templates for frequently used metadata values:
 - Explore [Search & Filtering](./search-filtering.md) to find images using metadata
 - Read about [Export & Sharing](./export-sharing.md) to share images with metadata
 - Learn about [AI Integration](../advanced-features/ai-integration.md) for more AI-powered features
+=======
+# Metadata Editing\n\n*Placeholder for metadata editing*
+>>>>>>> origin/doc/dev
+

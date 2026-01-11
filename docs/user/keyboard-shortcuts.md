@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Keyboard Shortcuts
 
 The AVA AIGC Toolbox provides a comprehensive set of keyboard shortcuts to help you work more efficiently. This guide lists all the available keyboard shortcuts and how to customize them.
@@ -195,5 +196,9 @@ You can customize keyboard shortcuts to suit your workflow:
 ## Next Steps
 
 - Learn about [Settings](./settings.md) to configure other application preferences
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [Tips & Best Practices](./tips-best-practices.md) for more user tips
+- Read about [Troubleshooting](.\/support\/troubleshooting\.md) for help with common issues
+- Explore [Tips & Best Practices](.\/support\/tips-best-practices\.md) for more user tips
+=======
+# Keyboard Shortcuts\n\n*Placeholder for keyboard shortcuts*
+>>>>>>> origin/doc/dev
+

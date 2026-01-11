@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Image Management
 
 This guide covers the core image management features of the AVA AIGC Toolbox, including how to import, view, and manage your AI-generated images.
@@ -269,3 +270,7 @@ You can configure thumbnail settings in the application settings:
 - Learn about [Organization](./organization.md) to organize your images using folders, albums, and tags
 - Read about [Metadata Editing](./metadata-editing.md) to view and edit AI metadata
 - Explore [Search & Filtering](./search-filtering.md) to find images quickly
+=======
+# Image Management\n\n*Placeholder for image management features*
+>>>>>>> origin/doc/dev
+
