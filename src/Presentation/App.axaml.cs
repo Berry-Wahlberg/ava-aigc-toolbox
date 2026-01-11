@@ -35,7 +35,7 @@ public partial class App : Avalonia.Application
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
+            // Avoid duplicate validations from both Avalonia and CommunityToolkit. 
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
@@ -81,6 +81,7 @@ public partial class App : Avalonia.Application
         services.AddTransient<GetAllFoldersUseCase>();
         services.AddTransient<GetRootFoldersUseCase>();
         services.AddTransient<ScanFolderUseCase>();
+        services.AddTransient<GetImportStatisticsUseCase>();
         
         // Tag use cases
         services.AddTransient<Application.UseCases.Tags.GetAllTagsUseCase>();
@@ -98,6 +99,7 @@ public partial class App : Avalonia.Application
 
         // ViewModels
         services.AddTransient<MainWindowViewModel>();
+        services.AddTransient<ImportWizardViewModel>();
 
         ServiceProvider = services.BuildServiceProvider();
     }
