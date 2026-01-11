@@ -12,7 +12,7 @@ using AIGenManager.Core.Domain.Entities;
 
 namespace AIGenManager.Presentation.ViewModels;
 
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}},nq}}")]
 public partial class MainWindowViewModel : ViewModelBase
 {
     private readonly GetRootFoldersUseCase _getRootFoldersUseCase;
@@ -78,14 +78,12 @@ public partial class MainWindowViewModel : ViewModelBase
         _getAllImagesUseCase = getAllImagesUseCase;
         _getImagesByFolderIdUseCase = getImagesByFolderIdUseCase;
         
-        // Tag use cases
         _getAllTagsUseCase = getAllTagsUseCase;
         _getTagsByImageIdUseCase = getTagsByImageIdUseCase;
         _addTagUseCase = addTagUseCase;
         _addTagToImageUseCase = addTagToImageUseCase;
         _removeTagFromImageUseCase = removeTagFromImageUseCase;
         
-        // Album use cases
         _getAllAlbumsUseCase = getAllAlbumsUseCase;
         _addAlbumUseCase = addAlbumUseCase;
         _addImageToAlbumUseCase = addImageToAlbumUseCase;
@@ -105,8 +103,48 @@ public partial class MainWindowViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
-            // Log the error (in a real app, you'd use a logging framework)
+            // Log error (in a real app, you'd use a logging framework)
             Debug.WriteLine($"Error loading data: {ex.Message}");
+        }
+    }
+
+    private async Task LoadFolders()
+    {
+        var folders = await _getRootFoldersUseCase.ExecuteAsync();
+        Folders.Clear();
+        foreach (var folder in folders)
+        {
+            Folders.Add(folder);
+        }
+    }
+
+    private async Task LoadImages()
+    {
+        var images = await _getAllImagesUseCase.ExecuteAsync();
+        Images.Clear();
+        foreach (var image in images)
+        {
+            Images.Add(image);
+        }
+    }
+
+    private async Task LoadTags()
+    {
+        var tags = await _getAllTagsUseCase.ExecuteAsync();
+        Tags.Clear();
+        foreach (var tag in tags)
+        {
+            Tags.Add(tag);
+        }
+    }
+
+    private async Task LoadAlbums()
+    {
+        var albums = await _getAllAlbumsUseCase.ExecuteAsync();
+        Albums.Clear();
+        foreach (var album in albums)
+        {
+            Albums.Add(album);
         }
     }
 
