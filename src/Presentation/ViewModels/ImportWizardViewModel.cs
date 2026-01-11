@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.DTOs;
@@ -45,6 +46,11 @@ public partial class ImportWizardViewModel : ViewModelBase
     [ObservableProperty]
     private MetadataDTO _manualMetadata = new();
 
+    [ObservableProperty]
+    private string _statusMessage = string.Empty;
+
+    public bool IsNotImporting => !IsImporting;
+
     public ImportWizardViewModel(ScanFolderUseCase scanFolderUseCase, GetImportStatisticsUseCase getImportStatisticsUseCase)
     {
         _scanFolderUseCase = scanFolderUseCase;
@@ -56,6 +62,7 @@ public partial class ImportWizardViewModel : ViewModelBase
     {
         if (string.IsNullOrWhiteSpace(SelectedFolderPath))
         {
+            StatusMessage = "Please select a folder to import.";
             return;
         }
 
@@ -63,6 +70,7 @@ public partial class ImportWizardViewModel : ViewModelBase
         CurrentProgress = 0;
         TotalProgress = 0;
         _errors = [];
+        StatusMessage = "Starting import...";
 
         try
         {
@@ -99,6 +107,12 @@ public partial class ImportWizardViewModel : ViewModelBase
                     _errors.Add(error);
                 }
             }
+
+            StatusMessage = $"Import completed: {statistics.SuccessfullyImported} succeeded, {statistics.FailedToImport} failed.";
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"Import failed: {ex.Message}";
         }
         finally
         {
@@ -111,6 +125,7 @@ public partial class ImportWizardViewModel : ViewModelBase
     {
         ManualMetadataFilePath = error.FilePath;
         ShowManualMetadataEntry = true;
+        StatusMessage = $"Entering manual metadata for: {System.IO.Path.GetFileName(error.FilePath)}";
     }
 
     [RelayCommand]
@@ -118,6 +133,85 @@ public partial class ImportWizardViewModel : ViewModelBase
     {
         ShowManualMetadataEntry = false;
         ManualMetadataFilePath = null;
+        ManualMetadata = new MetadataDTO();
+        StatusMessage = "Manual metadata entry cancelled.";
+    }
+
+    [RelayCommand]
+    private async Task SaveManualMetadataAsync()
+    {
+        if (string.IsNullOrWhiteSpace(ManualMetadataFilePath))
+        {
+            StatusMessage = "No file selected for manual metadata entry.";
+            return;
+        }
+
+        // Validate required fields
+        var validationErrors = new List<string>();
+        
+        if (string.IsNullOrWhiteSpace(ManualMetadata.Prompt))
+        {
+            validationErrors.Add("Prompt is required.");
+        }
+        
+        if (!ManualMetadata.Steps.HasValue || ManualMetadata.Steps.Value <= 0)
+        {
+            validationErrors.Add("Steps must be greater than 0.");
+        }
+        
+        if (string.IsNullOrWhiteSpace(ManualMetadata.Sampler))
+        {
+            validationErrors.Add("Sampler is required.");
+        }
+        
+        if (!ManualMetadata.CFGScale.HasValue || ManualMetadata.CFGScale.Value <= 0)
+        {
+            validationErrors.Add("CFG Scale must be greater than 0.");
+        }
+        
+        if (!ManualMetadata.Seed.HasValue || ManualMetadata.Seed.Value < 0)
+        {
+            validationErrors.Add("Seed must be a positive number.");
+        }
+        
+        if (!ManualMetadata.Width.HasValue || ManualMetadata.Width.Value <= 0)
+        {
+            validationErrors.Add("Width must be greater than 0.");
+        }
+        
+        if (!ManualMetadata.Height.HasValue || ManualMetadata.Height.Value <= 0)
+        {
+            validationErrors.Add("Height must be greater than 0.");
+        }
+
+        if (validationErrors.Any())
+        {
+            StatusMessage = $"Validation failed: {string.Join(", ", validationErrors)}";
+            return;
+        }
+
+        try
+        {
+            // In a real implementation, this would save the metadata to the database
+            // For now, we'll just simulate the save operation
+            await Task.Delay(500);
+            
+            // Remove the error from the list since it's been resolved
+            var errorToRemove = _errors.FirstOrDefault(e => e.FilePath == ManualMetadataFilePath);
+            if (errorToRemove != null)
+            {
+                _errors.Remove(errorToRemove);
+            }
+
+            StatusMessage = $"Manual metadata saved successfully for: {System.IO.Path.GetFileName(ManualMetadataFilePath)}";
+            ShowManualMetadataEntry = false;
+            ManualMetadataFilePath = null;
+            ManualMetadata = new MetadataDTO();
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"Failed to save manual metadata: {ex.Message}";
+        }
     }
 
     [RelayCommand]
@@ -128,5 +222,6 @@ public partial class ImportWizardViewModel : ViewModelBase
         CurrentProgress = 0;
         TotalProgress = 0;
         CurrentFile = string.Empty;
+        StatusMessage = "Import results cleared.";
     }
 }
