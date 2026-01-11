@@ -1,9 +1,10 @@
 using AIGenManager.Core.Application.Ports;
+using AIGenManager.Core.Domain.Services;
 using AIGenManager.Infrastructure.Data;
 using AIGenManager.Infrastructure.Repositories;
+using AIGenManager.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
-using System;
 
 namespace AIGenManager.Infrastructure
 {
@@ -30,6 +31,11 @@ namespace AIGenManager.Infrastructure
             services.AddSingleton<ITagRepository, SQLiteTagRepository>();
             services.AddSingleton<IImageTagRepository, SQLiteImageTagRepository>();
             services.AddSingleton<IAlbumRepository, SQLiteAlbumRepository>();
+
+            // Services
+            services.AddSingleton<IMetadataExtractionService, MetadataExtractionService>();
+            services.AddSingleton<IImageImportService, ImageImportService>();
+            services.AddSingleton<FileSystemService>();
 
             return services;
         }
