@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <AssemblyName>Berry-AIGC-Toolbox</AssemblyName>
+    <RootNamespace>BerryAIGCToolbox</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

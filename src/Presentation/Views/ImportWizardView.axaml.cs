@@ -1,17 +1,15 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using AIGenManager.Presentation.ViewModels;
+using BerryAIGCToolbox.ViewModels;
+using AIGenManager.Application.UseCases.Folders;
 
-namespace AIGenManager.Presentation.Views;
+namespace BerryAIGCToolbox.Views;
 
 public partial class ImportWizardView : UserControl
 {
     public ImportWizardView()
     {
         InitializeComponent();
-        DataContext = new ImportWizardViewModel(
-            App.ServiceProvider.GetRequiredService<ScanFolderUseCase>(),
-            App.ServiceProvider.GetRequiredService<GetImportStatisticsUseCase>()
-        );
+        // ImportWizardViewModel will be set by the parent view or DI container
     }
 }

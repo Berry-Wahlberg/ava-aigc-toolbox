@@ -1,16 +1,19 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using AIGenManager.Application.UseCases.Folders;
 using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.DTOs;
 
-namespace AIGenManager.Presentation.ViewModels;
+namespace BerryAIGCToolbox.ViewModels;
 
 public partial class ImportWizardViewModel : ViewModelBase
 {
-    private readonly ScanFolderUseCase _scanFolderUseCase;
+    private readonly AIGenManager.Application.UseCases.Images.ScanFolderUseCase _scanFolderUseCase;
     private readonly GetImportStatisticsUseCase _getImportStatisticsUseCase;
 
     [ObservableProperty]
@@ -51,10 +54,18 @@ public partial class ImportWizardViewModel : ViewModelBase
 
     public bool IsNotImporting => !IsImporting;
 
-    public ImportWizardViewModel(ScanFolderUseCase scanFolderUseCase, GetImportStatisticsUseCase getImportStatisticsUseCase)
+    public ImportWizardViewModel(AIGenManager.Application.UseCases.Images.ScanFolderUseCase scanFolderUseCase, GetImportStatisticsUseCase getImportStatisticsUseCase)
     {
         _scanFolderUseCase = scanFolderUseCase;
         _getImportStatisticsUseCase = getImportStatisticsUseCase;
+    }
+
+    [RelayCommand]
+    private void SelectFolder()
+    {
+        // For now, we'll just use a hardcoded path for testing
+        SelectedFolderPath = "C:\\AI Images";
+        StatusMessage = "Folder selected: " + SelectedFolderPath;
     }
 
     [RelayCommand]
@@ -69,7 +80,7 @@ public partial class ImportWizardViewModel : ViewModelBase
         IsImporting = true;
         CurrentProgress = 0;
         TotalProgress = 0;
-        _errors = [];
+        Errors = new ObservableCollection<ImportErrorDTO>();
         StatusMessage = "Starting import...";
 
         try
@@ -104,7 +115,7 @@ public partial class ImportWizardViewModel : ViewModelBase
                 
                 foreach (var error in errors)
                 {
-                    _errors.Add(error);
+                    Errors.Add(error);
                 }
             }
 
@@ -197,10 +208,10 @@ public partial class ImportWizardViewModel : ViewModelBase
             await Task.Delay(500);
             
             // Remove the error from the list since it's been resolved
-            var errorToRemove = _errors.FirstOrDefault(e => e.FilePath == ManualMetadataFilePath);
+            var errorToRemove = Errors.FirstOrDefault(e => e.FilePath == ManualMetadataFilePath);
             if (errorToRemove != null)
             {
-                _errors.Remove(errorToRemove);
+                Errors.Remove(errorToRemove);
             }
 
             StatusMessage = $"Manual metadata saved successfully for: {System.IO.Path.GetFileName(ManualMetadataFilePath)}";
@@ -218,7 +229,7 @@ public partial class ImportWizardViewModel : ViewModelBase
     private void ClearImportResult()
     {
         ImportResult = null;
-        _errors = [];
+        Errors = new ObservableCollection<ImportErrorDTO>();
         CurrentProgress = 0;
         TotalProgress = 0;
         CurrentFile = string.Empty;

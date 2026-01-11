@@ -1,7 +1,8 @@
 using AIGenManager.Core.Domain.Services;
-using MetadataExtractor;
-using MetadataExtractor.Formats;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Text;
 
 namespace AIGenManager.Infrastructure.Services;
 
@@ -9,7 +10,7 @@ public class MetadataExtractionService : IMetadataExtractionService
 {
     private readonly string[] _supportedExtensions = new[] { ".png", ".jpg", ".jpeg", ".webp" };
 
-    public async Task<MetadataExtractionResult> ExtractMetadataAsync(string imagePath)
+    public Task<MetadataExtractionResult> ExtractMetadataAsync(string imagePath)
     {
         var result = new MetadataExtractionResult();
 
@@ -20,7 +21,7 @@ public class MetadataExtractionService : IMetadataExtractionService
                 result.Success = false;
                 result.ErrorMessage = "File not found";
                 result.RequiresManualEntry = true;
-                return result;
+                return Task.FromResult(result);
             }
 
             var extension = Path.GetExtension(imagePath).ToLowerInvariant();
@@ -29,31 +30,31 @@ public class MetadataExtractionService : IMetadataExtractionService
                 result.Success = false;
                 result.ErrorMessage = $"Unsupported file format: {extension}";
                 result.RequiresManualEntry = true;
-                return result;
+                return Task.FromResult(result);
             }
 
-            using var imageStream = File.OpenRead(imagePath);
-            var metadata = ImageMetadataReader.ReadMetadata(imageStream);
+            using var image = Image.FromFile(imagePath);
+            var propertyItems = image.PropertyItems;
 
-            if (metadata == null)
+            if (propertyItems == null || propertyItems.Length == 0)
             {
                 result.Success = false;
                 result.ErrorMessage = "No metadata found in image";
                 result.RequiresManualEntry = true;
-                return result;
+                return Task.FromResult(result);
             }
 
             result.Success = true;
-            result.Prompt = GetMetadataValue(metadata, "Prompt", "UserComment");
-            result.NegativePrompt = GetMetadataValue(metadata, "Negative Prompt", "NegativePrompt");
-            result.Steps = ParseIntMetadata(metadata, "Steps", "SampleSteps");
-            result.Sampler = GetMetadataValue(metadata, "Sampler", "Sampler");
-            result.CFGScale = ParseDecimalMetadata(metadata, "CFG Scale", "CFGScale");
-            result.Seed = ParseLongMetadata(metadata, "Seed");
-            result.Width = ParseIntMetadata(metadata, "Width", "ImageWidth");
-            result.Height = ParseIntMetadata(metadata, "Height", "ImageHeight");
-            result.ModelName = GetMetadataValue(metadata, "Model", "ModelName");
-            result.ModelHash = GetMetadataValue(metadata, "Model Hash", "ModelHash");
+            result.Prompt = GetPropertyText(propertyItems, 0x010F);
+            result.NegativePrompt = GetPropertyText(propertyItems, 0x9286);
+            result.Steps = ParseIntMetadata(GetPropertyText(propertyItems, 0x927C));
+            result.Sampler = GetPropertyText(propertyItems, 0x927D);
+            result.CFGScale = ParseDecimalMetadata(GetPropertyText(propertyItems, 0x927E));
+            result.Seed = ParseLongMetadata(GetPropertyText(propertyItems, 0x927B));
+            result.Width = image.Width;
+            result.Height = image.Height;
+            result.ModelName = GetPropertyText(propertyItems, 0x0110);
+            result.ModelHash = GetPropertyText(propertyItems, 0x0131);
         }
         catch (Exception ex)
         {
@@ -62,24 +63,23 @@ public class MetadataExtractionService : IMetadataExtractionService
             result.RequiresManualEntry = true;
         }
 
-        return result;
+        return Task.FromResult(result);
     }
 
-    private string? GetMetadataValue(ImageMetadata metadata, params string[] possibleKeys)
+    private string? GetPropertyText(PropertyItem[] propertyItems, int propertyId)
     {
-        foreach (var key in possibleKeys)
+        foreach (var item in propertyItems)
         {
-            if (metadata.Tags.ContainsKey(key))
+            if (item.Id == propertyId)
             {
-                return metadata.Tags[key]?.ToString();
+                return Encoding.UTF8.GetString(item.Value);
             }
         }
         return null;
     }
 
-    private int? ParseIntMetadata(ImageMetadata metadata, params string[] possibleKeys)
+    private int? ParseIntMetadata(string? value)
     {
-        var value = GetMetadataValue(metadata, possibleKeys);
         if (int.TryParse(value, out var intValue))
         {
             return intValue;
@@ -87,9 +87,8 @@ public class MetadataExtractionService : IMetadataExtractionService
         return null;
     }
 
-    private long? ParseLongMetadata(ImageMetadata metadata, params string[] possibleKeys)
+    private long? ParseLongMetadata(string? value)
     {
-        var value = GetMetadataValue(metadata, possibleKeys);
         if (long.TryParse(value, out var longValue))
         {
             return longValue;
@@ -97,9 +96,8 @@ public class MetadataExtractionService : IMetadataExtractionService
         return null;
     }
 
-    private decimal? ParseDecimalMetadata(ImageMetadata metadata, params string[] possibleKeys)
+    private decimal? ParseDecimalMetadata(string? value)
     {
-        var value = GetMetadataValue(metadata, possibleKeys);
         if (decimal.TryParse(value, out var decimalValue))
         {
             return decimalValue;

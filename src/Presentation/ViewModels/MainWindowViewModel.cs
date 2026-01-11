@@ -12,15 +12,15 @@ using AIGenManager.Application.UseCases.Tags;
 using AIGenManager.Application.UseCases.Albums;
 using AIGenManager.Core.Domain.Entities;
 
-namespace AIGenManager.Presentation.ViewModels;
+namespace BerryAIGCToolbox.ViewModels;
 
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}},nq}}")]
+[DebuggerDisplay($"{{nameof(GetDebuggerDisplay)}},nq")] 
 public partial class MainWindowViewModel : ViewModelBase
 {
     private readonly GetRootFoldersUseCase _getRootFoldersUseCase;
     private readonly GetAllImagesUseCase _getAllImagesUseCase;
     private readonly GetImagesByFolderIdUseCase _getImagesByFolderIdUseCase;
-    private readonly ScanFolderUseCase _scanFolderUseCase;
+    private readonly AIGenManager.Application.UseCases.Folders.ScanFolderUseCase _scanFolderUseCase;
     
     // Tag use cases
     private readonly GetAllTagsUseCase _getAllTagsUseCase;
@@ -108,9 +108,9 @@ public partial class MainWindowViewModel : ViewModelBase
     public bool ShowMainContent => !IsLoading && HasData;
 
     [RelayCommand]
-    private void RefreshData()
+    private async Task RefreshData()
     {
-        LoadData();
+        await LoadData();
     }
 
     [RelayCommand]
@@ -259,7 +259,7 @@ public partial class MainWindowViewModel : ViewModelBase
         GetRootFoldersUseCase getRootFoldersUseCase,
         GetAllImagesUseCase getAllImagesUseCase,
         GetImagesByFolderIdUseCase getImagesByFolderIdUseCase,
-        ScanFolderUseCase scanFolderUseCase,
+        AIGenManager.Application.UseCases.Folders.ScanFolderUseCase scanFolderUseCase,
         
         // Tag use cases
         GetAllTagsUseCase getAllTagsUseCase,
@@ -290,10 +290,11 @@ public partial class MainWindowViewModel : ViewModelBase
         _addImageToAlbumUseCase = addImageToAlbumUseCase;
         _getImagesByAlbumIdUseCase = getImagesByAlbumIdUseCase;
         
-        LoadData();
+        // Start loading data asynchronously without blocking the constructor
+        _ = LoadData();
     }
 
-    private async void LoadData()
+    private async Task LoadData()
     {
         try
         {
@@ -317,6 +318,7 @@ public partial class MainWindowViewModel : ViewModelBase
         {
             StatusMessage = $"Error loading data: {ex.Message}";
             Debug.WriteLine($"Error loading data: {ex.Message}");
+            Debug.WriteLine($"Stack trace: {ex.StackTrace}");
         }
         finally
         {
@@ -326,26 +328,58 @@ public partial class MainWindowViewModel : ViewModelBase
 
     private async Task LoadFolders()
     {
-        var folders = await _getRootFoldersUseCase.ExecuteAsync();
-        Folders = new ObservableCollection<Folder>(folders);
+        try
+        {
+            var folders = await _getRootFoldersUseCase.ExecuteAsync();
+            Folders = new ObservableCollection<Folder>(folders);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error loading folders: {ex.Message}");
+            Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+        }
     }
 
     private async Task LoadImages()
     {
-        var images = await _getAllImagesUseCase.ExecuteAsync();
-        Images = new ObservableCollection<Image>(images);
+        try
+        {
+            var images = await _getAllImagesUseCase.ExecuteAsync();
+            Images = new ObservableCollection<Image>(images);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error loading images: {ex.Message}");
+            Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+        }
     }
 
     private async Task LoadTags()
     {
-        var tags = await _getAllTagsUseCase.ExecuteAsync();
-        Tags = new ObservableCollection<Tag>(tags);
+        try
+        {
+            var tags = await _getAllTagsUseCase.ExecuteAsync();
+            Tags = new ObservableCollection<Tag>(tags);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error loading tags: {ex.Message}");
+            Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+        }
     }
 
     private async Task LoadAlbums()
     {
-        var albums = await _getAllAlbumsUseCase.ExecuteAsync();
-        Albums = new ObservableCollection<Album>(albums);
+        try
+        {
+            var albums = await _getAllAlbumsUseCase.ExecuteAsync();
+            Albums = new ObservableCollection<Album>(albums);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error loading albums: {ex.Message}");
+            Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+        }
     }
 
     [RelayCommand]
@@ -374,6 +408,7 @@ public partial class MainWindowViewModel : ViewModelBase
         {
             StatusMessage = $"Error importing folder: {ex.Message}";
             Debug.WriteLine($"Error importing folder: {ex.Message}");
+            Debug.WriteLine($"Stack trace: {ex.StackTrace}");
         }
         finally
         {
@@ -383,6 +418,6 @@ public partial class MainWindowViewModel : ViewModelBase
 
     private string GetDebuggerDisplay()
     {
-        return ToString();
+        return ToString() ?? GetType().Name;
     }
 }
