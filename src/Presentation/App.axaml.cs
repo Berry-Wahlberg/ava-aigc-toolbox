@@ -15,6 +15,7 @@ using AIGenManager.Infrastructure.Repositories;
 using AIGenManager.Infrastructure.Data;
 using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.UseCases.Folders;
+using AIGenManager.Infrastructure.Services;
 
 namespace AIGenManager.Presentation;
 
@@ -70,11 +71,16 @@ public partial class App : Avalonia.Application
         services.AddSingleton<IImageTagRepository, SQLiteImageTagRepository>();
         services.AddSingleton<IAlbumRepository, SQLiteAlbumRepository>();
 
+        // Services for metadata extraction
+        services.AddSingleton<PngMetadataExtractor>();
+        services.AddSingleton<FolderScanner>();
+
         // Use cases
         services.AddTransient<GetAllImagesUseCase>();
         services.AddTransient<GetImagesByFolderIdUseCase>();
         services.AddTransient<GetAllFoldersUseCase>();
         services.AddTransient<GetRootFoldersUseCase>();
+        services.AddTransient<ScanFolderUseCase>();
         
         // Tag use cases
         services.AddTransient<Application.UseCases.Tags.GetAllTagsUseCase>();

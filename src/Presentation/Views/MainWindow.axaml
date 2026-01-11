@@ -7,52 +7,213 @@
         x:Class="AIGenManager.Presentation.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="AI Image Manager">
+        Title="Berry AIGC Toolbox"
+        Width="1200" Height="800"
+        MinWidth="800" MinHeight="600">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         
-        <!-- Folder Tree View -->
-        <Border Grid.Column="0" Background="#f0f0f0" Padding="5">
-            <StackPanel>
-                <TextBlock Text="Folders" FontWeight="Bold" Margin="0 0 0 10"/>
-                <TreeView ItemsSource="{Binding Folders}" SelectedItem="{Binding SelectedFolder}">
-                    <TreeView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Path}" Margin="0 2"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </TreeView.ItemTemplate>
-                </TreeView>
-                <Button Content="Load Images" Command="{Binding LoadImagesForSelectedFolderCommand}" Margin="0 10 0 0"/>
+        <!-- Toolbar -->
+        <Border Grid.Row="0" Background="#2d2d2d" Padding="10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="Berry AIGC Toolbox" FontWeight="Bold" FontSize="18" Foreground="White" VerticalAlignment="Center"/>
+                <Separator Width="2" Background="#555"/>
+                <Button Content="Import Folder" Command="{Binding ImportFolderCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
+                <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
+                <Button Content="Refresh" Command="{Binding RefreshDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
+                <TextBlock Text="{Binding StatusMessage}" Foreground="#ccc" VerticalAlignment="Center" Margin="20,0,0,0"/>
             </StackPanel>
         </Border>
         
-        <!-- Images Grid -->
-        <Border Grid.Column="1" Padding="10">
-            <StackPanel>
-                <TextBlock Text="Images" FontWeight="Bold" Margin="0 0 0 10"/>
-                <ListBox ItemsSource="{Binding Images}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical" Margin="0 5">
-                                <TextBlock Text="{Binding FileName}"/>
-                                <TextBlock Text="{Binding Path}" FontSize="12" Foreground="Gray"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+        <!-- Loading Indicator -->
+        <Border Grid.Row="1" Background="#80000000" IsVisible="{Binding IsLoading}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+                <ProgressBar Width="200" Height="4" IsIndeterminate="True"/>
+                <TextBlock Text="{Binding StatusMessage}" Foreground="White" FontSize="14"/>
             </StackPanel>
+        </Border>
+        
+        <!-- Empty State -->
+        <Border Grid.Row="1" Background="#f5f5f5" IsVisible="{Binding ShowEmptyState}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20" MaxWidth="600">
+                <TextBlock Text="Welcome to Berry AIGC Toolbox!" FontWeight="Bold" FontSize="24" TextAlignment="Center"/>
+                <TextBlock Text="Your AI-generated image library is currently empty." FontSize="16" TextAlignment="Center" Foreground="#666"/>
+                <TextBlock Text="Get started by loading sample data to explore the features:" FontSize="14" TextAlignment="Center" Foreground="#888" Margin="0,10,0,0"/>
+                <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" HorizontalAlignment="Center" Padding="15,8" FontSize="14"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Main Content -->
+        <Grid Grid.Row="1" IsVisible="{Binding ShowMainContent}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Sidebar -->
+            <Border Grid.Column="0" Background="#f0f0f0" Padding="5">
+                <ScrollViewer>
+                    <StackPanel Spacing="15">
+                        <!-- Folders Section -->
+                        <TextBlock Text="Folders" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                        <TreeView ItemsSource="{Binding Folders}" SelectedItem="{Binding SelectedFolder}" MinHeight="200">
+                            <TreeView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Path}" Margin="0 2"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </TreeView.ItemTemplate>
+                        </TreeView>
+                        <Button Content="Load Images" Command="{Binding LoadImagesForSelectedFolderCommand}" IsEnabled="{Binding HasSelectedFolder}" Margin="0,5,0,0"/>
+                        
+                        <!-- Tags Section -->
+                        <TextBlock Text="Tags" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                        <ListBox ItemsSource="{Binding Tags}" SelectedItem="{Binding SelectedTag}" MinHeight="150" MaxHeight="200">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" Margin="0 2"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        
+                        <!-- Albums Section -->
+                        <TextBlock Text="Albums" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                        <ListBox ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}" MinHeight="150" MaxHeight="200">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" Margin="0 2"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+            
+            <!-- Images Grid -->
+            <Border Grid.Column="1" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Text="Images" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding Images}" SelectedItem="{Binding SelectedImage}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="White" BorderBrush="#ddd" BorderThickness="1" Padding="10" Margin="0,5">
+                                    <StackPanel Orientation="Horizontal" Spacing="10">
+                                        <Border Width="80" Height="80" Background="#eee" CornerRadius="4">
+                                            <TextBlock Text="IMG" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#999"/>
+                                        </Border>
+                                        <StackPanel Spacing="5">
+                                            <TextBlock Text="{Binding FileName}" FontWeight="SemiBold" FontSize="14"/>
+                                            <TextBlock Text="{Binding Path}" FontSize="12" Foreground="#666" TextTrimming="CharacterEllipsis"/>
+                                            <StackPanel Orientation="Horizontal" Spacing="15">
+                                                <TextBlock Text="{Binding Model}" FontSize="11" Foreground="#888"/>
+                                                <TextBlock Text="{Binding Sampler}" FontSize="11" Foreground="#888"/>
+                                                <TextBlock Text="{Binding Rating}" FontSize="11" Foreground="#888"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+            
+            <!-- Image Details Panel -->
+            <Border Grid.Column="2" Background="#fafafa" Padding="10" BorderBrush="#ddd" BorderThickness="1,0,0,0">
+                <ScrollViewer>
+                    <StackPanel Spacing="15" IsVisible="{Binding HasSelectedImage}">
+                        <TextBlock Text="Image Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                        
+                        <!-- Preview -->
+                        <Border Width="260" Height="260" Background="#eee" CornerRadius="4" HorizontalAlignment="Center">
+                            <TextBlock Text="Preview" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#999"/>
+                        </Border>
+                        
+                        <!-- Basic Info -->
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="File Name" FontWeight="SemiBold" FontSize="12"/>
+                            <TextBlock Text="{Binding SelectedImage.FileName}" TextWrapping="Wrap"/>
+                            
+                            <TextBlock Text="Path" FontWeight="SemiBold" FontSize="12" Margin="0,10,0,0"/>
+                            <TextBlock Text="{Binding SelectedImage.Path}" TextWrapping="Wrap" FontSize="11" Foreground="#666"/>
+                            
+                            <TextBlock Text="Dimensions" FontWeight="SemiBold" FontSize="12" Margin="0,10,0,0"/>
+                            <TextBlock>
+                                <Run Text="{Binding SelectedImage.Width}"/>
+                                <Run Text=" x "/>
+                                <Run Text="{Binding SelectedImage.Height}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        
+                        <!-- AI Metadata -->
+                        <Border Background="#f0f0f0" Padding="10" CornerRadius="4">
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="AI Generation Parameters" FontWeight="Bold" FontSize="12"/>
+                                <TextBlock Text="Model" FontWeight="SemiBold" FontSize="11"/>
+                                <TextBlock Text="{Binding SelectedImage.Model}" TextWrapping="Wrap"/>
+                                
+                                <TextBlock Text="Prompt" FontWeight="SemiBold" FontSize="11" Margin="0,5,0,0"/>
+                                <TextBlock Text="{Binding SelectedImage.Prompt}" TextWrapping="Wrap" FontSize="11" Foreground="#666"/>
+                                
+                                <TextBlock Text="Sampler" FontWeight="SemiBold" FontSize="11" Margin="0,5,0,0"/>
+                                <TextBlock Text="{Binding SelectedImage.Sampler}"/>
+                                
+                                <StackPanel Orientation="Horizontal" Spacing="20" Margin="0,5,0,0">
+                                    <StackPanel>
+                                        <TextBlock Text="Steps" FontWeight="SemiBold" FontSize="11"/>
+                                        <TextBlock Text="{Binding SelectedImage.Steps}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <TextBlock Text="CFG Scale" FontWeight="SemiBold" FontSize="11"/>
+                                        <TextBlock Text="{Binding SelectedImage.CFGScale}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <TextBlock Text="Seed" FontWeight="SemiBold" FontSize="11"/>
+                                        <TextBlock Text="{Binding SelectedImage.Seed}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        
+                        <!-- User Properties -->
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Rating" FontWeight="SemiBold" FontSize="12"/>
+                            <TextBlock Text="{Binding SelectedImage.Rating}"/>
+                            
+                            <TextBlock Text="Favorite" FontWeight="SemiBold" FontSize="12" Margin="0,10,0,0"/>
+                            <TextBlock Text="{Binding SelectedImage.Favorite}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        
+        <!-- Status Bar -->
+        <Border Grid.Row="2" Background="#2d2d2d" Padding="10,5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{Binding StatusMessage}" Foreground="#ccc" FontSize="12"/>
+                <TextBlock Grid.Column="1" Text="{Binding HasData}" Foreground="#999" FontSize="12"/>
+            </Grid>
         </Border>
     </Grid>
 
