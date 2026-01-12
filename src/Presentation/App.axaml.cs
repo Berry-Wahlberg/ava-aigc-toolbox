@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using BerryAIGCToolbox.ViewModels;
 using BerryAIGCToolbox.Views;
 using AIGenManager.Core.Application.Ports;
+using AIGenManager.Core.Domain.Services;
 using AIGenManager.Infrastructure.Repositories;
 using AIGenManager.Infrastructure.Data;
 using AIGenManager.Application.UseCases.Images;
@@ -89,9 +90,12 @@ public partial class App : Avalonia.Application
             services.AddSingleton<IImageTagRepository, SQLiteImageTagRepository>();
             services.AddSingleton<IAlbumRepository, SQLiteAlbumRepository>();
 
-            // Services for metadata extraction
+            // Services for metadata extraction and thumbnail generation
             services.AddSingleton<IFolderScanner, FolderScanner>();
             services.AddSingleton<PngMetadataExtractor>();
+            services.AddSingleton<IMetadataExtractionService, MetadataExtractionService>();
+            services.AddSingleton<IThumbnailGenerationService, ThumbnailGenerationService>();
+            services.AddSingleton<IImageImportService, ImageImportService>();
 
             // Use cases
             services.AddTransient<GetAllImagesUseCase>();
