@@ -2,8 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="BerryAIGCToolbox.App"
              xmlns:local="using:BerryAIGCToolbox"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+             RequestedThemeVariant="Light">
+             <!-- Explicitly set to Light mode as requested -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>
