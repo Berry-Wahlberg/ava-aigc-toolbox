@@ -3,127 +3,360 @@
         xmlns:vm="using:BerryAIGCToolbox.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="900"
         x:Class="BerryAIGCToolbox.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="Berry AIGC Toolbox"
-        Width="1200" Height="800"
-        MinWidth="800" MinHeight="600">
+        Width="1400" Height="900"
+        MinWidth="1024" MinHeight="768"
+        Background="{DynamicResource SystemBackground}">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
     <Grid>
+        <!-- Layout with resizable sidebar -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280" MinWidth="250" MaxWidth="400"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="320" MinWidth="300" MaxWidth="500"/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <!-- Toolbar -->
-        <Border Grid.Row="0" Background="{DynamicResource SystemChromeLowColor}" Padding="10">
-            <StackPanel Orientation="Horizontal" Spacing="10">
-                <TextBlock Text="Berry AIGC Toolbox" FontWeight="Bold" FontSize="18" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" VerticalAlignment="Center"/>
-                <Separator Width="2" Background="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
-                <Button Content="Import Folder" Command="{Binding ImportFolderCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
-                <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
-                <Button Content="Refresh" Command="{Binding RefreshDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
-                <TextBlock Text="{Binding StatusMessage}" Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+        <!-- Top Navigation Bar (spans all columns) -->
+        <Border Grid.Row="0" Grid.ColumnSpan="3" 
+                Background="{DynamicResource SystemChromeLowColor}" 
+                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}"
+                BorderThickness="0,0,0,1" 
+                Padding="16">
+            <StackPanel Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+                <!-- App Logo and Title -->
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <Border Width="32" Height="32" Background="{DynamicResource SystemAccentColor}" CornerRadius="6">
+                        <TextBlock Text="B" FontWeight="Bold" FontSize="18" Foreground="White" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock Text="Berry AIGC Toolbox" FontWeight="Bold" FontSize="18" 
+                               Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                </StackPanel>
+
+                <Separator Width="1" Height="24" Background="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
+
+                <!-- Main Navigation -->
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button Content="Import" Command="{Binding ImportFolderCommand}" IsEnabled="{Binding IsNotLoading}" 
+                            Padding="10,6" Background="{DynamicResource SystemAccentColor}" 
+                            Foreground="White" BorderThickness="0" CornerRadius="6">
+                        <Button.Styles>
+                            <Style Selector="Button:hover">
+                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/>
+                            </Style>
+                            <Style Selector="Button:pressed">
+                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorDark1}"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
+                    <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" 
+                            IsEnabled="{Binding IsNotLoading}" Padding="10,6" 
+                            CornerRadius="6"/>
+                    <Button Content="Refresh" Command="{Binding RefreshDataCommand}" 
+                            IsEnabled="{Binding IsNotLoading}" Padding="10,6" 
+                            CornerRadius="6"/>
+                </StackPanel>
+
+                <!-- Search Bar -->
+                <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
+                        BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                        BorderThickness="1" CornerRadius="6" Padding="8,6" 
+                        VerticalAlignment="Center" Margin="20,0,0,0" MinWidth="300">
+                    <TextBox Watermark="Search images..." FontSize="14" 
+                             Background="Transparent" BorderThickness="0" 
+                             Text="{Binding SearchQuery}"/>
+                </Border>
+
+                <!-- Status Message -->
+                <TextBlock Text="{Binding StatusMessage}" 
+                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                           VerticalAlignment="Center" Margin="20,0,0,0" 
+                           FontSize="13" Width="200" TextTrimming="CharacterEllipsis"/>
             </StackPanel>
         </Border>
-        
-        <!-- Loading Indicator -->
-        <Border Grid.Row="1" Background="#80000000" IsVisible="{Binding IsLoading}">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
-                <ProgressBar Width="200" Height="4" IsIndeterminate="True"/>
-                <TextBlock Text="{Binding StatusMessage}" Foreground="White" FontSize="14"/>
+
+        <!-- Loading Overlay (spans all columns and rows) -->
+        <Border Grid.RowSpan="3" Grid.ColumnSpan="3" 
+                Background="{DynamicResource SystemControlBackgroundBaseLowBrush}" 
+                IsVisible="{Binding IsLoading}"
+                ZIndex="10">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="16">
+                <ProgressBar Width="240" Height="8" IsIndeterminate="True" 
+                             Foreground="{DynamicResource SystemAccentColor}" 
+                             Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"/>
+                <TextBlock Text="{Binding StatusMessage}" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                           FontSize="16" FontWeight="SemiBold"/>
             </StackPanel>
         </Border>
-        
-        <!-- Empty State -->
-        <Border Grid.Row="1" Background="#f5f5f5" IsVisible="{Binding ShowEmptyState}">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20" MaxWidth="600">
-                <TextBlock Text="Welcome to Berry AIGC Toolbox!" FontWeight="Bold" FontSize="24" TextAlignment="Center"/>
-                <TextBlock Text="Your AI-generated image library is currently empty." FontSize="16" TextAlignment="Center" Foreground="#666"/>
-                <TextBlock Text="Get started by loading sample data to explore the features:" FontSize="14" TextAlignment="Center" Foreground="#888" Margin="0,10,0,0"/>
-                <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" HorizontalAlignment="Center" Padding="15,8" FontSize="14"/>
-            </StackPanel>
+
+        <!-- Empty State (spans center and right columns) -->
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
+                Background="{DynamicResource SystemBackground}" 
+                IsVisible="{Binding ShowEmptyState}">
+            <Border Padding="40">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            Spacing="24" MaxWidth="600">
+                    <Border Width="120" Height="120" 
+                            Background="{DynamicResource SystemAccentColorLight3}" 
+                            CornerRadius="24">
+                        <TextBlock Text="📁" FontSize="64" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel Spacing="8" HorizontalAlignment="Center">
+                        <TextBlock Text="Welcome to Berry AIGC Toolbox" 
+                                   FontWeight="Bold" FontSize="28" 
+                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                   TextAlignment="Center"/>
+                        <TextBlock Text="Your AI-generated image library is currently empty." 
+                                   FontSize="16" 
+                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                   TextAlignment="Center"/>
+                        <TextBlock Text="Get started by importing folders or loading sample data to explore the features." 
+                                   FontSize="14" 
+                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}" 
+                                   TextAlignment="Center" Margin="0,8,0,0"/>
+                    </StackPanel>
+                    <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" 
+                            Padding="20,12" FontSize="16" FontWeight="SemiBold" 
+                            Background="{DynamicResource SystemAccentColor}" 
+                            Foreground="White" BorderThickness="0" CornerRadius="8" 
+                            HorizontalAlignment="Center">
+                        <Button.Styles>
+                            <Style Selector="Button:hover">
+                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/>
+                            </Style>
+                            <Style Selector="Button:pressed">
+                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorDark1}"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
+                </StackPanel>
+            </Border>
         </Border>
-        
-        <!-- Main Content -->
-        <Grid Grid.Row="1" IsVisible="{Binding ShowMainContent}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="300"/>
-            </Grid.ColumnDefinitions>
-            
-            <!-- Sidebar -->
-            <Border Grid.Column="0" Background="#f0f0f0" Padding="5">
-                <ScrollViewer>
-                    <StackPanel Spacing="15">
-                        <!-- Folders Section -->
-                        <TextBlock Text="Folders" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-                        <TreeView ItemsSource="{Binding Folders}" SelectedItem="{Binding SelectedFolder}" MinHeight="200">
+
+        <!-- Left Sidebar -->
+        <Border Grid.Row="1" Grid.Column="0" 
+                Background="{DynamicResource SystemChromeLowColor}" 
+                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                BorderThickness="0,0,1,0">
+            <StackPanel Spacing="0">
+                <!-- Folder Navigation -->
+                <StackPanel Spacing="0">
+                    <TextBlock Text="FOLDERS" FontSize="12" FontWeight="Bold" 
+                               Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}" 
+                               Padding="16,12,16,8"/>
+                    <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                            Padding="4" Margin="0,0,0,12">
+                        <TreeView ItemsSource="{Binding Folders}" SelectedItem="{Binding SelectedFolder}" 
+                                  BorderThickness="0" Background="Transparent" 
+                                  MinHeight="250" MaxHeight="300">
                             <TreeView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Path}" Margin="0 2"/>
+                                <TreeDataTemplate>
+                                    <StackPanel Orientation="Horizontal" Spacing="8" 
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="📁" FontSize="14"/>
+                                        <TextBlock Text="{Binding Path}" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                                   TextTrimming="CharacterEllipsis"/>
                                     </StackPanel>
-                                </DataTemplate>
+                                </TreeDataTemplate>
                             </TreeView.ItemTemplate>
                         </TreeView>
-                        <Button Content="Load Images" Command="{Binding LoadImagesForSelectedFolderCommand}" IsEnabled="{Binding HasSelectedFolder}" Margin="0,5,0,0"/>
-                        
-                        <!-- Tags Section -->
-                        <TextBlock Text="Tags" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-                        <ListBox ItemsSource="{Binding Tags}" SelectedItem="{Binding SelectedTag}" MinHeight="150" MaxHeight="200">
+                    </Border>
+                    <Button Content="Load Images" Command="{Binding LoadImagesForSelectedFolderCommand}" 
+                            IsEnabled="{Binding HasSelectedFolder}" 
+                            Padding="12,8" Margin="12,0,12,12" 
+                            Background="{DynamicResource SystemAccentColor}" 
+                            Foreground="White" BorderThickness="0" CornerRadius="6">
+                        <Button.Styles>
+                            <Style Selector="Button:hover">
+                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/>
+                            </Style>
+                            <Style Selector="Button:pressed">
+                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorDark1}"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
+                </StackPanel>
+
+                <!-- Tags Section -->
+                <StackPanel Spacing="0">
+                    <TextBlock Text="TAGS" FontSize="12" FontWeight="Bold" 
+                               Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}" 
+                               Padding="16,12,16,8"/>
+                    <ScrollViewer Margin="12,0" MaxHeight="200">
+                        <ListBox ItemsSource="{Binding Tags}" SelectedItem="{Binding SelectedTag}" 
+                                 BorderThickness="0" Background="Transparent">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" Margin="0 2"/>
+                                    <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                            BorderThickness="1" 
+                                            CornerRadius="16" Padding="12,6" Margin="0,2" 
+                                            Cursor="Hand">
+                                        <TextBlock Text="{Binding Name}" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                                   FontSize="13"/>
+                                    </Border>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        
-                        <!-- Albums Section -->
-                        <TextBlock Text="Albums" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
-                        <ListBox ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}" MinHeight="150" MaxHeight="200">
+                    </ScrollViewer>
+                </StackPanel>
+
+                <!-- Albums Section -->
+                <StackPanel Spacing="0" Margin="0,12,0,0">
+                    <TextBlock Text="ALBUMS" FontSize="12" FontWeight="Bold" 
+                               Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}" 
+                               Padding="16,12,16,8"/>
+                    <ScrollViewer Margin="12,0" MaxHeight="200">
+                        <ListBox ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}" 
+                                 BorderThickness="0" Background="Transparent">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" Margin="0 2"/>
+                                    <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                            BorderThickness="1" 
+                                            CornerRadius="8" Padding="12,8" Margin="0,2" 
+                                            Cursor="Hand">
+                                        <StackPanel Orientation="Horizontal" Spacing="8" 
+                                                    VerticalAlignment="Center">
+                                            <TextBlock Text="📋" FontSize="14"/>
+                                            <TextBlock Text="{Binding Name}" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                                       FontSize="14"/>
+                                        </StackPanel>
+                                    </Border>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
+                    </ScrollViewer>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Center Content Area -->
+        <Border Grid.Row="1" Grid.Column="1" 
+                Background="{DynamicResource SystemBackground}" 
+                IsVisible="{Binding ShowMainContent}">
+            <StackPanel Spacing="0">
+                <!-- View Controls -->
+                <Border Background="{DynamicResource SystemChromeLowColor}" 
+                        Padding="16" BorderThickness="0,0,0,1" 
+                        BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}">
+                    <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                        <TextBlock Text="IMAGES" FontSize="16" FontWeight="Bold" 
+                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="({Binding Images.Count})" FontSize="14" 
+                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                   VerticalAlignment="Center"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="8" Margin="20,0,0,0" 
+                                    VerticalAlignment="Center">
+                            <Button Content="Grid" FontSize="13" Padding="8,6" 
+                                    Background="{DynamicResource SystemAccentColor}" 
+                                    Foreground="White" BorderThickness="0" CornerRadius="4"/>
+                            <Button Content="List" FontSize="13" Padding="8,6" 
+                                    Background="{DynamicResource SystemChromeMediumBrush}" 
+                                    Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                    BorderThickness="1" CornerRadius="4" 
+                                    BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="12" Margin="20,0,0,0" 
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="Sort by:" FontSize="13" 
+                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                            <ComboBox SelectedItem="{Binding SortOption}" 
+                                      FontSize="13" Padding="8,4" 
+                                      MinWidth="120" BorderThickness="1" 
+                                      BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                      CornerRadius="4">
+                                <ComboBoxItem Content="Date Created"/>
+                                <ComboBoxItem Content="Rating"/>
+                                <ComboBoxItem Content="File Name"/>
+                                <ComboBoxItem Content="Aesthetic Score"/>
+                            </ComboBox>
+                        </StackPanel>
                     </StackPanel>
-                </ScrollViewer>
-            </Border>
-            
-            <!-- Images Grid -->
-            <Border Grid.Column="1" Padding="10">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    
-                    <TextBlock Grid.Row="0" Text="Images" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
-                    <ListBox Grid.Row="1" ItemsSource="{Binding Images}" SelectedItem="{Binding SelectedImage}">
+                </Border>
+
+                <!-- Image Grid -->
+                <ScrollViewer Padding="16">
+                    <ListBox ItemsSource="{Binding Images}" SelectedItem="{Binding SelectedImage}" 
+                             BorderThickness="0" Background="Transparent" 
+                             SelectionMode="Single">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Border Background="White" BorderBrush="#ddd" BorderThickness="1" Padding="10" Margin="0,5">
-                                    <StackPanel Orientation="Horizontal" Spacing="10">
-                                        <Border Width="80" Height="80" Background="#eee" CornerRadius="4">
-                                            <TextBlock Text="IMG" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#999"/>
+                                <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                                        BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                        BorderThickness="1" 
+                                        CornerRadius="8" Padding="8" Margin="0,0,12,12" 
+                                        Width="200" Cursor="Hand">
+                                    <StackPanel Spacing="8">
+                                        <!-- Image Preview -->
+                                        <Border Background="{DynamicResource SystemChromeLowBrush}" 
+                                                CornerRadius="6" Height="200" 
+                                                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                                BorderThickness="1">
+                                            <!-- Use Grid to allow multiple overlapping elements -->
+                                            <Grid>
+                                                <Image Source="{Binding ThumbnailPath}" 
+                                                       Stretch="UniformToFill" 
+                                                       HorizontalAlignment="Center" 
+                                                       VerticalAlignment="Center"/>
+                                                <!-- Fallback content using Overlay -->
+                                                <Panel Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
+                                                       IsVisible="{Binding ThumbnailPath, Converter={x:Static ObjectConverters.IsNull}}">
+                                                    <TextBlock Text="IMG" FontSize="32" 
+                                                               FontWeight="Bold" 
+                                                               Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                                               HorizontalAlignment="Center" 
+                                                               VerticalAlignment="Center"/>
+                                                </Panel>
+                                            </Grid>
                                         </Border>
-                                        <StackPanel Spacing="5">
-                                            <TextBlock Text="{Binding FileName}" FontWeight="SemiBold" FontSize="14"/>
-                                            <TextBlock Text="{Binding Path}" FontSize="12" Foreground="#666" TextTrimming="CharacterEllipsis"/>
-                                            <StackPanel Orientation="Horizontal" Spacing="15">
-                                                <TextBlock Text="{Binding Model}" FontSize="11" Foreground="#888"/>
-                                                <TextBlock Text="{Binding Sampler}" FontSize="11" Foreground="#888"/>
-                                                <TextBlock Text="{Binding Rating}" FontSize="11" Foreground="#888"/>
+
+                                        <!-- Image Info -->
+                                        <StackPanel Spacing="4">
+                                            <TextBlock Text="{Binding FileName}" 
+                                                       FontWeight="SemiBold" 
+                                                       FontSize="14" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                                       TextTrimming="CharacterEllipsis"/>
+                                            <TextBlock Text="{Binding Model}" 
+                                                       FontSize="12" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                                       TextTrimming="CharacterEllipsis"/>
+                                            <StackPanel Orientation="Horizontal" Spacing="12" 
+                                                        VerticalAlignment="Center">
+                                                <TextBlock Text="⭐ {Binding Rating}" 
+                                                           FontSize="12" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                                <TextBlock Text="{Binding Width}x{Binding Height}" 
+                                                           FontSize="12" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
@@ -131,90 +364,263 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                </Grid>
-            </Border>
-            
-            <!-- Image Details Panel -->
-            <Border Grid.Column="2" Background="#fafafa" Padding="10" BorderBrush="#ddd" BorderThickness="1,0,0,0">
-                <ScrollViewer>
-                    <StackPanel Spacing="15" IsVisible="{Binding HasSelectedImage}">
-                        <TextBlock Text="Image Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
-                        
-                        <!-- Preview -->
-                        <Border Width="260" Height="260" Background="#eee" CornerRadius="4" HorizontalAlignment="Center">
-                            <TextBlock Text="Preview" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#999"/>
-                        </Border>
-                        
-                        <!-- Basic Info -->
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="File Name" FontWeight="SemiBold" FontSize="12"/>
-                            <TextBlock Text="{Binding SelectedImage.FileName}" TextWrapping="Wrap"/>
-                            
-                            <TextBlock Text="Path" FontWeight="SemiBold" FontSize="12" Margin="0,10,0,0"/>
-                            <TextBlock Text="{Binding SelectedImage.Path}" TextWrapping="Wrap" FontSize="11" Foreground="#666"/>
-                            
-                            <TextBlock Text="Dimensions" FontWeight="SemiBold" FontSize="12" Margin="0,10,0,0"/>
-                            <TextBlock>
-                                <Run Text="{Binding SelectedImage.Width}"/>
-                                <Run Text=" x "/>
-                                <Run Text="{Binding SelectedImage.Height}"/>
-                            </TextBlock>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+
+        <!-- Right Panel - Image Details -->
+        <Border Grid.Row="1" Grid.Column="2" 
+                Background="{DynamicResource SystemChromeLowColor}" 
+                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                BorderThickness="0,0,0,0" 
+                IsVisible="{Binding ShowMainContent}">
+            <StackPanel Spacing="0">
+                <StackPanel Spacing="0" IsVisible="{Binding HasSelectedImage}">
+                    <!-- Details Header -->
+                    <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                            Padding="16,12" 
+                            BorderThickness="0,0,0,1" 
+                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="IMAGE DETAILS" FontSize="14" FontWeight="Bold" 
+                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
                         </StackPanel>
-                        
-                        <!-- AI Metadata -->
-                        <Border Background="#f0f0f0" Padding="10" CornerRadius="4">
-                            <StackPanel Spacing="8">
-                                <TextBlock Text="AI Generation Parameters" FontWeight="Bold" FontSize="12"/>
-                                <TextBlock Text="Model" FontWeight="SemiBold" FontSize="11"/>
-                                <TextBlock Text="{Binding SelectedImage.Model}" TextWrapping="Wrap"/>
+                    </Border>
+
+                    <!-- Image Preview -->
+                    <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                            Padding="16" 
+                            BorderThickness="0,0,0,1" 
+                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}">
+                        <Border Background="{DynamicResource SystemChromeLowBrush}" 
+                                CornerRadius="8" 
+                                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                BorderThickness="1" 
+                                HorizontalAlignment="Center" 
+                                MaxHeight="300">
+                            <!-- Use Grid to allow multiple overlapping elements -->
+                            <Grid>
+                                <Image Source="{Binding SelectedImage.ThumbnailPath}" 
+                                       Stretch="Uniform" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       Margin="20"/>
+                                <!-- Fallback content using separate panel -->
+                                <Panel IsVisible="{Binding SelectedImage.ThumbnailPath, Converter={x:Static ObjectConverters.IsNull}}" 
+                                       Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
+                                    <TextBlock Text="PREVIEW" FontSize="18" 
+                                               FontWeight="Bold" 
+                                               Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                               HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center"/>
+                                </Panel>
+                            </Grid>
+                        </Border>
+                    </Border>
+
+                    <!-- Image Metadata -->
+                    <ScrollViewer>
+                        <Border Padding="16">
+                            <StackPanel Spacing="16">
+                            <!-- Basic Info -->
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="BASIC INFO" FontSize="12" FontWeight="Bold" 
+                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}"/>
                                 
-                                <TextBlock Text="Prompt" FontWeight="SemiBold" FontSize="11" Margin="0,5,0,0"/>
-                                <TextBlock Text="{Binding SelectedImage.Prompt}" TextWrapping="Wrap" FontSize="11" Foreground="#666"/>
-                                
-                                <TextBlock Text="Sampler" FontWeight="SemiBold" FontSize="11" Margin="0,5,0,0"/>
-                                <TextBlock Text="{Binding SelectedImage.Sampler}"/>
-                                
-                                <StackPanel Orientation="Horizontal" Spacing="20" Margin="0,5,0,0">
-                                    <StackPanel>
-                                        <TextBlock Text="Steps" FontWeight="SemiBold" FontSize="11"/>
-                                        <TextBlock Text="{Binding SelectedImage.Steps}"/>
+                                <StackPanel Spacing="8">
+                                    <StackPanel Spacing="4">
+                                        <TextBlock Text="File Name" FontSize="12" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                        <TextBlock Text="{Binding SelectedImage.FileName}" 
+                                                   FontSize="14" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                                   TextWrapping="Wrap"/>
                                     </StackPanel>
-                                    <StackPanel>
-                                        <TextBlock Text="CFG Scale" FontWeight="SemiBold" FontSize="11"/>
-                                        <TextBlock Text="{Binding SelectedImage.CFGScale}"/>
+
+                                    <StackPanel Spacing="4">
+                                        <TextBlock Text="Path" FontSize="12" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                        <TextBlock Text="{Binding SelectedImage.Path}" 
+                                                   FontSize="12" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                                   TextWrapping="Wrap" 
+                                                   TextTrimming="CharacterEllipsis"/>
                                     </StackPanel>
-                                    <StackPanel>
-                                        <TextBlock Text="Seed" FontWeight="SemiBold" FontSize="11"/>
-                                        <TextBlock Text="{Binding SelectedImage.Seed}"/>
+
+                                    <StackPanel Spacing="4">
+                                        <TextBlock Text="Dimensions" FontSize="12" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                        <TextBlock Text="{Binding SelectedImage.Width} x {Binding SelectedImage.Height}" 
+                                                   FontSize="14" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Spacing="4">
+                                        <TextBlock Text="File Size" FontSize="12" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                        <TextBlock Text="{Binding SelectedImage.FileSize}" 
+                                                   FontSize="14" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
-                        </Border>
-                        
-                        <!-- User Properties -->
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="Rating" FontWeight="SemiBold" FontSize="12"/>
-                            <TextBlock Text="{Binding SelectedImage.Rating}"/>
-                            
-                            <TextBlock Text="Favorite" FontWeight="SemiBold" FontSize="12" Margin="0,10,0,0"/>
-                            <TextBlock Text="{Binding SelectedImage.Favorite}"/>
+
+                            <!-- AI Generation Parameters -->
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="AI GENERATION" FontSize="12" FontWeight="Bold" 
+                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}"/>
+                                
+                                <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                                        BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                        BorderThickness="1" 
+                                        CornerRadius="6" 
+                                        Padding="12">
+                                    <StackPanel Spacing="10">
+                                        <StackPanel Spacing="4">
+                                            <TextBlock Text="Model" FontSize="12" FontWeight="SemiBold" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                            <TextBlock Text="{Binding SelectedImage.Model}" 
+                                                       FontSize="13" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                                       TextWrapping="Wrap"/>
+                                        </StackPanel>
+
+                                        <StackPanel Spacing="4">
+                                            <TextBlock Text="Prompt" FontSize="12" FontWeight="SemiBold" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                            <TextBlock Text="{Binding SelectedImage.Prompt}" 
+                                                       FontSize="13" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                                       TextWrapping="Wrap"/>
+                                        </StackPanel>
+
+                                        <StackPanel Spacing="4">
+                                            <TextBlock Text="Negative Prompt" FontSize="12" FontWeight="SemiBold" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                            <TextBlock Text="{Binding SelectedImage.NegativePrompt}" 
+                                                       FontSize="13" 
+                                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                                       TextWrapping="Wrap"/>
+                                        </StackPanel>
+
+                                        <Grid ColumnDefinitions="2* 1* 1* 1*">
+                                            <StackPanel Grid.Column="0" Spacing="2">
+                                                <TextBlock Text="Sampler" FontSize="11" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                                <TextBlock Text="{Binding SelectedImage.Sampler}" 
+                                                           FontSize="12" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1" Spacing="2">
+                                                <TextBlock Text="Steps" FontSize="11" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                                <TextBlock Text="{Binding SelectedImage.Steps}" 
+                                                           FontSize="12" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="2" Spacing="2">
+                                                <TextBlock Text="CFG" FontSize="11" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                                <TextBlock Text="{Binding SelectedImage.CFGScale}" 
+                                                           FontSize="12" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="3" Spacing="2">
+                                                <TextBlock Text="Seed" FontSize="11" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                                <TextBlock Text="{Binding SelectedImage.Seed}" 
+                                                           FontSize="12" 
+                                                           Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                                           TextTrimming="CharacterEllipsis"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+
+                            <!-- User Properties -->
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="USER PROPERTIES" FontSize="12" FontWeight="Bold" 
+                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}"/>
+                                
+                                <StackPanel Spacing="8">
+                                    <StackPanel Orientation="Horizontal" Spacing="12" 
+                                                VerticalAlignment="Center">
+                                        <TextBlock Text="Rating:" FontSize="13" 
+                                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                        <StackPanel Orientation="Horizontal" Spacing="2">
+                                            <Button Content="⭐" FontSize="16" Padding="4" 
+                                                    Background="Transparent" BorderThickness="0" 
+                                                    Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
+                                            <Button Content="⭐" FontSize="16" Padding="4" 
+                                                    Background="Transparent" BorderThickness="0" 
+                                                    Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
+                                            <Button Content="⭐" FontSize="16" Padding="4" 
+                                                    Background="Transparent" BorderThickness="0" 
+                                                    Foreground="{DynamicResource SystemAccentColor}"/>
+                                            <Button Content="⭐" FontSize="16" Padding="4" 
+                                                    Background="Transparent" BorderThickness="0" 
+                                                    Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
+                                            <Button Content="⭐" FontSize="16" Padding="4" 
+                                                    Background="Transparent" BorderThickness="0" 
+                                                    Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Spacing="12" 
+                                                VerticalAlignment="Center">
+                                            <CheckBox IsChecked="{Binding SelectedImage.Favorite}" 
+                                                      Content="Favorite" FontSize="13" 
+                                                      Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                            <CheckBox IsChecked="{Binding SelectedImage.NSFW}" 
+                                                      Content="NSFW" FontSize="13" 
+                                                      Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
                         </StackPanel>
+                        </Border>
+                    </ScrollViewer>
+                </StackPanel>
+
+                <!-- No Selection State -->
+                <Border Padding="40" IsVisible="{Binding !HasSelectedImage}">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                Spacing="16">
+                        <TextBlock Text="📷" FontSize="48" 
+                                   Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
+                        <TextBlock Text="Select an image to view details" 
+                                   FontSize="14" 
+                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}" 
+                                   TextAlignment="Center"/>
                     </StackPanel>
-                </ScrollViewer>
-            </Border>
-        </Grid>
-        
-        <!-- Status Bar -->
-        <Border Grid.Row="2" Background="{DynamicResource SystemChromeLowColor}" Padding="10,5">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="{Binding StatusMessage}" Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" FontSize="12"/>
-                <TextBlock Grid.Column="1" Text="{Binding HasData}" Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" FontSize="12"/>
-            </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <!-- Status Bar (spans all columns) -->
+        <Border Grid.Row="2" Grid.ColumnSpan="3" 
+                Background="{DynamicResource SystemChromeLowColor}" 
+                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                BorderThickness="0,1,0,0" 
+                Padding="16,8">
+            <StackPanel Orientation="Horizontal" Spacing="24">
+                <TextBlock Text="{Binding StatusMessage}" 
+                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                           FontSize="12" Width="300" TextTrimming="CharacterEllipsis"/>
+                <TextBlock Text="{Binding Images.Count} images" 
+                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                           FontSize="12"/>
+                <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,0" HorizontalAlignment="Right" 
+                            VerticalAlignment="Center">
+                    <Button Content="⚙" FontSize="12" Padding="8" 
+                            Background="Transparent" BorderThickness="0" 
+                            Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                    <Button Content="?" FontSize="12" Padding="8" 
+                            Background="Transparent" BorderThickness="0" 
+                            Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                </StackPanel>
+            </StackPanel>
         </Border>
     </Grid>
-
 </Window>

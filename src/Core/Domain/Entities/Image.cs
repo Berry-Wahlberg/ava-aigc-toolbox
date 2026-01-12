@@ -56,6 +56,7 @@ public class Image
     public DateTime? ViewedDate { get; set; }
     public DateTime? TouchedDate { get; set; }
     public ImageType Type { get; set; }
+    public string? ThumbnailPath { get; set; }
     
     // Import-related properties
     public ImportStatus ImportStatus { get; set; }

@@ -111,6 +111,19 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public bool ShowMainContent => !IsLoading && HasData;
 
+    // New properties for modern UI
+    [ObservableProperty]
+    private string _searchQuery = string.Empty;
+
+    [ObservableProperty]
+    private string _sortOption = "Date Created";
+
+    [ObservableProperty]
+    private bool _isGridviewSelected = true;
+
+    [ObservableProperty]
+    private bool _isListviewSelected = false;
+
     [RelayCommand]
     private async Task RefreshData()
     {
