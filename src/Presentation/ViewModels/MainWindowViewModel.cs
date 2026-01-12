@@ -6,11 +6,15 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Avalonia;
 using AIGenManager.Application.UseCases.Folders;
 using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.UseCases.Tags;
 using AIGenManager.Application.UseCases.Albums;
 using AIGenManager.Core.Domain.Entities;
+// Use specific namespaces to avoid ambiguity
+using OpenFolderDialog = Avalonia.Controls.OpenFolderDialog;
+using Window = Avalonia.Controls.Window;
 
 namespace BerryAIGCToolbox.ViewModels;
 
@@ -387,9 +391,31 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
-            // Show folder picker dialog (implementation will depend on Avalonia UI framework)
-            // For now, we'll simulate with a hardcoded path for testing
-            var folderPath = "C:\\AI Images";
+            // Get the main window reference
+            var mainWindow = ViewModelBase.MainWindow;
+            if (mainWindow == null)
+            {
+                StatusMessage = "Error: Main window not found.";
+                return;
+            }
+            
+            // Use Avalonia's StorageProvider API for folder selection
+            var options = new Avalonia.Platform.Storage.FolderPickerOpenOptions
+            {
+                Title = "Select Folder to Import",
+                AllowMultiple = false
+            };
+            
+            var result = await mainWindow.StorageProvider.OpenFolderPickerAsync(options);
+            
+            if (result == null || result.Count == 0)
+            {
+                // User cancelled the dialog
+                StatusMessage = "Import cancelled by user.";
+                return;
+            }
+            
+            var folderPath = result[0].Path.LocalPath;
             
             IsLoading = true;
             StatusMessage = $"Scanning folder: {folderPath}...";

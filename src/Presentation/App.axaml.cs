@@ -47,6 +47,9 @@ public partial class App : Avalonia.Application
                 {
                     DataContext = ServiceProvider!.GetRequiredService<MainWindowViewModel>(),
                 };
+                
+                // Set the static reference to the main window for view models to access
+                ViewModelBase.MainWindow = desktop.MainWindow;
             }
 
             base.OnFrameworkInitializationCompleted();
