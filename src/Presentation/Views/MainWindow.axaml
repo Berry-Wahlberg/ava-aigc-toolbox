@@ -23,14 +23,14 @@
         </Grid.RowDefinitions>
         
         <!-- Toolbar -->
-        <Border Grid.Row="0" Background="#2d2d2d" Padding="10">
+        <Border Grid.Row="0" Background="{DynamicResource SystemChromeLowColor}" Padding="10">
             <StackPanel Orientation="Horizontal" Spacing="10">
-                <TextBlock Text="Berry AIGC Toolbox" FontWeight="Bold" FontSize="18" Foreground="White" VerticalAlignment="Center"/>
-                <Separator Width="2" Background="#555"/>
+                <TextBlock Text="Berry AIGC Toolbox" FontWeight="Bold" FontSize="18" Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" VerticalAlignment="Center"/>
+                <Separator Width="2" Background="{DynamicResource SystemControlForegroundChromeHighBrush}"/>
                 <Button Content="Import Folder" Command="{Binding ImportFolderCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
                 <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
                 <Button Content="Refresh" Command="{Binding RefreshDataCommand}" IsEnabled="{Binding IsNotLoading}" Padding="8,4"/>
-                <TextBlock Text="{Binding StatusMessage}" Foreground="#ccc" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                <TextBlock Text="{Binding StatusMessage}" Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" VerticalAlignment="Center" Margin="20,0,0,0"/>
             </StackPanel>
         </Border>
         
@@ -205,14 +205,14 @@
         </Grid>
         
         <!-- Status Bar -->
-        <Border Grid.Row="2" Background="#2d2d2d" Padding="10,5">
+        <Border Grid.Row="2" Background="{DynamicResource SystemChromeLowColor}" Padding="10,5">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="{Binding StatusMessage}" Foreground="#ccc" FontSize="12"/>
-                <TextBlock Grid.Column="1" Text="{Binding HasData}" Foreground="#999" FontSize="12"/>
+                <TextBlock Grid.Column="0" Text="{Binding StatusMessage}" Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" FontSize="12"/>
+                <TextBlock Grid.Column="1" Text="{Binding HasData}" Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" FontSize="12"/>
             </Grid>
         </Border>
     </Grid>
