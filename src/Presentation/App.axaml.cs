@@ -89,6 +89,7 @@ public partial class App : Avalonia.Application
             services.AddSingleton<ITagRepository, SQLiteTagRepository>();
             services.AddSingleton<IImageTagRepository, SQLiteImageTagRepository>();
             services.AddSingleton<IAlbumRepository, SQLiteAlbumRepository>();
+            services.AddSingleton<IPromptRepository, SQLitePromptRepository>();
 
             // Services for metadata extraction and thumbnail generation
             services.AddSingleton<IFolderScanner, FolderScanner>();
@@ -107,21 +108,23 @@ public partial class App : Avalonia.Application
             
             // Tag use cases
             services.AddTransient<AIGenManager.Application.UseCases.Tags.GetAllTagsUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Tags.GetTagsByImageIdUseCase>();
             services.AddTransient<AIGenManager.Application.UseCases.Tags.AddTagUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Tags.AddTagToImageUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Tags.RemoveTagFromImageUseCase>();
             
             // Album use cases
             services.AddTransient<AIGenManager.Application.UseCases.Albums.GetAllAlbumsUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Albums.GetAlbumByIdUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Albums.GetImagesByAlbumIdUseCase>();
             services.AddTransient<AIGenManager.Application.UseCases.Albums.AddAlbumUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Albums.AddImageToAlbumUseCase>();
+            
+            // Prompt use cases
+            services.AddTransient<AIGenManager.Application.UseCases.Prompts.GetAllPromptsUseCase>();
+            services.AddTransient<AIGenManager.Application.UseCases.Prompts.AddPromptUseCase>();
+            services.AddTransient<AIGenManager.Application.UseCases.Prompts.DeletePromptUseCase>();
 
             // ViewModels
             services.AddTransient<MainWindowViewModel>();
             services.AddTransient<ImportWizardViewModel>();
+            services.AddTransient<PromptViewModel>();
+            services.AddTransient<AlbumViewModel>();
+            services.AddTransient<TagViewModel>();
 
             ServiceProvider = services.BuildServiceProvider();
             
