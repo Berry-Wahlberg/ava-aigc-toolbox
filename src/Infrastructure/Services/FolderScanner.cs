@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AIGenManager.Core.Application.Ports;
 using AIGenManager.Core.Domain.Entities;
+using AIGenManager.Core.Domain.Services;
 
 namespace AIGenManager.Infrastructure.Services;
 
@@ -13,22 +14,26 @@ namespace AIGenManager.Infrastructure.Services;
 /// </summary>
 public class FolderScanner : IFolderScanner
 {
-    private readonly PngMetadataExtractor _metadataExtractor;
+    private readonly IMetadataExtractionService _metadataExtractionService;
+    private readonly IThumbnailGenerationService _thumbnailGenerationService;
     private readonly IImageRepository _imageRepository;
     private readonly IFolderRepository _folderRepository;
 
     /// <summary>
     /// Initializes a new instance of the FolderScanner service
     /// </summary>
-    /// <param name="metadataExtractor">PNG metadata extractor service</param>
+    /// <param name="metadataExtractionService">Metadata extraction service</param>
+    /// <param name="thumbnailGenerationService">Thumbnail generation service</param>
     /// <param name="imageRepository">Image repository</param>
     /// <param name="folderRepository">Folder repository</param>
     public FolderScanner(
-        PngMetadataExtractor metadataExtractor,
+        IMetadataExtractionService metadataExtractionService,
+        IThumbnailGenerationService thumbnailGenerationService,
         IImageRepository imageRepository,
         IFolderRepository folderRepository)
     {
-        _metadataExtractor = metadataExtractor;
+        _metadataExtractionService = metadataExtractionService;
+        _thumbnailGenerationService = thumbnailGenerationService;
         _imageRepository = imageRepository;
         _folderRepository = folderRepository;
     }
@@ -47,7 +52,7 @@ public class FolderScanner : IFolderScanner
         }
 
         var processedCount = 0;
-        var supportedExtensions = new[] { ".png", ".jpg", ".jpeg", ".webp" };
+        var supportedExtensions = new[] { ".png", ".jpg", ".jpeg", ".webp", ".txt", ".mp4" };
 
         // Get all image files
         var searchOption = recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
@@ -83,27 +88,30 @@ public class FolderScanner : IFolderScanner
                 return; // Image already processed
             }
 
+            // Extract metadata using the enhanced service
+            var metadataResult = await _metadataExtractionService.ExtractMetadataAsync(imagePath);
+
+            // Generate thumbnail
+            var thumbnailPath = await _thumbnailGenerationService.GenerateThumbnailAsync(imagePath);
+
             // Create image entity
             var image = new Image(imagePath, fileInfo.Name)
             {
                 FileSize = fileInfo.Length,
                 CreatedDate = fileInfo.CreationTime,
                 ModifiedDate = fileInfo.LastWriteTime,
-                NoMetadata = false
+                Width = metadataResult.Width ?? 0,
+                Height = metadataResult.Height ?? 0,
+                Prompt = metadataResult.Prompt,
+                NegativePrompt = metadataResult.NegativePrompt,
+                Model = metadataResult.Model,
+                Sampler = metadataResult.Sampler,
+                Steps = metadataResult.Steps ?? 0,
+                CFGScale = metadataResult.CFGScale ?? 0,
+                Seed = metadataResult.Seed ?? 0,
+                NoMetadata = !metadataResult.Success || metadataResult.RequiresManualEntry,
+                ThumbnailPath = thumbnailPath
             };
-
-            // Extract PNG metadata if it's a PNG file
-            if (fileInfo.Extension.Equals(".png", StringComparison.OrdinalIgnoreCase))
-            {
-                if (!_metadataExtractor.ExtractPngMetadata(imagePath, image))
-                {
-                    image.NoMetadata = true;
-                }
-            }
-            else
-            {
-                image.NoMetadata = true;
-            }
 
             // Save to database
             await _imageRepository.AddAsync(image);
@@ -114,4 +122,6 @@ public class FolderScanner : IFolderScanner
             Console.WriteLine($"Error processing image {imagePath}: {ex.Message}");
         }
     }
+
+
 }

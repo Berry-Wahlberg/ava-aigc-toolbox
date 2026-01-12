@@ -16,6 +16,7 @@ public class MetadataExtractionResult
     public long? Seed { get; set; }
     public int? Width { get; set; }
     public int? Height { get; set; }
+    public string? Model { get; set; }
     public string? ModelName { get; set; }
     public string? ModelHash { get; set; }
     public string? ErrorMessage { get; set; }

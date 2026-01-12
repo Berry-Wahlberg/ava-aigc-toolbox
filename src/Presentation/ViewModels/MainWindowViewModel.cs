@@ -59,6 +59,7 @@ public partial class MainWindowViewModel : ViewModelBase
     partial void OnSelectedFolderChanged(Folder? value)
     {
         OnPropertyChanged(nameof(HasSelectedFolder));
+        _ = LoadImagesForFolderAsync();
     }
 
     [ObservableProperty]
@@ -124,6 +125,74 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty]
     private bool _isListviewSelected = false;
 
+    [ObservableProperty]
+    private bool _showNSFW = false;
+
+    [ObservableProperty]
+    private int _minRating = 0;
+
+    [ObservableProperty]
+    private bool _onlyFavorites = false;
+
+    // Filtered images based on search, tags, and other criteria
+    [ObservableProperty]
+    private ObservableCollection<Image> _filteredImages = [];
+
+    // Available sort options
+    public List<string> SortOptions => new List<string>
+    {
+        "Date Created",
+        "Aesthetic Score",
+        "Rating",
+        "File Name",
+        "Model Name",
+        "Steps"
+    };
+
+    // Available rating options
+    public List<int> RatingOptions => new List<int> { 0, 1, 2, 3, 4, 5 };
+
+    // Apply filters whenever relevant properties change
+    partial void OnSearchQueryChanged(string value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnSortOptionChanged(string value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnShowNSFWChanged(bool value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnMinRatingChanged(int value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnOnlyFavoritesChanged(bool value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnImagesChanged(ObservableCollection<Image> value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnSelectedTagChanged(Tag? value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnSelectedAlbumChanged(Album? value)
+    {
+        ApplyFilters();
+    }
+
     [RelayCommand]
     private async Task RefreshData()
     {
@@ -133,19 +202,242 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     private async Task LoadImagesForSelectedFolder()
     {
+        await LoadImagesForFolderAsync();
+    }
+
+    private async Task LoadImagesForFolderAsync()
+    {
         if (SelectedFolder != null)
         {
             try
             {
+                IsLoading = true;
+                StatusMessage = "Loading images for folder...";
                 var request = new GetImagesByFolderIdRequest(SelectedFolder.Id);
                 var images = await _getImagesByFolderIdUseCase.ExecuteAsync(request);
                 Images = new ObservableCollection<Image>(images);
+                StatusMessage = $"Loaded {Images.Count} images for folder: {SelectedFolder.Path}";
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error loading images for folder: {ex.Message}");
+                StatusMessage = $"Error loading images for folder: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
             }
         }
+    }
+
+    /// <summary>
+    /// Applies all filters to the images collection
+    /// </summary>
+    private void ApplyFilters()
+    {
+        if (Images == null)
+        {
+            FilteredImages = new ObservableCollection<Image>();
+            return;
+        }
+
+        IEnumerable<Image> filtered = Images;
+
+        // Apply NSFW filter
+        if (!ShowNSFW)
+        {
+            filtered = filtered.Where(img => !img.NSFW);
+        }
+
+        // Apply minimum rating filter
+        if (MinRating > 0)
+        {
+            filtered = filtered.Where(img => img.Rating >= MinRating);
+        }
+
+        // Apply favorites filter
+        if (OnlyFavorites)
+        {
+            filtered = filtered.Where(img => img.Favorite);
+        }
+
+        // Apply search query
+        if (!string.IsNullOrWhiteSpace(SearchQuery))
+        {
+            var query = SearchQuery.ToLowerInvariant();
+            filtered = filtered.Where(img =>
+                (img.Prompt?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.NegativePrompt?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.FileName?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.Model?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.Sampler?.ToLowerInvariant().Contains(query) ?? false));
+        }
+
+        // Apply selected tag filter
+        if (SelectedTag != null)
+        {
+            // This is a placeholder - in reality, you'd check if the image has the selected tag
+            // filtered = filtered.Where(img => img.Tags.Contains(SelectedTag));
+        }
+
+        // Apply selected album filter
+        if (SelectedAlbum != null)
+        {
+            // This is a placeholder - in reality, you'd check if the image is in the selected album
+            // filtered = filtered.Where(img => img.Albums.Contains(SelectedAlbum));
+        }
+
+        // Apply sorting
+        filtered = ApplySorting(filtered);
+
+        // Update filtered images collection
+        FilteredImages = new ObservableCollection<Image>(filtered);
+    }
+
+    /// <summary>
+    /// Applies sorting based on the current sort option
+    /// </summary>
+    private IEnumerable<Image> ApplySorting(IEnumerable<Image> images)
+    {
+        return SortOption switch
+        {
+            "Date Created" => images.OrderByDescending(img => img.CreatedDate),
+            "Aesthetic Score" => images.OrderByDescending(img => img.AestheticScore),
+            "Rating" => images.OrderByDescending(img => img.Rating),
+            "File Name" => images.OrderBy(img => img.FileName),
+            "Model Name" => images.OrderBy(img => img.Model),
+            "Steps" => images.OrderByDescending(img => img.Steps),
+            _ => images.OrderByDescending(img => img.CreatedDate)
+        };
+    }
+
+    [RelayCommand]
+    private async Task LoadImagesByAlbum(Album album)
+    {
+        if (album != null)
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = $"Loading images for album: {album.Name}...";
+                var request = new GetImagesByAlbumIdRequest(album.Id);
+                var images = await _getImagesByAlbumIdUseCase.ExecuteAsync(request);
+                Images = new ObservableCollection<Image>(images);
+                StatusMessage = $"Loaded {Images.Count} images for album: {album.Name}";
+                SelectedAlbum = album;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading images for album: {ex.Message}");
+                StatusMessage = $"Error loading images for album: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+    }
+
+    [RelayCommand]
+    private void ToggleFavorite(Image image)
+    {
+        if (image != null)
+        {
+            image.Favorite = !image.Favorite;
+            // In a real implementation, you'd save this to the database
+            ApplyFilters(); // Refresh the filtered list if only favorites is selected
+        }
+    }
+
+    /// <summary>
+    /// Sets the rating for an image
+    /// </summary>
+    /// <param name="image">The image to rate</param>
+    /// <param name="rating">The rating to set (0-5)</param>
+    public void SetRating(Image image, int rating)
+    {
+        if (image != null)
+        {
+            image.Rating = rating;
+            // In a real implementation, you'd save this to the database
+            ApplyFilters(); // Refresh the filtered list if rating filter is applied
+        }
+    }
+
+    [RelayCommand]
+    private void ToggleNSFW(Image image)
+    {
+        if (image != null)
+        {
+            image.NSFW = !image.NSFW;
+            // In a real implementation, you'd save this to the database
+            ApplyFilters(); // Refresh the filtered list if NSFW filter is applied
+        }
+    }
+
+    [RelayCommand]
+    private async Task AddNewTag()
+    {
+        if (!string.IsNullOrWhiteSpace(NewTagName))
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = $"Adding tag: {NewTagName}...";
+                var tag = await _addTagUseCase.ExecuteAsync(new AddTagRequest(NewTagName));
+                if (tag != null)
+                {
+                    Tags.Add(tag);
+                    NewTagName = string.Empty;
+                    StatusMessage = $"Tag '{tag.Name}' added successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error adding tag: {ex.Message}");
+                StatusMessage = $"Error adding tag: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+    }
+
+    [RelayCommand]
+    private async Task AddNewAlbum()
+    {
+        if (!string.IsNullOrWhiteSpace(NewAlbumName))
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = $"Adding album: {NewAlbumName}...";
+                var album = await _addAlbumUseCase.ExecuteAsync(new AddAlbumRequest(NewAlbumName));
+                if (album != null)
+                {
+                    Albums.Add(album);
+                    NewAlbumName = string.Empty;
+                    StatusMessage = $"Album '{album.Name}' added successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error adding album: {ex.Message}");
+                StatusMessage = $"Error adding album: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+    }
+
+    [RelayCommand]
+    private void ToggleView()
+    {
+        IsGridviewSelected = !IsGridviewSelected;
+        IsListviewSelected = !IsListviewSelected;
     }
 
     [RelayCommand]
@@ -330,6 +622,9 @@ public partial class MainWindowViewModel : ViewModelBase
             
             HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();
             StatusMessage = HasData ? "Data loaded successfully" : "No data found. Import images or load sample data to get started.";
+            
+            // Initialize filtered images
+            ApplyFilters();
         }
         catch (Exception ex)
         {
