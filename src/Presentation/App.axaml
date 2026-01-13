@@ -17,5 +17,7 @@
     <Application.Resources>
         <converters:IsNullConverter x:Key="IsNull"/>
         <converters:IsNotNullConverter x:Key="IsNotNull"/>
+        <converters:ThumbnailLoadStatusConverter x:Key="ThumbnailLoadStatus"/>
+        <converters:ThumbnailLoadingConverter x:Key="ThumbnailLoading"/>
     </Application.Resources>
 </Application>

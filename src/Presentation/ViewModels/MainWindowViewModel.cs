@@ -199,6 +199,29 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
     [RelayCommand]
+    private async Task CleanupThumbnails()
+    {
+        try
+        {
+            IsLoading = true;
+            StatusMessage = "Cleaning up invalid thumbnails...";
+            
+            await _thumbnailGenerationService.CleanupInvalidThumbnailsAsync();
+            
+            StatusMessage = "Thumbnail cleanup completed successfully.";
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"Error cleaning up thumbnails: {ex.Message}";
+            Debug.WriteLine($"Error cleaning up thumbnails: {ex.Message}");
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+
+    [RelayCommand]
     private async Task LoadImagesForSelectedFolder()
     {
         await LoadImagesForFolderAsync();
@@ -241,7 +264,7 @@ public partial class MainWindowViewModel : ViewModelBase
     /// <param name="images">Collection of images to process</param>
     private async Task GenerateMissingThumbnailsAsync(IEnumerable<Image> images)
     {
-        var imagesToProcess = images.Where(img => string.IsNullOrEmpty(img.ThumbnailPath)).ToList();
+        var imagesToProcess = images.ToList();
         if (imagesToProcess.Count == 0)
         {
             return;
@@ -255,22 +278,39 @@ public partial class MainWindowViewModel : ViewModelBase
         {
             try
             {
-                // Generate thumbnail
+                // 设置加载状态
+                img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loading;
+                
+                // 验证缩略图是否存在且有效
+                if (!string.IsNullOrEmpty(img.ThumbnailPath))
+                {
+                    // 检查缩略图文件是否存在且有效
+                    if (File.Exists(img.ThumbnailPath) && _thumbnailGenerationService.IsThumbnailValid(img.ThumbnailPath))
+                    {
+                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loaded;
+                        return;
+                    }
+                }
+                
+                // 生成缩略图
                 if (File.Exists(img.Path))
                 {
                     var thumbnailPath = await _thumbnailGenerationService.GetOrGenerateThumbnailAsync(img.Path);
                     img.ThumbnailPath = thumbnailPath;
+                    img.ThumbnailLoadStatus = !string.IsNullOrEmpty(thumbnailPath) ? ThumbnailLoadStatus.Loaded : ThumbnailLoadStatus.Failed;
                 }
                 else
                 {
                     Debug.WriteLine($"Image file not found: {img.Path}");
                     img.ThumbnailPath = string.Empty;
+                    img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error generating thumbnail for {img.Path}: {ex.Message}");
-                img.ThumbnailPath = string.Empty; // Set empty string for fallback
+                img.ThumbnailPath = string.Empty;
+                img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
             }
             finally
             {

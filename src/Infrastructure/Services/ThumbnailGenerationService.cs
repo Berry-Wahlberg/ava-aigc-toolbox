@@ -94,15 +94,32 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
             return string.Empty;
         }
 
-        try
+        var thumbnailPath = GetThumbnailPath(imagePath);
+        
+        // 验证现有缩略图是否有效
+        if (File.Exists(thumbnailPath))
         {
-            return await GenerateThumbnailAsync(imagePath);
+            var originalFileInfo = new FileInfo(imagePath);
+            var thumbnailFileInfo = new FileInfo(thumbnailPath);
+            
+            // 检查缩略图是否比原图新
+            if (thumbnailFileInfo.LastWriteTime >= originalFileInfo.LastWriteTime)
+            {
+                // 验证缩略图文件是否可读
+                try
+                {
+                    using var stream = File.OpenRead(thumbnailPath);
+                    return thumbnailPath;
+                }
+                catch
+                {
+                    // 缩略图损坏,重新生成
+                    return await GenerateThumbnailAsync(imagePath);
+                }
+            }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error getting or generating thumbnail: {ex.Message}");
-            return string.Empty;
-        }
+        
+        return await GenerateThumbnailAsync(imagePath);
     }
 
     /// <inheritdoc/>
@@ -194,5 +211,73 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
         graphics.DrawImage(originalImage, 0, 0, thumbnailWidth, thumbnailHeight);
         
         return thumbnail;
+    }
+
+    /// <summary>
+    /// 清理无效的缩略图文件
+    /// </summary>
+    public async Task CleanupInvalidThumbnailsAsync()
+    {
+        if (!Directory.Exists(_cacheDirectory))
+        {
+            return;
+        }
+        
+        await Task.Run(() =>
+        {
+            try
+            {
+                var thumbnailFiles = Directory.GetFiles(_cacheDirectory, "*.jpg");
+                
+                foreach (var thumbnailFile in thumbnailFiles)
+                {
+                    try
+                    {
+                        // 验证缩略图文件是否可读
+                        using var stream = File.OpenRead(thumbnailFile);
+                    }
+                    catch
+                    {
+                        // 缩略图损坏,删除它
+                        try
+                        {
+                            File.Delete(thumbnailFile);
+                            Console.WriteLine($"Deleted invalid thumbnail: {thumbnailFile}");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error deleting thumbnail {thumbnailFile}: {ex.Message}");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error cleaning up thumbnails: {ex.Message}");
+            }
+        });
+    }
+
+    /// <summary>
+    /// 验证缩略图文件是否有效
+    /// </summary>
+    /// <param name="thumbnailPath">缩略图文件路径</param>
+    /// <returns>如果缩略图有效返回true,否则返回false</returns>
+    public bool IsThumbnailValid(string thumbnailPath)
+    {
+        if (!File.Exists(thumbnailPath))
+        {
+            return false;
+        }
+        
+        try
+        {
+            using var stream = File.OpenRead(thumbnailPath);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 }

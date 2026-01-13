@@ -28,4 +28,16 @@ public interface IThumbnailGenerationService
     /// Gets the thumbnail cache directory path
     /// </summary>
     string GetCacheDirectory();
+
+    /// <summary>
+    /// 清理无效的缩略图文件
+    /// </summary>
+    Task CleanupInvalidThumbnailsAsync();
+
+    /// <summary>
+    /// 验证缩略图文件是否有效
+    /// </summary>
+    /// <param name="thumbnailPath">缩略图文件路径</param>
+    /// <returns>如果缩略图有效返回true,否则返回false</returns>
+    bool IsThumbnailValid(string thumbnailPath);
 }
