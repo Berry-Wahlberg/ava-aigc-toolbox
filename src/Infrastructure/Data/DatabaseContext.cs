@@ -3,7 +3,6 @@ using System.IO;
 using AIGenManager.Core.Domain.Entities;
 using SQLite;
 
-
 namespace AIGenManager.Infrastructure.Data;
 
 public class DatabaseContext : IDisposable
@@ -25,7 +24,6 @@ public class DatabaseContext : IDisposable
         {
             Directory.CreateDirectory(databaseDir);
         }
-
         CreateTables();
         CreateIndexes();
     }
@@ -37,6 +35,7 @@ public class DatabaseContext : IDisposable
         _connection.CreateTable<Tag>();
         _connection.CreateTable<ImageTag>();
         _connection.CreateTable<Album>();
+        _connection.CreateTable<Prompt>();
         
         // Create AlbumImage table with foreign keys
         var sql = @"
@@ -48,6 +47,19 @@ public class DatabaseContext : IDisposable
         );
         ";
         _connection.Execute(sql);
+        
+        // Create ImagePrompts table for prompt-image associations
+        var imagePromptsSql = @"
+        CREATE TABLE IF NOT EXISTS ""ImagePrompts""(
+            ""ImageId""   integer NOT NULL,
+            ""PromptId""   integer NOT NULL,
+            ""IsNegative""   integer DEFAULT 0,
+            FOREIGN KEY (""ImageId"") REFERENCES Images(Id) ON DELETE CASCADE,
+            FOREIGN KEY (""PromptId"") REFERENCES Prompts(Id) ON DELETE CASCADE,
+            PRIMARY KEY (""ImageId"", ""PromptId"")
+        );
+        ";
+        _connection.Execute(imagePromptsSql);
     }
 
     private void CreateIndexes()
@@ -73,14 +85,14 @@ public class DatabaseContext : IDisposable
         _connection.CreateIndex<Image>(image => image.Unavailable);
         _connection.CreateIndex<Image>(image => image.CreatedDate);
         _connection.CreateIndex<Image>(image => image.Type);
-
+        
         // Folder indexes
         _connection.CreateIndex<Folder>(folder => folder.ParentId);
         _connection.CreateIndex<Folder>(folder => folder.Path, true);
         _connection.CreateIndex<Folder>(folder => folder.Archived);
         _connection.CreateIndex<Folder>(folder => folder.Unavailable);
         _connection.CreateIndex<Folder>(folder => folder.Excluded);
-
+        
         // Tag indexes
         _connection.CreateIndex<Tag>(tag => tag.Id);
         _connection.CreateIndex<Tag>(tag => tag.Name, true);
@@ -96,6 +108,14 @@ public class DatabaseContext : IDisposable
         // AlbumImage indexes
         _connection.Execute("CREATE INDEX IF NOT EXISTS 'IX_AlbumImage_AlbumId' ON 'AlbumImage' ('AlbumId')");
         _connection.Execute("CREATE INDEX IF NOT EXISTS 'IX_AlbumImage_ImageId' ON 'AlbumImage' ('ImageId')");
+        
+        // Prompt indexes
+        _connection.CreateIndex<Prompt>(prompt => prompt.Name);
+        _connection.CreateIndex<Prompt>(prompt => prompt.Category);
+        _connection.CreateIndex<Prompt>(prompt => prompt.CreatedDate);
+        _connection.CreateIndex<Prompt>(prompt => prompt.UsageCount);
+        _connection.CreateIndex<Prompt>(prompt => prompt.IsFavorite);
+        _connection.CreateIndex<Prompt>(prompt => prompt.IsSystem);
     }
 
     public SQLiteConnection GetConnection()

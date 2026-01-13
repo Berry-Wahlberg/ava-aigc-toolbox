@@ -5,9 +5,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Avalonia;
 using AIGenManager.Application.UseCases.Folders;
 using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.DTOs;
+// Use specific namespaces to avoid ambiguity
+using OpenFolderDialog = Avalonia.Controls.OpenFolderDialog;
+using Window = Avalonia.Controls.Window;
 
 namespace BerryAIGCToolbox.ViewModels;
 
@@ -61,11 +65,41 @@ public partial class ImportWizardViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void SelectFolder()
+    private async Task SelectFolder()
     {
-        // For now, we'll just use a hardcoded path for testing
-        SelectedFolderPath = "C:\\AI Images";
-        StatusMessage = "Folder selected: " + SelectedFolderPath;
+        try
+        {
+            // Get the main window reference
+            var mainWindow = ViewModelBase.MainWindow;
+            if (mainWindow == null)
+            {
+                StatusMessage = "Error: Main window not found.";
+                return;
+            }
+            
+            // Use Avalonia's StorageProvider API for folder selection
+            var options = new Avalonia.Platform.Storage.FolderPickerOpenOptions
+            {
+                Title = "Select Folder to Import",
+                AllowMultiple = false
+            };
+            
+            var result = await mainWindow.StorageProvider.OpenFolderPickerAsync(options);
+            
+            if (result != null && result.Count > 0)
+            {
+                SelectedFolderPath = result[0].Path.LocalPath;
+                StatusMessage = "Folder selected: " + SelectedFolderPath;
+            }
+            else
+            {
+                StatusMessage = "Folder selection cancelled.";
+            }
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"Error selecting folder: {ex.Message}";
+        }
     }
 
     [RelayCommand]

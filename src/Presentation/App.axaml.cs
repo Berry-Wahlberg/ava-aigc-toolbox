@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using BerryAIGCToolbox.ViewModels;
 using BerryAIGCToolbox.Views;
 using AIGenManager.Core.Application.Ports;
+using AIGenManager.Core.Domain.Services;
 using AIGenManager.Infrastructure.Repositories;
 using AIGenManager.Infrastructure.Data;
 using AIGenManager.Application.UseCases.Images;
@@ -47,6 +48,9 @@ public partial class App : Avalonia.Application
                 {
                     DataContext = ServiceProvider!.GetRequiredService<MainWindowViewModel>(),
                 };
+                
+                // Set the static reference to the main window for view models to access
+                ViewModelBase.MainWindow = desktop.MainWindow;
             }
 
             base.OnFrameworkInitializationCompleted();
@@ -85,10 +89,14 @@ public partial class App : Avalonia.Application
             services.AddSingleton<ITagRepository, SQLiteTagRepository>();
             services.AddSingleton<IImageTagRepository, SQLiteImageTagRepository>();
             services.AddSingleton<IAlbumRepository, SQLiteAlbumRepository>();
+            services.AddSingleton<IPromptRepository, SQLitePromptRepository>();
 
-            // Services for metadata extraction
+            // Services for metadata extraction and thumbnail generation
             services.AddSingleton<IFolderScanner, FolderScanner>();
             services.AddSingleton<PngMetadataExtractor>();
+            services.AddSingleton<IMetadataExtractionService, MetadataExtractionService>();
+            services.AddSingleton<IThumbnailGenerationService, ThumbnailGenerationService>();
+            services.AddSingleton<IImageImportService, ImageImportService>();
 
             // Use cases
             services.AddTransient<GetAllImagesUseCase>();
@@ -100,21 +108,25 @@ public partial class App : Avalonia.Application
             
             // Tag use cases
             services.AddTransient<AIGenManager.Application.UseCases.Tags.GetAllTagsUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Tags.GetTagsByImageIdUseCase>();
             services.AddTransient<AIGenManager.Application.UseCases.Tags.AddTagUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Tags.AddTagToImageUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Tags.RemoveTagFromImageUseCase>();
             
             // Album use cases
             services.AddTransient<AIGenManager.Application.UseCases.Albums.GetAllAlbumsUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Albums.GetAlbumByIdUseCase>();
-            services.AddTransient<AIGenManager.Application.UseCases.Albums.GetImagesByAlbumIdUseCase>();
             services.AddTransient<AIGenManager.Application.UseCases.Albums.AddAlbumUseCase>();
             services.AddTransient<AIGenManager.Application.UseCases.Albums.AddImageToAlbumUseCase>();
+            services.AddTransient<AIGenManager.Application.UseCases.Albums.GetImagesByAlbumIdUseCase>();
+            
+            // Prompt use cases
+            services.AddTransient<AIGenManager.Application.UseCases.Prompts.GetAllPromptsUseCase>();
+            services.AddTransient<AIGenManager.Application.UseCases.Prompts.AddPromptUseCase>();
+            services.AddTransient<AIGenManager.Application.UseCases.Prompts.DeletePromptUseCase>();
 
             // ViewModels
             services.AddTransient<MainWindowViewModel>();
             services.AddTransient<ImportWizardViewModel>();
+            services.AddTransient<PromptViewModel>();
+            services.AddTransient<AlbumViewModel>();
+            services.AddTransient<TagViewModel>();
 
             ServiceProvider = services.BuildServiceProvider();
             

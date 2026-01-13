@@ -25,10 +25,6 @@ namespace AIGenManager.Infrastructure
                 return dbContext.GetConnection();
             });
 
-            // Services
-            services.AddSingleton<PngMetadataExtractor>();
-            services.AddSingleton<FolderScanner>();
-
             // Repositories
             services.AddSingleton<IImageRepository, SQLiteImageRepository>();
             services.AddSingleton<IFolderRepository, SQLiteFolderRepository>();
@@ -37,9 +33,12 @@ namespace AIGenManager.Infrastructure
             services.AddSingleton<IAlbumRepository, SQLiteAlbumRepository>();
 
             // Services
+            services.AddSingleton<PngMetadataExtractor>();
             services.AddSingleton<IMetadataExtractionService, MetadataExtractionService>();
             services.AddSingleton<IImageImportService, ImageImportService>();
             services.AddSingleton<FileSystemService>();
+            services.AddSingleton<IFolderScanner, FolderScanner>();
+            services.AddSingleton<IThumbnailGenerationService, ThumbnailGenerationService>();
 
             return services;
         }

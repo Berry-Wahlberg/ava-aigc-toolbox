@@ -4,13 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using Avalonia;
 using AIGenManager.Application.UseCases.Folders;
 using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.UseCases.Tags;
 using AIGenManager.Application.UseCases.Albums;
 using AIGenManager.Core.Domain.Entities;
+// Use specific namespaces to avoid ambiguity
+using OpenFolderDialog = Avalonia.Controls.OpenFolderDialog;
+using Window = Avalonia.Controls.Window;
 
 namespace BerryAIGCToolbox.ViewModels;
 
@@ -21,13 +27,11 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly GetAllImagesUseCase _getAllImagesUseCase;
     private readonly GetImagesByFolderIdUseCase _getImagesByFolderIdUseCase;
     private readonly AIGenManager.Application.UseCases.Folders.ScanFolderUseCase _scanFolderUseCase;
+    private readonly AIGenManager.Core.Domain.Services.IThumbnailGenerationService _thumbnailGenerationService;
     
     // Tag use cases
     private readonly GetAllTagsUseCase _getAllTagsUseCase;
-    private readonly GetTagsByImageIdUseCase _getTagsByImageIdUseCase;
     private readonly AddTagUseCase _addTagUseCase;
-    private readonly AddTagToImageUseCase _addTagToImageUseCase;
-    private readonly RemoveTagFromImageUseCase _removeTagFromImageUseCase;
     
     // Album use cases
     private readonly GetAllAlbumsUseCase _getAllAlbumsUseCase;
@@ -55,6 +59,7 @@ public partial class MainWindowViewModel : ViewModelBase
     partial void OnSelectedFolderChanged(Folder? value)
     {
         OnPropertyChanged(nameof(HasSelectedFolder));
+        _ = LoadImagesForFolderAsync();
     }
 
     [ObservableProperty]
@@ -107,6 +112,87 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public bool ShowMainContent => !IsLoading && HasData;
 
+    // New properties for modern UI
+    [ObservableProperty]
+    private string _searchQuery = string.Empty;
+
+    [ObservableProperty]
+    private string _sortOption = "Date Created";
+
+    [ObservableProperty]
+    private bool _isGridviewSelected = true;
+
+    [ObservableProperty]
+    private bool _isListviewSelected = false;
+
+    [ObservableProperty]
+    private bool _showNSFW = false;
+
+    [ObservableProperty]
+    private int _minRating = 0;
+
+    [ObservableProperty]
+    private bool _onlyFavorites = false;
+
+    // Filtered images based on search, tags, and other criteria
+    [ObservableProperty]
+    private ObservableCollection<Image> _filteredImages = [];
+
+    // Available sort options
+    public List<string> SortOptions => new List<string>
+    {
+        "Date Created",
+        "Aesthetic Score",
+        "Rating",
+        "File Name",
+        "Model Name",
+        "Steps"
+    };
+
+    // Available rating options
+    public List<int> RatingOptions => new List<int> { 0, 1, 2, 3, 4, 5 };
+
+    // Apply filters whenever relevant properties change
+    partial void OnSearchQueryChanged(string value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnSortOptionChanged(string value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnShowNSFWChanged(bool value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnMinRatingChanged(int value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnOnlyFavoritesChanged(bool value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnImagesChanged(ObservableCollection<Image> value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnSelectedTagChanged(Tag? value)
+    {
+        ApplyFilters();
+    }
+
+    partial void OnSelectedAlbumChanged(Album? value)
+    {
+        ApplyFilters();
+    }
+
     [RelayCommand]
     private async Task RefreshData()
     {
@@ -114,140 +200,21 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private async Task LoadImagesForSelectedFolder()
-    {
-        if (SelectedFolder != null)
-        {
-            try
-            {
-                var request = new GetImagesByFolderIdRequest(SelectedFolder.Id);
-                var images = await _getImagesByFolderIdUseCase.ExecuteAsync(request);
-                Images = new ObservableCollection<Image>(images);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error loading images for folder: {ex.Message}");
-            }
-        }
-    }
-
-    [RelayCommand]
-    private async Task LoadSampleData()
+    private async Task CleanupThumbnails()
     {
         try
         {
             IsLoading = true;
-            StatusMessage = "Generating sample data...";
+            StatusMessage = "Cleaning up invalid thumbnails...";
             
-            // Create sample folders
-            var sampleFolders = new List<Folder>
-            {
-                new Folder("C:/AI Images/Stable Diffusion") { IsRoot = true, ImageCount = 5 },
-                new Folder("C:/AI Images/Midjourney") { IsRoot = true, ImageCount = 3 },
-                new Folder("C:/AI Images/DALL-E") { IsRoot = true, ImageCount = 2 }
-            };
+            await _thumbnailGenerationService.CleanupInvalidThumbnailsAsync();
             
-            foreach (var folder in sampleFolders)
-            {
-                Folders.Add(folder);
-            }
-            
-            // Create sample images
-            var sampleImages = new List<Image>
-            {
-                new Image("C:/AI Images/Stable Diffusion/image1.png", "portrait_001.png") 
-                { 
-                    Prompt = "Portrait of a woman in a garden, digital art, detailed", 
-                    Steps = 30, 
-                    Sampler = "Euler a", 
-                    CFGScale = 7.0m,
-                    Seed = 1234567890,
-                    Width = 512,
-                    Height = 768,
-                    Model = "SDXL 1.0",
-                    Rating = 4,
-                    Favorite = true
-                },
-                new Image("C:/AI Images/Stable Diffusion/image2.png", "landscape_002.png") 
-                { 
-                    Prompt = "Beautiful mountain landscape at sunset, photorealistic", 
-                    Steps = 40, 
-                    Sampler = "DPM++ 2M", 
-                    CFGScale = 8.0m,
-                    Seed = 9876543210,
-                    Width = 1024,
-                    Height = 768,
-                    Model = "SDXL 1.0",
-                    Rating = 5
-                },
-                new Image("C:/AI Images/Midjourney/image1.png", "fantasy_001.png") 
-                { 
-                    Prompt = "Dragon flying over a medieval castle, fantasy art", 
-                    Steps = 25, 
-                    Sampler = "Midjourney v6", 
-                    CFGScale = 7.5m,
-                    Seed = 4567890123,
-                    Width = 1024,
-                    Height = 1024,
-                    Model = "Midjourney v6",
-                    Rating = 5,
-                    Favorite = true
-                },
-                new Image("C:/AI Images/DALL-E/image1.png", "abstract_001.png") 
-                { 
-                    Prompt = "Abstract geometric patterns with vibrant colors", 
-                    Steps = 20, 
-                    Sampler = "DALL-E 3", 
-                    CFGScale = 6.5m,
-                    Seed = 7890123456,
-                    Width = 1024,
-                    Height = 1024,
-                    Model = "DALL-E 3",
-                    Rating = 3
-                }
-            };
-            
-            foreach (var image in sampleImages)
-            {
-                Images.Add(image);
-            }
-            
-            // Create sample tags
-            var sampleTags = new List<Tag>
-            {
-                new Tag { Name = "Portrait" },
-                new Tag { Name = "Landscape" },
-                new Tag { Name = "Fantasy" },
-                new Tag { Name = "Abstract" },
-                new Tag { Name = "Digital Art" },
-                new Tag { Name = "Photorealistic" }
-            };
-            
-            foreach (var tag in sampleTags)
-            {
-                Tags.Add(tag);
-            }
-            
-            // Create sample albums
-            var sampleAlbums = new List<Album>
-            {
-                new Album { Name = "Favorites" },
-                new Album { Name = "High Quality" },
-                new Album { Name = "Portrait Collection" }
-            };
-            
-            foreach (var album in sampleAlbums)
-            {
-                Albums.Add(album);
-            }
-            
-            HasData = true;
-            StatusMessage = "Sample data loaded successfully!";
+            StatusMessage = "Thumbnail cleanup completed successfully.";
         }
         catch (Exception ex)
         {
-            StatusMessage = $"Error loading sample data: {ex.Message}";
-            Debug.WriteLine($"Error loading sample data: {ex.Message}");
+            StatusMessage = $"Error cleaning up thumbnails: {ex.Message}";
+            Debug.WriteLine($"Error cleaning up thumbnails: {ex.Message}");
         }
         finally
         {
@@ -255,18 +222,366 @@ public partial class MainWindowViewModel : ViewModelBase
         }
     }
 
+    [RelayCommand]
+    private async Task LoadImagesForSelectedFolder()
+    {
+        await LoadImagesForFolderAsync();
+    }
+
+    private async Task LoadImagesForFolderAsync()
+    {
+        if (SelectedFolder != null)
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = "Loading images for folder...";
+                var request = new GetImagesByFolderIdRequest(SelectedFolder.Id);
+                var images = await _getImagesByFolderIdUseCase.ExecuteAsync(request);
+                
+                // Create observable collection
+                Images = new ObservableCollection<Image>(images);
+                
+                // Generate thumbnails for images that don't have them
+                await GenerateMissingThumbnailsAsync(Images);
+                
+                StatusMessage = $"Loaded {Images.Count} images for folder: {SelectedFolder.Path}";
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading images for folder: {ex.Message}");
+                StatusMessage = $"Error loading images for folder: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Generates thumbnails for images that don't have them
+    /// </summary>
+    /// <param name="images">Collection of images to process</param>
+    private async Task GenerateMissingThumbnailsAsync(IEnumerable<Image> images)
+    {
+        var imagesToProcess = images.ToList();
+        if (imagesToProcess.Count == 0)
+        {
+            return;
+        }
+        
+        StatusMessage = $"Generating thumbnails for {imagesToProcess.Count} images...";
+        
+        const int MAX_CONCURRENT_TASKS = 8;
+        var semaphore = new SemaphoreSlim(MAX_CONCURRENT_TASKS);
+        var tasks = new List<Task>();
+        var successCount = 0;
+        var failureCount = 0;
+        
+        foreach (var img in imagesToProcess)
+        {
+            await semaphore.WaitAsync();
+            
+            var task = Task.Run(async () =>
+            {
+                try
+                {
+                    img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loading;
+                    
+                    if (!File.Exists(img.Path))
+                    {
+                        Debug.WriteLine($"Image file not found: {img.Path}");
+                        img.ThumbnailPath = string.Empty;
+                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
+                        return;
+                    }
+                    
+                    var thumbnailPath = await _thumbnailGenerationService.GetOrGenerateThumbnailAsync(img.Path);
+                    
+                    if (!string.IsNullOrEmpty(thumbnailPath) && File.Exists(thumbnailPath))
+                    {
+                        img.ThumbnailPath = thumbnailPath;
+                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loaded;
+                        Interlocked.Increment(ref successCount);
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"Failed to generate thumbnail for: {img.Path}");
+                        img.ThumbnailPath = string.Empty;
+                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
+                        Interlocked.Increment(ref failureCount);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error generating thumbnail for {img.Path}: {ex.Message}");
+                    Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+                    img.ThumbnailPath = string.Empty;
+                    img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
+                    Interlocked.Increment(ref failureCount);
+                }
+                finally
+                {
+                    semaphore.Release();
+                }
+            });
+            
+            tasks.Add(task);
+        }
+        
+        await Task.WhenAll(tasks);
+        
+        StatusMessage = $"Thumbnail generation completed. Success: {successCount}, Failed: {failureCount}";
+    }
+
+    /// <summary>
+    /// Applies all filters to the images collection
+    /// </summary>
+    private void ApplyFilters()
+    {
+        if (Images == null)
+        {
+            FilteredImages = new ObservableCollection<Image>();
+            return;
+        }
+
+        IEnumerable<Image> filtered = Images;
+
+        // Apply NSFW filter - only filter out images that are explicitly marked as NSFW
+        if (!ShowNSFW)
+        {
+            filtered = filtered.Where(img => img.NSFW != true);
+        }
+
+        // Apply minimum rating filter - only filter if MinRating > 0 and image has a rating
+        if (MinRating > 0)
+        {
+            filtered = filtered.Where(img => img.Rating == null || img.Rating >= MinRating);
+        }
+
+        // Apply favorites filter
+        if (OnlyFavorites)
+        {
+            filtered = filtered.Where(img => img.Favorite);
+        }
+
+        // Apply search query
+        if (!string.IsNullOrWhiteSpace(SearchQuery))
+        {
+            var query = SearchQuery.ToLowerInvariant();
+            filtered = filtered.Where(img =>
+                (img.Prompt?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.NegativePrompt?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.FileName?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.Model?.ToLowerInvariant().Contains(query) ?? false) ||
+                (img.Sampler?.ToLowerInvariant().Contains(query) ?? false));
+        }
+
+        // Apply selected tag filter
+        if (SelectedTag != null)
+        {
+            // This is a placeholder - in reality, you'd check if the image has the selected tag
+            // filtered = filtered.Where(img => img.Tags.Contains(SelectedTag));
+        }
+
+        // Apply selected album filter
+        if (SelectedAlbum != null)
+        {
+            // This is a placeholder - in reality, you'd check if the image is in the selected album
+            // filtered = filtered.Where(img => img.Albums.Contains(SelectedAlbum));
+        }
+
+        // Apply sorting
+        filtered = ApplySorting(filtered);
+
+        // Update filtered images collection
+        FilteredImages = new ObservableCollection<Image>(filtered);
+    }
+
+    /// <summary>
+    /// Applies sorting based on the current sort option
+    /// </summary>
+    private IEnumerable<Image> ApplySorting(IEnumerable<Image> images)
+    {
+        // Handle null values in sorting to prevent images from being filtered out
+        return SortOption switch
+        {
+            "Date Created" => images.OrderByDescending(img => img.CreatedDate),
+            "Aesthetic Score" => images.OrderByDescending(img => img.AestheticScore ?? 0),
+            "Rating" => images.OrderByDescending(img => img.Rating ?? 0),
+            "File Name" => images.OrderBy(img => img.FileName ?? ""),
+            "Model Name" => images.OrderBy(img => img.Model ?? ""),
+            "Steps" => images.OrderByDescending(img => img.Steps),
+            _ => images.OrderByDescending(img => img.CreatedDate)
+        };
+    }
+
+    [RelayCommand]
+    private async Task LoadImagesByAlbum(Album album)
+    {
+        if (album != null)
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = $"Loading images for album: {album.Name}...";
+                var request = new GetImagesByAlbumIdRequest(album.Id);
+                var images = await _getImagesByAlbumIdUseCase.ExecuteAsync(request);
+                Images = new ObservableCollection<Image>(images);
+                
+                // Generate thumbnails for images that don't have them
+                await GenerateMissingThumbnailsAsync(Images);
+                
+                StatusMessage = $"Loaded {Images.Count} images for album: {album.Name}";
+                SelectedAlbum = album;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading images for album: {ex.Message}");
+                StatusMessage = $"Error loading images for album: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+    }
+
+    [RelayCommand]
+    private void ToggleFavorite(Image image)
+    {
+        if (image != null)
+        {
+            image.Favorite = !image.Favorite;
+            // In a real implementation, you'd save this to the database
+            ApplyFilters(); // Refresh the filtered list if only favorites is selected
+        }
+    }
+
+    [RelayCommand]
+    public void OpenImage(Image image)
+    {
+        if (image != null && !string.IsNullOrEmpty(image.Path))
+        {
+            try
+            {
+                // Open the image file with the default application
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = image.Path,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error opening image: {ex.Message}";
+                Debug.WriteLine($"Error opening image: {ex.Message}");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Sets the rating for an image
+    /// </summary>
+    /// <param name="image">The image to rate</param>
+    /// <param name="rating">The rating to set (0-5)</param>
+    public void SetRating(Image image, int rating)
+    {
+        if (image != null)
+        {
+            image.Rating = rating;
+            // In a real implementation, you'd save this to the database
+            ApplyFilters(); // Refresh the filtered list if rating filter is applied
+        }
+    }
+
+    [RelayCommand]
+    private void ToggleNSFW(Image image)
+    {
+        if (image != null)
+        {
+            image.NSFW = !image.NSFW;
+            // In a real implementation, you'd save this to the database
+            ApplyFilters(); // Refresh the filtered list if NSFW filter is applied
+        }
+    }
+
+    [RelayCommand]
+    private async Task AddNewTag()
+    {
+        if (!string.IsNullOrWhiteSpace(NewTagName))
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = $"Adding tag: {NewTagName}...";
+                var tag = await _addTagUseCase.ExecuteAsync(new AddTagRequest(NewTagName));
+                if (tag != null)
+                {
+                    Tags.Add(tag);
+                    NewTagName = string.Empty;
+                    StatusMessage = $"Tag '{tag.Name}' added successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error adding tag: {ex.Message}");
+                StatusMessage = $"Error adding tag: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+    }
+
+    [RelayCommand]
+    private async Task AddNewAlbum()
+    {
+        if (!string.IsNullOrWhiteSpace(NewAlbumName))
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = $"Adding album: {NewAlbumName}...";
+                var album = await _addAlbumUseCase.ExecuteAsync(new AddAlbumRequest(NewAlbumName));
+                if (album != null)
+                {
+                    Albums.Add(album);
+                    NewAlbumName = string.Empty;
+                    StatusMessage = $"Album '{album.Name}' added successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error adding album: {ex.Message}");
+                StatusMessage = $"Error adding album: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+    }
+
+    [RelayCommand]
+    private void ToggleView()
+    {
+        IsGridviewSelected = !IsGridviewSelected;
+        IsListviewSelected = !IsListviewSelected;
+    }
+
     public MainWindowViewModel(
         GetRootFoldersUseCase getRootFoldersUseCase,
         GetAllImagesUseCase getAllImagesUseCase,
         GetImagesByFolderIdUseCase getImagesByFolderIdUseCase,
         AIGenManager.Application.UseCases.Folders.ScanFolderUseCase scanFolderUseCase,
+        AIGenManager.Core.Domain.Services.IThumbnailGenerationService thumbnailGenerationService,
         
         // Tag use cases
         GetAllTagsUseCase getAllTagsUseCase,
-        GetTagsByImageIdUseCase getTagsByImageIdUseCase,
         AddTagUseCase addTagUseCase,
-        AddTagToImageUseCase addTagToImageUseCase,
-        RemoveTagFromImageUseCase removeTagFromImageUseCase,
         
         // Album use cases
         GetAllAlbumsUseCase getAllAlbumsUseCase,
@@ -278,12 +593,10 @@ public partial class MainWindowViewModel : ViewModelBase
         _getAllImagesUseCase = getAllImagesUseCase;
         _getImagesByFolderIdUseCase = getImagesByFolderIdUseCase;
         _scanFolderUseCase = scanFolderUseCase;
+        _thumbnailGenerationService = thumbnailGenerationService;
         
         _getAllTagsUseCase = getAllTagsUseCase;
-        _getTagsByImageIdUseCase = getTagsByImageIdUseCase;
         _addTagUseCase = addTagUseCase;
-        _addTagToImageUseCase = addTagToImageUseCase;
-        _removeTagFromImageUseCase = removeTagFromImageUseCase;
         
         _getAllAlbumsUseCase = getAllAlbumsUseCase;
         _addAlbumUseCase = addAlbumUseCase;
@@ -291,7 +604,7 @@ public partial class MainWindowViewModel : ViewModelBase
         _getImagesByAlbumIdUseCase = getImagesByAlbumIdUseCase;
         
         // Start loading data asynchronously without blocking the constructor
-        _ = LoadData();
+        _ = Task.Run(() => LoadData());
     }
 
     private async Task LoadData()
@@ -305,6 +618,12 @@ public partial class MainWindowViewModel : ViewModelBase
             StatusMessage = "Loading images...";
             await LoadImages();
             
+            // Generate thumbnails for all loaded images
+            if (Images.Any())
+            {
+                await GenerateMissingThumbnailsAsync(Images);
+            }
+            
             StatusMessage = "Loading tags...";
             await LoadTags();
             
@@ -312,7 +631,10 @@ public partial class MainWindowViewModel : ViewModelBase
             await LoadAlbums();
             
             HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();
-            StatusMessage = HasData ? "Data loaded successfully" : "No data found. Import images or load sample data to get started.";
+            StatusMessage = HasData ? "Data loaded successfully" : "No data found. Import images to get started.";
+            
+            // Initialize filtered images
+            ApplyFilters();
         }
         catch (Exception ex)
         {
@@ -344,13 +666,20 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
+            Console.WriteLine("Loading images from database...");
             var images = await _getAllImagesUseCase.ExecuteAsync();
+            Console.WriteLine($"Loaded {images.Count()} images from database");
             Images = new ObservableCollection<Image>(images);
+            Console.WriteLine($"Set Images property to {Images.Count} images");
+            // Explicitly call ApplyFilters to ensure FilteredImages is updated
+            ApplyFilters();
+            Console.WriteLine($"Applied filters, FilteredImages count: {FilteredImages.Count}");
         }
         catch (Exception ex)
         {
             Debug.WriteLine($"Error loading images: {ex.Message}");
             Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+            Console.WriteLine($"Error loading images: {ex.Message}");
         }
     }
 
@@ -387,21 +716,55 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
-            // Show folder picker dialog (implementation will depend on Avalonia UI framework)
-            // For now, we'll simulate with a hardcoded path for testing
-            var folderPath = "C:\\AI Images";
+            // Get the main window reference
+            var mainWindow = ViewModelBase.MainWindow;
+            if (mainWindow == null)
+            {
+                StatusMessage = "Error: Main window not found.";
+                return;
+            }
+            
+            // Use Avalonia's StorageProvider API for folder selection
+            var options = new Avalonia.Platform.Storage.FolderPickerOpenOptions
+            {
+                Title = "Select Folders to Import",
+                AllowMultiple = true
+            };
+            
+            var result = await mainWindow.StorageProvider.OpenFolderPickerAsync(options);
+            
+            if (result == null || result.Count == 0)
+            {
+                // User cancelled the dialog
+                StatusMessage = "Import cancelled by user.";
+                return;
+            }
             
             IsLoading = true;
-            StatusMessage = $"Scanning folder: {folderPath}...";
+            int totalProcessed = 0;
             
-            var request = new ScanFolderRequest(folderPath, true);
-            var processedCount = await _scanFolderUseCase.ExecuteAsync(request);
+            // Process all selected folders
+            foreach (var folder in result)
+            {
+                var folderPath = folder.Path.LocalPath;
+                StatusMessage = $"Scanning folder: {folderPath}...";
+                
+                var request = new ScanFolderRequest(folderPath, true);
+                var processedCount = await _scanFolderUseCase.ExecuteAsync(request);
+                totalProcessed += processedCount;
+            }
             
             // Refresh data
             await LoadFolders();
             await LoadImages();
             
-            StatusMessage = $"Successfully imported {processedCount} images from {folderPath}";
+            // Generate thumbnails for newly imported images
+            if (Images.Any())
+            {
+                await GenerateMissingThumbnailsAsync(Images);
+            }
+            
+            StatusMessage = $"Successfully imported {totalProcessed} images from {result.Count} folders";
             HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();
         }
         catch (Exception ex)
