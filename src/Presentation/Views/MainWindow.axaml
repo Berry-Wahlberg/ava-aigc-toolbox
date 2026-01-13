@@ -12,6 +12,9 @@
         Width="1400" Height="900"
         MinWidth="1024" MinHeight="768"
         Background="{DynamicResource SystemBackground}">
+    <Window.Resources>
+        <converters:StringToUriConverter x:Key="StringToUri"/>
+    </Window.Resources>
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -303,15 +306,15 @@
 
                 <!-- Image Grid -->
                 <ScrollViewer Padding="16">
-                    <ListBox ItemsSource="{Binding Images}" SelectedItem="{Binding SelectedImage}" 
+                    <ListBox ItemsSource="{Binding FilteredImages}" SelectedItem="{Binding SelectedImage}" 
                              BorderThickness="0" Background="Transparent" 
                              SelectionMode="Single"
                              DoubleTapped="OnImageDoubleTapped">
                         <ListBox.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border Background="{DynamicResource SystemChromeMediumBrush}" 
@@ -321,44 +324,46 @@
                                         Width="200" Cursor="Hand">
                                     <StackPanel Spacing="8">
                                         <!-- Image Preview -->
-                                        <Border Background="{DynamicResource SystemChromeLowBrush}" 
-                                                CornerRadius="6" Height="200" 
-                                                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
-                                                BorderThickness="1">
-                                            <!-- Use Grid to allow multiple overlapping elements -->
-                                            <Grid>
-                                                <Image Source="{Binding ThumbnailPath}" 
-                                                       Stretch="UniformToFill" 
-                                                       HorizontalAlignment="Center" 
-                                                       VerticalAlignment="Center"
-                                                       RenderOptions.BitmapInterpolationMode="HighQuality"
-                                                       IsVisible="{Binding ThumbnailLoadStatus, Converter={StaticResource ThumbnailLoadStatus}, ConverterParameter=Inverted}"/>
-                                                <!-- Loading indicator -->
-                                                <Panel IsVisible="{Binding ThumbnailLoadStatus, Converter={StaticResource ThumbnailLoading}}" 
-                                                       Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
-                                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-                                                        <ProgressBar Width="40" Height="40" IsIndeterminate="True" 
-                                                                     Foreground="{DynamicResource SystemAccentColor}" 
-                                                                     Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"/>
-                                                        <TextBlock Text="Loading..." FontSize="12" 
-                                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                                                   HorizontalAlignment="Center"/>
-                                                    </StackPanel>
-                                                </Panel>
-                                                <!-- Fallback content for failed/not loaded thumbnails -->
-                                                <Panel Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
-                                                       IsVisible="{Binding ThumbnailLoadStatus, Converter={StaticResource ThumbnailLoadStatus}}">
-                                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="4">
-                                                        <TextBlock Text="🖼️" FontSize="32" 
-                                                                   Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
-                                                                   HorizontalAlignment="Center"/>
-                                                        <TextBlock Text="No Thumbnail" FontSize="10" 
-                                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                                                   HorizontalAlignment="Center"/>
-                                                    </StackPanel>
-                                                </Panel>
-                                            </Grid>
-                                        </Border>
+                    <Border Background="{DynamicResource SystemChromeLowBrush}" 
+                            CornerRadius="6" Height="200" 
+                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                            BorderThickness="1">
+                        <Grid>
+                            <!-- Image with direct binding to ThumbnailUri -->
+                            <Image Source="{Binding ThumbnailUri}" 
+                                   Stretch="UniformToFill" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"
+                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                            
+                            <!-- Loading indicator - only shown when explicitly loading -->
+                            <Panel IsVisible="{Binding IsThumbnailLoading}" 
+                                   Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
+                                   Opacity="0.8">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
+                                    <ProgressBar Width="40" Height="40" IsIndeterminate="True" 
+                                                 Foreground="{DynamicResource SystemAccentColor}" 
+                                                 Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"/>
+                                    <TextBlock Text="Loading..." FontSize="12" 
+                                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                               HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Panel>
+                            
+                            <!-- Fallback content for failed/not loaded thumbnails -->
+                            <Panel IsVisible="{Binding IsThumbnailFailed}" 
+                                   Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="4">
+                                    <TextBlock Text="🖼️" FontSize="32" 
+                                               Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                               HorizontalAlignment="Center"/>
+                                    <TextBlock Text="No Thumbnail" FontSize="10" 
+                                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                               HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Panel>
+                        </Grid>
+                    </Border>
 
                                         <!-- Image Info -->
                                         <StackPanel Spacing="4">
@@ -410,52 +415,55 @@
                     </Border>
 
                     <!-- Image Preview -->
-                    <Border Background="{DynamicResource SystemChromeMediumBrush}" 
-                            Padding="16" 
-                            BorderThickness="0,0,0,1" 
-                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}">
-                        <Border Background="{DynamicResource SystemChromeLowBrush}" 
-                                CornerRadius="8" 
-                                BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
-                                BorderThickness="1" 
-                                HorizontalAlignment="Center" 
-                                MaxHeight="300">
-                            <!-- Use Grid to allow multiple overlapping elements -->
-                            <Grid>
-                                <Image Source="{Binding SelectedImage.ThumbnailPath}" 
-                                       Stretch="Uniform" 
-                                       HorizontalAlignment="Center" 
-                                       VerticalAlignment="Center" 
-                                       Margin="20"
-                                       RenderOptions.BitmapInterpolationMode="HighQuality"
-                                       IsVisible="{Binding SelectedImage.ThumbnailLoadStatus, Converter={StaticResource ThumbnailLoadStatus}, ConverterParameter=Inverted}"/>
-                                <!-- Loading indicator -->
-                                <Panel IsVisible="{Binding SelectedImage.ThumbnailLoadStatus, Converter={StaticResource ThumbnailLoading}}" 
-                                       Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
-                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-                                        <ProgressBar Width="40" Height="40" IsIndeterminate="True" 
-                                                     Foreground="{DynamicResource SystemAccentColor}" 
-                                                     Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"/>
-                                        <TextBlock Text="Loading..." FontSize="12" 
-                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                                   HorizontalAlignment="Center"/>
-                                    </StackPanel>
-                                </Panel>
-                                <!-- Fallback content for failed/not loaded thumbnails -->
-                                <Panel IsVisible="{Binding SelectedImage.ThumbnailLoadStatus, Converter={StaticResource ThumbnailLoadStatus}}" 
-                                       Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
-                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-                                        <TextBlock Text="🖼️" FontSize="48" 
-                                                   Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
-                                                   HorizontalAlignment="Center"/>
-                                        <TextBlock Text="Preview Unavailable" FontSize="14" 
-                                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                                   HorizontalAlignment="Center"/>
-                                    </StackPanel>
-                                </Panel>
-                            </Grid>
-                        </Border>
+                <Border Background="{DynamicResource SystemChromeMediumBrush}" 
+                        Padding="16" 
+                        BorderThickness="0,0,0,1" 
+                        BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}">
+                    <Border Background="{DynamicResource SystemChromeLowBrush}" 
+                            CornerRadius="8" 
+                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                            BorderThickness="1" 
+                            HorizontalAlignment="Center" 
+                            MaxHeight="300">
+                        <!-- Use Grid to allow multiple overlapping elements -->
+                        <Grid>
+                            <!-- Image with direct binding to ThumbnailUri -->
+                            <Image Source="{Binding SelectedImage.ThumbnailUri}" 
+                                   Stretch="Uniform" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   Margin="20"
+                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                            
+                            <!-- Loading indicator - only shown when explicitly loading -->
+                            <Panel IsVisible="{Binding SelectedImage.IsThumbnailLoading}" 
+                                   Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
+                                   Opacity="0.8">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
+                                    <ProgressBar Width="40" Height="40" IsIndeterminate="True" 
+                                                 Foreground="{DynamicResource SystemAccentColor}" 
+                                                 Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"/>
+                                    <TextBlock Text="Loading..." FontSize="12" 
+                                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                               HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Panel>
+                            
+                            <!-- Fallback content for failed/not loaded thumbnails -->
+                            <Panel IsVisible="{Binding SelectedImage.IsThumbnailFailed}" 
+                                   Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
+                                    <TextBlock Text="🖼️" FontSize="48" 
+                                               Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                               HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Preview Unavailable" FontSize="14" 
+                                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                               HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Panel>
+                        </Grid>
                     </Border>
+                </Border>
 
                     <!-- Image Metadata -->
                     <ScrollViewer>

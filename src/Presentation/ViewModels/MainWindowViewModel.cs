@@ -272,8 +272,7 @@ public partial class MainWindowViewModel : ViewModelBase
         
         StatusMessage = $"Generating thumbnails for {imagesToProcess.Count} images...";
         
-        // Process images in parallel with progress reporting
-        var processedCount = 0;
+        // Process images in parallel for improved performance
         var tasks = imagesToProcess.Select(async img =>
         {
             try
@@ -281,44 +280,24 @@ public partial class MainWindowViewModel : ViewModelBase
                 // 设置加载状态
                 img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loading;
                 
-                // 验证缩略图是否存在且有效
-                if (!string.IsNullOrEmpty(img.ThumbnailPath))
+                // 检查原始图像是否存在
+                if (!File.Exists(img.Path))
                 {
-                    // 检查缩略图文件是否存在且有效
-                    if (File.Exists(img.ThumbnailPath) && _thumbnailGenerationService.IsThumbnailValid(img.ThumbnailPath))
-                    {
-                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loaded;
-                        return;
-                    }
+                    img.ThumbnailPath = string.Empty;
+                    img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
+                    return;
                 }
                 
                 // 生成缩略图
-                if (File.Exists(img.Path))
-                {
-                    var thumbnailPath = await _thumbnailGenerationService.GetOrGenerateThumbnailAsync(img.Path);
-                    img.ThumbnailPath = thumbnailPath;
-                    img.ThumbnailLoadStatus = !string.IsNullOrEmpty(thumbnailPath) ? ThumbnailLoadStatus.Loaded : ThumbnailLoadStatus.Failed;
-                }
-                else
-                {
-                    Debug.WriteLine($"Image file not found: {img.Path}");
-                    img.ThumbnailPath = string.Empty;
-                    img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
-                }
+                var thumbnailPath = await _thumbnailGenerationService.GetOrGenerateThumbnailAsync(img.Path);
+                
+                img.ThumbnailPath = thumbnailPath;
+                img.ThumbnailLoadStatus = !string.IsNullOrEmpty(thumbnailPath) ? ThumbnailLoadStatus.Loaded : ThumbnailLoadStatus.Failed;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Error generating thumbnail for {img.Path}: {ex.Message}");
                 img.ThumbnailPath = string.Empty;
                 img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
-            }
-            finally
-            {
-                processedCount++;
-                if (processedCount % 5 == 0 || processedCount == imagesToProcess.Count)
-                {
-                    StatusMessage = $"Generating thumbnails: {processedCount}/{imagesToProcess.Count} completed...";
-                }
             }
         });
         
@@ -420,6 +399,10 @@ public partial class MainWindowViewModel : ViewModelBase
                 var request = new GetImagesByAlbumIdRequest(album.Id);
                 var images = await _getImagesByAlbumIdUseCase.ExecuteAsync(request);
                 Images = new ObservableCollection<Image>(images);
+                
+                // Generate thumbnails for images that don't have them
+                await GenerateMissingThumbnailsAsync(Images);
+                
                 StatusMessage = $"Loaded {Images.Count} images for album: {album.Name}";
                 SelectedAlbum = album;
             }
@@ -729,6 +712,12 @@ public partial class MainWindowViewModel : ViewModelBase
             StatusMessage = "Loading images...";
             await LoadImages();
             
+            // Generate thumbnails for all loaded images
+            if (Images.Any())
+            {
+                await GenerateMissingThumbnailsAsync(Images);
+            }
+            
             StatusMessage = "Loading tags...";
             await LoadTags();
             
@@ -771,13 +760,17 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
+            Console.WriteLine("Loading images from database...");
             var images = await _getAllImagesUseCase.ExecuteAsync();
+            Console.WriteLine($"Loaded {images.Count()} images from database");
             Images = new ObservableCollection<Image>(images);
+            Console.WriteLine($"Set Images property to {Images.Count} images");
         }
         catch (Exception ex)
         {
             Debug.WriteLine($"Error loading images: {ex.Message}");
             Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+            Console.WriteLine($"Error loading images: {ex.Message}");
         }
     }
 
@@ -849,6 +842,12 @@ public partial class MainWindowViewModel : ViewModelBase
             // Refresh data
             await LoadFolders();
             await LoadImages();
+            
+            // Generate thumbnails for newly imported images
+            if (Images.Any())
+            {
+                await GenerateMissingThumbnailsAsync(Images);
+            }
             
             StatusMessage = $"Successfully imported {processedCount} images from {folderPath}";
             HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();

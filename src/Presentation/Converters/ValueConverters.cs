@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.IO;
 using Avalonia.Data.Converters;
 using AIGenManager.Core.Domain.Entities;
 
@@ -31,24 +32,29 @@ public class IsNotNullConverter : IValueConverter
     }
 }
 
-public class ThumbnailLoadStatusConverter : IValueConverter
+public class StringToUriConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        bool inverted = parameter?.ToString() == "Inverted";
-        
-        if (value is ThumbnailLoadStatus status)
+        if (value is string path && !string.IsNullOrEmpty(path))
         {
-            bool shouldShow = status switch
+            try
             {
-                ThumbnailLoadStatus.NotLoaded => true,
-                ThumbnailLoadStatus.Loading => true,
-                ThumbnailLoadStatus.Failed => true,
-                _ => false
-            };
-            return inverted ? !shouldShow : shouldShow;
+                if (Path.IsPathRooted(path))
+                {
+                    // For absolute paths in Avalonia, we need to use the file:/// scheme
+                    var uriPath = path.Replace('\\', '/');
+                    return new Uri($"file:///{uriPath}", UriKind.Absolute);
+                }
+                return new Uri(path, UriKind.Relative);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error converting path to URI: {ex.Message}");
+                return null;
+            }
         }
-        return inverted ? false : true;
+        return null;
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
@@ -57,19 +63,4 @@ public class ThumbnailLoadStatusConverter : IValueConverter
     }
 }
 
-public class ThumbnailLoadingConverter : IValueConverter
-{
-    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is ThumbnailLoadStatus status)
-        {
-            return status == ThumbnailLoadStatus.Loading;
-        }
-        return false;
-    }
 
-    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        throw new NotImplementedException();
-    }
-}

@@ -1,10 +1,13 @@
 using AIGenManager.Core.Domain.Services;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Collections.Concurrent;
+
+// 为SixLabors.ImageSharp.Image添加别名，避免与实体类Image冲突
+using ImageSharpImage = SixLabors.ImageSharp.Image;
 
 namespace AIGenManager.Infrastructure.Services;
 
@@ -70,11 +73,11 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
         // Generate thumbnail with enhanced error handling
         try
         {
-            await Task.Run(() =>
+            await Task.Run(async () =>
             {
                 using var originalImage = LoadImageSafe(imagePath);
                 using var thumbnail = GenerateThumbnailImage(originalImage);
-                thumbnail.Save(thumbnailPath, ImageFormat.Jpeg);
+                await thumbnail.SaveAsJpegAsync(thumbnailPath);
             });
         }
         catch (Exception ex)
@@ -168,18 +171,18 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
     /// </summary>
     /// <param name="imagePath">Path to the image file</param>
     /// <returns>Loaded image</returns>
-    private Image LoadImageSafe(string imagePath)
+    private ImageSharpImage LoadImageSafe(string imagePath)
     {
         using var stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-        return Image.FromStream(stream, true, true);
+        return ImageSharpImage.Load(stream);
     }
-
+    
     /// <summary>
     /// Generates a thumbnail image from the original image
     /// </summary>
     /// <param name="originalImage">Original image to generate thumbnail from</param>
     /// <returns>Thumbnail image</returns>
-    private Image GenerateThumbnailImage(Image originalImage)
+    private ImageSharpImage GenerateThumbnailImage(ImageSharpImage originalImage)
     {
         // Calculate aspect ratio preserving dimensions
         var width = originalImage.Width;
@@ -201,14 +204,7 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
         }
         
         // Create thumbnail with high quality
-        var thumbnail = new Bitmap(thumbnailWidth, thumbnailHeight);
-        using var graphics = Graphics.FromImage(thumbnail);
-        graphics.CompositingQuality = CompositingQuality.HighQuality;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
-        
-        // Draw the image
-        graphics.DrawImage(originalImage, 0, 0, thumbnailWidth, thumbnailHeight);
+        var thumbnail = originalImage.Clone(ctx => ctx.Resize(thumbnailWidth, thumbnailHeight));
         
         return thumbnail;
     }

@@ -306,12 +306,52 @@ public partial class Image : ObservableObject
         set => SetProperty(ref _thumbnailPath, value);
     }
     
+    // 计算属性：直接返回缩略图URI
+    public Uri? ThumbnailUri
+    {
+        get
+        {
+            if (string.IsNullOrEmpty(ThumbnailPath))
+            {
+                return null;
+            }
+            
+            try
+            {
+                // 确保路径使用正确的URI格式
+                string uriPath = ThumbnailPath;
+                if (!uriPath.StartsWith("file://"))
+                {
+                    // 转换为绝对路径的URI格式
+                    uriPath = uriPath.Replace('\\', '/');
+                    if (!uriPath.StartsWith("/"))
+                    {
+                        uriPath = $"/{uriPath}";
+                    }
+                    uriPath = $"file://{uriPath}";
+                }
+                return new Uri(uriPath, UriKind.Absolute);
+            }
+            catch (Exception)
+            {
+                // 如果URI格式无效，返回null
+                return null;
+            }
+        }
+    }
+    
     private ThumbnailLoadStatus _thumbnailLoadStatus = ThumbnailLoadStatus.NotLoaded;
     public ThumbnailLoadStatus ThumbnailLoadStatus
     {
         get => _thumbnailLoadStatus;
         set => SetProperty(ref _thumbnailLoadStatus, value);
     }
+    
+    // 计算属性：是否正在加载缩略图
+    public bool IsThumbnailLoading => ThumbnailLoadStatus == ThumbnailLoadStatus.Loading;
+    
+    // 计算属性：是否加载失败
+    public bool IsThumbnailFailed => ThumbnailLoadStatus == ThumbnailLoadStatus.Failed;
     
     // Import-related properties
     private ImportStatus _importStatus;
