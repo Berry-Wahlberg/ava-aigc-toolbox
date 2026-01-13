@@ -3,6 +3,7 @@
         xmlns:vm="using:BerryAIGCToolbox.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="using:BerryAIGCToolbox.Converters"
         mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="900"
         x:Class="BerryAIGCToolbox.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -328,7 +329,7 @@
                                                        VerticalAlignment="Center"/>
                                                 <!-- Fallback content using Overlay -->
                                                 <Panel Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
-                                                       IsVisible="{Binding ThumbnailPath, Converter={x:Static ObjectConverters.IsNull}}">
+                                                       IsVisible="{Binding ThumbnailPath, Converter={StaticResource IsNull}}">
                                                     <TextBlock Text="IMG" FontSize="32" 
                                                                FontWeight="Bold" 
                                                                Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
@@ -406,7 +407,7 @@
                                        VerticalAlignment="Center" 
                                        Margin="20"/>
                                 <!-- Fallback content using separate panel -->
-                                <Panel IsVisible="{Binding SelectedImage.ThumbnailPath, Converter={x:Static ObjectConverters.IsNull}}" 
+                                <Panel IsVisible="{Binding SelectedImage.ThumbnailPath, Converter={StaticResource IsNull}}" 
                                        Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                                     <TextBlock Text="PREVIEW" FontSize="18" 
                                                FontWeight="Bold" 

@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="BerryAIGCToolbox.App"
              xmlns:local="using:BerryAIGCToolbox"
+             xmlns:converters="using:BerryAIGCToolbox.Converters"
              RequestedThemeVariant="Light">
              <!-- Explicitly set to Light mode as requested -->
 
@@ -12,4 +13,9 @@
     <Application.Styles>
         <FluentTheme />
     </Application.Styles>
+    
+    <Application.Resources>
+        <converters:IsNullConverter x:Key="IsNull"/>
+        <converters:IsNotNullConverter x:Key="IsNotNull"/>
+    </Application.Resources>
 </Application>

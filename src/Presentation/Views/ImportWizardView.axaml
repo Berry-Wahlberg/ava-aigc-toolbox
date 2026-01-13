@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:BerryAIGCToolbox.ViewModels"
              xmlns:dto="using:AIGenManager.Application.DTOs"
+             xmlns:converters="using:BerryAIGCToolbox.Converters"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
              x:Class="BerryAIGCToolbox.Views.ImportWizardView"
              x:DataType="vm:ImportWizardViewModel">
@@ -73,7 +74,7 @@
         
         <!-- Import Results -->
         <Border Background="{DynamicResource SystemChromeLowColor}" CornerRadius="8" Padding="20" 
-                IsVisible="{Binding ImportResult, Converter={x:Static ObjectConverters.IsNotNull}}">
+                IsVisible="{Binding ImportResult, Converter={StaticResource IsNotNull}}">
           <StackPanel Spacing="15">
             <TextBlock Text="Import Results" FontSize="18" FontWeight="SemiBold"/>
             
@@ -102,7 +103,7 @@
             
             <!-- Error List -->
             <Expander Header="Import Errors" IsExpanded="True" Margin="0,15,0,0"
-                      IsVisible="{Binding ImportResult.FailedToImport, Converter={x:Static ObjectConverters.IsNotNull}}">
+                      IsVisible="{Binding ImportResult.FailedToImport, Converter={StaticResource IsNotNull}}">
               <ListBox ItemsSource="{Binding Errors}" 
                        MaxHeight="300"
                        Margin="0,10,0,0">
@@ -238,7 +239,7 @@
         <Button Grid.Column="2" 
                 Content="Clear Results" 
                 Command="{Binding ClearImportResultCommand}"
-                IsEnabled="{Binding ImportResult, Converter={x:Static ObjectConverters.IsNotNull}}"
+                IsEnabled="{Binding ImportResult, Converter={StaticResource IsNotNull}}"
                 Padding="20,8"
                 Margin="10,0,0,0"/>
         
