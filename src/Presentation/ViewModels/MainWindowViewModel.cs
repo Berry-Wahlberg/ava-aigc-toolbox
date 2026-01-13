@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Avalonia;
 using AIGenManager.Application.UseCases.Folders;
@@ -272,38 +273,66 @@ public partial class MainWindowViewModel : ViewModelBase
         
         StatusMessage = $"Generating thumbnails for {imagesToProcess.Count} images...";
         
-        // Process images in parallel for improved performance
-        var tasks = imagesToProcess.Select(async img =>
+        const int MAX_CONCURRENT_TASKS = 8;
+        var semaphore = new SemaphoreSlim(MAX_CONCURRENT_TASKS);
+        var tasks = new List<Task>();
+        var successCount = 0;
+        var failureCount = 0;
+        
+        foreach (var img in imagesToProcess)
         {
-            try
+            await semaphore.WaitAsync();
+            
+            var task = Task.Run(async () =>
             {
-                // 设置加载状态
-                img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loading;
-                
-                // 检查原始图像是否存在
-                if (!File.Exists(img.Path))
+                try
                 {
+                    img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loading;
+                    
+                    if (!File.Exists(img.Path))
+                    {
+                        Debug.WriteLine($"Image file not found: {img.Path}");
+                        img.ThumbnailPath = string.Empty;
+                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
+                        return;
+                    }
+                    
+                    var thumbnailPath = await _thumbnailGenerationService.GetOrGenerateThumbnailAsync(img.Path);
+                    
+                    if (!string.IsNullOrEmpty(thumbnailPath) && File.Exists(thumbnailPath))
+                    {
+                        img.ThumbnailPath = thumbnailPath;
+                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Loaded;
+                        Interlocked.Increment(ref successCount);
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"Failed to generate thumbnail for: {img.Path}");
+                        img.ThumbnailPath = string.Empty;
+                        img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
+                        Interlocked.Increment(ref failureCount);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error generating thumbnail for {img.Path}: {ex.Message}");
+                    Debug.WriteLine($"Stack trace: {ex.StackTrace}");
                     img.ThumbnailPath = string.Empty;
                     img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
-                    return;
+                    Interlocked.Increment(ref failureCount);
                 }
-                
-                // 生成缩略图
-                var thumbnailPath = await _thumbnailGenerationService.GetOrGenerateThumbnailAsync(img.Path);
-                
-                img.ThumbnailPath = thumbnailPath;
-                img.ThumbnailLoadStatus = !string.IsNullOrEmpty(thumbnailPath) ? ThumbnailLoadStatus.Loaded : ThumbnailLoadStatus.Failed;
-            }
-            catch (Exception ex)
-            {
-                img.ThumbnailPath = string.Empty;
-                img.ThumbnailLoadStatus = ThumbnailLoadStatus.Failed;
-            }
-        });
+                finally
+                {
+                    semaphore.Release();
+                }
+            });
+            
+            tasks.Add(task);
+        }
         
         await Task.WhenAll(tasks);
         
-        StatusMessage = $"Thumbnail generation completed.";
+        StatusMessage = $"Thumbnail generation completed. Success: {successCount}, Failed: {failureCount}";
     }
 
     /// <summary>
@@ -319,16 +348,16 @@ public partial class MainWindowViewModel : ViewModelBase
 
         IEnumerable<Image> filtered = Images;
 
-        // Apply NSFW filter
+        // Apply NSFW filter - only filter out images that are explicitly marked as NSFW
         if (!ShowNSFW)
         {
-            filtered = filtered.Where(img => !img.NSFW);
+            filtered = filtered.Where(img => img.NSFW != true);
         }
 
-        // Apply minimum rating filter
+        // Apply minimum rating filter - only filter if MinRating > 0 and image has a rating
         if (MinRating > 0)
         {
-            filtered = filtered.Where(img => img.Rating >= MinRating);
+            filtered = filtered.Where(img => img.Rating == null || img.Rating >= MinRating);
         }
 
         // Apply favorites filter
@@ -375,13 +404,14 @@ public partial class MainWindowViewModel : ViewModelBase
     /// </summary>
     private IEnumerable<Image> ApplySorting(IEnumerable<Image> images)
     {
+        // Handle null values in sorting to prevent images from being filtered out
         return SortOption switch
         {
             "Date Created" => images.OrderByDescending(img => img.CreatedDate),
-            "Aesthetic Score" => images.OrderByDescending(img => img.AestheticScore),
-            "Rating" => images.OrderByDescending(img => img.Rating),
-            "File Name" => images.OrderBy(img => img.FileName),
-            "Model Name" => images.OrderBy(img => img.Model),
+            "Aesthetic Score" => images.OrderByDescending(img => img.AestheticScore ?? 0),
+            "Rating" => images.OrderByDescending(img => img.Rating ?? 0),
+            "File Name" => images.OrderBy(img => img.FileName ?? ""),
+            "Model Name" => images.OrderBy(img => img.Model ?? ""),
             "Steps" => images.OrderByDescending(img => img.Steps),
             _ => images.OrderByDescending(img => img.CreatedDate)
         };
@@ -542,130 +572,6 @@ public partial class MainWindowViewModel : ViewModelBase
         IsListviewSelected = !IsListviewSelected;
     }
 
-    [RelayCommand]
-    private async Task LoadSampleData()
-    {
-        try
-        {
-            IsLoading = true;
-            StatusMessage = "Generating sample data...";
-            
-            // Create sample folders
-            var sampleFolders = new List<Folder>
-            {
-                new Folder("C:/AI Images/Stable Diffusion") { IsRoot = true, ImageCount = 5 },
-                new Folder("C:/AI Images/Midjourney") { IsRoot = true, ImageCount = 3 },
-                new Folder("C:/AI Images/DALL-E") { IsRoot = true, ImageCount = 2 }
-            };
-            
-            foreach (var folder in sampleFolders)
-            {
-                Folders.Add(folder);
-            }
-            
-            // Create sample images
-            var sampleImages = new List<Image>
-            {
-                new Image("C:/AI Images/Stable Diffusion/image1.png", "portrait_001.png") 
-                { 
-                    Prompt = "Portrait of a woman in a garden, digital art, detailed", 
-                    Steps = 30, 
-                    Sampler = "Euler a", 
-                    CFGScale = 7.0m,
-                    Seed = 1234567890,
-                    Width = 512,
-                    Height = 768,
-                    Model = "SDXL 1.0",
-                    Rating = 4,
-                    Favorite = true
-                },
-                new Image("C:/AI Images/Stable Diffusion/image2.png", "landscape_002.png") 
-                { 
-                    Prompt = "Beautiful mountain landscape at sunset, photorealistic", 
-                    Steps = 40, 
-                    Sampler = "DPM++ 2M", 
-                    CFGScale = 8.0m,
-                    Seed = 9876543210,
-                    Width = 1024,
-                    Height = 768,
-                    Model = "SDXL 1.0",
-                    Rating = 5
-                },
-                new Image("C:/AI Images/Midjourney/image1.png", "fantasy_001.png") 
-                { 
-                    Prompt = "Dragon flying over a medieval castle, fantasy art", 
-                    Steps = 25, 
-                    Sampler = "Midjourney v6", 
-                    CFGScale = 7.5m,
-                    Seed = 4567890123,
-                    Width = 1024,
-                    Height = 1024,
-                    Model = "Midjourney v6",
-                    Rating = 5,
-                    Favorite = true
-                },
-                new Image("C:/AI Images/DALL-E/image1.png", "abstract_001.png") 
-                { 
-                    Prompt = "Abstract geometric patterns with vibrant colors", 
-                    Steps = 20, 
-                    Sampler = "DALL-E 3", 
-                    CFGScale = 6.5m,
-                    Seed = 7890123456,
-                    Width = 1024,
-                    Height = 1024,
-                    Model = "DALL-E 3",
-                    Rating = 3
-                }
-            };
-            
-            foreach (var image in sampleImages)
-            {
-                Images.Add(image);
-            }
-            
-            // Create sample tags
-            var sampleTags = new List<Tag>
-            {
-                new Tag { Name = "Portrait" },
-                new Tag { Name = "Landscape" },
-                new Tag { Name = "Fantasy" },
-                new Tag { Name = "Abstract" },
-                new Tag { Name = "Digital Art" },
-                new Tag { Name = "Photorealistic" }
-            };
-            
-            foreach (var tag in sampleTags)
-            {
-                Tags.Add(tag);
-            }
-            
-            // Create sample albums
-            var sampleAlbums = new List<Album>
-            {
-                new Album { Name = "Favorites" },
-                new Album { Name = "High Quality" },
-                new Album { Name = "Portrait Collection" }
-            };
-            
-            foreach (var album in sampleAlbums)
-            {
-                Albums.Add(album);
-            }
-            
-            HasData = true;
-            StatusMessage = "Sample data loaded successfully!";
-        }
-        catch (Exception ex)
-        {
-            StatusMessage = $"Error loading sample data: {ex.Message}";
-            Debug.WriteLine($"Error loading sample data: {ex.Message}");
-        }
-        finally
-        {
-            IsLoading = false;
-        }
-    }
-
     public MainWindowViewModel(
         GetRootFoldersUseCase getRootFoldersUseCase,
         GetAllImagesUseCase getAllImagesUseCase,
@@ -725,7 +631,7 @@ public partial class MainWindowViewModel : ViewModelBase
             await LoadAlbums();
             
             HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();
-            StatusMessage = HasData ? "Data loaded successfully" : "No data found. Import images or load sample data to get started.";
+            StatusMessage = HasData ? "Data loaded successfully" : "No data found. Import images to get started.";
             
             // Initialize filtered images
             ApplyFilters();
@@ -765,6 +671,9 @@ public partial class MainWindowViewModel : ViewModelBase
             Console.WriteLine($"Loaded {images.Count()} images from database");
             Images = new ObservableCollection<Image>(images);
             Console.WriteLine($"Set Images property to {Images.Count} images");
+            // Explicitly call ApplyFilters to ensure FilteredImages is updated
+            ApplyFilters();
+            Console.WriteLine($"Applied filters, FilteredImages count: {FilteredImages.Count}");
         }
         catch (Exception ex)
         {
@@ -818,8 +727,8 @@ public partial class MainWindowViewModel : ViewModelBase
             // Use Avalonia's StorageProvider API for folder selection
             var options = new Avalonia.Platform.Storage.FolderPickerOpenOptions
             {
-                Title = "Select Folder to Import",
-                AllowMultiple = false
+                Title = "Select Folders to Import",
+                AllowMultiple = true
             };
             
             var result = await mainWindow.StorageProvider.OpenFolderPickerAsync(options);
@@ -831,13 +740,19 @@ public partial class MainWindowViewModel : ViewModelBase
                 return;
             }
             
-            var folderPath = result[0].Path.LocalPath;
-            
             IsLoading = true;
-            StatusMessage = $"Scanning folder: {folderPath}...";
+            int totalProcessed = 0;
             
-            var request = new ScanFolderRequest(folderPath, true);
-            var processedCount = await _scanFolderUseCase.ExecuteAsync(request);
+            // Process all selected folders
+            foreach (var folder in result)
+            {
+                var folderPath = folder.Path.LocalPath;
+                StatusMessage = $"Scanning folder: {folderPath}...";
+                
+                var request = new ScanFolderRequest(folderPath, true);
+                var processedCount = await _scanFolderUseCase.ExecuteAsync(request);
+                totalProcessed += processedCount;
+            }
             
             // Refresh data
             await LoadFolders();
@@ -849,7 +764,7 @@ public partial class MainWindowViewModel : ViewModelBase
                 await GenerateMissingThumbnailsAsync(Images);
             }
             
-            StatusMessage = $"Successfully imported {processedCount} images from {folderPath}";
+            StatusMessage = $"Successfully imported {totalProcessed} images from {result.Count} folders";
             HasData = Folders.Any() || Images.Any() || Tags.Any() || Albums.Any();
         }
         catch (Exception ex)

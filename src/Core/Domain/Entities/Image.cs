@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using System.IO;
 
 namespace AIGenManager.Core.Domain.Entities;
 
@@ -311,30 +312,27 @@ public partial class Image : ObservableObject
     {
         get
         {
-            if (string.IsNullOrEmpty(ThumbnailPath))
-            {
-                return null;
-            }
-            
             try
             {
-                // 确保路径使用正确的URI格式
-                string uriPath = ThumbnailPath;
-                if (!uriPath.StartsWith("file://"))
+                if (string.IsNullOrEmpty(ThumbnailPath))
                 {
-                    // 转换为绝对路径的URI格式
-                    uriPath = uriPath.Replace('\\', '/');
-                    if (!uriPath.StartsWith("/"))
-                    {
-                        uriPath = $"/{uriPath}";
-                    }
-                    uriPath = $"file://{uriPath}";
+                    return null;
                 }
-                return new Uri(uriPath, UriKind.Absolute);
+                
+                string thumbnailPath = ThumbnailPath;
+                
+                if (!File.Exists(thumbnailPath))
+                {
+                    return null;
+                }
+                
+                // 创建绝对URI，确保路径格式正确
+                return new Uri(thumbnailPath, UriKind.Absolute);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // 如果URI格式无效，返回null
+                // 记录错误但不崩溃
+                System.Diagnostics.Debug.WriteLine($"Error creating ThumbnailUri for {ThumbnailPath}: {ex.Message}");
                 return null;
             }
         }

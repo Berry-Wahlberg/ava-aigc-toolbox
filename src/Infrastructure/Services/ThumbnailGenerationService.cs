@@ -5,6 +5,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 // 为SixLabors.ImageSharp.Image添加别名，避免与实体类Image冲突
 using ImageSharpImage = SixLabors.ImageSharp.Image;
@@ -19,12 +20,19 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
     private const int THUMBNAIL_SIZE = 256;
     private const string THUMBNAIL_EXTENSION = ".jpg";
     private const long MAX_CACHE_SIZE = 1024 * 1024 * 1024; // 1 GB
+    private const int MAX_CACHE_ITEMS = 10000; // 最大缓存项数
     
     private readonly string _cacheDirectory;
     private readonly HashSet<string> _supportedFormats = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     {
         ".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".tiff", ".tif"
     };
+    
+    // LRU缓存：使用ConcurrentDictionary存储缓存项，使用LinkedList维护访问顺序
+    private readonly ConcurrentDictionary<string, (string ThumbnailPath, LinkedListNode<string> Node)> _thumbnailCache;
+    private readonly LinkedList<string> _lruList;
+    private readonly object _cacheLock = new object();
+    private long _currentCacheSize = 0;
 
     /// <summary>
     /// Initializes a new instance of the ThumbnailGenerationService
@@ -35,6 +43,10 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
         var appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BerryAIGCToolbox");
         _cacheDirectory = Path.Combine(appDataPath, "Thumbnails");
         Directory.CreateDirectory(_cacheDirectory);
+        
+        // Initialize LRU cache
+        _thumbnailCache = new ConcurrentDictionary<string, (string ThumbnailPath, LinkedListNode<string> Node)>();
+        _lruList = new LinkedList<string>();
     }
 
     /// <inheritdoc/>
@@ -97,32 +109,112 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
             return string.Empty;
         }
 
+        // 生成缓存键：使用图片路径和修改时间的组合
+        var originalFileInfo = new FileInfo(imagePath);
+        var cacheKey = $"{imagePath}_{originalFileInfo.LastWriteTimeUtc.Ticks}";
+        
+        // 检查缓存
+        if (_thumbnailCache.TryGetValue(cacheKey, out var cacheItem))
+        {
+            // 验证缩略图文件是否仍存在且有效
+            if (File.Exists(cacheItem.ThumbnailPath))
+            {
+                // 将访问的项移到LRU列表末尾（表示最近使用）
+                lock (_cacheLock)
+                {
+                    _lruList.Remove(cacheItem.Node);
+                    _lruList.AddLast(cacheItem.Node);
+                }
+                return cacheItem.ThumbnailPath;
+            }
+            else
+            {
+                // 缩略图文件不存在，从缓存中移除
+                _thumbnailCache.TryRemove(cacheKey, out _);
+            }
+        }
+
         var thumbnailPath = GetThumbnailPath(imagePath);
         
         // 验证现有缩略图是否有效
         if (File.Exists(thumbnailPath))
         {
-            var originalFileInfo = new FileInfo(imagePath);
-            var thumbnailFileInfo = new FileInfo(thumbnailPath);
-            
             // 检查缩略图是否比原图新
-            if (thumbnailFileInfo.LastWriteTime >= originalFileInfo.LastWriteTime)
+            if (new FileInfo(thumbnailPath).LastWriteTime >= originalFileInfo.LastWriteTime)
             {
                 // 验证缩略图文件是否可读
                 try
                 {
                     using var stream = File.OpenRead(thumbnailPath);
+                    // 添加到缓存
+                    AddToCache(cacheKey, thumbnailPath);
                     return thumbnailPath;
                 }
                 catch
                 {
                     // 缩略图损坏,重新生成
-                    return await GenerateThumbnailAsync(imagePath);
+                    return await GenerateAndCacheThumbnail(imagePath, cacheKey);
                 }
             }
         }
         
-        return await GenerateThumbnailAsync(imagePath);
+        // 生成新的缩略图
+        return await GenerateAndCacheThumbnail(imagePath, cacheKey);
+    }
+    
+    /// <summary>
+    /// 生成缩略图并添加到缓存
+    /// </summary>
+    private async Task<string> GenerateAndCacheThumbnail(string imagePath, string cacheKey)
+    {
+        var thumbnailPath = await GenerateThumbnailAsync(imagePath);
+        if (!string.IsNullOrEmpty(thumbnailPath))
+        {
+            AddToCache(cacheKey, thumbnailPath);
+        }
+        return thumbnailPath;
+    }
+    
+    /// <summary>
+    /// 添加到LRU缓存
+    /// </summary>
+    private void AddToCache(string cacheKey, string thumbnailPath)
+    {
+        lock (_cacheLock)
+        {
+            // 检查是否已存在于缓存中
+            if (_thumbnailCache.TryGetValue(cacheKey, out var existingItem))
+            {
+                // 更新现有项
+                _lruList.Remove(existingItem.Node);
+            }
+            else
+            {
+                // 检查缓存大小是否超过限制
+                if (_thumbnailCache.Count >= MAX_CACHE_ITEMS)
+                {
+                    // 移除最久未使用的项
+                    RemoveLeastRecentlyUsed();
+                }
+            }
+            
+            // 添加或更新到缓存
+            var node = _lruList.AddLast(cacheKey);
+            _thumbnailCache[cacheKey] = (thumbnailPath, node);
+        }
+    }
+    
+    /// <summary>
+    /// 移除最久未使用的缓存项
+    /// </summary>
+    private void RemoveLeastRecentlyUsed()
+    {
+        if (_lruList.First != null)
+        {
+            var lruKey = _lruList.First.Value;
+            _lruList.RemoveFirst();
+            _thumbnailCache.TryRemove(lruKey, out _);
+        }
     }
 
     /// <inheritdoc/>

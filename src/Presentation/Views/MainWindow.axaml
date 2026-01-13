@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:BerryAIGCToolbox.ViewModels"
+        xmlns:controls="using:BerryAIGCToolbox.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:converters="using:BerryAIGCToolbox.Converters"
@@ -67,9 +68,6 @@
                             </Style>
                         </Button.Styles>
                     </Button>
-                    <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" 
-                            IsEnabled="{Binding IsNotLoading}" Padding="10,6" 
-                            CornerRadius="6"/>
                     <Button Content="Refresh" Command="{Binding RefreshDataCommand}" 
                             IsEnabled="{Binding IsNotLoading}" Padding="10,6" 
                             CornerRadius="6"/>
@@ -133,25 +131,11 @@
                                    FontSize="16" 
                                    Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
                                    TextAlignment="Center"/>
-                        <TextBlock Text="Get started by importing folders or loading sample data to explore the features." 
+                        <TextBlock Text="Get started by importing folders to explore the features." 
                                    FontSize="14" 
                                    Foreground="{DynamicResource SystemControlForegroundBaseMediumLowBrush}" 
                                    TextAlignment="Center" Margin="0,8,0,0"/>
                     </StackPanel>
-                    <Button Content="Load Sample Data" Command="{Binding LoadSampleDataCommand}" 
-                            Padding="20,12" FontSize="16" FontWeight="SemiBold" 
-                            Background="{DynamicResource SystemAccentColor}" 
-                            Foreground="White" BorderThickness="0" CornerRadius="8" 
-                            HorizontalAlignment="Center">
-                        <Button.Styles>
-                            <Style Selector="Button:hover">
-                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/>
-                            </Style>
-                            <Style Selector="Button:pressed">
-                                <Setter Property="Background" Value="{DynamicResource SystemAccentColorDark1}"/>
-                            </Style>
-                        </Button.Styles>
-                    </Button>
                 </StackPanel>
             </Border>
         </Border>
@@ -266,13 +250,13 @@
                 <Border Background="{DynamicResource SystemChromeLowColor}" 
                         Padding="16" BorderThickness="0,0,0,1" 
                         BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}">
-                    <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
-                        <TextBlock Text="IMAGES" FontSize="16" FontWeight="Bold" 
-                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Text="({Binding Images.Count})" FontSize="14" 
-                                   Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                   VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <TextBlock Text="IMAGES" FontSize="16" FontWeight="Bold" 
+                               Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                               VerticalAlignment="Center"/>
+                    <TextBlock Text="({Binding FilteredImages.Count})" FontSize="14" 
+                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                               VerticalAlignment="Center"/>
 
                         <StackPanel Orientation="Horizontal" Spacing="8" Margin="20,0,0,0" 
                                     VerticalAlignment="Center">
@@ -304,93 +288,58 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Image Grid -->
-                <ScrollViewer Padding="16">
-                    <ListBox ItemsSource="{Binding FilteredImages}" SelectedItem="{Binding SelectedImage}" 
-                             BorderThickness="0" Background="Transparent" 
-                             SelectionMode="Single"
-                             DoubleTapped="OnImageDoubleTapped">
-                        <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                        <ListBox.ItemTemplate>
+                <!-- Waterfall Image Grid -->
+                <ScrollViewer Padding="16" HorizontalScrollBarVisibility="Disabled">
+                    <ItemsControl ItemsSource="{Binding FilteredImages}" 
+                                  Background="Transparent">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <controls:WaterfallPanel ColumnCount="3" 
+                                                         ColumnSpacing="12" 
+                                                         RowSpacing="12"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Border Background="{DynamicResource SystemChromeMediumBrush}" 
                                         BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
                                         BorderThickness="1" 
-                                        CornerRadius="8" Padding="8" Margin="0,0,12,12" 
-                                        Width="200" Cursor="Hand">
-                                    <StackPanel Spacing="8">
-                                        <!-- Image Preview -->
-                    <Border Background="{DynamicResource SystemChromeLowBrush}" 
-                            CornerRadius="6" Height="200" 
-                            BorderBrush="{DynamicResource SystemControlForegroundChromeHighBrush}" 
-                            BorderThickness="1">
-                        <Grid>
-                            <!-- Image with direct binding to ThumbnailUri -->
-                            <Image Source="{Binding ThumbnailUri}" 
-                                   Stretch="UniformToFill" 
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center"
-                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
-                            
-                            <!-- Loading indicator - only shown when explicitly loading -->
-                            <Panel IsVisible="{Binding IsThumbnailLoading}" 
-                                   Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
-                                   Opacity="0.8">
-                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-                                    <ProgressBar Width="40" Height="40" IsIndeterminate="True" 
-                                                 Foreground="{DynamicResource SystemAccentColor}" 
-                                                 Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"/>
-                                    <TextBlock Text="Loading..." FontSize="12" 
-                                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                               HorizontalAlignment="Center"/>
-                                </StackPanel>
-                            </Panel>
-                            
-                            <!-- Fallback content for failed/not loaded thumbnails -->
-                            <Panel IsVisible="{Binding IsThumbnailFailed}" 
-                                   Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
-                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="4">
-                                    <TextBlock Text="🖼️" FontSize="32" 
-                                               Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
-                                               HorizontalAlignment="Center"/>
-                                    <TextBlock Text="No Thumbnail" FontSize="10" 
-                                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                               HorizontalAlignment="Center"/>
-                                </StackPanel>
-                            </Panel>
-                        </Grid>
-                    </Border>
-
-                                        <!-- Image Info -->
-                                        <StackPanel Spacing="4">
-                                            <TextBlock Text="{Binding FileName}" 
-                                                       FontWeight="SemiBold" 
-                                                       FontSize="14" 
-                                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
-                                                       TextTrimming="CharacterEllipsis"/>
-                                            <TextBlock Text="{Binding Model}" 
-                                                       FontSize="12" 
-                                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
-                                                       TextTrimming="CharacterEllipsis"/>
-                                            <StackPanel Orientation="Horizontal" Spacing="12" 
-                                                        VerticalAlignment="Center">
-                                                <TextBlock Text="⭐ {Binding Rating}" 
-                                                           FontSize="12" 
-                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
-                                                <TextBlock Text="{Binding Width}x{Binding Height}" 
-                                                           FontSize="12" 
-                                                           Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </StackPanel>
+                                        CornerRadius="8" 
+                                        Cursor="Hand"
+                                        DoubleTapped="OnImageDoubleTapped">
+                                    <!-- Image Preview - No additional text info -->
+                                    <Grid>
+                                        <!-- Image with direct binding to ThumbnailUri -->
+                                        <Image Source="{Binding ThumbnailUri}" 
+                                               Stretch="Uniform" 
+                                               HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center"
+                                               RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                                        
+                                        <!-- Loading indicator - only shown when explicitly loading -->
+                                        <Panel IsVisible="{Binding IsThumbnailLoading}" 
+                                               Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
+                                               Opacity="0.8">
+                                            <ProgressBar Width="40" Height="40" IsIndeterminate="True" 
+                                                         Foreground="{DynamicResource SystemAccentColor}" 
+                                                         Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"
+                                                         HorizontalAlignment="Center"
+                                                         VerticalAlignment="Center"/>
+                                        </Panel>
+                                        
+                                        <!-- Fallback content for failed/not loaded thumbnails -->
+                                        <Panel IsVisible="{Binding IsThumbnailFailed}" 
+                                               Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
+                                            <TextBlock Text="🖼️" FontSize="32" 
+                                                       Foreground="{DynamicResource SystemControlForegroundChromeHighBrush}" 
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+                                        </Panel>
+                                    </Grid>
                                 </Border>
                             </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </ScrollViewer>
             </StackPanel>
         </Border>
