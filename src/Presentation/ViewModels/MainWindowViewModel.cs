@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia;
@@ -25,6 +26,7 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly GetAllImagesUseCase _getAllImagesUseCase;
     private readonly GetImagesByFolderIdUseCase _getImagesByFolderIdUseCase;
     private readonly AIGenManager.Application.UseCases.Folders.ScanFolderUseCase _scanFolderUseCase;
+    private readonly AIGenManager.Core.Domain.Services.IThumbnailGenerationService _thumbnailGenerationService;
     
     // Tag use cases
     private readonly GetAllTagsUseCase _getAllTagsUseCase;
@@ -212,7 +214,13 @@ public partial class MainWindowViewModel : ViewModelBase
                 StatusMessage = "Loading images for folder...";
                 var request = new GetImagesByFolderIdRequest(SelectedFolder.Id);
                 var images = await _getImagesByFolderIdUseCase.ExecuteAsync(request);
+                
+                // Create observable collection
                 Images = new ObservableCollection<Image>(images);
+                
+                // Generate thumbnails for images that don't have them
+                await GenerateMissingThumbnailsAsync(Images);
+                
                 StatusMessage = $"Loaded {Images.Count} images for folder: {SelectedFolder.Path}";
             }
             catch (Exception ex)
@@ -225,6 +233,58 @@ public partial class MainWindowViewModel : ViewModelBase
                 IsLoading = false;
             }
         }
+    }
+    
+    /// <summary>
+    /// Generates thumbnails for images that don't have them
+    /// </summary>
+    /// <param name="images">Collection of images to process</param>
+    private async Task GenerateMissingThumbnailsAsync(IEnumerable<Image> images)
+    {
+        var imagesToProcess = images.Where(img => string.IsNullOrEmpty(img.ThumbnailPath)).ToList();
+        if (imagesToProcess.Count == 0)
+        {
+            return;
+        }
+        
+        StatusMessage = $"Generating thumbnails for {imagesToProcess.Count} images...";
+        
+        // Process images in parallel with progress reporting
+        var processedCount = 0;
+        var tasks = imagesToProcess.Select(async img =>
+        {
+            try
+            {
+                // Generate thumbnail
+                if (File.Exists(img.Path))
+                {
+                    var thumbnailPath = await _thumbnailGenerationService.GetOrGenerateThumbnailAsync(img.Path);
+                    img.ThumbnailPath = thumbnailPath;
+                }
+                else
+                {
+                    Debug.WriteLine($"Image file not found: {img.Path}");
+                    img.ThumbnailPath = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error generating thumbnail for {img.Path}: {ex.Message}");
+                img.ThumbnailPath = string.Empty; // Set empty string for fallback
+            }
+            finally
+            {
+                processedCount++;
+                if (processedCount % 5 == 0 || processedCount == imagesToProcess.Count)
+                {
+                    StatusMessage = $"Generating thumbnails: {processedCount}/{imagesToProcess.Count} completed...";
+                }
+            }
+        });
+        
+        await Task.WhenAll(tasks);
+        
+        StatusMessage = $"Thumbnail generation completed.";
     }
 
     /// <summary>
@@ -588,6 +648,7 @@ public partial class MainWindowViewModel : ViewModelBase
         GetAllImagesUseCase getAllImagesUseCase,
         GetImagesByFolderIdUseCase getImagesByFolderIdUseCase,
         AIGenManager.Application.UseCases.Folders.ScanFolderUseCase scanFolderUseCase,
+        AIGenManager.Core.Domain.Services.IThumbnailGenerationService thumbnailGenerationService,
         
         // Tag use cases
         GetAllTagsUseCase getAllTagsUseCase,
@@ -603,6 +664,7 @@ public partial class MainWindowViewModel : ViewModelBase
         _getAllImagesUseCase = getAllImagesUseCase;
         _getImagesByFolderIdUseCase = getImagesByFolderIdUseCase;
         _scanFolderUseCase = scanFolderUseCase;
+        _thumbnailGenerationService = thumbnailGenerationService;
         
         _getAllTagsUseCase = getAllTagsUseCase;
         _addTagUseCase = addTagUseCase;

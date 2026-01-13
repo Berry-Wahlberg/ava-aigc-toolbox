@@ -18,6 +18,10 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
     private const long MAX_CACHE_SIZE = 1024 * 1024 * 1024; // 1 GB
     
     private readonly string _cacheDirectory;
+    private readonly HashSet<string> _supportedFormats = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+    {
+        ".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".tiff", ".tif"
+    };
 
     /// <summary>
     /// Initializes a new instance of the ThumbnailGenerationService
@@ -25,7 +29,7 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
     public ThumbnailGenerationService()
     {
         // Create cache directory in app data
-        var appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "AIGenManager");
+        var appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BerryAIGCToolbox");
         _cacheDirectory = Path.Combine(appDataPath, "Thumbnails");
         Directory.CreateDirectory(_cacheDirectory);
     }
@@ -38,7 +42,14 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
             throw new FileNotFoundException($"Image file not found: {imagePath}");
         }
 
-        // Create cache subdirectory if needed
+        // Check if file extension is supported
+        var extension = Path.GetExtension(imagePath);
+        if (!_supportedFormats.Contains(extension))
+        {
+            throw new NotSupportedException($"Image format not supported: {extension}");
+        }
+
+        // Create cache directory if needed
         await Task.Run(() => Directory.CreateDirectory(_cacheDirectory));
 
         // Generate unique filename based on image path and modification time
@@ -56,16 +67,21 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
             }
         }
 
-        // Generate thumbnail
-        await Task.Run(() =>
+        // Generate thumbnail with enhanced error handling
+        try
         {
-            using var originalImage = Image.FromFile(imagePath);
-            using var thumbnail = GenerateThumbnailImage(originalImage);
-            thumbnail.Save(thumbnailPath, ImageFormat.Jpeg);
-        });
-
-        // Cleanup cache if it exceeds maximum size
-        await CleanupCacheAsync();
+            await Task.Run(() =>
+            {
+                using var originalImage = LoadImageSafe(imagePath);
+                using var thumbnail = GenerateThumbnailImage(originalImage);
+                thumbnail.Save(thumbnailPath, ImageFormat.Jpeg);
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error generating thumbnail for {imagePath}: {ex.Message}");
+            throw;
+        }
 
         return thumbnailPath;
     }
@@ -78,36 +94,32 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
             return string.Empty;
         }
 
-        var thumbnailPath = GetThumbnailPath(imagePath);
-        
-        if (File.Exists(thumbnailPath))
+        try
         {
-            var originalFileInfo = new FileInfo(imagePath);
-            var thumbnailFileInfo = new FileInfo(thumbnailPath);
-            
-            if (thumbnailFileInfo.LastWriteTime >= originalFileInfo.LastWriteTime)
-            {
-                return thumbnailPath;
-            }
+            return await GenerateThumbnailAsync(imagePath);
         }
-
-        return await GenerateThumbnailAsync(imagePath);
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error getting or generating thumbnail: {ex.Message}");
+            return string.Empty;
+        }
     }
 
     /// <inheritdoc/>
     public async Task ClearCacheAsync()
     {
-        await Task.Run(() =>
+        try
         {
             if (Directory.Exists(_cacheDirectory))
             {
-                var files = Directory.GetFiles(_cacheDirectory);
-                foreach (var file in files)
-                {
-                    File.Delete(file);
-                }
+                await Task.Run(() => Directory.Delete(_cacheDirectory, true));
+                Directory.CreateDirectory(_cacheDirectory);
             }
-        });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error clearing thumbnail cache: {ex.Message}");
+        }
     }
 
     /// <inheritdoc/>
@@ -117,85 +129,70 @@ public class ThumbnailGenerationService : IThumbnailGenerationService
     }
 
     /// <summary>
-    /// Generates a thumbnail image from the original
+    /// Generates a unique path for the thumbnail based on the original image path and modification time
     /// </summary>
-    /// <param name="originalImage">Original image</param>
+    /// <param name="imagePath">Path to the original image</param>
+    /// <returns>Unique path for the thumbnail</returns>
+    private string GetThumbnailPath(string imagePath)
+    {
+        var fileInfo = new FileInfo(imagePath);
+        var contentToHash = $"{imagePath}_{fileInfo.LastWriteTimeUtc.Ticks}";
+        
+        // Generate a hash of the content
+        using var sha256 = SHA256.Create();
+        var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(contentToHash));
+        var hashString = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+        
+        return Path.Combine(_cacheDirectory, $"{hashString}{THUMBNAIL_EXTENSION}");
+    }
+
+    /// <summary>
+    /// Loads an image safely with error handling
+    /// </summary>
+    /// <param name="imagePath">Path to the image file</param>
+    /// <returns>Loaded image</returns>
+    private Image LoadImageSafe(string imagePath)
+    {
+        using var stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        return Image.FromStream(stream, true, true);
+    }
+
+    /// <summary>
+    /// Generates a thumbnail image from the original image
+    /// </summary>
+    /// <param name="originalImage">Original image to generate thumbnail from</param>
     /// <returns>Thumbnail image</returns>
     private Image GenerateThumbnailImage(Image originalImage)
     {
+        // Calculate aspect ratio preserving dimensions
         var width = originalImage.Width;
         var height = originalImage.Height;
-
-        // Calculate aspect ratio
-        if (width > height)
+        var ratio = (double)width / height;
+        
+        int thumbnailWidth, thumbnailHeight;
+        if (ratio > 1)
         {
-            height = (int)(height * ((double)THUMBNAIL_SIZE / width));
-            width = THUMBNAIL_SIZE;
+            // Landscape
+            thumbnailWidth = THUMBNAIL_SIZE;
+            thumbnailHeight = (int)(THUMBNAIL_SIZE / ratio);
         }
         else
         {
-            width = (int)(width * ((double)THUMBNAIL_SIZE / height));
-            height = THUMBNAIL_SIZE;
+            // Portrait or square
+            thumbnailHeight = THUMBNAIL_SIZE;
+            thumbnailWidth = (int)(THUMBNAIL_SIZE * ratio);
         }
-
-        // Create thumbnail bitmap
-        var thumbnail = new Bitmap(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
-        thumbnail.SetResolution(72, 72);
-
-        // Draw original image onto thumbnail with padding
+        
+        // Create thumbnail with high quality
+        var thumbnail = new Bitmap(thumbnailWidth, thumbnailHeight);
         using var graphics = Graphics.FromImage(thumbnail);
-        graphics.Clear(Color.Black);
+        graphics.CompositingQuality = CompositingQuality.HighQuality;
         graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
         graphics.SmoothingMode = SmoothingMode.HighQuality;
-        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-        // Calculate padding to center the image
-        var x = (THUMBNAIL_SIZE - width) / 2;
-        var y = (THUMBNAIL_SIZE - height) / 2;
-
-        graphics.DrawImage(originalImage, x, y, width, height);
-
-        return thumbnail;
-    }
-
-    /// <summary>
-    /// Generates a unique thumbnail path based on the original image path
-    /// </summary>
-    /// <param name="imagePath">Original image path</param>
-    /// <returns>Thumbnail path</returns>
-    private string GetThumbnailPath(string imagePath)
-    {
-        // Generate SHA256 hash of the image path to create a unique filename
-        using var sha256 = SHA256.Create();
-        var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(imagePath));
-        var hash = BitConverter.ToString(bytes).Replace("-", "").ToLower();
         
-        return Path.Combine(_cacheDirectory, $"{hash}{THUMBNAIL_EXTENSION}");
-    }
-
-    /// <summary>
-    /// Cleans up the cache if it exceeds the maximum size
-    /// </summary>
-    private async Task CleanupCacheAsync()
-    {
-        await Task.Run(() =>
-        {
-            var files = Directory.GetFiles(_cacheDirectory)
-                .Select(file => new FileInfo(file))
-                .OrderBy(f => f.LastWriteTime)
-                .ToList();
-
-            long totalSize = files.Sum(f => f.Length);
-
-            // Delete oldest files until cache size is under the limit
-            foreach (var file in files)
-            {
-                if (totalSize <= MAX_CACHE_SIZE)
-                    break;
-
-                totalSize -= file.Length;
-                File.Delete(file.FullName);
-            }
-        });
+        // Draw the image
+        graphics.DrawImage(originalImage, 0, 0, thumbnailWidth, thumbnailHeight);
+        
+        return thumbnail;
     }
 }
