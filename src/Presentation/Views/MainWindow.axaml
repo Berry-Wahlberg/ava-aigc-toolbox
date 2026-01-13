@@ -302,7 +302,8 @@
                 <ScrollViewer Padding="16">
                     <ListBox ItemsSource="{Binding Images}" SelectedItem="{Binding SelectedImage}" 
                              BorderThickness="0" Background="Transparent" 
-                             SelectionMode="Single">
+                             SelectionMode="Single"
+                             DoubleTapped="OnImageDoubleTapped">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal"/>

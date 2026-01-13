@@ -346,6 +346,28 @@ public partial class MainWindowViewModel : ViewModelBase
         }
     }
 
+    [RelayCommand]
+    private void OpenImage(Image image)
+    {
+        if (image != null && !string.IsNullOrEmpty(image.Path))
+        {
+            try
+            {
+                // Open the image file with the default application
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = image.Path,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error opening image: {ex.Message}";
+                Debug.WriteLine($"Error opening image: {ex.Message}");
+            }
+        }
+    }
+
     /// <summary>
     /// Sets the rating for an image
     /// </summary>
