@@ -347,7 +347,7 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void OpenImage(Image image)
+    public void OpenImage(Image image)
     {
         if (image != null && !string.IsNullOrEmpty(image.Path))
         {

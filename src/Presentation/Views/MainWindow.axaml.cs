@@ -12,7 +12,7 @@ public partial class MainWindow : Window
 
     private void OnImageDoubleTapped(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        if (sender is ListBox listBox && listBox.SelectedItem is Image image)
+        if (sender is ListBox listBox && listBox.SelectedItem is AIGenManager.Core.Domain.Entities.Image image)
         {
             var viewModel = DataContext as ViewModels.MainWindowViewModel;
             viewModel?.OpenImage(image);
