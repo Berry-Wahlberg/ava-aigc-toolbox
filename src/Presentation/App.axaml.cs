@@ -113,6 +113,8 @@ public partial class App : Avalonia.Application
             // Album use cases
             services.AddTransient<AIGenManager.Application.UseCases.Albums.GetAllAlbumsUseCase>();
             services.AddTransient<AIGenManager.Application.UseCases.Albums.AddAlbumUseCase>();
+            services.AddTransient<AIGenManager.Application.UseCases.Albums.AddImageToAlbumUseCase>();
+            services.AddTransient<AIGenManager.Application.UseCases.Albums.GetImagesByAlbumIdUseCase>();
             
             // Prompt use cases
             services.AddTransient<AIGenManager.Application.UseCases.Prompts.GetAllPromptsUseCase>();

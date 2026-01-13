@@ -28,10 +28,7 @@ public partial class MainWindowViewModel : ViewModelBase
     
     // Tag use cases
     private readonly GetAllTagsUseCase _getAllTagsUseCase;
-    private readonly GetTagsByImageIdUseCase _getTagsByImageIdUseCase;
     private readonly AddTagUseCase _addTagUseCase;
-    private readonly AddTagToImageUseCase _addTagToImageUseCase;
-    private readonly RemoveTagFromImageUseCase _removeTagFromImageUseCase;
     
     // Album use cases
     private readonly GetAllAlbumsUseCase _getAllAlbumsUseCase;
@@ -572,10 +569,7 @@ public partial class MainWindowViewModel : ViewModelBase
         
         // Tag use cases
         GetAllTagsUseCase getAllTagsUseCase,
-        GetTagsByImageIdUseCase getTagsByImageIdUseCase,
         AddTagUseCase addTagUseCase,
-        AddTagToImageUseCase addTagToImageUseCase,
-        RemoveTagFromImageUseCase removeTagFromImageUseCase,
         
         // Album use cases
         GetAllAlbumsUseCase getAllAlbumsUseCase,
@@ -589,10 +583,7 @@ public partial class MainWindowViewModel : ViewModelBase
         _scanFolderUseCase = scanFolderUseCase;
         
         _getAllTagsUseCase = getAllTagsUseCase;
-        _getTagsByImageIdUseCase = getTagsByImageIdUseCase;
         _addTagUseCase = addTagUseCase;
-        _addTagToImageUseCase = addTagToImageUseCase;
-        _removeTagFromImageUseCase = removeTagFromImageUseCase;
         
         _getAllAlbumsUseCase = getAllAlbumsUseCase;
         _addAlbumUseCase = addAlbumUseCase;
@@ -600,7 +591,7 @@ public partial class MainWindowViewModel : ViewModelBase
         _getImagesByAlbumIdUseCase = getImagesByAlbumIdUseCase;
         
         // Start loading data asynchronously without blocking the constructor
-        _ = LoadData();
+        _ = Task.Run(() => LoadData());
     }
 
     private async Task LoadData()
