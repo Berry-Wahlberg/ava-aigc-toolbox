@@ -1,9 +1,9 @@
 ﻿using System.Windows.Input;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit;
+namespace BerryAIGC.Toolkit;
 
 public class PreviewModel : BaseNotify
 {

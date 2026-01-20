@@ -1,13 +1,13 @@
 ﻿using System.Collections.ObjectModel;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public class ThumbnailViewModel : BaseNotify
 {

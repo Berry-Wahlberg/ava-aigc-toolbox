@@ -7,13 +7,13 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <SelfContained>False</SelfContained>
-    <AssemblyName>BerryAIGen.Updater</AssemblyName>
-    <RootNamespace>BerryAIGen.Updater</RootNamespace>
+    <AssemblyName>BerryAIGC.Updater</AssemblyName>
+    <RootNamespace>BerryAIGC.Updater</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Common\BerryAIGen.Common.csproj" />
-    <ProjectReference Include="..\src\Infrastructure\Github\BerryAIGen.Github.csproj" />
+    <ProjectReference Include="..\src\Common\BerryAIGC.Common.csproj" />
+    <ProjectReference Include="..\src\Infrastructure\Github\BerryAIGC.Github.csproj" />
   </ItemGroup>
 
 </Project>

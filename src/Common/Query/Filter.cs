@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BerryAIGen.Common.Query;
+namespace BerryAIGC.Common.Query;
 
 public class Filter
 {

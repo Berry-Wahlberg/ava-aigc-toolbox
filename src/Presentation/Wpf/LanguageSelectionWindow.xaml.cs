@@ -1,14 +1,14 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Models;
 using WPFLocalizeExtension.Engine;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public class LanguageSelectionModel : BaseNotify
     {

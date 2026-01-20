@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace BerryAIGen.Toolkit.Configuration;
+namespace BerryAIGC.Toolkit.Configuration;
 
 public abstract class SettingsContainer : INotifyPropertyChanged
 {

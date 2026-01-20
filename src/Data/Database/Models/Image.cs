@@ -1,7 +1,7 @@
-﻿using BerryAIGen.Common;
+﻿using BerryAIGC.Common;
 using SQLite;
 
-namespace BerryAIGen.Database.Models;
+namespace BerryAIGC.Database.Models;
 
 [AttributeUsage(AttributeTargets.Property)]
 public class UserDefinedAttribute : Attribute {

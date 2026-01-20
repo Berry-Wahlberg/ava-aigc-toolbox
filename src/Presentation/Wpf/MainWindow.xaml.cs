@@ -1,7 +1,7 @@
-﻿using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
+﻿using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,17 +12,17 @@ using System.Windows;
 using System.Windows.Controls;
 using Path = System.IO.Path;
 
-using Search = BerryAIGen.Toolkit.Pages.Search;
-using BerryAIGen.Toolkit.Thumbnails;
-using BerryAIGen.IO;
+using Search = BerryAIGC.Toolkit.Pages.Search;
+using BerryAIGC.Toolkit.Thumbnails;
+using BerryAIGC.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.Win32;
-using BerryAIGen.Toolkit.Pages;
-using BerryAIGen.Toolkit.Themes;
+using BerryAIGC.Toolkit.Pages;
+using BerryAIGC.Toolkit.Themes;
 using MessageBox = System.Windows.MessageBox;
-using Model = BerryAIGen.Common.Model;
+using Model = BerryAIGC.Common.Model;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Globalization;
 using System.Runtime.InteropServices;
@@ -30,22 +30,22 @@ using System.Windows.Interop;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using BerryAIGen.Civitai.Models;
+using BerryAIGC.Civitai.Models;
 using WPFLocalizeExtension.Engine;
-using BerryAIGen.Toolkit.Controls;
+using BerryAIGC.Toolkit.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Xml;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Services;
 
-using Settings = BerryAIGen.Toolkit.Configuration.Settings;
-using BerryAIGen.Database.Models;
+using Settings = BerryAIGC.Toolkit.Configuration.Settings;
+using BerryAIGC.Database.Models;
 using Image = System.Windows.Controls.Image;
 using System.Windows.Media;
 using SixLabors.ImageSharp;
 using Size = System.Windows.Size;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -76,7 +76,7 @@ namespace BerryAIGen.Toolkit
             try
             {
                 Logger.Log("===========================================");
-                Logger.Log($"Started BerryAIGen.Toolkit {AppInfo.Version}");
+                Logger.Log($"Started BerryAIGC.Toolkit {AppInfo.Version}");
 
                 Logger.Log($"Creating Configuration instance");
                 _configuration = new Configuration<Settings>(AppInfo.SettingsPath, AppInfo.IsPortable);
@@ -128,7 +128,7 @@ namespace BerryAIGen.Toolkit
                 _model.ReloadHashes = new AsyncCommand<object>(async (o) =>
                 {
                     LoadModels();
-                    await _messagePopupManager.Show("Models have been reloaded", "BerryAIGen.Toolkit", PopupButtons.OK);
+                    await _messagePopupManager.Show("Models have been reloaded", "BerryAIGC.Toolkit", PopupButtons.OK);
                 });
 
                 _model.SettingsCommand = new RelayCommand<object>(ShowSettings);

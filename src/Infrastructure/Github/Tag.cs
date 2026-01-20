@@ -1,4 +1,4 @@
-namespace BerryAIGen.Github;
+namespace BerryAIGC.Github;
 
 public class Tag
 {

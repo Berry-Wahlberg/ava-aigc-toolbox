@@ -1,7 +1,7 @@
-﻿using BerryAIGen.Common;
+﻿using BerryAIGC.Common;
 using System.Threading;
 
-namespace BerryAIGen.IO
+namespace BerryAIGC.IO
 {
     public class MetadataScanner
     {

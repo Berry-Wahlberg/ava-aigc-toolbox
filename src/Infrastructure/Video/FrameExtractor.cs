@@ -1,7 +1,7 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Util;
 
-namespace BerryAIGen.Video;
+namespace BerryAIGC.Video;
 
 public class FrameExtractor
 {

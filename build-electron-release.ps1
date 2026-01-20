@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Builds and packages the BerryAIGen.Electron application for release with enhanced features.
+Builds and packages the BerryAIGC.Electron application for release with enhanced features.
 
 .DESCRIPTION
 This script builds the Electron.NET application with comprehensive environment checks,
@@ -8,10 +8,10 @@ robust error handling, and optimized output structure. It creates a ready-to-use
 application that can be launched by double-click.
 
 .EXAMPLE
-.uild-electron-release.ps1
+.uild-electron-release.ps1
 
 .NOTES
-Author: BerryAIGen Team
+Author: BerryAIGC Team
 Date: 2026-01-09
 Version: 2.0.0
 #>
@@ -392,7 +392,7 @@ if (Test-Path $electronOutputDir) {
 }
 
 # Step 12: Verify the executable exists
-$executablePath = Join-Path $OutputPath "BerryAIGen.Electron.exe"
+$executablePath = Join-Path $OutputPath "BerryAIGC.Electron.exe"
 if (Test-Path $executablePath) {
     Write-Log "✓ Executable verified: $executablePath" "INFO"
     # Get file information

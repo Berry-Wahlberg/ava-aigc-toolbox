@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +11,9 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     /// <summary>
     /// Interaction logic for SearchResultsWindowxaml.xaml

@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
@@ -8,10 +8,10 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public partial class MainWindow
     {

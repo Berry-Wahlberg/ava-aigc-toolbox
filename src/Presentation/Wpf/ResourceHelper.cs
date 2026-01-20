@@ -1,11 +1,11 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace BerryAIGen.Toolkit;
+namespace BerryAIGC.Toolkit;
 
 public static class ResourceHelper
 {

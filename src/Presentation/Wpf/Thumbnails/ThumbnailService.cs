@@ -1,7 +1,7 @@
-﻿﻿using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Video;
+﻿﻿using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Video;
 using Emgu.CV.Cuda;
 using System;
 using System.Collections.Generic;
@@ -15,10 +15,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Resources;
 using System.Windows.Threading;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 using Stream = System.IO.Stream;
 
-namespace BerryAIGen.Toolkit.Thumbnails;
+namespace BerryAIGC.Toolkit.Thumbnails;
 
 public class ThumbailResult
 {

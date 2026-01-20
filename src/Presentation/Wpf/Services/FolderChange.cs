@@ -1,5 +1,5 @@
-﻿namespace BerryAIGen.Toolkit.Services;
-using BerryAIGen.Common;
+﻿namespace BerryAIGC.Toolkit.Services;
+using BerryAIGC.Common;
 
 public class FolderChange
 {

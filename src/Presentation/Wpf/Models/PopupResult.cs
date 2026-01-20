@@ -1,5 +1,5 @@
-﻿namespace BerryAIGen.Toolkit.Models;
-using BerryAIGen.Common;
+﻿namespace BerryAIGC.Toolkit.Models;
+using BerryAIGC.Common;
 
 public enum PopupResult
 {

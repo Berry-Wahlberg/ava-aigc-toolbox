@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace BerryAIGen.Common.Query;
+namespace BerryAIGC.Common.Query;
 
 public enum TagsMode
 {

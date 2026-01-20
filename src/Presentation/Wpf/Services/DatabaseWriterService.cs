@@ -1,18 +1,18 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Database.Models;
-using BerryAIGen.IO;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Thumbnails;
-using Node = BerryAIGen.IO.Node;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Database.Models;
+using BerryAIGC.IO;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Thumbnails;
+using Node = BerryAIGC.IO.Node;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class DatabaseWriteReport
 {

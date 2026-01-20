@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using BerryAIGen.Database.Models;
+using BerryAIGC.Database.Models;
 using SQLite;
 
-namespace BerryAIGen.Database;
+namespace BerryAIGC.Database;
 
 public partial class DataStore
 {

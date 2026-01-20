@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace BerryAIGen.Updater;
+namespace BerryAIGC.Updater;
 
 public class CustomTextBox : TextBox
 {

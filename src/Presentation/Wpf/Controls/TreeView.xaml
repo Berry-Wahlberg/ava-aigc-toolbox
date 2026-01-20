@@ -1,12 +1,12 @@
-<UserControl x:Class="BerryAIGen.Toolkit.Controls.TreeView"
+<UserControl x:Class="BerryAIGC.Toolkit.Controls.TreeView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="BerryAIGen.Controls.TreeView"
+             xmlns:local="BerryAIGC.Controls.TreeView"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:converters="clr-namespace:BerryAIGen.Toolkit.Converters"
+             xmlns:converters="clr-namespace:BerryAIGC.Toolkit.Converters"
              xmlns:fa="http://schemas.fontawesome.io/icons/"
-             xmlns:controls="clr-namespace:BerryAIGen.Toolkit.Controls"
+             xmlns:controls="clr-namespace:BerryAIGC.Toolkit.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="328">
     <UserControl.Resources>

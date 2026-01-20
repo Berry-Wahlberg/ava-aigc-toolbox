@@ -1,15 +1,15 @@
 ﻿using System.Collections.ObjectModel;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     /// <summary>
     /// Interaction logic for ManageFilesWindow.xaml

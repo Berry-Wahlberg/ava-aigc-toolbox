@@ -1,7 +1,7 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Thumbnails;
+namespace BerryAIGC.Toolkit.Thumbnails;
 
 public class Job<T, TOut>
 {

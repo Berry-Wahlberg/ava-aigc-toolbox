@@ -1,10 +1,10 @@
-﻿using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Behaviors;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+﻿using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Behaviors;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +23,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Image = System.Drawing.Image;
 using Point = System.Windows.Point;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     /// <summary>
     /// Interaction logic for PreviewPane.xaml

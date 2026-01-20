@@ -1,12 +1,12 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Interop;
-using BerryAIGen.Common.Query;
-using BerryAIGen.Toolkit.Controls;
+using BerryAIGC.Common.Query;
+using BerryAIGC.Toolkit.Controls;
 
-namespace BerryAIGen.Toolkit.Configuration;
+namespace BerryAIGC.Toolkit.Configuration;
 
 public class Settings : SettingsContainer, IScanOptions
 {

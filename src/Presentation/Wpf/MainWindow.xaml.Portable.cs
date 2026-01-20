@@ -1,13 +1,13 @@
-﻿using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Services;
+﻿using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Services;
 using System;
 using System.IO;
 using System.Windows;
-using BerryAIGen.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Configuration;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public partial class MainWindow
     {
@@ -56,12 +56,10 @@ namespace BerryAIGen.Toolkit
             }
             else
             {
-                var existsDialogResult = MessageBox.Show(this, $"A configuration or database file was found in the {target} folder. Do you want to use it?", "BerryAIGen.Toolkit", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
-
+                var existsDialogResult = MessageBox.Show(this, $"A configuration or database file was found in the {target} folder. Do you want to use it?", "BerryAIGC.Toolkit", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
                 if (existsDialogResult == MessageBoxResult.No)
                 {
-                    var confirmResult = MessageBox.Show(this, $"Are you sure you want to overwrite the files in the {target} folder?", "BerryAIGen.Toolkit", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
+                    var confirmResult = MessageBox.Show(this, $"Are you sure you want to overwrite files in the {target} folder?", "BerryAIGC.Toolkit", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (confirmResult == MessageBoxResult.Yes)
                     {
                         if (File.Exists(sourceSettingsPath))
@@ -74,13 +72,10 @@ namespace BerryAIGen.Toolkit
                         }
                     }
                 }
-
                 if (existsDialogResult == MessageBoxResult.Cancel)
                 {
                     return;
                 }
-
-
 
                 if (existsDialogResult == MessageBoxResult.Yes)
                 {
@@ -107,7 +102,7 @@ namespace BerryAIGen.Toolkit
 
                         if (moved)
                         {
-                            MessageBox.Show(this, "Your portable files have been renamed to .backup", "BerryAIGen.Toolkit", MessageBoxButton.OK);
+                            MessageBox.Show(this, "Your portable files have been renamed to .backup", "BerryAIGC.Toolkit", MessageBoxButton.OK);
                         }
                     }
 

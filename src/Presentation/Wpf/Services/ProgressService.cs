@@ -1,14 +1,14 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Threading;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class ProgressService
 {

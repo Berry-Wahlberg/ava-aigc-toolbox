@@ -1,8 +1,8 @@
-﻿using BerryAIGen.Database;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Toolkit.Models;
+﻿using BerryAIGC.Database;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Toolkit.Models;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     /// <summary>
     /// Interaction logic for Preview.xaml

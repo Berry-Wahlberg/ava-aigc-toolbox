@@ -1,25 +1,25 @@
-using BerryAIGen.Database;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Database;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
 using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 using System.Windows.Forms;
 using System.Windows.Interop;
 using System.Windows.Media;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Toolkit.Thumbnails;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Toolkit.Thumbnails;
 using WPFLocalizeExtension.Engine;
 using MessageBox = System.Windows.MessageBox;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Controls;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Controls;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
 
 

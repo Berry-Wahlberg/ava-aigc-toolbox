@@ -1,10 +1,10 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Globalization;
 using System.Windows.Data;
-using BerryAIGen.Common.Query;
+using BerryAIGC.Common.Query;
 
-namespace BerryAIGen.Toolkit.Converters;
+namespace BerryAIGC.Toolkit.Converters;
 
 public class TagsModeConverter : IValueConverter
 {

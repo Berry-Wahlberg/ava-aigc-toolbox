@@ -1,16 +1,16 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Diagnostics;
 using System.Net;
 using System.Security.Policy;
 using System.Threading;
 using System.Windows;
-using BerryAIGen.Civitai;
-using BerryAIGen.Civitai.Models;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Civitai;
+using BerryAIGC.Civitai.Models;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     public partial class ThumbnailView
     {

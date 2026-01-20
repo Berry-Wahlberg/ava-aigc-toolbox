@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Common;
+﻿namespace BerryAIGC.Common;
 
 public class Model
 {

@@ -1,18 +1,18 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Toolkit.Thumbnails;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Toolkit.Thumbnails;
 using SQLite;
 using Path = System.IO.Path;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public partial class MainWindow
     {

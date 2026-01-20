@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BerryAIGen.Electron.Pages;
+namespace BerryAIGC.Electron.Pages;
 
 public class PrivacyModel : PageModel
 {

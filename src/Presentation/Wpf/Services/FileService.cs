@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -8,13 +8,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
 using Path = System.IO.Path;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class NamePath
 {

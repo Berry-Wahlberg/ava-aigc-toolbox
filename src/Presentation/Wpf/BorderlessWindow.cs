@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
@@ -13,7 +13,7 @@ using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 using MouseEventHandler = System.Windows.Input.MouseEventHandler;
 using Point = System.Windows.Point;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public class BorderlessWindow : Window
     {

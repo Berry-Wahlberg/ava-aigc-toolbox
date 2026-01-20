@@ -1,6 +1,6 @@
-# BerryAIGen.Toolkit
+# BerryGeeen.Toolkit
 
-BerryAIGen.Toolkit is a comprehensive image metadata indexer and viewer designed specifically for AI-generated images. It provides powerful tools to help you organize, search, and manage your growing collection of AI-generated media.
+BerryGeeen.Toolkit is a comprehensive image metadata indexer and viewer designed specifically for AI-generated images. It provides powerful tools to help you organize, search, and manage your growing collection of AI-generated media.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ BerryAIGen.Toolkit is a comprehensive image metadata indexer and viewer designed
 
 ## Overview
 
-BerryAIGen.Toolkit enables users to:
+Berry AIGC Toolbox enables users to:
 - Index and search metadata from AI-generated images
 - Organize images with ratings, tags, and albums
 - View detailed metadata (PNGInfo) in a user-friendly interface
@@ -57,10 +57,10 @@ BerryAIGen.Toolkit enables users to:
 - **Runtime**: [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) for Electron.NET version
 
 ### Download and Install
-1. Download the latest release from the [GitHub Releases](https://github.com/Berry-Wahlberg/AIGenManager/releases/latest) page
-2. Expand the **Assets** section and download the zip file (e.g., `BerryAIGen.Toolkit.v1.x.zip`)
+1. Download latest release from [GitHub Releases](https://github.com/Berry-Wahlberg/AIGenManager/releases/latest) page
+2. Expand **Assets** section and download zip file (e.g., `BerryAIGC.Toolkit.v1.x.zip`)
 3. Extract all files to a folder of your choice
-4. Run `BerryAIGen.Toolkit.exe` to launch the application
+4. Run `BerryAIGC.Toolkit.exe` to launch application
 
 ## Building from Source
 
@@ -70,9 +70,9 @@ BerryAIGen.Toolkit enables users to:
 
 ### Build Instructions
 1. Clone this repository
-2. Open the solution file `BerryAIGen.sln` in Visual Studio
-3. Build the solution using the **Build** menu or by pressing `Ctrl+Shift+B`
-4. Alternatively, run `dotnet build` from the command line in the project root
+2. Open solution file `BerryAIGC.sln` in Visual Studio
+3. Build solution using **Build** menu or by pressing `Ctrl+Shift+B`
+4. Alternatively, run `dotnet build` from command line in project root
 
 ### Publishing
 - Run `publish.cmd` to create a release build in the `build` folder

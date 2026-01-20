@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class ResultsView : BaseNotify
 {

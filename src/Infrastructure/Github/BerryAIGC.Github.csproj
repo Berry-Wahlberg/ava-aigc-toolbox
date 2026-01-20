@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>BerryAIGen.Scripting</AssemblyName>
-    <RootNamespace>BerryAIGen.Scripting</RootNamespace>
+    <AssemblyName>BerryAIGC.Github</AssemblyName>
+    <RootNamespace>BerryAIGC.Github</RootNamespace>
   </PropertyGroup>
 
 </Project>

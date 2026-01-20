@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Input;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit;
+namespace BerryAIGC.Toolkit;
 
 public class AlbumListModel : BaseNotify
 {

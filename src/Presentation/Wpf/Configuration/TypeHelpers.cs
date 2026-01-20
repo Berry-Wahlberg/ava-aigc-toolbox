@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Configuration;
+namespace BerryAIGC.Toolkit.Configuration;
 
 public static class TypeHelpers
 {

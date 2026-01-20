@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using SQLite;
 using WPFLocalizeExtension.Engine;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public class WelcomeModel : BaseNotify
     {
@@ -40,7 +40,7 @@ namespace BerryAIGen.Toolkit
             StoreMetadata = true;
             // Set default database path to user's documents folder
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            DatabasePath = Path.Combine(documentsPath, "BerryAIGen.Toolkit", "BerryAIGen-toolkit.db");
+            DatabasePath = Path.Combine(documentsPath, "BerryAIGC.Toolkit", "BerryAIGC-toolkit.db");
             
             // Initialize Escape command
             Escape = new RelayCommand<object>(_ => { });

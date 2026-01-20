@@ -1,10 +1,10 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 
-namespace BerryAIGen.Toolkit.Classes;
+namespace BerryAIGC.Toolkit.Classes;
 
 public static class IconHelper
 {

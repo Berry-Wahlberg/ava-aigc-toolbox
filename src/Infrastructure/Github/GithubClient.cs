@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
 
-namespace BerryAIGen.Github;
+namespace BerryAIGC.Github;
 
 public class GithubClient : IDisposable
 {

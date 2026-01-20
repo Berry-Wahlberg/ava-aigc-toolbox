@@ -1,8 +1,8 @@
 ﻿
 using System.Windows.Controls;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Common;
+namespace BerryAIGC.Toolkit.Common;
 
 public interface INavigatorService
 {

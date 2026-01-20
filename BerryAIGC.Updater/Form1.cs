@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.IO.Compression;
-using BerryAIGen.Common;
-using BerryAIGen.Github;
+using BerryAIGC.Common;
+using BerryAIGC.Github;
 
-namespace BerryAIGen.Updater
+namespace BerryAIGC.Updater
 {
     public partial class Form1 : Form
     {
@@ -31,7 +31,7 @@ namespace BerryAIGen.Updater
             }
 
             _targetPath = args[1];
-            _exePath = Path.Join(_targetPath, "BerryAIGen.Toolkit.exe");
+            _exePath = Path.Join(_targetPath, "BerryAIGC.Toolkit.exe");
 
             if (!Directory.Exists(_targetPath) || !File.Exists(_exePath))
             {
@@ -158,7 +158,7 @@ namespace BerryAIGen.Updater
         private void TryKillProcess()
         {
             string targetProcessPath = Path.Join(_exePath);
-            string targetProcessName = "BerryAIGen.Toolkit";
+            string targetProcessName = "BerryAIGC.Toolkit";
 
             Process[] runningProcesses = Process.GetProcesses();
             foreach (Process process in runningProcesses)

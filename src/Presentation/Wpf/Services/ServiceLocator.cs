@@ -1,18 +1,18 @@
-﻿using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Thumbnails;
+﻿using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Thumbnails;
 using System.Collections;
 using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using System.Windows.Navigation;
 using System.Windows.Threading;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class ServiceLocator
 {

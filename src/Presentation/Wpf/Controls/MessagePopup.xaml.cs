@@ -1,17 +1,17 @@
 ﻿using System;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 using System.Windows.Controls.Primitives;
 using System.Globalization;
 using System.Windows.Media;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     public class MessagePopupHandle
     {

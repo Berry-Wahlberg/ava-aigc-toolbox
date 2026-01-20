@@ -1,5 +1,5 @@
-﻿using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common;
 using SQLite;
 using System;
 using System.Collections.Concurrent;
@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Media.Imaging;
 
-namespace BerryAIGen.Toolkit.Thumbnails;
+namespace BerryAIGC.Toolkit.Thumbnails;
 
 public class CacheEntry
 {

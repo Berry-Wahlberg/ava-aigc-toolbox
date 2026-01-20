@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
 [assembly:ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located

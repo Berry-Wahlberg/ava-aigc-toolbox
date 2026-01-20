@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Xml.Linq;
 using WPFLocalizeExtension.Providers;
 
-namespace BerryAIGen.Toolkit.Behaviors
+namespace BerryAIGC.Toolkit.Behaviors
 {
     public class DragSortDropEventArgs : RoutedEventArgs
     {

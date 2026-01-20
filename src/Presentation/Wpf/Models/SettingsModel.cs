@@ -1,13 +1,13 @@
 ﻿﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class SettingsModel : BaseNotify
 {

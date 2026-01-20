@@ -1,16 +1,16 @@
 using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
-using BerryAIGen.Database;
+using BerryAIGC.Database;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Common.Query;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Common.Query;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class MainModel : BaseNotify
 {

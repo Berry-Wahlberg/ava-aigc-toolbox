@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BerryAIGen.Data
+namespace BerryAIGC.Data
 {
     public class Class1
     {

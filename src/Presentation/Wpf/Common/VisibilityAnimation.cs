@@ -1,11 +1,11 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media.Animation;
 
-namespace BerryAIGen.Toolkit.Classes;
+namespace BerryAIGC.Toolkit.Classes;
 
 /// <summary>
 /// Supplies attached properties that provides visibility of animations

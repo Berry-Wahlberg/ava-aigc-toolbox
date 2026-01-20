@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class ExternalApplicationsService
 {

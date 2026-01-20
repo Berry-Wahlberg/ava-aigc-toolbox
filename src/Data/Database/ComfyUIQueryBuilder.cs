@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using BerryAIGen.Common.Query;
+using BerryAIGC.Common.Query;
 
-namespace BerryAIGen.Database;
+namespace BerryAIGC.Database;
 
 public static class ComfyUIQueryBuilder
 {

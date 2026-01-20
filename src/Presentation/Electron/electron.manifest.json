@@ -1,16 +1,16 @@
 {
-  "executable": "BerryAIGen.Electron",
+  "executable": "BerryAIGC.Electron",
   "splashscreen": {
     "imageFile": ""
   },
-  "name": "BerryAIGen.Electron",
-  "author": "BerryAIGen Team",
+  "name": "BerryAIGC.Electron",
+  "author": "BerryAIGC Team",
   "singleInstance": true,
   "environment": "Production",
   "build": {
-    "appId": "com.BerryAIGen.Electron",
-    "productName": "BerryAIGen Toolkit",
-    "copyright": "Copyright © 2026 BerryAIGen",
+    "appId": "com.BerryAIGC.Electron",
+    "productName": "Berry AIGC Toolbox",
+    "copyright": "Copyright © 2026 BerryAIGC",
     "buildVersion": "2.0.0",
     "compression": "maximum",
     "directories": {

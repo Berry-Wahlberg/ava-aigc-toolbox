@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace BerryAIGen.Database;
+namespace BerryAIGC.Database;
 
 public class Snippet {
     [PrimaryKey, AutoIncrement]

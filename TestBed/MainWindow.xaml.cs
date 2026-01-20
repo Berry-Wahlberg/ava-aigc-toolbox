@@ -14,8 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BerryAIGen.Toolkit;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit;
+using BerryAIGC.Toolkit.Models;
 
 namespace TestBed
 {

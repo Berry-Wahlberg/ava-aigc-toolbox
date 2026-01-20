@@ -1,11 +1,11 @@
 ﻿using System.Windows;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.MdStyles;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.MdStyles;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public class TipsModel : BaseNotify
     {
@@ -40,7 +40,7 @@ namespace BerryAIGen.Toolkit
             InitializeComponent();
             var tips = new TipsModel
             {
-                Markdown = ResourceHelper.GetString("BerryAIGen.Toolkit.Tips.md"),
+                Markdown = ResourceHelper.GetString("BerryAIGC.Toolkit.Tips.md"),
                 Style = CustomStyles.BetterGithub,
                 Escape = new RelayCommand<object>(o => Close())
             };
@@ -55,7 +55,7 @@ namespace BerryAIGen.Toolkit
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer", "https://github.com/Berry-Wahlberg/AIGenManager/blob/master/BerryAIGen.Toolkit/Tips.md");
+            System.Diagnostics.Process.Start("explorer", "https://github.com/Berry-Wahlberg/AIGenManager/blob/master/BerryAIGC.Toolkit/Tips.md");
         }
     }
 }

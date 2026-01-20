@@ -1,8 +1,8 @@
-﻿using BerryAIGen.Common.Query;
+﻿using BerryAIGC.Common.Query;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
     public static partial class QueryBuilder
     {

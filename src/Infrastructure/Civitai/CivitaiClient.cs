@@ -2,9 +2,9 @@
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using BerryAIGen.Civitai.Models;
+using BerryAIGC.Civitai.Models;
 
-namespace BerryAIGen.Civitai;
+namespace BerryAIGC.Civitai;
 
 public class CivitaiClient : IDisposable
 {

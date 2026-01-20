@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
-using BerryAIGen.Common;
-using BerryAIGen.Database.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Database.Models;
 using SQLite;
 
-namespace BerryAIGen.Database;
+namespace BerryAIGC.Database;
 
 public partial class Migrations
 {

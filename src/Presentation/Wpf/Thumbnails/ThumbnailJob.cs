@@ -1,8 +1,8 @@
-﻿using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
+﻿using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Thumbnails;
+namespace BerryAIGC.Toolkit.Thumbnails;
 
 public class ThumbnailJob
 {

@@ -1,10 +1,10 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace BerryAIGen.Toolkit.Converters;
+namespace BerryAIGC.Toolkit.Converters;
 
 public class FilterActiveConverter: IValueConverter
 {

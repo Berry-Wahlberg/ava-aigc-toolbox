@@ -1,8 +1,8 @@
 ﻿using System.Windows.Input;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit;
+namespace BerryAIGC.Toolkit;
 
 public class SearchResultsModel : BaseNotify
 {

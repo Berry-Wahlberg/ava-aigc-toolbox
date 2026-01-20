@@ -1,11 +1,11 @@
-﻿using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Navigation;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 [DebuggerDisplay("{Path}")]
 public class FolderViewModel : BaseNotify

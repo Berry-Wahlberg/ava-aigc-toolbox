@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     public class TreeViewItem : BaseNotify
     {

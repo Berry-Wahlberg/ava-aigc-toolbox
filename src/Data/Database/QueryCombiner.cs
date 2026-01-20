@@ -1,9 +1,9 @@
 using System.Drawing;
 using System.Net.Sockets;
-using BerryAIGen.Common;
-using BerryAIGen.Common.Query;
+using BerryAIGC.Common;
+using BerryAIGC.Common.Query;
 
-namespace BerryAIGen.Database;
+namespace BerryAIGC.Database;
 
 public static class QueryCombiner
 {

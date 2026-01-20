@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace BerryAIGen.Toolkit.Converters;
+namespace BerryAIGC.Toolkit.Converters;
 
 /// <summary>
 /// Converts a boolean value to a Brush.

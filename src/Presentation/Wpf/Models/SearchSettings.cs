@@ -1,9 +1,9 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class SearchSettings : BaseNotify
 {

@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Updater
+﻿namespace BerryAIGC.Updater
 {
     internal static class Program
     {

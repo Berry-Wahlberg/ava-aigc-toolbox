@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 public static class Utility
 {

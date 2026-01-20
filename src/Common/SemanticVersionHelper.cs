@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 public class SemanticVersionHelper
 {

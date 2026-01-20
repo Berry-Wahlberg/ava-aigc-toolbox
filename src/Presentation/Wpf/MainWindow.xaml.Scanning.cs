@@ -1,6 +1,6 @@
-﻿using BerryAIGen.IO;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
+﻿using BerryAIGC.IO;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,9 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public partial class MainWindow
     {

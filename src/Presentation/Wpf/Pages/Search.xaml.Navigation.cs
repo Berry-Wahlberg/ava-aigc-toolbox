@@ -1,8 +1,8 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Linq;
 
-namespace BerryAIGen.Toolkit.Pages
+namespace BerryAIGC.Toolkit.Pages
 {
     public partial class Search
     {

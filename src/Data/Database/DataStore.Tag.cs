@@ -1,11 +1,11 @@
-﻿using BerryAIGen.Common;
-using BerryAIGen.Common.Query;
-using BerryAIGen.Database.Models;
+﻿using BerryAIGC.Common;
+using BerryAIGC.Common.Query;
+using BerryAIGC.Database.Models;
 using System;
 using System.Text;
 using System.Xml.Linq;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
 
     public partial class DataStore

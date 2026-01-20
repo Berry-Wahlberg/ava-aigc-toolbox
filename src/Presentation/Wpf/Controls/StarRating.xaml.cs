@@ -1,6 +1,6 @@
-﻿using BerryAIGen.Toolkit.Behaviors;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
+﻿using BerryAIGC.Toolkit.Behaviors;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,11 +16,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     public enum RatingSize
     {

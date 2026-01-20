@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Common.Query;
+﻿namespace BerryAIGC.Common.Query;
 
 public enum NodeComparison
 {

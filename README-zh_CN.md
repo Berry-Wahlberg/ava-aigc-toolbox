@@ -1,6 +1,6 @@
-# BerryAIGen.Toolkit
+# BerryIGeen.Toolkit
 
-BerryAIGen.Toolkit是一个专为AI生成图像设计的综合元数据索引器和查看器。它提供强大的工具，帮助您组织、搜索和管理不断增长的AI生成媒体集合。
+BerryIGeen.Toolkit是一个专为AI生成图像设计的综合元数据索引器和查看器。它提供强大的工具，帮助您组织、搜索和管理不断增长的AI生成媒体集合。
 
 ## 目录
 
@@ -17,7 +17,7 @@ BerryAIGen.Toolkit是一个专为AI生成图像设计的综合元数据索引器
 
 ## 概述
 
-BerryAIGen.Toolkit允许用户：
+Berry AIGC Toolbox允许用户：
 - 索引和搜索AI生成图像的元数据
 - 使用评分、标签和相册组织图像
 - 在用户友好的界面中查看详细元数据（PNGInfo）
@@ -69,7 +69,7 @@ BerryAIGen.Toolkit允许用户：
 
 ### 构建说明
 1. 克隆此存储库
-2. 在Visual Studio中打开解决方案文件`BerryAIGen.sln`
+2. 在Visual Studio中打开解决方案文件`BerryAIGC.sln`
 3. 使用**构建**菜单或按`Ctrl+Shift+B`构建解决方案
 4. 或者，在项目根目录下从命令行运行`dotnet build`
 

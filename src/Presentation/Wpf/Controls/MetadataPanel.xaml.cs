@@ -1,15 +1,15 @@
-﻿using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Common;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     /// <summary>
     /// Interaction logic for MetadataPanel.xaml

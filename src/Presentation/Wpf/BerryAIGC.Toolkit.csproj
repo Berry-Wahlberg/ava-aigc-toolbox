@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>BerryAIGen-toolkit.ico</ApplicationIcon>
+    <ApplicationIcon>BerryAIGC-toolkit.ico</ApplicationIcon>
     <LangVersion>latest</LangVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AssemblyName>BerryAIGen.Toolkit</AssemblyName>
-    <RootNamespace>BerryAIGen.Toolkit</RootNamespace>
+    <AssemblyName>BerryAIGC.Toolkit</AssemblyName>
+    <RootNamespace>BerryAIGC.Toolkit</RootNamespace>
     <!-- Version information -->
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
@@ -88,7 +88,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="BerryAIGen-toolkit.ico" />
+    <Content Include="BerryAIGC-toolkit.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -125,11 +125,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\BerryAIGen.Common.csproj" />
-    <ProjectReference Include="..\..\Data\Database\BerryAIGen.Database.csproj" />
-    <ProjectReference Include="..\..\Data\IO\BerryAIGen.IO.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\Civitai\BerryAIGen.Civitai.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\Video\BerryAIGen.Video.csproj" />
+    <ProjectReference Include="..\..\Common\BerryAIGC.Common.csproj" />
+    <ProjectReference Include="..\..\Data\Database\BerryAIGC.Database.csproj" />
+    <ProjectReference Include="..\..\Data\IO\BerryAIGC.IO.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Civitai\BerryAIGC.Civitai.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Video\BerryAIGC.Video.csproj" />
   </ItemGroup>
 
   <ItemGroup>

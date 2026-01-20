@@ -1,11 +1,11 @@
 ﻿using System;
-using BerryAIGen.Common;
-using BerryAIGen.IO;
+using BerryAIGC.Common;
+using BerryAIGC.IO;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace BerryAIGen.Toolkit.Behaviors
+namespace BerryAIGC.Toolkit.Behaviors
 {
     public static partial class DTBehaviors
     {

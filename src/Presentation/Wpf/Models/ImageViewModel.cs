@@ -1,15 +1,15 @@
-﻿using BerryAIGen.Common;
-using BerryAIGen.Database.Models;
+﻿using BerryAIGC.Common;
+using BerryAIGC.Database.Models;
 
-using BerryAIGen.Toolkit.Controls;
+using BerryAIGC.Toolkit.Controls;
 using System.Collections.Generic;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Services;
-using Node = BerryAIGen.IO.Node;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Services;
+using Node = BerryAIGC.IO.Node;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class ImageViewModel : BaseNotify
 {

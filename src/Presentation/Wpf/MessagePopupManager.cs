@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -8,10 +8,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit;
+namespace BerryAIGC.Toolkit;
 
 public class MessagePopupManager
 {

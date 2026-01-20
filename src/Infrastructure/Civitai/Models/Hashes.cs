@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace BerryAIGen.Civitai.Models;
+namespace BerryAIGC.Civitai.Models;
 
 public class Hashes
 {

@@ -1,5 +1,5 @@
-﻿using BerryAIGen.Toolkit.Behaviors;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Toolkit.Behaviors;
+using BerryAIGC.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +17,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
 
     /// <summary>

@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Text.Json;
 using System.Threading;
 using System.Windows;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
 using WPFLocalizeExtension.Providers;
 
-namespace BerryAIGen.Toolkit.Localization
+namespace BerryAIGC.Toolkit.Localization
 {
     public class JsonLocalizationProvider : FrameworkElement, ILocalizationProvider
     {
@@ -32,7 +32,7 @@ namespace BerryAIGen.Toolkit.Localization
 
             var assembly = typeof(JsonLocalizationProvider).Assembly;
 
-            using (var defaultStream = assembly.GetManifestResourceStream("BerryAIGen.Toolkit.Localization.default.json"))
+            using (var defaultStream = assembly.GetManifestResourceStream("BerryAIGC.Toolkit.Localization.default.json"))
             {
                 var reader = new StreamReader(defaultStream);
                 var json = reader.ReadToEnd();

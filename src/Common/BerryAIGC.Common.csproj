@@ -3,12 +3,12 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <AssemblyName>BerryAIGen.Common</AssemblyName>
-    <RootNamespace>BerryAIGen.Common</RootNamespace>
+    <AssemblyName>BerryAIGC.Common</AssemblyName>
+    <RootNamespace>BerryAIGC.Common</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Github\BerryAIGen.Github.csproj" />
+    <ProjectReference Include="..\Infrastructure\Github\BerryAIGC.Github.csproj" />
   </ItemGroup>
 
 

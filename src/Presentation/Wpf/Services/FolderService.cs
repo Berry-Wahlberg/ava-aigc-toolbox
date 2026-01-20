@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,18 +12,18 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Database.Models;
-using BerryAIGen.IO;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Thumbnails;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Database.Models;
+using BerryAIGC.IO;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Thumbnails;
 using File = System.IO.File;
 
-namespace BerryAIGen.Toolkit.Services
+namespace BerryAIGC.Toolkit.Services
 {
     public class PathComparer : IEqualityComparer<FolderViewModel>
     {

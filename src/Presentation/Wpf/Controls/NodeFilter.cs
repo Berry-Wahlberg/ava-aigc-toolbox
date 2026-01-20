@@ -1,9 +1,9 @@
 ﻿using System.Windows.Input;
-using BerryAIGen.Common;
-using BerryAIGen.Common.Query;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Common.Query;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public class NodeFilter : BaseNotify
 {

@@ -1,8 +1,8 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Threading.Tasks;
 
-namespace BerryAIGen.Toolkit.Common;
+namespace BerryAIGC.Toolkit.Common;
 
 public static class TaskUtilities
 {

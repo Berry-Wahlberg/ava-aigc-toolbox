@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using Directory = MetadataExtractor.Directory;
 using Dir = System.IO.Directory;
 using System.Globalization;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Text;
 using SixLabors.ImageSharp;
 using MetadataExtractor;
@@ -13,7 +13,7 @@ using MetadataExtractor.Formats.Png;
 using MetadataExtractor.Formats.WebP;
 using MetadataExtractor.Formats.QuickTime;
 
-namespace BerryAIGen.IO;
+namespace BerryAIGC.IO;
 
 public class Metadata
 {

@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>BerryAIGen.Civitai</AssemblyName>
-    <RootNamespace>BerryAIGen.Civitai</RootNamespace>
+    <AssemblyName>BerryAIGC.Civitai</AssemblyName>
+    <RootNamespace>BerryAIGC.Civitai</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

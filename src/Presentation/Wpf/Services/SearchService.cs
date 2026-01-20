@@ -1,11 +1,11 @@
 ﻿using System;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class SearchService
 {

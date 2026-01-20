@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
@@ -7,9 +7,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     /// <summary>
     /// Interaction logic for Search.xaml

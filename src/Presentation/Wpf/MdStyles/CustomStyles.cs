@@ -1,8 +1,8 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows;
 
-namespace BerryAIGen.Toolkit.MdStyles
+namespace BerryAIGC.Toolkit.MdStyles
 {
     public class CustomStyles
     {

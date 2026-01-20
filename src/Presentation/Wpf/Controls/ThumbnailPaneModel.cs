@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Input;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public class ThumbnailPaneModel : BaseNotify
 {

@@ -1,10 +1,10 @@
 ﻿using System.Text;
-using BerryAIGen.Database.Models;
+using BerryAIGC.Database.Models;
 using Microsoft.VisualBasic;
 using SQLite;
-using ComfyUINode = BerryAIGen.IO.Node;
+using ComfyUINode = BerryAIGC.IO.Node;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
     public partial class DataStore
     {

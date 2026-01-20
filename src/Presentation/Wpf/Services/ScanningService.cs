@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -7,15 +7,15 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Database.Models;
-using BerryAIGen.IO;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Database.Models;
+using BerryAIGC.IO;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class ScanningService
 {

@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Threading.Tasks;
-using BerryAIGen.Common;
-using BerryAIGen.Common.Query;
-using BerryAIGen.Database;
-using BerryAIGen.Database.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Common.Query;
+using BerryAIGC.Database;
+using BerryAIGC.Database.Models;
 
-namespace BerryAIGen.Electron.Pages;
+namespace BerryAIGC.Electron.Pages;
 
 public class IndexModel : PageModel
 {
@@ -268,7 +268,7 @@ public class IndexModel : PageModel
         try
         {
             // Create new album object
-            var album = new BerryAIGen.Database.Models.Album
+            var album = new BerryAIGC.Database.Models.Album
             {
                 Name = albumName,
                 Order = 0,

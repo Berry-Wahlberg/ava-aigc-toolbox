@@ -45,7 +45,7 @@ if ($WarningsAsErrors -eq $null) {
 }
 
 # Define solution path and name
-$SolutionName = "BerryAIGen.sln"
+$SolutionName = "BerryAIGC.sln"
 $SolutionPath = Join-Path -Path $PSScriptRoot -ChildPath $SolutionName
 
 # Validate solution file exists

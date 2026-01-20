@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 /// <summary>
 /// A class for parsing and comparing semantic versions

@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -8,11 +8,11 @@ using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.IO;
-using BerryAIGen.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.IO;
+using BerryAIGC.Toolkit.Configuration;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class ScanCompletionEvent
 {

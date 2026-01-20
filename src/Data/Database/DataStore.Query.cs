@@ -1,4 +1,4 @@
-﻿using BerryAIGen.Database.Models;
+﻿using BerryAIGC.Database.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +6,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using BerryAIGen.Common.Query;
+using BerryAIGC.Common.Query;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
     public partial class DataStore
     {

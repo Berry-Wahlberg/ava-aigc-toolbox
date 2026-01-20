@@ -4,8 +4,8 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>BerryAIGen.Video</AssemblyName>
-    <RootNamespace>BerryAIGen.Video</RootNamespace>
+    <AssemblyName>BerryAIGC.Video</AssemblyName>
+    <RootNamespace>BerryAIGC.Video</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

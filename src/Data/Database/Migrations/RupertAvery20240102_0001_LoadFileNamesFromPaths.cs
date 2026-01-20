@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
     public partial class Migrations
     {

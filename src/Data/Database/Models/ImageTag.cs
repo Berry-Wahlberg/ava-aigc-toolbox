@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Database.Models;
+﻿namespace BerryAIGC.Database.Models;
 
 public class ImageTag
 {

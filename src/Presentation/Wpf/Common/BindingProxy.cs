@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Common;
+namespace BerryAIGC.Toolkit.Common;
 
 public class BindingProxy : Freezable
 {

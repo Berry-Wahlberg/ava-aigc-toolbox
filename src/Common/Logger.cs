@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 public class Logger
 {
@@ -11,7 +11,7 @@ public class Logger
     {
         lock (_lock)
         {
-            File.AppendAllText("BerryAIGen.Toolkit.log", $"{DateTime.Now:G}: {message}\r\n");
+            File.AppendAllText("BerryAIGC.Toolkit.log", $"{DateTime.Now:G}: {message}\r\n");
         }
     }
 
@@ -19,7 +19,7 @@ public class Logger
     {
         lock (_lock)
         {
-            File.AppendAllText("BerryAIGen.Toolkit.log", $"{DateTime.Now:G}: {exception}\r\n");
+            File.AppendAllText("BerryAIGC.Toolkit.log", $"{DateTime.Now:G}: {exception}\r\n");
         }
     }
 }

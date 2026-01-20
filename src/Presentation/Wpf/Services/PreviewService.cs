@@ -1,9 +1,9 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows;
-using BerryAIGen.Toolkit.Controls;
+using BerryAIGC.Toolkit.Controls;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class PreviewService
 {

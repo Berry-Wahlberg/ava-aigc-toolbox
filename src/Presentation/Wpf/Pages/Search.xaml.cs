@@ -1,18 +1,18 @@
-﻿using BerryAIGen.Civitai.Models;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common.Query;
-using BerryAIGen.Database;
-using BerryAIGen.Database.Models;
-using BerryAIGen.IO;
+﻿using BerryAIGC.Civitai.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common.Query;
+using BerryAIGC.Database;
+using BerryAIGC.Database.Models;
+using BerryAIGC.IO;
 
 
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Video;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Video;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -33,11 +33,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using WPFLocalizeExtension.Engine;
 using XmpCore.Impl;
-using Metadata = BerryAIGen.IO.Metadata;
-using Model = BerryAIGen.Common.Model;
-using SearchView = BerryAIGen.Common.SearchView;
+using Metadata = BerryAIGC.IO.Metadata;
+using Model = BerryAIGC.Common.Model;
+using SearchView = BerryAIGC.Common.SearchView;
 
-namespace BerryAIGen.Toolkit.Pages
+namespace BerryAIGC.Toolkit.Pages
 {
     public enum CursorPosition
     {

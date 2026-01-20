@@ -1,15 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Security.Cryptography;
-using BerryAIGen.IO;
+using BerryAIGC.IO;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using BerryAIGen.Civitai;
-using BerryAIGen.Civitai.Models;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
+using BerryAIGC.Civitai;
+using BerryAIGC.Civitai.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
 using SQLite;
 
 //var dbPath = @"C:\Users\ruper\AppData\Roaming\DiffusionToolkit\Backup-20240420-020535.db";
@@ -76,7 +76,7 @@ async Task<Results<LiteModel>> GetNextPageLite(string nextPageUrl)
 }
 
 
-async Task<Results<BerryAIGen.Civitai.Models.Model>?> GetNextPage(string nextPageUrl)
+async Task<Results<BerryAIGC.Civitai.Models.Model>?> GetNextPage(string nextPageUrl)
 {
     Console.WriteLine($"Fetching {nextPageUrl}");
 

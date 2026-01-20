@@ -1,7 +1,7 @@
-﻿using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class MetadataSection : BaseNotify
 {

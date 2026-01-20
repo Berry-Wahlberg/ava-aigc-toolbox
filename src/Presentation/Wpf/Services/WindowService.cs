@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class WindowService
 {

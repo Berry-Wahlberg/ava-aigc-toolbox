@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO.Compression;
 using System.Security.Cryptography;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.IO;
+namespace BerryAIGC.IO;
 
 public class ModelScanner
 {

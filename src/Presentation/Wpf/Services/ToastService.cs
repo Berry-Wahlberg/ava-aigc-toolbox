@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Threading;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class ToastService
 {

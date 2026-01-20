@@ -1,20 +1,20 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Database.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Database.Models;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     public partial class ThumbnailView
     {

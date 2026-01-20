@@ -1,8 +1,8 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Threading;
 
-namespace BerryAIGen.Toolkit.Services
+namespace BerryAIGC.Toolkit.Services
 {
     public class NotificationService
     {

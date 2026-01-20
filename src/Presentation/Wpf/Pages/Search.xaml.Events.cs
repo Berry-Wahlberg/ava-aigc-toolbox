@@ -1,7 +1,7 @@
-﻿using BerryAIGen.Toolkit.MdStyles;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+﻿using BerryAIGC.Toolkit.MdStyles;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace BerryAIGen.Toolkit.Pages
+namespace BerryAIGC.Toolkit.Pages
 {
     public partial class Search
     {
@@ -162,7 +162,7 @@ namespace BerryAIGen.Toolkit.Pages
 
         public void OpenSearchHelp()
         {
-            _model.SearchHelpMarkdown = ResourceHelper.GetString("BerryAIGen.Toolkit.SearchHelp.md");
+            _model.SearchHelpMarkdown = ResourceHelper.GetString("BerryAIGC.Toolkit.SearchHelp.md");
             _model.SearchHelpStyle = CustomStyles.BetterGithub;
             _model.IsSearchHelpVisible = true;
         }

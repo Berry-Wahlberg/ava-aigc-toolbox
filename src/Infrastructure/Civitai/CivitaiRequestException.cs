@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace BerryAIGen.Civitai;
+namespace BerryAIGC.Civitai;
 
 public class CivitaiRequestException : Exception
 {

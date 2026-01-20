@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Infrastructure\Civitai\BerryAIGen.Civitai.csproj" />
-    <ProjectReference Include="..\src\Data\Database\BerryAIGen.Database.csproj" />
-    <ProjectReference Include="..\src\Data\IO\BerryAIGen.IO.csproj" />
+    <ProjectReference Include="..\src\Infrastructure\Civitai\BerryAIGC.Civitai.csproj" />
+    <ProjectReference Include="..\src\Data\Database\BerryAIGC.Database.csproj" />
+    <ProjectReference Include="..\src\Data\IO\BerryAIGC.IO.csproj" />
   </ItemGroup>
 
 </Project>

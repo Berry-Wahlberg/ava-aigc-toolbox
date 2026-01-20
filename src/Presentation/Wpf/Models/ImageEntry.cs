@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class ImageEntry : BaseNotify
 {

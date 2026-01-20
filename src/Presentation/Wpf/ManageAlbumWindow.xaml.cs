@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +12,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BerryAIGen.Database;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Database;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public class ManageAlbumModel : BaseNotify
     {

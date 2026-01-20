@@ -1,5 +1,5 @@
-﻿using BerryAIGen.Common;
-using BerryAIGen.Database.Models;
+﻿using BerryAIGC.Common;
+using BerryAIGC.Database.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
     public partial class Migrations
     {

@@ -1,5 +1,5 @@
-﻿namespace BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Common;
+﻿namespace BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Common;
 
 public class MetadataSectionSettings : SettingsContainer
 {

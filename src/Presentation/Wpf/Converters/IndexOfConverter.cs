@@ -1,12 +1,12 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
 
-namespace BerryAIGen.Toolkit.Converters;
+namespace BerryAIGC.Toolkit.Converters;
 
 public class IndexOfConverter : IMultiValueConverter
 {

@@ -1,10 +1,10 @@
 ﻿using System.Net.Sockets;
 using SQLite;
 using System.Text;
-using BerryAIGen.Common;
-using BerryAIGen.Database.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Database.Models;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
     public partial class DataStore
     {

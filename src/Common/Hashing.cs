@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 public static class ByteExtensions
 {

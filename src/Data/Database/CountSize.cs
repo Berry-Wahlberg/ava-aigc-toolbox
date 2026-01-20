@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace BerryAIGen.Database;
+namespace BerryAIGC.Database;
 
 
 public class CountSize

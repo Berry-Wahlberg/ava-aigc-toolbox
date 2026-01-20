@@ -1,7 +1,7 @@
-﻿using BerryAIGen.IO;
-using BerryAIGen.Common;
+﻿using BerryAIGC.IO;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class RecordJob
 {

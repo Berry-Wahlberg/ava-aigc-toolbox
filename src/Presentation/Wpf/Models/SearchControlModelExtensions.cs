@@ -1,12 +1,12 @@
 ﻿using System.Collections.ObjectModel;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Linq;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common.Query;
-using BerryAIGen.Toolkit.Controls;
-using NodeFilter = BerryAIGen.Common.Query.NodeFilter;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common.Query;
+using BerryAIGC.Toolkit.Controls;
+using NodeFilter = BerryAIGC.Common.Query.NodeFilter;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public static class SearchControlModelExtensions
 {

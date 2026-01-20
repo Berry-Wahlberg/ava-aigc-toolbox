@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Controls;
+using BerryAIGC.Toolkit.Controls;
 
 public class ScrollDragger
 {

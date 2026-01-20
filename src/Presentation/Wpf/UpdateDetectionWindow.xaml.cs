@@ -3,13 +3,13 @@ using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     /// <summary>
     /// Interaction logic for UpdateDetectionWindow.xaml

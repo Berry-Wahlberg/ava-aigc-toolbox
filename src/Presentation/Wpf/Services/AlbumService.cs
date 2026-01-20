@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class AlbumService
 {

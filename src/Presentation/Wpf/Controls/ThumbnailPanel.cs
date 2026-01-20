@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Drawing.Printing;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Toolkit.Thumbnails;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Toolkit.Thumbnails;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public class ThumbView
 {

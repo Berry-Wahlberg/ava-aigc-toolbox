@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Threading;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Services;
+namespace BerryAIGC.Toolkit.Services;
 
 public class MessageService
 {

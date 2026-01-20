@@ -3,9 +3,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using BerryAIGen.Github;
+using BerryAIGC.Github;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 public class UpdateChecker
 {

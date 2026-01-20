@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Pages;
+namespace BerryAIGC.Toolkit.Pages;
 
 public class ModelsModel : BaseNotify
 {

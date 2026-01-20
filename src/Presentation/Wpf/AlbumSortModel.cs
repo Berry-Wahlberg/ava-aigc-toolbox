@@ -1,14 +1,14 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Input;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit;
+namespace BerryAIGC.Toolkit;
 
 public class AlbumSortModel : BaseNotify
 {

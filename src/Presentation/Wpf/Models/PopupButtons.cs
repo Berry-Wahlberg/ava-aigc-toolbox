@@ -1,7 +1,7 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 [Flags]
 public enum PopupButtons

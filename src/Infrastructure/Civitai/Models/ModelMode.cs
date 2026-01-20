@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Civitai.Models;
+﻿namespace BerryAIGC.Civitai.Models;
 
 public enum ModelMode
 {

@@ -1,18 +1,18 @@
 ﻿﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common.Query;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common.Query;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class SearchModel : BaseNotify
     {

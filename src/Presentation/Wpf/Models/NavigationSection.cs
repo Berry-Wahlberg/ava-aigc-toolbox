@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Configuration;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Configuration;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class NavigationSection : BaseNotify
 {

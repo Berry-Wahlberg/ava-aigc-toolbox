@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Common
+namespace BerryAIGC.Toolkit.Common
 {
     /// <summary>
     /// This only exists because the InputBinding constructor is protected, but since we have to have it anyway

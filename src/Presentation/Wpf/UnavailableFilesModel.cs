@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.ObjectModel;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit;
+namespace BerryAIGC.Toolkit;
 
 public class ImageFileItem : BaseNotify
 {

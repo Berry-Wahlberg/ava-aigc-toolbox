@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Globalization;
 using System.Management;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using BerryAIGen.IO;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.IO;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     /// <summary>
     /// Interaction logic for ComfyNode.xaml

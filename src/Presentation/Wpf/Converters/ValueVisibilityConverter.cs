@@ -1,11 +1,11 @@
-﻿using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Common;
 using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace BerryAIGen.Toolkit.Converters;
+namespace BerryAIGC.Toolkit.Converters;
 
 public class ValueVisibilityConverter : IValueConverter
 {

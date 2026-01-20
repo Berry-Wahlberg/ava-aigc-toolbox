@@ -1,10 +1,10 @@
-﻿using BerryAIGen.Common.Query;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+﻿using BerryAIGC.Common.Query;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,9 +13,9 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public class CheckBoxItem : BaseNotify
 {

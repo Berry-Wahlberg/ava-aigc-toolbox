@@ -1,9 +1,9 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace BerryAIGen.Toolkit.Common;
+namespace BerryAIGC.Toolkit.Common;
 
 public class AsyncCommand<T> : IAsyncCommand<T>
 {

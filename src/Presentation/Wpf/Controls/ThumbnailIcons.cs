@@ -1,14 +1,14 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Themes;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Themes;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public class ThumbnailIcons : FrameworkElement
 {

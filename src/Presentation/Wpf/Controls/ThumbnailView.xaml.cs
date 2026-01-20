@@ -1,5 +1,5 @@
-﻿using BerryAIGen.Database;
-using BerryAIGen.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Common;
 
 using System;
 using System.Collections.Generic;
@@ -14,17 +14,17 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Toolkit.Pages;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Localization;
-using Settings = BerryAIGen.Toolkit.Configuration.Settings;
-using BerryAIGen.Database.Models;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Toolkit.Pages;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Localization;
+using Settings = BerryAIGC.Toolkit.Configuration.Settings;
+using BerryAIGC.Database.Models;
 using System.Reflection;
 using FontAwesome.WPF;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     public enum ThumbnailViewMode
     {

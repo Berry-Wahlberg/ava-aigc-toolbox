@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 public class Win32FileAPI
 {

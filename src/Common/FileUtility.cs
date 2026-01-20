@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace BerryAIGen.Common;
+namespace BerryAIGC.Common;
 
 
 public static class DragAndDrop

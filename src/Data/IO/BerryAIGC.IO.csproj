@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>BerryAIGen.IO</AssemblyName>
-    <RootNamespace>BerryAIGen.IO</RootNamespace>
+    <AssemblyName>BerryAIGC.IO</AssemblyName>
+    <RootNamespace>BerryAIGC.IO</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\BerryAIGen.Common.csproj" />
+    <ProjectReference Include="..\..\Common\BerryAIGC.Common.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 using ElectronNET.API;
 using ElectronNET.API.Entities;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.IO;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.IO;
 using System;
 using System.Threading.Tasks;
 using System.Diagnostics;
@@ -54,7 +54,7 @@ if (HybridSupport.IsElectronActive)
                 Resizable = true,
                 AutoHideMenuBar = true,
                 Center = true,
-                Title = "BerryAIGen Toolkit",
+                Title = "BerryAIGC Toolkit",
                 BackgroundColor = "#ffffff",
                 // Add icon if available
             };

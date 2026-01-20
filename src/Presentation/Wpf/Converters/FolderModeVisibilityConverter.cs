@@ -1,11 +1,11 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit.Converters;
+namespace BerryAIGC.Toolkit.Converters;
 
 public class FolderModeVisibilityConverter : IValueConverter
 {

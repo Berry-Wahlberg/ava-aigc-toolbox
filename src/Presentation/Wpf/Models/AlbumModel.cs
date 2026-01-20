@@ -1,8 +1,8 @@
-﻿using BerryAIGen.Database;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Database;
+using BerryAIGC.Common;
 using System;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class AlbumModel : BaseNotify, IAlbumInfo
 {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BerryAIGen.IO
+namespace BerryAIGC.IO
 {
     public class StealthPng
     {

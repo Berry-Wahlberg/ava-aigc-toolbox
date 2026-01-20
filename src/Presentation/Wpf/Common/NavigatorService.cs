@@ -1,12 +1,12 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit.Common;
+namespace BerryAIGC.Toolkit.Common;
 
 public class NavigateException : Exception
 {

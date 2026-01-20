@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace BerryAIGen.IO;
+namespace BerryAIGC.IO;
 
 public static class HashFunctions
 {

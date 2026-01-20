@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -9,16 +9,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Database;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Controls;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Toolkit.Thumbnails;
+using BerryAIGC.Database;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Controls;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Toolkit.Thumbnails;
 
-namespace BerryAIGen.Toolkit.Pages
+namespace BerryAIGC.Toolkit.Pages
 {
     /// <summary>
     /// Interaction logic for Prompts.xaml

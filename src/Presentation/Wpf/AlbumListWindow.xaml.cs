@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Linq;
 using System.Windows;
-using BerryAIGen.Database;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     /// <summary>
     /// Interaction logic for AlbumListWindow.xaml

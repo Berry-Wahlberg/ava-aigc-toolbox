@@ -1,6 +1,6 @@
-﻿using BerryAIGen.Database;
-using BerryAIGen.Common;
-using BerryAIGen.Toolkit.Models;
+﻿using BerryAIGC.Database;
+using BerryAIGC.Common;
+using BerryAIGC.Toolkit.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,14 +12,14 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Behaviors;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Database.Models;
-using BerryAIGen.Civitai.Models;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Behaviors;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Database.Models;
+using BerryAIGC.Civitai.Models;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
-namespace BerryAIGen.Toolkit.Pages
+namespace BerryAIGC.Toolkit.Pages
 {
     public partial class Search
     {

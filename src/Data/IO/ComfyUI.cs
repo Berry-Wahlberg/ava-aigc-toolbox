@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Xml.Linq;
 
-namespace BerryAIGen.IO
+namespace BerryAIGC.IO
 {
     public class Node
     {

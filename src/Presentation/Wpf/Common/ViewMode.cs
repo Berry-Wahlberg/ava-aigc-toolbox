@@ -1,5 +1,5 @@
-﻿namespace BerryAIGen.Toolkit.Common;
-using BerryAIGen.Common;
+﻿namespace BerryAIGC.Toolkit.Common;
+using BerryAIGC.Common;
 
 public enum ViewMode {
     Search,

@@ -1,6 +1,6 @@
-﻿using System;
-using BerryAIGen.Common;
-using BerryAIGen.IO;
+using System;
+using BerryAIGC.Common;
+using BerryAIGC.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -8,12 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using Model = BerryAIGen.Common.Model;
+using Model = BerryAIGC.Common.Model;
 using Path = System.IO.Path;
 using System.Text.Json;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Pages
+namespace BerryAIGC.Toolkit.Pages
 {
     /// <summary>
     /// Interaction logic for Models.xaml

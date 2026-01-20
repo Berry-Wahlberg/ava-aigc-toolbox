@@ -20,11 +20,11 @@
     <PackageReference Include="ElectronNET.API" Version="23.6.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\BerryAIGen.Common.csproj" />
-    <ProjectReference Include="..\..\Data\Database\BerryAIGen.Database.csproj" />
-    <ProjectReference Include="..\..\Data\IO\BerryAIGen.IO.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\Civitai\BerryAIGen.Civitai.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\Github\BerryAIGen.Github.csproj" />
+    <ProjectReference Include="..\..\Common\BerryAIGC.Common.csproj" />
+    <ProjectReference Include="..\..\Data\Database\BerryAIGC.Database.csproj" />
+    <ProjectReference Include="..\..\Data\IO\BerryAIGC.IO.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Civitai\BerryAIGC.Civitai.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Github\BerryAIGC.Github.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="electron.manifest.json">

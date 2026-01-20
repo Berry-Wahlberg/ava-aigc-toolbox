@@ -1,10 +1,10 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows;
 using System.Windows.Controls;
-using BerryAIGen.Toolkit.Models;
+using BerryAIGC.Toolkit.Models;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public class ThumbnailTemplateSelector : DataTemplateSelector
 {

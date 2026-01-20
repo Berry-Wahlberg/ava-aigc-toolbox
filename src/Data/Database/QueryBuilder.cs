@@ -1,12 +1,12 @@
-﻿using BerryAIGen.Common;
+﻿using BerryAIGC.Common;
 using System;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-using static BerryAIGen.IO.Metadata;
+using static BerryAIGC.IO.Metadata;
 
-namespace BerryAIGen.Database;
+namespace BerryAIGC.Database;
 
 public static partial class QueryBuilder
 {

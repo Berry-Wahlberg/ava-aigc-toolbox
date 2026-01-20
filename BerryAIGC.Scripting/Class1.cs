@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Scripting
+﻿namespace BerryAIGC.Scripting
 {
     public class Class1
     {

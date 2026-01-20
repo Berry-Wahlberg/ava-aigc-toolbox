@@ -1,11 +1,11 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace BerryAIGen.Toolkit.Behaviors;
+namespace BerryAIGC.Toolkit.Behaviors;
 
 public static class ScrollSpeed
 {

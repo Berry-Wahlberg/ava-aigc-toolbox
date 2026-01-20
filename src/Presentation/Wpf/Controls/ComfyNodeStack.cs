@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using BerryAIGen.IO;
+using BerryAIGC.IO;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 public partial class ComfyNodeStack : UserControl
 {
     public static readonly DependencyProperty NodesProperty = DependencyProperty.Register(

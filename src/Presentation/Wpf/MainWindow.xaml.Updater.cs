@@ -1,11 +1,11 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
-using BerryAIGen.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public partial class MainWindow
     {
@@ -34,11 +34,10 @@ namespace BerryAIGen.Toolkit
                     Directory.CreateDirectory(temp);
                 }
 
-                FileCopy(appDir, "BerryAIGen.Updater.exe", temp);
-
+                FileCopy(appDir, "BerryAIGC.Updater.exe", temp);
                 var pi = new ProcessStartInfo()
                 {
-                    FileName = Path.Combine(temp, "BerryAIGen.Updater.exe"),
+                    FileName = Path.Combine(temp, "BerryAIGC.Updater.exe"),
                     Arguments = $"\"{appDir}\"",
                     UseShellExecute = true
                 };

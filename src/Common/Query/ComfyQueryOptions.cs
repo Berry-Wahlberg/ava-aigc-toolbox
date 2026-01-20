@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BerryAIGen.Common.Query;
+namespace BerryAIGC.Common.Query;
 
 public class ComfyQueryOptions
 {

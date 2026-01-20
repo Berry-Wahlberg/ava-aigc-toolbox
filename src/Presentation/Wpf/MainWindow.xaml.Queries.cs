@@ -1,15 +1,15 @@
-﻿using BerryAIGen.Database;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Database;
+using BerryAIGC.Common;
 using SQLite;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Common.Query;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Common.Query;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public partial class MainWindow
     {

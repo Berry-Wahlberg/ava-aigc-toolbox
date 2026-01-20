@@ -1,10 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Windows;
-using BerryAIGen.Toolkit;
-using BerryAIGen.Common;
+using BerryAIGC.Toolkit;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Themes
+namespace BerryAIGC.Toolkit.Themes
 {
     public static class ThemeManager
     {

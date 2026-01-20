@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls.Primitives;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Input;
 
-namespace BerryAIGen.Toolkit.Common;
+namespace BerryAIGC.Toolkit.Common;
 
 /// <summary>
 /// This gesture doesn't handle keys originating in a text control. This allows key bindings without modifier keys

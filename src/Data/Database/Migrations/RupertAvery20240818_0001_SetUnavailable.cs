@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Database
+﻿namespace BerryAIGC.Database
 {
     public partial class Migrations
     {

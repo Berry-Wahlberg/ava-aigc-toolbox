@@ -1,6 +1,6 @@
-﻿using BerryAIGen.Database.Models;
+﻿using BerryAIGC.Database.Models;
 
-namespace BerryAIGen.Database
+namespace BerryAIGC.Database
 {
     public partial class Migrations
     {

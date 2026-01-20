@@ -1,5 +1,5 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -7,12 +7,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit
+namespace BerryAIGC.Toolkit
 {
     public class ReleaseNotesModel : BaseNotify
     {
@@ -48,7 +48,7 @@ namespace BerryAIGen.Toolkit
 
         public ReleaseNotesModel()
         {
-            var releaseNotes = ResourceHelper.GetResources("BerryAIGen.Toolkit.Release_Notes");
+            var releaseNotes = ResourceHelper.GetResources("BerryAIGC.Toolkit.Release_Notes");
 
             _files = releaseNotes.Where(SemanticVersion.IsSemanticVersion).OrderBy(SemanticVersion.Parse).ToList();
 

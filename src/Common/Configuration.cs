@@ -4,7 +4,7 @@ using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace BerryAIGen.Common
+namespace BerryAIGC.Common
 {
     public class Configuration<T>
     {

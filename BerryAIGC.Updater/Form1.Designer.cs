@@ -1,4 +1,4 @@
-﻿namespace BerryAIGen.Updater
+﻿namespace BerryAIGC.Updater
 {
     partial class Form1
     {
@@ -31,7 +31,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.textBoxNotes = new BerryAIGen.Updater.CustomTextBox();
+            this.textBoxNotes = new BerryAIGC.Updater.CustomTextBox();
             this.SuspendLayout();
             // 
             // progressBar1

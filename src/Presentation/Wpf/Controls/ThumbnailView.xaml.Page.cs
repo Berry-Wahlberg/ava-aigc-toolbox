@@ -1,15 +1,15 @@
 ﻿using System;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Pages;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Pages;
+using BerryAIGC.Toolkit.Services;
 
-namespace BerryAIGen.Toolkit.Controls
+namespace BerryAIGC.Toolkit.Controls
 {
     public class PageChangedEventArgs
     {

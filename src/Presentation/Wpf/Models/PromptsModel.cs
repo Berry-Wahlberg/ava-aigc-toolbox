@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
-using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Services;
+using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Services;
 using MdXaml.LinkActions;
 
-namespace BerryAIGen.Toolkit.Models;
+namespace BerryAIGC.Toolkit.Models;
 
 public class PromptsModel : BaseNotify
 {

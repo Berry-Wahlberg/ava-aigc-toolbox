@@ -1,7 +1,7 @@
-﻿using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Common;
+﻿using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Common;
 
-namespace BerryAIGen.Toolkit.Pages;
+namespace BerryAIGC.Toolkit.Pages;
 
 public class ModelViewModel : BaseNotify
 {

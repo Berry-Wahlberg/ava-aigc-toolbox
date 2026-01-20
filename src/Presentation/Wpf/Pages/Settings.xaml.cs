@@ -1,11 +1,11 @@
-﻿using BerryAIGen.Common;
-using BerryAIGen.Database;
-using BerryAIGen.Toolkit.Common;
-using BerryAIGen.Toolkit.Configuration;
-using BerryAIGen.Toolkit.Localization;
-using BerryAIGen.Toolkit.Models;
-using BerryAIGen.Toolkit.Services;
-using BerryAIGen.Toolkit.Themes;
+﻿using BerryAIGC.Common;
+using BerryAIGC.Database;
+using BerryAIGC.Toolkit.Common;
+using BerryAIGC.Toolkit.Configuration;
+using BerryAIGC.Toolkit.Localization;
+using BerryAIGC.Toolkit.Models;
+using BerryAIGC.Toolkit.Services;
+using BerryAIGC.Toolkit.Themes;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
 
-namespace BerryAIGen.Toolkit.Pages
+namespace BerryAIGC.Toolkit.Pages
 {
 
     /// <summary>
@@ -250,7 +250,7 @@ namespace BerryAIGen.Toolkit.Pages
                     if (!_dataStore.TryRestoreBackup(dialog.FileName))
                     {
                         MessageBox.Show(this._window,
-                            "The database backup is not a BerryAIGen.Toolkit database.",
+                            "The database backup is not a BerryAIGC.Toolkit database.",
                             "Restore Database", MessageBoxButton.OK,
                             MessageBoxImage.Error);
                         return;

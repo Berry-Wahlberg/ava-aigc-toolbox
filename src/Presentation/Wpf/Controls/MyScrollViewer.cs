@@ -1,9 +1,9 @@
 ﻿using System.Windows;
-using BerryAIGen.Common;
+using BerryAIGC.Common;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace BerryAIGen.Toolkit.Controls;
+namespace BerryAIGC.Toolkit.Controls;
 
 public sealed class MyScrollViewer : ScrollViewer
 {
