@@ -1,143 +1,328 @@
-# BerryIGeen.Toolkit
+# 花花AIGC工具箱 (Berry AIGC Toolbox)
 
-BerryIGeen.Toolkit是一个专为AI生成图像设计的综合元数据索引器和查看器。它提供强大的工具，帮助您组织、搜索和管理不断增长的AI生成媒体集合。
+一个基于 Avalonia 和 .NET 构建的跨平台 AIGC（AI 生成内容）图像资产管理工具。支持 AI 驱动的图像组织、标签管理、批量处理、格式转换以及 AIGC 工作流助手。可在 Windows、macOS 和 Linux 上无缝运行。
 
-## 目录
+## 功能特性
 
-- [概述](#概述)
-- [功能](#功能)
-- [安装](#安装)
-- [从源代码构建](#从源代码构建)
-- [使用方法](#使用方法)
-- [支持的格式](#支持的格式)
-- [支持的元数据格式](#支持的元数据格式)
-- [截图](#截图)
-- [常见问题](#常见问题)
-- [开发](#开发)
+### 核心功能
+- **跨平台支持**：可在 Windows、macOS 和 Linux 上运行
+- **AI 驱动的图像管理**：轻松组织和管理 AI 生成的图像
+- **高级标签系统**：创建、应用和管理图像标签
+- **相册组织**：将图像分组到自定义相册中以便更好地组织
+- **文件夹导航**：按原始文件夹结构浏览图像
+- **元数据提取**：自动提取 AI 生成的元数据（提示词、反向提示词、步数、采样器等）
+- **批量处理**：同时对多张图像执行操作
+- **格式转换**：在不同图像格式之间转换
+- **AIGC 工作流助手**：简化 AI 内容创建工作流
 
-## 概述
+### AI 功能
+- **自动标签**：AI 驱动的图像自动标签
+- **元数据识别**：智能提取 AI 生成参数
+- **提示词分析**：理解和分类图像提示词
+- **工作流集成**：与 AI 生成工具无缝集成
 
-Berry AIGC Toolbox允许用户：
-- 索引和搜索AI生成图像的元数据
-- 使用评分、标签和相册组织图像
-- 在用户友好的界面中查看详细元数据（PNGInfo）
-- 在整个集合中搜索和分析提示词
-- 使用拖放功能管理图像库
+### 用户体验
+- **直观界面**：简洁易用的设计
+- **键盘快捷键**：高效的键盘导航
+- **拖放支持**：轻松导入和组织图像
+- **多种视图模式**：网格和列表视图，满足不同偏好
+- **高级搜索和筛选**：使用强大的搜索功能快速查找图像
 
-## 功能
-
-### 元数据管理
-- **自动扫描**：扫描图像和视频以提取和索引提示词和其他元数据
-- **元数据查看**：在预览窗格中轻松查看详细元数据
-- **搜索功能**：使用强大的搜索过滤器搜索图像元数据
-
-### 图像组织
-- **评分系统**：为图像评分1-10
-- **收藏标记**：将图像标记为收藏
-- **NSFW支持**：通过关键词自动标记NSFW内容并模糊NSFW图像
-- **自定义标签**：创建并将自定义标签应用到图像
-- **相册**：将图像组织到相册中，支持拖放
-
-### 提示词分析
-- **提示词库**：查看和搜索集合中使用的所有提示词
-- **使用统计**：查看特定提示词的使用频率
-- **负面提示词分析**：分析整个集合中的负面提示词
-- **提示词到图像映射**：查看与特定提示词关联的所有图像
-
-### 文件管理
-- **文件夹视图**：使用熟悉的文件夹结构浏览图像库
-- **拖放支持**：拖动图像以移动它们（按CTRL拖动以复制）
-- **右键菜单命令**：使用上下文菜单移动、复制和管理图像
-
-## 安装
+## 安装说明
 
 ### 系统要求
-- **操作系统**：Windows 10/11
-- **运行时**：[.NET 8.0 桌面运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)（包含.NET 8.0运行时）
 
-### 下载和安装
-1. 从[GitHub Releases](https://github.com/Berry-Wahlberg/AIGenManager/releases/latest)页面下载最新版本
-2. 展开**Assets**部分并下载zip文件（例如：`BerryAIGen.Toolkit.v1.x.zip`）
-3. 将所有文件提取到您选择的文件夹
-4. 运行`BerryAIGen.Toolkit.exe`启动应用程序
+#### 最低要求
+- **操作系统**：Windows 10+、macOS 10.15+ 或 Linux（Ubuntu 20.04+、Fedora 32+）
+- **.NET 运行时**：.NET 7.0 或更高版本
+- **磁盘空间**：100 MB 可用空间
+- **内存**：最低 2 GB
 
-## 从源代码构建
+#### 推荐要求
+- **内存**：4 GB 或更多
+- **处理器**：多核 CPU
+- **显示器**：1080p 或更高分辨率
 
-### 先决条件
-- **IDE**：Visual Studio 2022或更高版本
-- **SDK**：[.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)（包含运行时）
+### 安装方法
 
-### 构建说明
-1. 克隆此存储库
-2. 在Visual Studio中打开解决方案文件`BerryAIGC.sln`
-3. 使用**构建**菜单或按`Ctrl+Shift+B`构建解决方案
-4. 或者，在项目根目录下从命令行运行`dotnet build`
+#### 1. 使用安装程序（Windows）
 
-### 发布
-- 运行`publish.cmd`在`build`文件夹中创建发布版本
+1. **下载安装程序**
+   - 访问官方网站或 GitHub 发布页面
+   - 下载适用于 Windows 的最新 `.exe` 安装程序
 
-## 使用方法
+2. **运行安装程序**
+   - 双击下载的 `.exe` 文件
+   - 按照屏幕上的说明操作
+   - 选择安装目录（推荐默认值）
+   - 选择是否创建桌面和开始菜单快捷方式
 
-### 入门
-- 首次启动时，系统会提示您选择首选语言
-- 使用设置菜单添加包含AI生成图像的文件夹
-- 应用程序将自动扫描并索引您的图像
-- 使用搜索栏通过元数据、标签或提示词查找图像
+3. **启动应用程序**
+   - 点击“完成”立即启动应用程序
+   - 或稍后使用桌面/开始菜单快捷方式
+
+#### 2. 使用包管理器（macOS/Linux）
+
+##### macOS (Homebrew)
+```bash
+brew tap berry-aigc-toolbox/tap
+brew install berry-aigc-toolbox
+```
+
+##### Linux (Snap)
+```bash
+sudo snap install berry-aigc-toolbox
+```
+
+##### Linux (Debian/Ubuntu)
+```bash
+sudo dpkg -i berry-aigc-toolbox_*.deb
+sudo apt-get install -f
+```
+
+#### 3. 便携版本（所有平台）
+
+1. **下载便携归档文件**
+   - 下载最新的 `.zip`（Windows）或 `.tar.gz`（macOS/Linux）归档文件
+
+2. **提取归档文件**
+   - 将内容提取到您选择的目录
+   - 无需安装
+
+3. **运行应用程序**
+   - Windows：双击 `AIGenManager.exe`
+   - macOS/Linux：在终端中运行 `./AIGenManager`
+
+### .NET 运行时安装
+
+如果您尚未安装 .NET 7.0 运行时，需要先安装：
+
+#### Windows
+- 从 [https://dotnet.microsoft.com/download/dotnet/7.0](https://dotnet.microsoft.com/download/dotnet/7.0) 下载
+- 运行安装程序并按照说明操作
+
+#### macOS
+```bash
+brew install --cask dotnet-sdk
+```
+
+#### Linux
+```bash
+# Ubuntu/Debian
+sudo apt-get update
+sudo apt-get install -y dotnet-runtime-7.0
+
+# Fedora
+sudo dnf install -y dotnet-runtime-7.0
+```
+
+## 使用说明
+
+### 首次启动
+
+当您首次启动应用程序时：
+
+1. **欢迎屏幕**
+   - 您将看到一个欢迎屏幕，提供以下选项：
+     - 从空库开始
+     - 导入现有图像
+     - 了解有关应用程序的更多信息
+
+2. **选择您的选项**
+   - **从空库开始**：为您的图像创建新数据库
+   - **导入现有图像**：让您选择要从中导入图像的文件夹
+   - **了解更多**：打开文档
+
+3. **数据库位置**
+   - 应用程序会自动创建一个数据库文件：
+     - Windows：`%APPDATA%/AIGenManager/aigenmanager.db`
+     - macOS：`~/.local/share/AIGenManager/aigenmanager.db`
+     - Linux：`~/.local/share/AIGenManager/aigenmanager.db`
+
+### 基本导航
+
+主窗口分为几个部分：
+
+- **侧边栏**：浏览文件夹、相册、标签和所有图像
+- **主要内容区域**：以网格或列表视图显示图像
+- **图像详情**：显示选中图像的元数据和属性
+- **工具栏**：访问导入、排序、筛选和视图选项
+- **状态栏**：显示图像总数、当前筛选条件和应用程序状态
+
+### 添加图像
+
+#### 从文件系统
+1. 点击工具栏中的 **导入** 按钮
+2. 选择 **从文件夹导入**
+3. 选择包含图像的文件夹
+4. 点击 **选择文件夹** 开始导入
+
+#### 拖放
+1. 打开文件资源管理器/查找器
+2. 选择一张或多张图像
+3. 将它们拖放到应用程序的主要内容区域
+4. 图像将被添加到您的库中
+
+### 组织图像
+
+#### 创建相册
+1. 点击侧边栏中 "相册" 旁边的 **+** 按钮
+2. 输入相册名称
+3. 按 Enter 键创建
+4. 将图像从网格拖放到相册中添加它们
+
+#### 添加标签
+
+##### 到单张图像
+1. 在网格中选择一张图像
+2. 在详情面板中，找到 "标签" 部分
+3. 点击 **+** 按钮
+4. 输入标签名称并按 Enter 键
+
+##### 到多张图像
+1. 使用 Ctrl/Cmd + 点击选择多张图像
+2. 右键单击并选择 **添加标签**
+3. 输入用逗号分隔的标签名称
+4. 点击 **添加** 将标签应用到所有选中的图像
+
+### 搜索和筛选
+
+#### 基本搜索
+1. 在窗口顶部的搜索框中输入
+2. 结果将在您输入时自动显示
+3. 搜索匹配文件名、标签和元数据
+
+#### 高级筛选
+1. 点击工具栏中的 **筛选** 按钮
+2. 设置筛选条件：
+   - 文件夹
+   - 相册
+   - 标签
+   - 评分
+   - 日期范围
+   - 尺寸
+   - AI 元数据（模型、采样器等）
+3. 点击 **应用** 查看筛选结果
 
 ### 键盘快捷键
-- `I`：在预览窗格中切换元数据可见性
-- `Ctrl+F`：聚焦搜索栏
-- `箭头键`：在图像之间导航
 
-### 提示和技巧
-有关更详细的使用信息，请参阅`document/develop`文件夹中的[开发文档](document/develop/README.md)。
+- **Ctrl/Cmd + K**：显示所有键盘快捷键
+- **Ctrl/Cmd + I**：导入图像
+- **Ctrl/Cmd + F**：聚焦搜索框
+- **Ctrl/Cmd + A**：选择所有图像
+- **Delete**：删除选中的图像
+- **Space**：预览选中的图像
+- **Ctrl/Cmd + 1**：网格视图
+- **Ctrl/Cmd + 2**：列表视图
 
-## 支持的格式
+## 配置选项
 
-### 图像格式
-- JPG/JPEG + EXIF
-- PNG
-- WebP
-- MP4（视频）
+### 数据库配置
 
-### 元数据格式
-- **AUTOMATIC1111及兼容**：Tensor.Art, SDNext
-- **InvokeAI**：Dream/sd-metadata/invokeai_metadata
-- **NovelAI**
-- **Stable Diffusion**
-- **EasyDiffusion**
-- **Fooocus系列**：RuinedFooocus, Fooocus, FooocusMRE
-- **Stable Swarm**
+应用程序使用 SQLite 进行数据存储。数据库文件会自动创建在：
+- Windows：`%APPDATA%/AIGenManager/aigenmanager.db`
+- macOS：`~/.local/share/AIGenManager/aigenmanager.db`
+- Linux：`~/.local/share/AIGenManager/aigenmanager.db`
 
-### 文本元数据
-- .TXT元数据文件
+要备份您的数据，只需将此文件复制到安全位置即可。
 
-## 支持的元数据格式
+### 应用程序设置
 
-BerryAIGen.Toolkit可以从各种AI图像生成平台提取元数据。即使没有元数据的图像也可以使用评分和相册等功能！
+应用程序设置存储在：
+- Windows：`%APPDATA%/AIGenManager/settings.json`
+- macOS：`~/.local/share/AIGenManager/settings.json`
+- Linux：`~/.local/share/AIGenManager/settings.json`
 
-## 截图
+设置包括：
+- UI 首选项（视图模式、主题等）
+- 导入设置
+- 搜索和筛选首选项
+- 键盘快捷键自定义
 
-![主界面](https://github.com/Berry-Wahlberg/AIGenManager/assets/screenshots/main-interface.png)
+### 自定义选项
 
-![元数据视图](https://github.com/Berry-Wahlberg/AIGenManager/assets/screenshots/metadata-view.png)
+应用程序支持各种自定义选项：
+- **主题**：浅色和深色主题
+- **视图选项**：网格大小、列表列等
+- **排序首选项**：默认排序顺序
+- **元数据显示**：选择要显示的元数据字段
 
-## 常见问题
+## 贡献指南
 
-### 如何查看图像的元数据（PNGInfo）？
-在预览窗格可见的情况下，在缩略图视图中或预览窗格获得焦点时按`I`，显示或隐藏元数据。您也可以点击预览窗格右下角的眼睛图标。
+### 架构概述
 
-### 什么是重建元数据，何时应该使用它？
-重建元数据会重新扫描所有图像，并使用找到的任何新的或更新的元数据更新数据库。它不会影响您的自定义标签（评分、收藏、NSFW）。当BerryAIGen.Toolkit的新版本添加了对您现有图像中存在的元数据格式的支持时，您才需要使用此功能。
+项目遵循清洁架构原则，包含以下层：
 
-### 我可以将图像移动到不同的文件夹吗？
-要在保持元数据的情况下将图像移动到BerryAIGen文件夹内的不同位置，应使用**右键 > 移动**命令。这确保所有特定于工具包的元数据（收藏、评分、NSFW标签）保持完整。使用资源管理器或其他应用程序移动文件将导致元数据丢失。
+1. **表示层**：使用 Avalonia 构建的 UI 组件和视图模型
+2. **应用层**：实现业务逻辑的用例
+3. **核心层**：领域模型、实体和接口
+4. **基础设施层**：数据访问和外部集成
 
-## 开发
+### 编码标准
 
-在`document/develop`文件夹中提供了全面的开发文档。该文档包括：
-- 技术规范
-- 架构图
-- 实现细节
-- 开发工作流程
-- API文档
+- 遵循 C# 编码约定
+- 对所有依赖项使用依赖注入
+- 在核心层实现接口，在基础设施层实现具体类
+- 对所有应用程序逻辑使用用例模式
+- 遵循 SOLID 原则
+
+### 开发设置
+
+1. **先决条件**
+   - .NET 7.0 SDK 或更高版本
+   - Visual Studio、Rider 或带有 C# 扩展的 VS Code
+   - Git
+
+2. **克隆仓库**
+   ```bash
+   git clone https://github.com/berry-aigc-toolbox/berry-aigc-toolbox.git
+   cd berry-aigc-toolbox
+   ```
+
+3. **构建项目**
+   ```bash
+   dotnet build
+   ```
+
+4. **运行应用程序**
+   ```bash
+   dotnet run --project src/Presentation/AIGenManager.Presentation.csproj
+   ```
+
+### 贡献工作流程
+
+1. Fork 仓库
+2. 创建功能分支
+3. 实现您的更改
+4. 运行测试（如果可用）
+5. 使用描述性提交消息提交您的更改
+6. 推送到您的 fork
+7. 创建拉取请求
+
+## 许可证
+
+本项目采用 MIT 许可证。有关详细信息，请参阅 [LICENSE](LICENSE) 文件。
+
+## 致谢
+
+- **Avalonia UI**：跨平台 UI 框架
+- **.NET**：强大的开发平台
+- **SQLite**：轻量级数据库引擎
+- **SQLite-net**：.NET 的 SQLite ORM
+
+## 联系方式
+
+- **GitHub 仓库**：[https://github.com/berry-aigc-toolbox/berry-aigc-toolbox](https://github.com/berry-aigc-toolbox/berry-aigc-toolbox)
+- **问题页面**：[https://github.com/berry-aigc-toolbox/berry-aigc-toolbox/issues](https://github.com/berry-aigc-toolbox/berry-aigc-toolbox/issues)
+- **文档**：[https://github.com/berry-aigc-toolbox/berry-aigc-toolbox/docs](https://github.com/berry-aigc-toolbox/berry-aigc-toolbox/docs)
+
+## 支持
+
+如需支持，请：
+1. 查看 [文档](https://github.com/berry-aigc-toolbox/berry-aigc-toolbox/docs)
+2. 搜索现有的 [问题](https://github.com/berry-aigc-toolbox/berry-aigc-toolbox/issues)
+3. 如果找不到解决方案，请创建新问题
+
+## 更新日志
+
+有关最新更改，请参阅 [CHANGELOG](CHANGELOG.md) 文件。
