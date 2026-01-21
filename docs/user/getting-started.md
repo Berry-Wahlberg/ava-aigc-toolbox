@@ -194,7 +194,7 @@ Now that you've learned the basics, you can:
 - Explore the [UI Overview](./ui-overview.md) for detailed interface explanation
 - Learn about [Image Management](./features/image-management.md) for more details on managing your images
 - Read about [Organization](./features/organization.md) to learn more about folders, albums, and tags
-- Check the [FAQ](./faq.md) for common questions
+- Check the [FAQ](./support/faq.md) for common questions
 
 ## Tips and Tricks
 
@@ -205,3 +205,4 @@ Now that you've learned the basics, you can:
 - **Update Metadata**: Use the metadata editor to keep your image information organized
 
 Enjoy using AVA AIGC Toolbox for managing your AI-generated images!
+
