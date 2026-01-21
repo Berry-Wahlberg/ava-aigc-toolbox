@@ -1,351 +1,355 @@
-# Organization
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox provides several powerful ways to organize your AI-generated images: folders, albums, and tags. This guide covers how to use these features to keep your image library well-organized and easy to navigate.
+# Organisation
 
-## Folders
+> **English version is authoritative**
 
-Folders in the AVA AIGC Toolbox mirror your filesystem structure, allowing you to organize images based on their physical location on your computer.
+> **Die englische Version ist maßgeblich**
 
-### Adding Folders
+Die AVA AIGC Toolbox bietet mehrere leistungsstarke Möglichkeiten, Ihre KI-generierten Bilder zu organisieren: Ordner, Alben und Tags. Diese Anleitung beschreibt, wie Sie diese Funktionen verwenden, um Ihre Bildbibliothek gut organisiert und leicht navigierbar zu halten.
 
-#### Steps to Add a Root Folder:
-1. In the sidebar, navigate to the **Folders** view
-2. Click the `+` button at the top of the sidebar, or go to `File > Add Folder`
-3. Select the folder you want to add to your library
-4. Configure folder options:
-   - **Include subfolders**: Include all images from subdirectories
-   - **Watch folder**: Automatically detect new images added to this folder
-   - **Exclude folder**: Exclude this folder from future library updates
-5. Click **Add** to add the folder to your library
+## Ordner
 
-### Managing Folders
+Ordner in der AVA AIGC Toolbox spiegeln Ihre Dateisystemstruktur wider und ermöglichen es Ihnen, Bilder basierend auf ihrer physischen Position auf Ihrem Computer zu organisieren.
 
-#### Refreshing Folders
-1. In the sidebar, right-click the folder you want to refresh
-2. Select **Refresh Folder** from the context menu
-3. The application will scan the folder for new, modified, or deleted images
+### Ordner hinzufügen
 
-#### Removing Folders
-1. In the sidebar, right-click the folder you want to remove
-2. Select **Remove Folder** from the context menu
-3. Confirm the removal in the dialog
-4. **Note**: This only removes the folder from the library, not from your filesystem
+#### Schritte zum Hinzufügen eines Stammordners:
+1. Navigieren Sie in der Seitenleiste zur **Ordner**-Ansicht
+2. Klicken Sie auf die `+`-Schaltfläche oben in der Seitenleiste oder gehen Sie zu `Datei > Ordner hinzufügen`
+3. Wählen Sie den Ordner aus, den Sie Ihrer Bibliothek hinzufügen möchten
+4. Konfigurieren Sie Ordneroptionen:
+   - **Unterordner einschließen**: Alle Bilder aus Unterverzeichnissen einschließen
+   - **Ordner beobachten**: Automatisch neue Bilder erkennen, die diesem Ordner hinzugefügt werden
+   - **Ordner ausschließen**: Dieser Ordner von zukünftigen Bibliotheksaktualisierungen ausschließen
+5. Klicken Sie auf **Hinzufügen**, um den Ordner zur Bibliothek hinzuzufügen
 
-#### Folder Properties
-1. In the sidebar, right-click a folder
-2. Select **Properties** from the context menu
-3. The properties dialog will display:
-   - Folder path and size
-   - Number of images contained
-   - Last scan date
-   - Folder options (include subfolders, watch folder, etc.)
-4. Click **Close** when finished
+### Ordner verwalten
 
-### Folder Navigation
+#### Ordner aktualisieren
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf den Ordner, den Sie aktualisieren möchten
+2. Wählen Sie **Ordner aktualisieren** aus dem Kontextmenü
+3. Die Anwendung durchsucht den Ordner nach neuen, geänderten oder gelöschten Bildern
 
-#### Expanding and Collapsing Folders
-- Click the arrow next to a folder to expand or collapse it
-- Double-click a folder to open it in the main content area
+#### Ordner entfernen
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf den Ordner, den Sie entfernen möchten
+2. Wählen Sie **Ordner entfernen** aus dem Kontextmenü
+3. Bestätigen Sie die Entfernung im Dialog
+4. **Hinweis**: Dies entfernt den Ordner nur aus der Bibliothek, nicht von Ihrem Dateisystem
 
-#### Searching Within Folders
-1. Navigate to the folder you want to search in
-2. Use the search bar at the top of the window
-3. The search will be restricted to the current folder and its subfolders
+#### Ordner-Eigenschaften
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf einen Ordner
+2. Wählen Sie **Eigenschaften** aus dem Kontextmenü
+3. Das Eigenschaftendialog zeigt:
+   - Ordnerpfad und Größe
+   - Anzahl der enthaltenen Bilder
+   - Letztes Scandatum
+   - Ordneroptionen (Unterordner einschließen, Ordner beobachten usw.)
+4. Klicken Sie auf **Schließen**, wenn Sie fertig sind
 
-## Albums
+### Ordner-Navigation
 
-Albums are user-created collections of images that can contain images from different folders. Unlike folders, albums don't reflect your filesystem structure - they're virtual collections.
+#### Ordner erweitern und reduzieren
+- Klicken Sie auf den Pfeil neben einem Ordner, um ihn zu erweitern oder zu reduzieren
+- Doppelklicken Sie auf einen Ordner, um ihn im Hauptinhaltbereich zu öffnen
 
-### Creating Albums
+#### Innerhalb von Ordnern suchen
+1. Navigieren Sie zum Ordner, in dem Sie suchen möchten
+2. Verwenden Sie die Suchleiste oben im Fenster
+3. Die Suche wird auf den aktuellen Ordner und seine Unterordner beschränkt
 
-#### Steps to Create an Album:
-1. In the sidebar, navigate to the **Albums** view
-2. Click the `+` button at the top of the sidebar
-3. Enter a name for your album
-4. Press `Enter` or click outside the text field to create the album
+## Alben
 
-#### Creating Albums from Selected Images:
-1. Select one or more images in the main content area
-2. Right-click and select **Add to Album > New Album**
-3. Enter a name for the album
-4. Press `Enter` to create the album
+Alben sind benutzererstellte Bildsammlungen, die Bilder aus verschiedenen Ordnern enthalten können. Im Gegensatz zu Ordnern spiegeln Alben nicht Ihre Dateisystemstruktur wider - sie sind virtuelle Sammlungen.
 
-### Managing Albums
+### Alben erstellen
 
-#### Adding Images to Albums
+#### Schritte zum Erstellen eines Albums:
+1. Navigieren Sie in der Seitenleiste zur **Alben**-Ansicht
+2. Klicken Sie auf die `+`-Schaltfläche oben in der Seitenleiste
+3. Geben Sie einen Namen für Ihr Album ein
+4. Drücken Sie `Enter` oder klicken Sie außerhalb des Textfelds, um das Album zu erstellen
 
-##### Add Single Image:
-1. Select an image in the main content area
-2. Right-click and select **Add to Album**
-3. Choose an existing album from the list
+#### Alben aus ausgewählten Bildern erstellen:
+1. Wählen Sie ein oder mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Zu Album hinzufügen > Neues Album**
+3. Geben Sie einen Namen für das Album ein
+4. Drücken Sie `Enter`, um das Album zu erstellen
 
-##### Add Multiple Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Add to Album**
-3. Choose an existing album from the list, or select **New Album**
+### Alben verwalten
+
+#### Bilder zu Alben hinzufügen
+
+##### Einzelnes Bild hinzufügen:
+1. Wählen Sie ein Bild im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Zu Album hinzufügen**
+3. Wählen Sie ein vorhandenes Album aus der Liste
+
+##### Mehrere Bilder hinzufügen:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Zu Album hinzufügen**
+3. Wählen Sie ein vorhandenes Album aus der Liste oder wählen Sie **Neues Album**
 
 ##### Drag and Drop:
-1. Select one or more images in the main content area
-2. Drag them into an album in the sidebar
+1. Wählen Sie ein oder mehrere Bilder im Hauptinhaltbereich aus
+2. Ziehen Sie sie in ein Album in der Seitenleiste
 
-#### Removing Images from Albums
-1. Navigate to the album containing the images
-2. Select the images you want to remove
-3. Right-click and select **Remove from Album**
-4. Confirm the removal in the dialog
+#### Bilder aus Alben entfernen
+1. Navigieren Sie zum Album, das die Bilder enthält
+2. Wählen Sie die Bilder aus, die Sie entfernen möchten
+3. Klicken Sie mit der rechten Maustaste und wählen Sie **Aus Album entfernen**
+4. Bestätigen Sie die Entfernung im Dialog
 
-#### Renaming Albums
-1. In the sidebar, right-click the album you want to rename
-2. Select **Rename Album** from the context menu
-3. Enter the new name
-4. Press `Enter` to confirm
+#### Alben umbenennen
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf das Album, das Sie umbenennen möchten
+2. Wählen Sie **Album umbenennen** aus dem Kontextmenü
+3. Geben Sie den neuen Namen ein
+4. Drücken Sie `Enter`, um zu bestätigen
 
-#### Deleting Albums
-1. In the sidebar, right-click the album you want to delete
-2. Select **Delete Album** from the context menu
-3. Confirm the deletion in the dialog
-4. **Note**: This only deletes the album, not the images it contains
+#### Alben löschen
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf das Album, das Sie löschen möchten
+2. Wählen Sie **Album löschen** aus dem Kontextmenü
+3. Bestätigen Sie die Löschung im Dialog
+4. **Hinweis**: Dies löscht nur das Album, nicht die Bilder, die es enthält
 
-#### Album Properties
-1. In the sidebar, right-click an album
-2. Select **Properties** from the context menu
-3. The properties dialog will display:
-   - Album name and description
-   - Number of images contained
-   - Creation date and last modified date
-   - Album order in the sidebar
-4. Click **Close** when finished
+#### Album-Eigenschaften
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf ein Album
+2. Wählen Sie **Eigenschaften** aus dem Kontextmenü
+3. Das Eigenschaftendialog zeigt:
+   - Albumname und -beschreibung
+   - Anzahl der enthaltenen Bilder
+   - Erstellungsdatum und letztes Änderungsdatum
+   - Album-Reihenfolge in der Seitenleiste
+4. Klicken Sie auf **Schließen**, wenn Sie fertig sind
 
-### Album Organization
+### Alben-Organisation
 
-#### Rearranging Albums
-1. In the sidebar, navigate to the **Albums** view
-2. Click and drag an album to reorder it in the list
-3. The new order will be saved automatically
+#### Alben neu anordnen
+1. Navigieren Sie in der Seitenleiste zur **Alben**-Ansicht
+2. Klicken und ziehen Sie ein Album, um es in der Liste neu anzuordnen
+3. Die neue Reihenfolge wird automatisch gespeichert
 
-#### Creating Album Hierarchies
-1. Create a parent album as described above
-2. Create child albums
-3. Click and drag a child album onto the parent album to make it a sub-album
-4. Expand the parent album to view sub-albums
-5. Double-click a parent album to view all images in the parent and its sub-albums
+#### Albumhierarchien erstellen
+1. Erstellen Sie ein Elternalbum wie oben beschrieben
+2. Erstellen Sie Kinderalben
+3. Klicken und ziehen Sie ein Kinderalbum auf das Elternalbum, um es zu einem Unteralbum zu machen
+4. Erweitern Sie das Elternalbum, um Unteralben anzuzeigen
+5. Doppelklicken Sie auf ein Elternalbum, um alle Bilder im Eltern- und seinen Unteralben anzuzeigen
 
 ## Tags
 
-Tags are keywords that you can assign to images to categorize and find them easily. Tags are one of the most powerful organizational tools in the AVA AIGC Toolbox.
+Tags sind Schlüsselwörter, die Sie Bildern zuweisen können, um sie zu kategorisieren und leicht zu finden. Tags sind eines der leistungsstärksten Organisationstools in der AVA AIGC Toolbox.
 
-### Adding Tags
+### Tags hinzufügen
 
-#### Adding Tags to Single Image:
-1. Select an image in the main content area
-2. In the details panel, find the **Tags** section
-3. Click the `+` button next to the tags list
-4. Enter a tag name
-5. Press `Enter` or click outside the text field to add the tag
+#### Tags zu einem einzelnen Bild hinzufügen:
+1. Wählen Sie ein Bild im Hauptinhaltbereich aus
+2. Finden Sie im Detailspanel den Abschnitt **Tags**
+3. Klicken Sie auf die `+`-Schaltfläche neben der Tag-Liste
+4. Geben Sie einen Tag-Namen ein
+5. Drücken Sie `Enter` oder klicken Sie außerhalb des Textfelds, um den Tag hinzuzufügen
 
-#### Adding Tags to Multiple Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Add Tags**
-3. Enter tag names separated by commas
-4. Click **Add** to apply the tags to all selected images
+#### Tags zu mehreren Bildern hinzufügen:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Tags hinzufügen**
+3. Geben Sie Tag-Namen ein, getrennt durch Kommas
+4. Klicken Sie auf **Hinzufügen**, um die Tags auf alle ausgewählten Bilder anzuwenden
 
-#### Adding Tags via Keyboard Shortcut:
-1. Select one or more images
-2. Press `Ctrl/Cmd + T` to open the tag dialog
-3. Enter tag names separated by commas
-4. Press `Enter` to apply the tags
+#### Tags über Tastaturkürzel hinzufügen:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Drücken Sie `Ctrl/Cmd + T`, um den Tag-Dialog zu öffnen
+3. Geben Sie Tag-Namen ein, getrennt durch Kommas
+4. Drücken Sie `Enter`, um die Tags anzuwenden
 
-### Managing Tags
+### Tags verwalten
 
-#### Viewing Images with a Specific Tag
-1. In the sidebar, navigate to the **Tags** view
-2. Click on a tag to view all images with that tag
-3. The main content area will display only images with the selected tag
+#### Bilder mit einem bestimmten Tag anzeigen
+1. Navigieren Sie in der Seitenleiste zur **Tags**-Ansicht
+2. Klicken Sie auf einen Tag, um alle Bilder mit diesem Tag anzuzeigen
+3. Der Hauptinhaltbereich zeigt nur Bilder mit dem ausgewählten Tag
 
-#### Removing Tags from Images
-1. Select an image in the main content area
-2. In the details panel, find the **Tags** section
-3. Hover over the tag you want to remove
-4. Click the `×` button that appears next to the tag name
+#### Tags aus Bildern entfernen
+1. Wählen Sie ein Bild im Hauptinhaltbereich aus
+2. Finden Sie im Detailspanel den Abschnitt **Tags**
+3. Bewegen Sie den Mauszeiger über den Tag, den Sie entfernen möchten
+4. Klicken Sie auf die `×`-Schaltfläche, die neben dem Tag-Namen erscheint
 
-#### Removing Tags from Multiple Images
-1. Select multiple images in the main content area
-2. Right-click and select **Remove Tags**
-3. Select the tags you want to remove
-4. Click **Remove** to remove the tags from all selected images
+#### Tags aus mehreren Bildern entfernen
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Tags entfernen**
+3. Wählen Sie die Tags aus, die Sie entfernen möchten
+4. Klicken Sie auf **Entfernen**, um die Tags aus allen ausgewählten Bildern zu entfernen
 
-#### Renaming Tags
-1. In the sidebar, navigate to the **Tags** view
-2. Right-click the tag you want to rename
-3. Select **Rename Tag** from the context menu
-4. Enter the new name
-5. Press `Enter` to confirm
-6. **Note**: This will rename the tag for all images that have it
+#### Tags umbenennen
+1. Navigieren Sie in der Seitenleiste zur **Tags**-Ansicht
+2. Klicken Sie mit der rechten Maustaste auf den Tag, den Sie umbenennen möchten
+3. Wählen Sie **Tag umbenennen** aus dem Kontextmenü
+4. Geben Sie den neuen Namen ein
+5. Drücken Sie `Enter`, um zu bestätigen
+6. **Hinweis**: Dies benennt den Tag für alle Bilder um, die ihn haben
 
-#### Deleting Tags
-1. In the sidebar, navigate to the **Tags** view
-2. Right-click the tag you want to delete
-3. Select **Delete Tag** from the context menu
-4. Confirm the deletion in the dialog
-5. **Note**: This will remove the tag from all images
+#### Tags löschen
+1. Navigieren Sie in der Seitenleiste zur **Tags**-Ansicht
+2. Klicken Sie mit der rechten Maustaste auf den Tag, den Sie löschen möchten
+3. Wählen Sie **Tag löschen** aus dem Kontextmenü
+4. Bestätigen Sie die Löschung im Dialog
+5. **Hinweis**: Dies entfernt den Tag aus allen Bildern
 
-#### Merging Tags
-1. In the sidebar, navigate to the **Tags** view
-2. Right-click the tag you want to merge
-3. Select **Merge With** from the context menu
-4. Select the tag you want to merge into
-5. Click **Merge** to combine the tags
-6. **Note**: All images with the original tag will now have the merged tag instead
+#### Tags zusammenführen
+1. Navigieren Sie in der Seitenleiste zur **Tags**-Ansicht
+2. Klicken Sie mit der rechten Maustaste auf den Tag, den Sie zusammenführen möchten
+3. Wählen Sie **Mit zusammenführen** aus dem Kontextmenü
+4. Wählen Sie den Tag aus, mit dem Sie zusammenführen möchten
+5. Klicken Sie auf **Zusammenführen**, um die Tags zu kombinieren
+6. **Hinweis**: Alle Bilder mit dem ursprünglichen Tag haben nun stattdessen den zusammengeführten Tag
 
-### Tag Organization
+### Tag-Organisation
 
-#### Tag Cloud View
-1. In the sidebar, navigate to the **Tags** view
-2. Click the **Tag Cloud** button at the top of the sidebar
-3. Tags are displayed in a visual cloud, with more frequently used tags appearing larger
-4. Click a tag in the cloud to view all images with that tag
+#### Tag-Cloud-Ansicht
+1. Navigieren Sie in der Seitenleiste zur **Tags**-Ansicht
+2. Klicken Sie auf die Schaltfläche **Tag-Cloud** oben in der Seitenleiste
+3. Tags werden in einer visuellen Cloud angezeigt, wobei häufiger verwendete Tags größer erscheinen
+4. Klicken Sie auf einen Tag in der Cloud, um alle Bilder mit diesem Tag anzuzeigen
 
-#### Sorting Tags
-1. In the sidebar, navigate to the **Tags** view
-2. Click the **Sort By** button at the top of the sidebar
-3. Choose from:
-   - **Name**: Sort tags alphabetically
-   - **Usage**: Sort tags by how many images have them
-   - **Creation Date**: Sort tags by when they were created
+#### Tags sortieren
+1. Navigieren Sie in der Seitenleiste zur **Tags**-Ansicht
+2. Klicken Sie auf die Schaltfläche **Sortieren nach** oben in der Seitenleiste
+3. Wählen Sie aus:
+   - **Name**: Tags alphabetisch sortieren
+   - **Verwendung**: Tags nach Anzahl der Bilder sortieren
+   - **Erstellungsdatum**: Tags nach Erstellungsdatum sortieren
 
-#### Tag Groups
-1. In the sidebar, navigate to the **Tags** view
-2. Click the **Tag Groups** button at the top of the sidebar
-3. Create tag groups by clicking **+ Group**
-4. Drag tags into groups to organize them
-5. Tag groups help you manage large numbers of tags
+#### Tag-Gruppen
+1. Navigieren Sie in der Seitenleiste zur **Tags**-Ansicht
+2. Klicken Sie auf die Schaltfläche **Tag-Gruppen** oben in der Seitenleiste
+3. Erstellen Sie Tag-Gruppen, indem Sie **+ Gruppe** klicken
+4. Ziehen Sie Tags in Gruppen, um sie zu organisieren
+5. Tag-Gruppen helfen Ihnen, große Anzahl von Tags zu verwalten
 
-## Smart Collections
+## Intelligente Sammlungen
 
-Smart collections are automatically generated collections of images based on specific criteria. They update dynamically as your library changes.
+Intelligente Sammlungen sind automatisch generierte Bildsammlungen, die auf spezifischen Kriterien basieren. Sie aktualisieren sich dynamisch, wenn sich Ihre Bibliothek ändert.
 
-### Default Smart Collections
+### Standard-Intelligente Sammlungen
 
-The application includes several default smart collections:
+Die Anwendung umfasst mehrere Standard-Intelligente Sammlungen:
 
-- **All Images**: Displays all images in your library
-- **Favorites**: Displays images marked as favorites
-- **Recently Added**: Displays images added in the last 30 days
-- **Recently Viewed**: Displays images viewed in the last 7 days
-- **Untagged Images**: Displays images with no tags
-- **For Deletion**: Displays images marked for deletion
+- **Alle Bilder**: Zeigt alle Bilder in Ihrer Bibliothek
+- **Favoriten**: Zeigt als Favoriten markierte Bilder
+- **Kürzlich hinzugefügt**: Zeigt Bilder, die in den letzten 30 Tagen hinzugefügt wurden
+- **Kürzlich angesehen**: Zeigt Bilder, die in den letzten 7 Tagen angesehen wurden
+- **Untaggte Bilder**: Zeigt Bilder ohne Tags
+- **Zum Löschen**: Zeigt zum Löschen markierte Bilder
 
-### Creating Custom Smart Collections
+### Benutzerdefinierte Intelligente Sammlungen erstellen
 
-#### Steps to Create a Custom Smart Collection:
-1. In the sidebar, navigate to the **Smart Collections** view
-2. Click the `+` button at the top of the sidebar
-3. Enter a name for your smart collection
-4. Configure the filter criteria:
-   - **Text Search**: Images matching specific text in filename, tags, or metadata
-   - **Date Range**: Images created or modified within a specific date range
-   - **Dimensions**: Images with specific width and height
-   - **Rating**: Images with a specific star rating
-   - **Tags**: Images with specific tags
-   - **AI Metadata**: Images with specific model, sampler, steps, etc.
-5. Click **Save** to create the smart collection
+#### Schritte zum Erstellen einer benutzerdefinierten Intelligenten Sammlung:
+1. Navigieren Sie in der Seitenleiste zur **Intelligenten Sammlungen**-Ansicht
+2. Klicken Sie auf die `+`-Schaltfläche oben in der Seitenleiste
+3. Geben Sie einen Namen für Ihre Intelligente Sammlung ein
+4. Konfigurieren Sie die Filterkriterien:
+   - **Textsuche**: Bilder, die bestimmten Text in Dateiname, Tags oder Metadaten enthalten
+   - **Datumsbereich**: Bilder, die in einem bestimmten Datumsbereich erstellt oder geändert wurden
+   - **Abmessungen**: Bilder mit bestimmten Breite und Höhe
+   - **Bewertung**: Bilder mit einer bestimmten Sternbewertung
+   - **Tags**: Bilder mit bestimmten Tags
+   - **KI-Metadaten**: Bilder mit bestimmtem Modell, Sampler, Schritten usw.
+5. Klicken Sie auf **Speichern**, um die Intelligente Sammlung zu erstellen
 
-### Managing Smart Collections
+### Intelligente Sammlungen verwalten
 
-#### Editing Smart Collections
-1. In the sidebar, right-click the smart collection you want to edit
-2. Select **Edit Collection** from the context menu
-3. Modify the filter criteria
-4. Click **Save** to update the smart collection
+#### Intelligente Sammlungen bearbeiten
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf die Intelligente Sammlung, die Sie bearbeiten möchten
+2. Wählen Sie **Sammlung bearbeiten** aus dem Kontextmenü
+3. Ändern Sie die Filterkriterien
+4. Klicken Sie auf **Speichern**, um die Intelligente Sammlung zu aktualisieren
 
-#### Deleting Smart Collections
-1. In the sidebar, right-click the smart collection you want to delete
-2. Select **Delete Collection** from the context menu
-3. Confirm the deletion in the dialog
+#### Intelligente Sammlungen löschen
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf die Intelligente Sammlung, die Sie löschen möchten
+2. Wählen Sie **Sammlung löschen** aus dem Kontextmenü
+3. Bestätigen Sie die Löschung im Dialog
 
-#### Refreshing Smart Collections
-1. In the sidebar, right-click a smart collection
-2. Select **Refresh Collection** from the context menu
-3. The smart collection will be updated with the latest images matching the criteria
+#### Intelligente Sammlungen aktualisieren
+1. Klicken Sie in der Seitenleiste mit der rechten Maustaste auf eine Intelligente Sammlung
+2. Wählen Sie **Sammlung aktualisieren** aus dem Kontextmenü
+3. Die Intelligente Sammlung wird mit den neuesten Bildern aktualisiert, die den Kriterien entsprechen
 
-## Best Practices for Organization
+## Best Practices für Organisation
 
-1. **Use a Consistent Naming Convention**: Use consistent naming for folders, albums, and tags
-2. **Start Simple**: Begin with a basic organization structure and expand as needed
-3. **Combine Methods**: Use folders for physical organization, albums for thematic organization, and tags for descriptive categorization
-4. **Use Descriptive Tags**: Use specific, descriptive tags rather than generic ones
-5. **Don't Over-Tag**: Use 5-10 relevant tags per image, not dozens
-6. **Regularly Clean Up**: Remove unused tags and organize your library periodically
-7. **Use Smart Collections**: Create smart collections for frequently used search criteria
-8. **Backup Your Library**: Regularly backup your library database to preserve your organization structure
+1. **Verwenden Sie eine konsistente Namenskonvention**: Verwenden Sie konsistente Benennung für Ordner, Alben und Tags
+2. **Beginnen Sie einfach**: Beginnen Sie mit einer grundlegenden Organisationsstruktur und erweitern Sie sie nach Bedarf
+3. **Methoden kombinieren**: Verwenden Sie Ordner für physische Organisation, Alben für thematische Organisation und Tags für beschreibende Kategorisierung
+4. **Beschreibende Tags verwenden**: Verwenden Sie spezifische, beschreibende Tags statt generischer
+5. **Nicht über-Taggen**: Verwenden Sie 5-10 relevante Tags pro Bild, nicht Dutzende
+6. **Regelmäßig aufräumen**: Entfernen Sie nicht verwendete Tags und organisieren Sie Ihre Bibliothek regelmäßig
+7. **Intelligente Sammlungen verwenden**: Erstellen Sie Intelligente Sammlungen für häufig verwendete Suchkriterien
+8. **Bibliothek sichern**: Sichern Sie regelmäßig Ihre Bibliotheksdatenbank, um Ihre Organisationsstruktur zu bewahren
 
-## Organization Workflow Examples
+## Organisations-Workflow-Beispiele
 
-### Example 1: Organizing by Project
+### Beispiel 1: Organisation nach Projekt
 ```
-Folders:
-└── AI Projects
-    ├── Project A
-    ├── Project B
-    └── Project C
+Ordner:
+└── AI-Projekte
+    ├── Projekt A
+    ├── Projekt B
+    └── Projekt C
 
-Albums:
-├── Project A Final Images
-├── Project A Sketches
-├── Project B Final Images
-└── Project B Sketches
+Alben:
+├── Projekt A - Endbilder
+├── Projekt A - Skizzen
+├── Projekt B - Endbilder
+└── Projekt B - Skizzen
 
 Tags:
-├── project-a
-├── project-b
-├── project-c
-├── final
-└── sketch
+├── projekt-a
+├── projekt-b
+├── projekt-c
+├── endgültig
+└── skizze
 ```
 
-### Example 2: Organizing by AI Model
+### Beispiel 2: Organisation nach KI-Modell
 ```
-Folders:
-└── AI Generated Images
+Ordner:
+└── KI-generierte Bilder
     ├── Stable Diffusion
     ├── MidJourney
     └── DALL-E
 
-Albums:
-├── Landscapes
-├── Portraits
-├── Abstract
-└── Characters
+Alben:
+├── Landschaften
+├── Porträts
+├── Abstrakt
+└── Charaktere
 
 Tags:
 ├── stable-diffusion
 ├── midjourney
 ├── dall-e
-├── landscape
+├── landschaft
 ├── portrait
-├── abstract
-└── character
+├── abstrakt
+└── charakter
 ```
 
-## Troubleshooting Organization
+## Fehlerbehebung bei Organisation
 
-### Tags Not Being Applied
-- **Check Selection**: Ensure you have selected the correct images
-- **Tag Name Format**: Avoid using commas in tag names (commas are used to separate multiple tags)
-- **Permission Issues**: Ensure you have write access to the database
+### Tags werden nicht angewendet
+- **Auswahl prüfen**: Stellen Sie sicher, dass Sie die richtigen Bilder ausgewählt haben
+- **Tag-Name-Format**: Vermeiden Sie das Verwenden von Kommas in Tag-Namen (Kommas werden verwendet, um mehrere Tags zu trennen)
+- **Berechtigungsprobleme**: Stellen Sie sicher, dass Sie Schreibzugriff auf die Datenbank haben
 
-### Albums Not Showing Images
-- **Check Album Filter**: Ensure you haven't applied a filter that's hiding images
-- **Refresh Album**: Try refreshing the album to update its contents
-- **Check Image Location**: Ensure the image files are still accessible
+### Alben zeigen keine Bilder
+- **Album-Filter prüfen**: Stellen Sie sicher, dass Sie keinen Filter angewendet haben, der Bilder verbirgt
+- **Album aktualisieren**: Versuchen Sie, das Album zu aktualisieren, um seinen Inhalt zu aktualisieren
+- **Bildpfad prüfen**: Stellen Sie sicher, dass die Bilddateien noch zugänglich sind
 
-### Folders Not Updating
-- **Check Watch Settings**: Ensure the folder is set to be watched for changes
-- **Refresh Folder**: Manually refresh the folder to scan for changes
-- **Check File System**: Ensure the folder still exists and you have access to it
+### Ordner werden nicht aktualisiert
+- **Beobachtungseinstellungen prüfen**: Stellen Sie sicher, dass der Ordner für Änderungen beobachtet wird
+- **Ordner aktualisieren**: Aktualisieren Sie den Ordner manuell, um nach Änderungen zu suchen
+- **Dateisystem prüfen**: Stellen Sie sicher, dass der Ordner noch existiert und Sie Zugriff darauf haben
 
-## Next Steps
+## Nächste Schritte
 
-- Learn about [Metadata Editing](./metadata-editing.md) to view and edit AI metadata
-- Explore [Search & Filtering](./search-filtering.md) to find images quickly
-- Read about [Export & Sharing](./export-sharing.md) to share your organized images
+- Erfahren Sie mehr über [Metadatenbearbeitung](./metadata-editing.md), um KI-Metadaten anzuzeigen und zu bearbeiten
+- Erkunden Sie [Suchen & Filterung](./search-filtering.md), um Bilder schnell zu finden
+- Lesen Sie über [Export & Teilen](./export-sharing.md), um Ihre organisierten Bilder zu teilen

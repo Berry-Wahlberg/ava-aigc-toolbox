@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Organization
 
 The AVA AIGC Toolbox provides several powerful ways to organize your AI-generated images: folders, albums, and tags. This guide covers how to use these features to keep your image library well-organized and easy to navigate.
@@ -349,3 +350,7 @@ Tags:
 - Learn about [Metadata Editing](./metadata-editing.md) to view and edit AI metadata
 - Explore [Search & Filtering](./search-filtering.md) to find images quickly
 - Read about [Export & Sharing](./export-sharing.md) to share your organized images
+=======
+# Organization\n\n*Placeholder for image organization*
+>>>>>>> origin/doc/dev
+

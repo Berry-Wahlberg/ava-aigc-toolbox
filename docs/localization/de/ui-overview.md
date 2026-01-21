@@ -1,111 +1,108 @@
 # UI-Übersicht
 
-> **Die englische Version gilt als maßgebend**
+> **Die englische Version ist maßgeblich**
 
-Die AVA AIGC Toolbox verfügt über eine intuitive, gut organisierte Benutzeroberfläche, die Ihnen hilft, Ihre KI-generierten Bilder effizient zu verwalten. Diese Anleitung bietet eine detaillierte Erklärung aller wichtigsten Schnittstellenkomponenten.
+Die AVA AIGC Toolbox verfügt über eine intuitive, gut organisierte Benutzeroberfläche, die Ihnen hilft, Ihre KI-generierten Bilder effizient zu verwalten. Diese Anleitung bietet eine detaillierte Erklärung aller Hauptkomponenten der Benutzeroberfläche.
 
-## Hauptfenster-Layout
+## Hauptfensterlayout
 
-Das Anwendungsfenster ist in fünf Hauptbereiche unterteilt:
+Das Anwendungsfenster ist in fünf Hauptabschnitte unterteilt:
 
-1. **Menüleiste** - Navigation auf oberster Ebene und Anwendungsbefehle
-2. **Seitenleiste** - Schnellzugriff auf verschiedene Ansichten und Filter
+1. **Menüleiste** - Top-Level-Navigation und Anwendungsbefehle
+2. **Seitenleiste** - Schneller Zugriff auf verschiedene Ansichten und Filter
 3. **Werkzeugleiste** - Häufig verwendete Aktionen und Einstellungen
 4. **Hauptinhaltbereich** - Bildanzeige und Details
 5. **Statusleiste** - Anwendungsstatus und Informationen
 
 ```
-┌─────────────────────────────────────────────────────────────────�?�?                       Menu Bar                                 �?├─────────────────────────────────────────────────────────────────�?�?                       Toolbar                                  �?├───────────────┬─────────────────────────────────────────────────�?�?              �?                                                �?�?  Sidebar     �?             Main Content Area                  �?�?              �?                                                �?├───────────────┴─────────────────────────────────────────────────�?�?                       Status Bar                               �?└─────────────────────────────────────────────────────────────────�?```
+┌─────────────────────────────────────────────────────────────────�?�?                       Menüleiste                               �?├─────────────────────────────────────────────────────────────────�?�?                       Werkzeugleiste                           �?├───────────────┬─────────────────────────────────────────────────�?�?              �?                                                �?�?  Seitenleiste �?             Hauptinhaltbereich                  �?�?              �?                                                �?├───────────────┴─────────────────────────────────────────────────�?�?                       Statusleiste                             �?└─────────────────────────────────────────────────────────────────�?```
 
 ## 1. Menüleiste
 
-Die Menüleiste enthält anwendungsweite Befehle und Einstellungen, die in folgende Menüs unterteilt sind:
+Die Menüleiste enthält anwendungswerte Befehle und Einstellungen, die in die folgenden Menüs organisiert sind:
 
 ### Dateimenü
-- **Neue Bibliothek**: Erstellen Sie eine neue leere Bildbibliothek
-- **Bibliothek öffnen**: Öffnen Sie eine vorhandene Bibliotheksdatenbank
+- **Neue Bibliothek**: Erstellen einer neuen leeren Bildbibliothek
+- **Bibliothek öffnen**: Öffnen einer bestehenden Bibliotheksdatenbank
 - **Importieren**: 
-  - **Bilder importieren**: Importieren Sie Bilder aus Ordnern
-  - **Metadaten importieren**: Importieren Sie Metadaten aus Dateien
+  - **Bilder importieren**: Importieren von Bildern aus Ordnern
+  - **Metadaten importieren**: Importieren von Metadaten aus Dateien
 - **Exportieren**: 
-  - **Ausgewählte Bilder exportieren**: Exportieren Sie ausgewählte Bilder in einen Ordner
-  - **Alle Bilder exportieren**: Exportieren Sie alle Bilder in der aktuellen Ansicht
-- **Einstellungen**: Öffnen Sie die Anwendungs-Einstellungen
-- **Beenden**: Schließen Sie die Anwendung
+  - **Ausgewählte Bilder exportieren**: Exportieren ausgewählter Bilder in einen Ordner
+  - **Alle Bilder exportieren**: Exportieren aller Bilder in der aktuellen Ansicht
+- **Einstellungen**: Öffnen der Anwendungs-Einstellungen
+- **Beenden**: Schließen der Anwendung
 
 ### Bearbeitungsmenü
-- **Rückgängig**: Mache die letzte Aktion rückgängig
-- **Wiederholen**: Wiederhole die letzte rückgängig gemachte Aktion
-- **Alle auswählen**: Wähle alle Bilder in der aktuellen Ansicht aus
-- **Auswahl aufheben**: Hebe die Auswahl aller ausgewählten Bilder auf
-- **Auswahl invertieren**: Invertiere die aktuelle Auswahl
-- **Suchen**: Öffne den Suchdialog
+- **Rückgängig**: Letzte Aktion rückgängig machen
+- **Wiederholen**: Letzte rückgängig gemachte Aktion wiederholen
+- **Alles auswählen**: Alle Bilder in der aktuellen Ansicht auswählen
+- **Auswahl aufheben**: Alle ausgewählten Bilder abwählen
+- **Auswahl invertieren**: Aktuelle Auswahl invertieren
+- **Suchen**: Öffnen des Suchdialogs
 
 ### Ansichtsmenü
-- **Seitenleiste umschalten**: Zeige oder verstecke die Seitenleiste
-- **Detailbereich umschalten**: Zeige oder verstecke den Detailbereich
-- **Ansicht**: 
-  - **Gitteransicht**: Zeige Bilder in einem Gitter
-  - **Listenansicht**: Zeige Bilder in einer Liste mit Details
-- **Sortieren nach**: Ändern Sie die Sortierreihenfolge der Bilder
-- **Zoomen**: Passen Sie die Zoomstufe des Bildgitters an
-- **Aktualisieren**: Aktualisieren Sie die aktuelle Ansicht
+- **Seitenleiste umschalten**: Seitenleiste anzeigen oder ausblenden
+- **Detailspanel umschalten**: Detailspanel anzeigen oder ausblenden
+- **Anzeigemodus**: 
+  - **Gitteransicht**: Bilder in einem Gitter anzeigen
+  - **Listenansicht**: Bilder in einer Liste mit Details anzeigen
+- **Sortieren nach**: Sortierreihenfolge der Bilder ändern
+- **Zoom**: Zoomstufe des Bildgitters anpassen
+- **Aktualisieren**: Aktuelle Ansicht aktualisieren
 
 ### Werkzeuge-Menü
 - **Stapeloperationen**: 
-  - **Stapelumbennung**: Benennen Sie mehrere Bilder auf einmal um
-  - **Stapeltagging**: Fügen Sie mehreren Bildern Tags hinzu
-  - **Stapelexport**: Exportieren Sie mehrere Bilder mit benutzerdefinierten Einstellungen
-- **Metadaten-Editor**: Öffnen Sie erweiterte Metadaten-Bearbeitungswerkzeuge
+  - **Stapelbenennung**: Gleichzeitiges Umbenennen mehrerer Bilder
+  - **Stapeltagging**: Hinzufügen von Tags zu mehreren Bildern
+  - **Stapelexport**: Exportieren mehrerer Bilder mit benutzerdefinierten Einstellungen
+- **Metadateneditor**: Öffnen erweiterter Metadatenbearbeitungswerkzeuge
 - **Bildwerkzeuge**: 
-  - **Zuschneiden**: Schneiden Sie Bilder zu
-  - **Größe ändern**: Ändern Sie die Größe von Bildern
-  - **Format konvertieren**: Konvertieren Sie Bilder in verschiedene Formate
+  - **Zuschneiden**: Bilder zuschneiden
+  - **Größe ändern**: Bilder skalieren
+  - **Format konvertieren**: Bilder in verschiedene Formate konvertieren
 - **KI-Werkzeuge**: 
-  - **Auto-Tagging**: Verwenden Sie KI, um Bilder automatisch zu taggen
-  - **Vorschaubilder generieren**: Erzeugen Sie Vorschaubilder für alle Bilder neu
+  - **Automatisches Tagging**: Verwendung von KI zum automatischen Taggen von Bildern
+  - **Vorschaubilder generieren**: Vorschaubilder für alle Bilder neu generieren
 
 ### Hilfe-Menü
-- **Dokumentation**: Öffnen Sie diese Dokumentation
-- **Tastaturkürzel**: Zeigen Sie Tastaturkürzel an
-- **Über**: Zeigen Sie die Anwendungsversion und Credits an
-- **Nach Updates suchen**: Suchen Sie nach neuen Versionen
-- **Problem melden**: Öffnen Sie die GitHub-Issues-Seite
+- **Dokumentation**: Diese Dokumentation öffnen
+- **Tastaturkürzel**: Anzeigen der Tastaturkürzel
+- **Über**: Anzeigen der Anwendungsversion und Credits
+- **Auf Updates prüfen**: Prüfen auf neue Versionen
+- **Problem melden**: GitHub-Issues-Seite öffnen
 
 ## 2. Seitenleiste
 
 Die Seitenleiste bietet schnellen Zugriff auf verschiedene Ansichten und Organisationsfunktionen:
 
-### Ordneransicht
-- **Wurzelordner**: Zeigt die Wurzelordner, die Sie Ihrer Bibliothek hinzugefügt haben
-- **Unterordner**: Erweitern Sie Ordner, um ihren Inhalt anzuzeigen
-- **Ordner hinzufügen**: Klicken Sie auf die `+`-Schaltfläche, um einen neuen Wurzelordner hinzuzufügen
-- **Ordneroptionen**: Klicken Sie mit der rechten Maustaste auf einen Ordner, um Optionen wie:
+### Ordnersicht
+- **Root-Ordner**: Zeigt die Root-Ordner an, die Sie Ihrer Bibliothek hinzugefügt haben
+- **Unterordner**: Ordner erweitern, um ihren Inhalt anzuzeigen
+- **Ordner hinzufügen**: Klicken Sie auf die `+`-Schaltfläche, um einen neuen Root-Ordner hinzuzufügen
+- **Ordneroptionen**: Rechtsklick auf einen Ordner für Optionen wie:
   - Ordner aktualisieren
   - Ordner entfernen
   - Eigenschaften
-  zuzugreifen
 
 ### Albenansicht
-- **Meine Alben**: Zeigt alle von Benutzern erstellten Alben
+- **Meine Alben**: Zeigt alle von Benutzern erstellten Alben an
 - **Album hinzufügen**: Klicken Sie auf die `+`-Schaltfläche, um ein neues Album zu erstellen
-- **Albumoptionen**: Klicken Sie mit der rechten Maustaste auf ein Album, um Optionen wie:
+- **Albumoptionen**: Rechtsklick auf ein Album für Optionen wie:
   - Album umbenennen
   - Album löschen
   - Bilder hinzufügen
   - Eigenschaften
-  zuzugreifen
 
 ### Tags-Ansicht
-- **Alle Tags**: Zeigt alle Tags in Ihrer Bibliothek, sortiert nach Nutzung
+- **Alle Tags**: Zeigt alle Tags in Ihrer Bibliothek an, sortiert nach Nutzung
 - **Tag-Cloud**: Visuelle Darstellung von Tags nach Popularität
 - **Tag hinzufügen**: Klicken Sie auf die `+`-Schaltfläche, um einen neuen Tag zu erstellen
-- **Tagoptionen**: Klicken Sie mit der rechten Maustaste auf einen Tag, um Optionen wie:
+- **Tagoptionen**: Rechtsklick auf einen Tag für Optionen wie:
   - Tag umbenennen
   - Tag löschen
   - Tags zusammenführen
   - Bilder mit Tag anzeigen
-  zuzugreifen
 
 ### Intelligente Sammlungen
 - **Alle Bilder**: Alle Bilder in Ihrer Bibliothek
@@ -113,26 +110,26 @@ Die Seitenleiste bietet schnellen Zugriff auf verschiedene Ansichten und Organis
 - **Kürzlich hinzugefügt**: Bilder, die in den letzten 30 Tagen hinzugefügt wurden
 - **Kürzlich angesehen**: Bilder, die in den letzten 7 Tagen angesehen wurden
 - **Ungetaggte Bilder**: Bilder ohne Tags
-- **Zur Löschung**: Zur Löschung markierte Bilder
+- **Zur Löschung markiert**: Zur Löschung markierte Bilder
 
 ## 3. Werkzeugleiste
 
 Die Werkzeugleiste bietet schnellen Zugriff auf häufig verwendete Aktionen und Einstellungen:
 
 ### Hauptwerkzeugleiste
-- **Import**: Importieren Sie Bilder aus Ordnern
-- **Aktualisieren**: Aktualisieren Sie die aktuelle Ansicht
-- **Ansicht**: Wechseln Sie zwischen Gitter- und Listenansicht
-- **Sortieren**: Ändern Sie die Sortierreihenfolge (nach Name, Datum, Größe usw.)
-- **Filter**: Öffnen Sie das Filterpanel
-- **Einstellungen**: Öffnen Sie die Anwendungs-Einstellungen
+- **Importieren**: Importieren von Bildern aus Ordnern
+- **Aktualisieren**: Aktuelle Ansicht aktualisieren
+- **Anzeigemodus**: Wechsel zwischen Gitter- und Listenansicht
+- **Sortieren**: Sortierreihenfolge ändern (nach Name, Datum, Größe usw.)
+- **Filtern**: Filterpanel öffnen
+- **Einstellungen**: Anwendungs-Einstellungen öffnen
 
 ### Bildoperationen-Werkzeugleiste
-- **Favorit**: Markieren/Symbolisieren Sie ausgewählte Bilder als Favoriten
-- **Löschen**: Löschen Sie ausgewählte Bilder
-- **Tag**: Fügen Sie ausgewählten Bildern Tags hinzu
-- **Bearbeiten**: Öffnen Sie den Bildeditor
-- **Exportieren**: Exportieren Sie ausgewählte Bilder
+- **Favorit**: Ausgewählte Bilder als Favorit markieren/abmarkieren
+- **Löschen**: Ausgewählte Bilder löschen
+- **Taggen**: Tags zu ausgewählten Bildern hinzufügen
+- **Bearbeiten**: Bildeditor öffnen
+- **Exportieren**: Ausgewählte Bilder exportieren
 
 ## 4. Hauptinhaltbereich
 
@@ -141,13 +138,13 @@ Der Hauptinhaltbereich zeigt Bilder und ihre Details an und besteht aus zwei Tei
 ### Bildanzeige
 
 #### Gitteransicht
-- **Bildvorschaubilder**: Zeigt Bilder in einem Gitter von Vorschaubildern
+- **Bildvorschaubilder**: Zeigt Bilder in einem Gitter von Vorschaubildern an
 - **Auswahl**: 
-  - Klicken Sie, um ein einzelnes Bild auszuwählen
-  - Ctrl/Cmd + Klicken, um mehrere Bilder auszuwählen
-  - Shift + Klicken, um einen Bereich von Bildern auszuwählen
-  - Ziehen Sie, um mehrere Bilder in einem rechteckigen Bereich auszuwählen
-- **Bildinformationen**: Zeigt grundlegende Informationen beim Überfahren mit der Maus an (Dateiname, Abmessungen, Größe)
+  - Klicken, um ein einzelnes Bild auszuwählen
+  - Ctrl/Cmd + Klick, um mehrere Bilder auszuwählen
+  - Shift + Klick, um einen Bereich von Bildern auszuwählen
+  - Ziehen, um mehrere Bilder in einem rechteckigen Bereich auszuwählen
+- **Bildinformationen**: Zeigt grundlegende Informationen beim Überfahren an (Dateiname, Abmessungen, Größe)
 
 #### Listenansicht
 - **Spalten**: Zeigt Bilder mit Spalten für:
@@ -159,20 +156,20 @@ Der Hauptinhaltbereich zeigt Bilder und ihre Details an und besteht aus zwei Tei
   - Bewertung
   - Favoritenstatus
 - **Sortierung**: Klicken Sie auf Spaltenüberschriften, um nach dieser Spalte zu sortieren
-- **Änderbare Spaltenbreiten**: Ziehen Sie Spaltentrenner, um Breiten anzupassen
+- **Veränderbare Spalten**: Ziehen Sie Spaltentrenner, um die Breiten anzupassen
 
 #### Vollbildansicht
-- **Doppelklick**: Öffnen Sie ein Bild in der Vollbildansicht
+- **Doppelklick**: Bild in der Vollbildansicht öffnen
 - **Navigation**: 
   - Pfeiltasten, um zwischen Bildern zu navigieren
-  - Escape, um den Vollbildmodus zu verlassen
+  - Escape, um die Vollbildansicht zu verlassen
   - Rechtsklick für zusätzliche Optionen
-- **Zoomen**: Verwenden Sie das Mausrad, um herein- oder herauszuzoomen
-- **Verschieben**: Klicken und ziehen Sie, um bei vergrößertem Bild zu verschieben
+- **Zoom**: Mausrad verwenden, um herein-/herauszuzoomen
+- **Panoramieren**: Klicken und ziehen, um beim Zoomen zu navigieren
 
-### Detailbereich
+### Detailspanel
 
-Der Detailbereich erscheint auf der rechten Seite des Fensters, wenn ein Bild ausgewählt ist, und zeigt detaillierte Informationen über das Bild an:
+Das Detailspanel erscheint auf der rechten Seite des Fensters, wenn ein Bild ausgewählt ist, und zeigt detaillierte Informationen über das Bild:
 
 #### Grundinformationen
 - **Dateiname**: Name der Bilddatei
@@ -181,15 +178,15 @@ Der Detailbereich erscheint auf der rechten Seite des Fensters, wenn ein Bild au
 - **Abmessungen**: Breite und Höhe in Pixeln
 - **Auflösung**: DPI-Informationen (sofern verfügbar)
 - **Format**: Dateiformat (JPEG, PNG usw.)
-- **Hinzufügungsdatum**: Wann das Bild zur Bibliothek hinzugefügt wurde
-- **Änderungsdatum**: Letztes Änderungsdatum der Datei
+- **Hinzugefügt am**: Wann das Bild der Bibliothek hinzugefügt wurde
+- **Geändert am**: Letztes Änderungsdatum der Datei
 
 #### KI-Metadaten
-- **Prompt**: Der Prompt, der zum Generieren des Bildes verwendet wurde
+- **Prompt**: Der Prompt, der zur Generierung des Bildes verwendet wurde
 - **Negative Prompt**: Der Negative Prompt, der verwendet wurde
 - **Schritte**: Anzahl der Generierungsschritte
 - **Sampler**: Name des verwendeten Samplers
-- **CFG-Skalierung**: CFG-Skalierungswert
+- **CFG-Skala**: CFG-Skalenwert
 - **Seed**: Seed-Wert, der für die Generierung verwendet wurde
 - **Modell**: Name des verwendeten Modells
 - **Modell-Hash**: Hash des Modells
@@ -198,18 +195,18 @@ Der Detailbereich erscheint auf der rechten Seite des Fensters, wenn ein Bild au
 #### Bildeigenschaften
 - **Bewertung**: 1-5-Sterne-Bewertungssystem
 - **Favorit**: Favoritenstatus umschalten
-- **Zur Löschung**: Zur Löschung markieren
-- **NSFW**: Als Nicht-Sicher-für-Arbeit markieren
+- **Zur Löschung markiert**: Zur Löschung markieren
+- **NSFW**: Als "Not Safe For Work" markieren
 - **Nicht verfügbar**: Datei ist nicht verfügbar
 
 #### Tags
-- **Tags-Liste**: Zeigt alle mit dem Bild verbundenen Tags an
+- **Tags-Liste**: Alle mit dem Bild verknüpften Tags anzeigen
 - **Tag hinzufügen**: Klicken Sie auf `+`, um neue Tags hinzuzufügen
 - **Tag entfernen**: Klicken Sie auf `×`, um bestehende Tags zu entfernen
 
 ## 5. Statusleiste
 
-Die Statusleiste erscheint am unteren Rand des Fensters und zeigt an:
+Die Statusleiste erscheint am unteren Rand des Fensters und zeigt:
 
 - **Gesamtbilder**: Anzahl der Bilder in der aktuellen Ansicht
 - **Ausgewählte Bilder**: Anzahl der ausgewählten Bilder
@@ -220,8 +217,8 @@ Die Statusleiste erscheint am unteren Rand des Fensters und zeigt an:
 
 ## 6. Dialoge und Panels
 
-### Importdialog
-- **Ordnerauswahl**: Wählen Sie Ordner aus, aus denen Bilder importiert werden sollen
+### Import-Dialog
+- **Ordnerauswahl**: Auswählen von Ordnern, aus denen Bilder importiert werden sollen
 - **Importoptionen**: 
   - Unterordner einschließen
   - Bestehende Bilder überschreiben
@@ -229,8 +226,8 @@ Die Statusleiste erscheint am unteren Rand des Fensters und zeigt an:
   - Vorschaubilder generieren
 - **Fortschrittsanzeige**: Zeigt den Importfortschritt an
 
-### Exportdialog
-- **Zielordner**: Wählen Sie, wo Bilder exportiert werden sollen
+### Export-Dialog
+- **Zielordner**: Auswählen, wohin Bilder exportiert werden sollen
 - **Exportoptionen**: 
   - Metadaten einschließen
   - Bilder skalieren
@@ -239,18 +236,18 @@ Die Statusleiste erscheint am unteren Rand des Fensters und zeigt an:
 - **Fortschrittsanzeige**: Zeigt den Exportfortschritt an
 
 ### Filterpanel
-- **Textsuche**: Suchen Sie nach Dateiname, Tags oder Metadaten
-- **Datumsbereich**: Filtern Sie nach Erstellungs- oder Änderungsdatum
-- **Abmessungen**: Filtern Sie nach Bildbreite und -höhe
-- **Bewertung**: Filtern Sie nach Sternbewertung
-- **Tags**: Filtern Sie nach bestimmten Tags
-- **KI-Metadaten**: Filtern Sie nach Modell, Sampler, Schritten usw.
+- **Textsuche**: Suchen nach Dateiname, Tags oder Metadaten
+- **Datumsbereich**: Filtern nach Erstellungs- oder Änderungsdatum
+- **Abmessungen**: Filtern nach Bildbreite und -höhe
+- **Bewertung**: Filtern nach Sternbewertung
+- **Tags**: Filtern nach bestimmten Tags
+- **KI-Metadaten**: Filtern nach Modell, Sampler, Schritten usw.
 
-### Einstellungsdialog
+### Einstellungen-Dialog
 - **Allgemein**: Anwendungssprache, Thema und Startoptionen
 - **Bibliothek**: Datenbankstandort und Sicherungseinstellungen
 - **Import**: Standard-Importoptionen
-- **Anzeige**: Vorschaubildgröße, Gitterabstand und Ansichtoptionen
+- **Anzeige**: Vorschaubildgröße, Gitterabstand und Anzeigeoptionen
 - **Metadaten**: Metadatenextraktion und Anzeigeoptionen
 - **Tastaturkürzel**: Tastaturkürzel anpassen
 
@@ -259,72 +256,72 @@ Die Statusleiste erscheint am unteren Rand des Fensters und zeigt an:
 Kontextmenüs erscheinen, wenn Sie mit der rechten Maustaste auf verschiedene Elemente klicken:
 
 ### Bildkontextmenü
-- **Anzeigen**: Öffnen Sie in der Vollbildansicht
-- **Bearbeiten**: Bearbeiten Sie das Bild oder seine Metadaten
-- **Kopieren**: Kopieren Sie das Bild in die Zwischenablage
-- **Verschieben nach**: Verschieben Sie das Bild in einen anderen Ordner oder ein anderes Album
-- **Kopieren nach**: Kopieren Sie das Bild an einen anderen Speicherort
-- **Löschen**: Löschen Sie das Bild aus der Bibliothek
-- **Zu Album hinzufügen**: Fügen Sie es einem bestehenden Album hinzu
-- **Tags hinzufügen**: Fügen Sie dem Bild Tags hinzu
-- **Tags entfernen**: Entfernen Sie Tags vom Bild
-- **Bewertung festlegen**: Legen Sie eine Sternbewertung fest
+- **Anzeigen**: In Vollbildansicht öffnen
+- **Bearbeiten**: Bild oder Metadaten bearbeiten
+- **Kopieren**: Bild in die Zwischenablage kopieren
+- **Verschieben nach**: Bild in einen anderen Ordner oder ein anderes Album verschieben
+- **Kopieren nach**: Bild an einen anderen Speicherort kopieren
+- **Löschen**: Bild aus der Bibliothek löschen
+- **Zu Album hinzufügen**: Zu einem bestehenden Album hinzufügen
+- **Tags hinzufügen**: Tags zum Bild hinzufügen
+- **Tags entfernen**: Tags vom Bild entfernen
+- **Bewertung festlegen**: Sternbewertung festlegen
 - **Als Favorit markieren**: Favoritenstatus umschalten
-- **Eigenschaften**: Zeigen Sie detaillierte Eigenschaften an
+- **Eigenschaften**: Detaillierte Eigenschaften anzeigen
 
 ### Ordnerkontextmenü
-- **Im Explorer/Finder öffnen**: Öffnen Sie den Ordner im System-Dateimanager
-- **Aktualisieren**: Aktualisieren Sie den Ordnerinhalt
-- **Ordner entfernen**: Entfernen Sie ihn aus der Bibliothek (löscht keine Dateien)
-- **Eigenschaften**: Zeigen Sie die Ordner-Eigenschaften an
+- **In Explorer/Finder öffnen**: Ordner im Systemdateimanager öffnen
+- **Aktualisieren**: Ordnerinhalt aktualisieren
+- **Ordner entfernen**: Aus der Bibliothek entfernen (Dateien werden nicht gelöscht)
+- **Eigenschaften**: Ordner-Eigenschaften anzeigen
 
 ### Albumkontextmenü
-- **Öffnen**: Zeigen Sie den Albuminhalt an
-- **Umbenennen**: Benennen Sie das Album um
-- **Löschen**: Löschen Sie das Album
-- **Bilder hinzufügen**: Fügen Sie dem Album Bilder hinzu
-- **Bilder entfernen**: Entfernen Sie ausgewählte Bilder aus dem Album
-- **Eigenschaften**: Zeigen Sie die Album-Eigenschaften an
+- **Öffnen**: Albuminhalt anzeigen
+- **Umbenennen**: Album umbenennen
+- **Löschen**: Album löschen
+- **Bilder hinzufügen**: Bilder zum Album hinzufügen
+- **Bilder entfernen**: Ausgewählte Bilder aus dem Album entfernen
+- **Eigenschaften**: Album-Eigenschaften anzeigen
 
-### Tagkontextmenü
-- **Bilder anzeigen**: Zeigen Sie alle Bilder mit diesem Tag an
-- **Umbenennen**: Benennen Sie den Tag um
-- **Löschen**: Löschen Sie den Tag
-- **Mit zusammenführen**: Führen Sie ihn mit einem anderen Tag zusammen
-- **Eigenschaften**: Zeigen Sie die Tag-Eigenschaften an
+### Tag-Kontextmenü
+- **Bilder anzeigen**: Alle Bilder mit diesem Tag anzeigen
+- **Umbenennen**: Tag umbenennen
+- **Löschen**: Tag löschen
+- **Mit zusammenführen**: Mit einem anderen Tag zusammenführen
+- **Eigenschaften**: Tag-Eigenschaften anzeigen
 
-## 8. Keyboard Shortcuts
+## 8. Tastaturkürzel
 
-For quick access to common commands, refer to the [Keyboard Shortcuts](./keyboard-shortcuts.md) reference.
+Für schnellen Zugriff auf häufig verwendete Befehle verweisen Sie auf die [Tastaturkürzel](./keyboard-shortcuts.md)-Referenz.
 
-## Customization Options
+## Anpassungsoptionen
 
-### Theme
-- **Light Mode**: Bright color scheme
-- **Dark Mode**: Dark color scheme
-- **System Theme**: Follow system theme settings
+### Thema
+- **Hellmodus**: Helles Farbschema
+- **Dunkelmodus**: Dunkles Farbschema
+- **Systemthema**: Folgen der System-Themeneinstellungen
 
-### View Options
-- **Thumbnail Size**: Adjust the size of thumbnails in grid view
-- **Grid Spacing**: Adjust spacing between images in grid view
-- **Show/Hide Columns**: Customize which columns appear in list view
-- **Details Panel Position**: Move details panel to left or right
+### Anzeigeoptionen
+- **Vorschaubildgröße**: Größe der Vorschaubilder in der Gitteransicht anpassen
+- **Gitterabstand**: Abstand zwischen Bildern in der Gitteransicht anpassen
+- **Spalten anzeigen/ausblenden**: Anpassen, welche Spalten in der Listenansicht erscheinen
+- **Position des Detailspanels**: Detailspanel nach links oder rechts verschieben
 
-### Font Size
-- Adjust the font size for better readability
+### Schriftgröße
+- Schriftgröße für bessere Lesbarkeit anpassen
 
-## Tips for Efficient Navigation
+## Tipps für effiziente Navigation
 
-1. **Keyboard Navigation**: Use keyboard shortcuts for faster operation
-2. **Customize Toolbar**: Add frequently used commands to the toolbar
-3. **Pin Frequent Items**: Pin frequently used folders, albums, and tags to the top of their respective lists
-4. **Use Smart Collections**: Take advantage of pre-built smart collections for quick access
-5. **Custom Filters**: Create and save custom filters for recurring searches
-6. **Keyboard Focus**: Press `Tab` to navigate between UI elements
-7. **Context Menus**: Right-click on elements for quick access to options
+1. **Tastaturnavigation**: Verwenden Sie Tastaturkürzel für schnellere Bedienung
+2. **Werkzeugleiste anpassen**: Häufig verwendete Befehle zur Werkzeugleiste hinzufügen
+3. **Häufig verwendete Elemente anheften**: Häufig verwendete Ordner, Alben und Tags an die Spitze ihrer jeweiligen Listen anheften
+4. **Intelligente Sammlungen nutzen**: Nutzen Sie vorgebaute intelligente Sammlungen für schnellen Zugriff
+5. **Benutzerdefinierte Filter erstellen**: Erstellen und speichern Sie benutzerdefinierte Filter für wiederholte Suchen
+6. **Tastaturfokus**: Drücken Sie `Tab`, um zwischen UI-Elementen zu navigieren
+7. **Kontextmenüs verwenden**: Rechtsklick auf Elemente für schnellen Zugriff auf Optionen
 
-## Conclusion
+## Fazit
 
-The AVA AIGC Toolbox UI is designed to be intuitive and efficient, with all features easily accessible from the main interface. By familiarizing yourself with the different components, you'll be able to navigate and use the application more effectively, helping you manage your AI-generated images with ease.
+Die AVA AIGC Toolbox UI ist darauf ausgelegt, intuitiv und effizient zu sein, mit allen Funktionen, die leicht von der Hauptoberfläche aus zugänglich sind. Indem Sie sich mit den verschiedenen Komponenten vertraut machen, können Sie die Anwendung einfacher navigieren und nutzen, was Ihnen hilft, Ihre KI-generierten Bilder mühelos zu verwalten.
 
-For more information on specific features, refer to the relevant sections in this documentation:
+Für weitere Informationen zu spezifischen Funktionen verweisen Sie auf die entsprechenden Abschnitte in dieser Dokumentation:

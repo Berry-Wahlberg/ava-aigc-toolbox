@@ -1,237 +1,241 @@
-# Search & Filtering
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox provides powerful search and filtering capabilities to help you quickly find images in your library. This guide covers how to use these features effectively.
+# Suchen & Filterung
 
-## Basic Search
+> **English version is authoritative**
 
-### Search Bar
+> **Die englische Version ist maßgeblich**
 
-The search bar is located at the top of the main window and provides a quick way to search for images:
+Die AVA AIGC Toolbox bietet leistungsstarke Such- und Filterfunktionen, um Ihnen zu helfen, Bilder in Ihrer Bibliothek schnell zu finden. Diese Anleitung beschreibt, wie Sie diese Funktionen effektiv verwenden können.
 
-#### Steps to Perform a Basic Search:
-1. Click in the search bar or press `Ctrl/Cmd + F` to focus on it
-2. Type your search query
-3. Results will appear automatically as you type
-4. Press `Enter` to execute the search
-5. Press `Esc` to clear the search
+## Grundlegende Suche
 
-### Search Scope
+### Suchleiste
 
-By default, the search includes:
-- Filenames
+Die Suchleiste befindet sich oben im Hauptfenster und bietet einen schnellen Weg, nach Bildern zu suchen:
+
+#### Schritte zum Durchführen einer grundlegenden Suche:
+1. Klicken Sie in die Suchleiste oder drücken Sie `Ctrl/Cmd + F`, um sie zu fokussieren
+2. Geben Sie Ihre Suchanfrage ein
+3. Die Ergebnisse erscheinen automatisch, während Sie tippen
+4. Drücken Sie `Enter`, um die Suche auszuführen
+5. Drücken Sie `Esc`, um die Suche zu löschen
+
+### Suchbereich
+
+Standardmäßig umfasst die Suche:
+- Dateinamen
 - Tags
-- AI metadata (prompt, negative prompt, model, etc.)
-- Image properties (rating, favorite status, etc.)
+- KI-Metadaten (Prompt, negativer Prompt, Modell usw.)
+- Bildeigenschaften (Bewertung, Favoritenstatus usw.)
 
-### Search Tips
+### Suchtipps
 
-- **Use quotes for exact phrases**: "futuristic city" will only match images containing that exact phrase
-- **Use AND/OR operators**: "cat AND dog" will match images containing both words, "cat OR dog" will match images containing either word
-- **Use NOT operator**: "cat NOT dog" will match images containing "cat" but not "dog"
-- **Use wildcards**: "cat*" will match images containing words starting with "cat"
+- **Genaue Phrasen mit Anführungszeichen**: "futuristische stadt" passt nur zu Bildern, die diese genaue Phrase enthalten
+- **AND/OR-Operatoren verwenden**: "katze AND hund" passt zu Bildern, die beide Wörter enthalten; "katze OR hund" passt zu Bildern, die eines der Wörter enthalten
+- **NOT-Operator verwenden**: "katze NOT hund" passt zu Bildern, die "katze" enthalten, aber nicht "hund"
+- **Platzhalter verwenden**: "katze*" passt zu Bildern, die Wörter enthalten, die mit "katze" beginnen
 
-## Advanced Search
+## Erweiterte Suche
 
-For more precise control over your search, use the advanced search dialog:
+Für präzisere Kontrolle über Ihre Suche verwenden Sie das erweiterte Suchdialog:
 
-#### Steps to Open Advanced Search:
-1. Click the **Advanced Search** button next to the search bar, or go to `Edit > Advanced Search`
-2. The advanced search dialog will appear
+#### Schritte zum Öffnen der erweiterten Suche:
+1. Klicken Sie auf die Schaltfläche **Erweiterte Suche** neben der Suchleiste oder gehen Sie zu `Bearbeiten > Erweiterte Suche`
+2. Das erweiterte Suchdialog wird angezeigt
 
-### Advanced Search Options
+### Optionen der erweiterten Suche
 
-The advanced search dialog allows you to create complex search queries using multiple criteria:
+Das erweiterte Suchdialog ermöglicht es Ihnen, komplexe Suchanfragen mit mehreren Kriterien zu erstellen:
 
-#### Text Search
-- **Filename**: Search by filename or partial filename
-- **Tags**: Search by tags
-- **Prompt**: Search within the image prompt
-- **Negative Prompt**: Search within the negative prompt
-- **Model**: Search by model name or hash
-- **Sampler**: Search by sampler name
+#### Textsuche
+- **Dateiname**: Suchen nach Dateiname oder Teilname
+- **Tags**: Suchen nach Tags
+- **Prompt**: Suchen innerhalb des Bildprompts
+- **Negativer Prompt**: Suchen innerhalb des negativen Prompts
+- **Modell**: Suchen nach Modellname oder Hash
+- **Sampler**: Suchen nach Samplername
 
-#### Date Range
-- **Created Date**: Search images created within a specific date range
-- **Modified Date**: Search images modified within a specific date range
-- **Added Date**: Search images added to the library within a specific date range
+#### Datumsbereich
+- **Erstellungsdatum**: Suchen Sie nach Bildern, die in einem bestimmten Datumsbereich erstellt wurden
+- **Änderungsdatum**: Suchen Sie nach Bildern, die in einem bestimmten Datumsbereich geändert wurden
+- **Hinzugefügtes Datum**: Suchen Sie nach Bildern, die innerhalb eines bestimmten Datumsbereichs zur Bibliothek hinzugefügt wurden
 
-#### Image Properties
-- **Rating**: Search by star rating (1-5 stars)
-- **Favorite**: Search only favorite or non-favorite images
-- **For Deletion**: Search images marked for deletion
-- **NSFW**: Search NSFW or non-NSFW images
-- **Unavailable**: Search unavailable images
+#### Bildeigenschaften
+- **Bewertung**: Suchen nach Sternbewertung (1-5 Sterne)
+- **Favorit**: Suchen nur nach Favoriten oder Nicht-Favoriten
+- **Zum Löschen**: Suchen nach zum Löschen markierten Bildern
+- **NSFW**: Suchen nach NSFW oder Nicht-NSFW-Bildern
+- **Nicht verfügbar**: Suchen nach nicht verfügbaren Bildern
 
-#### Image Dimensions
-- **Width**: Search images with specific width (in pixels)
-- **Height**: Search images with specific height (in pixels)
-- **Aspect Ratio**: Search images with specific aspect ratio
-- **Orientation**: Search by orientation (portrait, landscape, square)
+#### Bildabmessungen
+- **Breite**: Suchen nach Bildern mit bestimmter Breite (in Pixeln)
+- **Höhe**: Suchen nach Bildern mit bestimmter Höhe (in Pixeln)
+- **Seitenverhältnis**: Suchen nach Bildern mit bestimmtem Seitenverhältnis
+- **Orientierung**: Suchen nach Orientierung (Portrait, Landschaft, Quadrat)
 
-#### AI Metadata
-- **Steps**: Search images with specific number of generation steps
-- **CFG Scale**: Search images with specific CFG scale value
-- **Seed**: Search images with specific seed value
-- **Clip Skip**: Search images with specific clip skip value
-- **Hypernetwork**: Search images using specific hypernetwork
+#### KI-Metadaten
+- **Schritte**: Suchen nach Bildern mit bestimmter Anzahl von Generierungsschritten
+- **CFG Scale**: Suchen nach Bildern mit bestimmtem CFG-Scale-Wert
+- **Seed**: Suchen nach Bildern mit bestimmtem Seed-Wert
+- **Clip Skip**: Suchen nach Bildern mit bestimmtem Clip-Skip-Wert
+- **Hypernetwork**: Suchen nach Bildern, die eine bestimmte Hypernetwork verwenden
 
-### Saving Advanced Searches
+### Erweiterte Suchen speichern
 
-You can save your advanced search criteria as a smart collection:
+Sie können Ihre erweiterten Suchkriterien als Intelligente Sammlung speichern:
 
-1. Configure your search criteria in the advanced search dialog
-2. Click **Save as Smart Collection**
-3. Enter a name for the smart collection
-4. Click **Save**
-5. The smart collection will appear in the sidebar under **Smart Collections**
+1. Konfigurieren Sie Ihre Suchkriterien im erweiterten Suchdialog
+2. Klicken Sie auf **Als Intelligente Sammlung speichern**
+3. Geben Sie einen Namen für die Intelligente Sammlung ein
+4. Klicken Sie auf **Speichern**
+5. Die Intelligente Sammlung erscheint in der Seitenleiste unter **Intelligente Sammlungen**
 
-## Filter Panel
+## Filterbereich
 
-The filter panel provides an interactive way to filter images based on various criteria:
+Der Filterbereich bietet eine interaktive Möglichkeit, Bilder basierend auf verschiedenen Kriterien zu filtern:
 
-#### Steps to Open the Filter Panel:
-1. Click the **Filter** button in the toolbar, or go to `View > Toggle Filter Panel`
-2. The filter panel will appear on the left side of the main content area
+#### Schritte zum Öffnen des Filterbereichs:
+1. Klicken Sie auf die Schaltfläche **Filter** in der Symbolleiste oder gehen Sie zu `Ansicht > Filterbereich umschalten`
+2. Der Filterbereich wird auf der linken Seite des Hauptinhaltbereichs angezeigt
 
-### Filter Categories
+### Filterkategorien
 
-The filter panel is organized into several categories:
+Der Filterbereich ist in mehrere Kategorien unterteilt:
 
-#### Quick Filters
-- **All Images**: Show all images in the current view
-- **Favorites**: Show only favorite images
-- **Recently Added**: Show images added in the last 30 days
-- **Untagged**: Show images with no tags
-- **For Deletion**: Show images marked for deletion
+#### Schnellfilter
+- **Alle Bilder**: Zeigt alle Bilder in der aktuellen Ansicht
+- **Favoriten**: Zeigt nur Favoritenbilder
+- **Kürzlich hinzugefügt**: Zeigt Bilder, die in den letzten 30 Tagen hinzugefügt wurden
+- **Untaggte**: Zeigt Bilder ohne Tags
+- **Zum Löschen**: Zeigt zum Löschen markierte Bilder
 
 #### Tags
-- Shows all tags in your library
-- Click a tag to filter by that tag
-- Click multiple tags to filter by images that have all selected tags
-- Use the search bar to find specific tags
+- Zeigt alle Tags in Ihrer Bibliothek
+- Klicken Sie auf einen Tag, um nach diesem Tag zu filtern
+- Klicken Sie auf mehrere Tags, um nach Bildern zu filtern, die alle ausgewählten Tags haben
+- Verwenden Sie die Suchleiste, um spezifische Tags zu finden
 
-#### AI Models
-- Shows all AI models used in your images
-- Click a model to filter by that model
-- Shows the number of images for each model
+#### KI-Modelle
+- Zeigt alle KI-Modelle, die in Ihren Bildern verwendet wurden
+- Klicken Sie auf ein Modell, um nach diesem Modell zu filtern
+- Zeigt die Anzahl der Bilder für jedes Modell
 
-#### Samplers
-- Shows all samplers used in your images
-- Click a sampler to filter by that sampler
-- Shows the number of images for each sampler
+#### Sampler
+- Zeigt alle Sampler, die in Ihren Bildern verwendet wurden
+- Klicken Sie auf einen Sampler, um nach diesem Sampler zu filtern
+- Zeigt die Anzahl der Bilder für jeden Sampler
 
-#### Dimensions
-- Filter by image orientation (portrait, landscape, square)
-- Filter by minimum/maximum width and height
+#### Abmessungen
+- Filtern nach Bildorientierung (Portrait, Landschaft, Quadrat)
+- Filtern nach Mindest-/Maximalbreite und -höhe
 
-#### Rating
-- Filter by star rating using a slider or checkboxes
-- Select "No Rating" to show images without a rating
+#### Bewertung
+- Filtern nach Sternbewertung mithilfe eines Schiebers oder Kontrollkästchen
+- Wählen Sie "Keine Bewertung", um Bilder ohne Bewertung anzuzeigen
 
-### Combining Filters
+### Filter kombinieren
 
-You can combine multiple filters to create precise searches:
+Sie können mehrere Filter kombinieren, um präzise Suchen zu erstellen:
 
-1. Apply a filter from one category (e.g., select a tag)
-2. Apply a filter from another category (e.g., select a model)
-3. The results will show images that match all applied filters
-4. Click a selected filter again to remove it
-5. Click **Clear All** to remove all filters
+1. Wenden Sie einen Filter aus einer Kategorie an (z. B. wählen Sie einen Tag)
+2. Wenden Sie einen Filter aus einer anderen Kategorie an (z. B. wählen Sie ein Modell)
+3. Die Ergebnisse zeigen Bilder, die alle angewendeten Filter entsprechen
+4. Klicken Sie erneut auf einen ausgewählten Filter, um ihn zu entfernen
+5. Klicken Sie auf **Alle löschen**, um alle Filter zu entfernen
 
-## Sorting Options
+## Sortieroptionen
 
-You can sort your images to make them easier to browse:
+Sie können Ihre Bilder sortieren, um sie leichter durchsuchen zu können:
 
-#### Steps to Change Sorting:
-1. Click the **Sort** button in the toolbar, or go to `View > Sort By`
-2. Select a sorting option from the list
-3. Click again to toggle between ascending and descending order
+#### Schritte zum Ändern der Sortierung:
+1. Klicken Sie auf die Schaltfläche **Sortieren** in der Symbolleiste oder gehen Sie zu `Ansicht > Sortieren nach`
+2. Wählen Sie eine Sortieroption aus der Liste
+3. Klicken Sie erneut, um zwischen aufsteigender und absteigender Reihenfolge umzuschalten
 
-### Available Sorting Options
+### Verfügbare Sortieroptionen
 
-- **Name**: Sort by filename
-- **Date Created**: Sort by image creation date
-- **Date Modified**: Sort by image modification date
-- **Date Added**: Sort by date added to the library
-- **Size**: Sort by file size
-- **Dimensions**: Sort by image dimensions
-- **Rating**: Sort by star rating
-- **Random**: Sort images randomly
-- **Steps**: Sort by number of generation steps
-- **CFG Scale**: Sort by CFG scale value
-- **Seed**: Sort by seed value
+- **Name**: Sortieren nach Dateiname
+- **Erstellungsdatum**: Sortieren nach Bild-Erstellungsdatum
+- **Änderungsdatum**: Sortieren nach Bild-Änderungsdatum
+- **Hinzugefügtes Datum**: Sortieren nach Datum der Hinzufügung zur Bibliothek
+- **Größe**: Sortieren nach Dateigröße
+- **Abmessungen**: Sortieren nach Bildabmessungen
+- **Bewertung**: Sortieren nach Sternbewertung
+- **Zufällig**: Bilder zufällig sortieren
+- **Schritte**: Sortieren nach Anzahl der Generierungsschritte
+- **CFG Scale**: Sortieren nach CFG-Scale-Wert
+- **Seed**: Sortieren nach Seed-Wert
 
-## Smart Collections
+## Intelligente Sammlungen
 
-Smart collections are automatically updated collections of images based on specific criteria. They're a great way to save frequently used searches and filters.
+Intelligente Sammlungen sind automatisch aktualisierte Bildsammlungen, die auf spezifischen Kriterien basieren. Sie sind eine großartige Möglichkeit, häufig verwendete Suchen und Filter zu speichern.
 
-For more information about smart collections, see [Organization](./organization.md#smart-collections).
+Weitere Informationen zu Intelligenten Sammlungen finden Sie unter [Organisation](./organization.md#intelligente-sammlungen).
 
-## Search History
+## Suchverlauf
 
-The application keeps a history of your recent searches:
+Die Anwendung behält einen Verlauf Ihrer letzten Suchen bei:
 
-#### Steps to Access Search History:
-1. Click the down arrow next to the search bar
-2. A dropdown menu will appear showing recent searches
-3. Click on a previous search to execute it again
-4. Click **Clear History** to remove all previous searches
+#### Schritte zum Zugriff auf den Suchverlauf:
+1. Klicken Sie auf den Pfeil nach unten neben der Suchleiste
+2. Ein Dropdown-Menü mit letzten Suchen wird angezeigt
+3. Klicken Sie auf eine vorherige Suche, um sie erneut auszuführen
+4. Klicken Sie auf **Verlauf löschen**, um alle vorherigen Suchen zu entfernen
 
-## Searching in Specific Views
+## Suchen in bestimmten Ansichten
 
-You can perform searches within specific views:
+Sie können in bestimmten Ansichten suchen:
 
-### Search in Folders
-1. Navigate to a folder in the sidebar
-2. Perform a search
-3. The search will be restricted to that folder and its subfolders
+### Suchen in Ordnern
+1. Navigieren Sie in der Seitenleiste zu einem Ordner
+2. Führen Sie eine Suche durch
+3. Die Suche ist auf diesen Ordner und seine Unterordner beschränkt
 
-### Search in Albums
-1. Navigate to an album in the sidebar
-2. Perform a search
-3. The search will be restricted to that album
+### Suchen in Alben
+1. Navigieren Sie in der Seitenleiste zu einem Album
+2. Führen Sie eine Suche durch
+3. Die Suche ist auf dieses Album beschränkt
 
-### Search in Tags
-1. Click on a tag in the sidebar
-2. Perform a search
-3. The search will be restricted to images with that tag
+### Suchen in Tags
+1. Klicken Sie in der Seitenleiste auf einen Tag
+2. Führen Sie eine Suche durch
+3. Die Suche ist auf Bilder mit diesem Tag beschränkt
 
-## Tips for Effective Searching
+## Tipps für effektives Suchen
 
-1. **Start with Basic Search**: Begin with a simple search query before moving to advanced search
-2. **Use Specific Terms**: Be specific with your search terms for more accurate results
-3. **Combine Filters**: Use multiple filters to narrow down results
-4. **Save Useful Searches**: Save frequently used searches as smart collections
-5. **Use Wildcards**: Use wildcards for broader searches
-6. **Check Search Scope**: Be aware of the current search scope (all images, folder, album, etc.)
-7. **Clear Filters**: Remember to clear filters when starting a new search
-8. **Use Search History**: Reuse previous searches from the search history
+1. **Beginnen Sie mit der grundlegenden Suche**: Beginnen Sie mit einer einfachen Suchanfrage, bevor Sie zur erweiterten Suche wechseln
+2. **Spezifische Begriffe verwenden**: Seien Sie spezifisch mit Ihren Suchbegriffen für genauere Ergebnisse
+3. **Filter kombinieren**: Verwenden Sie mehrere Filter, um Ergebnisse einzugrenzen
+4. **Nützliche Suchen speichern**: Speichern Sie häufig verwendete Suchen als Intelligente Sammlungen
+5. **Platzhalter verwenden**: Verwenden Sie Platzhalter für breitere Suchen
+6. **Suchbereich prüfen**: Seien Sie sich des aktuellen Suchbereichs bewusst (alle Bilder, Ordner, Album usw.)
+7. **Filter löschen**: Vergessen Sie nicht, Filter zu löschen, wenn Sie eine neue Suche beginnen
+8. **Suchverlauf verwenden**: Verwenden Sie vorherige Suchen aus dem Suchverlauf
 
-## Troubleshooting Search Issues
+## Fehlerbehebung bei Suchproblemen
 
-### No Results Found
-- **Check Search Query**: Ensure your search query is correct and not too specific
-- **Check Search Scope**: Ensure you're searching in the correct view (all images, folder, album, etc.)
-- **Check Filters**: Ensure no filters are restricting your results
-- **Check Spelling**: Ensure your search terms are spelled correctly
+### Keine Ergebnisse gefunden
+- **Suchanfrage prüfen**: Stellen Sie sicher, dass Ihre Suchanfrage korrekt und nicht zu spezifisch ist
+- **Suchbereich prüfen**: Stellen Sie sicher, dass Sie in der richtigen Ansicht suchen (alle Bilder, Ordner, Album usw.)
+- **Filter prüfen**: Stellen Sie sicher, dass keine Filter Ihre Ergebnisse einschränken
+- **Rechtschreibung prüfen**: Stellen Sie sicher, dass Ihre Suchbegriffe richtig geschrieben sind
 
-### Too Many Results
-- **Narrow Your Search**: Add more search terms or apply additional filters
-- **Use More Specific Terms**: Use more specific terms to narrow down results
-- **Use AND Operator**: Use "AND" to require multiple terms
+### Zu viele Ergebnisse
+- **Suche eingrenzen**: Fügen Sie weitere Suchbegriffe hinzu oder wenden Sie zusätzliche Filter an
+- **Mehr spezifische Begriffe verwenden**: Verwenden Sie spezifischere Begriffe, um Ergebnisse einzugrenzen
+- **AND-Operator verwenden**: Verwenden Sie "AND", um mehrere Begriffe zu verlangen
 
-### Unexpected Results
-- **Check Search Options**: Ensure you're searching in the correct fields
-- **Check Operator Usage**: Ensure you're using search operators correctly
-- **Check Quote Usage**: Ensure you're using quotes for exact phrases correctly
+### Unerwartete Ergebnisse
+- **Suchoptionen prüfen**: Stellen Sie sicher, dass Sie in den richtigen Feldern suchen
+- **Operatorenverwendung prüfen**: Stellen Sie sicher, dass Sie Suchoperatoren korrekt verwenden
+- **Anführungszeichenverwendung prüfen**: Stellen Sie sicher, dass Sie Anführungszeichen für genaue Phrasen korrekt verwenden
 
-### Slow Search Performance
-- **Optimize Database**: Go to `Settings > Library > Optimize Database` to improve search performance
-- **Reduce Search Scope**: Search within a specific folder or album instead of all images
-- **Use Fewer Criteria**: Use fewer search criteria for faster results
+### Langsame Suchleistung
+- **Datenbank optimieren**: Gehen Sie zu `Einstellungen > Bibliothek > Datenbank optimieren`, um die Suchleistung zu verbessern
+- **Suchbereich reduzieren**: Suchen Sie in einem spezifischen Ordner oder Album anstatt in allen Bildern
+- **Weniger Kriterien verwenden**: Verwenden Sie weniger Suchkriterien für schnellere Ergebnisse
 
-## Next Steps
+## Nächste Schritte
 
-- Learn about [Export & Sharing](./export-sharing.md) to share your search results
-- Read about [Organization](./organization.md) to better organize your images
-- Explore [Metadata Editing](./metadata-editing.md) to improve searchability by updating metadata
+- Erfahren Sie mehr über [Export & Teilen](./export-sharing.md), um Ihre Suchergebnisse zu teilen
+- Lesen Sie über [Organisation](./organization.md), um Ihre Bilder besser zu organisieren
+- Erkunden Sie [Metadatenbearbeitung](./metadata-editing.md), um die Suchbarkeit durch Aktualisieren von Metadaten zu verbessern

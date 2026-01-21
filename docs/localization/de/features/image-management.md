@@ -1,271 +1,273 @@
-# Image Management
-\n> **Die englische Version gilt als maßgebend**\n\n
-This guide covers the core image management features of the AVA AIGC Toolbox, including how to import, view, and manage your AI-generated images.
+# Bildverwaltung
 
-## Importing Images
+> **Die englische Version ist maßgeblich**
 
-### 1. Import from Folders
+Diese Anleitung behandelt die Kernfunktionen der Bildverwaltung in der AVA AIGC Toolbox, einschließlich der Importierung, Anzeige und Verwaltung Ihrer KI-generierten Bilder.
 
-You can import images from your filesystem into the AVA AIGC Toolbox:
+## Importieren von Bildern
 
-#### Steps to Import:
-1. Click the **Import** button in the toolbar, or go to `File > Import > Import Images`
-2. In the import dialog, click **Add Folder** and select one or more folders containing images
-3. Configure import options:
-   - **Include subfolders**: Import images from all subdirectories
-   - **Overwrite existing images**: Replace images with the same path in the library
-   - **Extract metadata**: Automatically extract AI metadata from images
-   - **Generate thumbnails**: Create or regenerate thumbnails for all imported images
-4. Click **Start Import** to begin the import process
-5. Monitor the progress in the import dialog
-6. Click **Finish** when import is complete
+### 1. Aus Ordnern importieren
 
-### 2. Drag and Drop
+Sie können Bilder aus Ihrem Dateisystem in die AVA AIGC Toolbox importieren:
 
-You can also import images by dragging and dropping them into the application:
+#### Schritte zum Importieren:
+1. Klicken Sie auf die **Importieren**-Schaltfläche in der Werkzeugleiste oder gehen Sie zu `Datei > Importieren > Bilder importieren`
+2. Im Importdialog klicken Sie auf **Ordner hinzufügen** und wählen einen oder mehrere Ordner aus, die Bilder enthalten
+3. Konfigurieren Sie Importoptionen:
+   - **Unterordner einschließen**: Bilder aus allen Unterverzeichnissen importieren
+   - **Vorhandene Bilder überschreiben**: Bilder mit demselben Pfad in der Bibliothek ersetzen
+   - **Metadaten extrahieren**: KI-Metadaten automatisch aus Bildern extrahieren
+   - **Vorschaubilder generieren**: Vorschaubilder für alle importierten Bilder erstellen oder neu generieren
+4. Klicken Sie auf **Import starten**, um den Importvorgang zu beginnen
+5. Verfolgen Sie den Fortschritt im Importdialog
+6. Klicken Sie auf **Fertig**, wenn der Import abgeschlossen ist
 
-#### Steps to Import via Drag and Drop:
-1. Open your system's file manager (Explorer/Finder)
-2. Select one or more images or folders
-3. Drag them into the AVA AIGC Toolbox window
-4. A confirmation dialog will appear with import options
-5. Configure the options as desired
-6. Click **Import** to start the import process
+### 2. Drag & Drop
 
-### 3. Automatic Import
+Sie können Bilder auch durch Ziehen und Ablegen in die Anwendung importieren:
 
-The application can automatically watch folders for new images:
+#### Schritte zum Importieren per Drag & Drop:
+1. Öffnen Sie Ihren Dateimanager (Explorer/Finder)
+2. Wählen Sie ein oder mehrere Bilder oder Ordner aus
+3. Ziehen Sie sie in das AVA AIGC Toolbox-Fenster
+4. Es wird ein Bestätigungsdialog mit Importoptionen angezeigt
+5. Konfigurieren Sie die Optionen nach Wunsch
+6. Klicken Sie auf **Importieren**, um den Importvorgang zu starten
 
-#### Steps to Set Up Automatic Import:
-1. Go to `Settings > Library > Watched Folders`
-2. Click **Add Folder** and select a folder to watch
-3. Configure watch options:
-   - **Include subfolders**: Monitor all subdirectories
-   - **Check interval**: How often to check for new images (in minutes)
-   - **Auto-import new images**: Automatically import new images when detected
-4. Click **Save** to enable automatic importing
+### 3. Automatischer Import
 
-## Viewing Images
+Die Anwendung kann automatisch Ordner auf neue Bilder überwachen:
 
-### 1. Grid View
+#### Schritte zum Einrichten des automatischen Imports:
+1. Gehen Sie zu `Einstellungen > Bibliothek > Überwachte Ordner`
+2. Klicken Sie auf **Ordner hinzufügen** und wählen einen zu überwachenden Ordner aus
+3. Konfigurieren Sie Überwachungsoptionen:
+   - **Unterordner einschließen**: Alle Unterverzeichnisse überwachen
+   - **Überprüfungsintervall**: Wie oft nach neuen Bildern gesucht wird (in Minuten)
+   - **Neue Bilder automatisch importieren**: Neue Bilder automatisch importieren, wenn sie erkannt werden
+4. Klicken Sie auf **Speichern**, um den automatischen Import zu aktivieren
 
-Grid view displays images in a grid of thumbnails, which is the default view when you open the application:
+## Anzeigen von Bildern
 
-#### Navigating Grid View:
-- **Scroll**: Use your mouse wheel or scroll bar to navigate the grid
+### 1. Gitteransicht
+
+Die Gitteransicht zeigt Bilder in einem Gitter von Vorschaubildern, was die Standardansicht ist, wenn Sie die Anwendung öffnen:
+
+#### Navigieren in der Gitteransicht:
+- **Scrollen**: Verwenden Sie das Mausrad oder die Bildlaufleiste, um im Gitter zu navigieren
 - **Zoom**: 
-  - Use `Ctrl/Cmd +` to zoom in
-  - Use `Ctrl/Cmd -` to zoom out
-  - Use `Ctrl/Cmd 0` to reset zoom
-- **Adjust Thumbnail Size**: Use the slider in the toolbar or go to `View > Thumbnail Size`
+  - Verwenden Sie `Ctrl/Cmd +`, um hereinzuzoomen
+  - Verwenden Sie `Ctrl/Cmd -`, um herauszuzoomen
+  - Verwenden Sie `Ctrl/Cmd 0`, um den Zoom zurückzusetzen
+- **Vorschaubildgröße anpassen**: Verwenden Sie den Schieberegler in der Werkzeugleiste oder gehen Sie zu `Ansicht > Vorschaubildgröße`
 
-#### Selecting Images in Grid View:
-- **Single Image**: Click on an image to select it
-- **Multiple Images**: 
-  - Hold `Ctrl/Cmd` and click to select multiple individual images
-  - Hold `Shift` and click to select a range of images
-  - Click and drag to draw a selection rectangle around multiple images
-- **Select All**: Press `Ctrl/Cmd + A` to select all images in the current view
-- **Deselect All**: Press `Esc` or go to `Edit > Deselect All`
+#### Auswählen von Bildern in der Gitteransicht:
+- **Einzelnes Bild**: Klicken Sie auf ein Bild, um es auszuwählen
+- **Mehrere Bilder**: 
+  - Halten Sie `Ctrl/Cmd` gedrückt und klicken Sie, um mehrere einzelne Bilder auszuwählen
+  - Halten Sie `Shift` gedrückt und klicken Sie, um einen Bereich von Bildern auszuwählen
+  - Klicken Sie und ziehen Sie, um ein Auswahlrechteck um mehrere Bilder zu ziehen
+- **Alles auswählen**: Drücken Sie `Ctrl/Cmd + A`, um alle Bilder in der aktuellen Ansicht auszuwählen
+- **Auswahl aufheben**: Drücken Sie `Esc` oder gehen Sie zu `Bearbeiten > Auswahl aufheben`
 
-### 2. List View
+### 2. Listenansicht
 
-List view displays images in a list with detailed information columns:
+Die Listenansicht zeigt Bilder in einer Liste mit detaillierten Informationsspalten:
 
-#### Switching to List View:
-- Click the **List View** button in the toolbar, or go to `View > List View`
+#### Wechseln zur Listenansicht:
+- Klicken Sie auf die **Listenansicht**-Schaltfläche in der Werkzeugleiste oder gehen Sie zu `Ansicht > Listenansicht`
 
-#### Customizing List View:
-- **Sort Columns**: Click on a column header to sort by that column
-- **Resize Columns**: Drag the dividers between column headers to adjust widths
-- **Show/Hide Columns**: Right-click on any column header to show or hide columns
-- **Reset Columns**: Go to `View > Reset List Columns` to restore default columns
+#### Anpassen der Listenansicht:
+- **Spalten sortieren**: Klicken Sie auf eine Spaltenüberschrift, um nach dieser Spalte zu sortieren
+- **Spaltenbreiten ändern**: Ziehen Sie die Trennlinien zwischen Spaltenüberschriften, um die Breiten anzupassen
+- **Spalten anzeigen/ausblenden**: Klicken Sie mit der rechten Maustaste auf eine beliebige Spaltenüberschrift, um Spalten anzuzeigen oder auszublenden
+- **Spalten zurücksetzen**: Gehen Sie zu `Ansicht > Listenansicht > Spalten zurücksetzen`, um die Standardspalten wiederherzustellen
 
-#### Available Columns:
-- Filename
-- Path
-- Size
-- Dimensions
-- Date Added
-- Date Modified
-- Rating
-- Favorite status
+#### Verfügbare Spalten:
+- Dateiname
+- Pfad
+- Größe
+- Abmessungen
+- Hinzufügungsdatum
+- Änderungsdatum
+- Bewertung
+- Favoritenstatus
 - Tags
-- Model
+- Modell
 - Sampler
-- Steps
-- CFG Scale
+- Schritte
+- CFG-Skala
 - Seed
 
-### 3. Full-Screen View
+### 3. Vollbildansicht
 
-Full-screen view allows you to view images in full resolution:
+Die Vollbildansicht ermöglicht es Ihnen, Bilder in voller Auflösung anzuzeigen:
 
-#### Opening Full-Screen View:
-- Double-click on an image in grid or list view
-- Select an image and press `Enter`
-- Right-click on an image and select **View**
+#### Öffnen der Vollbildansicht:
+- Doppelklicken Sie auf ein Bild in der Gitter- oder Listenansicht
+- Wählen Sie ein Bild aus und drücken Sie `Enter`
+- Klicken Sie mit der rechten Maustaste auf ein Bild und wählen Sie **Anzeigen**
 
-#### Navigating in Full-Screen View:
-- **Next Image**: Use `Right Arrow`, `Page Down`, or click the right arrow button
-- **Previous Image**: Use `Left Arrow`, `Page Up`, or click the left arrow button
+#### Navigieren in der Vollbildansicht:
+- **Nächstes Bild**: Verwenden Sie `Rechte Pfeiltaste`, `Bild runter` oder klicken Sie auf die rechte Pfeiltaste-Schaltfläche
+- **Vorheriges Bild**: Verwenden Sie `Linke Pfeiltaste`, `Bild hoch` oder klicken Sie auf die linke Pfeiltaste-Schaltfläche
 - **Zoom**: 
-  - Use mouse wheel to zoom in/out
-  - Click and drag to pan when zoomed in
-  - Press `F11` to toggle between fit-to-screen and actual size
-- **Exit Full-Screen**: Press `Esc` or click the close button
+  - Verwenden Sie das Mausrad, um herein- oder herauszuzoomen
+  - Klicken Sie und ziehen Sie, um beim Zoomen zu navigieren
+  - Drücken Sie `F11`, um zwischen Anpassen an Bildschirm und Originalgröße umzuschalten
+- **Vollbild verlassen**: Drücken Sie `Esc` oder klicken Sie auf die Schließen-Schaltfläche
 
-#### Full-Screen View Options:
-- **Show/Hide Controls**: Move your mouse to the bottom of the screen to show controls
-- **Image Information**: Click the `i` button to toggle image information display
-- **Slideshow**: Click the play button to start a slideshow
-- **Set as Favorite**: Click the heart button to mark/unmark as favorite
+#### Optionen in der Vollbildansicht:
+- **Steuerungen anzeigen/ausblenden**: Bewegen Sie die Maus an den unteren Rand des Bildschirms, um die Steuerungen anzuzeigen
+- **Bildinformationen**: Klicken Sie auf die `i`-Schaltfläche, um die Anzeige von Bildinformationen umzuschalten
+- **Diashow**: Klicken Sie auf die Abspielschaltfläche, um eine Diashow zu starten
+- **Als Favorit markieren**: Klicken Sie auf das Herzsymbol, um ein Bild als Favorit zu markieren oder zu demarkieren
 
-## Image Operations
+## Bildoperationen
 
-### 1. Copying Images
+### 1. Kopieren von Bildern
 
-You can copy images to the clipboard or to other locations:
+Sie können Bilder in die Zwischenablage oder an andere Orten kopieren:
 
-#### Copy to Clipboard:
-1. Select one or more images
-2. Right-click and select **Copy**
-3. Paste the images into another application or location using `Ctrl/Cmd + V`
+#### In die Zwischenablage kopieren:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Kopieren**
+3. Fügen Sie die Bilder mit `Ctrl/Cmd + V` in eine andere Anwendung oder an einen anderen Ort ein
 
-#### Copy to Folder:
-1. Select one or more images
-2. Right-click and select **Copy To**
-3. Choose the destination folder
-4. Click **Copy** to copy the images
+#### In Ordner kopieren:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Kopieren nach**
+3. Wählen Sie den Zielordner
+4. Klicken Sie auf **Kopieren**, um die Bilder zu kopieren
 
-### 2. Moving Images
+### 2. Verschieben von Bildern
 
-You can move images to different folders within your library:
+Sie können Bilder zu verschiedenen Ordnern in Ihrer Bibliothek verschieben:
 
-#### Steps to Move Images:
-1. Select one or more images
-2. Right-click and select **Move To**
-3. Choose the destination folder
-4. Click **Move** to move the images
+#### Schritte zum Verschieben von Bildern:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Verschieben nach**
+3. Wählen Sie den Zielordner
+4. Klicken Sie auf **Verschieben**, um die Bilder zu verschieben
 
-### 3. Renaming Images
+### 3. Umbenennen von Bildern
 
-You can rename individual images or multiple images at once:
+Sie können einzelne Bilder oder mehrere Bilder gleichzeitig umbenennen:
 
-#### Rename Single Image:
-1. Select an image
-2. Right-click and select **Rename**
-3. Type the new name
-4. Press `Enter` to confirm
+#### Einzelnes Bild umbenennen:
+1. Wählen Sie ein Bild aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Umbenennen**
+3. Geben Sie den neuen Namen ein
+4. Drücken Sie `Enter`, um zu bestätigen
 
-#### Batch Rename Images:
-1. Select multiple images
-2. Go to `Tools > Batch Operations > Batch Rename`
-3. Configure rename options:
-   - **Prefix**: Add a prefix to filenames
-   - **Suffix**: Add a suffix to filenames
-   - **Numbering**: Add sequential numbers
-   - **Pattern**: Use a custom pattern for renaming
-4. Preview the new names
-5. Click **Rename** to apply the changes
+#### Stapelbenennung von Bildern:
+1. Wählen Sie mehrere Bilder aus
+2. Gehen Sie zu `Werkzeuge > Stapeloperationen > Stapelbenennung`
+3. Konfigurieren Sie die Umbenennungsoptionen:
+   - **Präfix**: Präfix zu Dateinamen hinzufügen
+   - **Suffix**: Suffix zu Dateinamen hinzufügen
+   - **Nummerierung**: Sequenzielle Nummern hinzufügen
+   - **Muster**: Benutzerdefiniertes Muster für die Umbenennung verwenden
+4. Vorschaubild der neuen Namen
+5. Klicken Sie auf **Umbenennen**, um die Änderungen anzuwenden
 
-### 4. Deleting Images
+### 4. Löschen von Bildern
 
-You can delete images from your library:
+Sie können Bilder aus Ihrer Bibliothek löschen:
 
-#### Delete Single Image:
-1. Select an image
-2. Press `Delete` or right-click and select **Delete**
-3. Confirm the deletion in the dialog
+#### Einzelnes Bild löschen:
+1. Wählen Sie ein Bild aus
+2. Drücken Sie `Entfernen` oder klicken Sie mit der rechten Maustaste und wählen Sie **Löschen**
+3. Bestätigen Sie die Löschung im Dialog
 
-#### Delete Multiple Images:
-1. Select multiple images
-2. Press `Delete` or right-click and select **Delete**
-3. Confirm the deletion in the dialog
+#### Mehrere Bilder löschen:
+1. Wählen Sie mehrere Bilder aus
+2. Drücken Sie `Entfernen` oder klicken Sie mit der rechten Maustaste und wählen Sie **Löschen**
+3. Bestätigen Sie die Löschung im Dialog
 
-#### Mark for Deletion:
-You can mark images for deletion without immediately removing them:
-1. Select one or more images
-2. Right-click and select **Mark for Deletion**
-3. To view marked images, go to **Smart Collections > For Deletion**
-4. To delete marked images, select them and click **Delete**
-5. To unmark images, right-click and select **Unmark for Deletion**
+#### Zur Löschung markieren:
+Sie können Bilder zur Löschung markieren, ohne sie sofort zu entfernen:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Zur Löschung markieren**
+3. Um markierte Bilder anzuzeigen, gehen Sie zu **Intelligente Sammlungen > Zur Löschung markiert**
+4. Um markierte Bilder zu löschen, wählen Sie sie aus und klicken Sie auf **Löschen**
+5. Um Bilder von der Löschliste zu entfernen, klicken Sie mit der rechten Maustaste und wählen Sie **Markierung für Löschung aufheben**
 
-### 5. Image Properties
+### 5. Bildeigenschaften
 
-You can view detailed properties of any image:
+Sie können detaillierte Eigenschaften eines beliebigen Bildes anzeigen:
 
-#### Steps to View Image Properties:
-1. Select an image
-2. Right-click and select **Properties**
-3. The properties dialog will display:
-   - Basic information (filename, path, size, dimensions)
-   - File attributes (created date, modified date, accessed date)
-   - AI metadata (prompt, negative prompt, steps, etc.)
-   - Image statistics (color profile, bit depth)
-4. Click **Close** when finished
+#### Schritte zum Anzeigen von Bildeigenschaften:
+1. Wählen Sie ein Bild aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Eigenschaften**
+3. Im Eigenschaften-Dialog werden angezeigt:
+   - Grundinformationen (Dateiname, Pfad, Größe, Abmessungen)
+   - Dateiattribute (Erstellungsdatum, Änderungsdatum, Zugriffsdatum)
+   - KI-Metadaten (Prompt, Negative Prompt, Schritte, usw.)
+   - Bildstatistiken (Farbprofil, Bit Tiefe)
+4. Klicken Sie auf **Schließen**, wenn Sie fertig sind
 
-## Thumbnail Management
+## Vorschaubildverwaltung
 
-### 1. Generate Thumbnails
+### 1. Vorschaubilder generieren
 
-The application automatically generates thumbnails when importing images, but you can regenerate them if needed:
+Die Anwendung generiert automatisch Vorschaubilder beim Importieren von Bildern, aber Sie können sie bei Bedarf neu generieren:
 
-#### Steps to Regenerate Thumbnails:
-1. Select one or more images, or go to a folder/album view
-2. Go to `Tools > AI Tools > Generate Thumbnails`
-3. Configure options:
-   - **Regenerate all thumbnails**: Replace existing thumbnails
-   - **Quality**: Set thumbnail quality (high, medium, low)
-   - **Size**: Set maximum thumbnail size
-4. Click **Generate** to start the process
-5. Monitor progress in the dialog
-6. Click **Finish** when done
+#### Schritte zum Neu generieren von Vorschaubildern:
+1. Wählen Sie ein oder mehrere Bilder aus oder gehen Sie zu einer Ordner-/Albumansicht
+2. Gehen Sie zu `Werkzeuge > KI-Werkzeuge > Vorschaubilder generieren`
+3. Konfigurieren Sie Optionen:
+   - **Alle Vorschaubilder neu generieren**: Vorhandene Vorschaubilder ersetzen
+   - **Qualität**: Vorschaubildqualität einstellen (hoch, mittel, niedrig)
+   - **Größe**: Maximale Vorschaubildgröße einstellen
+4. Klicken Sie auf **Generieren**, um den Vorgang zu starten
+5. Verfolgen Sie den Fortschritt im Dialog
+6. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-### 2. Thumbnail Settings
+### 2. Vorschaubeinstellungen
 
-You can configure thumbnail settings in the application settings:
+Sie können Vorschaubeinstellungen in den Anwendungs-Einstellungen konfigurieren:
 
-#### Steps to Configure Thumbnail Settings:
-1. Go to `Settings > Display > Thumbnails`
-2. Configure settings:
-   - **Default thumbnail size**: Set the default size for grid view
-   - **Quality**: Set thumbnail quality (high, medium, low)
-   - **Cache size**: Set maximum cache size for thumbnails
-   - **Auto-regenerate**: Automatically regenerate thumbnails when needed
-3. Click **Save** to apply changes
+#### Schritte zum Konfigurieren von Vorschaubeinstellungen:
+1. Gehen Sie zu `Einstellungen > Anzeige > Vorschaubilder`
+2. Konfigurieren Sie Einstellungen:
+   - **Standard-Vorschaubildgröße**: Standardgröße für die Gitteransicht einstellen
+   - **Qualität**: Vorschaubildqualität einstellen (hoch, mittel, niedrig)
+   - **Cache-Größe**: Maximale Cache-Größe für Vorschaubilder einstellen
+   - **Automatisch neu generieren**: Vorschaubilder bei Bedarf automatisch neu generieren
+3. Klicken Sie auf **Speichern**, um Änderungen anzuwenden
 
-## Best Practices for Image Management
+## Best Practices für Bildverwaltung
 
-1. **Organize First**: Plan your folder structure before importing large numbers of images
-2. **Use Descriptive Names**: Name folders and images in a way that makes them easy to find
-3. **Import with Metadata**: Always extract metadata when importing images
-4. **Regular Backups**: Backup your library database regularly (see [Backup & Restore](../advanced-features/backup-restore.md))
-5. **Optimize Performance**: For large libraries, consider increasing cache size and using lower thumbnail quality
-6. **Clean Up Regularly**: Remove unused images and organize your library periodically
-7. **Use Smart Collections**: Take advantage of smart collections for quick access to frequently used image groups
+1. **Zuerst organisieren**: Planen Sie Ihre Ordnerstruktur, bevor Sie große Mengen von Bildern importieren
+2. **Verwendbare Namen verwenden**: Benennen Sie Ordner und Bilder so, dass sie leicht zu finden sind
+3. **Importieren mit Metadaten**: Extrahieren Sie immer Metadaten beim Importieren von Bildern
+4. **Regelmäßige Sicherungen**: Sichern Sie Ihre Bibliotheksdatenbank regelmäßig (siehe [Sicherung & Wiederherstellung](../advanced-features/backup-restore.md))
+5. **Leistung optimieren**: Für große Bibliotheken sollten Sie die Cache-Größe erhöhen und eine niedrigere Vorschaubildqualität verwenden
+6. **Regelmäßige Reinigung**: Entfernen Sie nicht verwendete Bilder und organisieren Sie Ihre Bibliothek regelmäßig
+7. **Intelligente Sammlungen verwenden**: Nutzen Sie intelligente Sammlungen für schnellen Zugriff auf häufig verwendete Bildgruppen
 
-## Troubleshooting Image Management
+## Fehlerbehebung bei der Bildverwaltung
 
-### Images Not Importing
-- **Check File Permissions**: Ensure you have read access to the source folders
-- **Supported Formats**: Verify that your images are in supported formats (JPEG, PNG, WebP, TIFF, BMP, GIF)
-- **File Size**: Check if images are too large to import
-- **Corrupted Files**: Some images may be corrupted - try importing one image at a time to identify problematic files
+### Bilder werden nicht importiert
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie Leseberechtigung für die Quellordner haben
+- **Unterstützte Formate**: Verifizieren Sie, dass Ihre Bilder in unterstützten Formaten vorliegen (JPEG, PNG, WebP, TIFF, BMP, GIF)
+- **Dateigröße**: Überprüfen Sie, ob Bilder zu groß zum Importieren sind
+- **Beschädigte Dateien**: Einige Bilder können beschädigt sein - versuchen Sie, ein Bild nach dem anderen zu importieren, um problematische Dateien zu identifizieren
 
-### Thumbnails Not Displaying
-- **Regenerate Thumbnails**: Try regenerating thumbnails for the affected images
-- **Check Cache**: Clear the thumbnail cache in `Settings > Display > Thumbnails > Clear Cache`
-- **File Access**: Ensure the application has access to the image files
+### Vorschaubilder werden nicht angezeigt
+- **Vorschaubilder neu generieren**: Versuchen Sie, Vorschaubilder für die betroffenen Bilder neu zu generieren
+- **Cache prüfen**: Leeren Sie den Vorschaubildcache in `Einstellungen > Anzeige > Vorschaubilder > Cache leeren`
+- **Dateizugriff**: Stellen Sie sicher, dass die Anwendung Zugriff auf die Bilddateien hat
 
-### Slow Image Loading
-- **Increase Cache Size**: Increase thumbnail cache size in settings
-- **Lower Thumbnail Quality**: Reduce thumbnail quality for better performance
-- **Close Other Applications**: Free up system resources by closing other applications
-- **Optimize Database**: Use the database optimization tool in `Settings > Library > Optimize Database`
+### Langsame Bildladung
+- **Cache-Größe erhöhen**: Erhöhen Sie die Vorschaubildcache-Größe in den Einstellungen
+- **Vorschaubildqualität senken**: Senken Sie die Vorschaubildqualität für bessere Leistung
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen, indem Sie andere Anwendungen schließen
+- **Datenbank optimieren**: Verwenden Sie das Datenbankoptimierungswerkzeug in `Einstellungen > Bibliothek > Datenbank optimieren`
 
-## Next Steps
+## Nächste Schritte
 
-- Learn about [Organization](./organization.md) to organize your images using folders, albums, and tags
-- Read about [Metadata Editing](./metadata-editing.md) to view and edit AI metadata
-- Explore [Search & Filtering](./search-filtering.md) to find images quickly
+- Erfahren Sie mehr über [Organisation](./organization.md), um Ihre Bilder mit Ordnern, Alben und Tags zu organisieren
+- Lesen Sie über [Metadatenbearbeitung](./metadata-editing.md), um KI-Metadaten anzuzeigen und zu bearbeiten
+- Entdecken Sie [Suche & Filterung](./search-filtering.md), um Bilder schnell zu finden

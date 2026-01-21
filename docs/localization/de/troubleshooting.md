@@ -1,218 +1,220 @@
-# Troubleshooting
-\n> **Die englische Version gilt als maßgebend**\n\n
-This guide provides solutions to common issues you may encounter while using the AVA AIGC Toolbox. If you can't find a solution here, please check the [FAQ](./faq.md) or reach out to our support team.
+# Fehlerbehebung
 
-## Application Launch Issues
+> **Die englische Version ist maßgeblich**
 
-### Application Won't Start
-- **Check System Requirements**: Ensure your system meets the minimum requirements (see [System Requirements](./getting-started.md#system-requirements))
-- **Check .NET Runtime**: Ensure you have .NET 7.0 or later installed
-- **Check File Permissions**: Ensure you have executable permissions for the application
-- **Run as Administrator**: Try running the application as administrator/root
-- **Check Log Files**: Review log files for error messages
+Diese Anleitung bietet Lösungen für häufige Probleme, die Sie beim Einsatz der AVA AIGC Toolbox begegnen können. Wenn Sie hier keine Lösung finden, überprüfen Sie bitte die [Häufig gestellten Fragen](./faq.md) oder wenden Sie sich an unser Support-Team.
+
+## Anwendung Startprobleme
+
+### Anwendung startet nicht
+- **Systemanforderungen prüfen**: Stellen Sie sicher, dass Ihr System die Mindestanforderungen erfüllt (siehe [Systemanforderungen](./getting-started.md#system-requirements))
+- **.NET Runtime prüfen**: Stellen Sie sicher, dass .NET 7.0 oder höher installiert ist
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie ausführungsberechtigt für die Anwendung sind
+- **Als Administrator ausführen**: Versuchen Sie, die Anwendung als Administrator/root auszuführen
+- **Protokolldateien prüfen**: Überprüfen Sie Protokolldateien auf Fehlermeldungen
   - Windows: `%APPDATA%/AIGenManager/logs/`
   - macOS: `~/.local/share/AIGenManager/logs/`
   - Linux: `~/.local/share/AIGenManager/logs/`
-- **Reinstall Application**: Try reinstalling the application
+- **Anwendung neu installieren**: Versuchen Sie, die Anwendung neu zu installieren
 
-### Application Crashes on Startup
-- **Check Database Integrity**: The database may be corrupted, try restoring from backup
-- **Reset Settings**: Delete the settings file to reset to defaults
+### Anwendung stürzt beim Start ab
+- **Datenbankintegrität prüfen**: Die Datenbank kann beschädigt sein, versuchen Sie, aus einer Sicherung wiederherzustellen
+- **Einstellungen zurücksetzen**: Löschen Sie die Einstellungsdatei, um auf Standardwerte zurückzusetzen
   - Windows: `%APPDATA%/AIGenManager/settings.json`
   - macOS: `~/.local/share/AIGenManager/settings.json`
   - Linux: `~/.local/share/AIGenManager/settings.json`
-- **Update Graphics Drivers**: Outdated graphics drivers can cause crashes
-- **Disable GPU Acceleration**: Add `--disable-gpu` to the command line arguments
-- **Check for Updates**: Ensure you're using the latest version of the application
+- **Grafiktreiber aktualisieren**: Veraltete Grafiktreiber können Abstürze verursachen
+- **GPU-Beschleunigung deaktivieren**: Fügen Sie `--disable-gpu` zu den Befehlszeilenargumenten hinzu
+- **Nach Updates suchen**: Stellen Sie sicher, dass Sie die neueste Version der Anwendung verwenden
 
-## Library Issues
+## Bibliotheksprobleme
 
-### Can't Open Library
-- **Check File Path**: Ensure the library file exists at the specified path
-- **Check File Permissions**: Ensure you have read/write access to the library file
-- **Check Database Integrity**: The database may be corrupted, try using the repair tool
-- **Restore from Backup**: Restore the library from a recent backup
+### Bibliothek kann nicht geöffnet werden
+- **Dateipfad prüfen**: Stellen Sie sicher, dass die Bibliotheksdatei am angegebenen Pfad existiert
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie Lese-/Schreibzugriff auf die Bibliotheksdatei haben
+- **Datenbankintegrität prüfen**: Die Datenbank kann beschädigt sein, versuchen Sie, das Reparaturwerkzeug zu verwenden
+- **Aus Sicherung wiederherstellen**: Stellen Sie die Bibliothek aus einer aktuellen Sicherung wieder her
 
-### Library Corruption
-- **Run Database Repair**: Go to `Tools > Database > Repair Database`
-- **Restore from Backup**: Restore from the latest valid backup
-- **Check Disk Health**: Check your hard drive for errors
-- **Optimize Database**: Go to `Tools > Database > Optimize Database`
+### Bibliotheksbeschädigung
+- **Datenbankreparatur ausführen**: Gehen Sie zu `Werkzeuge > Datenbank > Datenbank reparieren`
+- **Aus Sicherung wiederherstellen**: Wiederherstellen aus der neuesten gültigen Sicherung
+- **Festplattenzustand prüfen**: Überprüfen Sie Ihre Festplatte auf Fehler
+- **Datenbank optimieren**: Gehen Sie zu `Werkzeuge > Datenbank > Datenbank optimieren`
 
-### Slow Library Performance
-- **Optimize Database**: Regularly optimize the database to improve performance
-- **Increase Cache Size**: Increase thumbnail and image cache sizes in settings
-- **Reduce Thumbnail Quality**: Lower thumbnail quality in settings for better performance
-- **Close Other Applications**: Free up system resources by closing other applications
-- **Use Local Storage**: Ensure images are stored on local drives, not network drives
+### Langsame Bibliotheksleistung
+- **Datenbank optimieren**: Optimieren Sie die Datenbank regelmäßig, um die Leistung zu verbessern
+- **Cache-Größe erhöhen**: Erhöhen Sie die Größe des Vorschaubild- und Bildcaches in den Einstellungen
+- **Vorschaubildqualität senken**: Senken Sie die Vorschaubildqualität in den Einstellungen für bessere Leistung
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen, indem Sie andere Anwendungen schließen
+- **Lokalen Speicher verwenden**: Stellen Sie sicher, dass Bilder auf lokalen Laufwerken gespeichert sind, nicht auf Netzlaufwerken
 
-## Import Issues
+## Importprobleme
 
-### Can't Import Images
-- **Check File Permissions**: Ensure you have read access to the source images
-- **Check Supported Formats**: Ensure images are in supported formats (JPEG, PNG, WebP, TIFF, BMP, GIF)
-- **Check File Size**: Some very large images may fail to import
-- **Check Disk Space**: Ensure there's enough disk space at the destination
-- **Check File Locks**: Ensure images aren't locked by other applications
+### Bilder können nicht importiert werden
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie Lesezugriff auf die Quelldateien haben
+- **Unterstützte Formate prüfen**: Stellen Sie sicher, dass die Bilder in unterstützten Formaten vorliegen (JPEG, PNG, WebP, TIFF, BMP, GIF)
+- **Dateigröße prüfen**: Einige sehr große Bilder können beim Import fehlschlagen
+- **Festplattenspeicher prüfen**: Stellen Sie sicher, dass am Zielort ausreichend Festplattenspeicher vorhanden ist
+- **Dateisperren prüfen**: Stellen Sie sicher, dass die Bilder nicht von anderen Anwendungen blockiert sind
 
-### Import Taking Too Long
-- **Reduce Batch Size**: Import images in smaller batches
-- **Disable Thumbnail Generation**: Disable thumbnail generation during import
-- **Disable Metadata Extraction**: Disable metadata extraction during import
-- **Use Local Storage**: Ensure source images are on local drives
+### Import dauert zu lange
+- **Batch-Größe reduzieren**: Importieren Sie Bilder in kleineren Batches
+- **Vorschaubildgenerierung deaktivieren**: Deaktivieren Sie die Vorschaubildgenerierung während des Imports
+- **Metadatenextraktion deaktivieren**: Deaktivieren Sie die Metadatenextraktion während des Imports
+- **Lokalen Speicher verwenden**: Stellen Sie sicher, dass die Quelldateien auf lokalen Laufwerken liegen
 
-### Metadata Not Extracting
-- **Check Image Format**: Ensure images contain embedded metadata
-- **Check Metadata Format**: Ensure metadata is in a supported format
-- **Try Manual Extraction**: Use manual metadata extraction (right-click > Extract Metadata)
-- **Update Application**: Ensure you're using the latest version
+### Metadaten werden nicht extrahiert
+- **Bildformat prüfen**: Stellen Sie sicher, dass die Bilder eingebettete Metadaten enthalten
+- **Metadatenformat prüfen**: Stellen Sie sicher, dass die Metadaten in einem unterstützten Format vorliegen
+- **Manuelle Extraktion versuchen**: Verwenden Sie die manuelle Metadatenextraktion (Rechtsklick > Metadaten extrahieren)
+- **Anwendung aktualisieren**: Stellen Sie sicher, dass Sie die neueste Version verwenden
 
-## Image Viewing Issues
+## Bildanzeigeprobleme
 
-### Images Not Displaying
-- **Check File Path**: Ensure the image files still exist at their original locations
-- **Check File Permissions**: Ensure you have read access to the images
-- **Regenerate Thumbnails**: Try regenerating thumbnails (right-click > Generate Thumbnails)
-- **Check Image Format**: Ensure images are in supported formats
-- **Clear Thumbnail Cache**: Clear the thumbnail cache in settings
+### Bilder werden nicht angezeigt
+- **Dateipfad prüfen**: Stellen Sie sicher, dass die Bilddateien noch an ihren ursprünglichen Orten existieren
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie Lesezugriff auf die Bilder haben
+- **Vorschaubilder neu generieren**: Versuchen Sie, Vorschaubilder neu zu generieren (Rechtsklick > Vorschaubilder generieren)
+- **Bildformat prüfen**: Stellen Sie sicher, dass die Bilder in unterstützten Formaten vorliegen
+- **Vorschaubildcache leeren**: Leeren Sie den Vorschaubildcache in den Einstellungen
 
-### Full-Screen View Issues
-- **Check Graphics Drivers**: Update your graphics drivers
-- **Disable GPU Acceleration**: Disable GPU acceleration in settings
-- **Check Display Resolution**: Ensure your display resolution is supported
-- **Use Keyboard Shortcuts**: Use `Esc` to exit full-screen view if the UI is unresponsive
+### Vollbildansichtsprobleme
+- **Grafiktreiber prüfen**: Aktualisieren Sie Ihre Grafiktreiber
+- **GPU-Beschleunigung deaktivieren**: Deaktivieren Sie die GPU-Beschleunigung in den Einstellungen
+- **Anzeigeauflösung prüfen**: Stellen Sie sicher, dass Ihre Anzeigeauflösung unterstützt wird
+- **Tastaturkürzel verwenden**: Verwenden Sie `Esc`, um die Vollbildansicht zu verlassen, wenn die Benutzeroberfläche nicht reagiert
 
-### Images Appear Blurry
-- **Check Zoom Level**: Ensure you're viewing images at 100% or higher zoom
-- **Check Image Quality**: The original images may be low quality
-- **Check Thumbnail Settings**: Ensure thumbnail quality is set to high in settings
-- **Regenerate Thumbnails**: Regenerate thumbnails for better quality
+### Bilder erscheinen unscharf
+- **Zoomstufe prüfen**: Stellen Sie sicher, dass Sie Bilder mit 100% Zoom oder höher anzeigen
+- **Bildqualität prüfen**: Die Originalbilder können eine geringe Qualität haben
+- **Vorschaubeinstellungen prüfen**: Stellen Sie sicher, dass die Vorschaubildqualität in den Einstellungen auf hoch eingestellt ist
+- **Vorschaubilder neu generieren**: Generieren Sie Vorschaubilder neu für bessere Qualität
 
-## Organization Issues
+## Organisationsprobleme
 
-### Tags Not Being Applied
-- **Check Selection**: Ensure you've selected the correct images
-- **Check Tag Name Format**: Avoid using commas in tag names
-- **Check Database Permissions**: Ensure you have write access to the database
-- **Optimize Database**: Try optimizing the database
+### Tags werden nicht angewendet
+- **Auswahl prüfen**: Stellen Sie sicher, dass Sie die richtigen Bilder ausgewählt haben
+- **Tag-Name-Format prüfen**: Vermeiden Sie das Verwenden von Kommas in Tag-Namen
+- **Datenbankberechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf die Datenbank haben
+- **Datenbank optimieren**: Versuchen Sie, die Datenbank zu optimieren
 
-### Albums Not Showing Images
-- **Check Album Membership**: Ensure images are properly added to albums
-- **Refresh Album**: Try refreshing the album
-- **Check Image Availability**: Ensure the image files still exist
-- **Repair Database**: Run database repair tool
+### Alben zeigen keine Bilder an
+- **Albummitgliedschaft prüfen**: Stellen Sie sicher, dass Bilder ordnungsgemäß zu Alben hinzugefügt sind
+- **Album aktualisieren**: Versuchen Sie, das Album zu aktualisieren
+- **Bildverfügbarkeit prüfen**: Stellen Sie sicher, dass die Bilddateien noch existieren
+- **Datenbank reparieren**: Führen Sie das Datenbankreparaturwerkzeug aus
 
-### Folders Not Updating
-- **Check File Watcher**: Ensure file system watching is enabled in settings
-- **Refresh Folder**: Manually refresh the folder
-- **Check Folder Permissions**: Ensure you have read access to the folder
-- **Check Folder Existence**: Ensure the folder still exists
+### Ordner werden nicht aktualisiert
+- **Dateiwatcher prüfen**: Stellen Sie sicher, dass das Dateisystem-Watching in den Einstellungen aktiviert ist
+- **Ordner aktualisieren**: Aktualisieren Sie den Ordner manuell
+- **Ordnerberechtigungen prüfen**: Stellen Sie sicher, dass Sie Lesezugriff auf den Ordner haben
+- **Ordnerexistenz prüfen**: Stellen Sie sicher, dass der Ordner noch existiert
 
-## Search Issues
+## Suchprobleme
 
-### No Search Results
-- **Check Search Query**: Ensure your search query is correct
-- **Check Search Scope**: Ensure you're searching in the correct scope (all images, folder, album, etc.)
-- **Check Filters**: Ensure no filters are restricting your results
-- **Check Database Index**: Rebuild search index in settings
+### Keine Suchergebnisse
+- **Suchanfrage prüfen**: Stellen Sie sicher, dass Ihre Suchanfrage korrekt ist
+- **Suchbereich prüfen**: Stellen Sie sicher, dass Sie im richtigen Bereich suchen (alle Bilder, Ordner, Album, usw.)
+- **Filter prüfen**: Stellen Sie sicher, dass keine Filter Ihre Ergebnisse einschränken
+- **Datenbankindex prüfen**: Neuerstellen Sie den Suchindex in den Einstellungen
 
-### Search Results Not Accurate
-- **Check Search Options**: Ensure you're using the correct search options
-- **Rebuild Search Index**: Rebuild the search index
-- **Check Metadata**: Ensure metadata is properly extracted and indexed
+### Suchergebnisse sind nicht genau
+- **Suchoptionen prüfen**: Stellen Sie sicher, dass Sie die richtigen Suchoptionen verwenden
+- **Suchindex neu erstellen**: Neuerstellen Sie den Suchindex
+- **Metadaten prüfen**: Stellen Sie sicher, dass Metadaten ordnungsgemäß extrahiert und indexiert sind
 
-### Slow Search Performance
-- **Optimize Database**: Optimize the database to improve search performance
-- **Rebuild Search Index**: Rebuild the search index
-- **Reduce Search Scope**: Search within specific folders or albums
+### Langsame Suchleistung
+- **Datenbank optimieren**: Optimieren Sie die Datenbank, um die Suchleistung zu verbessern
+- **Suchindex neu erstellen**: Neuerstellen Sie den Suchindex
+- **Suchbereich reduzieren**: Suchen Sie in bestimmten Ordnern oder Alben
 
-## Export Issues
+## Exportprobleme
 
-### Can't Export Images
-- **Check Destination Permissions**: Ensure you have write access to the destination folder
-- **Check Disk Space**: Ensure there's enough disk space at the destination
-- **Check File Locks**: Ensure images aren't locked by other applications
-- **Reduce Batch Size**: Export images in smaller batches
+### Bilder können nicht exportiert werden
+- **Zielberechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf den Zielordner haben
+- **Festplattenspeicher prüfen**: Stellen Sie sicher, dass am Zielort ausreichend Festplattenspeicher vorhanden ist
+- **Dateisperren prüfen**: Stellen Sie sicher, dass die Bilder nicht von anderen Anwendungen blockiert sind
+- **Batch-Größe reduzieren**: Exportieren Sie Bilder in kleineren Batches
 
-### Exported Images Missing Metadata
-- **Check Export Options**: Ensure you've selected to include metadata in the export
-- **Check Format Support**: Ensure the export format supports metadata embedding
-- **Check Metadata Availability**: Ensure images have metadata to export
+### Exportierte Bilder fehlen Metadaten
+- **Exportoptionen prüfen**: Stellen Sie sicher, dass Sie die Option "Metadaten einschließen" im Exportdialog ausgewählt haben
+- **Formatunterstützung prüfen**: Stellen Sie sicher, dass das Exportformat die Einbettung von Metadaten unterstützt
+- **Metadatenverfügbarkeit prüfen**: Stellen Sie sicher, dass die Bilder Metadaten zum Exportieren haben
 
-### Export Taking Too Long
-- **Reduce Batch Size**: Export images in smaller batches
-- **Reduce Quality Settings**: Use lower quality settings for faster export
-- **Disable Resize**: Disable image resizing during export
-- **Close Other Applications**: Free up system resources
+### Export dauert zu lange
+- **Batch-Größe reduzieren**: Exportieren Sie Bilder in kleineren Batches
+- **Qualitätseinstellungen reduzieren**: Verwenden Sie niedrigere Qualitätseinstellungen für einen schnelleren Export
+- **Größenänderung deaktivieren**: Deaktivieren Sie die Bildskalierung während des Exports
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen
 
-## AI Features Issues
+## KI-Funktionsprobleme
 
-### AI Features Not Working
-- **Check AI Settings**: Ensure AI features are enabled in settings
-- **Check Model Availability**: Ensure required AI models are installed
-- **Check API Credentials**: Ensure API keys are correctly configured
-- **Check Network Connection**: Ensure you have internet access for cloud-based AI features
-- **Check System Requirements**: Ensure your system meets AI processing requirements
+### KI-Funktionen funktionieren nicht
+- **KI-Einstellungen prüfen**: Stellen Sie sicher, dass KI-Funktionen in den Einstellungen aktiviert sind
+- **Modellverfügbarkeit prüfen**: Stellen Sie sicher, dass die erforderlichen KI-Modelle installiert sind
+- **API-Zugangsdaten prüfen**: Stellen Sie sicher, dass API-Schlüssel korrekt konfiguriert sind
+- **Netzwerkverbindung prüfen**: Stellen Sie sicher, dass Sie Internetzugang für cloudbasierte KI-Funktionen haben
+- **Systemanforderungen prüfen**: Stellen Sie sicher, dass Ihr System die Anforderungen für die KI-Verarbeitung erfüllt
 
-### Slow AI Processing
-- **Reduce Parallel Requests**: Decrease the number of parallel AI requests in settings
-- **Use Local Models**: Switch to local models for faster processing
-- **Close Other Applications**: Free up system resources
-- **Use Smaller Models**: Use smaller AI models for faster processing
+### Langsame KI-Verarbeitung
+- **Parallele Anfragen reduzieren**: Verringern Sie die Anzahl paralleler KI-Anfragen in den Einstellungen
+- **Lokale Modelle verwenden**: Wechseln Sie zu lokalen Modellen für schnellere Verarbeitung
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen
+- **Kleinere Modelle verwenden**: Verwenden Sie kleinere KI-Modelle für schnellere Verarbeitung
 
-### Poor AI Results
-- **Adjust Confidence Threshold**: Change the confidence threshold for better results
-- **Try Different Models**: Experiment with different AI models
-- **Improve Input Quality**: Ensure input images are of good quality
-- **Update Models**: Use the latest versions of AI models
+### Schlechte KI-Ergebnisse
+- **Confidence-Schwellenwert anpassen**: Ändern Sie den Confidence-Schwellenwert für bessere Ergebnisse
+- **Andere Modelle ausprobieren**: Experimentieren Sie mit verschiedenen KI-Modellen
+- **Eingabequalität verbessern**: Stellen Sie sicher, dass Eingabebilder von guter Qualität sind
+- **Modelle aktualisieren**: Verwenden Sie die neuesten Versionen von KI-Modellen
 
-## UI Issues
+## Benutzeroberflächenprobleme
 
-### UI Not Responding
-- **Wait for Operation to Complete**: Some operations may take time to finish
-- **Close Other Applications**: Free up system resources
-- **Restart Application**: Try restarting the application
-- **Reset Settings**: Reset settings to default
+### Benutzeroberfläche reagiert nicht
+- **Auf Abschluss der Operation warten**: Einige Operationen können Zeit zum Abschließen benötigen
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen
+- **Anwendung neu starten**: Versuchen Sie, die Anwendung neu zu starten
+- **Einstellungen zurücksetzen**: Setzen Sie die Einstellungen auf Standardwerte zurück
 
-### UI Elements Missing
-- **Check Display Resolution**: Ensure your display resolution is supported
-- **Restart Application**: Try restarting the application
-- **Reset Settings**: Reset UI settings to default
-- **Update Application**: Ensure you're using the latest version
+### Benutzeroberflächenelemente fehlen
+- **Anzeigeauflösung prüfen**: Stellen Sie sicher, dass Ihre Anzeigeauflösung unterstützt wird
+- **Anwendung neu starten**: Versuchen Sie, die Anwendung neu zu starten
+- **Einstellungen zurücksetzen**: Setzen Sie die Benutzeroberflächeneinstellungen auf Standardwerte zurück
+- **Anwendung aktualisieren**: Stellen Sie sicher, dass Sie die neueste Version verwenden
 
-### UI Font Too Small/Large
-- **Adjust Font Size**: Change font size in settings
-- **Restart Application**: Restart to apply font size changes
-- **Check Display Scaling**: Ensure display scaling is set correctly in your OS
+### Benutzeroberflächenschrift zu klein/groß
+- **Schriftgröße anpassen**: Ändern Sie die Schriftgröße in den Einstellungen
+- **Anwendung neu starten**: Starten Sie die Anwendung neu, um Schriftgrößenänderungen anzuwenden
+- **Anzeigeskalierung prüfen**: Stellen Sie sicher, dass die Anzeigeskalierung in Ihrem Betriebssystem korrekt eingestellt ist
 
-## General Tips
+## Allgemeine Tipps
 
-1. **Update Regularly**: Keep the application updated to the latest version
-2. **Backup Regularly**: Backup your library regularly
-3. **Optimize Database**: Regularly optimize the database for better performance
-4. **Clear Caches**: Clear thumbnail and image caches periodically
-5. **Reset Settings**: If you encounter persistent issues, reset settings to default
-6. **Check Logs**: Review log files for error messages
-7. **Reinstall if Needed**: If all else fails, try reinstalling the application
-8. **Reach Out for Support**: If you can't resolve an issue, contact support
+1. **Regelmäßig aktualisieren**: Halten Sie die Anwendung auf der neuesten Version
+2. **Regelmäßig sichern**: Sichern Sie Ihre Bibliothek regelmäßig
+3. **Datenbank optimieren**: Optimieren Sie die Datenbank regelmäßig für bessere Leistung
+4. **Caches leeren**: Leeren Sie Vorschaubild- und Bildcaches regelmäßig
+5. **Einstellungen zurücksetzen**: Bei anhaltenden Problemen setzen Sie die Einstellungen auf Standardwerte zurück
+6. **Protokolle prüfen**: Überprüfen Sie Protokolldateien auf Fehlermeldungen
+7. **Bei Bedarf neu installieren**: Wenn alles andere fehlschlägt, versuchen Sie, die Anwendung neu zu installieren
+8. **Support anfordern**: Wenn Sie ein Problem nicht lösen können, wenden Sie sich an den Support
 
-## Contacting Support
+## Support kontaktieren
 
-If you can't resolve an issue using this guide:
+Wenn Sie ein Problem mithilfe dieser Anleitung nicht lösen können:
 
-1. **Check the [FAQ](./faq.md)** for answers to common questions
-2. **Search the Documentation** for related topics
-3. **Check GitHub Issues** for similar issues reported by other users
-4. **Create a Support Ticket** with:
-   - Application version
-   - OS version
-   - Detailed description of the issue
-   - Steps to reproduce the issue
-   - Log files
-   - Screenshots (if applicable)
+1. **Überprüfen Sie die [Häufig gestellten Fragen](./faq.md)** für Antworten auf allgemeine Fragen
+2. **Durchsuchen Sie die Dokumentation** nach verwandten Themen
+3. **Überprüfen Sie GitHub Issues** auf ähnliche Probleme, die von anderen Benutzern gemeldet wurden
+4. **Erstellen Sie ein Support-Ticket** mit:
+   - Anwendungsversion
+   - Betriebssystemversion
+   - Detaillierte Beschreibung des Problems
+   - Schritte zur Reproduktion des Problems
+   - Protokolldateien
+   - Screenshots (sofern anwendbar)
 
-## Next Steps
+## Nächste Schritte
 
-- Check the [FAQ](./faq.md) for answers to common questions
-- Explore [Tips & Best Practices](./tips-best-practices.md) for more user tips
-- Read about [Settings](./settings.md) to configure application preferences
+- Überprüfen Sie die [Häufig gestellten Fragen](./faq.md) für Antworten auf allgemeine Fragen
+- Entdecken Sie [Tipps & Best Practices](./tips-best-practices.md) für weitere Benutzertipps
+- Lesen Sie über [Einstellungen](./settings.md), um Anwendungsvorlieben zu konfigurieren

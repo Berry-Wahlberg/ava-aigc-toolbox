@@ -1,216 +1,220 @@
-# Batch Operations
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox allows you to perform bulk operations on multiple images at once, saving you time and effort. This guide covers the various batch operations available in the application.
+# Batch-Operationen
 
-## Batch Tagging
+> **English version is authoritative**
 
-### Adding Tags to Multiple Images
+> **Die englische Version ist maßgeblich**
 
-#### Steps to Batch Add Tags:
-1. Select multiple images in the main content area
-2. Right-click and select **Add Tags**, or go to `Tools > Batch Operations > Batch Add Tags`
-3. In the batch tag dialog, enter the tags you want to add, separated by commas
-4. Choose tag options:
-   - **Replace existing tags**: Replace all existing tags with the new tags
-   - **Append to existing tags**: Add new tags to existing tags
-5. Click **Add Tags** to apply the tags to all selected images
+Die AVA AIGC Toolbox ermöglicht es Ihnen, Massenoperationen auf mehreren Bildern gleichzeitig durchzuführen, was Ihnen Zeit und Mühe spart. Diese Anleitung beschreibt die verschiedenen Batch-Operationen, die in der Anwendung verfügbar sind.
 
-### Removing Tags from Multiple Images
+## Batch-Tagging
 
-#### Steps to Batch Remove Tags:
-1. Select multiple images in the main content area
-2. Right-click and select **Remove Tags**, or go to `Tools > Batch Operations > Batch Remove Tags`
-3. In the batch remove tag dialog, select the tags you want to remove
-4. Click **Remove Tags** to remove the selected tags from all images
+### Tags zu mehreren Bildern hinzufügen
 
-### Replacing Tags in Multiple Images
+#### Schritte zum Batch-Hinzufügen von Tags:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Tags hinzufügen** oder gehen Sie zu `Werkzeuge > Batch-Operationen > Tags in Batch hinzufügen`
+3. Geben Sie im Batch-Tag-Dialog die Tags ein, die Sie hinzufügen möchten, getrennt durch Kommas
+4. Wählen Sie Tag-Optionen:
+   - **Vorhandene Tags ersetzen**: Ersetzen Sie alle vorhandenen Tags durch die neuen Tags
+   - **Zu vorhandenen Tags hinzufügen**: Fügen Sie neue Tags zu vorhandenen Tags hinzu
+5. Klicken Sie auf **Tags hinzufügen**, um die Tags auf alle ausgewählten Bilder anzuwenden
 
-#### Steps to Batch Replace Tags:
-1. Select multiple images in the main content area
-2. Right-click and select **Replace Tags**, or go to `Tools > Batch Operations > Batch Replace Tags`
-3. In the batch replace tag dialog, enter the old tag and the new tag
-4. Click **Replace Tags** to replace the old tag with the new tag in all images
+### Tags von mehreren Bildern entfernen
 
-## Batch Metadata Editing
+#### Schritte zum Batch-Entfernen von Tags:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Tags entfernen** oder gehen Sie zu `Werkzeuge > Batch-Operationen > Tags in Batch entfernen`
+3. Wählen Sie im Batch-Entfernungs-Tag-Dialog die Tags aus, die Sie entfernen möchten
+4. Klicken Sie auf **Tags entfernen**, um die ausgewählten Tags aus allen Bildern zu entfernen
 
-### Updating Metadata for Multiple Images
+### Tags in mehreren Bildern ersetzen
 
-#### Steps to Batch Edit Metadata:
-1. Select multiple images in the main content area
-2. Right-click and select **Edit Metadata**, or go to `Tools > Batch Operations > Batch Edit Metadata`
-3. In the batch metadata dialog, select the metadata fields you want to edit
-4. Enter the new values for each selected field
-5. Choose how to apply the changes:
-   - **Set**: Replace existing values with the new value
-   - **Append**: Add the new value to existing values
-   - **Prepend**: Insert the new value before existing values
-6. Click **Apply** to save the changes to all selected images
+#### Schritte zum Batch-Ersetzen von Tags:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Tags ersetzen** oder gehen Sie zu `Werkzeuge > Batch-Operationen > Tags in Batch ersetzen`
+3. Geben Sie im Batch-Ersetzungs-Tag-Dialog das alte Tag und das neue Tag ein
+4. Klicken Sie auf **Tags ersetzen**, um das alte Tag durch das neue Tag in allen Bildern zu ersetzen
 
-### Applying Metadata Templates
+## Batch-Metadatenbearbeitung
 
-#### Steps to Apply Metadata Templates to Multiple Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Apply Metadata Template**
-3. Choose a template from the list
-4. Click **Apply** to apply the template to all selected images
+### Metadaten für mehrere Bilder aktualisieren
 
-## Batch Image Operations
+#### Schritte zur Batch-Bearbeitung von Metadaten:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Metadaten bearbeiten** oder gehen Sie zu `Werkzeuge > Batch-Operationen > Metadaten in Batch bearbeiten`
+3. Wählen Sie im Batch-Metadaten-Dialog die Metadatenfelder aus, die Sie bearbeiten möchten
+4. Geben Sie die neuen Werte für jedes ausgewählte Feld ein
+5. Wählen Sie, wie die Änderungen angewendet werden sollen:
+   - **Setzen**: Ersetzen Sie vorhandene Werte durch den neuen Wert
+   - **Hinzufügen**: Fügen Sie den neuen Wert zu vorhandenen Werten hinzu
+   - **Voranstellen**: Fügen Sie den neuen Wert vor vorhandenen Werten ein
+6. Klicken Sie auf **Anwenden**, um die Änderungen auf alle ausgewählten Bilder zu speichern
 
-### Resizing Multiple Images
+### Metadatenvorlagen anwenden
 
-#### Steps to Batch Resize Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Resize Images**, or go to `Tools > Batch Operations > Batch Resize`
-3. In the batch resize dialog, configure resize options:
-   - **Resize by Percentage**: Resize images by a percentage of the original size
-   - **Resize to Specific Dimensions**: Resize images to specific width and height
-   - **Maintain Aspect Ratio**: Keep the original aspect ratio when resizing
-   - **Quality**: Set the quality for resized images
-4. Choose output options:
-   - **Overwrite original images**: Replace original images with resized versions
-   - **Save as new images**: Save resized images as new files
-5. Click **Resize** to start the process
-6. Monitor progress in the dialog
-7. Click **Finish** when done
+#### Schritte zum Anwenden von Metadatenvorlagen auf mehrere Bilder:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Metadatenvorlage anwenden**
+3. Wählen Sie eine Vorlage aus der Liste
+4. Klicken Sie auf **Anwenden**, um die Vorlage auf alle ausgewählten Bilder anzuwenden
 
-### Converting Multiple Images
+## Batch-Bildoperationen
 
-#### Steps to Batch Convert Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Convert Images**, or go to `Tools > Batch Operations > Batch Convert`
-3. In the batch convert dialog, select the target format (JPEG, PNG, WebP, TIFF, BMP)
-4. Configure format-specific options:
-   - **Quality**: Set the quality for lossy formats (JPEG, WebP)
-   - **Compression Level**: Set the compression level for lossless formats (PNG, TIFF)
-5. Choose output options:
-   - **Overwrite original images**: Replace original images with converted versions
-   - **Save as new images**: Save converted images as new files
-6. Click **Convert** to start the process
-7. Monitor progress in the dialog
-8. Click **Finish** when done
+### Mehrere Bilder ändern
 
-### Renaming Multiple Images
+#### Schritte zum Batch-Ändern von Bildern:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Bilder ändern** oder gehen Sie zu `Werkzeuge > Batch-Operationen > Batch-Ändern`
+3. Konfigurieren Sie im Batch-Änderungs-Dialog die Änderungsoptionen:
+   - **Nach Prozentsatz ändern**: Ändern Sie Bilder um einen Prozentsatz der Originalgröße
+   - **Auf bestimmte Abmessungen ändern**: Ändern Sie Bilder auf bestimmte Breite und Höhe
+   - **Seitenverhältnis beibehalten**: Behalten Sie das Originalseitenverhältnis bei der Änderung
+   - **Qualität**: Legen Sie die Qualität für geänderte Bilder fest
+4. Wählen Sie Ausgabeeoptionen:
+   - **Originalbilder überschreiben**: Ersetzen Sie Originalbilder durch geänderte Versionen
+   - **Als neue Bilder speichern**: Speichern Sie geänderte Bilder als neue Dateien
+5. Klicken Sie auf **Ändern**, um den Vorgang zu starten
+6. Überwachen Sie den Fortschritt im Dialog
+7. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-#### Steps to Batch Rename Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Rename Images**, or go to `Tools > Batch Operations > Batch Rename`
-3. In the batch rename dialog, configure rename options:
-   - **Prefix**: Add a prefix to filenames
-   - **Suffix**: Add a suffix to filenames
-   - **Numbering**: Add sequential numbers
-   - **Pattern**: Use a custom pattern for renaming
-4. Preview the new names
-5. Click **Rename** to apply the changes
+### Mehrere Bilder konvertieren
 
-## Batch Rating and Properties
+#### Schritte zum Batch-Konvertieren von Bildern:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Bilder konvertieren** oder gehen Sie zu `Werkzeuge > Batch-Operationen > Batch-Konvertieren`
+3. Wählen Sie im Batch-Konvertierungs-Dialog das Zielformat (JPEG, PNG, WebP, TIFF, BMP)
+4. Konfigurieren Sie format-spezifische Optionen:
+   - **Qualität**: Legen Sie die Qualität für verlustbehaftete Formate fest (JPEG, WebP)
+   - **Komprimierungsstufe**: Legen Sie die Komprimierungsstufe für verlustfreie Formate fest (PNG, TIFF)
+5. Wählen Sie Ausgabeeoptionen:
+   - **Originalbilder überschreiben**: Ersetzen Sie Originalbilder durch konvertierte Versionen
+   - **Als neue Bilder speichern**: Speichern Sie konvertierte Bilder als neue Dateien
+6. Klicken Sie auf **Konvertieren**, um den Vorgang zu starten
+7. Überwachen Sie den Fortschritt im Dialog
+8. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-### Rating Multiple Images
+### Mehrere Bilder umbenennen
 
-#### Steps to Batch Rate Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Set Rating**
-3. Choose the star rating (1-5 stars)
-4. The rating will be applied to all selected images
+#### Schritte zum Batch-Umbenennen von Bildern:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Bilder umbenennen** oder gehen Sie zu `Werkzeuge > Batch-Operationen > Batch-Umbenennen`
+3. Konfigurieren Sie im Batch-Umbenennungs-Dialog die Umbenennungsoptionen:
+   - **Präfix**: Fügen Sie ein Präfix zu Dateinamen hinzu
+   - **Suffix**: Fügen Sie ein Suffix zu Dateinamen hinzu
+   - **Nummerierung**: Fügen Sie fortlaufende Nummern hinzu
+   - **Muster**: Verwenden Sie ein benutzerdefiniertes Muster für die Umbenennung
+4. Vorschau der neuen Namen
+5. Klicken Sie auf **Umbenennen**, um die Änderungen anzuwenden
 
-### Marking Multiple Images as Favorites
+## Batch-Bewertung und Eigenschaften
 
-#### Steps to Batch Mark as Favorites:
-1. Select multiple images in the main content area
-2. Right-click and select **Mark as Favorite**, or click the heart button in the toolbar
-3. The favorite status will be toggled for all selected images
+### Mehrere Bilder bewerten
 
-### Marking Multiple Images for Deletion
+#### Schritte zum Batch-Bewerten von Bildern:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Bewertung setzen**
+3. Wählen Sie die Sternbewertung (1-5 Sterne)
+4. Die Bewertung wird auf alle ausgewählten Bilder angewendet
 
-#### Steps to Batch Mark for Deletion:
-1. Select multiple images in the main content area
-2. Right-click and select **Mark for Deletion**
-3. The selected images will be marked for deletion
-4. To view marked images, go to **Smart Collections > For Deletion**
-5. To delete marked images, select them and click **Delete**
+### Mehrere Bilder als Favoriten markieren
 
-## Batch AI Operations
+#### Schritte zum Batch-Markieren als Favoriten:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Als Favorit markieren** oder klicken Sie auf die Herz-Schaltfläche in der Symbolleiste
+3. Der Favoritenstatus wird für alle ausgewählten Bilder umgeschaltet
 
-### Batch Auto-Tagging
+### Mehrere Bilder zum Löschen markieren
 
-#### Steps to Batch Auto-Tag Images:
-1. Select multiple images in the main content area
-2. Right-click and select **AI Tools > Auto-Tag Images**, or go to `Tools > AI Tools > Auto-Tag Images`
-3. In the auto-tag dialog, configure tag generation options
-4. Click **Generate Tags** to start the process
-5. Monitor progress in the dialog
-6. Review generated tags
-7. Click **Apply** to apply the tags to all selected images
+#### Schritte zum Batch-Markieren zum Löschen:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Zum Löschen markieren**
+3. Die ausgewählten Bilder werden zum Löschen markiert
+4. Um markierte Bilder anzuzeigen, gehen Sie zu **Intelligente Sammlungen > Zum Löschen**
+5. Um markierte Bilder zu löschen, wählen Sie sie und klicken Sie auf **Löschen**
 
-### Batch Metadata Enhancement
+## Batch-KI-Operationen
 
-#### Steps to Batch Enhance Metadata:
-1. Select multiple images in the main content area
-2. Right-click and select **AI Tools > Enhance Metadata**, or go to `Tools > AI Tools > Enhance Metadata`
-3. In the enhancement dialog, select which metadata fields to enhance
-4. Click **Enhance Metadata** to start the process
-5. Monitor progress in the dialog
-6. Review enhanced metadata
-7. Click **Apply** to save the changes to all selected images
+### Batch-Automatik-Tagging
 
-## Batch Export
+#### Schritte zum Batch-Automatik-Taggen von Bildern:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **KI-Tools > Bilder automatisch taggen** oder gehen Sie zu `Werkzeuge > KI-Tools > Bilder automatisch taggen`
+3. Konfigurieren Sie im Automatik-Tag-Dialog die Tag-Generierungsoptionen
+4. Klicken Sie auf **Tags generieren**, um den Vorgang zu starten
+5. Überwachen Sie den Fortschritt im Dialog
+6. Überprüfen Sie die generierten Tags
+7. Klicken Sie auf **Anwenden**, um die Tags auf alle ausgewählten Bilder anzuwenden
 
-### Exporting Multiple Images
+### Batch-Metadatenverbesserung
 
-#### Steps to Batch Export Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Export Selected Images**, or go to `File > Export > Export Selected Images`
-3. In the export dialog, configure export options
-4. Click **Export** to start the process
-5. Monitor progress in the dialog
-6. Click **Finish** when done
+#### Schritte zur Batch-Verbesserung von Metadaten:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **KI-Tools > Metadaten verbessern** oder gehen Sie zu `Werkzeuge > KI-Tools > Metadaten verbessern`
+3. Wählen Sie im Verbesserungsdialog die Metadatenfelder aus, die verbessert werden sollen
+4. Klicken Sie auf **Metadaten verbessern**, um den Vorgang zu starten
+5. Überwachen Sie den Fortschritt im Dialog
+6. Überprüfen Sie die verbesserten Metadaten
+7. Klicken Sie auf **Anwenden**, um die Änderungen auf alle ausgewählten Bilder zu speichern
 
-### Using Export Presets for Batch Export
+## Batch-Export
 
-#### Steps to Use Export Presets for Batch Export:
-1. Select multiple images in the main content area
-2. Right-click and select **Export Selected Images**
-3. In the export dialog, click the **Presets** dropdown menu
-4. Select a preset from the list
-5. Click **Export** to use the preset for batch export
+### Mehrere Bilder exportieren
 
-## Batch Operations Best Practices
+#### Schritte zum Batch-Exportieren von Bildern:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Ausgewählte Bilder exportieren** oder gehen Sie zu `Datei > Export > Ausgewählte Bilder exportieren`
+3. Konfigurieren Sie im Exportdialog die Exportoptionen
+4. Klicken Sie auf **Exportieren**, um den Vorgang zu starten
+5. Überwachen Sie den Fortschritt im Dialog
+6. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-1. **Start with a Small Batch**: Test batch operations on a small number of images first
-2. **Use Undo When Possible**: Many batch operations support undo, use it if you make a mistake
-3. **Backup Before Batch Operations**: Always backup your images before performing destructive batch operations
-4. **Use Filters to Select Images**: Use search and filtering to select the exact images you want to process
-5. **Monitor Progress**: Keep an eye on batch operation progress for large batches
-6. **Use Presets**: Save frequently used batch operation configurations as presets
-7. **Check Results**: Always check the results of batch operations before continuing
-8. **Avoid Overwriting Original Files**: When possible, save processed images as new files
+### Exportvorlagen für Batch-Export verwenden
 
-## Troubleshooting Batch Operations
+#### Schritte zum Verwenden von Exportvorlagen für Batch-Export:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Ausgewählte Bilder exportieren**
+3. Klicken Sie im Exportdialog auf das Dropdown-Menü **Vorlagen**
+4. Wählen Sie eine Vorlage aus der Liste
+5. Klicken Sie auf **Exportieren**, um die Vorlage für den Batch-Export zu verwenden
 
-### Batch Operation Failing
-- **Check File Permissions**: Ensure you have write access to the images
-- **Check File Locks**: Ensure the images are not locked by other applications
-- **Check Image Formats**: Ensure all images are in supported formats
-- **Reduce Batch Size**: Try processing images in smaller batches
+## Best Practices für Batch-Operationen
 
-### Slow Batch Processing
-- **Close Other Applications**: Free up system resources by closing other applications
-- **Reduce Parallel Processing**: Decrease the number of parallel processes in settings
-- **Use Lower Quality Settings**: Use lower quality settings for faster processing
-- **Use Local Storage**: Ensure images are stored on local drives, not network drives
+1. **Mit einem kleinen Batch beginnen**: Testen Sie Batch-Operationen zuerst auf einer kleinen Anzahl von Bildern
+2. **Undo verwenden, wenn möglich**: Viele Batch-Operationen unterstützen Undo, verwenden Sie es, wenn Sie einen Fehler machen
+3. **Sichern vor Batch-Operationen**: Sichern Sie Ihre Bilder immer vor der Durchführung destruktiver Batch-Operationen
+4. **Filter verwenden, um Bilder auszuwählen**: Verwenden Sie Suche und Filterung, um genau die Bilder auszuwählen, die Sie verarbeiten möchten
+5. **Fortschritt überwachen**: Behalten Sie bei großen Batches das Auge auf den Fortschritt der Batch-Operation
+6. **Vorlagen verwenden**: Speichern Sie häufig verwendete Batch-Operationskonfigurationen als Vorlagen
+7. **Ergebnisse prüfen**: Überprüfen Sie immer die Ergebnisse von Batch-Operationen, bevor Sie fortfahren
+8. **Vermeiden Sie das Überschreiben von Originaldateien**: Speichern Sie verarbeitete Bilder, wenn möglich, als neue Dateien
 
-### Incorrect Results from Batch Operations
-- **Check Configuration**: Ensure you configured the batch operation correctly
-- **Use Undo**: If available, use undo to revert the operation
-- **Restore from Backup**: If the operation was destructive, restore from backup
-- **Test on Sample Images**: Test the operation on sample images first
+## Fehlerbehebung bei Batch-Operationen
 
-### Images Not Selected Correctly
-- **Check Selection**: Ensure you selected the correct images
-- **Use Filters**: Use search and filtering to select images more precisely
-- **Use Smart Collections**: Use smart collections to gather images for batch processing
+### Batch-Operation schlägt fehl
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf die Bilder haben
+- **Dateisperren prüfen**: Stellen Sie sicher, dass die Bilder nicht von anderen Anwendungen gesperrt sind
+- **Bildformate prüfen**: Stellen Sie sicher, dass alle Bilder in unterstützten Formaten sind
+- **Batch-Größe reduzieren**: Versuchen Sie, Bilder in kleineren Batches zu verarbeiten
 
-## Next Steps
+### Langsame Batch-Verarbeitung
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen, indem Sie andere Anwendungen schließen
+- **Parallele Verarbeitung reduzieren**: Verringern Sie die Anzahl der parallelen Prozesse in den Einstellungen
+- **Niedrigere Qualitätsstufen verwenden**: Verwenden Sie niedrigere Qualitätsstufen für schnellere Verarbeitung
+- **Lokalen Speicher verwenden**: Stellen Sie sicher, dass Bilder auf lokalen Laufwerken gespeichert sind, nicht auf Netzwerklaufwerken
 
-- Learn about [Backup & Restore](./backup-restore.md) to safeguard your library
-- Read about [AI Integration](./ai-integration.md) for more AI-powered features
-- Explore [Export & Sharing](../features/export-sharing.md) to share your processed images
+### Falsche Ergebnisse aus Batch-Operationen
+- **Konfiguration prüfen**: Stellen Sie sicher, dass Sie die Batch-Operation korrekt konfiguriert haben
+- **Undo verwenden**: Wenn verfügbar, verwenden Sie Undo, um die Operation rückgängig zu machen
+- **Aus Sicherung wiederherstellen**: Wenn die Operation destruktiv war, stellen Sie aus der Sicherung wieder her
+- **Auf Beispielbildern testen**: Testen Sie die Operation zuerst auf Beispielbildern
+
+### Bilder werden nicht korrekt ausgewählt
+- **Auswahl prüfen**: Stellen Sie sicher, dass Sie die richtigen Bilder ausgewählt haben
+- **Filter verwenden**: Verwenden Sie Suche und Filterung, um Bilder präziser auszuwählen
+- **Intelligente Sammlungen verwenden**: Verwenden Sie intelligente Sammlungen, um Bilder für die Batch-Verarbeitung zu sammeln
+
+## Nächste Schritte
+
+- Erfahren Sie mehr über [Sicherung & Wiederherstellung](./backup-restore.md), um Ihre Bibliothek zu schützen
+- Lesen Sie über [KI-Integration](./ai-integration.md) für weitere KI-gestützte Funktionen
+- Erkunden Sie [Export & Teilen](../features/export-sharing.md), um Ihre verarbeiteten Bilder zu teilen

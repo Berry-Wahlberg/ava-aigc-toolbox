@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Settings
 
 The AVA AIGC Toolbox provides a comprehensive set of settings to customize your experience. This guide covers all the available settings and how to configure them.
@@ -236,5 +237,9 @@ The AVA AIGC Toolbox provides a comprehensive set of settings to customize your 
 ## Next Steps
 
 - Learn about [Keyboard Shortcuts](./keyboard-shortcuts.md) for quick access to common commands
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [FAQ](./faq.md) for answers to frequently asked questions
+- Read about [Troubleshooting](.\/support\/troubleshooting\.md) for help with common issues
+- Explore [FAQ](.\/support\/faq\.md) for answers to frequently asked questions
+=======
+# Settings\n\n*Placeholder for application settings*
+>>>>>>> origin/doc/dev
+

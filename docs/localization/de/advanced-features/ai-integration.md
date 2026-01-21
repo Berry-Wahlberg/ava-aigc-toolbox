@@ -1,218 +1,222 @@
-# AI Integration
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox offers several AI-powered features to enhance your workflow with AI-generated images. This guide covers how to use these advanced AI integration features.
+# KI-Integration
 
-## AI-Powered Tagging
+> **English version is authoritative**
 
-### Automatic Tag Generation
+> **Die englische Version ist maßgeblich**
 
-The application can automatically generate tags for your images using AI:
+Die AVA AIGC Toolbox bietet mehrere KI-gestützte Funktionen, um Ihren Arbeitsablauf mit KI-generierten Bildern zu verbessern. Diese Anleitung beschreibt, wie Sie diese erweiterten KI-Integrationsfunktionen verwenden.
 
-#### Steps to Auto-Tag Images:
-1. Select one or more images
-2. Right-click and select **AI Tools > Auto-Tag Images**, or go to `Tools > AI Tools > Auto-Tag Images`
-3. In the auto-tag dialog, select the tag generation model (if multiple are available)
-4. Choose tag options:
-   - **Number of Tags**: How many tags to generate per image
-   - **Tag Confidence Threshold**: Minimum confidence level for generated tags
-   - **Overwrite Existing Tags**: Replace existing tags with generated tags
-5. Click **Generate Tags** to start the process
-6. Monitor progress in the dialog
-7. Review generated tags
-8. Click **Apply** to apply the tags to the images
+## KI-gestütztes Tagging
 
-### Custom Tag Models
+### Automatische Tag-Generierung
 
-You can use custom tag models for more specific tagging needs:
+Die Anwendung kann automatisch Tags für Ihre Bilder mit KI generieren:
 
-#### Steps to Add Custom Tag Model:
-1. Go to `Settings > AI > Tag Models`
-2. Click **Add Model**
-3. Select the model file from your filesystem
-4. Enter a name for the model
-5. Click **Save** to add the model
+#### Schritte zum automatischen Taggen von Bildern:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **KI-Tools > Bilder automatisch taggen** oder gehen Sie zu `Werkzeuge > KI-Tools > Bilder automatisch taggen`
+3. Wählen Sie im Automatik-Tag-Dialog das Tag-Generierungsmodell (falls mehrere verfügbar sind)
+4. Wählen Sie Tag-Optionen:
+   - **Anzahl der Tags**: Wie viele Tags pro Bild generiert werden sollen
+   - **Tag-Konfidenzschwelle**: Mindestkonfidenzniveau für generierte Tags
+   - **Vorhandene Tags überschreiben**: Ersetzen Sie vorhandene Tags durch generierte Tags
+5. Klicken Sie auf **Tags generieren**, um den Vorgang zu starten
+6. Überwachen Sie den Fortschritt im Dialog
+7. Überprüfen Sie die generierten Tags
+8. Klicken Sie auf **Anwenden**, um die Tags auf die Bilder anzuwenden
 
-### Tag Model Settings
+### benutzerdefinierte Tag-Modelle
 
-#### Steps to Configure Tag Models:
-1. Go to `Settings > AI > Tag Models`
-2. Select the model you want to configure
-3. Adjust settings:
-   - **Default Model**: Set as default tag model
-   - **Confidence Threshold**: Default confidence level for this model
-   - **Tag Language**: Language for generated tags
-   - **Tag Categories**: Enable/disable specific tag categories
-4. Click **Save** to apply changes
+Sie können benutzerdefinierte Tag-Modelle für spezielle Tagging-Bedürfnisse verwenden:
 
-## AI Metadata Enhancement
+#### Schritte zum Hinzufügen eines benutzerdefinierten Tag-Modells:
+1. Gehen Sie zu `Einstellungen > KI > Tag-Modelle`
+2. Klicken Sie auf **Modell hinzufügen**
+3. Wählen Sie die Modellentdatei von Ihrem Dateisystem
+4. Geben Sie einen Namen für das Modell ein
+5. Klicken Sie auf **Speichern**, um das Modell hinzuzufügen
 
-### Smart Metadata Completion
+### Tag-Modell-Einstellungen
 
-The application can automatically enhance your image metadata using AI:
+#### Schritte zur Konfiguration von Tag-Modellen:
+1. Gehen Sie zu `Einstellungen > KI > Tag-Modelle`
+2. Wählen Sie das Modell, das Sie konfigurieren möchten
+3. Passen Sie die Einstellungen an:
+   - **Standardmodell**: Setzen Sie als Standardtag-Modell
+   - **Konfidenzschwelle**: Standardkonfidenzniveau für dieses Modell
+   - **Tag-Sprache**: Sprache für generierte Tags
+   - **Tag-Kategorien**: Aktivieren/Deaktivieren bestimmter Tag-Kategorien
+4. Klicken Sie auf **Speichern**, um die Änderungen anzuwenden
 
-#### Steps to Enhance Metadata:
-1. Select one or more images
-2. Right-click and select **AI Tools > Enhance Metadata**, or go to `Tools > AI Tools > Enhance Metadata`
-3. In the enhancement dialog, select which metadata fields to enhance:
-   - **Prompt Enhancement**: Improve the prompt text
-   - **Negative Prompt Generation**: Generate negative prompts for images without them
-   - **Style Classification**: Add style tags and classification
-4. Click **Enhance Metadata** to start the process
-5. Monitor progress in the dialog
-6. Review enhanced metadata
-7. Click **Apply** to save the changes
+## KI-Metadatenverbesserung
 
-### Prompt Improvement
+### Intelligente Metadaten-Vervollständigung
 
-You can improve your prompts using AI to generate better results in future image generations:
+Die Anwendung kann Ihre Bildmetadaten automatisch mit KI verbessern:
 
-#### Steps to Improve Prompts:
-1. Select an image with a prompt you want to improve
-2. In the details panel, find the **AI Metadata** section
-3. Click the **Improve Prompt** button next to the prompt field
-4. The application will generate an improved prompt
-5. Review the improved prompt
-6. Click **Accept** to replace the original prompt, or **Discard** to keep the original
+#### Schritte zur Verbesserung von Metadaten:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **KI-Tools > Metadaten verbessern** oder gehen Sie zu `Werkzeuge > KI-Tools > Metadaten verbessern`
+3. Wählen Sie im Verbesserungsdialog die zu verbessernden Metadatenfelder:
+   - **Prompt-Verbesserung**: Verbessern Sie den Prompt-Text
+   - **Negative Prompt-Generierung**: Generieren Sie negative Prompts für Bilder, die keine haben
+   - **Stilklassifizierung**: Fügen Sie Stil-Tags und -Klassifizierungen hinzu
+4. Klicken Sie auf **Metadaten verbessern**, um den Vorgang zu starten
+5. Überwachen Sie den Fortschritt im Dialog
+6. Überprüfen Sie die verbesserten Metadaten
+7. Klicken Sie auf **Anwenden**, um die Änderungen zu speichern
 
-## AI Image Analysis
+### Prompt-Verbesserung
 
-### Image Style Analysis
+Sie können Ihre Prompts mit KI verbessern, um bessere Ergebnisse bei zukünftigen Bildgenerierungen zu erzielen:
 
-The application can analyze images to determine their artistic style:
+#### Schritte zur Verbesserung von Prompts:
+1. Wählen Sie ein Bild mit einem Prompt, den Sie verbessern möchten
+2. Finden Sie im Detailbereich den Abschnitt **KI-Metadaten**
+3. Klicken Sie auf die Schaltfläche **Prompt verbessern** neben dem Prompt-Feld
+4. Die Anwendung generiert einen verbesserten Prompt
+5. Überprüfen Sie den verbesserten Prompt
+6. Klicken Sie auf **Akzeptieren**, um den ursprünglichen Prompt zu ersetzen, oder auf **Verwerfen**, um den ursprünglichen zu behalten
 
-#### Steps to Analyze Image Style:
-1. Select one or more images
-2. Right-click and select **AI Tools > Analyze Style**, or go to `Tools > AI Tools > Analyze Style`
-3. In the style analysis dialog, select the style analysis model
-4. Click **Analyze Style** to start the process
-5. Monitor progress in the dialog
-6. Review the style analysis results
-7. Click **Apply** to add style tags to the images
+## KI-Bildanalyse
 
-### Image Quality Assessment
+### Bildstil-Analyse
 
-The application can assess the quality of AI-generated images:
+Die Anwendung kann Bilder analysieren, um ihren künstlerischen Stil zu bestimmen:
 
-#### Steps to Assess Image Quality:
-1. Select one or more images
-2. Right-click and select **AI Tools > Assess Quality**, or go to `Tools > AI Tools > Assess Quality`
-3. In the quality assessment dialog, select the quality model
-4. Click **Assess Quality** to start the process
-5. Monitor progress in the dialog
-6. Review the quality scores
-7. Click **Apply** to add quality scores to the images
+#### Schritte zur Analyse des Bildstils:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **KI-Tools > Stil analysieren** oder gehen Sie zu `Werkzeuge > KI-Tools > Stil analysieren`
+3. Wählen Sie im Stilanalyse-Dialog das Stilanalyse-Modell
+4. Klicken Sie auf **Stil analysieren**, um den Vorgang zu starten
+5. Überwachen Sie den Fortschritt im Dialog
+6. Überprüfen Sie die Stilanalyseergebnisse
+7. Klicken Sie auf **Anwenden**, um Stil-Tags zu den Bildern hinzuzufügen
 
-## AI Integration Settings
+### Bildqualitätsbewertung
 
-### General AI Settings
+Die Anwendung kann die Qualität von KI-generierten Bildern bewerten:
 
-#### Steps to Configure AI Settings:
-1. Go to `Settings > AI > General`
-2. Configure general AI settings:
-   - **Enable AI Features**: Toggle AI features on or off
-   - **Default AI Model**: Set the default AI model for various tasks
-   - **Max Parallel Requests**: Number of parallel AI requests
-   - **Cache AI Results**: Cache AI results for faster processing
-3. Click **Save** to apply changes
+#### Schritte zur Bewertung der Bildqualität:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **KI-Tools > Qualität bewerten** oder gehen Sie zu `Werkzeuge > KI-Tools > Qualität bewerten`
+3. Wählen Sie im Qualitätsbewertungsdialog das Qualitätsmodell
+4. Klicken Sie auf **Qualität bewerten**, um den Vorgang zu starten
+5. Überwachen Sie den Fortschritt im Dialog
+6. Überprüfen Sie die Qualitätswerte
+7. Klicken Sie auf **Anwenden**, um Qualitätswerte zu den Bildern hinzuzufügen
 
-### API Integration
+## KI-Integrations-Einstellungen
 
-The application can integrate with external AI APIs:
+### Allgemeine KI-Einstellungen
 
-#### Steps to Configure API Integration:
-1. Go to `Settings > AI > API`
-2. Select the API you want to configure
-3. Enter API credentials:
-   - **API Key**: Your API key for the service
-   - **API URL**: API endpoint URL
-   - **Rate Limit**: Maximum number of requests per minute
-4. Click **Test Connection** to verify the configuration
-5. Click **Save** to apply changes
+#### Schritte zur Konfiguration von KI-Einstellungen:
+1. Gehen Sie zu `Einstellungen > KI > Allgemein`
+2. Konfigurieren Sie allgemeine KI-Einstellungen:
+   - **KI-Funktionen aktivieren**: Schalten Sie KI-Funktionen ein oder aus
+   - **Standard-KI-Modell**: Legen Sie das Standard-KI-Modell für verschiedene Aufgaben fest
+   - **Maximale parallele Anfragen**: Anzahl der parallelen KI-Anfragen
+   - **KI-Ergebnisse cachen**: Cache-KI-Ergebnisse für schnellere Verarbeitung
+3. Klicken Sie auf **Speichern**, um die Änderungen anzuwenden
 
-### Supported AI Services
+### API-Integration
 
-The application supports integration with various AI services:
+Die Anwendung kann mit externen KI-APIs integriert werden:
 
-- **Local Models**: Run AI models locally on your machine
-- **OpenAI**: GPT for text generation and analysis
-- **Stable Diffusion APIs**: For image generation and analysis
-- **Custom APIs**: Add your own AI service endpoints
+#### Schritte zur Konfiguration der API-Integration:
+1. Gehen Sie zu `Einstellungen > KI > API`
+2. Wählen Sie die API, die Sie konfigurieren möchten
+3. Geben Sie API-Anmeldeinformationen ein:
+   - **API-Schlüssel**: Ihr API-Schlüssel für den Dienst
+   - **API-URL**: API-Endpunkt-URL
+   - **Rate Limit**: Maximale Anzahl von Anfragen pro Minute
+4. Klicken Sie auf **Verbindung testen**, um die Konfiguration zu überprüfen
+5. Klicken Sie auf **Speichern**, um die Änderungen anzuwenden
 
-## AI Workflow Integration
+### Unterstützte KI-Dienste
 
-### Integration with AI Generation Tools
+Die Anwendung unterstützt die Integration mit verschiedenen KI-Diensten:
 
-The application can integrate with AI image generation tools:
+- **Lokale Modelle**: Führen Sie KI-Modelle lokal auf Ihrem Rechner aus
+- **OpenAI**: GPT für Textgenerierung und -analyse
+- **Stable Diffusion APIs**: Für Bildgenerierung und -analyse
+- **Benutzerdefinierte APIs**: Fügen Sie Ihre eigenen KI-Dienstendpunkte hinzu
 
-#### Steps to Configure Workflow Integration:
-1. Go to `Settings > AI > Workflow Integration`
-2. Select the AI generation tool you want to integrate with
-3. Configure the tool settings:
-   - **Tool Path**: Path to the tool executable
-   - **Default Settings**: Default settings for image generation
-   - **Output Folder**: Folder where generated images are saved
-4. Click **Test Integration** to verify the configuration
-5. Click **Save** to apply changes
+## KI-Arbeitsablauf-Integration
 
-### Quick Generation
+### Integration mit KI-Generierungstools
 
-Generate new images directly from the application:
+Die Anwendung kann mit KI-Bildgenerierungstools integriert werden:
 
-#### Steps to Generate Images:
-1. Go to `Tools > AI Tools > Generate Images`
-2. In the generation dialog, configure generation settings:
-   - **Prompt**: Text prompt for image generation
-   - **Negative Prompt**: Text specifying what to exclude
-   - **Model**: AI model to use for generation
-   - **Steps**: Number of generation steps
-   - **Sampler**: Sampling method to use
-   - **CFG Scale**: Classifier-free guidance scale
-   - **Seed**: Random seed for generation
-   - **Width/Height**: Generated image dimensions
-3. Click **Generate** to start the generation process
-4. Monitor progress in the dialog
-5. When generation is complete, review the generated images
-6. Click **Add to Library** to add the images to your library
+#### Schritte zur Konfiguration der Arbeitsablauf-Integration:
+1. Gehen Sie zu `Einstellungen > KI > Arbeitsablauf-Integration`
+2. Wählen Sie das KI-Generierungstool, mit dem Sie integrieren möchten
+3. Konfigurieren Sie die Tool-Einstellungen:
+   - **Tool-Pfad**: Pfad zur Tool-ausführbaren Datei
+   - **Standard-Einstellungen**: Standard-Einstellungen für die Bildgenerierung
+   - **Ausgabeordner**: Ordner, in dem generierte Bilder gespeichert werden
+4. Klicken Sie auf **Integration testen**, um die Konfiguration zu überprüfen
+5. Klicken Sie auf **Speichern**, um die Änderungen anzuwenden
 
-## Best Practices for AI Integration
+### Schnelle Generierung
 
-1. **Use Local Models When Possible**: Local models are faster and more private
-2. **Optimize Settings**: Adjust confidence thresholds and parameters for your needs
-3. **Review Generated Content**: Always review AI-generated tags and metadata
-4. **Cache Results**: Enable caching for repeated AI operations
-5. **Limit Parallel Requests**: Avoid overwhelming your system or API limits
-6. **Update Models Regularly**: Keep your AI models up to date for better results
-7. **Use Appropriate Models**: Choose the right model for each task (tagging, enhancement, etc.)
-8. **Respect API Limits**: Follow API rate limits to avoid service disruptions
+Generieren Sie neue Bilder direkt aus der Anwendung:
 
-## Troubleshooting AI Issues
+#### Schritte zum Generieren von Bildern:
+1. Gehen Sie zu `Werkzeuge > KI-Tools > Bilder generieren`
+2. Konfigurieren Sie im Generierungsdialog die Generierungseinstellungen:
+   - **Prompt**: Text-Prompt für die Bildgenerierung
+   - **Negativer Prompt**: Text, der angibt, was ausgeschlossen werden soll
+   - **Modell**: KI-Modell für die Generierung
+   - **Schritte**: Anzahl der Generierungsschritte
+   - **Sampler**: Zu verwendende Stichprobenmethode
+   - **CFG-Skala**: Classifier-free guidance scale
+   - **Seed**: Zufallssamen für die Generierung
+   - **Breite/Höhe**: Abmessungen des generierten Bildes
+3. Klicken Sie auf **Generieren**, um den Generierungsprozess zu starten
+4. Überwachen Sie den Fortschritt im Dialog
+5. Überprüfen Sie die generierten Bilder, wenn die Generierung abgeschlossen ist
+6. Klicken Sie auf **Zur Bibliothek hinzufügen**, um die Bilder zu Ihrer Bibliothek hinzuzufügen
 
-### AI Features Not Working
-- **Check Model Availability**: Ensure the required AI models are installed
-- **Check API Credentials**: Verify API keys and configurations
-- **Check System Requirements**: Ensure your system meets the requirements for AI processing
-- **Check Firewall Settings**: Ensure the application has network access for API calls
+## Best Practices für KI-Integration
 
-### Slow AI Processing
-- **Reduce Parallel Requests**: Decrease the number of parallel AI requests
-- **Use Smaller Models**: Switch to smaller, faster models for better performance
-- **Enable Caching**: Ensure AI result caching is enabled
-- **Close Other Applications**: Free up system resources by closing other applications
+1. **Verwenden Sie lokale Modelle, wenn möglich**: Lokale Modelle sind schneller und privater
+2. **Optimieren Sie Einstellungen**: Passen Sie Konfidenzschwellen und Parameter an Ihre Bedürfnisse an
+3. **Generierten Inhalt überprüfen**: Überprüfen Sie immer KI-generierte Tags und Metadaten
+4. **Ergebnisse cachen**: Aktivieren Sie das Caching für wiederholte KI-Operationen
+5. **Parallele Anfragen begrenzen**: Vermeiden Sie, Ihr System oder API-Limits zu überlasten
+6. **Modelle regelmäßig aktualisieren**: Halten Sie Ihre KI-Modelle auf dem neuesten Stand für bessere Ergebnisse
+7. **Passende Modelle verwenden**: Wählen Sie das richtige Modell für jede Aufgabe (Tagging, Verbesserung usw.)
+8. **API-Limits beachten**: Befolgen Sie API-Rate-Limits, um Dienststörungen zu vermeiden
 
-### Poor AI Results
-- **Adjust Confidence Threshold**: Change the confidence threshold for better results
-- **Try Different Models**: Experiment with different AI models
-- **Improve Input Quality**: Ensure your input images are of good quality
-- **Update Models**: Use the latest versions of AI models
+## Fehlerbehebung bei KI-Problemen
 
-### API Integration Issues
-- **Check API Key**: Verify your API key is correct and has sufficient permissions
-- **Check API Status**: Verify the API service is operational
-- **Check Rate Limits**: Ensure you're not exceeding API rate limits
-- **Check Network Connection**: Ensure you have a stable internet connection
+### KI-Funktionen funktionieren nicht
+- **Überprüfen Sie die Modellverfügbarkeit**: Stellen Sie sicher, dass die erforderlichen KI-Modelle installiert sind
+- **Überprüfen Sie API-Anmeldeinformationen**: Verifizieren Sie API-Schlüssel und Konfigurationen
+- **Überprüfen Sie Systemanforderungen**: Stellen Sie sicher, dass Ihr System die Anforderungen für die KI-Verarbeitung erfüllt
+- **Überprüfen Sie Firewall-Einstellungen**: Stellen Sie sicher, dass die Anwendung Netzwerkzugang für API-Aufrufe hat
 
-## Next Steps
+### Langsame KI-Verarbeitung
+- **Parallelle Anfragen reduzieren**: Verringern Sie die Anzahl der parallelen KI-Anfragen
+- **Kleinere Modelle verwenden**: Wechseln Sie zu kleineren, schnelleren Modellen für bessere Leistung
+- **Caching aktivieren**: Stellen Sie sicher, dass das Caching von KI-Ergebnissen aktiviert ist
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen, indem Sie andere Anwendungen schließen
 
-- Learn about [Batch Operations](./batch-operations.md) for bulk image processing
-- Read about [Backup & Restore](./backup-restore.md) to safeguard your library
-- Explore [Metadata Editing](../features/metadata-editing.md) for manual metadata management
+### Schlechte KI-Ergebnisse
+- **Konfidenzschwelle anpassen**: Ändern Sie die Konfidenzschwelle für bessere Ergebnisse
+- **Versuchen Sie verschiedene Modelle**: Experimentieren Sie mit unterschiedlichen KI-Modellen
+- **Eingabequalität verbessern**: Stellen Sie sicher, dass Ihre Eingabebilder von guter Qualität sind
+- **Modelle aktualisieren**: Verwenden Sie die neuesten Versionen von KI-Modellen
+
+### API-Integrationsprobleme
+- **Überprüfen Sie den API-Schlüssel**: Verifizieren Sie, dass Ihr API-Schlüssel korrekt ist und über ausreichende Berechtigungen verfügt
+- **Überprüfen Sie den API-Status**: Verifizieren Sie, dass der API-Dienst betriebsbereit ist
+- **Überprüfen Sie Rate Limits**: Stellen Sie sicher, dass Sie keine API-Rate-Limits überschreiten
+- **Überprüfen Sie die Netzwerkverbindung**: Stellen Sie sicher, dass Sie über eine stabile Internetverbindung verfügen
+
+## Nächste Schritte
+
+- Erfahren Sie mehr über [Batch-Operationen](./batch-operations.md) für die Massenverarbeitung von Bildern
+- Lesen Sie über [Sicherung & Wiederherstellung](./backup-restore.md), um Ihre Bibliothek zu schützen
+- Erkunden Sie [Metadaten-Bearbeitung](../features/metadata-editing.md) für die manuelle Metadatenverwaltung

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AssemblyName>BerryAIGC.Common</AssemblyName>
+    <RootNamespace>BerryAIGC.Common</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Github\BerryAIGC.Github.csproj" />
+  </ItemGroup>
+
+
+</Project>

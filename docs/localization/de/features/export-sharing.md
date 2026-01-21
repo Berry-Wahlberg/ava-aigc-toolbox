@@ -1,220 +1,224 @@
-# Export & Sharing
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox provides several options for exporting and sharing your AI-generated images. This guide covers how to use these features effectively.
+# Export & Teilen
 
-## Exporting Images
+> **English version is authoritative**
 
-### 1. Export Single Image
+> **Die englische Version ist maßgeblich**
 
-#### Steps to Export a Single Image:
-1. Select the image you want to export
-2. Right-click and select **Export Image**, or go to `File > Export > Export Selected Images`
-3. The export dialog will appear
-4. Choose the destination folder
-5. Configure export options
-6. Click **Export** to export the image
+Die AVA AIGC Toolbox bietet mehrere Optionen zum Exportieren und Teilen Ihrer KI-generierten Bilder. Diese Anleitung beschreibt, wie Sie diese Funktionen effektiv verwenden können.
 
-### 2. Export Multiple Images
+## Bilder exportieren
 
-#### Steps to Export Multiple Images:
-1. Select multiple images in the main content area
-2. Right-click and select **Export Selected Images**, or go to `File > Export > Export Selected Images`
-3. The export dialog will appear
-4. Choose the destination folder
-5. Configure export options
-6. Click **Export** to export all selected images
-7. Monitor progress in the export dialog
-8. Click **Finish** when done
+### 1. Einzelnes Bild exportieren
 
-### 3. Export All Images
+#### Schritte zum Exportieren eines einzelnen Bildes:
+1. Wählen Sie das Bild aus, das Sie exportieren möchten
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Bild exportieren** oder gehen Sie zu `Datei > Export > Ausgewählte Bilder exportieren`
+3. Der Exportdialog wird angezeigt
+4. Wählen Sie den Zielordner
+5. Konfigurieren Sie Exportoptionen
+6. Klicken Sie auf **Exportieren**, um das Bild zu exportieren
 
-#### Steps to Export All Images:
-1. Go to `File > Export > Export All Images`
-2. The export dialog will appear
-3. Choose the destination folder
-4. Configure export options
-5. Click **Export** to export all images
-6. Monitor progress in the export dialog
-7. Click **Finish** when done
+### 2. Mehrere Bilder exportieren
 
-## Export Options
+#### Schritte zum Exportieren mehrerer Bilder:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Ausgewählte Bilder exportieren** oder gehen Sie zu `Datei > Export > Ausgewählte Bilder exportieren`
+3. Der Exportdialog wird angezeigt
+4. Wählen Sie den Zielordner
+5. Konfigurieren Sie Exportoptionen
+6. Klicken Sie auf **Exportieren**, um alle ausgewählten Bilder zu exportieren
+7. Überwachen Sie den Fortschritt im Exportdialog
+8. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-The export dialog provides several options to customize your export:
+### 3. Alle Bilder exportieren
 
-### 1. Destination
-- **Folder**: Choose the destination folder for exported images
-- **Subfolder Structure**: Choose how to handle subfolders (flat structure, preserve original structure, create new structure)
+#### Schritte zum Exportieren aller Bilder:
+1. Gehen Sie zu `Datei > Export > Alle Bilder exportieren`
+2. Der Exportdialog wird angezeigt
+3. Wählen Sie den Zielordner
+4. Konfigurieren Sie Exportoptionen
+5. Klicken Sie auf **Exportieren**, um alle Bilder zu exportieren
+6. Überwachen Sie den Fortschritt im Exportdialog
+7. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-### 2. File Naming
-- **Original Filename**: Use the original filenames
-- **Custom Pattern**: Create a custom filename pattern using variables
-  - `{filename}`: Original filename
-  - `{id}`: Image ID
-  - `{model}`: Model name
-  - `{date}`: Creation date
-  - `{time}`: Creation time
-  - `{seed}`: Seed value
+## Exportoptionen
 
-### 3. Format Options
-- **Preserve Original Format**: Keep the original file format
-- **Convert to Format**: Convert images to a different format (JPEG, PNG, WebP, TIFF, BMP)
-- **Quality**: Set the quality for lossy formats (JPEG, WebP)
-- **Compression Level**: Set the compression level for lossless formats (PNG, TIFF)
+Der Exportdialog bietet mehrere Optionen, um Ihren Export anzupassen:
 
-### 4. Resize Options
-- **Preserve Original Size**: Keep the original image dimensions
-- **Resize to Specific Dimensions**: Resize images to specific width and height
-- **Maintain Aspect Ratio**: Keep the original aspect ratio when resizing
-- **Resize by Percentage**: Resize images by a percentage of the original size
+### 1. Zielort
+- **Ordner**: Wählen Sie den Zielordner für exportierte Bilder
+- **Unterordnerstruktur**: Wählen Sie, wie mit Unterordnern umgegangen werden soll (flache Struktur, Originalstruktur beibehalten, neue Struktur erstellen)
 
-### 5. Metadata Options
-- **Include Metadata**: Embed metadata in the exported images
-- **Select Metadata Fields**: Choose which metadata fields to include
-- **Format**: Choose metadata format (EXIF, XMP, PNG Text Chunks)
-- **Preserve Original Metadata**: Keep all original metadata
+### 2. Dateibenennung
+- **Originaldateiname**: Verwenden Sie die Originaldateinamen
+- **Benutzerdefiniertes Muster**: Erstellen Sie ein benutzerdefiniertes Dateinamenmuster unter Verwendung von Variablen
+  - `{filename}`: Originaldateiname
+  - `{id}`: Bild-ID
+  - `{model}`: Modellname
+  - `{date}`: Erstellungsdatum
+  - `{time}`: Erstellungszeit
+  - `{seed}`: Seed-Wert
 
-### 6. Additional Options
-- **Overwrite Existing Files**: Replace files with the same name in the destination
-- **Create Subfolders for Different Models**: Create separate subfolders for different AI models
-- **Open Destination Folder After Export**: Open the destination folder in your file manager after export
+### 3. Formatoptionen
+- **Originalformat beibehalten**: Behalten Sie das Originaldateiformat
+- **In Format konvertieren**: Konvertieren Sie Bilder in ein anderes Format (JPEG, PNG, WebP, TIFF, BMP)
+- **Qualität**: Legen Sie die Qualität für verlustbehaftete Formate fest (JPEG, WebP)
+- **Komprimierungsstufe**: Legen Sie die Komprimierungsstufe für verlustfreie Formate fest (PNG, TIFF)
 
-## Sharing Images
+### 4. Änderungsoptionen
+- **Originalgröße beibehalten**: Behalten Sie die Originalbildabmessungen
+- **Auf bestimmte Abmessungen ändern**: Ändern Sie Bilder auf bestimmte Breite und Höhe
+- **Seitenverhältnis beibehalten**: Behalten Sie das Originalseitenverhältnis bei der Änderung
+- **Nach Prozentsatz ändern**: Ändern Sie Bilder um einen Prozentsatz der Originalgröße
 
-### 1. Share via Email
+### 5. Metadatenoptionen
+- **Metadaten einschließen**: Fügen Sie Metadaten in die exportierten Bilder ein
+- **Metadatenfelder auswählen**: Wählen Sie, welche Metadatenfelder eingeschlossen werden sollen
+- **Format**: Wählen Sie das Metadatenformat (EXIF, XMP, PNG Text Chunks)
+- **Originalmetadaten beibehalten**: Behalten Sie alle Originalmetadaten
 
-#### Steps to Share via Email:
-1. Select one or more images
-2. Right-click and select **Share > Email**
-3. Your default email client will open with the images attached
-4. Compose your email and send
+### 6. Zusätzliche Optionen
+- **Vorhandene Dateien überschreiben**: Ersetzen Sie Dateien mit gleichem Namen im Ziel
+- **Unterordner für verschiedene Modelle erstellen**: Erstellen Sie separate Unterordner für verschiedene KI-Modelle
+- **Zielordner nach Export öffnen**: Öffnen Sie den Zielordner in Ihrem Dateimanager nach dem Export
 
-### 2. Share to Social Media
+## Bilder teilen
 
-#### Steps to Share to Social Media:
-1. Select an image
-2. Right-click and select **Share > Social Media**
-3. Choose a social media platform (if supported)
-4. Follow the platform-specific sharing instructions
+### 1. Über E-Mail teilen
 
-### 3. Copy to Clipboard
+#### Schritte zum Teilen über E-Mail:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Teilen > E-Mail**
+3. Ihr Standard-E-Mail-Client wird geöffnet, mit den Bildern als Anhängen
+4. Verfassen Sie Ihre E-Mail und senden Sie sie
 
-#### Steps to Copy to Clipboard:
-1. Select an image
-2. Right-click and select **Copy**, or press `Ctrl/Cmd + C`
-3. The image will be copied to your clipboard
-4. Paste it into another application using `Ctrl/Cmd + V`
+### 2. Auf sozialen Medien teilen
 
-### 4. Generate Shareable Link
+#### Schritte zum Teilen auf sozialen Medien:
+1. Wählen Sie ein Bild aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Teilen > Soziale Medien**
+3. Wählen Sie eine soziale Medienplattform (falls unterstützt)
+4. Folgen Sie den plattformspezifischen Anweisungen zum Teilen
 
-#### Steps to Generate Shareable Link:
-1. Select one or more images
-2. Right-click and select **Share > Generate Link**
-3. Configure sharing options (expiry, access permissions)
-4. Click **Generate Link**
-5. Copy the generated link to share with others
+### 3. In die Zwischenablage kopieren
 
-## Batch Export
+#### Schritte zum Kopieren in die Zwischenablage:
+1. Wählen Sie ein Bild aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Kopieren** oder drücken Sie `Ctrl/Cmd + C`
+3. Das Bild wird in Ihre Zwischenablage kopiert
+4. Fügen Sie es mit `Ctrl/Cmd + V` in eine andere Anwendung ein
 
-For more advanced batch export options, use the batch export tool:
+### 4. Freigabeverknüpfung generieren
 
-#### Steps to Use Batch Export:
-1. Go to `Tools > Batch Operations > Batch Export`
-2. Select the images you want to export (all, current view, or selected)
-3. Configure export options as described above
-4. Click **Export** to start the batch export
-5. Monitor progress in the batch export dialog
-6. Click **Finish** when done
+#### Schritte zum Generieren einer Freigabeverknüpfung:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Teilen > Link generieren**
+3. Konfigurieren Sie Freigabeoptionen (Ablaufdatum, Zugriffsberechtigungen)
+4. Klicken Sie auf **Link generieren**
+5. Kopieren Sie den generierten Link, um ihn mit anderen zu teilen
 
-## Export Presets
+## Batch-Export
 
-You can save export configurations as presets for quick access:
+Für erweiterte Batch-Exportoptionen verwenden Sie das Batch-Export-Tool:
 
-### Creating Export Presets
+#### Schritte zum Verwenden des Batch-Export:
+1. Gehen Sie zu `Werkzeuge > Batch-Operationen > Batch-Export`
+2. Wählen Sie die Bilder aus, die Sie exportieren möchten (alle, aktuelle Ansicht oder ausgewählt)
+3. Konfigurieren Sie die Exportoptionen wie oben beschrieben
+4. Klicken Sie auf **Exportieren**, um den Batch-Export zu starten
+5. Überwachen Sie den Fortschritt im Batch-Exportdialog
+6. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-#### Steps to Create an Export Preset:
-1. Open the export dialog
-2. Configure the export options
-3. Click the **Save Preset** button
-4. Enter a name for the preset
-5. Click **Save** to create the preset
+## Exportvorlagen
 
-### Using Export Presets
+Sie können Exportkonfigurationen als Vorlagen speichern, um sie schnell zugänglich zu machen:
 
-#### Steps to Use an Export Preset:
-1. Open the export dialog
-2. Click the **Presets** dropdown menu
-3. Select a preset from the list
-4. The export options will be populated with the preset settings
-5. Click **Export** to use the preset
+### Exportvorlagen erstellen
 
-### Managing Export Presets
+#### Schritte zum Erstellen einer Exportvorlage:
+1. Öffnen Sie den Exportdialog
+2. Konfigurieren Sie die Exportoptionen
+3. Klicken Sie auf die Schaltfläche **Vorlage speichern**
+4. Geben Sie einen Namen für die Vorlage ein
+5. Klicken Sie auf **Speichern**, um die Vorlage zu erstellen
 
-#### Steps to Manage Export Presets:
-1. Open the export dialog
-2. Click the **Manage Presets** button
-3. In the preset management dialog, you can:
-   - **Edit**: Modify existing presets
-   - **Delete**: Remove unwanted presets
-   - **Reorder**: Change the order of presets
-4. Click **Close** when finished
+### Exportvorlagen verwenden
 
-## Metadata Export
+#### Schritte zum Verwenden einer Exportvorlage:
+1. Öffnen Sie den Exportdialog
+2. Klicken Sie auf das Dropdown-Menü **Vorlagen**
+3. Wählen Sie eine Vorlage aus der Liste
+4. Die Exportoptionen werden mit den Vorlageneinstellungen gefüllt
+5. Klicken Sie auf **Exportieren**, um die Vorlage zu verwenden
 
-In addition to exporting images, you can also export metadata separately:
+### Exportvorlagen verwalten
 
-### Exporting Metadata to Files
+#### Schritte zum Verwalten von Exportvorlagen:
+1. Öffnen Sie den Exportdialog
+2. Klicken Sie auf die Schaltfläche **Vorlagen verwalten**
+3. Im Vorlagenverwaltungsdialog können Sie:
+   - **Bearbeiten**: Vorhandene Vorlagen ändern
+   - **Löschen**: Nicht gewünschte Vorlagen entfernen
+   - **Umsortieren**: Die Reihenfolge von Vorlagen ändern
+4. Klicken Sie auf **Schließen**, wenn Sie fertig sind
 
-#### Steps to Export Metadata:
-1. Select one or more images
-2. Go to `File > Export > Export Metadata`
-3. Choose the export format (JSON, CSV, TXT)
-4. Select which metadata fields to include
-5. Choose the destination folder
-6. Click **Export** to export the metadata
+## Metadatenexport
 
-### Metadata Formats
+Zusätzlich zum Exportieren von Bildern können Sie Metadaten auch separat exportieren:
 
-- **JSON**: Structured format suitable for programming and data analysis
-- **CSV**: Comma-separated values suitable for spreadsheets
-- **TXT**: Plain text format suitable for reading
+### Metadaten in Dateien exportieren
 
-## Best Practices for Exporting
+#### Schritte zum Exportieren von Metadaten:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Gehen Sie zu `Datei > Export > Metadaten exportieren`
+3. Wählen Sie das Exportformat (JSON, CSV, TXT)
+4. Wählen Sie, welche Metadatenfelder eingeschlossen werden sollen
+5. Wählen Sie den Zielordner
+6. Klicken Sie auf **Exportieren**, um die Metadaten zu exportieren
 
-1. **Choose the Right Format**: Use appropriate formats for your use case (JPEG for web, PNG for lossless, WebP for modern web)
-2. **Optimize for Destination**: Resize and compress images appropriately for their intended use
-3. **Include Relevant Metadata**: Always include relevant metadata when sharing with others
-4. **Use Descriptive Filenames**: Use descriptive filenames for easy identification
-5. **Create Export Presets**: Save frequently used export configurations as presets
-6. **Test with Sample Images**: Test your export settings with a few sample images first
-7. **Backup Before Exporting**: Backup your images before performing large export operations
-8. **Monitor Progress**: Keep an eye on export progress for large batches
+### Metadatenformate
 
-## Troubleshooting Export Issues
+- **JSON**: Strukturiertes Format, das für Programmierung und Datenanalyse geeignet ist
+- **CSV**: Komma-getrennte Werte, die für Tabellenkalkulationen geeignet sind
+- **TXT**: Klartextformat, das zum Lesen geeignet ist
 
-### Export Failing
-- **Check Destination Permissions**: Ensure you have write access to the destination folder
-- **Check File Size**: Some export formats may have size limitations
-- **Check Image Format**: Ensure the image format is supported for the chosen export format
-- **Check Disk Space**: Ensure there's enough disk space in the destination
+## Best Practices für Exportieren
 
-### Images Not Exporting with Metadata
-- **Check Metadata Options**: Ensure you've selected to include metadata in the export
-- **Check Format Support**: Ensure the export format supports metadata embedding
-- **Check Metadata Availability**: Ensure the images have metadata to export
+1. **Wählen Sie das richtige Format**: Verwenden Sie geeignete Formate für Ihren Anwendungsfall (JPEG für Web, PNG für verlustfrei, WebP für modernes Web)
+2. **Für das Ziel optimieren**: Passen Sie Bilder entsprechend ihrer beabsichtigten Verwendung an (Größe und Kompression)
+3. **Relevante Metadaten einschließen**: Schließen Sie immer relevante Metadaten ein, wenn Sie mit anderen teilen
+4. **Beschreibende Dateinamen verwenden**: Verwenden Sie beschreibende Dateinamen für einfache Identifikation
+5. **Exportvorlagen erstellen**: Speichern Sie häufig verwendete Exportkonfigurationen als Vorlagen
+6. **Mit Beispielbildern testen**: Testen Sie Ihre Exporteinstellungen zuerst mit ein paar Beispielbildern
+7. **Vor Exportieren sichern**: Sichern Sie Ihre Bilder vor der Durchführung großer Exportoperationen
+8. **Fortschritt überwachen**: Behalten Sie bei großen Batches das Auge auf den Exportfortschritt
 
-### Slow Export Performance
-- **Reduce Quality/Compression**: Lower quality or compression for faster export
-- **Export Fewer Images**: Export images in smaller batches
-- **Close Other Applications**: Free up system resources by closing other applications
-- **Use Faster Formats**: Use faster formats like WebP for web export
+## Fehlerbehebung bei Exportproblemen
 
-### Incorrect Filenames
-- **Check Naming Pattern**: Ensure your custom filename pattern is correct
-- **Check Variables**: Ensure you're using valid variables in your naming pattern
-- **Avoid Special Characters**: Avoid special characters in filenames that may not be supported by your filesystem
+### Export schlägt fehl
+- **Zielberechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf den Zielordner haben
+- **Dateigröße prüfen**: Einige Exportformate können Größenbeschränkungen haben
+- **Bildformat prüfen**: Stellen Sie sicher, dass das Bildformat für das gewählte Exportformat unterstützt wird
+- **Platz prüfen**: Stellen Sie sicher, dass genügend Speicherplatz im Ziel vorhanden ist
 
-## Next Steps
+### Bilder werden nicht mit Metadaten exportiert
+- **Metadatenoptionen prüfen**: Stellen Sie sicher, dass Sie ausgewählt haben, Metadaten im Export einzubeziehen
+- **Formatsupport prüfen**: Stellen Sie sicher, dass das Exportformat das Einbetten von Metadaten unterstützt
+- **Metadatenverfügbarkeit prüfen**: Stellen Sie sicher, dass die Bilder über Metadaten zum Exportieren verfügen
 
-- Learn about [AI Integration](../advanced-features/ai-integration.md) for more AI-powered features
-- Read about [Batch Operations](../advanced-features/batch-operations.md) for more bulk processing options
-- Explore [Backup & Restore](../advanced-features/backup-restore.md) to safeguard your image library
+### Langsame Exportleistung
+- **Qualität/Kompression reduzieren**: Verringern Sie Qualität oder Kompression für schnelleren Export
+- **Weniger Bilder exportieren**: Exportieren Sie Bilder in kleineren Batches
+- **Andere Anwendungen schließen**: Freigeben Sie Systemressourcen, indem Sie andere Anwendungen schließen
+- **Schnellere Formate verwenden**: Verwenden Sie schnellere Formate wie WebP für Web-Export
+
+### Falsche Dateinamen
+- **Benennungsmuster prüfen**: Stellen Sie sicher, dass Ihr benutzerdefiniertes Dateinamenmuster korrekt ist
+- **Variablen prüfen**: Stellen Sie sicher, dass Sie gültige Variablen in Ihrem Benennungsmuster verwenden
+- **Spezielle Zeichen vermeiden**: Vermeiden Sie spezielle Zeichen in Dateinamen, die von Ihrem Dateisystem nicht unterstützt werden
+
+## Nächste Schritte
+
+- Erfahren Sie mehr über [KI-Integration](../advanced-features/ai-integration.md) für weitere KI-gestützte Funktionen
+- Lesen Sie über [Batch-Operationen](../advanced-features/batch-operations.md) für weitere Massenverarbeitungsoptionen
+- Erkunden Sie [Sicherung & Wiederherstellung](../advanced-features/backup-restore.md), um Ihre Bildbibliothek zu schützen

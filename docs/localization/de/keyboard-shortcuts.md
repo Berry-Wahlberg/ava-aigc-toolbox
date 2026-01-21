@@ -1,8 +1,8 @@
 # Tastaturkürzel
 
-> **Die englische Version gilt als maßgebend**
+> **Die englische Version ist maßgeblich**
 
-Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen die Arbeit effizienter zu gestalten. Diese Anleitung listet alle verfügbaren Tastaturkürzel und wie Sie sie anpassen können.
+Die AVA AIGC Toolbox bietet einen umfassenden Satz an Tastaturkürzeln, um Ihre Arbeit effizienter zu gestalten. Diese Anleitung listet alle verfügbaren Tastaturkürzel und zeigt, wie Sie sie anpassen können.
 
 ## Allgemeine Tastaturkürzel
 
@@ -12,9 +12,9 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 | `Ctrl/Cmd + S` | Aktuelle Änderungen speichern |
 | `Ctrl/Cmd + Q` | Anwendung beenden |
 | `Ctrl/Cmd + ,` | Einstellungen öffnen |
-| `Ctrl/Cmd + H` | Seitenleiste anzeigen/verstecken |
-| `Ctrl/Cmd + L` | Suchleiste fokussieren |
-| `Ctrl/Cmd + F` | In aktueller Ansicht suchen |
+| `Ctrl/Cmd + H` | Seitenleiste anzeigen/ausblenden |
+| `Ctrl/Cmd + L` | Fokus auf die Suchleiste legen |
+| `Ctrl/Cmd + F` | In der aktuellen Ansicht suchen |
 | `F1` | Dokumentation öffnen |
 | `F12` | Debug-Modus umschalten |
 
@@ -22,12 +22,12 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 
 | Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + Left Arrow` | Zur vorherigen Ansicht navigieren |
-| `Ctrl/Cmd + Right Arrow` | Zur nächsten Ansicht navigieren |
+| `Ctrl/Cmd + Linke Pfeiltaste` | Zur vorherigen Ansicht navigieren |
+| `Ctrl/Cmd + Rechte Pfeiltaste` | Zur nächsten Ansicht navigieren |
 | `Ctrl/Cmd + Home` | Zum Anfang der Ansicht gehen |
 | `Ctrl/Cmd + End` | Zum Ende der Ansicht gehen |
-| `Page Up` | Nach oben scrollen |
-| `Page Down` | Nach unten scrollen |
+| `Bild hoch` | Nach oben scrollen |
+| `Bild runter` | Nach unten scrollen |
 | `Home` | Zum Anfang scrollen |
 | `End` | Zum Ende scrollen |
 
@@ -37,24 +37,24 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 |----------|--------|
 | `Enter` | Ausgewähltes Bild in der Vollbildansicht öffnen |
 | `Esc` | Vollbildansicht schließen |
-| `Right Arrow` | Nächstes Bild in der Vollbildansicht |
-| `Left Arrow` | Vorheriges Bild in der Vollbildansicht |
-| `Up Arrow` | Vergrößern |
-| `Down Arrow` | Verkleinern |
+| `Rechte Pfeiltaste` | Nächstes Bild in der Vollbildansicht |
+| `Linke Pfeiltaste` | Vorheriges Bild in der Vollbildansicht |
+| `Obere Pfeiltaste` | Hineinzoomen |
+| `Untere Pfeiltaste` | Herauszoomen |
 | `0` | Zoom zurücksetzen |
-| `F11` | Zwischen "Passend zum Bildschirm" und tatsächlicher Größe umschalten |
-| `Space` | Diashow in der Vollbildansicht umschalten |
+| `F11` | Zwischen Anpassen an Bildschirm und Originalgröße umschalten |
+| `Leertaste` | Diashow in der Vollbildansicht umschalten |
 
 ## Auswahlkürzel
 
 | Kürzel | Aktion |
 |----------|--------|
 | `Ctrl/Cmd + A` | Alle Bilder auswählen |
-| `Ctrl/Cmd + D` | Auswahl aufheben |
+| `Ctrl/Cmd + D` | Alle Bilder abwählen |
 | `Ctrl/Cmd + I` | Auswahl invertieren |
-| `Ctrl/Cmd + Click` | Einzelne Bilder auswählen/abwählen |
-| `Shift + Click` | Bereich von Bildern auswählen |
-| `Ctrl/Cmd + Shift + Click` | Bereich von Bildern ab der letzten Auswahl auswählen |
+| `Ctrl/Cmd + Klick` | Einzelne Bilder auswählen/abwählen |
+| `Shift + Klick` | Bereich von Bildern auswählen |
+| `Ctrl/Cmd + Shift + Klick` | Bereich von Bildern ab der letzten Auswahl auswählen |
 
 ## Bildverwaltungskürzel
 
@@ -62,7 +62,7 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 |----------|--------|
 | `Ctrl/Cmd + I` | Bilder importieren |
 | `Ctrl/Cmd + E` | Ausgewählte Bilder exportieren |
-| `Delete` | Ausgewählte Bilder löschen |
+| `Entfernen` | Ausgewählte Bilder löschen |
 | `Ctrl/Cmd + Z` | Letzte Aktion rückgängig machen |
 | `Ctrl/Cmd + Shift + Z` | Letzte rückgängig gemachte Aktion wiederholen |
 | `Ctrl/Cmd + C` | Ausgewählte Bilder kopieren |
@@ -77,7 +77,7 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 | `Ctrl/Cmd + Shift + T` | Tags von ausgewählten Bildern entfernen |
 | `Ctrl/Cmd + U` | Alle Tags von ausgewählten Bildern entfernen |
 
-## Bewertungs- und Eigenschaftskürzel
+## Bewertungs- & Eigenschaftskürzel
 
 | Kürzel | Aktion |
 |----------|--------|
@@ -88,15 +88,15 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 | `Ctrl/Cmd + 5` | Bewertung auf 5 Sterne setzen |
 | `Ctrl/Cmd + 0` | Bewertung löschen |
 | `Ctrl/Cmd + F` | Favoritenstatus umschalten |
-| `Ctrl/Cmd + D` | Zur Löschung markieren/unmarkieren |
+| `Ctrl/Cmd + D` | Zur Löschung markiert-Status umschalten |
 | `Ctrl/Cmd + N` | NSFW-Status umschalten |
 
-## Ansichtsmoduskürzel
+## Anzeigemodus-Kürzel
 
 | Kürzel | Aktion |
 |----------|--------|
 | `Ctrl/Cmd + G` | Zwischen Gitter- und Listenansicht umschalten |
-| `Ctrl/Cmd + Shift + G` | Gitternetzlinien anzeigen/verstecken |
+| `Ctrl/Cmd + Shift + G` | Gitternetzlinien anzeigen/ausblenden |
 | `Ctrl/Cmd + +` | Vorschaubildgröße erhöhen |
 | `Ctrl/Cmd + -` | Vorschaubildgröße verringern |
 | `Ctrl/Cmd + 0` | Vorschaubildgröße zurücksetzen |
@@ -105,14 +105,14 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 
 | Kürzel | Aktion |
 |----------|--------|
-| `Ctrl/Cmd + F` | Suchleiste fokussieren |
+| `Ctrl/Cmd + F` | Fokus auf die Suchleiste legen |
 | `Enter` | Suche ausführen |
 | `Esc` | Suche löschen |
 | `Ctrl/Cmd + Shift + F` | Erweiterte Suche öffnen |
-| `Down Arrow` | In Suchergebnissen nach unten navigieren |
-| `Up Arrow` | In Suchergebnissen nach oben navigieren |
+| `Untere Pfeiltaste` | In Suchergebnissen nach unten navigieren |
+| `Obere Pfeiltaste` | In Suchergebnissen nach oben navigieren |
 
-## Stapeloperationenkürzel
+## Stapeloperationen-Kürzel
 
 | Kürzel | Aktion |
 |----------|--------|
@@ -122,28 +122,28 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Tastaturkürzeln, um Ihnen
 | `Ctrl/Cmd + Shift + A` | Bilder stapelweise automatisch taggen |
 | `Ctrl/Cmd + Shift + E` | Metadaten stapelweise verbessern |
 
-## Menükürzel
+## Menü-Kürzel
 
 | Kürzel | Aktion |
 |----------|--------|
-| `Alt/F10` | Menüleiste fokussieren |
-| `Arrow Keys` | Menüelemente navigieren |
+| `Alt/F10` | Fokus auf die Menüleiste legen |
+| `Pfeiltasten` | Navigieren zwischen Menüelementen |
 | `Enter` | Menüelement auswählen |
 | `Esc` | Menü schließen |
 
-## Tastaturkürzel anpassen
+## Anpassen von Tastaturkürzeln
 
-Sie können Tastaturkürzel an Ihre Arbeitsweise anpassen:
+Sie können Tastaturkürzel an Ihre Workflow anpassen:
 
 #### Schritte zum Anpassen von Tastaturkürzeln:
 1. Gehen Sie zu `Datei > Einstellungen > Tastaturkürzel`
 2. In den Tastaturkürzel-Einstellungen können Sie:
-   - **Alle** verfügbaren Kürzel **anzeigen**
-   - Nach **bestimmten** Kürzeln **suchen**
-   - **Vorhandene** Kürzel **bearbeiten**
-   - Kürzel auf **Standardwerte zurücksetzen**
-3. Zum Bearbeiten eines Kürzels:
-   - Klicken Sie auf das Kürzelsfeld neben der Aktion
+   - **Anzeigen** aller verfügbaren Kürzel
+   - **Suchen** nach bestimmten Kürzeln
+   - **Bearbeiten** vorhandener Kürzel
+   - **Zurücksetzen** von Kürzeln auf Standardwerte
+3. Um ein Kürzel zu bearbeiten:
+   - Klicken Sie auf das Kürzelfeld neben der Aktion
    - Drücken Sie die neue Tastenkombination
    - Klicken Sie auf **Speichern**, um das neue Kürzel anzuwenden
 4. Klicken Sie auf **Speichern**, um alle Änderungen zu speichern
@@ -168,24 +168,24 @@ Sie können Tastaturkürzel an Ihre Arbeitsweise anpassen:
 
 ## Best Practices für Tastaturkürzel
 
-1. **Lernen Sie häufig verwendete Kürzel**: Beginnen Sie mit den am häufigsten verwendeten Kürzeln
-2. **Passen Sie sie an Ihre Arbeitsweise an**: Passen Sie Kürzel an Ihre bevorzugte Arbeitsweise an
-3. **Vermeiden Sie Konflikte**: Stellen Sie sicher, dass neue Kürzel keine Konflikte mit bestehenden verursachen
+1. **Lernen Sie gängige Kürzel**: Beginnen Sie mit den am häufigsten verwendeten Kürzeln
+2. **Anpassen an Ihren Workflow**: Passen Sie Kürzel an Ihren bevorzugten Workflow an
+3. **Vermeiden Sie Konflikte**: Stellen Sie sicher, dass neue Kürzel keine Konflikte mit bestehenden haben
 4. **Dokumentieren Sie Ihre Kürzel**: Halten Sie eine Aufzeichnung Ihrer benutzerdefinierten Kürzel
-5. **Üben Sie regelmäßig**: Verwenden Sie Kürzel häufig, um Muskelgedächtnis aufzubauen
-6. **Setzen Sie sie bei Bedarf zurück**: Wenn Sie verwirrt sind, setzen Sie die Kürzel auf Standardwerte zurück
+5. **Regelmäßig üben**: Verwenden Sie Kürzel häufig, um Muskelgedächtnis aufzubauen
+6. **Bei Bedarf zurücksetzen**: Wenn Sie sich verwirren, setzen Sie die Kürzel auf Standardwerte zurück
 
-## Problembehebung bei Tastaturkürzeln
+## Fehlerbehebung bei Tastaturkürzeln
 
 ### Kürzel funktionieren nicht
 - **Fokus prüfen**: Stellen Sie sicher, dass die richtige Ansicht den Fokus hat
 - **Konflikte prüfen**: Stellen Sie sicher, dass keine andere Anwendung das Kürzel abfängt
-- **Einstellungen prüfen**: Vergewissern Sie sich, dass das Kürzel in den Einstellungen aktiviert ist
-- **Anwendung neu starten**: Versuchen Sie, die Anwendung neu zu starten
-- **Kürzel zurücksetzen**: Setzen Sie die Kürzel auf Standardwerte zurück, wenn Probleme weiterhin auftreten
+- **Einstellungen prüfen**: Verifizieren Sie, dass das Kürzel in den Einstellungen aktiviert ist
+- **Anwendung neu starten**: Probieren Sie, die Anwendung neu zu starten
+- **Kürzel zurücksetzen**: Setzen Sie die Kürzel auf Standardwerte zurück, falls Probleme bestehen
 
 ### Kürzelkonflikte
-- **Konfliktanwendung identifizieren**: Bestimmen Sie, welche Anwendung im Konflikt steht
+- **Konfliktierende Anwendung identifizieren**: Ermitteln Sie, welche Anwendung konfliktiert
 - **Kürzel ändern**: Ändern Sie das Kürzel in den Einstellungen
 - **Konflikt deaktivieren**: Deaktivieren Sie das konfligierende Kürzel in der anderen Anwendung
 
@@ -196,6 +196,6 @@ Sie können Tastaturkürzel an Ihre Arbeitsweise anpassen:
 
 ## Nächste Schritte
 
-- Erfahren Sie mehr über [Einstellungen](./settings.md), um weitere Anwendungsvorlieben zu konfigurieren
-- Lesen Sie über [Problembehebung](./troubleshooting.md), um Hilfe bei häufig auftretenden Problemen zu erhalten
-- Entdecken Sie [Tipps & Best Practices](./tips-best-practices.md) für weitere Benutzer-Tipps
+- Erfahren Sie mehr über [Einstellungen](./settings.md), um andere Anwendungsvorlieben zu konfigurieren
+- Lesen Sie über [Fehlerbehebung](./troubleshooting.md) für Hilfe bei häufigen Problemen
+- Entdecken Sie [Tipps & Best Practices](./tips-best-practices.md) für weitere Benutzertipps

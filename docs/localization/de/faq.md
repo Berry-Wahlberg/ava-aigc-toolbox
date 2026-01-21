@@ -1,164 +1,166 @@
-# FAQ
-\n> **Die englische Version gilt als maßgebend**\n\n
-This FAQ section answers common questions about the AVA AIGC Toolbox. If you don't find what you're looking for, please check the [Troubleshooting](./troubleshooting.md) guide or contact support.
+# Häufig gestellte Fragen
 
-## General Questions
+> **Die englische Version ist maßgeblich**
 
-### What is AVA AIGC Toolbox?
-AVA AIGC Toolbox is a comprehensive tool for managing, organizing, and editing AI-generated images. It provides features like metadata extraction, auto-tagging, search functionality, and AI-powered image enhancement.
+Dieser FAQ-Bereich beantwortet häufige Fragen zur AVA AIGC Toolbox. Wenn Sie nicht finden, wonach Sie suchen, überprüfen Sie bitte die [Fehlerbehebung](./troubleshooting.md)-Anleitung oder wenden Sie sich an den Support.
 
-### Is AVA AIGC Toolbox free to use?
-Yes, AVA AIGC Toolbox is an open-source project available for free under the MIT License.
+## Allgemeine Fragen
 
-### What platforms does AVA AIGC Toolbox support?
-AVA AIGC Toolbox is built with Avalonia UI framework, which means it supports Windows, macOS, and Linux operating systems.
+### Was ist die AVA AIGC Toolbox?
+Die AVA AIGC Toolbox ist ein umfassendes Tool zur Verwaltung, Organisation und Bearbeitung von KI-generierten Bildern. Sie bietet Funktionen wie Metadatenextraktion, automatisches Taggen, Suchfunktionalität und KI-gestützte Bildverbesserung.
 
-### What file formats are supported?
-The application supports all common image formats including JPEG, PNG, WebP, BMP, TIFF, and AVIF. It also supports animated formats like GIF and WebP.
+### Ist die AVA AIGC Toolbox kostenlos zu verwenden?
+Ja, die AVA AIGC Toolbox ist ein Open-Source-Projekt, das unter der MIT-Lizenz kostenlos verfügbar ist.
 
-### How much storage space do I need?
-The application itself requires minimal storage space (around 100MB). The actual storage requirements depend on the size of your image library and the cache settings you configure.
+### Welche Plattformen unterstützt die AVA AIGC Toolbox?
+Die AVA AIGC Toolbox ist mit dem Avalonia UI-Framework erstellt, was bedeutet, dass sie Windows, macOS und Linux-Betriebssysteme unterstützt.
 
-## Installation & Setup
+### Welche Dateiformate werden unterstützt?
+Die Anwendung unterstützt alle gängigen Bildformate einschließlich JPEG, PNG, WebP, BMP, TIFF und AVIF. Sie unterstützt auch animierte Formate wie GIF und WebP.
 
-### How do I install AVA AIGC Toolbox?
-Refer to the [Installation](./installation.md) guide for detailed instructions on installing the application on your platform.
+### Wie viel Speicherplatz brauche ich?
+Die Anwendung selbst erfordert minimalen Speicherplatz (ca. 100MB). Die tatsächlichen Speicheranforderungen hängen von der Größe Ihrer Bildbibliothek und den Cache-Einstellungen ab, die Sie konfigurieren.
 
-### What are the system requirements?
-- **Operating System**: Windows 10+, macOS 10.15+, or Linux
-- **Processor**: Intel Core i5 or equivalent
-- **Memory**: 8GB RAM (16GB recommended)
-- **Storage**: 500MB free space plus space for your image library
-- **.NET 7.0 Runtime**: Required for running the application
+## Installation & Einrichtung
 
-### Can I run AVA AIGC Toolbox from a USB drive?
-Yes, you can run the portable version of AVA AIGC Toolbox from a USB drive. Just download the portable ZIP file from the releases page and extract it to your USB drive.
+### Wie installiere ich die AVA AIGC Toolbox?
+Weitere Informationen finden Sie in der [Installationsanleitung](./installation.md) mit detaillierten Anweisungen für die Installation der Anwendung auf Ihrer Plattform.
 
-### How do I update AVA AIGC Toolbox?
-You can update the application either through the built-in update checker (in Settings > General > Update Checks) or by downloading the latest version from the project's GitHub page.
+### Was sind die Systemanforderungen?
+- **Betriebssystem**: Windows 10+, macOS 10.15+ oder Linux
+- **Prozessor**: Intel Core i5 oder gleichwertig
+- **Speicher**: 8GB RAM (16GB empfohlen)
+- **Speicherplatz**: 500MB freier Speicher plus Platz für Ihre Bildbibliothek
+- **.NET 7.0 Runtime**: Erforderlich zum Ausführen der Anwendung
 
-## Library Management
+### Kann ich die AVA AIGC Toolbox von einem USB-Laufwerk ausführen?
+Ja, Sie können die portable Version der AVA AIGC Toolbox von einem USB-Laufwerk ausführen. Laden Sie einfach die portable ZIP-Datei von der Releases-Seite herunter und extrahieren Sie sie auf Ihr USB-Laufwerk.
 
-### What is an image library?
-An image library is a collection of images organized within the AVA AIGC Toolbox. The application uses a SQLite database to store metadata about your images, while the actual image files remain in their original locations.
+### Wie aktualisiere ich die AVA AIGC Toolbox?
+Sie können die Anwendung entweder über den integrierten Update-Checker (in Einstellungen > Allgemein > Update-Prüfungen) aktualisieren oder die neueste Version von der GitHub-Seite des Projekts herunterladen.
 
-### Can I have multiple libraries?
-Yes, you can create and switch between multiple libraries. To do this, go to `File > Open Library` or use the library selector in the welcome screen.
+## Bibliotheksverwaltung
 
-### How do I back up my library?
-You can back up your library using the built-in backup feature. Go to `File > Backup Library` or configure automatic backups in `Settings > Library > Backup`.
+### Was ist eine Bildbibliothek?
+Eine Bildbibliothek ist eine Sammlung von Bildern, die in der AVA AIGC Toolbox organisiert ist. Die Anwendung verwendet eine SQLite-Datenbank, um Metadaten über Ihre Bilder zu speichern, während die eigentlichen Bilddateien an ihren ursprünglichen Orten bleiben.
 
-### Can I move my library to another computer?
-Yes, you can move your library by copying the library database file and ensuring all image files are accessible from the new location. You may need to update file paths if images are stored in different locations on the new computer.
+### Kann ich mehrere Bibliotheken haben?
+Ja, Sie können mehrere Bibliotheken erstellen und zwischen ihnen wechseln. Gehen Sie dazu zu `Datei > Bibliothek öffnen` oder verwenden Sie den Bibliotheksauswähler im Willkommensbildschirm.
 
-## Image Import & Export
+### Wie sichere ich meine Bibliothek?
+Sie können Ihre Bibliothek mit der integrierten Sicherungsfunktion sichern. Gehen Sie zu `Datei > Bibliothek sichern` oder konfigurieren Sie automatische Sicherungen in `Einstellungen > Bibliothek > Sicherung`.
 
-### How do I import images?
-You can import images by clicking the `Import` button in the toolbar, dragging and dropping images into the application, or using the `File > Import` menu option.
+### Kann ich meine Bibliothek auf einen anderen Computer übertragen?
+Ja, Sie können Ihre Bibliothek übertragen, indem Sie die Bibliotheksdatenbankdatei kopieren und sicherstellen, dass alle Bilddateien von dem neuen Ort aus zugänglich sind. Sie müssen möglicherweise Dateipfade aktualisieren, wenn Bilder auf dem neuen Computer an anderen Orten gespeichert sind.
 
-### Why are some images not importing?
-Common reasons include:
-- The file format is not supported
-- The file is corrupted
-- You don't have read permissions for the file
-- The file size exceeds the configured limit
-- The file is already in the library
+## Bildimport & Export
 
-### How do I export images?
-Select the images you want to export, then click the `Export` button in the toolbar or use the `File > Export` menu option.
+### Wie importiere ich Bilder?
+Sie können Bilder importieren, indem Sie auf die `Importieren`-Schaltfläche in der Werkzeugleiste klicken, Bilder in die Anwendung ziehen und ablegen oder die Menüoption `Datei > Importieren` verwenden.
 
-### Can I export images with their metadata?
-Yes, you can include metadata in your exports by enabling the "Include Metadata" option in the export dialog or in `Settings > Export > Defaults`.
+### Warum werden einige Bilder nicht importiert?
+Häufige Gründe sind:
+- Das Dateiformat wird nicht unterstützt
+- Die Datei ist beschädigt
+- Sie haben keine Leseberechtigung für die Datei
+- Die Dateigröße überschreitet das konfigurierte Limit
+- Die Datei ist bereits in der Bibliothek vorhanden
 
-## Metadata & Tagging
+### Wie exportiere ich Bilder?
+Wählen Sie die Bilder aus, die Sie exportieren möchten, klicken Sie dann auf die `Exportieren`-Schaltfläche in der Werkzeugleiste oder verwenden Sie die Menüoption `Datei > Exportieren`.
 
-### What metadata is extracted from images?
-The application extracts various metadata fields including:
-- Basic information (file name, size, dimensions, format)
-- EXIF data (camera settings, location, date taken)
-- AI-generated metadata (prompt, model name, seed, steps, CFG scale, sampler)
-- User-added metadata (tags, ratings, favorites, notes)
+### Kann ich Bilder mit ihren Metadaten exportieren?
+Ja, Sie können Metadaten in Ihre Exporte einbeziehen, indem Sie die Option "Metadaten einschließen" im Exportdialog oder in `Einstellungen > Export > Standardwerte` aktivieren.
 
-### How accurate is the auto-tagging feature?
-The accuracy of auto-tagging depends on the AI model being used. We recommend reviewing auto-generated tags and making adjustments as needed. You can also customize the confidence threshold in `Settings > AI > Tag Models`.
+## Metadaten & Tagging
 
-### Can I edit metadata for multiple images at once?
-Yes, you can edit metadata for multiple images simultaneously using the batch editing feature. Select multiple images, then edit the metadata in the details panel.
+### Welche Metadaten werden aus Bildern extrahiert?
+Die Anwendung extrahiert verschiedene Metadatenfelder, darunter:
+- Grundinformationen (Dateiname, Größe, Abmessungen, Format)
+- EXIF-Daten (Kameraeinstellungen, Standort, Aufnahmedatum)
+- KI-generierte Metadaten (Prompt, Modellname, Seed, Schritte, CFG-Skala, Sampler)
+- Benutzergenerierte Metadaten (Tags, Bewertungen, Favoriten, Notizen)
 
-### Will editing metadata in AVA AIGC Toolbox modify my original files?
-By default, the application stores metadata in its database and doesn't modify original files. However, you can choose to write metadata back to files when exporting or using the "Write Metadata to Files" option.
+### Wie genau ist die automatische Tagging-Funktion?
+Die Genauigkeit des automatischen Taggings hängt vom verwendeten KI-Modell ab. Wir empfehlen, automatisch generierte Tags zu überprüfen und bei Bedarf anzupassen. Sie können den Confidence-Schwellenwert in `Einstellungen > KI > Tag-Modelle` anpassen.
 
-## AI Features
+### Kann ich Metadaten für mehrere Bilder gleichzeitig bearbeiten?
+Ja, Sie können Metadaten für mehrere Bilder gleichzeitig bearbeiten, indem Sie die Stapelbearbeitungsfunktion verwenden. Wählen Sie mehrere Bilder aus und bearbeiten Sie dann die Metadaten im Detailspanel.
 
-### Do I need an API key for AI features?
-Some AI features (like certain auto-tagging models or image enhancement) may require an API key. You can configure API keys in `Settings > AI > API Integration`.
+### Wird das Bearbeiten von Metadaten in der AVA AIGC Toolbox meine Originaldateien ändern?
+Standardmäßig speichert die Anwendung Metadaten in ihrer Datenbank und ändert keine Originaldateien. Sie können jedoch auswählen, Metadaten bei Exporten oder mit der Option "Metadaten in Dateien schreiben" zurück in die Dateien zu schreiben.
 
-### Are AI features optional?
-Yes, you can enable or disable AI features entirely in `Settings > AI > General`. Disabling AI features can improve performance if you don't need them.
+## KI-Funktionen
 
-### How does AI auto-tagging work?
-AI auto-tagging uses machine learning models to analyze your images and generate relevant tags. The application supports various models, and you can configure the default model in settings.
+### Brauche ich einen API-Schlüssel für KI-Funktionen?
+Einige KI-Funktionen (wie bestimmte automatische Tagging-Modelle oder Bildverbesserung) können einen API-Schlüssel erfordern. Sie können API-Schlüssel in `Einstellungen > KI > API-Integration` konfigurieren.
 
-### Can I use my own AI models?
-Currently, the application supports a predefined set of AI models. Support for custom models may be added in future versions.
+### Sind KI-Funktionen optional?
+Ja, Sie können KI-Funktionen vollständig in `Einstellungen > KI > Allgemein` aktivieren oder deaktivieren. Das Deaktivieren von KI-Funktionen kann die Leistung verbessern, wenn Sie sie nicht benötigen.
 
-## Performance & Troubleshooting
+### Wie funktioniert das automatische KI-Tagging?
+Das automatische KI-Tagging verwendet maschinelle Lernmodelle, um Ihre Bilder zu analysieren und relevante Tags zu generieren. Die Anwendung unterstützt verschiedene Modelle, und Sie können das Standardmodell in den Einstellungen konfigurieren.
 
-### Why is the application running slowly?
-Common reasons for slow performance include:
-- Large library size (consider optimizing or splitting your library)
-- Insufficient RAM (try increasing cache sizes in settings)
-- High parallel processing settings (reduce in `Settings > Library > Performance`)
-- Animations enabled (disable in `Settings > Interface`)
+### Kann ich meine eigenen KI-Modelle verwenden?
+Derzeit unterstützt die Anwendung eine vordefinierte Menge an KI-Modellen. Die Unterstützung für benutzerdefinierte Modelle könnte in zukünftigen Versionen hinzugefügt werden.
 
-### How can I improve performance?
-- Increase thumbnail and image cache sizes
-- Enable lazy loading
-- Reduce the number of parallel processes
-- Disable animations
-- Use a faster storage device for your library
-- Keep your application updated
+## Leistung & Fehlerbehebung
 
-### Why are thumbnails not displaying correctly?
-Try the following solutions:
-- Clear the thumbnail cache (`File > Maintenance > Clear Thumbnail Cache`)
-- Restart the application
-- Check if the original image files are still accessible
-- Re-import the affected images
+### Warum läuft die Anwendung langsam?
+Häufige Gründe für langsame Leistung sind:
+- Große Bibliotheksgröße (erwägen Sie die Optimierung oder Aufteilung Ihrer Bibliothek)
+- Unzureichender RAM (versuchen Sie, die Cache-Größe in den Einstellungen zu erhöhen)
+- Hohe Parallelverarbeitungseinstellungen (reduzieren Sie sie in `Einstellungen > Bibliothek > Leistung`)
+- Animationen aktiviert (deaktivieren Sie sie in `Einstellungen > Schnittstelle`)
 
-### What should I do if the application crashes?
-1. Check the log files (`Settings > Troubleshooting > Logging` for location)
-2. Restart the application
-3. Try opening a different library
-4. Reset settings to default
-5. If the issue persists, report the bug on GitHub with logs attached
+### Wie kann ich die Leistung verbessern?
+- Erhöhen Sie die Größe des Vorschaubild- und Bildcaches
+- Aktivieren Sie Lazy Loading
+- Reduzieren Sie die Anzahl paralleler Prozesse
+- Deaktivieren Sie Animationen
+- Verwenden Sie ein schnelleres Speichergerät für Ihre Bibliothek
+- Halten Sie Ihre Anwendung auf dem neuesten Stand
 
-## Advanced Questions
+### Warum werden Vorschaubilder nicht korrekt angezeigt?
+Versuchen Sie die folgenden Lösungen:
+- Leeren Sie den Vorschaubildcache (`Datei > Wartung > Vorschaubildcache leeren`)
+- Starten Sie die Anwendung neu
+- Prüfen Sie, ob die Originalbilddateien noch zugänglich sind
+- Importieren Sie die betroffenen Bilder erneut
 
-### Can I extend the application with plugins?
-Currently, the application doesn't support plugins. However, this is a planned feature for future versions.
+### Was soll ich tun, wenn die Anwendung abstürzt?
+1. Prüfen Sie die Protokolldateien (`Einstellungen > Fehlerbehebung > Protokollierung` für den Standort)
+2. Starten Sie die Anwendung neu
+3. Versuchen Sie, eine andere Bibliothek zu öffnen
+4. Setzen Sie die Einstellungen auf Standardwerte zurück
+5. Wenn das Problem weiterhin besteht, melden Sie den Fehler auf GitHub mit angehängten Protokollen
 
-### Is the application safe to use with sensitive images?
-Yes, all processing is done locally on your computer, and no images are sent to external servers unless you specifically use AI features that require API calls.
+## Erweiterte Fragen
 
-### How can I contribute to the project?
-You can contribute by:
-- Reporting bugs and suggesting features on GitHub
-- Submitting pull requests
-- Improving documentation
-- Translating the application to other languages
-- Testing pre-release versions
+### Kann ich die Anwendung mit Plugins erweitern?
+Derzeit unterstützt die Anwendung keine Plugins. Dies ist jedoch ein geplantes Feature für zukünftige Versionen.
 
-### Where is the application data stored?
-Application data is stored in:
+### Ist die Anwendung sicher für den Einsatz mit sensiblen Bildern?
+Ja, alle Verarbeitungen werden lokal auf Ihrem Computer durchgeführt, und keine Bilder werden an externe Server gesendet, es sei denn, Sie verwenden speziell KI-Funktionen, die API-Aufrufe erfordern.
+
+### Wie kann ich zum Projekt beitragen?
+Sie können beitragen, indem Sie:
+- Fehler melden und Funktionsvorschläge auf GitHub einreichen
+- Pull Requests einreichen
+- Die Dokumentation verbessern
+- Die Anwendung in andere Sprachen übersetzen
+- Vorabversionen testen
+
+### Wo werden die Anwendungsdaten gespeichert?
+Anwendungsdaten werden gespeichert in:
 - **Windows**: `%APPDATA%/AIGenManager/`
 - **macOS**: `~/.local/share/AIGenManager/`
 - **Linux**: `~/.local/share/AIGenManager/`
 
-This includes settings, logs, cache, and library databases.
+Dies umfasst Einstellungen, Protokolle, Cache und Bibliotheksdatenbanken.
 
-## Next Steps
+## Nächste Schritte
 
-- Learn about [Settings](./settings.md) to configure the application to your needs
-- Read about [Troubleshooting](./troubleshooting.md) for help with common issues
-- Explore [Tips & Best Practices](./tips-best-practices.md) for more user tips
+- Erfahren Sie mehr über [Einstellungen](./settings.md), um die Anwendung an Ihre Bedürfnisse anzupassen
+- Lesen Sie über [Fehlerbehebung](./troubleshooting.md) für Hilfe bei häufigen Problemen
+- Entdecken Sie [Tipps & Best Practices](./tips-best-practices.md) für weitere Benutzertipps

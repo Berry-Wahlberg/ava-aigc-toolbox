@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Batch Operations
 
 The AVA AIGC Toolbox allows you to perform bulk operations on multiple images at once, saving you time and effort. This guide covers the various batch operations available in the application.
@@ -214,3 +215,7 @@ The AVA AIGC Toolbox allows you to perform bulk operations on multiple images at
 - Learn about [Backup & Restore](./backup-restore.md) to safeguard your library
 - Read about [AI Integration](./ai-integration.md) for more AI-powered features
 - Explore [Export & Sharing](../features/export-sharing.md) to share your processed images
+=======
+# Batch Operations\n\n*Placeholder for batch operations*
+>>>>>>> origin/doc/dev
+

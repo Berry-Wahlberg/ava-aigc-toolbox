@@ -1,278 +1,282 @@
-# Metadata Editing
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox automatically extracts and displays AI-generated metadata from your images, and allows you to view, edit, and manage this metadata. This guide covers how to work with metadata in the application.
+# Metadatenbearbeitung
 
-## What is AI Metadata?
+> **English version is authoritative**
 
-AI-generated images often contain embedded metadata that provides information about how the image was created. This metadata typically includes:
+> **Die englische Version ist maßgeblich**
 
-- **Prompt**: The text prompt used to generate the image
-- **Negative Prompt**: Text specifying what should be excluded from the image
-- **Steps**: Number of generation steps used
-- **Sampler**: The sampling method used (e.g., Euler, DDIM, LMS)
+Die AVA AIGC Toolbox extrahiert und zeigt automatisch KI-generierte Metadaten aus Ihren Bildern an und ermöglicht es Ihnen, diese Metadaten anzuzeigen, zu bearbeiten und zu verwalten. Diese Anleitung beschreibt, wie Sie mit Metadaten in der Anwendung arbeiten.
+
+## Was ist KI-Metadaten?
+
+KI-generierte Bilder enthalten oft eingebettete Metadaten, die Informationen darüber liefern, wie das Bild erstellt wurde. Diese Metadaten umfassen typischerweise:
+
+- **Prompt**: Der Text-Prompt, der verwendet wurde, um das Bild zu generieren
+- **Negativer Prompt**: Text, der angibt, was aus dem Bild ausgeschlossen werden soll
+- **Schritte**: Anzahl der verwendeten Generierungsschritte
+- **Sampler**: Die verwendete Stichprobenmethode (z. B. Euler, DDIM, LMS)
 - **CFG Scale**: Classifier-free guidance scale
-- **Seed**: Random seed used for generation
-- **Model**: Name of the AI model used
-- **Model Hash**: Unique identifier for the model
-- **Width/Height**: Generated image dimensions
-- **Clip Skip**: Number of CLIP layers to skip
-- **Hypernetwork**: Hypernetwork used (if any)
-- **Hypernetwork Strength**: Strength of the hypernetwork
+- **Seed**: Zufallssamen, der für die Generierung verwendet wurde
+- **Modell**: Name des verwendeten KI-Modells
+- **Modell-Hash**: Eindeutiger Identifikator für das Modell
+- **Breite/Höhe**: Generierte Bildabmessungen
+- **Clip Skip**: Anzahl der CLIP-Schichten, die übersprungen werden
+- **Hypernetwork**: Verwendete Hypernetwork (falls vorhanden)
+- **Hypernetwork-Stärke**: Stärke der Hypernetwork
 
-## Viewing Metadata
+## Metadaten anzeigen
 
-### Image Details Panel
+### Bilddetailspanel
 
-The primary way to view image metadata is through the details panel:
+Die primäre Möglichkeit, Bildmetadaten anzuzeigen, ist über das Detailspanel:
 
-#### Steps to View Metadata:
-1. Select an image in the main content area
-2. The details panel will appear on the right side of the window
-3. Scroll down to view all available metadata
-4. Click on sections to expand or collapse them
+#### Schritte zum Anzeigen von Metadaten:
+1. Wählen Sie ein Bild im Hauptinhaltbereich aus
+2. Das Detailspanel wird auf der rechten Seite des Fensters angezeigt
+3. Scrollen Sie nach unten, um alle verfügbaren Metadaten anzuzeigen
+4. Klicken Sie auf Abschnitte, um sie zu erweitern oder zu reduzieren
 
-### Metadata Sections
+### Metadatensektionen
 
-The metadata is organized into several sections:
+Die Metadaten sind in mehrere Abschnitte unterteilt:
 
-- **Basic Information**: Filename, path, size, dimensions, and file attributes
-- **AI Metadata**: Generation parameters like prompt, negative prompt, steps, etc.
-- **Image Properties**: User-defined properties like rating, favorite status, and tags
-- **Technical Details**: Color profile, bit depth, and other technical image information
+- **Grundlegende Informationen**: Dateiname, Pfad, Größe, Abmessungen und Dateiattribute
+- **KI-Metadaten**: Generierungsparameter wie Prompt, negativer Prompt, Schritte usw.
+- **Bildeigenschaften**: Benutzerdefinierte Eigenschaften wie Bewertung, Favoritenstatus und Tags
+- **Technische Details**: Farbprofil, Bit-Tiefe und andere technische Bildinformationen
 
-### Full Metadata View
+### Vollständige Metadatenansicht
 
-For a more comprehensive view of all metadata:
+Für eine umfassendere Ansicht aller Metadaten:
 
-1. Select an image
-2. Right-click and select **Properties**
-3. Go to the **Metadata** tab
-4. View all embedded and application-specific metadata
-5. Click **Close** when finished
+1. Wählen Sie ein Bild aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Eigenschaften**
+3. Gehen Sie zum **Metadaten**-Tab
+4. Sehen Sie sich alle eingebetteten und anwendungsspezifischen Metadaten an
+5. Klicken Sie auf **Schließen**, wenn Sie fertig sind
 
-## Editing Metadata
+## Metadaten bearbeiten
 
-### Basic Metadata Editing
+### Grundlegende Metadatenbearbeitung
 
-You can edit most metadata fields directly in the details panel:
+Sie können die meisten Metadatenfelder direkt im Detailspanel bearbeiten:
 
-#### Steps to Edit Metadata:
-1. Select an image in the main content area
-2. In the details panel, find the metadata field you want to edit
-3. Click on the field to make it editable
-4. Enter the new value
-5. Press `Enter` or click outside the field to save the changes
+#### Schritte zum Bearbeiten von Metadaten:
+1. Wählen Sie ein Bild im Hauptinhaltbereich aus
+2. Suchen Sie im Detailspanel das Metadatenfeld, das Sie bearbeiten möchten
+3. Klicken Sie auf das Feld, um es bearbeitbar zu machen
+4. Geben Sie den neuen Wert ein
+5. Drücken Sie `Enter` oder klicken Sie außerhalb des Feldes, um die Änderungen zu speichern
 
-### AI Metadata Fields
+### KI-Metadatenfelder
 
-The following AI metadata fields can be edited:
+Die folgenden KI-Metadatenfelder können bearbeitet werden:
 
 - **Prompt**
-- **Negative Prompt**
-- **Model**
-- **Model Hash**
+- **Negativer Prompt**
+- **Modell**
+- **Modell-Hash**
 - **Sampler**
-- **Steps**
+- **Schritte**
 - **CFG Scale**
 - **Seed**
-- **Width/Height**
+- **Breite/Höhe**
 - **Clip Skip**
 - **Hypernetwork**
-- **Hypernetwork Strength**
+- **Hypernetwork-Stärke**
 
-### Bulk Metadata Editing
+### Massenbearbeitung von Metadaten
 
-You can edit metadata for multiple images at once:
+Sie können Metadaten für mehrere Bilder gleichzeitig bearbeiten:
 
-#### Steps to Bulk Edit Metadata:
-1. Select multiple images in the main content area
-2. Right-click and select **Edit Metadata**
-3. In the bulk edit dialog, select the metadata fields you want to edit
-4. Enter the new values for each selected field
-5. Choose how to apply the changes:
-   - **Set**: Replace existing values with the new value
-   - **Append**: Add the new value to existing values
-   - **Prepend**: Insert the new value before existing values
-6. Click **Apply** to save the changes to all selected images
+#### Schritte zur Massenbearbeitung von Metadaten:
+1. Wählen Sie mehrere Bilder im Hauptinhaltbereich aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Metadaten bearbeiten**
+3. Wählen Sie im Massenbearbeitungsdialog die Metadatenfelder aus, die Sie bearbeiten möchten
+4. Geben Sie die neuen Werte für jedes ausgewählte Feld ein
+5. Wählen Sie, wie die Änderungen angewendet werden sollen:
+   - **Setzen**: Ersetzen Sie vorhandene Werte durch den neuen Wert
+   - **Hinzufügen**: Fügen Sie den neuen Wert zu vorhandenen Werten hinzu
+   - **Voranstellen**: Fügen Sie den neuen Wert vor vorhandenen Werten ein
+6. Klicken Sie auf **Anwenden**, um die Änderungen auf alle ausgewählten Bilder zu speichern
 
-### Advanced Metadata Editor
+### Erweiterter Metadateneditor
 
-For more advanced metadata editing options:
+Für erweiterte Metadatenbearbeitungsoptionen:
 
-1. Select one or more images
-2. Go to `Tools > Metadata Editor`
-3. In the advanced editor, you can:
-   - View all metadata fields in a tabular format
-   - Edit multiple fields at once
-   - Copy metadata from one image to another
-   - Import/export metadata to files
-   - Batch process metadata for multiple images
-4. Click **Save** to apply changes
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Gehen Sie zu `Werkzeuge > Metadateneditor`
+3. Im erweiterten Editor können Sie:
+   - Alle Metadatenfelder in einem tabellarischen Format anzeigen
+   - Gleichzeitig mehrere Felder bearbeiten
+   - Metadaten von einem Bild auf ein anderes kopieren
+   - Metadaten aus Dateien importieren/exportieren
+   - Metadaten für mehrere Bilder in Batch verarbeiten
+4. Klicken Sie auf **Speichern**, um Änderungen anzuwenden
 
-## Metadata Extraction
+## Metadatenextraktion
 
-### Automatic Extraction
+### Automatische Extraktion
 
-The application automatically extracts metadata when importing images:
+Die Anwendung extrahiert Metadaten automatisch beim Importieren von Bildern:
 
-#### Steps to Enable Automatic Extraction:
-1. Go to `Settings > Metadata > Extraction`
-2. Check **Extract metadata when importing images**
-3. Select which metadata fields to extract
-4. Click **Save** to apply changes
+#### Schritte zum Aktivieren der automatischen Extraktion:
+1. Gehen Sie zu `Einstellungen > Metadaten > Extraktion`
+2. Aktivieren Sie **Metadaten beim Importieren von Bildern extrahieren**
+3. Wählen Sie, welche Metadatenfelder extrahiert werden sollen
+4. Klicken Sie auf **Speichern**, um die Änderungen anzuwenden
 
-### Manual Extraction
+### Manuelle Extraktion
 
-You can manually extract metadata from images:
+Sie können Metadaten manuell aus Bildern extrahieren:
 
-#### Steps to Manually Extract Metadata:
-1. Select one or more images
-2. Right-click and select **Extract Metadata**
-3. In the extraction dialog, select which metadata fields to extract
-4. Click **Extract** to start the extraction process
-5. Monitor progress in the dialog
-6. Click **Finish** when done
+#### Schritte zur manuellen Extraktion von Metadaten:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Metadaten extrahieren**
+3. Wählen Sie im Extraktionsdialog die Metadatenfelder aus, die extrahiert werden sollen
+4. Klicken Sie auf **Extrahieren**, um den Extraktionsvorgang zu starten
+5. Überwachen Sie den Fortschritt im Dialog
+6. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-### Supported Metadata Formats
+### Unterstützte Metadatenformate
 
-The application supports extracting metadata from:
+Die Anwendung unterstützt die Extraktion von Metadaten aus:
 
-- **PNG files**: Embedded in text chunks
-- **JPEG files**: Embedded in EXIF, IPTC, or XMP fields
-- **WebP files**: Embedded in metadata sections
-- **TIFF files**: Embedded in TIFF tags
+- **PNG-Dateien**: Eingebettet in Text-Chunks
+- **JPEG-Dateien**: Eingebettet in EXIF-, IPTC- oder XMP-Feldern
+- **WebP-Dateien**: Eingebettet in Metadatensektionen
+- **TIFF-Dateien**: Eingebettet in TIFF-Tags
 
-### Common Metadata Formats
+### Allgemeine Metadatenformate
 
-The application can extract metadata from common AI image generation tools:
+Die Anwendung kann Metadaten aus gängigen KI-Bildgenerierungstools extrahieren:
 
 - **Stable Diffusion**: Automatic1111 WebUI, InvokeAI, ComfyUI
-- **MidJourney**: Direct downloads from MidJourney
-- **DALL-E**: Direct downloads from DALL-E
-- **Other Tools**: Any tool that embeds metadata in supported formats
+- **MidJourney**: Direkte Downloads von MidJourney
+- **DALL-E**: Direkte Downloads von DALL-E
+- **Andere Tools**: Jede Tool, die Metadaten in unterstützten Formaten einbettet
 
-## Metadata Export
+## Metadatenexport
 
-### Embedding Metadata in Images
+### Metadaten in Bilder einbetten
 
-You can embed metadata back into image files:
+Sie können Metadaten zurück in Bilddateien einbetten:
 
-#### Steps to Embed Metadata:
-1. Select one or more images
-2. Right-click and select **Embed Metadata**
-3. In the embed dialog, select which metadata fields to embed
-4. Choose embedding options:
-   - **Overwrite existing metadata**: Replace existing metadata in files
-   - **Preserve original files**: Create backups before embedding
-5. Click **Embed** to start the process
-6. Monitor progress in the dialog
-7. Click **Finish** when done
+#### Schritte zum Einbetten von Metadaten:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Metadaten einbetten**
+3. Wählen Sie im Einbettungsdialog die Metadatenfelder aus, die eingebettet werden sollen
+4. Wählen Sie Einbettungsoptionen:
+   - **Vorhandene Metadaten überschreiben**: Ersetzen Sie vorhandene Metadaten in Dateien
+   - **Originaldateien behalten**: Erstellen Sie Backups vor dem Einbetten
+5. Klicken Sie auf **Einbetten**, um den Vorgang zu starten
+6. Überwachen Sie den Fortschritt im Dialog
+7. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-### Exporting Metadata to Files
+### Metadaten in Dateien exportieren
 
-You can export metadata to external files:
+Sie können Metadaten in externe Dateien exportieren:
 
-#### Steps to Export Metadata:
-1. Select one or more images
-2. Go to `File > Export > Export Metadata`
-3. Choose the export format:
-   - **JSON**: Structured metadata in JSON format
-   - **CSV**: Comma-separated values for spreadsheets
-   - **TXT**: Plain text format
-4. Select which metadata fields to export
-5. Choose the destination folder
-6. Click **Export** to save the metadata files
+#### Schritte zum Exportieren von Metadaten:
+1. Wählen Sie ein oder mehrere Bilder aus
+2. Gehen Sie zu `Datei > Export > Metadaten exportieren`
+3. Wählen Sie das Exportformat:
+   - **JSON**: Strukturierte Metadaten in JSON-Format
+   - **CSV**: Komma-getrennte Werte für Tabellenkalkulationen
+   - **TXT**: Klartextformat
+4. Wählen Sie, welche Metadatenfelder exportiert werden sollen
+5. Wählen Sie den Zielordner
+6. Klicken Sie auf **Exportieren**, um die Metadatendateien zu speichern
 
-### Importing Metadata from Files
+### Metadaten aus Dateien importieren
 
-You can import metadata from external files:
+Sie können Metadaten aus externen Dateien importieren:
 
-#### Steps to Import Metadata:
-1. Go to `File > Import > Import Metadata`
-2. Select the metadata file to import
-3. Map the imported fields to the application's metadata fields
-4. Click **Import** to apply the metadata to matching images
-5. Monitor progress in the dialog
-6. Click **Finish** when done
+#### Schritte zum Importieren von Metadaten:
+1. Gehen Sie zu `Datei > Import > Metadaten importieren`
+2. Wählen Sie die Metadatendatei zum Importieren
+3. Ordnen Sie die importierten Felder den Metadatenfeldern der Anwendung zu
+4. Klicken Sie auf **Importieren**, um die Metadaten auf passende Bilder anzuwenden
+5. Überwachen Sie den Fortschritt im Dialog
+6. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-## Metadata Templates
+## Metadatenvorlagen
 
-### Creating Metadata Templates
+### Metadatenvorlagen erstellen
 
-You can create templates for frequently used metadata values:
+Sie können Vorlagen für häufig verwendete Metadatenwerte erstellen:
 
-#### Steps to Create a Template:
-1. Go to `Tools > Metadata Templates > Manage Templates`
-2. Click **Add Template**
-3. Enter a name for the template
-4. Fill in the metadata fields you want to include in the template
-5. Click **Save** to create the template
+#### Schritte zum Erstellen einer Vorlage:
+1. Gehen Sie zu `Werkzeuge > Metadatenvorlagen > Vorlagen verwalten`
+2. Klicken Sie auf **Vorlage hinzufügen**
+3. Geben Sie einen Namen für die Vorlage ein
+4. Füllen Sie die Metadatenfelder aus, die Sie in der Vorlage einschließen möchten
+5. Klicken Sie auf **Speichern**, um die Vorlage zu erstellen
 
-### Applying Templates
+### Vorlagen anwenden
 
-#### Applying Templates to Single Image:
-1. Select an image
-2. Go to `Tools > Metadata Templates > [Template Name]`
-3. The template metadata will be applied to the image
+#### Vorlagen auf einzelnes Bild anwenden:
+1. Wählen Sie ein Bild aus
+2. Gehen Sie zu `Werkzeuge > Metadatenvorlagen > [Vorlagenname]`
+3. Die Vorlagenmetadaten werden auf das Bild angewendet
 
-#### Applying Templates to Multiple Images:
-1. Select multiple images
-2. Right-click and select **Apply Metadata Template**
-3. Choose a template from the list
-4. Click **Apply** to apply the template to all selected images
+#### Vorlagen auf mehrere Bilder anwenden:
+1. Wählen Sie mehrere Bilder aus
+2. Klicken Sie mit der rechten Maustaste und wählen Sie **Metadatenvorlage anwenden**
+3. Wählen Sie eine Vorlage aus der Liste
+4. Klicken Sie auf **Anwenden**, um die Vorlage auf alle ausgewählten Bilder anzuwenden
 
-### Editing Templates
+### Vorlagen bearbeiten
 
-1. Go to `Tools > Metadata Templates > Manage Templates`
-2. Select the template you want to edit
-3. Click **Edit Template**
-4. Modify the template fields
-5. Click **Save** to update the template
+1. Gehen Sie zu `Werkzeuge > Metadatenvorlagen > Vorlagen verwalten`
+2. Wählen Sie die Vorlage aus, die Sie bearbeiten möchten
+3. Klicken Sie auf **Vorlage bearbeiten**
+4. Ändern Sie die Vorlagenfelder
+5. Klicken Sie auf **Speichern**, um die Vorlage zu aktualisieren
 
-### Deleting Templates
+### Vorlagen löschen
 
-1. Go to `Tools > Metadata Templates > Manage Templates`
-2. Select the template you want to delete
-3. Click **Delete Template**
-4. Confirm the deletion in the dialog
+1. Gehen Sie zu `Werkzeuge > Metadatenvorlagen > Vorlagen verwalten`
+2. Wählen Sie die Vorlage aus, die Sie löschen möchten
+3. Klicken Sie auf **Vorlage löschen**
+4. Bestätigen Sie die Löschung im Dialog
 
-## Best Practices for Metadata Management
+## Best Practices für Metadatenverwaltung
 
-1. **Extract Metadata on Import**: Always extract metadata when importing new images
-2. **Keep Metadata Updated**: Regularly update metadata for better searchability
-3. **Use Descriptive Prompts**: Ensure prompts are descriptive and accurate for better organization
-4. **Backup Metadata**: Export metadata periodically as a backup
-5. **Use Templates**: Create templates for frequently used metadata values
-6. **Embed Metadata Before Sharing**: Always embed metadata before sharing images with others
-7. **Standardize Values**: Use consistent values for model names, samplers, etc.
-8. **Don't Overwrite Original Files**: Always preserve original files when embedding metadata
+1. **Metadaten beim Import extrahieren**: Extrahieren Sie immer Metadaten beim Importieren neuer Bilder
+2. **Metadaten aktuell halten**: Aktualisieren Sie Metadaten regelmäßig für bessere Suchbarkeit
+3. **Beschreibende Prompts verwenden**: Stellen Sie sicher, dass Prompts beschreibend und genau sind, für eine bessere Organisation
+4. **Metadaten sichern**: Exportieren Sie Metadaten regelmäßig als Backup
+5. **Vorlagen verwenden**: Erstellen Sie Vorlagen für häufig verwendete Metadatenwerte
+6. **Metadaten vor dem Teilen einbetten**: Betten Sie Metadaten immer ein, bevor Sie Bilder mit anderen teilen
+7. **Werte standardisieren**: Verwenden Sie konsistente Werte für Modellnamen, Sampler usw.
+8. **Originaldateien nicht überschreiben**: Bewahren Sie Originaldateien immer auf, wenn Sie Metadaten einbetten
 
-## Troubleshooting Metadata Issues
+## Fehlerbehebung bei Metadatenproblemen
 
-### Metadata Not Extracting
-- **Check File Format**: Ensure the image is in a supported format (PNG, JPEG, WebP, TIFF)
-- **Check Metadata Format**: Verify that the metadata is embedded in a supported format
-- **Corrupted Files**: Some files may have corrupted metadata - try re-generating the image
-- **Unsupported Tool**: The tool used to generate the image may not embed metadata in a supported format
+### Metadaten werden nicht extrahiert
+- **Dateiformat prüfen**: Stellen Sie sicher, dass das Bild in einem unterstützten Format ist (PNG, JPEG, WebP, TIFF)
+- **Metadatenformat prüfen**: Verifizieren Sie, dass die Metadaten in einem unterstützten Format eingebettet sind
+- **Beschädigte Dateien**: Einige Dateien können beschädigte Metadaten haben - versuchen Sie, das Bild neu zu generieren
+- **Nicht unterstützte Tool**: Das Tool, das zum Generieren des Bildes verwendet wurde, kann Metadaten nicht in einem unterstützten Format einbetten
 
-### Metadata Not Saving
-- **Check File Permissions**: Ensure you have write access to the image files
-- **Read-Only Files**: Some files may be read-only - check file properties
-- **File Locked**: The file may be locked by another application
-- **Unsupported Format**: Some formats may not support embedding certain metadata fields
+### Metadaten werden nicht gespeichert
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf die Bilddateien haben
+- **Schreibgeschützte Dateien**: Einige Dateien können schreibgeschützt sein - überprüfen Sie die Dateieigenschaften
+- **Datei gesperrt**: Die Datei kann von einer anderen Anwendung gesperrt sein
+- **Nicht unterstütztes Format**: Einige Formate können das Einbetten bestimmter Metadatenfelder nicht unterstützen
 
-### Incorrect Metadata Values
-- **Manual Correction**: Edit the incorrect values directly in the details panel
-- **Re-Extract**: Try re-extracting metadata from the image
-- **Import Correct Metadata**: Import corrected metadata from a file
+### Falsche Metadatenwerte
+- **Manuelle Korrektur**: Bearbeiten Sie die falschen Werte direkt im Detailspanel
+- **Erneut extrahieren**: Versuchen Sie, Metadaten erneut aus dem Bild zu extrahieren
+- **Korrekte Metadaten importieren**: Importieren Sie korrigierte Metadaten aus einer Datei
 
-### Missing Metadata Fields
-- **Custom Fields**: Some metadata fields may be custom to specific tools - they may not map directly to the application's fields
-- **Update Application**: Ensure you're using the latest version of the application, which may support more metadata fields
-- **Manual Mapping**: Use the advanced metadata editor to map custom fields to application fields
+### Fehlende Metadatenfelder
+- **Benutzerdefinierte Felder**: Einige Metadatenfelder können spezifisch für bestimmte Tools sein - sie können nicht direkt den Feldern der Anwendung zugeordnet werden
+- **Anwendung aktualisieren**: Stellen Sie sicher, dass Sie die neueste Version der Anwendung verwenden, die möglicherweise mehr Metadatenfelder unterstützt
+- **Manuelle Zuordnung**: Verwenden Sie den erweiterten Metadateneditor, um benutzerdefinierte Felder den Anwendungsfeldern zuzuordnen
 
-## Next Steps
+## Nächste Schritte
 
-- Explore [Search & Filtering](./search-filtering.md) to find images using metadata
-- Read about [Export & Sharing](./export-sharing.md) to share images with metadata
-- Learn about [AI Integration](../advanced-features/ai-integration.md) for more AI-powered features
+- Erkunden Sie [Suchen & Filterung](./search-filtering.md), um Bilder anhand von Metadaten zu finden
+- Lesen Sie über [Export & Teilen](./export-sharing.md), um Bilder mit Metadaten zu teilen
+- Erfahren Sie mehr über [KI-Integration](../advanced-features/ai-integration.md) für weitere KI-gestützte Funktionen

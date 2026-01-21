@@ -1,224 +1,224 @@
 # Einstellungen
 
-> **Die englische Version gilt als maßgebend**
+> **Die englische Version ist maßgeblich**
 
-Die AVA AIGC Toolbox bietet eine umfassende Reihe von Einstellungen, um Ihre Erfahrung zu personalisieren. Diese Anleitung behandelt alle verfügbaren Einstellungen und wie Sie sie konfigurieren können.
+Die AVA AIGC Toolbox bietet einen umfassenden Satz an Einstellungen, um Ihre Erfahrung anzupassen. Diese Anleitung behandelt alle verfügbaren Einstellungen und wie Sie sie konfigurieren können.
 
 ## Zugriff auf Einstellungen
 
 #### Schritte zum Öffnen der Einstellungen:
 1. Klicken Sie auf die **Einstellungen**-Schaltfläche in der Werkzeugleiste oder gehen Sie zu `Datei > Einstellungen`
-2. Der Einstellungsdialog wird angezeigt
+2. Das Einstellungsdialogfeld wird angezeigt
 3. Verwenden Sie die Seitenleiste, um zwischen verschiedenen Einstellungskategorien zu navigieren
 4. Klicken Sie auf **Speichern**, um Änderungen anzuwenden, oder auf **Abbrechen**, um Änderungen zu verwerfen
-5. Einige Einstellungen erfordern möglicherweise einen Neustart der Anwendung, um wirksam zu werden
+5. Einige Einstellungen erfordern ein Neustart der Anwendung, um wirksam zu werden
 
 ## Allgemeine Einstellungen
 
 ### Anwendung
 - **Sprache**: Wählen Sie die Anwendungssprache (Englisch, usw.)
 - **Thema**: Wählen Sie zwischen hellem, dunklem oder System-Thema
-- **Startverhalten**: Konfigurieren Sie, was beim Start der Anwendung passiert
-  - **Willkommensbildschirm anzeigen**: Zeigen Sie den Willkommensbildschirm beim Start an
-  - **Letzte Bibliothek öffnen**: Öffnen Sie automatisch die zuletzt genutzte Bibliothek
-  - **In das Systemtray minimieren**: Starten Sie im Systemtray minimiert
+- **Startverhalten**: Konfigurieren Sie, was passiert, wenn die Anwendung startet
+  - **Willkommensbildschirm anzeigen**: Willkommensbildschirm beim Start anzeigen
+  - **Letzte Bibliothek öffnen**: Automatisch die zuletzt verwendete Bibliothek öffnen
+  - **In System托盘 minimieren**: Im System托盘 gestartet minimieren
 - **Update-Prüfungen**: Konfigurieren Sie automatische Update-Prüfungen
   - **Automatisch nach Updates suchen**: Automatische Update-Prüfungen aktivieren/deaktivieren
   - **Update-Kanal**: Wählen Sie den Update-Kanal (stable, beta, nightly)
 
-### Benutzeroberfläche
-- **Schriftgröße**: Passen Sie die Anwendungs-Schriftgröße für bessere Lesbarkeit an
-- **Symbolgröße**: Ändern Sie die Größe der Symbole in der Benutzeroberfläche
-- **Animation**: Schalten Sie Animationen an oder aus
+### Schnittstelle
+- **Schriftgröße**: Anpassen der Anwendungs-Schriftgröße für bessere Lesbarkeit
+- **Symbolgröße**: Ändern Sie die Größe der Symbole in der Schnittstelle
+- **Animationen**: Animationen an oder aus schalten
 - **Tooltips**: Tooltips aktivieren/deaktivieren
-- **Statusleiste**: Statusleiste anzeigen/verstecken
+- **Statusleiste**: Statusleiste anzeigen/ausblenden
 
-## Bibliothekseinstellungen
+## Bibliotheks-Einstellungen
 
 ### Allgemein
 - **Datenbankstandort**: Pfad zur Bibliotheksdatenbankdatei
 - **Standard-Importordner**: Standardordner zum Importieren von Bildern
-- **Bibliothek automatisch aktualisieren**: Aktualisieren Sie die Bibliothek automatisch, wenn Dateien sich ändern
-- **Dateisystem-Monitor**: Dateisystem-Überwachung aktivieren/deaktivieren
+- **Bibliothek automatisch aktualisieren**: Bibliothek automatisch aktualisieren, wenn Dateien sich ändern
+- **Dateiwatcher**: Dateisystem-Watching aktivieren/deaktivieren
 
 ### Sicherung
 - **Automatische Sicherung aktivieren**: Geplante Sicherungen aktivieren/deaktivieren
 - **Sicherungsfrequenz**: Wie oft gesichert werden soll (täglich, wöchentlich, monatlich)
-- **Sicherungszeit**: Uhrzeit, zu der Sicherungen durchgeführt werden
+- **Sicherungzeit**: Uhrzeit, zu der Sicherungen durchgeführt werden
 - **Sicherungstyp**: Nur Datenbank oder vollständige Sicherung
-- **Zielordner**: Wo Sicherungen gespeichert werden sollen
-- **Sicherungen behalten für**: Wie lange alte Sicherungen behalten werden sollen
-- **Maximale Anzahl von Sicherungen**: Maximale Anzahl von zu behaltenden Sicherungen
+- **Zielordner**: Wo Sicherungen gespeichert werden
+- **Sicherungen behalten für**: Wie lange alte Sicherungen behalten werden
+- **Maximale Sicherungsanzahl**: Maximale Anzahl von Sicherungen, die behalten werden
 
 ### Leistung
 - **Vorschaubild-Cache-Größe**: Maximale Größe des Vorschaubild-Caches in MB
 - **Bild-Cache-Größe**: Maximale Größe des Bild-Caches in MB
-- **Parallele Verarbeitung**: Anzahl der parallelen Prozesse für Aufgaben
+- **Parallelverarbeitung**: Anzahl paralleler Prozesse für Aufgaben
 - **Lazy Loading**: Lazy Loading von Bildern aktivieren/deaktivieren
 
-## Importeinstellungen
+## Import-Einstellungen
 
 ### Allgemein
 - **Unterordner einschließen**: Unterordner standardmäßig beim Import einschließen
 - **Metadaten extrahieren**: Metadaten standardmäßig aus Bildern extrahieren
 - **Vorschaubilder generieren**: Vorschaubilder standardmäßig während des Imports generieren
-- **Bestehende überschreiben**: Bestehende Bilder standardmäßig überschreiben
+- **Vorhandene überschreiben**: Vorhandene Bilder standardmäßig überschreiben
 
 ### Dateibehandlung
 - **Defekte Dateien überspringen**: Defekte Dateien während des Imports überspringen
-- **Duplicate Dateien überspringen**: Dateien mit demselben Pfad überspringen
-- **Dateinamen-Konfliktlösung**: Wie mit Dateinamenkonflikten umgegangen werden soll
+- **Doppelte Dateien überspringen**: Dateien mit demselben Pfad überspringen
+- **Dateinamen-Konfliktauflösung**: Wie mit Dateinamenkonflikten umgegangen wird
   - **Neue Datei umbenennen**: Neue Datei mit einem Suffix umbenennen
-  - **Bestehende überschreiben**: Bestehende Datei ersetzen
+  - **Vorhandene überschreiben**: Vorhandene Datei ersetzen
   - **Überspringen**: Neue Datei überspringen
 
-## Anzeigeeinstellungen
+## Anzeige-Einstellungen
 
 ### Gitteransicht
-- **Standard-Vorschaubildgröße**: Standardgröße der Vorschaubilder in der Gitteransicht
+- **Standard-Vorschaubildgröße**: Standardgröße von Vorschaubildern in der Gitteransicht
 - **Gitterabstand**: Abstand zwischen Bildern in der Gitteransicht
-- **Dateinamen anzeigen**: Dateinamen unter den Vorschaubildern anzeigen/verstecken
-- **Bewertungssterne anzeigen**: Bewertungssterne auf den Vorschaubildern anzeigen/verstecken
-- **Favoriten-Symbol anzeigen**: Favoriten-Symbol auf den Vorschaubildern anzeigen/verstecken
+- **Dateinamen anzeigen**: Dateinamen unter Vorschaubildern anzeigen/ausblenden
+- **Bewertungssterne anzeigen**: Bewertungssterne auf Vorschaubildern anzeigen/ausblenden
+- **Favorit-Symbol anzeigen**: Favorit-Symbol auf Vorschaubildern anzeigen/ausblenden
 
 ### Listenansicht
 - **Standardspalten**: Wählen Sie, welche Spalten standardmäßig in der Listenansicht angezeigt werden
-- **Spaltenbreiten**: Passen Sie die Standardbreiten für Spalten an
-- **Zeilenhöhe**: Setzen Sie die Höhe der Zeilen in der Listenansicht
+- **Spaltenbreiten**: Anpassen der Standardbreiten für Spalten
+- **Zeilenhöhe**: Festlegen der Höhe der Zeilen in der Listenansicht
 
-### Detailbereich
-- **Detailbereich anzeigen**: Detailbereich standardmäßig anzeigen/verstecken
-- **Bereichsposition**: Position des Detailbereichs (links, rechts, unten)
+### Detailspanel
+- **Detailspanel anzeigen**: Detailspanel standardmäßig anzeigen/ausblenden
+- **Panel-Position**: Position des Detailspanels (links, rechts, unten)
 - **Erweiterte Abschnitte**: Welche Abschnitte standardmäßig erweitert angezeigt werden
 
 ## Metadaten-Einstellungen
 
 ### Extraktion
 - **Metadaten beim Import extrahieren**: Metadaten automatisch extrahieren, wenn Bilder importiert werden
-- **Metadatenfelder**: Wählen Sie, welche Metadatenfelder extrahiert werden sollen
-- **Modellnamen-Zuordnung**: Ordnen Sie Modell-Hashes lesbaren Namen zu
+- **Metadatenfelder**: Wählen Sie, welche Metadatenfelder extrahiert werden
+- **Modellnamen-Zuordnung**: Abbilden von Modellhashes auf menschenlesbare Namen
 - **Modell automatisch erkennen**: Modellnamen automatisch aus Metadaten erkennen
 
 ### Anzeige
-- **Vollständiger Prompt anzeigen**: Vollständigen Prompt oder abgeschnittenen Prompt im Detailbereich anzeigen
-- **Datenformat**: Wählen Sie das Datumsformat (kurz, lang, benutzerdefiniert)
-- **Zahlenformat**: Wählen Sie die Zahlenformatierungsoptionen
+- **Vollen Prompt anzeigen**: Vollen Prompt oder abgeschnittenen Prompt im Detailspanel anzeigen
+- **Daten formatieren**: Datumsformat auswählen (kurz, lang, benutzerdefiniert)
+- **Zahlen formatieren**: Zahlenformatierungsoptionen auswählen
 
 ### Bearbeitung
 - **Metadatenbearbeitung erlauben**: Metadatenbearbeitung aktivieren/deaktivieren
 - **Metadaten validieren**: Metadaten vor dem Speichern validieren
-- **Originalmetadaten sichern**: Originalmetadaten vor der Bearbeitung sichern
+- **Original-Metadaten sichern**: Original-Metadaten vor der Bearbeitung sichern
 
 ## KI-Einstellungen
 
 ### Allgemein
 - **KI-Funktionen aktivieren**: KI-Funktionen an oder aus schalten
 - **Standard-KI-Modell**: Setzen Sie das Standard-KI-Modell für verschiedene Aufgaben
-- **Maximale parallele Anfragen**: Anzahl der parallelen KI-Anfragen
+- **Maximale parallele Anfragen**: Anzahl paralleler KI-Anfragen
 - **KI-Ergebnisse cachen**: KI-Ergebnisse cachen für schnellere Verarbeitung
 
 ### Tag-Modelle
-- **Standard-Tag-Modell**: Setzen Sie das Standardmodell für automatisches Tagging
-- **Tag-Confidence-Schwelle**: Standard-Confidence-Level für generierte Tags
+- **Standard-Tag-Modell**: Setzen Sie das Standardmodell für automatisches Taggen
+- **Tag-Confidence-Schwellenwert**: Standard-Confidence-Level für generierte Tags
 - **Tag-Sprache**: Standardsprache für generierte Tags
 
 ### API-Integration
 - **API-Schlüssel**: Ihr API-Schlüssel für KI-Dienste
 - **API-URL**: API-Endpunkt-URL
-- **Rate Limit**: Maximale Anzahl von Anfragen pro Minute
-- **Timeout**: API-Anfrage-Timeout in Sekunden
+- **Ratenbegrenzung**: Maximale Anzahl von Anfragen pro Minute
+- **Timeout**: API-Anfragen-Timeout in Sekunden
 
-## Sucheinstellungen
+## Such-Einstellungen
 
 ### Allgemein
 - **Standard-Suchbereich**: Standardbereich für Suchen (alle Bilder, aktueller Ordner, usw.)
-- **Größe des Suchverlaufs**: Anzahl der zu behaltenden kürzlichen Suchen
+- **Suchverlaufgröße**: Anzahl kürzlich durchgeführter Suchen, die behalten werden
 - **Autovervollständigung**: Such-Autovervollständigung aktivieren/deaktivieren
-- **Platzhalter aktivieren**: Platzhalter in der Suche aktivieren/deaktivieren
+- **Wildcards aktiviert**: Wildcards in Suchen aktivieren/deaktivieren
 
 ### Erweitert
-- **Suchindexierung**: Konfigurieren Sie das Suchindexierungsverhalten
+- **Suchindexierung**: Suchindexierungsverhalten konfigurieren
   - **Beim Import indizieren**: Bilder beim Import indizieren
   - **Im Hintergrund indizieren**: Bilder im Hintergrund indizieren
-  - **Indizierungsfrequenz**: Wie oft der Suchindex aktualisiert werden soll
+  - **Indexierungsfrequenz**: Wie oft der Suchindex aktualisiert wird
 
-## Exporteinstellungen
+## Export-Einstellungen
 
-### Standards
+### Standardwerte
 - **Standard-Exportformat**: Standardformat zum Exportieren von Bildern
-- **Standard-Exportqualität**: Standardqualität für den Export
+- **Standard-Exportqualität**: Standardqualität für Export
 - **Standard-Skalierungsoptionen**: Standard-Skalierungseinstellungen
 - **Metadaten einschließen**: Metadaten standardmäßig in Exports einschließen
 
-### Voreinstellungen
-- **Exportvoreinstellungen verwalten**: Erstellen, bearbeiten und löschen Sie Exportvoreinstellungen
-- **Standard-Exportvoreinstellung**: Setzen Sie die Standard-Exportvoreinstellung
+### Presets
+- **Export-Presets verwalten**: Export-Presets erstellen, bearbeiten und löschen
+- **Standard-Export-Preset**: Setzen Sie das Standard-Export-Preset
 
 ## Tastaturkürzel
 
 ### Anpassung
 - **Tastaturkürzel aktivieren**: Tastaturkürzel aktivieren/deaktivieren
-- **Kürzel anpassen**: Vorhandene Tastaturkürzel modifizieren
-- **Auf Standardwerte zurücksetzen**: Standard-Tastaturkürzel wiederherstellen
+- **Kürzel anpassen**: Bestehende Tastaturkürzel modifizieren
+- **Zurücksetzen auf Standardwerte**: Standard-Tastaturkürzel wiederherstellen
 
-## Problembehebungs-Einstellungen
+## Fehlerbehebungs-Einstellungen
 
 ### Protokollierung
-- **Log-Level**: Setzen Sie die Ausführlichkeit der Protokolle (debug, info, warning, error)
-- **Log-Datei-Standort**: Pfad zu den Log-Dateien
-- **Maximale Log-Dateigröße**: Maximale Größe der Log-Dateien in MB
-- **Log-Dateien behalten für**: Wie lange Log-Dateien behalten werden sollen
+- **Protokollstufe**: Festlegen der Ausführlichkeit von Protokollen (debug, info, warning, error)
+- **Protokolldatei-Standort**: Pfad zu Protokolldateien
+- **Maximale Protokolldateigröße**: Maximale Größe von Protokolldateien in MB
+- **Protokolldateien behalten für**: Wie lange Protokolldateien behalten werden
 
 ### Debug
-- **Debug-Modus aktivieren**: Debug-Modus für die Problembehebung aktivieren
-- **Debug-Informationen anzeigen**: Debug-Informationen in der Benutzeroberfläche anzeigen
-- **Debug-Berichte generieren**: Debug-Berichte für den Support erstellen
+- **Debug-Modus aktivieren**: Debug-Modus für Fehlerbehebung aktivieren
+- **Debug-Informationen anzeigen**: Debug-Informationen in der Schnittstelle anzeigen
+- **Debug-Berichte generieren**: Debug-Berichte für Support erstellen
 
-## Einstellungen zurücksetzen
+## Zurücksetzen von Einstellungen
 
-### Auf Standardwerte zurücksetzen
+### Zurücksetzen auf Standardwerte
 1. Gehen Sie zu `Einstellungen > Erweitert > Einstellungen zurücksetzen`
-2. Klicken Sie auf **Auf Standardwerte zurücksetzen**
-3. Bestätigen Sie den Reset im Dialog
+2. Klicken Sie auf **Zurücksetzen auf Standardwerte**
+3. Bestätigen Sie den Rücksetzungsvorgang im Dialog
 4. Die Anwendung wird mit Standard-Einstellungen neu gestartet
 
-### Spezifische Einstellungen zurücksetzen
+### Bestimmte Einstellungen zurücksetzen
 1. Gehen Sie zur Einstellungskategorie, die Sie zurücksetzen möchten
-2. Klicken Sie auf die Schaltfläche **Auf Standardwerte zurücksetzen** am unteren Rand der Seite
-3. Bestätigen Sie den Reset im Dialog
+2. Klicken Sie auf die **Zurücksetzen auf Standardwerte**-Schaltfläche am unteren Rand der Seite
+3. Bestätigen Sie den Rücksetzungsvorgang im Dialog
 4. Klicken Sie auf **Speichern**, um Änderungen anzuwenden
 
-## Einstellungen importieren/exportieren
+## Importieren/Exportieren von Einstellungen
 
 ### Einstellungen exportieren
 1. Gehen Sie zu `Einstellungen > Erweitert > Einstellungen importieren/exportieren`
 2. Klicken Sie auf **Einstellungen exportieren**
 3. Wählen Sie einen Speicherort für die Einstellungsdatei
-4. Klicken Sie auf **Speichern**, um die Einstellungen zu exportieren
+4. Klicken Sie auf **Speichern**, um Einstellungen zu exportieren
 
 ### Einstellungen importieren
 1. Gehen Sie zu `Einstellungen > Erweitert > Einstellungen importieren/exportieren`
 2. Klicken Sie auf **Einstellungen importieren**
 3. Wählen Sie die Einstellungsdatei aus Ihrem Dateisystem
-4. Klicken Sie auf **Öffnen**, um die Einstellungen zu importieren
-5. Starten Sie die Anwendung neu, um die importierten Einstellungen anzuwenden
+4. Klicken Sie auf **Öffnen**, um Einstellungen zu importieren
+5. Starten Sie die Anwendung neu, um importierte Einstellungen anzuwenden
 
 ## Best Practices für Einstellungen
 
-1. **Beginnen Sie mit den Standards**: Starten Sie mit den Standard-Einstellungen und passen Sie sie bei Bedarf an
-2. **Einstellungen sichern**: Exportieren Sie Ihre Einstellungen nach wichtigen Änderungen
-3. **Änderungen testen**: Testen Sie Einstellungsänderungen, bevor Sie sich darauf verlassen
-4. **Beim Auffordern neu starten**: Starten Sie die Anwendung immer neu, wenn Sie dazu aufgefordert werden
+1. **Mit Standardwerten beginnen**: Beginnen Sie mit Standard-Einstellungen und passen Sie sie bei Bedarf an
+2. **Einstellungen sichern**: Exportieren Sie Ihre Einstellungen nach signifikanten Änderungen
+3. **Änderungen testen**: Testen Sie Einstellungsänderungen, bevor Sie sich auf sie verlassen
+4. **Bei Aufforderung neu starten**: Starten Sie die Anwendung immer neu, wenn Sie dazu aufgefordert werden
 5. **Benutzerdefinierte Einstellungen dokumentieren**: Halten Sie eine Aufzeichnung Ihrer benutzerdefinierten Einstellungen
-6. **Voreinstellungen verwenden**: Speichern Sie häufig verwendete Konfigurationen als Voreinstellungen
-7. **Leistung optimieren**: Passen Sie die Leistungseinstellungen basierend auf Ihrem System an
-8. **Bei Problemen zurücksetzen**: Wenn Sie Probleme haben, versuchen Sie, auf Standardwerte zurückzusetzen
+6. **Presets verwenden**: Speichern Sie häufig verwendete Konfigurationen als Presets
+7. **Leistung optimieren**: Passen Sie Leistungseinstellungen basierend auf Ihrem System an
+8. **Bei Problemen zurücksetzen**: Wenn Sie Probleme haben, versuchen Sie, auf Standard-Einstellungen zurückzusetzen
 
-## Problembehebung bei Einstellungsproblemen
+## Fehlerbehebung bei Einstellungsproblemen
 
 ### Einstellungen werden nicht gespeichert
-- **Berechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf den Speicherort der Einstellungsdatei haben
-- **Festplattenplatz prüfen**: Stellen Sie sicher, dass genügend Festplattenplatz für die Einstellungen vorhanden ist
+- **Berechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf den Einstellungsdateistandort haben
+- **Festplattenspeicher prüfen**: Stellen Sie sicher, dass genügend Festplattenspeicher für Einstellungen vorhanden ist
 - **Andere Instanzen schließen**: Stellen Sie sicher, dass keine anderen Instanzen der Anwendung ausgeführt werden
 - **Einstellungen zurücksetzen**: Versuchen Sie, die Einstellungen auf Standardwerte zurückzusetzen
 
@@ -227,16 +227,16 @@ Die AVA AIGC Toolbox bietet eine umfassende Reihe von Einstellungen, um Ihre Erf
   - Windows: `%APPDATA%/AIGenManager/settings.json`
   - macOS: `~/.local/share/AIGenManager/settings.json`
   - Linux: `~/.local/share/AIGenManager/settings.json`
-- **Anwendung neu installieren**: Wenn das manuelle Zurücksetzen nicht funktioniert, installieren Sie die Anwendung neu
+- **Anwendung neu installieren**: Wenn ein manueller Reset nicht funktioniert, installieren Sie die Anwendung neu
 
 ### Leistungsprobleme
-- **Cache-Einstellungen anpassen**: Erhöhen Sie die Cache-Größen für bessere Leistung
-- **Parallele Verarbeitung reduzieren**: Verringern Sie die Anzahl der parallelen Prozesse
-- **Animationen deaktivieren**: Schalten Sie Animationen aus für schnellere Leistung
-- **Lazy Loading aktivieren**: Aktivieren Sie Lazy Loading, um die anfängliche Ladezeit zu reduzieren
+- **Cache-Einstellungen anpassen**: Cache-Größen für bessere Leistung erhöhen
+- **Parallelverarbeitung reduzieren**: Anzahl paralleler Prozesse verringern
+- **Animationen deaktivieren**: Animationen ausschalten für schnellere Leistung
+- **Lazy Loading aktivieren**: Lazy Loading aktivieren, um die anfängliche Ladezeit zu reduzieren
 
 ## Nächste Schritte
 
 - Erfahren Sie mehr über [Tastaturkürzel](./keyboard-shortcuts.md) für schnellen Zugriff auf häufig verwendete Befehle
-- Lesen Sie über [Problembehebung](./troubleshooting.md) für Hilfe bei häufig auftretenden Problemen
-- Entdecken Sie die [FAQ](./faq.md) für Antworten auf häufig gestellte Fragen
+- Lesen Sie über [Fehlerbehebung](./troubleshooting.md) für Hilfe bei häufigen Problemen
+- Entdecken Sie [FAQ](./faq.md) für Antworten auf häufig gestellte Fragen

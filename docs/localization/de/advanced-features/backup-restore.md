@@ -1,207 +1,211 @@
-# Backup & Restore
-\n> **Die englische Version gilt als maßgebend**\n\n
-The AVA AIGC Toolbox provides robust backup and restoration features to safeguard your image library. This guide covers how to backup your library and restore it if needed.
+# Sicherung & Wiederherstellung
 
-## Understanding the Library Structure
+> **English version is authoritative**
 
-Before backing up your library, it's important to understand its structure:
+> **Die englische Version ist maßgeblich**
 
-- **Database File**: Contains all metadata, tags, albums, and organizational information
-- **Image Files**: The actual image files are stored on your filesystem
-- **Thumbnail Cache**: Contains generated thumbnails for faster browsing
+Die AVA AIGC Toolbox bietet robuste Sicherungs- und Wiederherstellungsfunktionen, um Ihre Bildbibliothek zu schützen. Diese Anleitung beschreibt, wie Sie Ihre Bibliothek sichern und bei Bedarf wiederherstellen können.
 
-## Backup Options
+## Verständnis der Bibliotheksstruktur
 
-### 1. Database Backup
+Vor dem Sichern Ihrer Bibliothek ist es wichtig, ihre Struktur zu verstehen:
 
-The most critical component to backup is the database file, which contains all your organizational data:
+- **Datenbankdatei**: Enthält alle Metadaten, Tags, Alben und Organisationsinformationen
+- **Bilddateien**: Die tatsächlichen Bilddateien werden auf Ihrem Dateisystem gespeichert
+- **Vorschaubildcache**: Enthält generierte Vorschaubilder für schnelles Browsen
 
-#### Steps to Backup the Database:
-1. Go to `File > Backup Library`, or click the **Backup** button in the toolbar
-2. In the backup dialog, select **Database Only** as the backup type
-3. Choose the destination folder for the backup
-4. Enter a name for the backup file
-5. Click **Backup** to start the process
-6. Monitor progress in the dialog
-7. Click **Finish** when done
+## Sicherungsoptionen
 
-### 2. Complete Backup
+### 1. Datenbanksicherung
 
-A complete backup includes:
-- Database file
-- Thumbnail cache
-- Optional: Image files (if they're stored in a managed location)
+Die wichtigste Komponente, die gesichert werden sollte, ist die Datenbankdatei, die alle Ihre Organisationsdaten enthält:
 
-#### Steps to Perform a Complete Backup:
-1. Go to `File > Backup Library`
-2. In the backup dialog, select **Complete Backup** as the backup type
-3. Choose the destination folder for the backup
-4. Configure backup options:
-   - **Include Image Files**: Include the actual image files in the backup
-   - **Compress Backup**: Create a compressed backup file
-   - **Encrypt Backup**: Encrypt the backup with a password
-5. Click **Backup** to start the process
-6. Monitor progress in the dialog
-7. Click **Finish** when done
+#### Schritte zur Sicherung der Datenbank:
+1. Gehen Sie zu `Datei > Bibliothek sichern` oder klicken Sie auf die Schaltfläche **Sichern** in der Symbolleiste
+2. Wählen Sie im Sicherungsdialog **Nur Datenbank** als Sicherungstyp
+3. Wählen Sie den Zielordner für die Sicherung
+4. Geben Sie einen Namen für die Sicherungsdatei ein
+5. Klicken Sie auf **Sichern**, um den Vorgang zu starten
+6. Überwachen Sie den Fortschritt im Dialog
+7. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-### 3. Automatic Backup
+### 2. Komplette Sicherung
 
-You can configure the application to automatically backup your library:
+Eine komplette Sicherung umfasst:
+- Datenbankdatei
+- Vorschaubildcache
+- Optional: Bilddateien (wenn sie in einem verwalteten Speicherort gespeichert sind)
 
-#### Steps to Set Up Automatic Backup:
-1. Go to `Settings > Library > Backup`
-2. Check **Enable automatic backup**
-3. Configure backup settings:
-   - **Backup Frequency**: How often to backup (daily, weekly, monthly)
-   - **Backup Time**: Time of day to perform the backup
-   - **Backup Type**: Database only or complete backup
-   - **Destination Folder**: Where to store backups
-   - **Keep Backups For**: How long to keep old backups
-   - **Maximum Backup Count**: Maximum number of backups to keep
-4. Click **Save** to enable automatic backups
+#### Schritte zur Durchführung einer kompletten Sicherung:
+1. Gehen Sie zu `Datei > Bibliothek sichern`
+2. Wählen Sie im Sicherungsdialog **Komplette Sicherung** als Sicherungstyp
+3. Wählen Sie den Zielordner für die Sicherung
+4. Konfigurieren Sie Sicherungsoptionen:
+   - **Bilddateien einschließen**: Fügen Sie die tatsächlichen Bilddateien in die Sicherung ein
+   - **Sicherung komprimieren**: Erstellen Sie eine komprimierte Sicherungsdatei
+   - **Sicherung verschlüsseln**: Verschlüsseln Sie die Sicherung mit einem Passwort
+5. Klicken Sie auf **Sichern**, um den Vorgang zu starten
+6. Überwachen Sie den Fortschritt im Dialog
+7. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-## Restoring from Backup
+### 3. Automatische Sicherung
 
-### 1. Restoring the Database
+Sie können die Anwendung so konfigurieren, dass sie Ihre Bibliothek automatisch sichert:
 
-#### Steps to Restore the Database:
-1. Close the application (recommended)
-2. Go to `File > Restore Library`
-3. In the restore dialog, select **Database Only** as the restore type
-4. Click **Browse** and select the backup file
-5. Configure restore options:
-   - **Overwrite existing database**: Replace the current database
-   - **Verify backup integrity**: Check if the backup file is valid
-6. Click **Restore** to start the process
-7. Monitor progress in the dialog
-8. Click **Finish** when done
-9. Restart the application for changes to take effect
+#### Schritte zur Einrichtung der automatischen Sicherung:
+1. Gehen Sie zu `Einstellungen > Bibliothek > Sicherung`
+2. Aktivieren Sie **Automatische Sicherung aktivieren**
+3. Konfigurieren Sie Sicherungseinstellungen:
+   - **Sicherungsfrequency**: Wie oft gesichert werden soll (täglich, wöchentlich, monatlich)
+   - **Sicherungszeit**: Uhrzeit für die Durchführung der Sicherung
+   - **Sicherungstyp**: Nur Datenbank oder komplette Sicherung
+   - **Zielordner**: Wo Sicherungen gespeichert werden
+   - **Sicherungen behalten für**: Wie lange alte Sicherungen behalten werden
+   - **Maximale Sicherungszahl**: Maximale Anzahl der zu behaltenden Sicherungen
+4. Klicken Sie auf **Speichern**, um automatische Sicherungen zu aktivieren
 
-### 2. Complete Restore
+## Wiederherstellung aus Sicherung
 
-#### Steps to Perform a Complete Restore:
-1. Close the application (recommended)
-2. Go to `File > Restore Library`
-3. In the restore dialog, select **Complete Restore** as the restore type
-4. Click **Browse** and select the backup file
-5. Choose the destination folder for restoration
-6. Configure restore options:
-   - **Overwrite existing files**: Replace existing files with restored files
-   - **Verify backup integrity**: Check if the backup file is valid
-   - **Restore image files**: Restore the actual image files
-   - **Restore thumbnail cache**: Restore the thumbnail cache
-7. Click **Restore** to start the process
-8. Monitor progress in the dialog
-9. Click **Finish** when done
-10. Restart the application for changes to take effect
+### 1. Wiederherstellung der Datenbank
 
-## Backup File Management
+#### Schritte zur Wiederherstellung der Datenbank:
+1. Schließen Sie die Anwendung (empfohlen)
+2. Gehen Sie zu `Datei > Bibliothek wiederherstellen`
+3. Wählen Sie im Wiederherstellungsdialog **Nur Datenbank** als Wiederherstellungstyp
+4. Klicken Sie auf **Durchsuchen** und wählen Sie die Sicherungsdatei
+5. Konfigurieren Sie Wiederherstellungsoptionen:
+   - **Vorhandene Datenbank überschreiben**: Ersetzen Sie die aktuelle Datenbank
+   - **Sicherungsintegrität prüfen**: Prüfen Sie, ob die Sicherungsdatei gültig ist
+6. Klicken Sie auf **Wiederherstellen**, um den Vorgang zu starten
+7. Überwachen Sie den Fortschritt im Dialog
+8. Klicken Sie auf **Fertig**, wenn Sie fertig sind
+9. Starten Sie die Anwendung neu, damit die Änderungen wirksam werden
 
-### Viewing Backup History
+### 2. Komplette Wiederherstellung
 
-#### Steps to View Backup History:
-1. Go to `Settings > Library > Backup`
-2. Scroll down to the **Backup History** section
-3. View the list of existing backups
-4. Click a backup to see details:
-   - Backup date and time
-   - Backup type
-   - File size
-   - Backup location
-5. Use the buttons to:
-   - **View Backup**: Open the backup file location
-   - **Delete Backup**: Remove the backup file
-   - **Restore Backup**: Restore from this backup
+#### Schritte zur Durchführung einer kompletten Wiederherstellung:
+1. Schließen Sie die Anwendung (empfohlen)
+2. Gehen Sie zu `Datei > Bibliothek wiederherstellen`
+3. Wählen Sie im Wiederherstellungsdialog **Komplette Wiederherstellung** als Wiederherstellungstyp
+4. Klicken Sie auf **Durchsuchen** und wählen Sie die Sicherungsdatei
+5. Wählen Sie den Zielordner für die Wiederherstellung
+6. Konfigurieren Sie Wiederherstellungsoptionen:
+   - **Vorhandene Dateien überschreiben**: Ersetzen Sie vorhandene Dateien durch wiederhergestellte Dateien
+   - **Sicherungsintegrität prüfen**: Prüfen Sie, ob die Sicherungsdatei gültig ist
+   - **Bilddateien wiederherstellen**: Stellen Sie die tatsächlichen Bilddateien wieder her
+   - **Vorschaubildcache wiederherstellen**: Stellen Sie den Vorschaubildcache wieder her
+7. Klicken Sie auf **Wiederherstellen**, um den Vorgang zu starten
+8. Überwachen Sie den Fortschritt im Dialog
+9. Klicken Sie auf **Fertig**, wenn Sie fertig sind
+10. Starten Sie die Anwendung neu, damit die Änderungen wirksam werden
 
-### Managing Backup Files
+## Verwaltung von Sicherungsdateien
 
-- **Backup Location**: By default, backups are stored in:
+### Anzeigen der Sicherungsverlauf
+
+#### Schritte zum Anzeigen des Sicherungsverlaufs:
+1. Gehen Sie zu `Einstellungen > Bibliothek > Sicherung`
+2. Scrollen Sie zum Abschnitt **Sicherungsverlauf**
+3. Sehen Sie sich die Liste der vorhandenen Sicherungen an
+4. Klicken Sie auf eine Sicherung, um Details zu sehen:
+   - Sicherungsdatum und -zeit
+   - Sicherungstyp
+   - Dateigröße
+   - Sicherungsspeicherort
+5. Verwenden Sie die Schaltflächen, um:
+   - **Sicherung anzeigen**: Öffnen Sie den Sicherungsdateispeicherort
+   - **Sicherung löschen**: Entfernen Sie die Sicherungsdatei
+   - **Sicherung wiederherstellen**: Wiederherstellen aus dieser Sicherung
+
+### Verwaltung von Sicherungsdateien
+
+- **Sicherungsspeicherort**: Standardmäßig werden Sicherungen gespeichert in:
   - Windows: `%APPDATA%/AIGenManager/Backups/`
   - macOS: `~/.local/share/AIGenManager/Backups/`
   - Linux: `~/.local/share/AIGenManager/Backups/`
 
-- **Manual Backup Management**: 
-  - You can manually copy backup files to external storage
-  - Keep backups in multiple locations for redundancy
-  - Label backups clearly with date and type
+- **Manuelle Sicherungsverwaltung**:
+  - Sie können Sicherungsdateien manuell auf externen Speichergeräten kopieren
+  - Halten Sie Sicherungen an mindestens zwei verschiedenen Speicherorten für Redundanz
+  - Kennzeichnen Sie Sicherungen klar mit Datum und Typ
 
-## Best Practices for Backup
+## Best Practices für Sicherungen
 
-1. **Backup Regularly**: Schedule regular backups based on how frequently you add images
-2. **Use Multiple Locations**: Store backups in at least two different locations (local and external)
-3. **Test Restores**: Periodically test restoring from backups to ensure they're valid
-4. **Backup Before Major Changes**: Always backup before performing batch operations or upgrading the application
-5. **Encrypt Sensitive Backups**: Use encryption for backups containing sensitive images
-6. **Keep Backups for Different Time Periods**: Keep daily, weekly, and monthly backups
-7. **Document Backup Locations**: Keep a record of where your backups are stored
-8. **Consider Cloud Storage**: Store backups in cloud storage for off-site protection
+1. **Regelmäßige Sicherung**: Planen Sie regelmäßige Sicherungen basierend auf der Häufigkeit, mit der Sie Bilder hinzufügen
+2. **Mehrere Speicherorte verwenden**: Speichern Sie Sicherungen an mindestens zwei verschiedenen Speicherorten (lokal und extern)
+3. **Wiederherstellungen testen**: Testen Sie regelmäßig die Wiederherstellung aus Sicherungen, um sicherzustellen, dass sie gültig sind
+4. **Sichern vor großen Änderungen**: Sichern Sie immer vor dem Ausführen von Batch-Operationen oder dem Upgrade der Anwendung
+5. **Sensible Sicherungen verschlüsseln**: Verwenden Sie Verschlüsselung für Sicherungen, die sensible Bilder enthalten
+6. **Sicherungen für verschiedene Zeiträume behalten**: Halten Sie tägliche, wöchentliche und monatliche Sicherungen
+7. **Sicherungsspeicherorte dokumentieren**: Halten Sie eine Aufzeichnung davon, wo Ihre Sicherungen gespeichert sind
+8. **Cloud-Speicher in Betracht ziehen**: Speichern Sie Sicherungen in Cloud-Speicher für Off-Site-Schutz
 
-## Troubleshooting Backup Issues
+## Fehlerbehebung bei Sicherungsproblemen
 
-### Backup Failing
-- **Check Disk Space**: Ensure there's enough disk space at the backup destination
-- **Check Permissions**: Ensure you have write access to the backup location
-- **Check File Locks**: Ensure the database isn't locked by another process
-- **Close Other Applications**: Close other applications that might be accessing the database
+### Sicherung schlägt fehl
+- **Platz prüfen**: Stellen Sie sicher, dass genügend Speicherplatz am Sicherungsziel vorhanden ist
+- **Berechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf den Sicherungsspeicherort haben
+- **Dateisperren prüfen**: Stellen Sie sicher, dass die Datenbank nicht von einem anderen Prozess gesperrt ist
+- **Andere Anwendungen schließen**: Schließen Sie andere Anwendungen, die möglicherweise auf die Datenbank zugreifen
 
-### Restore Failing
-- **Check Backup File**: Ensure the backup file is valid and not corrupted
-- **Check File Permissions**: Ensure you have write access to the library location
-- **Close the Application**: Close the application before restoring to avoid file locks
-- **Check Version Compatibility**: Ensure the backup is compatible with your current application version
+### Wiederherstellung schlägt fehl
+- **Sicherungsdatei prüfen**: Stellen Sie sicher, dass die Sicherungsdatei gültig und nicht beschädigt ist
+- **Dateiberechtigungen prüfen**: Stellen Sie sicher, dass Sie Schreibzugriff auf den Bibliotheksspeicherort haben
+- **Anwendung schließen**: Schließen Sie die Anwendung vor der Wiederherstellung, um Dateisperren zu vermeiden
+- **Versionskompatibilität prüfen**: Stellen Sie sicher, dass die Sicherung mit Ihrer aktuellen Anwendungsversion kompatibel ist
 
-### Corrupted Database
-- **Try Automatic Repair**: Go to `Tools > Database > Repair Database`
-- **Restore from Backup**: If repair fails, restore from the latest valid backup
-- **Check Disk Health**: Check your hard drive for errors if you experience frequent corruption
+### Beschädigte Datenbank
+- **Automatische Reparatur versuchen**: Gehen Sie zu `Werkzeuge > Datenbank > Datenbank reparieren`
+- **Aus Sicherung wiederherstellen**: Wenn die Reparatur fehlschlägt, stellen Sie aus der neuesten gültigen Sicherung wieder her
+- **Festplattenintegrität prüfen**: Überprüfen Sie Ihre Festplatte auf Fehler, wenn Sie häufige Beschädigungen erfahren
 
-## Database Optimization
+## Datenbankoptimierung
 
-Regular database optimization can improve performance and reduce corruption risks:
+Regelmäßige Datenbankoptimierung kann die Leistung verbessern und die Risiken von Beschädigungen reduzieren:
 
-#### Steps to Optimize the Database:
-1. Go to `Tools > Database > Optimize Database`
-2. In the optimization dialog, select optimization options:
-   - **Compact Database**: Reduce database file size
-   - **Rebuild Indexes**: Rebuild database indexes for better performance
-   - **Check Database Integrity**: Verify database integrity
-3. Click **Optimize** to start the process
-4. Monitor progress in the dialog
-5. Click **Finish** when done
+#### Schritte zur Optimierung der Datenbank:
+1. Gehen Sie zu `Werkzeuge > Datenbank > Datenbank optimieren`
+2. Wählen Sie im Optimierungsdialog Optimierungsoptionen:
+   - **Datenbank komprimieren**: Reduzieren Sie die Datenbankdateigröße
+   - **Indizes neu erstellen**: Erstellen Sie Datenbankindizes neu für bessere Leistung
+   - **Datenbankintegrität prüfen**: Verifizieren Sie die Datenbankintegrität
+3. Klicken Sie auf **Optimieren**, um den Vorgang zu starten
+4. Überwachen Sie den Fortschritt im Dialog
+5. Klicken Sie auf **Fertig**, wenn Sie fertig sind
 
-## Emergency Recovery
+## Notfallwiederherstellung
 
-If you're unable to start the application due to database corruption:
+Wenn Sie die Anwendung aufgrund von Datenbankbeschädigung nicht starten können:
 
-1. **Locate the Database File**: Find the database file at its default location
-2. **Rename the Corrupted Database**: Rename the corrupted database file (e.g., `aigenmanager.db.corrupted`)
-3. **Start the Application**: The application will create a new empty database
-4. **Restore from Backup**: Use the steps above to restore from your latest backup
+1. **Datenbankdatei lokalisieren**: Finden Sie die Datenbankdatei an ihrem Standardort
+2. **Beschädigte Datenbank umbenennen**: Benennen Sie die beschädigte Datenbankdatei um (z. B. `aigenmanager.db.corrupted`)
+3. **Anwendung starten**: Die Anwendung erstellt eine neue leere Datenbank
+4. **Aus Sicherung wiederherstellen**: Verwenden Sie die oben beschriebenen Schritte, um aus Ihrer neuesten Sicherung wieder herzustellen
 
-## Backup File Format
+## Sicherungsdateiformat
 
-Backup files are stored in the following formats:
+Sicherungsdateien werden in den folgenden Formaten gespeichert:
 
-- **.db**: SQLite database file (for database-only backups)
-- **.zip**: Compressed backup file (for complete backups)
-- **.bak**: Encrypted backup file (for encrypted backups)
+- **.db**: SQLite-Datenbankdatei (für Datenbank-only-Sicherungen)
+- **.zip**: Komprimierte Sicherungsdatei (für komplette Sicherungen)
+- **.bak**: Verschlüsselte Sicherungsdatei (für verschlüsselte Sicherungen)
 
-## Migrating to a New Computer
+## Migration zu einem neuen Computer
 
-### Steps to Migrate Your Library to a New Computer:
-1. On the old computer:
-   - Perform a complete backup of your library
-   - Copy the backup file to an external storage device
-   - Note the location of your image files
-2. On the new computer:
-   - Install the AVA AIGC Toolbox
-   - Copy your image files to the same location (or a new location)
-   - Open the application
-   - Restore from the backup file
-   - If you changed the image file location, update the library settings
+### Schritte zur Migration Ihrer Bibliothek zu einem neuen Computer:
+1. Auf dem alten Computer:
+   - Führen Sie eine komplette Sicherung Ihrer Bibliothek durch
+   - Kopieren Sie die Sicherungsdatei auf ein externes Speichergerät
+   - Notieren Sie sich den Speicherort Ihrer Bilddateien
+2. Auf dem neuen Computer:
+   - Installieren Sie die AVA AIGC Toolbox
+   - Kopieren Sie Ihre Bilddateien an den gleichen Ort (oder an einen neuen Ort)
+   - Öffnen Sie die Anwendung
+   - Stellen Sie aus der Sicherungsdatei wieder her
+   - Wenn Sie den Bilddateispeicherort geändert haben, aktualisieren Sie die Bibliothekseinstellungen
 
-## Next Steps
+## Nächste Schritte
 
-- Learn about [AI Integration](./ai-integration.md) for more AI-powered features
-- Read about [Batch Operations](./batch-operations.md) for bulk image processing
-- Explore [Settings](../settings.md) to configure backup settings
+- Erfahren Sie mehr über [KI-Integration](./ai-integration.md) für weitere KI-gestützte Funktionen
+- Lesen Sie über [Batch-Operationen](./batch-operations.md) für die Massenverarbeitung von Bildern
+- Erkunden Sie [Einstellungen](../settings.md), um Sicherungseinstellungen zu konfigurieren
