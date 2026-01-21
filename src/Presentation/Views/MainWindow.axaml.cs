@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace AIGenManager.Presentation.Views;
+namespace BerryAIGCToolbox.Views;
 
 public partial class MainWindow : Window
 {

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Infrastructure\Civitai\BerryAIGC.Civitai.csproj" />
+    <ProjectReference Include="..\src\Data\Database\BerryAIGC.Database.csproj" />
+    <ProjectReference Include="..\src\Data\IO\BerryAIGC.IO.csproj" />
+  </ItemGroup>
+
+</Project>

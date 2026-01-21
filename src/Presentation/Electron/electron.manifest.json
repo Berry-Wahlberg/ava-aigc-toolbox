@@ -1,0 +1,35 @@
+{
+  "executable": "BerryAIGC.Electron",
+  "splashscreen": {
+    "imageFile": ""
+  },
+  "name": "BerryAIGC.Electron",
+  "author": "BerryAIGC Team",
+  "singleInstance": true,
+  "environment": "Production",
+  "build": {
+    "appId": "com.BerryAIGC.Electron",
+    "productName": "Berry AIGC Toolbox",
+    "copyright": "Copyright © 2026 BerryAIGC",
+    "buildVersion": "2.0.0",
+    "compression": "maximum",
+    "directories": {
+      "output": "../../../bin/Desktop"
+    },
+    "extraResources": [
+      {
+        "from": "./bin",
+        "to": "bin",
+        "filter": [ "**/*" ]
+      }
+    ],
+    "files": [
+      {
+        "from": "./ElectronHostHook/node_modules",
+        "to": "ElectronHostHook/node_modules",
+        "filter": [ "**/*" ]
+      },
+      "**/*"
+    ]
+  }
+}

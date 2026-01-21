@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Export & Sharing
 
 The AVA AIGC Toolbox provides several options for exporting and sharing your AI-generated images. This guide covers how to use these features effectively.
@@ -218,3 +219,7 @@ In addition to exporting images, you can also export metadata separately:
 - Learn about [AI Integration](../advanced-features/ai-integration.md) for more AI-powered features
 - Read about [Batch Operations](../advanced-features/batch-operations.md) for more bulk processing options
 - Explore [Backup & Restore](../advanced-features/backup-restore.md) to safeguard your image library
+=======
+# Export & Sharing\n\n*Placeholder for export and sharing*
+>>>>>>> origin/doc/dev
+

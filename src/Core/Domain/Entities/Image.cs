@@ -1,5 +1,13 @@
 namespace AIGenManager.Core.Domain.Entities;
 
+public enum ImportStatus
+{
+    Pending,
+    Success,
+    Failed,
+    RequiresManualEntry
+}
+
 public class Image
 {
     // Required for SQLite-net
@@ -48,6 +56,11 @@ public class Image
     public DateTime? ViewedDate { get; set; }
     public DateTime? TouchedDate { get; set; }
     public ImageType Type { get; set; }
+    
+    // Import-related properties
+    public ImportStatus ImportStatus { get; set; }
+    public string? ImportErrorMessage { get; set; }
+    public bool ManualMetadataRequired { get; set; }
 
     public Image(string path, string fileName)
     {
@@ -56,5 +69,6 @@ public class Image
         CreatedDate = DateTime.Now;
         ModifiedDate = DateTime.Now;
         Type = ImageType.Image;
+        ImportStatus = ImportStatus.Pending;
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Integration
 
 The AVA AIGC Toolbox offers several AI-powered features to enhance your workflow with AI-generated images. This guide covers how to use these advanced AI integration features.
@@ -216,3 +217,7 @@ Generate new images directly from the application:
 - Learn about [Batch Operations](./batch-operations.md) for bulk image processing
 - Read about [Backup & Restore](./backup-restore.md) to safeguard your library
 - Explore [Metadata Editing](../features/metadata-editing.md) for manual metadata management
+=======
+# AI Integration\n\n*Placeholder for AI integration features*
+>>>>>>> origin/doc/dev
+
