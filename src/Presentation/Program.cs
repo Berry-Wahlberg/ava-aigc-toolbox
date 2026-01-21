@@ -1,7 +1,8 @@
 ﻿using Avalonia;
 using System;
+using BerryAIGCToolbox;
 
-namespace AIGenManager.Presentation;
+namespace BerryAIGCToolbox;
 
 sealed class Program
 {

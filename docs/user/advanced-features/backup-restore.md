@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Backup & Restore
 
 The AVA AIGC Toolbox provides robust backup and restoration features to safeguard your image library. This guide covers how to backup your library and restore it if needed.
@@ -205,3 +206,7 @@ Backup files are stored in the following formats:
 - Learn about [AI Integration](./ai-integration.md) for more AI-powered features
 - Read about [Batch Operations](./batch-operations.md) for bulk image processing
 - Explore [Settings](../settings.md) to configure backup settings
+=======
+# Backup & Restore\n\n*Placeholder for backup and restore*
+>>>>>>> origin/doc/dev
+
