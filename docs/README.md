@@ -1,161 +1,82 @@
-# AIGenManager Electron.NET Implementation
+# AVA AIGC Toolbox Documentation
 
-## Overview
+Welcome to documentation for AVA AIGC Toolbox, a cross-platform AI-generated image management application built with Avalonia & .NET.
 
-This documentation provides comprehensive information about the AIGenManager Electron.NET implementation, including architecture, UI design, localization, and development guidelines.
+## Documentation Overview
 
-## Features
+This documentation is clearly separated into two distinct sections to serve different audiences:
 
-- **Responsive Navigation Bar**: Collapses automatically based on window width (800px threshold)
-- **Modern UI Design**: Clean, professional interface with smooth transitions
-- **Localization Support**: Multi-language support with client-side implementation
-- **Configurable Window Size**: Defaults to 1280x800px for consistent user experience
-- **24x24px Zoom Button**: Standardized button size with proper spacing
+### 1. Developer Documentation
+**For Software Developers & Technical Teams**
+- Professional, detailed technical documentation
+- System architecture and design patterns
+- Development environment setup
+- Coding standards and best practices
+- API and domain entity references
+- Testing strategies and deployment guides
+- Advanced development skills and patterns
 
-## Project Structure
+### 2. User Documentation  
+**For End Users & Administrators**
+- Simple, user-friendly guides
+- Installation and setup instructions
+- Feature descriptions and usage guides
+- UI overview and navigation tips
+- Troubleshooting and support resources
 
-```
-BerryAIGen.Electron/
-├── Pages/
-│   ├── Index.cshtml          # Main application page
-│   └── Shared/
-│       └── _Layout.cshtml    # Main layout file
-├── wwwroot/
-│   ├── css/
-│   │   └── site.css         # Main stylesheet
-│   ├── js/
-│   │   ├── navigation.js    # Navigation collapse logic
-│   │   └── localization.js  # Localization manager
-│   └── lang/
-│       └── en.json          # English translations
-├── Program.cs               # Electron.NET configuration
-└── BerryAIGen.Electron.csproj # Project file
-```
+## Documentation Navigation
 
-## Getting Started
+### Developer Documentation
 
-### Prerequisites
+The developer documentation provides comprehensive technical information for software developers working on AVA AIGC Toolbox codebase.
 
-- .NET 10.0 SDK
-- Node.js and npm (for Electron)
-- Electron.NET CLI
+**Access Developer Documentation:** [Developer Guide](./developer/README.md)
 
-### Installation
+**Key Developer Topics:**
+- [Getting Started](./developer/README.md#getting-started)
+- [Architecture](./developer/README.md#architecture)
+- [Core Concepts](./developer/README.md#core-concepts)
+- [API Reference](./developer/README.md#api-reference)
+- [Development Workflow](./developer/README.md#development-workflow)
+- [Testing Strategy](./developer/README.md#testing-strategy)
+- [Deployment](./developer/README.md#deployment)
+- [Development Skills](./developer/README.md#development-skills)
 
-1. Install the Electron.NET CLI globally:
-   ```bash
-   dotnet tool install ElectronNET.CLI -g
-   ```
+### User Documentation
 
-2. Restore dependencies:
-   ```bash
-   dotnet restore
-   ```
+The user documentation provides clear, step-by-step guides for end users of AVA AIGC Toolbox application.
 
-3. Start the application in development mode:
-   ```bash
-   electronize start
-   ```
+**Access User Documentation:** [User Guide](./user/README.md)
 
-## Architecture
+**Key User Topics:**
+- [Installation](./user/README.md#getting-started)
+- [Getting Started](./user/README.md#getting-started)
+- [Core Features](./user/README.md#core-features)
+- [Advanced Features](./user/README.md#advanced-features)
+- [Support Resources](./user/README.md#support--resources)
 
-### Main Components
+## Choosing the Right Documentation
 
-1. **Electron Main Process**: Handles window management, app lifecycle, and native OS interactions
-2. **Electron Renderer Process**: Renders the web-based UI using ASP.NET Core Razor Pages
-3. **Navigation System**: Responsive sidebar with automatic collapse/expand logic
-4. **Localization System**: Client-side internationalization with JSON language files
+| If you are... | Use this documentation | Focus on... |
+|---------------|------------------------|-------------|
+| **A software developer** contributing to codebase | Developer Documentation | Architecture, coding standards, API reference |
+| **A technical architect** reviewing system | Developer Documentation | Architecture, core concepts, design patterns |
+| **A quality assurance engineer** | Developer Documentation | Testing strategy, domain entities |
+| **A DevOps engineer** deploying application | Developer Documentation | Deployment guide, configuration |
+| **An end user** using application | User Documentation | Installation, getting started, features |
+| **An administrator** managing application | User Documentation | Settings, backup & restore, support |
 
-### Core Technologies
+## Getting Help
 
-- **Electron.NET**: Bridge between .NET and Electron
-- **ASP.NET Core**: Web framework for UI rendering
-- **CSS3**: Modern styling with flexbox and grid layouts
-- **JavaScript (ES6+)**: Client-side functionality
+- **For Development Issues**: Check [Developer Documentation](./developer/README.md) or create a GitHub issue
+- **For User Questions**: Check [User Documentation](./user/README.md) or [FAQ](./user/support/faq.md)
 
-## UI/UX Design
+## Version Information
 
-### Navigation Bar
+- **Documentation Version**: 1.0.0
+- **Application Version**: 1.0.0
+- **Last Updated**: January 2026
 
-- **Default Width**: 240px (expanded), 50px (collapsed)
-- **Collapse Threshold**: 800px window width
-- **Transition Effect**: Smooth 0.3s width transition
-- **Toggle Button**: Located in sidebar header for manual control
+---
 
-### Window Dimensions
-
-- **Default Size**: 1280x800px
-- **Resizable**: Yes, with grip handle
-- **Menu Bar**: Auto-hidden for more screen space
-
-### Button Design
-
-- **Zoom Button**: 24x24px with blue background
-- **Toolbar Buttons**: 36x36px with light gray border
-- **Hover Effects**: Subtle color changes and scaling
-- **Active States**: Clear visual feedback for active navigation items
-
-## Localization
-
-### Implementation
-
-- **Client-side**: JavaScript-based localization manager
-- **Language Files**: JSON format stored in `/wwwroot/lang/`
-- **Default Language**: English (en)
-- **Key Format**: Dot-separated paths (e.g., `navigation.title`)
-- **Fallback**: Returns original key if translation not found
-
-### Adding New Languages
-
-1. Create a new JSON file in `/wwwroot/lang/` (e.g., `es.json` for Spanish)
-2. Copy the structure from `en.json`
-3. Translate all values to the target language
-4. Update the localization manager to support the new language
-
-### Using Translations
-
-Add the `data-i18n` attribute to HTML elements:
-
-```html
-<h3 data-i18n="navigation.title">Navigation</h3>
-```
-
-## Development Guidelines
-
-### Coding Standards
-
-- Use English for all code, comments, and documentation
-- Follow consistent naming conventions
-- Keep CSS organized by component
-- Use semantic HTML5 elements
-- Write modular, maintainable JavaScript
-
-### Testing
-
-- Test responsive behavior across different screen sizes
-- Verify localization works correctly
-- Test window resizing and navigation collapse
-- Ensure all buttons and controls function properly
-
-### Build and Deployment
-
-- **Development**: `electronize start`
-- **Build**: `electronize build /target win`
-- **Publish**: `electronize publish /target win`
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Application not starting**: Check that all dependencies are installed
-2. **Navigation not collapsing**: Verify window width thresholds in CSS
-3. **Localization not working**: Check JSON file structure and key names
-4. **UI elements misaligned**: Review CSS flexbox/grid layouts
-
-## Contributing
-
-Please follow the development guidelines when contributing to this project. Ensure all changes are thoroughly tested and documented.
-
-## License
-
-This project is licensed under the MIT License.
+*AVA AIGC Toolbox - Your Ultimate AI-Generated Image Management Solution*
