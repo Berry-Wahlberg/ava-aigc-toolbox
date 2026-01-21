@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SelfContained>False</SelfContained>
+    <AssemblyName>BerryAIGC.Updater</AssemblyName>
+    <RootNamespace>BerryAIGC.Updater</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Common\BerryAIGC.Common.csproj" />
+    <ProjectReference Include="..\src\Infrastructure\Github\BerryAIGC.Github.csproj" />
+  </ItemGroup>
+
+</Project>

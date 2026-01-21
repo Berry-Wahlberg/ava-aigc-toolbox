@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Search & Filtering
 
 The AVA AIGC Toolbox provides powerful search and filtering capabilities to help you quickly find images in your library. This guide covers how to use these features effectively.
@@ -235,3 +236,7 @@ You can perform searches within specific views:
 - Learn about [Export & Sharing](./export-sharing.md) to share your search results
 - Read about [Organization](./organization.md) to better organize your images
 - Explore [Metadata Editing](./metadata-editing.md) to improve searchability by updating metadata
+=======
+# Search & Filtering\n\n*Placeholder for search and filtering*
+>>>>>>> origin/doc/dev
+
