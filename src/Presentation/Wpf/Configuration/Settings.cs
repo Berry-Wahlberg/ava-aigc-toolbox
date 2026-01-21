@@ -23,7 +23,7 @@ public class Settings : SettingsContainer, IScanOptions
     {
         NSFWTags = new List<string>() { "nsfw", "nude", "naked" };
         FileExtensions = ".png, .jpg, .jpeg, .webp";
-        Theme = "System";
+        Theme = "Light";
         PageSize = 100;
         ThumbnailSize = 128;
         UseBuiltInViewer = true;
