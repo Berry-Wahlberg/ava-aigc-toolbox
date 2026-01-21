@@ -15,7 +15,8 @@ using AIGenManager.Infrastructure.Repositories;
 using AIGenManager.Infrastructure.Data;
 using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.UseCases.Folders;
-using AIGenManager.Infrastructure.Services;
+using BerryAIGC.Toolkit.DependencyInjection;
+using BerryAIGC.Toolkit.Themes;
 
 namespace BerryAIGCToolbox;
 
@@ -64,6 +65,9 @@ public partial class App : Avalonia.Application
         {
             var services = new ServiceCollection();
 
+            // Register all presentation services
+            services.AddPresentationServices();
+            
             // Database context
             var appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BerryAIGCToolbox");
             Directory.CreateDirectory(appDataPath);
@@ -115,6 +119,9 @@ public partial class App : Avalonia.Application
             // ViewModels
             services.AddTransient<MainWindowViewModel>();
             services.AddTransient<ImportWizardViewModel>();
+
+            // Theme service
+            services.AddSingleton<IThemeService, ThemeService>();
 
             ServiceProvider = services.BuildServiceProvider();
             
