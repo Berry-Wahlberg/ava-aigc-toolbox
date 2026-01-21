@@ -1,9 +1,46 @@
+# Ignore thumbnails created by Windows
+Thumbs.db
+# Ignore files built by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+![Rr]elease Notes*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+.vs/
+#Nuget packages folder
+packages
+build
+build-self-contained
+.vscode
+.trae
+#FreeFileSync temporary files
+sync.ffs_db
+sync.ffs_lock
 # Visual Studio Code
 .vscode/
-
 # Trae AI
 .trae/
-
 # Build outputs
 bin/
 obj/
@@ -11,14 +48,11 @@ obj/
 *.user
 *.cache
 *.nupkg
-
 # Test results
 TestResults/
-
 # Logs
 logs/
 *.log
-
 # OS generated files
 .DS_Store
 Thumbs.db
@@ -27,23 +61,19 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-
 # NuGet
 .nuget/
 packages/
-
 # Environment files
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
 # Database files
 *.db
 *.sqlite
 *.sqlite3
-
 # Temporary files
 *.tmp
 *.temp
