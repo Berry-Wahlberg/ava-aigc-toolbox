@@ -9,6 +9,7 @@ namespace BerryAIGC.Toolkit.ViewModels;
 public partial class MainWindowViewModel : BaseViewModel
 {
     private readonly IThemeService _themeService;
+    private readonly ILocalizationService _localizationService;
     private ObservableCollection<FolderViewModel> _folders = new();
     private ObservableCollection<ImageViewModel> _images = new();
     private FolderViewModel? _selectedFolder;

@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="using:BerryAIGC.Toolkit.ViewModels"
+        x:Class="BerryAIGC.Toolkit.Views.SettingsWindow"
+        Title="Settings"
+        Width="800"
+        Height="700"
+        MinWidth="600"
+        MinHeight="500"
+        Icon="/Assets/berry-aigc-toolbox.ico">
+
+    <Design.DataContext>
+        <vm:SettingsViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,*">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="{DynamicResource Theme.Background}" Padding="20">
+            <TextBlock Text="Settings" Classes="PageTitle" FontSize="24" FontWeight="Bold" Margin="0,0,20,0"/>
+        </Border>
+
+        <Border Grid.Row="1" Background="{DynamicResource Theme.Background}">
+            <ScrollViewer>
+                <StackPanel Spacing="20" Margin="20">
+                    <TextBlock Text="Appearance" Classes="SectionHeader" FontSize="18" FontWeight="SemiBold"/>
+                    <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
+                        <TextBlock Text="Theme:" Width="120"/>
+                        <ComboBox SelectedIndex="{Binding ThemeIndex}" Classes="SettingsComboBox">
+                            <ComboBoxItem>Light</ComboBoxItem>
+                            <ComboBoxItem>Dark</ComboBoxItem>
+                            <ComboBoxItem>System</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    
+                    <TextBlock Text="Thumbnail Size:" Width="120" Margin="0,20,0,0"/>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <RadioButton Content="Small" IsChecked="{Binding ThumbnailSize, Converter={StaticResource IntToBoolConverter}, ConverterParameter=0}" Classes="SettingsRadioButton"/>
+                        <RadioButton Content="Medium" IsChecked="{Binding ThumbnailSize, Converter={StaticResource IntToBoolConverter}, ConverterParameter=1}" Classes="SettingsRadioButton"/>
+                        <RadioButton Content="Large" IsChecked="{Binding ThumbnailSize, Converter={StaticResource IntToBoolConverter}, ConverterParameter=2}" Classes="SettingsRadioButton"/>
+                    </StackPanel>
+
+                    <TextBlock Text="View Mode:" Width="120" Margin="0,20,0,0"/>
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <RadioButton Content="Grid" IsChecked="{Binding ViewMode, Converter={StaticResource IntToBoolConverter}, ConverterParameter=0}" Classes="SettingsRadioButton"/>
+                        <RadioButton Content="List" IsChecked="{Binding ViewMode, Converter={StaticResource IntToBoolConverter}, ConverterParameter=1}" Classes="SettingsRadioButton"/>
+                    </StackPanel>
+
+                    <TextBlock Text="Display Options:" Classes="SectionHeader" FontSize="18" FontWeight="SemiBold" Margin="0,20,0,0"/>
+                    <StackPanel Spacing="10">
+                        <CheckBox Content="Show filenames" IsChecked="{Binding ShowFilenames}" Classes="SettingsCheckBox"/>
+                        <CheckBox Content="Show tags" IsChecked="{Binding ShowTags}" Classes="SettingsCheckBox"/>
+                        <CheckBox Content="Show metadata" IsChecked="{Binding ShowMetadata}" Classes="SettingsCheckBox"/>
+                    </StackPanel>
+
+                    <Button Content="Save" Command="{Binding SaveCommand}" Classes="PrimaryButton" HorizontalAlignment="Right" Margin="0,20,0,0" MinWidth="100"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Window.Styles>
+        <Style Selector="TextBlock.PageTitle">
+            <Setter Property="Foreground" Value="{DynamicResource Theme.Foreground}"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,0,0,20,0"/>
+        </Style>
+        <Style Selector="TextBlock.SectionHeader">
+            <Setter Property="Foreground" Value="{DynamicResource Theme.Foreground}"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
+        <Style Selector="ComboBox.SettingsComboBox">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="MinWidth" Value="150"/>
+            <Setter Property="MinHeight" Value="35"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style Selector="RadioButton.SettingsRadioButton">
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+        <Style Selector="CheckBox.SettingsCheckBox">
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+        <Style Selector="Button.PrimaryButton">
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Window.Styles>
+</Window>

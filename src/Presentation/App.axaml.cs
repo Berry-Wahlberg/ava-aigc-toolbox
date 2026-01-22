@@ -17,6 +17,7 @@ using AIGenManager.Application.UseCases.Images;
 using AIGenManager.Application.UseCases.Folders;
 using BerryAIGC.Toolkit.DependencyInjection;
 using BerryAIGC.Toolkit.Themes;
+using BerryAIGC.Toolkit.ViewModels;
 
 namespace BerryAIGCToolbox;
 
@@ -122,6 +123,9 @@ public partial class App : Avalonia.Application
 
             // Theme service
             services.AddSingleton<IThemeService, ThemeService>();
+            
+            // Localization service
+            services.AddSingleton<ILocalizationService, LocalizationService>();
 
             ServiceProvider = services.BuildServiceProvider();
             
