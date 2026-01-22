@@ -3,6 +3,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using BerryAIGC.Toolkit.Themes;
+using BerryAIGC.Toolkit.Localization;
 
 namespace BerryAIGC.Toolkit.ViewModels;
 
@@ -10,6 +11,7 @@ public partial class MainWindowViewModel : BaseViewModel
 {
     private readonly IThemeService _themeService;
     private readonly ILocalizationService _localizationService;
+    private ObservableCollection<FolderViewModel> _folders = new();ILocalizationService _localizationService;
     private ObservableCollection<FolderViewModel> _folders = new();
     private ObservableCollection<ImageViewModel> _images = new();
     private FolderViewModel? _selectedFolder;
