@@ -12,6 +12,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="DependencyInjection\" />
+    <Folder Include="Views\" />
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
@@ -27,11 +28,5 @@
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Core\AIGenManager.Core.csproj" />
-    <ProjectReference Include="..\Application\AIGenManager.Application.csproj" />
-    <ProjectReference Include="..\Infrastructure\AIGenManager.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
