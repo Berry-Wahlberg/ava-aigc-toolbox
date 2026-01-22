@@ -25,5 +25,6 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ProgressService>();
         services.AddSingleton<ContextMenuService>();
         services.AddSingleton<ExternalApplicationsService>();
+        services.AddSingleton<IToastService, ToastService>();
     }
 }
