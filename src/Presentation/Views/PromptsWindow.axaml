@@ -1,72 +1,42 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:vm="using:BerryAIGC.Toolkit.ViewModels"
         x:Class="BerryAIGC.Toolkit.Views.PromptsWindow"
         Title="Prompts"
         Width="800"
         Height="600"
-        MinWidth="600"
-        MinHeight="400"
         Icon="/Assets/berry-aigc-toolbox.ico">
 
     <Design.DataContext>
         <vm:PromptsViewModel/>
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,*">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="{DynamicResource Theme.Background}" Padding="20">
-            <TextBlock Text="AI Prompts" Classes="PageTitle" FontSize="24" FontWeight="Bold" Margin="0,0,20,0"/>
+        <Border Grid.Row="0" Padding="20">
+            <TextBlock Text="AI Prompts" FontSize="24" FontWeight="Bold"/>
         </Border>
 
-        <Border Grid.Row="1" Background="{DynamicResource Theme.Background}">
-            <ScrollViewer>
-                <ItemsControl ItemsSource="{Binding Prompts}">
-                    <ItemsControl.ItemsPanel>
-                        <StackPanel Orientation="Vertical" Spacing="10"/>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Border Classes="PromptCard" Margin="10" Background="{DynamicResource Theme.CardBackground}" BorderBrush="{DynamicResource Theme.BorderBrush}">
-                                <Grid RowDefinitions="Auto,Auto">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Text="{Binding Name}" Classes="PromptName" FontSize="18" FontWeight="Bold" Margin="10"/>
-                                    <TextBlock Text="{Binding Description}" Classes="PromptDescription" TextWrapping="Wrap" Margin="10,0,0,10,0"/>
-                                </Grid>
-                            </Border>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </ScrollViewer>
-        </Border>
-
-        <Window.Styles>
-            <Style Selector="TextBlock.PageTitle">
-                <Setter Property="Foreground" Value="{DynamicResource Theme.Foreground}"/>
-                <Setter Property="FontSize" Value="24"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="Margin" Value="0,0,0,20,0"/>
-            </Style>
-            <Style Selector="Border.PromptCard">
-                <Setter Property="CornerRadius" Value="8"/>
-                <Setter Property="Padding" Value="10"/>
-                <Setter Property="Margin" Value="10"/>
-            </Style>
-            <Style Selector="TextBlock.PromptName">
-                <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-            </Style>
-            <Style Selector="TextBlock.PromptDescription">
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="TextWrapping" Value="Wrap"/>
-            </Style>
-        </Window.Styles>
+        <ScrollViewer Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding Prompts}">
+                <ItemsControl.ItemsPanel>
+                    <StackPanel Orientation="Vertical" Spacing="10"/>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="10" Padding="10">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,5,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
 </Window>

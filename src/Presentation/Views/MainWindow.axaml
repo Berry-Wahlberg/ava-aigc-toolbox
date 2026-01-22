@@ -15,9 +15,9 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,*">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -26,26 +26,24 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="{DynamicResource Theme.Background}" Height="40">
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="{DynamicResource Theme.Background}">
             <Grid Margin="20,0">
-                <TextBlock Classes="TitleText" Text="Berry AIGC Toolbox" FontSize="18" FontWeight="SemiBold"/>
+                <TextBlock Text="Berry AIGC Toolbox" FontSize="18" FontWeight="SemiBold"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
-                    <Button Classes="TitleBarButton" Content="_" Click="MinimizeButton_Click" ToolTip.Tip="Minimize"/>
-                    <Button Classes="TitleBarButton" Content="□" Click="MaximizeButton_Click" ToolTip.Tip="Maximize"/>
-                    <Button Classes="TitleBarButton" Content="✕" Click="CloseButton_Click" ToolTip.Tip="Close"/>
+                    <Button Content="_" Click="MinimizeButton_Click" ToolTip.Tip="Minimize"/>
+                    <Button Content="□" Click="MaximizeButton_Click" ToolTip.Tip="Maximize"/>
+                    <Button Content="✕" Click="CloseButton_Click" ToolTip.Tip="Close"/>
                 </StackPanel>
             </Grid>
         </Border>
 
-        <Border Grid.Row="1" Grid.Column="0" Background="{DynamicResource Theme.SidebarBackground}" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource Theme.BorderBrush}">
+        <Border Grid.Row="1" Grid.Column="0" Background="{DynamicResource Theme.Background}" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource Theme.BorderBrush}">
             <StackPanel Margin="10">
-                <TextBlock Text="Navigation" Classes="SectionHeader" Margin="0,0,10,0"/>
-                
-                <TreeView Classes="FolderTree" ItemsSource="{Binding Folders}" SelectedItem="{Binding SelectedFolder}">
+                <TextBlock Text="Navigation" FontWeight="SemiBold" Margin="0,0,10,0"/>
+                <TreeView ItemsSource="{Binding Folders}" SelectedItem="{Binding SelectedFolder}">
                     <TreeView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Spacing="5">
-                                <Image Source="/Assets/folder.png" Width="16" Height="16"/>
                                 <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
@@ -55,18 +53,18 @@
         </Border>
 
         <Border Grid.Row="1" Grid.Column="1" Background="{DynamicResource Theme.Background}">
-            <Grid RowDefinitions="Auto,Auto,*">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" Background="{DynamicResource Theme.ToolbarBackground}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Theme.BorderBrush}">
+                <Border Grid.Row="0" Background="{DynamicResource Theme.Background}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Theme.BorderBrush}">
                     <StackPanel Orientation="Horizontal" Spacing="10" Margin="10,5">
-                        <Button Content="Import" Command="{Binding ImportCommand}" Classes="ToolbarButton"/>
-                        <Button Content="Search" Command="{Binding SearchCommand}" Classes="ToolbarButton"/>
-                        <Button Content="Settings" Command="{Binding SettingsCommand}" Classes="ToolbarButton"/>
-                        <TextBlock Text="{Binding StatusMessage}" VerticalAlignment="Center" Margin="10,0,0,0" Classes="StatusText"/>
+                        <Button Content="Import" Command="{Binding ImportCommand}"/>
+                        <Button Content="Search" Command="{Binding SearchCommand}"/>
+                        <Button Content="Settings" Command="{Binding SettingsCommand}"/>
+                        <TextBlock Text="{Binding StatusMessage}" VerticalAlignment="Center" Margin="10,0,0,0"/>
                     </StackPanel>
                 </Border>
 
@@ -77,10 +75,13 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border Classes="ImageCard" Margin="5" Background="{DynamicResource Theme.CardBackground}" BorderBrush="{DynamicResource Theme.BorderBrush}">
-                                    <Grid RowDefinitions="*,Auto">
-                                        <Image Source="{Binding Thumbnail}" Stretch="UniformToFill" Margin="5"/>
-                                        <TextBlock Text="{Binding FileName}" TextWrapping="Wrap" MaxLines="2" Margin="5,0,5,0" TextTrimming="CharacterEllipsis"/>
+                                <Border Margin="5" Background="{DynamicResource Theme.Background}" BorderBrush="{DynamicResource Theme.BorderBrush}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="{Binding FileName}" TextWrapping="Wrap" MaxLines="2" Margin="5"/>
                                     </Grid>
                                 </Border>
                             </DataTemplate>
@@ -89,59 +90,5 @@
                 </ScrollViewer>
             </Grid>
         </Border>
-
-    <Window.Styles>
-        <Style Selector="Border.TitleBar">
-            <Setter Property="Background" Value="{DynamicResource Theme.TitleBarBackground}"/>
-        </Style>
-        <Style Selector="TextBlock.TitleText">
-            <Setter Property="Foreground" Value="{DynamicResource Theme.TitleBarForeground}"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-        </Style>
-        <Style Selector="Button.TitleBarButton">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="8"/>
-            <Setter Property="Margin" Value="0"/>
-            <Setter Property="Width" Value="30"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="Cursor" Value="Hand"/>
-        </Style>
-        <Style Selector="Button.TitleBarButton:pointerover /template/Control/">
-            <Setter Property="Background" Value="{DynamicResource Theme.TitleBarButtonHover}"/>
-        </Style>
-        <Style Selector="Border.SidebarBackground">
-            <Setter Property="Background" Value="{DynamicResource Theme.SidebarBackground}"/>
-        </Style>
-        <Style Selector="TreeView.FolderTree">
-            <Setter Property="MinHeight" Value="200"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="Transparent"/>
-        </Style>
-        <Style Selector="Border.ToolbarBackground">
-            <Setter Property="Background" Value="{DynamicResource Theme.ToolbarBackground}"/>
-        </Style>
-        <Style Selector="Button.ToolbarButton">
-            <Setter Property="Padding" Value="10,15"/>
-            <Setter Property="MinWidth" Value="80"/>
-        </Style>
-        <Style Selector="TextBlock.StatusText">
-            <Setter Property="Foreground" Value="{DynamicResource Theme.StatusText}"/>
-        </Style>
-        <Style Selector="Border.ImageCard">
-            <Setter Property="CornerRadius" Value="5"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style Selector="Border.ImageCard:pointerover /template/Control/">
-            <Setter Property="Background" Value="{DynamicResource Theme.CardHover}"/>
-        </Style>
-        <Style Selector="TextBlock.SectionHeader">
-            <Setter Property="Foreground" Value="{DynamicResource Theme.Foreground}"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Margin" Value="0,0,10,0"/>
-        </Style>
-    </Window.Styles>
+    </Grid>
 </Window>
