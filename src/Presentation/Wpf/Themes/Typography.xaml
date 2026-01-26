@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:Double x:Key="FontSizeXS">10</sys:Double>
+    <sys:Double x:Key="FontSizeS">12</sys:Double>
+    <sys:Double x:Key="FontSizeM">14</sys:Double>
+    <sys:Double x:Key="FontSizeL">16</sys:Double>
+    <sys:Double x:Key="FontSizeXL">18</sys:Double>
+    <sys:Double x:Key="FontSizeXXL">20</sys:Double>
+    <sys:Double x:Key="FontSizeDisplayS">24</sys:Double>
+    <sys:Double x:Key="FontSizeDisplayM">32</sys:Double>
+    <sys:Double x:Key="FontSizeDisplayL">48</sys:Double>
+
+    <sys:Double x:Key="LineHeightTight">1.2</sys:Double>
+    <sys:Double x:Key="LineHeightNormal">1.5</sys:Double>
+    <sys:Double x:Key="LineHeightRelaxed">1.75</sys:Double>
+
+    <FontWeight x:Key="FontWeightLight">Light</FontWeight>
+    <FontWeight x:Key="FontWeightRegular">Regular</FontWeight>
+    <FontWeight x:Key="FontWeightMedium">Medium</FontWeight>
+    <FontWeight x:Key="FontWeightSemiBold">SemiBold</FontWeight>
+    <FontWeight x:Key="FontWeightBold">Bold</FontWeight>
+
+    <sys:Double x:Key="LetterSpacingTight">-0.5</sys:Double>
+    <sys:Double x:Key="LetterSpacingNormal">0</sys:Double>
+    <sys:Double x:Key="LetterSpacingWide">0.5</sys:Double>
+
+</ResourceDictionary>

@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:TimeSpan x:Key="DurationInstant">00:00:00.100</sys:TimeSpan>
+    <sys:TimeSpan x:Key="DurationFast">00:00:00.200</sys:TimeSpan>
+    <sys:TimeSpan x:Key="DurationNormal">00:00:00.300</sys:TimeSpan>
+    <sys:TimeSpan x:Key="DurationSlow">00:00:00.500</sys:TimeSpan>
+
+    <CubicEase x:Key="EasingStandard" EasingMode="EaseOut"/>
+    <CubicEase x:Key="EasingDecelerate" EasingMode="EaseOut"/>
+    <CubicEase x:Key="EasingAccelerate" EasingMode="EaseIn"/>
+
+    <sys:Double x:Key="ElevationNone">0</sys:Double>
+    <sys:Double x:Key="ElevationXS">1</sys:Double>
+    <sys:Double x:Key="ElevationS">2</sys:Double>
+    <sys:Double x:Key="ElevationM">4</sys:Double>
+    <sys:Double x:Key="ElevationL">8</sys:Double>
+    <sys:Double x:Key="ElevationXL">12</sys:Double>
+
+    <DropShadowEffect x:Key="ShadowXS" 
+                      BlurRadius="2" 
+                      ShadowDepth="1" 
+                      Opacity="0.1" 
+                      Color="#000000"/>
+    
+    <DropShadowEffect x:Key="ShadowS" 
+                      BlurRadius="4" 
+                      ShadowDepth="2" 
+                      Opacity="0.15" 
+                      Color="#000000"/>
+    
+    <DropShadowEffect x:Key="ShadowM" 
+                      BlurRadius="8" 
+                      ShadowDepth="4" 
+                      Opacity="0.2" 
+                      Color="#000000"/>
+    
+    <DropShadowEffect x:Key="ShadowL" 
+                      BlurRadius="16" 
+                      ShadowDepth="8" 
+                      Opacity="0.25" 
+                      Color="#000000"/>
+
+</ResourceDictionary>

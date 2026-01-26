@@ -5,19 +5,19 @@
                          xmlns:behaviors="clr-namespace:BerryAIGC.Toolkit.Behaviors"
                          xmlns:fa="http://schemas.fontawesome.io/icons/">
 
-    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackground}"/>
-    <SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource Background}"/>
-    <SolidColorBrush x:Key="ToastBrush" Color="{DynamicResource ToastBackground}"/>
-    <SolidColorBrush x:Key="SecondaryBrush" Color="{DynamicResource Splitter}"/>
-    <SolidColorBrush x:Key="SplitterBrush" Color="{DynamicResource Splitter}"/>
-    <SolidColorBrush x:Key="FocusedBrush" Color="{DynamicResource Focused}"/>
-    <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource Highlight}"/>
-    <SolidColorBrush x:Key="HighlightFocusedBrush" Color="{DynamicResource HighlightFocused}"/>
-    <SolidColorBrush x:Key="BgHighlightBrush" Color="{DynamicResource BgHighlight}"/>
-    <SolidColorBrush x:Key="ForegroundBrush" Color="{DynamicResource Foreground}"/>
-    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{DynamicResource DisabledForeground}"/>
-    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="{DynamicResource DisabledBackground}"/>
-    <SolidColorBrush x:Key="PreviewBackgroundBrush" Color="{DynamicResource PreviewBackground}"/>
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource AppControlBackground}"/>
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource AppBackground}"/>
+    <SolidColorBrush x:Key="ToastBrush" Color="{DynamicResource AppToastBackground}"/>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{DynamicResource AppSplitter}"/>
+    <SolidColorBrush x:Key="SplitterBrush" Color="{DynamicResource AppSplitter}"/>
+    <SolidColorBrush x:Key="FocusedBrush" Color="{DynamicResource AppFocused}"/>
+    <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource AppHighlight}"/>
+    <SolidColorBrush x:Key="HighlightFocusedBrush" Color="{DynamicResource AppHighlightFocused}"/>
+    <SolidColorBrush x:Key="BgHighlightBrush" Color="{DynamicResource AppBgHighlight}"/>
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{DynamicResource AppForeground}"/>
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{DynamicResource AppDisabledForeground}"/>
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="{DynamicResource AppDisabledBackground}"/>
+    <SolidColorBrush x:Key="PreviewBackgroundBrush" Color="{DynamicResource AppPreviewBackground}"/>
 
 
 

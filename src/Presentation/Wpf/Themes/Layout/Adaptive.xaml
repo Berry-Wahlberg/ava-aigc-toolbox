@@ -1,0 +1,26 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="AdaptiveGridStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="{StaticResource MarginM}"/>
+    </Style>
+
+    <Style x:Key="MobileLayoutStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="{StaticResource MarginS}"/>
+    </Style>
+
+    <Style x:Key="TabletLayoutStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="{StaticResource MarginM}"/>
+    </Style>
+
+    <Style x:Key="DesktopLayoutStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="{StaticResource MarginL}"/>
+    </Style>
+
+    <Style x:Key="FluidContainerStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="{StaticResource MarginM}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+    </Style>
+
+</ResourceDictionary>
